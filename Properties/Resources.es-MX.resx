@@ -138,6 +138,9 @@
   <data name="Register_Button" xml:space="preserve">
     <value>Registrarse</value>
   </data>
+  <data name="TitleGame" xml:space="preserve">
+    <value>Juego del Ahorcado</value>
+  </data>
   <data name="TitleLogIn" xml:space="preserve">
     <value>Iniciar Sesión</value>
   </data>

@@ -138,6 +138,9 @@
   <data name="Register_Button" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="TitleGame" xml:space="preserve">
+    <value>Hangman Game</value>
+  </data>
   <data name="TitleLogIn" xml:space="preserve">
     <value>Log in</value>
   </data>

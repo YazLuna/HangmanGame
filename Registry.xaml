@@ -4,25 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p = "clr-namespace:hangmanGame.Properties"
         xmlns:local="clr-namespace:hangmanGame"
-        Title="{x:Static p:Resources.TitleRegistry}" Height="700" Width="800">
+        Title="{x:Static p:Resources.TitleRegistry}" Height="700" Width="800" Background="#FFCFF6FF">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="239*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Margin="219,34,303,582" Grid.Column="1" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleRegistry}" Height="53"/>
-        <Label Margin="142,111,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" Height="49"/>
-        <Label Margin="99,178,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" Height="49"/>
-        <Label Margin="100,246,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" Height="51"/>
-        <Label Margin="147,317,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Height="49"/>
-        <Label Margin="110,385,0,0" Grid.Column="1" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.Password}" Height="56"/>
-        <TextBox Margin="238,111,279,523" Grid.Column="1"></TextBox>
-        <TextBox Margin="238,180,279,454" Grid.Column="1"></TextBox>
-        <TextBox Margin="238,246,279,388" Grid.Column="1"></TextBox>
-        <TextBox Margin="238,317,279,317" Grid.Column="1"></TextBox>
-        <TextBox Margin="238,387,279,247" Grid.Column="1"></TextBox>
-        <Button Grid.Column="1" Margin="117,494,450,125" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Register_Button}"></Button>
-        <Button Grid.Column="1" Margin="397,494,170,125" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Cancel_Button}"></Button>
+        <Label Margin="222,34,283,590" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleRegistry}" Height="45" Grid.Column="1"/>
+        <Label Margin="203,111,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" Height="64"/>
+        <Label Margin="160,180,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" Height="61"/>
+        <Label Margin="160,246,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" Height="66" RenderTransformOrigin="0.916,0.53"/>
+        <Label Margin="208,317,0,0" Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Height="65"/>
+        <Label Margin="166,387,0,0" Grid.Column="1" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.Password}" Height="53"/>
+        <TextBox Margin="280,111,237,523" Grid.Column="1"></TextBox>
+        <TextBox Margin="280,180,237,454" Grid.Column="1"></TextBox>
+        <TextBox Margin="280,246,237,388" Grid.Column="1"></TextBox>
+        <TextBox Margin="280,317,237,317" Grid.Column="1"></TextBox>
+        <TextBox Margin="280,387,237,247" Grid.Column="1"></TextBox>
+        <Button Grid.Column="1" Margin="117,494,450,125"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Register_Button}"></Button>
+        <Button Grid.Column="1" Margin="397,494,170,125" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}"></Button>
     </Grid>
 </Window>

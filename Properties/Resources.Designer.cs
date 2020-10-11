@@ -124,6 +124,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Hangman Game.
+        /// </summary>
+        public static string TitleGame {
+            get {
+                return ResourceManager.GetString("TitleGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Log in.
         /// </summary>
         public static string TitleLogIn {

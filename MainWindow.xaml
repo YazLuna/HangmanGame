@@ -4,14 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p = "clr-namespace:hangmanGame.Properties"
         xmlns:local="clr-namespace:hangmanGame"
-        Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800">
+        Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800" Background="#FFCFF6FF">
     <Grid>
 
-        <Label Margin="336,55,366,311"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleLogIn}" Height="53"></Label>
-        <Label Margin="245,133,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Width="66"></Label>
-        <Label Margin="202,190,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" Height="42"></Label>
-        <TextBox Margin="316,141,254,249"></TextBox>
-        <TextBox Margin="316,203,254,187"></TextBox>
-        <Button Margin="316,292,366,79" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}" Click="Button_Click"></Button>
+        <Label Margin="507,58,88,308"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}"></Label>
+        <Label Margin="436,136,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}"></Label>
+        <Label Margin="393,193,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}"></Label>
+        <TextBox Margin="507,144,63,246"></TextBox>
+        <TextBox Margin="507,206,63,184"></TextBox>
+        <Button Margin="537,313,155,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}"></Button>
+        <Button Margin="622,254,63,0" Style="{StaticResource buttonCreateAccount}" Content = "{x:Static p:Resources.TitleRegistry}" Click="Button_Click"></Button>
+        <Image Name="imageHangmanGame" Source="hangmanGame.png" Margin="-69,29,423,24"></Image>
+        <Image Name="imageMan" Source="man.png" Margin="138,80,317,24"></Image>
     </Grid>
 </Window>
