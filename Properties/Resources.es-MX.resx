@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accept_Button" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
   <data name="Cancel_Button" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="ChangePassword_Button" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="Change_Button" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
+  <data name="ConfirmationCode" xml:space="preserve">
+    <value>Código de confirmación: </value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar nueva contraseña: </value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmar contraseña: </value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña actual: </value>
+  </data>
+  <data name="DeleteAccount_Button" xml:space="preserve">
+    <value>Eliminar</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Correo Electrónico: </value>
@@ -126,8 +150,17 @@
   <data name="LastName" xml:space="preserve">
     <value>Apellido: </value>
   </data>
+  <data name="MessageConfirmation" xml:space="preserve">
+    <value>Por favor revise su correo electrónico  para confirmar su correo y seguir con el proceso de crear cuenta.</value>
+  </data>
+  <data name="Modify_Button" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nombre: </value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nueva contraseña: </value>
   </data>
   <data name="NickName" xml:space="preserve">
     <value>Nombre de usuario: </value>
@@ -138,11 +171,26 @@
   <data name="Register_Button" xml:space="preserve">
     <value>Registrarse</value>
   </data>
+  <data name="SendConfirmation_Button" xml:space="preserve">
+    <value>Enviar código de confirmación</value>
+  </data>
+  <data name="TitleChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="TitleDeleteAccount" xml:space="preserve">
+    <value>Eliminar cuenta</value>
+  </data>
+  <data name="TitleEmailConfirmation" xml:space="preserve">
+    <value>Confirmación de correo electrónico</value>
+  </data>
   <data name="TitleGame" xml:space="preserve">
     <value>Juego del Ahorcado</value>
   </data>
   <data name="TitleLogIn" xml:space="preserve">
     <value>Iniciar Sesión</value>
+  </data>
+  <data name="TitleModifyAccount" xml:space="preserve">
+    <value>Modificar cuenta</value>
   </data>
   <data name="TitleRegistry" xml:space="preserve">
     <value>Crear cuenta</value>

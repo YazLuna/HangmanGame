@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:hangmanGame"
         Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800" Background="#FFCFF6FF">
     <Grid>
-
         <Label Margin="507,58,88,308"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}"></Label>
         <Label Margin="436,136,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}"></Label>
         <Label Margin="393,193,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}"></Label>
-        <TextBox Margin="507,144,63,246"></TextBox>
-        <TextBox Margin="507,206,63,184"></TextBox>
+        <TextBox Margin="507,144,63,246" ></TextBox>
+        <PasswordBox Name="passwordBox" PasswordChar="*" Margin="507,204,63,189"/>
         <Button Margin="537,313,155,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}"></Button>
         <Button Margin="622,254,63,0" Style="{StaticResource buttonCreateAccount}" Content = "{x:Static p:Resources.TitleRegistry}" Click="Button_Click"></Button>
-        <Image Name="imageHangmanGame" Source="hangmanGame.png" Margin="-69,29,423,24"></Image>
-        <Image Name="imageMan" Source="man.png" Margin="138,80,317,24"></Image>
+        <Image Name="imageHangmanGame" Source="image/hangmanGame.png" Margin="-69,29,423,24"></Image>
+        <Image Name="imageMan" Source="image/man.png" Margin="138,80,317,24"></Image>
     </Grid>
 </Window>

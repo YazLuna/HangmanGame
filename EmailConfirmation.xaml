@@ -1,0 +1,16 @@
+﻿<Window x:Class="hangmanGame.EmailConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p = "clr-namespace:hangmanGame.Properties"
+        xmlns:local="clr-namespace:hangmanGame"
+        Title="{x:Static p:Resources.TitleEmailConfirmation}" Height="500" Width="700" Background="#FFCFF6FF">
+    <Grid>
+        <Label Margin="245,33,238,399" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleEmailConfirmation}" />
+        <Label Margin="72,110,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.MessageConfirmation}" Height="57" Width="574"/>
+        <Label Margin="123,218,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ConfirmationCode}" />
+        <TextBox Margin="327,226,165,214"></TextBox>
+        <Button Margin="481,335,147,0" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}"/>
+        <Button Margin="123,335,352,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.SendConfirmation_Button}"/>
+    </Grid>
+</Window>

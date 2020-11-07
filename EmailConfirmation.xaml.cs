@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 
 namespace hangmanGame
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para EmailConfirmation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EmailConfirmation : Window
     {
-        public MainWindow()
+        public EmailConfirmation()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // View Expense Report
-            Registry registry = new Registry();
-            registry.Show();
-            this.Close();
         }
     }
 }

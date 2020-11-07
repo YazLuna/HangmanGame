@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accept_button" xml:space="preserve">
+    <value>Accept</value>
+  </data>
   <data name="Cancel_Button" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="ChangePassword_Button" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Change_Button" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="ConfirmationCode" xml:space="preserve">
+    <value>Confirmation Code: </value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirm New Password: </value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password: </value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password: </value>
+  </data>
+  <data name="DeleteAccount_Button" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email: </value>
@@ -126,8 +150,17 @@
   <data name="LastName" xml:space="preserve">
     <value>Last Name: </value>
   </data>
+  <data name="MessageConfirmation" xml:space="preserve">
+    <value>Please check your email to confirm your email and continue with the account creation process.</value>
+  </data>
+  <data name="Modify_Button" xml:space="preserve">
+    <value>Modify</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name: </value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password: </value>
   </data>
   <data name="NickName" xml:space="preserve">
     <value>NickName: </value>
@@ -138,11 +171,26 @@
   <data name="Register_Button" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="SendConfirmation_Button" xml:space="preserve">
+    <value>Send Confirmation Code</value>
+  </data>
+  <data name="TitleChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="TitleDeleteAccount" xml:space="preserve">
+    <value>Delete Account</value>
+  </data>
+  <data name="TitleEmailConfirmation" xml:space="preserve">
+    <value>Email confirmation</value>
+  </data>
   <data name="TitleGame" xml:space="preserve">
     <value>Hangman Game</value>
   </data>
   <data name="TitleLogIn" xml:space="preserve">
     <value>Log in</value>
+  </data>
+  <data name="TitleModifyAccount" xml:space="preserve">
+    <value>Modify Account</value>
   </data>
   <data name="TitleRegistry" xml:space="preserve">
     <value>Create Account</value>

@@ -61,11 +61,83 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Accept.
+        /// </summary>
+        public static string Accept_button {
+            get {
+                return ResourceManager.GetString("Accept_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel.
         /// </summary>
         public static string Cancel_Button {
             get {
                 return ResourceManager.GetString("Cancel_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change.
+        /// </summary>
+        public static string Change_Button {
+            get {
+                return ResourceManager.GetString("Change_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change Password.
+        /// </summary>
+        public static string ChangePassword_Button {
+            get {
+                return ResourceManager.GetString("ChangePassword_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmation Code: .
+        /// </summary>
+        public static string ConfirmationCode {
+            get {
+                return ResourceManager.GetString("ConfirmationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirm New Password: .
+        /// </summary>
+        public static string ConfirmNewPassword {
+            get {
+                return ResourceManager.GetString("ConfirmNewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirm Password: .
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Current Password: .
+        /// </summary>
+        public static string CurrentPassword {
+            get {
+                return ResourceManager.GetString("CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Delete.
+        /// </summary>
+        public static string DeleteAccount_Button {
+            get {
+                return ResourceManager.GetString("DeleteAccount_Button", resourceCulture);
             }
         }
         
@@ -88,11 +160,38 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please check your email to confirm your email and continue with the account creation process..
+        /// </summary>
+        public static string MessageConfirmation {
+            get {
+                return ResourceManager.GetString("MessageConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modify.
+        /// </summary>
+        public static string Modify_Button {
+            get {
+                return ResourceManager.GetString("Modify_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Name: .
         /// </summary>
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New Password: .
+        /// </summary>
+        public static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
             }
         }
         
@@ -124,6 +223,42 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Send Confirmation Code.
+        /// </summary>
+        public static string SendConfirmation_Button {
+            get {
+                return ResourceManager.GetString("SendConfirmation_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change Password.
+        /// </summary>
+        public static string TitleChangePassword {
+            get {
+                return ResourceManager.GetString("TitleChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Delete Account.
+        /// </summary>
+        public static string TitleDeleteAccount {
+            get {
+                return ResourceManager.GetString("TitleDeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Email confirmation.
+        /// </summary>
+        public static string TitleEmailConfirmation {
+            get {
+                return ResourceManager.GetString("TitleEmailConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Hangman Game.
         /// </summary>
         public static string TitleGame {
@@ -138,6 +273,15 @@ namespace hangmanGame.Properties {
         public static string TitleLogIn {
             get {
                 return ResourceManager.GetString("TitleLogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modify Account.
+        /// </summary>
+        public static string TitleModifyAccount {
+            get {
+                return ResourceManager.GetString("TitleModifyAccount", resourceCulture);
             }
         }
         

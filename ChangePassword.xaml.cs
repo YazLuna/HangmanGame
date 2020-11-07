@@ -15,22 +15,24 @@ using System.Windows.Shapes;
 namespace hangmanGame
 {
     /// <summary>
-    /// Lógica de interacción para Registry.xaml
+    /// Lógica de interacción para ChangePassword.xaml
     /// </summary>
-    public partial class Registry : Window
+    public partial class ChangePassword : Window
     {
-        public Registry()
+        public ChangePassword()
         {
             InitializeComponent();
         }
 
-        private void ImagenOjo_MouseEnter ( Object sender, MouseEventArgs e) {
+        private void ImagenOjo_MouseEnter(Object sender, MouseEventArgs e)
+        {
 
             TextBoxClaro.Visibility = Visibility.Visible;
             PassBoxOculto.Visibility = Visibility.Hidden;
             TextBoxClaro.Text = PassBoxOculto.Password;
         }
-        private void ImagenOjo_MouseLeave(Object sender, MouseEventArgs e) {
+        private void ImagenOjo_MouseLeave(Object sender, MouseEventArgs e)
+        {
             TextBoxClaro.Visibility = Visibility.Hidden;
             PassBoxOculto.Visibility = Visibility.Visible;
             TextBoxClaro.Text = String.Empty;
