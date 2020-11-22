@@ -23,5 +23,12 @@ namespace hangmanGame
         {
             InitializeComponent();
         }
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            Lobby lobby = new Lobby();
+            lobby.Show();
+            this.Close();
+        }
     }
 }

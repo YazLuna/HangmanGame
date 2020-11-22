@@ -1,18 +1,17 @@
 ﻿<Window x:Class="hangmanGame.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:p = "clr-namespace:hangmanGame.Properties"
-        xmlns:local="clr-namespace:hangmanGame"
-        Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800" Background="#FFCFF6FF">
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:p = "clr-namespace:hangmanGame.Properties"
+		Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800" Background="#FFCFF6FF">
     <Grid>
         <Label Margin="507,58,88,308"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}"></Label>
         <Label Margin="436,136,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}"></Label>
         <Label Margin="393,193,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}"></Label>
-        <TextBox Margin="507,144,63,246" ></TextBox>
-        <PasswordBox Name="passwordBox" PasswordChar="*" Margin="507,204,63,189"/>
-        <Button Margin="537,313,155,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}"></Button>
-        <Button Margin="622,254,63,0" Style="{StaticResource buttonCreateAccount}" Content = "{x:Static p:Resources.TitleRegistry}" Click="Button_Click"></Button>
+        <TextBox Name="tbEmail" Margin="507,144,46,246" ></TextBox>
+        <PasswordBox Name="pbPassword" PasswordChar="*" Margin="507,204,46,189"/>
+        <Button Margin="548,313,141,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}" Click="LogIn" Width="103"></Button>
+        <Button Margin="627,254,46,0" Style="{StaticResource buttonCreateAccount}" Content = "{x:Static p:Resources.TitleRegistry}" Click="CreateAccount" Width="119"></Button>
+        <Button Margin="420,254,187,0" Style="{StaticResource buttonLostMyPassword}" Content = "{x:Static p:Resources.TitleLostMyPassword}" Click="LostMyPassword" Width="185" Height="38"></Button>
         <Image Name="imageHangmanGame" Source="image/hangmanGame.png" Margin="-69,29,423,24"></Image>
         <Image Name="imageMan" Source="image/man.png" Margin="138,80,317,24"></Image>
     </Grid>

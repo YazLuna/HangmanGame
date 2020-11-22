@@ -17,7 +17,7 @@
         <TextBox Margin="285,246,445,336" />
         <TextBox Margin="285,317,445,265" />
         <Button Margin="235,441,691,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}"></Button>
-        <Button Margin="453,441,477,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}"></Button>
+        <Button Margin="453,441,477,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"> </Button>
         <Button Margin="658,240,175,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}"></Button>
         <Button Margin="658,148,273,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}"></Button>
         <Image Name="imageDelteAccount" Source="image/iconoDeleteAccount.png" Margin="724,137,212,440" RenderTransformOrigin="0.253,0.868"></Image>

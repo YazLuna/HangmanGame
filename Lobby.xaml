@@ -1,0 +1,29 @@
+﻿<Window x:Class="hangmanGame.Lobby"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p = "clr-namespace:hangmanGame.Properties"
+        xmlns:local="clr-namespace:hangmanGame"
+        Title="{x:Static p:Resources.TitleWelcome}" Height="473.196" Width="829.381" Background="#FFCFF6FF">
+
+    <Grid>
+        <Button Name="btnLogOut" Content="{x:Static p:Resources.LogOut_Button}" Margin="75,261,564,0" Style="{StaticResource buttonCancel}" Click="LogOut" Width="182" Height="48"/>
+        <Button Name="btnPlay" Content="{x:Static p:Resources.Play_Button}" Margin="75,140,564,0" Style="{StaticResource buttonPlay}" Click="Play" Width="182" Height="93"/>
+        <Grid Background="#EBE9E9"  HorizontalAlignment="Left" Height="100" Margin="44,10,0,0" VerticalAlignment="Top" Width="704">
+            <Button Name="btnUpdateAccount" Content="{x:Static p:Resources.UpdateAccount_Button}" Style="{StaticResource buttonLostMyPassword}" Click="UpdateAccount" Margin="574,56,0,0" />
+            <Label Margin="38,18,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.TitleWelcome}" />
+            <Label Margin="38,56,0,0" Style="{StaticResource textStyle}" Content = "{x:Static p:Resources.Score}" />
+        </Grid>
+        <Label Margin="508,133,0,0" Style="{StaticResource textStyle}" Content = "{x:Static p:Resources.Player}" />
+        <Label Margin="474,110,0,0" Style="{StaticResource textStyle}" Content = "{x:Static p:Resources.BestScores}" />
+        <Label Margin="373,133,0,0" Style="{StaticResource textStyle}" Content = "{x:Static p:Resources.Position}" />
+        <Label Margin="594,129,0,0" Style="{StaticResource textStyle}" Content = "{x:Static p:Resources.AccumulatedScore}" />
+        <ListBox HorizontalAlignment="Left" Height="232" Margin="594,159,0,0" VerticalAlignment="Top" Width="137"/>
+        <ListBox HorizontalAlignment="Left" Height="232" Margin="474,159,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox HorizontalAlignment="Left" Height="232" Margin="373,159,0,0" VerticalAlignment="Top" Width="101">
+            <ListBoxItem Content="ListBoxItem"/>
+        </ListBox>
+
+    </Grid>
+
+</Window>

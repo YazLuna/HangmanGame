@@ -13,10 +13,10 @@
         <Label Margin="208,317,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
         <Label Margin="171,387,0,0" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.Password}" />
         <Label Margin="89,453,0,0" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.ConfirmPassword}" />
-        <TextBox Margin="280,111,237,571" ></TextBox>
-        <TextBox Margin="280,180,237,502" ></TextBox>
-        <TextBox Margin="280,246,237,436" ></TextBox>
-        <TextBox Margin="280,317,237,365" ></TextBox>
+        <TextBox Name="tbName"  Margin="280,111,237,571" ></TextBox>
+        <TextBox Name="tbLastName" Margin="280,180,237,502" ></TextBox>
+        <TextBox Name="tbNickName" Margin="280,246,237,436" ></TextBox>
+        <TextBox Name="tbEmail" Margin="280,317,237,365" ></TextBox>
         <Grid Height="Auto" MinHeight="23" MaxHeight="23" Margin="280,387,216,295">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -74,7 +74,7 @@
                 </Image.Source>
             </Image>
         </Grid>
-        <Button Grid.Column="1" Margin="160,570,482,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Register_Button}"></Button>
-        <Button Grid.Column="1" Margin="447,570,208,0" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}"></Button>
+        <Button Name ="btnRegister" Grid.Column="1" Margin="160,570,482,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Register_Button}" Click="RegisterPlayer"></Button>
+        <Button Name ="btnCancel" Grid.Column="1" Margin="447,570,208,0" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
     </Grid>
 </Window>

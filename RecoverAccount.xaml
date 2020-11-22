@@ -1,0 +1,19 @@
+﻿<Window x:Class="hangmanGame.RecoverAccount"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p = "clr-namespace:hangmanGame.Properties"
+        xmlns:local="clr-namespace:hangmanGame"
+        Title="{x:Static p:Resources.TitleRecoverAccount}" Height="473.196" Width="829.381" Background="#FFCFF6FF">
+    <Grid Margin="0,0,2,-2">
+        <Label Margin="322,22,279,370" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleRecoverAccount}" Width="218" Height="52"/>
+        <Label Margin="330,78,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ConfirmationCode}" />
+        <Label Margin="296,250,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ValidatePassword}" />
+        <TextBox Name="tbCode"  Margin="269,112,248,296" ></TextBox>
+        <TextBox Name="tbValidatePassword" Margin="269,287,248,121" ></TextBox>
+        <Button Name ="btnCancel" Margin="446,358,248,0" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel" Width="125"/>
+        <Button Name ="btnSend" FontSize="20" Margin="269,360,407,0" Style="{StaticResource buttonOk}" Content = "{x:Static p:Resources.Accept_button}" Click="Send" Width="143" Height="49"/>
+        <Label Margin="346,159,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NewPassword}" />
+        <TextBox x:Name="tbNewPassword" Margin="269,201,0,207" HorizontalAlignment="Left" Width="302" ></TextBox>
+    </Grid>
+</Window>

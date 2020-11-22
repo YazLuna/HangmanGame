@@ -1,37 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 
 namespace hangmanGame
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+	[CallbackBehavior(UseSynchronizationContext = false)]
+	public partial class MainWindow : Window, MessageService.IPlayerManagerCallback
+	{
+		private bool responseGeneral;
+		public MainWindow()
+		{
+			InitializeComponent();
+		}
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // View Expense Report
-            Registry registry = new Registry();
-            registry.Show();
-            this.Close();
-        }
-    }
+		public void PlayerResponseBoolean(bool response)
+		{
+			Console.WriteLine(response);
+			responseGeneral = response;
+		}
+
+
+		private void CreateAccount(object sender, RoutedEventArgs e)
+		{
+			Registry registry = new Registry();
+			registry.Show();
+			this.Close();
+		}
+
+		private void LogIn(object sender, RoutedEventArgs e)
+		{ 
+			InstanceContext instanceContext = new InstanceContext(this);
+			MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
+			String email= tbEmail.Text;
+			String password = pbPassword.Password;
+			logIn.LogIn(email, password);
+			if (responseGeneral)
+			{
+				Lobby lobby = new Lobby();
+				lobby.Show();
+				this.Close();
+			}
+		}
+
+		private void LostMyPassword(object sender, RoutedEventArgs e)
+		{
+			LostMyPassword lostMyPassword = new LostMyPassword();
+			lostMyPassword.Show();
+			this.Close();
+		}
+	}
 }

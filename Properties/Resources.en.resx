@@ -120,6 +120,12 @@
   <data name="Accept_Button" xml:space="preserve">
     <value>Accept</value>
   </data>
+  <data name="AccumulatedScore" xml:space="preserve">
+    <value>Accumulated Score</value>
+  </data>
+  <data name="BestScores" xml:space="preserve">
+    <value>BEST SCORES</value>
+  </data>
   <data name="Cancel_Button" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -150,6 +156,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Last Name: </value>
   </data>
+  <data name="LogOut_Button" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
   <data name="MessageConfirmation" xml:space="preserve">
     <value>Please check your email to confirm your email and continue with the account creation process.</value>
   </data>
@@ -168,8 +177,26 @@
   <data name="Password" xml:space="preserve">
     <value>Password: </value>
   </data>
+  <data name="Player" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="Play_Button" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="RecoverCode" xml:space="preserve">
+    <value>Enter the recovery code sent to your email:</value>
+  </data>
+  <data name="RecoveryCode_Button" xml:space="preserve">
+    <value>Send recovery code</value>
+  </data>
   <data name="Register_Button" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>Your score is:</value>
   </data>
   <data name="SendConfirmation_Button" xml:space="preserve">
     <value>Send Confirmation Code</value>
@@ -189,10 +216,28 @@
   <data name="TitleLogIn" xml:space="preserve">
     <value>Log in</value>
   </data>
+  <data name="TitleLostMyPassword" xml:space="preserve">
+    <value>Lost My Password</value>
+  </data>
   <data name="TitleModifyAccount" xml:space="preserve">
     <value>Modify Account</value>
   </data>
+  <data name="TitleRecoverAccount" xml:space="preserve">
+    <value>Recover Account</value>
+  </data>
   <data name="TitleRegistry" xml:space="preserve">
     <value>Create Account</value>
+  </data>
+  <data name="TitleWelcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="UpdateAccount_Button" xml:space="preserve">
+    <value>Update Account</value>
+  </data>
+  <data name="ValidateEmail" xml:space="preserve">
+    <value>Validate your Email:</value>
+  </data>
+  <data name="ValidatePassword" xml:space="preserve">
+    <value>Verify your new password:</value>
   </data>
 </root>
