@@ -13,7 +13,7 @@
         <Label Margin="208,317,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
         <Label Margin="171,387,0,0" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.Password}" />
         <Label Margin="89,453,0,0" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.ConfirmPassword}" />
-        <TextBox Name="tbName"  Margin="280,111,237,571" ></TextBox>
+        <TextBox Name="tbName" Margin="280,111,236,571" FontFamily="Arial"/>
         <TextBox Name="tbLastName" Margin="280,180,237,502" ></TextBox>
         <TextBox Name="tbNickName" Margin="280,246,237,436" ></TextBox>
         <TextBox Name="tbEmail" Margin="280,317,237,365" ></TextBox>
@@ -22,14 +22,14 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="23"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" x:Name="TextBoxClaro"
+            <TextBox Grid.Column="0" x:Name="tbPassword"
                  VerticalAlignment="Top" HorizontalAlignment="Stretch"
                  Height="23"
                  Margin="0,0,0,0"
                  IsReadOnly="True"
                  Visibility="Hidden">
             </TextBox>
-            <PasswordBox Grid.Column="0" x:Name="PassBoxOculto"
+            <PasswordBox Grid.Column="0" x:Name="pbPassword"
              VerticalAlignment="Top" HorizontalAlignment="Stretch"
              Height="23"
              Margin="0,0,0,0"
@@ -45,19 +45,20 @@
                     <BitmapImage UriSource="image/eyePassword.png"/>
                 </Image.Source>
             </Image>
-        </Grid>        <Grid Height="Auto" MinHeight="23" MaxHeight="23" Margin="280,453,216,229">
+        </Grid>
+        <Grid Height="Auto" MinHeight="23" MaxHeight="23" Margin="280,453,216,229">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="23"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Name="TextBoxClaro2"
+            <TextBox Grid.Column="0" Name="tbConfirmationPassword"
                  VerticalAlignment="Top" HorizontalAlignment="Stretch"
                  Height="23"
                  Margin="0,0,0,0"
                  IsReadOnly="True"
                  Visibility="Hidden">
             </TextBox>
-            <PasswordBox Grid.Column="0" Name="PassBoxOculto2"
+            <PasswordBox Grid.Column="0" Name="pbConfirmationPassword"
              VerticalAlignment="Top" HorizontalAlignment="Stretch"
              Height="23"
              Margin="0,0,0,0"

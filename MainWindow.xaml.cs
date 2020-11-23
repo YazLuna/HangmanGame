@@ -37,6 +37,7 @@ namespace hangmanGame
 			if (responseGeneral)
 			{
 				Lobby lobby = new Lobby();
+				lobby.EmailReceived(email);
 				lobby.Show();
 				this.Close();
 			}
