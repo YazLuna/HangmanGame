@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ServiceModel;
 using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace hangmanGame
 {
@@ -15,7 +17,6 @@ namespace hangmanGame
 
 		public void PlayerResponseBoolean(bool response)
 		{
-			Console.WriteLine(response);
 			responseGeneral = response;
 		}
 
@@ -28,18 +29,52 @@ namespace hangmanGame
 		}
 
 		private void LogIn(object sender, RoutedEventArgs e)
-		{ 
-			InstanceContext instanceContext = new InstanceContext(this);
-			MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
-			String email= tbEmail.Text;
-			String password = pbPassword.Password;
-			logIn.LogIn(email, password);
-			if (responseGeneral)
-			{
-				Lobby lobby = new Lobby();
-				lobby.Show();
-				this.Close();
+		{
+			if (ValidateCredential())
+            {
+				InstanceContext instanceContext = new InstanceContext(this);
+				MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
+				String email = tbEmail.Text;
+				String password = pbPassword.Password;
+				logIn.LogIn(email, password);
+				if (responseGeneral)
+				{
+					tbEmail.BorderBrush = Brushes.LightGreen;
+					pbPassword.BorderBrush = Brushes.LightGreen;
+					Lobby lobby = new Lobby();
+					lobby.Show();
+					this.Close();
+				}
+				else
+				{
+					WrongCredentials();
+				}
 			}
+		}
+
+		private bool ValidateCredential ()
+        {
+			bool isValid = false;
+
+			if (tbEmail.Text != null && pbPassword.Password != null)
+            {
+				isValid = true;
+				tbEmail.BorderBrush = Brushes.LightGreen;
+				pbPassword.BorderBrush = Brushes.LightGreen;
+			} else
+            {
+				WrongCredentials();
+			}
+
+			return isValid;
+        }
+
+		private void WrongCredentials ()
+		{
+			tbEmail.BorderBrush = Brushes.Red;
+			pbPassword.BorderBrush = Brushes.Red;
+			System.Windows.Forms.MessageBox.Show("You entered wrong credentials", "Wrong credentials"
+						, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 		}
 
 		private void LostMyPassword(object sender, RoutedEventArgs e)

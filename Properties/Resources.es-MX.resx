@@ -144,6 +144,9 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirmar contraseña: </value>
   </data>
+  <data name="CorrectPassword" xml:space="preserve">
+    <value>Debe tener una longitud entre 8 y 15 caracteres, numeros y letras, por lo menos una letra mayuscula y un caracter especial (#_@)</value>
+  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Contraseña actual: </value>
   </data>

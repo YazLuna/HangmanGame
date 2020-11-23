@@ -450,10 +450,10 @@ namespace hangmanGame.MessageService {
         System.Threading.Tasks.Task SendEmailAsync(string email, int code);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/ChangePassword", ReplyAction="http://tempuri.org/IPlayerManager/ChangePasswordResponse")]
-        void ChangePassword(string email, string password);
+        void ChangePassword(string email, string newPassword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/ChangePassword", ReplyAction="http://tempuri.org/IPlayerManager/ChangePasswordResponse")]
-        System.Threading.Tasks.Task ChangePasswordAsync(string email, string password);
+        System.Threading.Tasks.Task ChangePasswordAsync(string email, string newPassword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchEmailPlayer", ReplyAction="http://tempuri.org/IPlayerManager/SearchEmailPlayerResponse")]
         void SearchEmailPlayer(string email);
@@ -521,12 +521,12 @@ namespace hangmanGame.MessageService {
             return base.Channel.SendEmailAsync(email, code);
         }
         
-        public void ChangePassword(string email, string password) {
-            base.Channel.ChangePassword(email, password);
+        public void ChangePassword(string email, string newPassword) {
+            base.Channel.ChangePassword(email, newPassword);
         }
         
-        public System.Threading.Tasks.Task ChangePasswordAsync(string email, string password) {
-            return base.Channel.ChangePasswordAsync(email, password);
+        public System.Threading.Tasks.Task ChangePasswordAsync(string email, string newPassword) {
+            return base.Channel.ChangePasswordAsync(email, newPassword);
         }
         
         public void SearchEmailPlayer(string email) {

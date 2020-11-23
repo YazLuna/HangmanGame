@@ -142,6 +142,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Between 8 and 15 characters long, numbers and letters, at least one capital letter and one special character (# _ @).
+        /// </summary>
+        public static string CorrectPassword {
+            get {
+                return ResourceManager.GetString("CorrectPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Current Password: .
         /// </summary>
         public static string CurrentPassword {

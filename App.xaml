@@ -10,8 +10,9 @@
 			<Setter Property="Label.FontWeight" Value="Bold"></Setter>
 			<Setter Property="Label.FontSize" Value="24"></Setter>
 			<Setter Property="Label.Foreground" Value="#FF21007A"></Setter>
-			
-		</Style>
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
+
+        </Style>
 		
 		<Style x:Key="labelStyle" TargetType="{x:Type Label}">
 			<Setter Property="VerticalAlignment" Value="Top" />
@@ -19,6 +20,7 @@
 			<Setter Property="FontWeight" Value="Bold" />
 			<Setter Property="Margin" Value="0,0,0,5"/>
 			<Setter Property="Label.FontSize" Value="20"></Setter>
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
 		  
 		</Style>
 
@@ -28,6 +30,7 @@
             <Setter Property="FontWeight" Value="Normal" />
             <Setter Property="Margin" Value="0,0,0,5"/>
             <Setter Property="Label.FontSize" Value="15"></Setter>
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
 
         </Style>
         

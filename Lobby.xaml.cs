@@ -15,42 +15,49 @@ using System.Windows.Shapes;
 
 namespace hangmanGame
 {
-    /// <summary>
-    /// Lógica de interacción para Window2.xaml
-    /// </summary>
-    [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class Lobby : Window, MessageService.IPlayerManagerCallback
-    {
-        public Lobby()
-        {
-            InitializeComponent();
-        }
+	/// <summary>
+	/// Lógica de interacción para Window2.xaml
+	/// </summary>
+	[CallbackBehavior(UseSynchronizationContext = false)]
+	public partial class Lobby : Window, MessageService.IPlayerManagerCallback
+	{
+		public Lobby()
+		{
+			InitializeComponent();
+			ColocateBestScores();
+		}
 
-        public void PlayerResponseBoolean(bool response)
-        {
-            Console.WriteLine(response);
-        }
+		public void PlayerResponseBoolean(bool response)
+		{
+			Console.WriteLine(response);
+		}
 
-        private void LogOut(object sender, RoutedEventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
-        }
+		private void LogOut(object sender, RoutedEventArgs e)
+		{
+			MainWindow main = new MainWindow();
+			main.Show();
+			this.Close();
+		}
 
-        private void UpdateAccount(object sender, RoutedEventArgs e)
-        {
-            ModifyAccount modifyAccount = new ModifyAccount();
-            modifyAccount.Show();
-            this.Close();
-        }
+		private void UpdateAccount(object sender, RoutedEventArgs e)
+		{
+			ModifyAccount modifyAccount = new ModifyAccount();
+			modifyAccount.Show();
+			this.Close();
+		}
 
-        private void Play(object sender, RoutedEventArgs e)
-        {
-           
-        }
+		private void Play(object sender, RoutedEventArgs e)
+		{
+		   
+		}
 
+		private void ColocateBestScores ()
+		{
+			List<string> users = new List<string>();
 
+			dgBestScores.ItemsSource = users;
+		}
 
-    }
+		
+	}
 }
