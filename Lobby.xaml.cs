@@ -21,9 +21,15 @@ namespace hangmanGame
     [CallbackBehavior(UseSynchronizationContext = false)]
     public partial class Lobby : Window, MessageService.IPlayerManagerCallback
     {
+        private string emailAccount;
         public Lobby()
         {
             InitializeComponent();
+        }
+
+        public void EmailReceived(string email)
+        {
+            emailAccount = email;
         }
 
         public void PlayerResponseBoolean(bool response)
@@ -40,6 +46,9 @@ namespace hangmanGame
 
         private void UpdateAccount(object sender, RoutedEventArgs e)
         {
+            InstanceContext instanceContext = new InstanceContext(this);
+            MessageService.HangmanGameServiceClient getPlayer = new MessageService.HangmanGameServiceClient(instanceContext);
+            
             ModifyAccount modifyAccount = new ModifyAccount();
             modifyAccount.Show();
             this.Close();

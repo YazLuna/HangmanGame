@@ -89,6 +89,12 @@
   <wsdl:message name="IPlayerManager_Register_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlayerManager_SearchNickNamePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNickNamePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_SearchNickNamePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNickNamePlayerResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlayerManager_SendEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:SendEmail" />
   </wsdl:message>
@@ -131,6 +137,10 @@
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/Register" message="tns:IPlayerManager_Register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/RegisterResponse" message="tns:IPlayerManager_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchNickNamePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayer" message="tns:IPlayerManager_SearchNickNamePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayerResponse" message="tns:IPlayerManager_SearchNickNamePlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SendEmail" message="tns:IPlayerManager_SendEmail_InputMessage" />
@@ -192,6 +202,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SearchNickNamePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchNickNamePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SendEmail">
       <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SendEmail" style="document" />
       <wsdl:input>
@@ -235,7 +254,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -244,7 +263,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

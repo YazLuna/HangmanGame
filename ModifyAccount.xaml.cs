@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace hangmanGame
 {
-    /// <summary>
-    /// Lógica de interacción para ModifyAccount.xaml
-    /// </summary>
+
     public partial class ModifyAccount : Window
     {
         public ModifyAccount()
@@ -30,5 +28,25 @@ namespace hangmanGame
             lobby.Show();
             this.Close();
         }
+
+        private void ChangePassword(object sender, RoutedEventArgs e)
+        {
+            ChangePassword changePassword = new ChangePassword();
+            changePassword.Show();
+            this.Close();
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            DeleteAccount deleteAccount = new DeleteAccount();
+            deleteAccount.Show();
+            this.Close();
+        }
+
+        private void Modify(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }
