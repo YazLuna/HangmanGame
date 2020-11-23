@@ -26,11 +26,17 @@ namespace hangmanGame
 			InitializeComponent();
 			ColocateBestScores();
 		}
+        private string emailAccount;
 
-		public void PlayerResponseBoolean(bool response)
-		{
-			Console.WriteLine(response);
-		}
+        public void EmailReceived(string email)
+        {
+            emailAccount = email;
+        }
+
+        public void PlayerResponseBoolean(bool response)
+        {
+            Console.WriteLine(response);
+        }
 
 		private void LogOut(object sender, RoutedEventArgs e)
 		{
@@ -39,12 +45,15 @@ namespace hangmanGame
 			this.Close();
 		}
 
-		private void UpdateAccount(object sender, RoutedEventArgs e)
-		{
-			ModifyAccount modifyAccount = new ModifyAccount();
-			modifyAccount.Show();
-			this.Close();
-		}
+        private void UpdateAccount(object sender, RoutedEventArgs e)
+        {
+            InstanceContext instanceContext = new InstanceContext(this);
+            MessageService.HangmanGameServiceClient getPlayer = new MessageService.HangmanGameServiceClient(instanceContext);
+            
+            ModifyAccount modifyAccount = new ModifyAccount();
+            modifyAccount.Show();
+            this.Close();
+        }
 
 		private void Play(object sender, RoutedEventArgs e)
 		{

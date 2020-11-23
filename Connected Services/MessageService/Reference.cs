@@ -443,6 +443,12 @@ namespace hangmanGame.MessageService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/Register", ReplyAction="http://tempuri.org/IPlayerManager/RegisterResponse")]
         System.Threading.Tasks.Task RegisterAsync(hangmanGame.MessageService.ServiceAccount account, hangmanGame.MessageService.ServicePlayer servicePlayer);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayer", ReplyAction="http://tempuri.org/IPlayerManager/SearchNickNamePlayerResponse")]
+        void SearchNickNamePlayer(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayer", ReplyAction="http://tempuri.org/IPlayerManager/SearchNickNamePlayerResponse")]
+        System.Threading.Tasks.Task SearchNickNamePlayerAsync(string nickname);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SendEmail", ReplyAction="http://tempuri.org/IPlayerManager/SendEmailResponse")]
         void SendEmail(string email, int code);
         
@@ -511,6 +517,14 @@ namespace hangmanGame.MessageService {
         
         public System.Threading.Tasks.Task RegisterAsync(hangmanGame.MessageService.ServiceAccount account, hangmanGame.MessageService.ServicePlayer servicePlayer) {
             return base.Channel.RegisterAsync(account, servicePlayer);
+        }
+        
+        public void SearchNickNamePlayer(string nickname) {
+            base.Channel.SearchNickNamePlayer(nickname);
+        }
+        
+        public System.Threading.Tasks.Task SearchNickNamePlayerAsync(string nickname) {
+            return base.Channel.SearchNickNamePlayerAsync(nickname);
         }
         
         public void SendEmail(string email, int code) {

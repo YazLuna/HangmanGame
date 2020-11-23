@@ -9,8 +9,8 @@
         <Label Margin="245,33,238,399" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleEmailConfirmation}" />
         <Label Margin="72,110,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.MessageConfirmation}" Height="57" Width="574"/>
         <Label Margin="123,218,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ConfirmationCode}" />
-        <TextBox Margin="327,226,165,214"></TextBox>
-        <Button Margin="481,335,147,0" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}"/>
-        <Button Margin="123,335,352,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.SendConfirmation_Button}"/>
+        <TextBox Name="tbConfirmationCode" Margin="327,226,165,214"></TextBox>
+        <Button Name="btnAccept" Margin="481,335,147,0" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}" Click="Accept"/>
+        <Button Name="btnSend" Margin="123,335,352,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.SendConfirmation_Button}" Click="SendCode"/>
     </Grid>
 </Window>

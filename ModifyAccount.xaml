@@ -12,15 +12,15 @@
         <Label Margin="160,180,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
         <Label Margin="160,246,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
         <Label Margin="208,317,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
-        <TextBox Margin="285,111,445,471" />
-        <TextBox Margin="285,180,445,402"/>
-        <TextBox Margin="285,246,445,336" />
-        <TextBox Margin="285,317,445,265" />
-        <Button Margin="235,441,691,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}"></Button>
+        <TextBox Name="name" Margin="285,111,445,471" />
+        <TextBox Name="lastName" Margin="285,180,445,402"/>
+        <TextBox Name="nickName" Margin="285,246,445,336" />
+        <TextBox Name="email" Margin="285,317,445,265" />
+        <Button Margin="235,441,691,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}" Click=" Modify"></Button>
         <Button Margin="453,441,477,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"> </Button>
-        <Button Margin="658,240,175,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}"></Button>
-        <Button Margin="658,148,273,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}"></Button>
-        <Image Name="imageDelteAccount" Source="image/iconoDeleteAccount.png" Margin="724,137,212,440" RenderTransformOrigin="0.253,0.868"></Image>
-        <Image Name="imageChangePassword" Source="image/changePassword.png"  Margin="822,234,119,336" RenderTransformOrigin="0.253,0.868"></Image>
+        <Button Margin="658,240,175,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
+        <Button Margin="658,148,273,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
+        <Image Name="imageDelteAccount" Source="image/iconoDeleteAccount.png" Margin="719,148,217,429"></Image>
+        <Image Name="imageChangePassword" Source="image/changePassword.png"  Margin="822,234,119,336"></Image>
     </Grid>
 </Window>

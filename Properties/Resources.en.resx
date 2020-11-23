@@ -151,7 +151,7 @@
     <value>Current Password: </value>
   </data>
   <data name="DeleteAccount_Button" xml:space="preserve">
-    <value>Delete Account</value>
+    <value>Delete</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email: </value>
