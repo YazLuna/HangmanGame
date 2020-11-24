@@ -1,4 +1,5 @@
-﻿using System;
+﻿using hangmanGame.MessageService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -19,24 +20,42 @@ namespace hangmanGame
 	/// Lógica de interacción para Window2.xaml
 	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Lobby : Window, MessageService.IPlayerManagerCallback
+	public partial class Lobby : Window, MessageService.IPlayerManagerCallback, MessageService.IInformationPlayerManagerCallback, MessageService.IPlayerScoresManagerCallback
 	{
+		public static string Email;
+		private string emailAccount;
+		private string Nickname;
+		private Nullable <int> Score;
+		private ServicePlayer[] ServicePlayers;
 		public Lobby()
 		{
 			InitializeComponent();
+			ColocatePersonalInformation();
 			ColocateBestScores();
 		}
-        private string emailAccount;
 
         public void EmailReceived(string email)
         {
             emailAccount = email;
         }
 
-        public void PlayerResponseBoolean(bool response)
-        {
-            Console.WriteLine(response);
-        }
+		public void PlayerResponseInformation(ServicePlayer response)
+		{
+			Nickname = response.NickName;
+			Score = response.ScoreObtained;
+		}
+
+		public void PlayerResponseList(ServicePlayer[] responseList)
+		{
+			ServicePlayers = responseList;
+		}
+
+		public void PlayerResponseBoolean(bool response)
+		{
+			Console.WriteLine(response);
+		}
+
+
 
 		private void LogOut(object sender, RoutedEventArgs e)
 		{
@@ -62,11 +81,21 @@ namespace hangmanGame
 
 		private void ColocateBestScores ()
 		{
-			List<string> users = new List<string>();
+			InstanceContext instanceContext = new InstanceContext(this);
+			MessageService.PlayerScoresManagerClient searchBestScores = new MessageService.PlayerScoresManagerClient(instanceContext);
+			searchBestScores.SearchBestScoresPlayer();
 
-			dgBestScores.ItemsSource = users;
+			dgBestScores.ItemsSource = ServicePlayers;
 		}
 
-		
-	}
+		private void ColocatePersonalInformation()
+        {
+			InstanceContext instanceContext = new InstanceContext(this);
+			MessageService.InformationPlayerManagerClient personalInformation = new MessageService.InformationPlayerManagerClient(instanceContext);
+			personalInformation.SearchInformationPlayer(Email);
+			lbNickname.Content = Nickname;
+			lbScore.Content = Score;
+		}
+
+    }
 }

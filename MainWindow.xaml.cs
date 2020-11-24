@@ -35,12 +35,13 @@ namespace hangmanGame
 				InstanceContext instanceContext = new InstanceContext(this);
 				MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
 				String email = tbEmail.Text;
-				String password = pbPassword.Password;
+				String password = Security.Encrypt(pbPassword.Password);
 				logIn.LogIn(email, password);
 				if (responseGeneral)
 				{
 					tbEmail.BorderBrush = Brushes.LightGreen;
 					pbPassword.BorderBrush = Brushes.LightGreen;
+					Lobby.Email = email;
 					Lobby lobby = new Lobby();
 					lobby.Show();
 					this.Close();

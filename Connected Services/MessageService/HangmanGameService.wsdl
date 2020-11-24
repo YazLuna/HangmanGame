@@ -58,6 +58,93 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAccountManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IPlayerScoresManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IInformationPlayerManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -119,6 +206,54 @@
   <wsdl:message name="IPlayerManager_PlayerResponseBoolean_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerResponseBooleanResponse" />
   </wsdl:message>
+  <wsdl:message name="IAccountManager_SearchAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_SearchAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_SearchPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_SearchPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_AccountResponseAccount_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AccountResponseAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_AccountResponseAccount_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AccountResponseAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_AccountResponsePlayer_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AccountResponsePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IAccountManager_AccountResponsePlayer_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AccountResponsePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerScoresManager_SearchBestScoresPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBestScoresPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerScoresManager_SearchBestScoresPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBestScoresPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerScoresManager_PlayerResponseList_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerResponseList" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerScoresManager_PlayerResponseList_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerResponseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInformationPlayerManager_SearchInformationPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchInformationPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IInformationPlayerManager_SearchInformationPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchInformationPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInformationPlayerManager_PlayerResponseInformation_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerResponseInformation" />
+  </wsdl:message>
+  <wsdl:message name="IInformationPlayerManager_PlayerResponseInformation_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerResponseInformationResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHangmanGameService">
     <wsdl:operation name="SendOperation">
       <wsdl:input wsaw:Action="http://tempuri.org/IHangmanGameService/SendOperation" message="tns:IHangmanGameService_SendOperation_InputMessage" />
@@ -157,6 +292,44 @@
     <wsdl:operation name="PlayerResponseBoolean">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/PlayerResponseBoolean" message="tns:IPlayerManager_PlayerResponseBoolean_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/PlayerResponseBooleanResponse" message="tns:IPlayerManager_PlayerResponseBoolean_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAccountManager">
+    <wsdl:operation name="SearchAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/SearchAccount" message="tns:IAccountManager_SearchAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/SearchAccountResponse" message="tns:IAccountManager_SearchAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/SearchPlayer" message="tns:IAccountManager_SearchPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/SearchPlayerResponse" message="tns:IAccountManager_SearchPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountResponseAccount">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/AccountResponseAccount" message="tns:IAccountManager_AccountResponseAccount_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/AccountResponseAccountResponse" message="tns:IAccountManager_AccountResponseAccount_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountResponsePlayer">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/AccountResponsePlayer" message="tns:IAccountManager_AccountResponsePlayer_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/AccountResponsePlayerResponse" message="tns:IAccountManager_AccountResponsePlayer_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPlayerScoresManager">
+    <wsdl:operation name="SearchBestScoresPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerScoresManager/SearchBestScoresPlayer" message="tns:IPlayerScoresManager_SearchBestScoresPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerScoresManager/SearchBestScoresPlayerResponse" message="tns:IPlayerScoresManager_SearchBestScoresPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerResponseList">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerScoresManager/PlayerResponseList" message="tns:IPlayerScoresManager_PlayerResponseList_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerScoresManager/PlayerResponseListResponse" message="tns:IPlayerScoresManager_PlayerResponseList_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IInformationPlayerManager">
+    <wsdl:operation name="SearchInformationPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInformationPlayerManager/SearchInformationPlayer" message="tns:IInformationPlayerManager_SearchInformationPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInformationPlayerManager/SearchInformationPlayerResponse" message="tns:IInformationPlayerManager_SearchInformationPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerResponseInformation">
+      <wsdl:output wsaw:Action="http://tempuri.org/IInformationPlayerManager/PlayerResponseInformation" message="tns:IInformationPlayerManager_PlayerResponseInformation_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IInformationPlayerManager/PlayerResponseInformationResponse" message="tns:IInformationPlayerManager_PlayerResponseInformation_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IHangmanGameService" type="tns:IHangmanGameService">
@@ -248,13 +421,97 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAccountManager" type="tns:IAccountManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAccountManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SearchAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountManager/SearchAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IAccountManager/SearchPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountResponseAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountManager/AccountResponseAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountResponsePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IAccountManager/AccountResponsePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IPlayerScoresManager" type="tns:IPlayerScoresManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPlayerScoresManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SearchBestScoresPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerScoresManager/SearchBestScoresPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerResponseList">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerScoresManager/PlayerResponseList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IInformationPlayerManager" type="tns:IInformationPlayerManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IInformationPlayerManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SearchInformationPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IInformationPlayerManager/SearchInformationPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerResponseInformation">
+      <soap12:operation soapAction="http://tempuri.org/IInformationPlayerManager/PlayerResponseInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="HangmanGameService">
     <wsdl:port name="NetTcpBinding_IHangmanGameService" binding="tns:NetTcpBinding_IHangmanGameService">
       <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -263,7 +520,34 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAccountManager" binding="tns:NetTcpBinding_IAccountManager">
+      <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IPlayerScoresManager" binding="tns:NetTcpBinding_IPlayerScoresManager">
+      <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IInformationPlayerManager" binding="tns:NetTcpBinding_IInformationPlayerManager">
+      <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

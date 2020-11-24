@@ -34,7 +34,7 @@ namespace hangmanGame
 			{
 				InstanceContext instanceContext = new InstanceContext(this);
 				MessageService.PlayerManagerClient changePassword = new MessageService.PlayerManagerClient(instanceContext);
-				changePassword.ChangePassword(Email, tbNewPassword.Text);
+				changePassword.ChangePassword(Email, Security.Encrypt(tbNewPassword.Text));
 				if (Response)
                 {
 						System.Windows.Forms.MessageBox.Show("The password has been modified successfully you can now enter the game", "Password changed successfully"
