@@ -76,7 +76,9 @@ namespace hangmanGame
 
 		private void Play(object sender, RoutedEventArgs e)
 		{
-		   
+			Play play = new Play();
+			play.Show();
+			this.Close();
 		}
 
 		private void ColocateBestScores ()

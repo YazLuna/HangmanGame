@@ -121,6 +121,9 @@
     <Compile Include="ModifyAccount.xaml.cs">
       <DependentUpon>ModifyAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Play.xaml.cs">
+      <DependentUpon>Play.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecoverAccount.xaml.cs">
       <DependentUpon>RecoverAccount.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModifyAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Play.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,6 +231,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\MessageService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessageService\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

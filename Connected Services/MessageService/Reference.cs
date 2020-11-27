@@ -680,6 +680,126 @@ namespace hangmanGame.MessageService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IChatManager", CallbackContract=typeof(hangmanGame.MessageService.IChatManagerCallback))]
+    public interface IChatManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ClientConnect", ReplyAction="http://tempuri.org/IChatManager/ClientConnectResponse")]
+        void ClientConnect(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ClientConnect", ReplyAction="http://tempuri.org/IChatManager/ClientConnectResponse")]
+        System.Threading.Tasks.Task ClientConnectAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetNewMessage", ReplyAction="http://tempuri.org/IChatManager/GetNewMessageResponse")]
+        void GetNewMessage(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetNewMessage", ReplyAction="http://tempuri.org/IChatManager/GetNewMessageResponse")]
+        System.Threading.Tasks.Task GetNewMessageAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessage", ReplyAction="http://tempuri.org/IChatManager/SendNewMessageResponse")]
+        void SendNewMessage(string newMessage, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessage", ReplyAction="http://tempuri.org/IChatManager/SendNewMessageResponse")]
+        System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetAllPlayers", ReplyAction="http://tempuri.org/IChatManager/GetAllPlayersResponse")]
+        void GetAllPlayers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetAllPlayers", ReplyAction="http://tempuri.org/IChatManager/GetAllPlayersResponse")]
+        System.Threading.Tasks.Task GetAllPlayersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/RemoveUser", ReplyAction="http://tempuri.org/IChatManager/RemoveUserResponse")]
+        void RemoveUser(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/RemoveUser", ReplyAction="http://tempuri.org/IChatManager/RemoveUserResponse")]
+        System.Threading.Tasks.Task RemoveUserAsync(string nickname);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChatManagerCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponseBoolean", ReplyAction="http://tempuri.org/IChatManager/ChatResponseBooleanResponse")]
+        void ChatResponseBoolean(bool response);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponse", ReplyAction="http://tempuri.org/IChatManager/ChatResponseResponse")]
+        void ChatResponse(string response);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponseList", ReplyAction="http://tempuri.org/IChatManager/ChatResponseListResponse")]
+        void ChatResponseList(hangmanGame.MessageService.ServicePlayer[] response);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/PlayerEntryMessage", ReplyAction="http://tempuri.org/IChatManager/PlayerEntryMessageResponse")]
+        void PlayerEntryMessage(string[] response);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChatManagerChannel : hangmanGame.MessageService.IChatManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ChatManagerClient : System.ServiceModel.DuplexClientBase<hangmanGame.MessageService.IChatManager>, hangmanGame.MessageService.IChatManager {
+        
+        public ChatManagerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public ChatManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public ChatManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ChatManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ChatManagerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void ClientConnect(string nickname) {
+            base.Channel.ClientConnect(nickname);
+        }
+        
+        public System.Threading.Tasks.Task ClientConnectAsync(string nickname) {
+            return base.Channel.ClientConnectAsync(nickname);
+        }
+        
+        public void GetNewMessage(string nickname) {
+            base.Channel.GetNewMessage(nickname);
+        }
+        
+        public System.Threading.Tasks.Task GetNewMessageAsync(string nickname) {
+            return base.Channel.GetNewMessageAsync(nickname);
+        }
+        
+        public void SendNewMessage(string newMessage, string nickname) {
+            base.Channel.SendNewMessage(newMessage, nickname);
+        }
+        
+        public System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname) {
+            return base.Channel.SendNewMessageAsync(newMessage, nickname);
+        }
+        
+        public void GetAllPlayers() {
+            base.Channel.GetAllPlayers();
+        }
+        
+        public System.Threading.Tasks.Task GetAllPlayersAsync() {
+            return base.Channel.GetAllPlayersAsync();
+        }
+        
+        public void RemoveUser(string nickname) {
+            base.Channel.RemoveUser(nickname);
+        }
+        
+        public System.Threading.Tasks.Task RemoveUserAsync(string nickname) {
+            return base.Channel.RemoveUserAsync(nickname);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IInformationPlayerManager", CallbackContract=typeof(hangmanGame.MessageService.IInformationPlayerManagerCallback))]
     public interface IInformationPlayerManager {
         

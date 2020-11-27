@@ -204,6 +204,9 @@
   <data name="SendConfirmation_Button" xml:space="preserve">
     <value>Send Confirmation Code</value>
   </data>
+  <data name="SendMessage_Button" xml:space="preserve">
+    <value>Send</value>
+  </data>
   <data name="TitleChangePassword" xml:space="preserve">
     <value>Change Password</value>
   </data>
@@ -224,6 +227,9 @@
   </data>
   <data name="TitleModifyAccount" xml:space="preserve">
     <value>Modify Account</value>
+  </data>
+  <data name="TitlePlay" xml:space="preserve">
+    <value>HangmanGame</value>
   </data>
   <data name="TitleRecoverAccount" xml:space="preserve">
     <value>Recover Account</value>

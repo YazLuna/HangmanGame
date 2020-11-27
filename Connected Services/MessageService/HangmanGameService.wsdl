@@ -116,6 +116,35 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IChatManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="NetTcpBinding_IInformationPlayerManager_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -150,6 +179,7 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HangmanGameService" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHangmanGameService_SendOperation_InputMessage">
@@ -242,6 +272,60 @@
   <wsdl:message name="IPlayerScoresManager_PlayerResponseList_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerResponseListResponse" />
   </wsdl:message>
+  <wsdl:message name="IChatManager_ClientConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClientConnect" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ClientConnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClientConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_GetNewMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_GetNewMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_SendNewMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendNewMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_SendNewMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendNewMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_GetAllPlayers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPlayers" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_GetAllPlayers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ChatResponseBoolean_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatResponseBoolean" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ChatResponseBoolean_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatResponseBooleanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ChatResponse_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ChatResponse_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ChatResponseList_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatResponseList" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_ChatResponseList_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatResponseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_PlayerEntryMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatManager_PlayerEntryMessage_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryMessageResponse" />
+  </wsdl:message>
   <wsdl:message name="IInformationPlayerManager_SearchInformationPlayer_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchInformationPlayer" />
   </wsdl:message>
@@ -320,6 +404,44 @@
     <wsdl:operation name="PlayerResponseList">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerScoresManager/PlayerResponseList" message="tns:IPlayerScoresManager_PlayerResponseList_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerScoresManager/PlayerResponseListResponse" message="tns:IPlayerScoresManager_PlayerResponseList_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IChatManager">
+    <wsdl:operation name="ClientConnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ClientConnect" message="tns:IChatManager_ClientConnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ClientConnectResponse" message="tns:IChatManager_ClientConnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/GetNewMessage" message="tns:IChatManager_GetNewMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/GetNewMessageResponse" message="tns:IChatManager_GetNewMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNewMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/SendNewMessage" message="tns:IChatManager_SendNewMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/SendNewMessageResponse" message="tns:IChatManager_SendNewMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlayers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/GetAllPlayers" message="tns:IChatManager_GetAllPlayers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/GetAllPlayersResponse" message="tns:IChatManager_GetAllPlayers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/RemoveUser" message="tns:IChatManager_RemoveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/RemoveUserResponse" message="tns:IChatManager_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChatResponseBoolean">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ChatResponseBoolean" message="tns:IChatManager_ChatResponseBoolean_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ChatResponseBooleanResponse" message="tns:IChatManager_ChatResponseBoolean_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChatResponse">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ChatResponse" message="tns:IChatManager_ChatResponse_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ChatResponseResponse" message="tns:IChatManager_ChatResponse_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChatResponseList">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ChatResponseList" message="tns:IChatManager_ChatResponseList_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ChatResponseListResponse" message="tns:IChatManager_ChatResponseList_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerEntryMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/PlayerEntryMessage" message="tns:IChatManager_PlayerEntryMessage_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/PlayerEntryMessageResponse" message="tns:IChatManager_PlayerEntryMessage_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IInformationPlayerManager">
@@ -483,6 +605,91 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IChatManager" type="tns:IChatManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IChatManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ClientConnect">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/ClientConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/GetNewMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNewMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/SendNewMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlayers">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/GetAllPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChatResponseBoolean">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/ChatResponseBoolean" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChatResponse">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/ChatResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChatResponseList">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/ChatResponseList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerEntryMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/PlayerEntryMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IInformationPlayerManager" type="tns:IInformationPlayerManager">
     <wsp:PolicyReference URI="#NetTcpBinding_IInformationPlayerManager_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
@@ -534,6 +741,15 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IPlayerScoresManager" binding="tns:NetTcpBinding_IPlayerScoresManager">
+      <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IChatManager" binding="tns:NetTcpBinding_IChatManager">
       <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>

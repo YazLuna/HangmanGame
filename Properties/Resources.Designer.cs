@@ -322,6 +322,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Send.
+        /// </summary>
+        public static string SendMessage_Button {
+            get {
+                return ResourceManager.GetString("SendMessage_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Change Password.
         /// </summary>
         public static string TitleChangePassword {
@@ -381,6 +390,15 @@ namespace hangmanGame.Properties {
         public static string TitleModifyAccount {
             get {
                 return ResourceManager.GetString("TitleModifyAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a HangmanGame.
+        /// </summary>
+        public static string TitlePlay {
+            get {
+                return ResourceManager.GetString("TitlePlay", resourceCulture);
             }
         }
         
