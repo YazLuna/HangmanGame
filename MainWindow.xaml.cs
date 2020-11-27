@@ -15,7 +15,6 @@ namespace hangmanGame
 
 		public void PlayerResponseBoolean(bool response)
 		{
-			Console.WriteLine(response);
 			responseGeneral = response;
 		}
 
@@ -31,8 +30,8 @@ namespace hangmanGame
 		{ 
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
-			String email= tbEmail.Text;
-			String password = pbPassword.Password;
+			string email= tbEmail.Text;
+			string password = Security.Encrypt(pbPassword.Password);
 			logIn.LogIn(email, password);
 			if (responseGeneral)
 			{
