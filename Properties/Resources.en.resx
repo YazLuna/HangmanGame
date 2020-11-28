@@ -144,6 +144,9 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm Password: </value>
   </data>
+  <data name="CorrectPassword" xml:space="preserve">
+    <value>Between 8 and 15 characters long, numbers and letters, at least one capital letter and one special character (# _ @)</value>
+  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Current Password: </value>
   </data>
@@ -201,6 +204,9 @@
   <data name="SendConfirmation_Button" xml:space="preserve">
     <value>Send Confirmation Code</value>
   </data>
+  <data name="SendMessage_Button" xml:space="preserve">
+    <value>Send</value>
+  </data>
   <data name="TitleChangePassword" xml:space="preserve">
     <value>Change Password</value>
   </data>
@@ -221,6 +227,9 @@
   </data>
   <data name="TitleModifyAccount" xml:space="preserve">
     <value>Modify Account</value>
+  </data>
+  <data name="TitlePlay" xml:space="preserve">
+    <value>HangmanGame</value>
   </data>
   <data name="TitleRecoverAccount" xml:space="preserve">
     <value>Recover Account</value>
