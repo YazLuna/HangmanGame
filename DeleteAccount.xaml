@@ -12,7 +12,13 @@
         <Label Margin="169,244,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
         <Label Margin="217,315,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
         <Label Margin="180,387,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" />
-        <Button Margin="220,494,411,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.DeleteAccount_Button}"></Button>
-        <Button Margin="434,494,196,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}"></Button>
+        <Button Name="btnDelete" Margin="220,494,411,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
+        <Button Name="btnCancel" Margin="434,494,196,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
+        <Label Name="lName" HorizontalAlignment="Left" Margin="294,118,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label Name="lLastName" HorizontalAlignment="Left" Margin="289,187,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label Name="lNickName"  HorizontalAlignment="Left" Margin="294,253,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label Name="lEmail" HorizontalAlignment="Left" Margin="289,324,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label Name="lPassword" HorizontalAlignment="Left" Margin="294,398,0,0" VerticalAlignment="Top" Height="28"/>
+
     </Grid>
 </Window>

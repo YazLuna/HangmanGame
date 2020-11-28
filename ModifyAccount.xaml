@@ -4,22 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p = "clr-namespace:hangmanGame.Properties"
         xmlns:local="clr-namespace:hangmanGame"
-        Title="{x:Static p:Resources.TitleModifyAccount}" Height="650" Width="1000" Background="#FFCFF6FF">
+        Title="{x:Static p:Resources.TitleModifyAccount}" Height="587.299" Width="1000" Background="#FFCFF6FF">
 
     <Grid>
-        <Label Margin="384,31,427,546" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleModifyAccount}" />
+        <Label Margin="384,20,427,500" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleModifyAccount}"/>
         <Label Margin="203,111,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
         <Label Margin="160,180,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
-        <Label Margin="160,246,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
-        <Label Margin="208,317,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
-        <TextBox Name="name" Margin="285,111,445,471" />
-        <TextBox Name="lastName" Margin="285,180,445,402"/>
-        <TextBox Name="nickName" Margin="285,246,445,336" />
-        <TextBox Name="email" Margin="285,317,445,265" />
-        <Button Margin="235,441,691,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}" Click=" Modify"></Button>
-        <Button Margin="453,441,477,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"> </Button>
-        <Button Margin="658,240,175,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
-        <Button Margin="658,148,273,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
+        <Label Margin="208,262,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
+        <TextBox Name="tbName" Margin="285,111,445,408" />
+        <TextBox Name="tbLastName" Margin="285,180,445,339"/>
+        <TextBox Name="tbEmail" Margin="285,262,445,257" />
+        <Button Name="btnModify" Margin="214,408,712,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}" Click=" Modify" RenderTransformOrigin="0.337,-0.807"></Button>
+        <Button Name="btnCancel" Margin="461,408,469,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
+        <Button Name="btnChangePassword" Margin="658,240,175,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
+        <Button Name="btnDelete" Margin="658,148,273,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
         <Image Name="imageDelteAccount" Source="image/iconoDeleteAccount.png" Margin="719,148,217,429"></Image>
         <Image Name="imageChangePassword" Source="image/changePassword.png"  Margin="822,234,119,336"></Image>
     </Grid>

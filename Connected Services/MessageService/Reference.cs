@@ -29,6 +29,9 @@ namespace hangmanGame.MessageService {
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NickNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -66,6 +69,19 @@ namespace hangmanGame.MessageService {
                 if ((object.ReferenceEquals(this.EmailField, value) != true)) {
                     this.EmailField = value;
                     this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdAccount {
+            get {
+                return this.IdAccountField;
+            }
+            set {
+                if ((this.IdAccountField.Equals(value) != true)) {
+                    this.IdAccountField = value;
+                    this.RaisePropertyChanged("IdAccount");
                 }
             }
         }
@@ -466,6 +482,36 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchEmailPlayer", ReplyAction="http://tempuri.org/IPlayerManager/SearchEmailPlayerResponse")]
         System.Threading.Tasks.Task SearchEmailPlayerAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccount", ReplyAction="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccountResponse")]
+        void SearchRepeatEmailAccount(string emailEdit, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccount", ReplyAction="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccountResponse")]
+        System.Threading.Tasks.Task SearchRepeatEmailAccountAsync(string emailEdit, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer", ReplyAction="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayerResponse")]
+        void SearchRepeatNickNamePlayer(string nickNameEdit, string nickNameCurrent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer", ReplyAction="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayerResponse")]
+        System.Threading.Tasks.Task SearchRepeatNickNamePlayerAsync(string nickNameEdit, string nickNameCurrent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/UpdateEmail", ReplyAction="http://tempuri.org/IPlayerManager/UpdateEmailResponse")]
+        void UpdateEmail(string email, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/UpdateEmail", ReplyAction="http://tempuri.org/IPlayerManager/UpdateEmailResponse")]
+        System.Threading.Tasks.Task UpdateEmailAsync(string email, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/UpdatePlayer", ReplyAction="http://tempuri.org/IPlayerManager/UpdatePlayerResponse")]
+        void UpdatePlayer(string nickName, hangmanGame.MessageService.ServicePlayer servicePlayerEdit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/UpdatePlayer", ReplyAction="http://tempuri.org/IPlayerManager/UpdatePlayerResponse")]
+        System.Threading.Tasks.Task UpdatePlayerAsync(string nickName, hangmanGame.MessageService.ServicePlayer servicePlayerEdit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/DeleteAccountPlayer", ReplyAction="http://tempuri.org/IPlayerManager/DeleteAccountPlayerResponse")]
+        void DeleteAccountPlayer(string nickName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayerManager/DeleteAccountPlayer", ReplyAction="http://tempuri.org/IPlayerManager/DeleteAccountPlayerResponse")]
+        System.Threading.Tasks.Task DeleteAccountPlayerAsync(string nickName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -549,6 +595,118 @@ namespace hangmanGame.MessageService {
         
         public System.Threading.Tasks.Task SearchEmailPlayerAsync(string email) {
             return base.Channel.SearchEmailPlayerAsync(email);
+        }
+        
+        public void SearchRepeatEmailAccount(string emailEdit, int idAccount) {
+            base.Channel.SearchRepeatEmailAccount(emailEdit, idAccount);
+        }
+        
+        public System.Threading.Tasks.Task SearchRepeatEmailAccountAsync(string emailEdit, int idAccount) {
+            return base.Channel.SearchRepeatEmailAccountAsync(emailEdit, idAccount);
+        }
+        
+        public void SearchRepeatNickNamePlayer(string nickNameEdit, string nickNameCurrent) {
+            base.Channel.SearchRepeatNickNamePlayer(nickNameEdit, nickNameCurrent);
+        }
+        
+        public System.Threading.Tasks.Task SearchRepeatNickNamePlayerAsync(string nickNameEdit, string nickNameCurrent) {
+            return base.Channel.SearchRepeatNickNamePlayerAsync(nickNameEdit, nickNameCurrent);
+        }
+        
+        public void UpdateEmail(string email, int idAccount) {
+            base.Channel.UpdateEmail(email, idAccount);
+        }
+        
+        public System.Threading.Tasks.Task UpdateEmailAsync(string email, int idAccount) {
+            return base.Channel.UpdateEmailAsync(email, idAccount);
+        }
+        
+        public void UpdatePlayer(string nickName, hangmanGame.MessageService.ServicePlayer servicePlayerEdit) {
+            base.Channel.UpdatePlayer(nickName, servicePlayerEdit);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePlayerAsync(string nickName, hangmanGame.MessageService.ServicePlayer servicePlayerEdit) {
+            return base.Channel.UpdatePlayerAsync(nickName, servicePlayerEdit);
+        }
+        
+        public void DeleteAccountPlayer(string nickName) {
+            base.Channel.DeleteAccountPlayer(nickName);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAccountPlayerAsync(string nickName) {
+            return base.Channel.DeleteAccountPlayerAsync(nickName);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IAccountManager", CallbackContract=typeof(hangmanGame.MessageService.IAccountManagerCallback))]
+    public interface IAccountManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/SearchAccount", ReplyAction="http://tempuri.org/IAccountManager/SearchAccountResponse")]
+        void SearchAccount(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/SearchAccount", ReplyAction="http://tempuri.org/IAccountManager/SearchAccountResponse")]
+        System.Threading.Tasks.Task SearchAccountAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/SearchPlayer", ReplyAction="http://tempuri.org/IAccountManager/SearchPlayerResponse")]
+        void SearchPlayer(string nickName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/SearchPlayer", ReplyAction="http://tempuri.org/IAccountManager/SearchPlayerResponse")]
+        System.Threading.Tasks.Task SearchPlayerAsync(string nickName);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAccountManagerCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountResponseAccount", ReplyAction="http://tempuri.org/IAccountManager/AccountResponseAccountResponse")]
+        void AccountResponseAccount(hangmanGame.MessageService.ServiceAccount serviceAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountResponsePlayer", ReplyAction="http://tempuri.org/IAccountManager/AccountResponsePlayerResponse")]
+        void AccountResponsePlayer(hangmanGame.MessageService.ServicePlayer servicePlayer);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAccountManagerChannel : hangmanGame.MessageService.IAccountManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AccountManagerClient : System.ServiceModel.DuplexClientBase<hangmanGame.MessageService.IAccountManager>, hangmanGame.MessageService.IAccountManager {
+        
+        public AccountManagerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public AccountManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public AccountManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AccountManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AccountManagerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void SearchAccount(string email) {
+            base.Channel.SearchAccount(email);
+        }
+        
+        public System.Threading.Tasks.Task SearchAccountAsync(string email) {
+            return base.Channel.SearchAccountAsync(email);
+        }
+        
+        public void SearchPlayer(string nickName) {
+            base.Channel.SearchPlayer(nickName);
+        }
+        
+        public System.Threading.Tasks.Task SearchPlayerAsync(string nickName) {
+            return base.Channel.SearchPlayerAsync(nickName);
         }
     }
 }
