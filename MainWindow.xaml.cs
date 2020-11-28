@@ -34,8 +34,8 @@ namespace hangmanGame
             {
 				InstanceContext instanceContext = new InstanceContext(this);
 				MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
-				String email = tbEmail.Text;
-				String password = Security.Encrypt(pbPassword.Password);
+				string email = tbEmail.Text;
+				string password = Security.Encrypt(pbPassword.Password);
 				logIn.LogIn(email, password);
 				if (responseGeneral)
 				{
