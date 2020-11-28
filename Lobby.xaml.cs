@@ -3,16 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace hangmanGame
 {
@@ -66,10 +57,9 @@ namespace hangmanGame
 
         private void UpdateAccount(object sender, RoutedEventArgs e)
         {
-            InstanceContext instanceContext = new InstanceContext(this);
-            MessageService.HangmanGameServiceClient getPlayer = new MessageService.HangmanGameServiceClient(instanceContext);
-            
             ModifyAccount modifyAccount = new ModifyAccount();
+            modifyAccount.EmailReceived(emailAccount);
+            modifyAccount.AccountReceived();
             modifyAccount.Show();
             this.Close();
         }

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Input;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Controls;
 
 namespace hangmanGame
 {
@@ -65,12 +62,11 @@ namespace hangmanGame
 			bool isValidData = ValidateDataPlaye();
 			if (isValidData)
 			{
-				String name = tbName.Text;
-				String lastName = tbLastName.Text;
-				String nickname = tbNickName.Text;
-				String email = tbEmail.Text;
-				String password = Security.Encrypt(pbPassword.Password);
-				String passwordConfirmation = Security.Encrypt(pbConfirmationPassword.Password);
+				string name = tbName.Text;
+				string lastName = tbLastName.Text;
+				string nickname = tbNickName.Text;
+				string email = tbEmail.Text;
+				string password = Security.Encrypt(pbPassword.Password);
 				int codeConfirmation = ValidationData.GenerateConfirmationCode();
 
 				MessageService.ServiceAccount account = new MessageService.ServiceAccount();
@@ -93,7 +89,7 @@ namespace hangmanGame
 
 				if(isValidRepeatEmail && isValidRepeatNickName)
                 {
-					MessageBox.Show("El nickName y email se encuentran registrado. Por favor cambialos", "Datos repetidos", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+					MessageBox.Show("El nickName y email se encuentran registrado. Por favor de cambiarlos", "Datos repetidos", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -156,7 +152,7 @@ namespace hangmanGame
 			return isValidDataPlayer;
 		}
 
-		public void ValidateName()
+		private void ValidateName()
 		{
 			isValidName = ValidationData.ValidateNameComplete(tbName.Text);
 			if (isValidName)
@@ -169,7 +165,7 @@ namespace hangmanGame
 			}
 		}
 
-		public void ValidateLastName()
+		private void ValidateLastName()
 		{
 			isValidLastName = ValidationData.ValidateNameComplete(tbLastName.Text);
 			if (isValidLastName)
@@ -182,7 +178,7 @@ namespace hangmanGame
 			}
 		}
 
-		public void ValidateEmail()
+		private void ValidateEmail()
 		{
 			isValidEmail = ValidationData.ValidateEmail(tbEmail.Text);
 			if (isValidEmail)
@@ -195,7 +191,7 @@ namespace hangmanGame
 			}
 		}
 
-		public void ValidatePassword()
+		private void ValidatePassword()
 		{
 			bool isValidatePassword;
 			bool isValidateConfirmationPassword;
@@ -231,7 +227,7 @@ namespace hangmanGame
 			}
 		}
 
-		public void ValidateNickName()
+		private void ValidateNickName()
 		{
 			isValidNickName = ValidationData.ValidateNickName(tbNickName.Text);
 			if (isValidNickName)
@@ -242,7 +238,6 @@ namespace hangmanGame
 			{
 				tbNickName.BorderBrush = Brushes.Red;
 			}
-
 		}
 	}
 }

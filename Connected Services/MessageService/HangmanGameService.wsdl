@@ -230,6 +230,36 @@
   <wsdl:message name="IPlayerManager_SearchEmailPlayer_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchEmailPlayerResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlayerManager_SearchRepeatEmailAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatEmailAccount" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_SearchRepeatEmailAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatEmailAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_SearchRepeatNickNamePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatNickNamePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_SearchRepeatNickNamePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatNickNamePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_UpdateEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmail" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_UpdateEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_UpdatePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_UpdatePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_DeleteAccountPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccountPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerManager_DeleteAccountPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccountPlayerResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlayerManager_PlayerResponseBoolean_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerResponseBoolean" />
   </wsdl:message>
@@ -372,6 +402,26 @@
     <wsdl:operation name="SearchEmailPlayer">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchEmailPlayer" message="tns:IPlayerManager_SearchEmailPlayer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchEmailPlayerResponse" message="tns:IPlayerManager_SearchEmailPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRepeatEmailAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccount" message="tns:IPlayerManager_SearchRepeatEmailAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccountResponse" message="tns:IPlayerManager_SearchRepeatEmailAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRepeatNickNamePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer" message="tns:IPlayerManager_SearchRepeatNickNamePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayerResponse" message="tns:IPlayerManager_SearchRepeatNickNamePlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/UpdateEmail" message="tns:IPlayerManager_UpdateEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/UpdateEmailResponse" message="tns:IPlayerManager_UpdateEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/UpdatePlayer" message="tns:IPlayerManager_UpdatePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/UpdatePlayerResponse" message="tns:IPlayerManager_UpdatePlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccountPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/DeleteAccountPlayer" message="tns:IPlayerManager_DeleteAccountPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/DeleteAccountPlayerResponse" message="tns:IPlayerManager_DeleteAccountPlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PlayerResponseBoolean">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/PlayerResponseBoolean" message="tns:IPlayerManager_PlayerResponseBoolean_OutputCallbackMessage" />
@@ -526,6 +576,51 @@
     </wsdl:operation>
     <wsdl:operation name="SearchEmailPlayer">
       <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchEmailPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRepeatEmailAccount">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRepeatNickNamePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmail">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/UpdateEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccountPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/DeleteAccountPlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
