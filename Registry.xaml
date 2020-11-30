@@ -4,78 +4,160 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p = "clr-namespace:hangmanGame.Properties"
         xmlns:local="clr-namespace:hangmanGame"
-        Title="{x:Static p:Resources.TitleRegistry}" Height="750" Width="800" Background="#FFCFF6FF">
+        Title="{x:Static p:Resources.TitleRegistry}" Height="649.39" Width="800" Background="#FFCFF6FF">
     <Grid>
-        <Label Margin="307,34,303,647" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleRegistry}"/>
-        <Label Margin="203,111,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
-        <Label Margin="160,180,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
-        <Label Margin="160,246,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
-        <Label Margin="208,317,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
-        <Label Margin="171,387,0,0" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.Password}" />
-        <Label Margin="89,453,0,0" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.ConfirmPassword}" />
-        <TextBox Name="tbName" Margin="280,111,236,571" FontFamily="Arial"/>
-        <TextBox Name="tbLastName" Margin="280,180,237,502" ></TextBox>
-        <TextBox Name="tbNickName" Margin="280,246,237,436" ></TextBox>
-        <TextBox Name="tbEmail" Margin="280,317,237,365" ></TextBox>
-        <Grid Height="Auto" MinHeight="23" MaxHeight="23" Margin="280,387,216,295">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="410"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkMagenta" Height="80"> </Rectangle>
+        <Label Grid.Row="0" VerticalAlignment="Center" Height="80" HorizontalAlignment="Center" Style="{StaticResource GeneralTextStyle}" Content = "{x:Static p:Resources.TitleRegistry}"/>
+        
+        <Grid HorizontalAlignment="Center" Grid.Row="1"  VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="23"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="270"/>
+                <ColumnDefinition Width="26"/>
+                <ColumnDefinition Width="26"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" x:Name="tbPassword"
-                 VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                 Height="23"
-                 Margin="0,0,0,0"
-                 IsReadOnly="True"
-                 Visibility="Hidden">
-            </TextBox>
-            <PasswordBox Grid.Column="0" x:Name="pbPassword"
-             VerticalAlignment="Top" HorizontalAlignment="Stretch"
-             Height="23"
-             Margin="0,0,0,0"
-             Visibility="Visible" />
-            <Image Grid.Column="1"
-                 Name="ImagenOjo"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Label Height="35" HorizontalAlignment="Right" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
+            <TextBox VerticalAlignment="Top" Height="35"  Grid.Column="1" x:Name="tbName"  PreviewTextInput="prohibitNumberAllowSpecialChar" FontSize="15" FontFamily="Arial"/>
+            <Image Grid.Column="2" Grid.Row="0" Visibility="Hidden"
+                 Name="imgErrorName"
                  Stretch="Fill"
-                 MouseEnter="ImagenOjo_MouseEnter"
-                 MouseLeave="ImagenOjo_MouseLeave"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorName" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="1"></Label> 
+            
+            <Label Height="40" HorizontalAlignment="Right" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" Grid.Row="2" />
+            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbLastName" PreviewTextInput="prohibitNumberAllowSpecialChar" Grid.Column="1" Grid.Row="2" FontSize="15" FontFamily="Arial"/>
+            <Image Grid.Column="2" Grid.Row="2" Visibility="Hidden"
+                 Name="imgErrorLastName"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorLastName" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="3"></Label>
+
+            <Label Height="35" HorizontalAlignment="Right" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" Grid.Row="4"/>
+            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbNickName" PreviewKeyDown="prohibitSpace" KeyDown="prohibitAllowSpecialChar" Grid.Column="1" Grid.Row="4" FontSize="15" FontFamily="Arial"/>
+            <Image Grid.Column="2" Grid.Row="4" Visibility="Hidden"
+                 Name="imgErrorNickName"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorNickName" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorNickName}" Grid.Column="1" Grid.Row="5"></Label>
+
+            <Label Height="35" HorizontalAlignment="Right" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Grid.Row="6" />
+            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbEmail" PreviewKeyDown="prohibitSpace" Grid.Row="6" Grid.Column="1" FontSize="15" FontFamily="Arial"/>
+            <Image Grid.Column="2" Grid.Row="6" Visibility="Hidden"
+                 Name="imgErrorEmail"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorEmail" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorEmail}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7"></Label>
+
+            <Label Height="35" HorizontalAlignment="Right" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.Password}" Grid.Column="0" Grid.Row="8"/>
+            <TextBox  VerticalAlignment="Top" Height="35" Grid.Column="1" x:Name="tbPassword"
+                  HorizontalAlignment="Stretch"
+                 IsReadOnly="True"
+                 Visibility="Hidden" Grid.Row="8" FontSize="15" FontFamily="Arial"/>
+            <PasswordBox VerticalAlignment="Top" Height="35" Grid.Column="1" x:Name="pbPassword"
+             Visibility="Visible" PreviewKeyDown="prohibitSpace" Grid.Row="8" FontSize="15" FontFamily="Arial"/>
+            <Image Grid.Column="2" Grid.Row="8"
+                 Name="imgEyePassword"
+                 Stretch="Fill"
+                 MouseEnter="Password_MouseEnter"
+                 MouseLeave="Password_MouseLeave"
                  Width="23" Height="23"
                  VerticalAlignment="Top" HorizontalAlignment="Right">
                 <Image.Source>
                     <BitmapImage UriSource="image/eyePassword.png"/>
                 </Image.Source>
             </Image>
-        </Grid>
-        <Grid Height="Auto" MinHeight="23" MaxHeight="23" Margin="280,453,216,229">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="23"/>
-            </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Name="tbConfirmationPassword"
-                 VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                 Height="23"
-                 Margin="0,0,0,0"
-                 IsReadOnly="True"
-                 Visibility="Hidden">
-            </TextBox>
-            <PasswordBox Grid.Column="0" Name="pbConfirmationPassword"
-             VerticalAlignment="Top" HorizontalAlignment="Stretch"
-             Height="23"
-             Margin="0,0,0,0"
-             Visibility="Visible" />
-            <Image Grid.Column="1"
-                 Name="ImagenOjo2"
+            <Image Grid.Column="3" Grid.Row="8" Visibility="Hidden"
+                 Name="imgErrorPassword"
                  Stretch="Fill"
-                 MouseEnter="ImagenOjo_MouseEnter2"
-                 MouseLeave="ImagenOjo_MouseLeave2"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorPassword" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorPassword}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="9"></Label>
+
+            <Label HorizontalAlignment="Right" Style="{StaticResource labelStyle}"  Content = "{x:Static p:Resources.ConfirmPassword}" Grid.Row="10"  Height="35"/>
+            <TextBox Grid.Column="1" Grid.Row="10" Name="tbConfirmationPassword"
+                 IsReadOnly="True"
+                 Visibility="Hidden" Height="35" VerticalAlignment="Top" FontSize="15" FontFamily="Arial">
+            </TextBox>
+            <PasswordBox Grid.Column="1" Grid.Row="10" Name="pbConfirmationPassword"
+             Visibility="Visible" PreviewKeyDown="prohibitSpace" Height="35" VerticalAlignment="Top" FontSize="15" FontFamily="Arial"/>
+            <Image Grid.Column="2" Grid.Row="10"
+                 Name="imgEyeConfirmationPassword"
+                 Stretch="Fill"
+                 MouseEnter="ConfirmationPassword_MouseEnter"
+                 MouseLeave="ConfirmationPassword_MouseLeave"
                  Width="23" Height="23"
                  VerticalAlignment="Top" HorizontalAlignment="Right">
                 <Image.Source>
                     <BitmapImage UriSource="image/eyePassword.png"/>
                 </Image.Source>
             </Image>
+            <Image Grid.Column="3" Grid.Row="10" 
+                 Name="imgErrorConfirmationPassword" Visibility="Hidden"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorConfirmationPassword" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorPassword}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="11"></Label>
         </Grid>
-        <Button Name ="btnRegister" Grid.Column="1" Margin="160,570,482,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Register_Button}" Click="RegisterPlayer"></Button>
-        <Button Name ="btnCancel" Grid.Column="1" Margin="447,570,208,0" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
+
+        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="480">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" HorizontalAlignment="Center" Name ="btnRegister"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Register_Button}" Click="RegisterPlayer"/>
+            <Button Grid.Column="1" HorizontalAlignment="Center" Name ="btnCancel" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"/>
+        </Grid>
     </Grid>
 </Window>

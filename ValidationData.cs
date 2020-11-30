@@ -16,7 +16,7 @@ namespace hangmanGame
 			return code;
 		}
 
-		public static bool ValidatePassword(String password)
+		public static bool ValidatePassword(string password)
 		{
 			bool isValidPassword = false;
 			var hasNumber = new Regex(@"[0-9]+");
@@ -32,23 +32,24 @@ namespace hangmanGame
 			return isValidPassword;
 		}
 
-		public static bool ValidateNameComplete(String name)
+		public static bool ValidateNameComplete(string name)
 		{
 			bool isValidNameComplete = false;
-			Regex regexName = new Regex(@"^[a-zA-Z]{3,50}$");
+			name= name.Trim();
+			Regex regexName = new Regex(@"^[a-zA-Z\s]{3,50}$");
 			isValidNameComplete = regexName.IsMatch(name);
 			return isValidNameComplete;
 		}
 
-		public static bool ValidateEmail(String email)
+		public static bool ValidateEmail(string email)
 		{
 			bool isValidEmail = false;
-			Regex regexEmail = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
+			Regex regexEmail = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{6,9})$");
 			isValidEmail = regexEmail.IsMatch(email);
 			return isValidEmail;
 		}
 
-		public static bool ValidateNickName(String nickName)
+		public static bool ValidateNickName(string nickName)
 		{
 			bool isValidNickName = false;
 			Regex regexNickName = new Regex(@"^[a-zA-Z0-9]{3,50}$");
@@ -56,12 +57,21 @@ namespace hangmanGame
 			return isValidNickName;
 		}
 
-		public static bool ValidateConfirmationCode(String confirmationCode)
+		public static bool ValidateConfirmationCode(string confirmationCode)
 		{
 			bool isValidConfirmationCode = false;
 			Regex regexConfirmation = new Regex(@"^[0-9]{3,6}$");
 			isValidConfirmationCode = regexConfirmation.IsMatch(confirmationCode);
 			return isValidConfirmationCode;
+		}
+
+		public static string DeleteSpaceWord(string words)
+		{
+			while (words.Contains("  "))
+			{
+				words = words.Replace("  ", " ");
+			}
+			return words;
 		}
 	}
 }

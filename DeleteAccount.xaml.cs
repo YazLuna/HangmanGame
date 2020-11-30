@@ -42,14 +42,14 @@ namespace hangmanGame
             bool isDeletePlayer = responseBoolean;
             if (isDeletePlayer)
             {
-                MessageBox.Show("La cuenta fue eliminada exitosamente", "Eliminar cuenta", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                MessageBox.Show(Properties.Resources.DeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                 MainWindow main = new MainWindow();
                 main.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar. Por favor intentar más tarde", "Eliminar cuenta", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                MessageBox.Show(Properties.Resources.NoDeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
             }
             
         }

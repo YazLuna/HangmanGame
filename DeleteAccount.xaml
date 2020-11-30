@@ -6,19 +6,49 @@
         xmlns:local="clr-namespace:hangmanGame"
         Title="{x:Static p:Resources.TitleDeleteAccount}" Height="650" Width="700" Background="#FFCFF6FF">
     <Grid>
-        <Label Margin="266,31,227,550" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleDeleteAccount}" Width="199" RenderTransformOrigin="0.338,0.537" />
-        <Label Margin="212,109,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
-        <Label Margin="169,178,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
-        <Label Margin="169,244,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
-        <Label Margin="217,315,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
-        <Label Margin="180,387,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" />
-        <Button Name="btnDelete" Margin="220,494,411,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
-        <Button Name="btnCancel" Margin="434,494,196,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
-        <Label Name="lName" HorizontalAlignment="Left" Margin="294,118,0,0" VerticalAlignment="Top" Height="28"/>
-        <Label Name="lLastName" HorizontalAlignment="Left" Margin="289,187,0,0" VerticalAlignment="Top" Height="28"/>
-        <Label Name="lNickName"  HorizontalAlignment="Left" Margin="294,253,0,0" VerticalAlignment="Top" Height="28"/>
-        <Label Name="lEmail" HorizontalAlignment="Left" Margin="289,324,0,0" VerticalAlignment="Top" Height="28"/>
-        <Label Name="lPassword" HorizontalAlignment="Left" Margin="294,398,0,0" VerticalAlignment="Top" Height="28"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="380"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkMagenta" Height="80"></Rectangle>
+        <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="80" Style="{StaticResource GeneralTextStyle}" Content = "{x:Static p:Resources.TitleDeleteAccount}" />
 
+        <Grid HorizontalAlignment="Center" Grid.Row="1"  VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+            <Label Height="35" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
+            <Label Name="lName" Margin="0,0,0,5" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" Height="35"/>
+            
+            <Label Height="35" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
+            <Label Name="lLastName" Margin="0,0,0,5" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"  Height="35"/>
+            
+            <Label Height="35" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
+            <Label Name="lNickName" Margin="0,0,0,5" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"  Height="35"/>
+            
+            <Label Height="35" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
+            <Label Name="lEmail" Margin="0,0,0,5" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"  Height="35"/>
+            
+            <Label Height="35" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="4" VerticalAlignment="Top" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" />
+            <Label Name="lPassword" Margin="0,0,0,5" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"  Height="35"/>
+        </Grid>
+
+        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="480">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnDelete" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
+            <Button Name="btnCancel" Grid.Column="1"  HorizontalAlignment="Center" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
+        </Grid>
     </Grid>
 </Window>

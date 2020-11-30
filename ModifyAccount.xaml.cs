@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Windows.Input;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Media;
-using System.ServiceModel;
+using System.Text.RegularExpressions;
+
 
 namespace hangmanGame
 {
@@ -10,12 +13,12 @@ namespace hangmanGame
     {
         private static MessageService.ServiceAccount account;
         private static MessageService.ServicePlayer player;
-        private static String emailAccount;
+        private static string emailAccount;
         private bool responseBoolean;
         private bool isValidData;
         private bool isUpdateEmail;
         private bool isUpdateData;
-        private String emailEdit;
+        private string emailEdit;
         private MessageService.ServicePlayer playerEdit;
         public ModifyAccount()
         {
@@ -37,7 +40,7 @@ namespace hangmanGame
             responseBoolean = response;
         }
 
-        public void EmailReceived (String emailReceive)
+        public void EmailReceived (string emailReceive)
         {
             emailAccount = emailReceive;
         }
@@ -56,6 +59,52 @@ namespace hangmanGame
             tbEmail.Text = account.Email;
             tbName.Text = player.NamePlayer;
             tbLastName.Text = player.LastName;
+        }
+
+        private void Error_MouseEnter(Object objectImg, MouseEventArgs e2)
+        {
+            bool isImgName;
+            isImgName = objectImg.Equals(imgErrorName);
+            if (isImgName)
+            {
+                lbErrorName.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                bool isImgLastName;
+                isImgLastName = objectImg.Equals(imgErrorLastName);
+                if (isImgLastName)
+                {
+                    lbErrorLastName.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    lbErrorEmail.Visibility = Visibility.Visible;
+                }
+            }
+        }
+        private void Error_MouseLeave(Object objectImg, MouseEventArgs e2)
+        {
+            bool isImgName;
+            isImgName = objectImg.Equals(imgErrorName);
+            if (isImgName)
+            {
+                lbErrorName.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                bool isImgLastName;
+                isImgLastName = objectImg.Equals(imgErrorLastName);
+                if (isImgLastName)
+                {
+                    lbErrorLastName.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    lbErrorEmail.Visibility = Visibility.Hidden;
+                }
+            }
+
         }
 
         private void Cancel(object sender, RoutedEventArgs e)
@@ -106,27 +155,22 @@ namespace hangmanGame
                     {
                         playerManager.UpdateEmail(emailEdit, account.IdAccount);
                         updateEmail = responseBoolean;
-                        if (updateEmail)
-                        {
-                            message = message + "El email se modifico con éxito.";
-                        }
-                        else
-                        {
-                            message = message + "El email se pudo modificar.";
-                        }
                     }
                     bool updatePlayer=false;
-                    playerManager.UpdatePlayer(player.NickName, playerEdit);
-                    updatePlayer = responseBoolean;
-                    if (updatePlayer)
+                    if (isUpdateData)
                     {
-                        message = message + " Los datos se modificaron con éxito.";
+                        playerManager.UpdatePlayer(player.NickName, playerEdit);
+                        updatePlayer = responseBoolean;
+                    }
+                    if (updatePlayer || updateEmail)
+                    {
+                        message = Properties.Resources.ModifyAccountMessage;
                     }
                     else
                     {
-                        message = message + "Los datos se pudieron modificar.";
+                        message = Properties.Resources.NoModifyAccountMessage;
                     }
-                    MessageBox.Show(message, "Modifique datos", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    MessageBox.Show(message,Properties.Resources.ModifyAccountMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                     Lobby lobby = new Lobby();
                     if (isUpdateEmail)
                     {
@@ -137,13 +181,13 @@ namespace hangmanGame
                 }
                 else
                 {
-                    MessageBox.Show("Por favor ingrese datos correctos", "Datos incorrectos", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    MessageBox.Show(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                     isUpdateData = false;
                 }
             }
             else
             {
-                MessageBox.Show("Por favor modifique por lo menos un dato", "Modifique datos", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                MessageBox.Show(Properties.Resources.ModifyLeastDataMessage, Properties.Resources.ModifyLeastDataMessageTile, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
             }
 
         }
@@ -155,17 +199,21 @@ namespace hangmanGame
             isUpdateEmail = false;
             if (tbName.Text != player.NamePlayer)
             {
+                imgErrorName.Visibility = Visibility.Hidden;
                 ValidateName();
             }
             if (tbLastName.Text != player.LastName)
             {
+                imgErrorLastName.Visibility = Visibility.Hidden;
                 ValidateLastName();
             }
             if (tbEmail.Text != account.Email)
             {
+                imgErrorEmail.Visibility = Visibility.Visible;
                 ValidateEmail();
             }
         }
+
 
         private void ValidateName()
         {
@@ -181,6 +229,7 @@ namespace hangmanGame
             {
                 tbName.BorderBrush = Brushes.Red;
                 isValidData = false;
+                imgErrorName.Visibility = Visibility.Visible;
             }
             isUpdateData = true;
         }
@@ -199,6 +248,7 @@ namespace hangmanGame
             {
                 tbLastName.BorderBrush = Brushes.Red;
                 isValidData = false;
+                imgErrorLastName.Visibility = Visibility.Visible;
             }
             isUpdateData = true;
         }
@@ -217,9 +267,27 @@ namespace hangmanGame
             {
                 tbEmail.BorderBrush = Brushes.Red;
                 isValidData = false;
+                imgErrorEmail.Visibility = Visibility.Visible;
             }
             emailEdit = tbEmail.Text;
         }
+        private void prohibitSpace(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+                e.Handled = true;
+        }
 
+        private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs e)
+        {
+            bool resultado = Regex.IsMatch(e.Text, @"^[a-zA-Z]+${3,50}");
+            if (!resultado)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
     }
 }
