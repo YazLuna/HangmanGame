@@ -120,6 +120,12 @@
   <data name="Accept_Button" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="AccountRegistrationMessage" xml:space="preserve">
+    <value>La cuenta fue creada correctamente.</value>
+  </data>
+  <data name="AccountRegistrationMessageTitle" xml:space="preserve">
+    <value>Registro de cuenta</value>
+  </data>
   <data name="AccumulatedScore" xml:space="preserve">
     <value>Puntaje Acumulado</value>
   </data>
@@ -128,6 +134,12 @@
   </data>
   <data name="Cancel_Button" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="ChangePasswordMessage" xml:space="preserve">
+    <value>La contraseña se cambio exitosamente.</value>
+  </data>
+  <data name="ChangePasswordMessageTitle" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
   </data>
   <data name="ChangePassword_Button" xml:space="preserve">
     <value>Cambiar contraseña</value>
@@ -150,11 +162,44 @@
   <data name="CurrentPassword" xml:space="preserve">
     <value>Contraseña actual: </value>
   </data>
+  <data name="DeleteAccountMessage" xml:space="preserve">
+    <value>La cuenta fue eliminada exitosamente.</value>
+  </data>
+  <data name="DeleteAccountMessageTitle" xml:space="preserve">
+    <value>Eliminar Cuenta</value>
+  </data>
   <data name="DeleteAccount_Button" xml:space="preserve">
     <value>Eliminar</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Correo Electrónico: </value>
+  </data>
+  <data name="ErrorCodeConfirmation" xml:space="preserve">
+    <value>Ingresar sólo números de 6 cifras.</value>
+  </data>
+  <data name="ErrorEmail" xml:space="preserve">
+    <value>Ingresar una estructura válida de correo el "maria_12@gmail.com".</value>
+  </data>
+  <data name="ErrorNameComplete" xml:space="preserve">
+    <value>Ingresar solo letras.</value>
+  </data>
+  <data name="ErrorNickName" xml:space="preserve">
+    <value>Ingresar solo letras y números.</value>
+  </data>
+  <data name="ErrorPassword" xml:space="preserve">
+    <value>Ingresar letras A-Z o a-z, 0-9 y caracteres @_#. Longitud (8-9).</value>
+  </data>
+  <data name="IncorrectCodeMessage" xml:space="preserve">
+    <value>Por favor ingrese el codigo de confirmación correcto.</value>
+  </data>
+  <data name="IncorrectCodeMessageTitle" xml:space="preserve">
+    <value>Codigo de confirmación incorrecto</value>
+  </data>
+  <data name="IncorrectDataMessage" xml:space="preserve">
+    <value>Por favor ingrese datos correctos en los campos marcados en rojo.</value>
+  </data>
+  <data name="IncorrectDataMessageTitle" xml:space="preserve">
+    <value>Datos Incorrectos</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Apellido: </value>
@@ -164,6 +209,18 @@
   </data>
   <data name="MessageConfirmation" xml:space="preserve">
     <value>Por favor revise su correo electrónico  para confirmar su correo y seguir con el proceso de crear cuenta.</value>
+  </data>
+  <data name="ModifyAccountMessage" xml:space="preserve">
+    <value>Los datos se modificaron exitosamente.</value>
+  </data>
+  <data name="ModifyAccountMessageTitle" xml:space="preserve">
+    <value>Modificar Cuenta</value>
+  </data>
+  <data name="ModifyLeastDataMessage" xml:space="preserve">
+    <value>Por favor modifique por lo menos un dato.</value>
+  </data>
+  <data name="ModifyLeastDataMessageTile" xml:space="preserve">
+    <value>Modifique Datos</value>
   </data>
   <data name="Modify_Button" xml:space="preserve">
     <value>Modificar</value>
@@ -176,6 +233,18 @@
   </data>
   <data name="NickName" xml:space="preserve">
     <value>Nombre de usuario: </value>
+  </data>
+  <data name="NoAccountRegisteredMessage" xml:space="preserve">
+    <value>La cuenta no se registro, por favor intentar más tarde.</value>
+  </data>
+  <data name="NoChangePasswordMessage" xml:space="preserve">
+    <value>La contraseña no se modifico, por favor intente más tarde.</value>
+  </data>
+  <data name="NoDeleteAccountMessage" xml:space="preserve">
+    <value>La cuenta no se elimino. Por favor intentar más tarde.</value>
+  </data>
+  <data name="NoModifyAccountMessage" xml:space="preserve">
+    <value>Los datos no se modificaron, Por favor intente más tarde.</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Contraseña: </value>
@@ -195,8 +264,20 @@
   <data name="RecoveryCode_Button" xml:space="preserve">
     <value>Enviar código de recuperación</value>
   </data>
+  <data name="RegisteredEmailMessage" xml:space="preserve">
+    <value>El email se encuentra registrado. Por favor de cambiarlo.</value>
+  </data>
+  <data name="RegisteredEmailNickNameMessage" xml:space="preserve">
+    <value>El nickName y email se encuentran registrado. Por favor de cambiarlos.</value>
+  </data>
+  <data name="RegisteredNickNameMessage" xml:space="preserve">
+    <value>El nickName se encuentra registrado. Por favor de cambiarlo.</value>
+  </data>
   <data name="Register_Button" xml:space="preserve">
     <value>Registrarse</value>
+  </data>
+  <data name="RepeatedDataMessageTitle" xml:space="preserve">
+    <value>Datos Repetidos</value>
   </data>
   <data name="Score" xml:space="preserve">
     <value>Tu puntaje es:</value>
