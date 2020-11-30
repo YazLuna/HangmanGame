@@ -1,0 +1,16 @@
+﻿<Window x:Class="hangmanGame.Play"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:p = "clr-namespace:hangmanGame.Properties"
+		Title="{x:Static p:Resources.TitleGame}" Height="650" Width="1000" Background="#FFCFF6FF">
+    <Grid>
+        <Grid Background="DarkBlue" HorizontalAlignment="Left" Height="363" Margin="538,246,0,0" VerticalAlignment="Top" Width="444">
+            <Button  Name="btnSendMessage" Style="{StaticResource buttonSend}" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,328,10,0" Width="114" Height="25" Click="SendMessage"/>
+            <ListBox Name="lstConnectedPlayers" HorizontalAlignment="Left" Height="304" Margin="320,19,0,0" VerticalAlignment="Top" Width="114" />
+            <TextBox Name="tbChat" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
+            <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,328,0,0" VerticalAlignment="Top" Width="305"/>
+        </Grid>
+        <Button HorizontalAlignment="Left" Margin="50,33,0,0" VerticalAlignment="Top" Width="74" Click="Exit" Height="37"/>
+
+    </Grid>
+</Window>

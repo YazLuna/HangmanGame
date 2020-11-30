@@ -39,4 +39,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceReportMisConduct" nillable="true" type="tns:ServiceReportMisConduct" />
+  <xs:complexType name="ArrayOfServicePlayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicePlayer" nillable="true" type="tns:ServicePlayer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServicePlayer" nillable="true" type="tns:ArrayOfServicePlayer" />
 </xs:schema>

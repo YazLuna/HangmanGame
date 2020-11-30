@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Forms;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace hangmanGame
 {
@@ -29,7 +18,6 @@ namespace hangmanGame
 
 		public void PlayerResponseBoolean(bool response)
 		{
-			Console.WriteLine(response);
 			Response = response;
 		}
 
@@ -46,7 +34,17 @@ namespace hangmanGame
 			{
 				InstanceContext instanceContext = new InstanceContext(this);
 				MessageService.PlayerManagerClient changePassword = new MessageService.PlayerManagerClient(instanceContext);
-				changePassword.ChangePassword(Email, tbNewPassword.Text);
+				changePassword.ChangePassword(Email, Security.Encrypt(tbNewPassword.Text));
+				if (Response)
+                {
+						System.Windows.Forms.MessageBox.Show("The password has been modified successfully you can now enter the game", "Password changed successfully"
+					, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				} 
+				else
+                {
+					System.Windows.Forms.MessageBox.Show("There is no connection to the database. Try again later", "Password not modified"
+					, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 				MainWindow main = new MainWindow();
 				main.Show();
 				this.Close();
@@ -58,14 +56,16 @@ namespace hangmanGame
         {
 			bool isValid = false;
 
-			if (tbCode.Text != null && Code == int.Parse(tbCode.Text))
+			if (tbCode.Text != null && ValidationData.ValidateConfirmationCode(tbCode.Text) && Code == int.Parse(tbCode.Text))
 			{
-				tbCode.Background = Brushes.LightGreen;
+				tbCode.BorderBrush = Brushes.LightGreen;
 				isValid = true;
 			}
 			else
 			{
-				tbCode.Background = Brushes.Red;
+				tbCode.BorderBrush = Brushes.Red;
+				System.Windows.Forms.MessageBox.Show("The code you entered is not correct", "Error Code"
+					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 
 			return isValid;
@@ -75,16 +75,20 @@ namespace hangmanGame
 		{
 			bool isValid = false;
 			
-			if( tbNewPassword.Text != null && tbValidatePassword.Text != null && tbValidatePassword.Text.Equals(tbNewPassword.Text))
+			if( tbNewPassword.Text != null && tbValidatePassword.Text != null && tbValidatePassword.Text.Equals(tbNewPassword.Text) &&
+				ValidationData.ValidatePassword(tbNewPassword.Text) && ValidationData.ValidatePassword(tbValidatePassword.Text))
 			{
-				tbNewPassword.Background = Brushes.LightGreen;
-				tbValidatePassword.Background = Brushes.LightGreen;
+				tbNewPassword.BorderBrush = Brushes.LightGreen;
+				tbValidatePassword.BorderBrush = Brushes.LightGreen;
 				isValid = true;
 			} 
 			else
             {
-				tbNewPassword.Background = Brushes.Red;
-				tbValidatePassword.Background = Brushes.Red;
+				tbNewPassword.BorderBrush = Brushes.Red;
+				tbValidatePassword.BorderBrush = Brushes.Red;
+				ValidateCode();
+				System.Windows.Forms.MessageBox.Show("The passwords you entered are not correct", "Incorrect passwords"
+					, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			return isValid;
 		}

@@ -4,11 +4,11 @@
 		xmlns:p = "clr-namespace:hangmanGame.Properties"
 		Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800" Background="#FFCFF6FF">
     <Grid>
-        <Label Margin="507,58,88,308"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}"></Label>
-        <Label Margin="436,136,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}"></Label>
-        <Label Margin="393,193,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}"></Label>
-        <TextBox Name="tbEmail" Margin="507,144,46,246" ></TextBox>
-        <PasswordBox Name="pbPassword" PasswordChar="*" Margin="507,204,46,189"/>
+        <Label Margin="343,52,10,304"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}" Width="439" Height="63"></Label>
+        <Label Margin="384,135,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Width="136" Height="38"></Label>
+        <Label Margin="384,193,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" Width="136"></Label>
+        <TextBox Name="tbEmail" Margin="525,144,28,246" ></TextBox>
+        <PasswordBox Name="pbPassword" PasswordChar="*" Margin="525,204,28,189"/>
         <Button Margin="548,313,141,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}" Click="LogIn" Width="103"></Button>
         <Button Margin="627,254,46,0" Style="{StaticResource buttonCreateAccount}" Content = "{x:Static p:Resources.TitleRegistry}" Click="CreateAccount" Width="119"></Button>
         <Button Margin="420,254,187,0" Style="{StaticResource buttonLostMyPassword}" Content = "{x:Static p:Resources.TitleLostMyPassword}" Click="LostMyPassword" Width="185" Height="38"></Button>
