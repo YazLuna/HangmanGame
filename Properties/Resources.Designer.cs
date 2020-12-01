@@ -232,6 +232,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You entered invalid credentials. Please enter correct data or register..
+        /// </summary>
+        public static string EnteredWrongCredentials {
+            get {
+                return ResourceManager.GetString("EnteredWrongCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enter only 6-digit numbers..
         /// </summary>
         public static string ErrorCodeConfirmation {
@@ -696,6 +705,15 @@ namespace hangmanGame.Properties {
         public static string ValidatePassword {
             get {
                 return ResourceManager.GetString("ValidatePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong credentials.
+        /// </summary>
+        public static string WrongCredentials {
+            get {
+                return ResourceManager.GetString("WrongCredentials", resourceCulture);
             }
         }
     }
