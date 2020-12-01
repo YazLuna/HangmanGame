@@ -110,6 +110,9 @@ namespace hangmanGame
         private void Cancel(object sender, RoutedEventArgs e)
         {
             Lobby lobby = new Lobby();
+            lobby.EmailReceived(emailAccount);
+            lobby.ColocateBestScores();
+            lobby.ColocatePersonalInformation();
             lobby.Show();
             this.Close();
         }
@@ -176,6 +179,8 @@ namespace hangmanGame
                     {
                         lobby.EmailReceived(emailEdit);
                     }
+                    lobby.ColocateBestScores();
+                    lobby.ColocatePersonalInformation();
                     lobby.Show();
                     this.Close();
                 }

@@ -44,7 +44,7 @@ namespace hangmanGame
 		public static bool ValidateEmail(string email)
 		{
 			bool isValidEmail = false;
-			Regex regexEmail = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{6,9})$");
+			Regex regexEmail = new Regex("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
 			isValidEmail = regexEmail.IsMatch(email);
 			return isValidEmail;
 		}
