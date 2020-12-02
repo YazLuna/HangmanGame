@@ -47,7 +47,12 @@ namespace hangmanGame
 			this.Close();
 		}
 
-        private void UpdateAccount(object sender, RoutedEventArgs e)
+		private void ManageSettings(object sender, RoutedEventArgs e)
+		{
+			
+		}
+
+		private void UpdateAccount(object sender, RoutedEventArgs e)
         {
             ModifyAccount modifyAccount = new ModifyAccount();
             modifyAccount.EmailReceived(emailAccount);
@@ -68,8 +73,9 @@ namespace hangmanGame
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.PlayerScoresManagerClient searchBestScores = new MessageService.PlayerScoresManagerClient(instanceContext);
 			searchBestScores.SearchBestScoresPlayer();
-
+	
 			dgBestScores.ItemsSource = servicePlayers;
+
 		}
 
 		public void ColocatePersonalInformation()
