@@ -3,16 +3,48 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:p = "clr-namespace:hangmanGame.Properties"
 		Title="{x:Static p:Resources.TitleLogIn}" Height="450" Width="800" Background="#FFCFF6FF">
-    <Grid>
-        <Label Margin="507,58,88,308"  Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}"></Label>
-        <Label Margin="436,136,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}"></Label>
-        <Label Margin="393,193,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}"></Label>
-        <TextBox Name="tbEmail" Margin="507,144,46,246" ></TextBox>
-        <PasswordBox Name="pbPassword" PasswordChar="*" Margin="507,204,46,189"/>
-        <Button Margin="548,313,141,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.TitleLogIn}" Click="LogIn" Width="103"></Button>
-        <Button Margin="627,254,46,0" Style="{StaticResource buttonCreateAccount}" Content = "{x:Static p:Resources.TitleRegistry}" Click="CreateAccount" Width="119"></Button>
-        <Button Margin="420,254,187,0" Style="{StaticResource buttonLostMyPassword}" Content = "{x:Static p:Resources.TitleLostMyPassword}" Click="LostMyPassword" Width="185" Height="38"></Button>
-        <Image Name="imageHangmanGame" Source="image/hangmanGame.png" Margin="-69,29,423,24"></Image>
-        <Image Name="imageMan" Source="image/man.png" Margin="138,80,317,24"></Image>
-    </Grid>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="70"/>
+			<RowDefinition Height="275"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Rectangle Grid.Row="0" VerticalAlignment="Top" Height="80"></Rectangle>
+		<Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleGame}" Margin="97,10,67,9" Width="628"/>
+
+		<Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="350"/>
+				<ColumnDefinition Width="410"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="85"/>
+				<RowDefinition Height="85"/>
+				<RowDefinition Height="85"/>
+			</Grid.RowDefinitions>
+			<Label Grid.Row="0" Grid.Column ="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Margin="0,10,0,0" Width="146" ></Label>
+			<TextBox Grid.Row="0" Grid.Column ="1" Name="tbEmail" Margin="146,10,32,38"  ></TextBox>
+			<Label Grid.Row="1" Grid.Column ="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" Margin="0,18,0,0" Width="146"></Label>
+			<PasswordBox Grid.Row="1" Grid.Column ="1" Name="pbPassword" PasswordChar="*" Margin="146,18,32,30"/>
+			<Button Grid.Row="2" Grid.Column ="1" Style="{StaticResource buttonRegister}" FontSize="15" Content = "{x:Static p:Resources.TitleRegistry}" Click="CreateAccount" Margin="237,30,15,0" Width="158"></Button>
+			<Button Grid.Row="2" Grid.Column ="1" Style="{StaticResource buttonCancel}" FontSize="15" Content = "{x:Static p:Resources.TitleLostMyPassword}" Click="LostMyPassword" Width="217" Height="41" Margin="15,31,178,0"></Button>
+			<Image Grid.Column ="0" Name="imageMan" Source="image/man.png" Margin="175,25,25,-7" Grid.RowSpan="3" />
+			<Image Grid.Column ="0" Name="imageHangmanGame" Source="image/hangmanGame.png" Margin="0,0,81,0" Grid.RowSpan="3" ></Image>
+			<Image Grid.Column="1" Grid.Row="1"
+				 Stretch="Fill" MouseEnter="Password_MouseEnter" MouseLeave="Password_MouseLeave" Width="23" Height="23"
+				 VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,24,4,0" RenderTransformOrigin="0.435,-0.739">
+				<Image.Source>
+					<BitmapImage UriSource="image/eyePassword.png"/>
+				</Image.Source>
+			</Image>
+			<TextBox Grid.Row="1" Grid.Column ="1" x:Name="tbPassword" Margin="146,18,32,30" Visibility="Hidden" />
+		</Grid>
+
+		<Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="282" Margin="510,0,0,0" Height="74">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Button Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.TitleLogIn}" Click="LogIn" Width="170" Margin="56,0"/>
+		</Grid>
+	</Grid>
 </Window>

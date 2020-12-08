@@ -6,11 +6,50 @@
         xmlns:local="clr-namespace:hangmanGame"
         Title="{x:Static p:Resources.TitleEmailConfirmation}" Height="500" Width="700" Background="#FFCFF6FF">
     <Grid>
-        <Label Margin="245,33,238,399" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleEmailConfirmation}" />
-        <Label Margin="72,110,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.MessageConfirmation}" Height="57" Width="574"/>
-        <Label Margin="123,218,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ConfirmationCode}" />
-        <TextBox Name="tbConfirmationCode" Margin="327,226,165,214"></TextBox>
-        <Button Name="btnAccept" Margin="481,335,147,0" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}" Click="Accept"/>
-        <Button Name="btnSend" Margin="123,335,352,0" Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.SendConfirmation_Button}" Click="SendCode"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+      
+        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkBlue" Height="80"></Rectangle>
+        <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="80" Style="{StaticResource GeneralTextStyle}" Content = "{x:Static p:Resources.TitleEmailConfirmation}" />
+
+        <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.MessageConfirmation}" Width="574"/>
+
+        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition Width="26"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="50" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ConfirmationCode}" />
+            <TextBox Grid.Column="1" Grid.Row="0" Width="270" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"  Name="tbConfirmationCode" FontFamily="Arial" FontSize="15"></TextBox>
+            <Image Grid.Column="2" Grid.Row="0" Visibility="Hidden"
+                 Name="imgErrorCodeConfirmation"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorCodeConfirmation" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorCodeConfirmation}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"></Label>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="btnSend" HorizontalAlignment="Center"  Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.SendConfirmation_Button}" Click="SendCode"/>
+            <Button Grid.Column="1" HorizontalAlignment="Center"  Name="btnAccept" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}" Click="Accept"/>
+        </Grid>
     </Grid>
 </Window>

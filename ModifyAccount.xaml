@@ -4,21 +4,102 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p = "clr-namespace:hangmanGame.Properties"
         xmlns:local="clr-namespace:hangmanGame"
-        Title="{x:Static p:Resources.TitleModifyAccount}" Height="587.299" Width="1000" Background="#FFCFF6FF">
+        Title="{x:Static p:Resources.TitleModifyAccount}" Height="520.27" Width="1000" Background="#FFCFF6FF">
 
     <Grid>
-        <Label Margin="384,20,427,500" Style="{StaticResource headerTextStyle}" Content = "{x:Static p:Resources.TitleModifyAccount}"/>
-        <Label Margin="203,111,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
-        <Label Margin="160,180,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
-        <Label Margin="208,262,0,0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
-        <TextBox Name="tbName" Margin="285,111,445,408" />
-        <TextBox Name="tbLastName" Margin="285,180,445,339"/>
-        <TextBox Name="tbEmail" Margin="285,262,445,257" />
-        <Button Name="btnModify" Margin="214,408,712,0"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}" Click=" Modify" RenderTransformOrigin="0.337,-0.807"></Button>
-        <Button Name="btnCancel" Margin="461,408,469,0"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
-        <Button Name="btnChangePassword" Margin="658,240,175,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
-        <Button Name="btnDelete" Margin="658,148,273,0"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
-        <Image Name="imageDelteAccount" Source="image/iconoDeleteAccount.png" Margin="719,148,217,429"></Image>
-        <Image Name="imageChangePassword" Source="image/changePassword.png"  Margin="822,234,119,336"></Image>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="235"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="410"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkMagenta" Height="80" Grid.ColumnSpan="3"></Rectangle>
+        <Label Grid.Row="0" VerticalAlignment="Center" Height="80" Grid.ColumnSpan="3" HorizontalAlignment="Center" Style="{StaticResource GeneralTextStyle}" Content = "{x:Static p:Resources.TitleModifyAccount}"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="270"/>
+                <ColumnDefinition Width="26"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Label HorizontalAlignment="Right" Height="35" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
+            <TextBox Height="35" Name="tbName" Grid.Row="0" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewTextInput="prohibitNumberAllowSpecialChar" />
+            <Image Grid.Column="2" Grid.Row="0" Visibility="Hidden"
+                 Name="imgErrorName"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorName" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="1"></Label>
+
+            <Label HorizontalAlignment="Right" Height="35" Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
+            <TextBox Height="35" Name="tbLastName" Grid.Row="2" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewTextInput="prohibitNumberAllowSpecialChar" />
+            <Image Grid.Column="2" Grid.Row="2" Visibility="Hidden"
+                 Name="imgErrorLastName"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorLastName" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="3"></Label>
+
+            <Label HorizontalAlignment="Right" Height="35" Grid.Row="4" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
+            <TextBox Height="35" Name="tbEmail" Grid.Row="4" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewKeyDown="prohibitSpace" />
+            <Image Grid.Column="2" Grid.Row="4" Visibility="Hidden"
+                 Name="imgErrorEmail"
+                 Stretch="Fill"
+                 Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
+                 VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image.Source>
+                    <BitmapImage UriSource="image/error.png"/>
+                </Image.Source>
+            </Image>
+            <Label Name="lbErrorEmail" Height="23" Visibility="Hidden" VerticalAlignment="Top" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorEmail}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5"></Label>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="26"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="120"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Name="btnChangePassword"  Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Name="btnDelete"  Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
+            <Image Grid.Column="1" Grid.Row="0" Name="imageDelteAccount" Source="image/iconoDeleteAccount.png"></Image>
+            <Image Grid.Column="1" Grid.Row="1" Name="imageChangePassword" Source="image/changePassword.png" ></Image>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="btnModify"  Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Modify_Button}" Click=" Modify"></Button>
+            <Button Grid.Column="1" Name="btnCancel"  Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel"></Button>
+        </Grid>
     </Grid>
 </Window>

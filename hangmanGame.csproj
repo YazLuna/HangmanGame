@@ -121,6 +121,9 @@
     <Compile Include="ModifyAccount.xaml.cs">
       <DependentUpon>ModifyAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Play.xaml.cs">
+      <DependentUpon>Play.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecoverAccount.xaml.cs">
       <DependentUpon>RecoverAccount.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModifyAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Play.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,6 +233,9 @@
     <None Include="Connected Services\MessageService\item2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\MessageService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -271,6 +281,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

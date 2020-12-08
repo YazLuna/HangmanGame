@@ -8,17 +8,35 @@
 			<Setter Property="Label.VerticalAlignment" Value="Center"></Setter>
 			<Setter Property="Label.FontFamily" Value="Trebuchet MS"></Setter>
 			<Setter Property="Label.FontWeight" Value="Bold"></Setter>
-			<Setter Property="Label.FontSize" Value="24"></Setter>
-			<Setter Property="Label.Foreground" Value="#FF21007A"></Setter>
-			
-		</Style>
-		
-		<Style x:Key="labelStyle" TargetType="{x:Type Label}">
+			<Setter Property="Label.FontSize" Value="30"></Setter>
+            <Setter Property="Label.Foreground" Value="#FF21007A"></Setter>
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="GeneralTextStyle">
+            <Setter Property="Label.HorizontalAlignment" Value="Center" />
+            <Setter Property="Label.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Label.FontFamily" Value="Trebuchet MS"></Setter>
+            <Setter Property="Label.FontWeight" Value="Bold"></Setter>
+            <Setter Property="Label.FontSize" Value="33"></Setter>
+            <Setter Property="Label.Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style x:Key="ErrorTextStyle">
+            <Setter Property="Label.HorizontalAlignment" Value="Left" />
+            <Setter Property="Label.VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Label.FontFamily" Value="Arial Narrow"></Setter>
+            <Setter Property="Label.FontSize" Value="12"></Setter>
+            <Setter Property="Label.Foreground" Value="Red"></Setter>
+        </Style>
+
+        <Style x:Key="labelStyle" TargetType="{x:Type Label}">
 			<Setter Property="VerticalAlignment" Value="Top" />
 			<Setter Property="HorizontalAlignment" Value="Left" />
 			<Setter Property="FontWeight" Value="Bold" />
 			<Setter Property="Margin" Value="0,0,0,5"/>
 			<Setter Property="Label.FontSize" Value="20"></Setter>
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
 		  
 		</Style>
 
@@ -28,35 +46,25 @@
             <Setter Property="FontWeight" Value="Normal" />
             <Setter Property="Margin" Value="0,0,0,5"/>
             <Setter Property="Label.FontSize" Value="15"></Setter>
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
 
         </Style>
         
-        <Style x:Key="buttonLogIn" TargetType="{x:Type Button}">
-			<Setter Property="VerticalAlignment" Value="Top" />
-			<Setter Property="HorizontalAlignment" Value="Center" />
-			<Setter Property="FontSize" Value="20"></Setter>
-			<Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="Padding" Value="10,10,10,10"></Setter>
-			<Setter Property="Margin" Value="30,30,30,30" />
-			<Setter Property="Background" Value="#FF21007A"></Setter>
-			
-		</Style>
-
-		<Style x:Key="buttonRegister" TargetType="{x:Type Button}">
+        <Style x:Key="buttonBlue" TargetType="{x:Type Button}">
 			<Setter Property="VerticalAlignment" Value="Top" />
 			<Setter Property="HorizontalAlignment" Value="Center" />
 			<Setter Property="FontSize" Value="20"></Setter>
 			<Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Padding" Value="10,10,10,10"></Setter>
 			<Setter Property="Margin" Value="5,5,5,5" />
-			<Setter Property="Background" Value="#FF057200"></Setter>
+			<Setter Property="Background" Value="#FF21007A"></Setter>
 			
 		</Style>
 
-        <Style x:Key="buttonOk" TargetType="{x:Type Button}">
+        <Style x:Key="buttonRegister" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Padding" Value="10,10,10,10"></Setter>
             <Setter Property="Margin" Value="5,5,5,5" />
@@ -75,38 +83,16 @@
 
         </Style>
 
-        <Style x:Key="buttonLostMyPassword" TargetType="{x:Type Button}">
+        <Style x:Key="buttonCancel" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Padding" Value="10,10,10,10"></Setter>
             <Setter Property="Margin" Value="5,5,5,5" />
             <Setter Property="Background" Value="#948E8E"></Setter>
 
         </Style>
-        <Style x:Key="buttonCancel" TargetType="{x:Type Button}">
-			<Setter Property="VerticalAlignment" Value="Top" />
-			<Setter Property="HorizontalAlignment" Value="Center"/>
-			<Setter Property="FontSize" Value="20"></Setter>
-			<Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="Padding" Value="10,10,10,10"></Setter>
-			<Setter Property="Margin" Value="5,5,5,5" />
-			<Setter Property="Background" Value="Red"></Setter>
-			
-		</Style>
-		<Style x:Key="buttonCreateAccount" TargetType="{x:Type Button}">
-			<Setter Property="VerticalAlignment" Value="Top" />
-			<Setter Property="HorizontalAlignment" Value="Center" />
-			<Setter Property="FontSize" Value="12"></Setter>
-			<Setter Property="Margin" Value="5,5,5,5" />
-			<Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="Padding" Value="10,10,10,10"></Setter>
-			<Setter Property="Background" Value="#FF057200"></Setter>
-			
-		</Style>
 
-
-
-	</Application.Resources>
+    </Application.Resources>
 </Application>

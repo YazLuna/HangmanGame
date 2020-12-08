@@ -1,5 +1,6 @@
-﻿
+﻿using System;
 using System.Windows;
+using System.Windows.Input;
 using System.ServiceModel;
 
 namespace hangmanGame
@@ -45,8 +46,19 @@ namespace hangmanGame
             SendConfirmationCode();
         }
 
+        private void Error_MouseEnter(Object objectImg, MouseEventArgs e2)
+        {
+            lbErrorCodeConfirmation.Visibility = Visibility.Visible;
+        }
+
+        private void Error_MouseLeave(Object objectImg, MouseEventArgs e2)
+        {
+            lbErrorCodeConfirmation.Visibility = Visibility.Hidden;
+        }
+
         private void Accept(object sender, RoutedEventArgs e)
         {
+            imgErrorCodeConfirmation.Visibility = Visibility.Hidden;
             bool isValidConfirmationCode;
             isValidConfirmationCode = ValidationData.ValidateConfirmationCode(tbConfirmationCode.Text);
             if (isValidConfirmationCode)
@@ -57,19 +69,20 @@ namespace hangmanGame
                 registry.Register(account, accountPlayer);
                 if (responseConfirmation)
                 {
-                    MessageBox.Show("La cuenta fue creada correctamente", "Registro de cuenta", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    MessageBox.Show(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("La cuenta no se registro, por favor intentar más tarde", "Registro de cuenta", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    MessageBox.Show(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                MessageBox.Show("Por favor ingrese el codigo de confirmación correcto", "Codigo incorrecto", (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                imgErrorCodeConfirmation.Visibility = Visibility.Visible;
+                MessageBox.Show(Properties.Resources.IncorrectCodeMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
             }
 
         }

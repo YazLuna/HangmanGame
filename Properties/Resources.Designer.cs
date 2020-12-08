@@ -70,6 +70,24 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The account was created successfully..
+        /// </summary>
+        public static string AccountRegistrationMessage {
+            get {
+                return ResourceManager.GetString("AccountRegistrationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account registration.
+        /// </summary>
+        public static string AccountRegistrationMessageTitle {
+            get {
+                return ResourceManager.GetString("AccountRegistrationMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Accumulated Score.
         /// </summary>
         public static string AccumulatedScore {
@@ -111,6 +129,24 @@ namespace hangmanGame.Properties {
         public static string ChangePassword_Button {
             get {
                 return ResourceManager.GetString("ChangePassword_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password was changed successfully..
+        /// </summary>
+        public static string ChangePasswordMessage {
+            get {
+                return ResourceManager.GetString("ChangePasswordMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change Password.
+        /// </summary>
+        public static string ChangePasswordMessageTitle {
+            get {
+                return ResourceManager.GetString("ChangePasswordMessageTitle", resourceCulture);
             }
         }
         
@@ -160,11 +196,200 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The account was successfully deleted..
+        /// </summary>
+        public static string DeleteAccountMessage {
+            get {
+                return ResourceManager.GetString("DeleteAccountMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Delete Account.
+        /// </summary>
+        public static string DeleteAccountMessageTitle {
+            get {
+                return ResourceManager.GetString("DeleteAccountMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Email: .
         /// </summary>
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Email not found.
+        /// </summary>
+        public static string EmailNotFound {
+            get {
+                return ResourceManager.GetString("EmailNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The email you entered does not correspond to that of any active account.
+        /// </summary>
+        public static string EmailNotFoundDetails {
+            get {
+                return ResourceManager.GetString("EmailNotFoundDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You entered invalid credentials. Please enter correct data or register..
+        /// </summary>
+        public static string EnteredWrongCredentials {
+            get {
+                return ResourceManager.GetString("EnteredWrongCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter only 6-digit numbers..
+        /// </summary>
+        public static string ErrorCodeConfirmation {
+            get {
+                return ResourceManager.GetString("ErrorCodeConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The code you entered is not correct. Please enter the one that was sent to your email.
+        /// </summary>
+        public static string ErrorCodeDetails {
+            get {
+                return ResourceManager.GetString("ErrorCodeDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password not modified.
+        /// </summary>
+        public static string ErrorDataBase {
+            get {
+                return ResourceManager.GetString("ErrorDataBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a There is no connection to the database. Please try again later.
+        /// </summary>
+        public static string ErrorDataBaseDetails {
+            get {
+                return ResourceManager.GetString("ErrorDataBaseDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter a valid email structure &quot;maria_12@gmail.com&quot;..
+        /// </summary>
+        public static string ErrorEmail {
+            get {
+                return ResourceManager.GetString("ErrorEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter only letters..
+        /// </summary>
+        public static string ErrorNameComplete {
+            get {
+                return ResourceManager.GetString("ErrorNameComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter only letters and numbers..
+        /// </summary>
+        public static string ErrorNickName {
+            get {
+                return ResourceManager.GetString("ErrorNickName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-9)..
+        /// </summary>
+        public static string ErrorPassword {
+            get {
+                return ResourceManager.GetString("ErrorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please enter the correct confirmation code..
+        /// </summary>
+        public static string IncorrectCodeMessage {
+            get {
+                return ResourceManager.GetString("IncorrectCodeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect confirmation code.
+        /// </summary>
+        public static string IncorrectCodeMessageTitle {
+            get {
+                return ResourceManager.GetString("IncorrectCodeMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please enter correct data in the fields marked in red..
+        /// </summary>
+        public static string IncorrectDataMessage {
+            get {
+                return ResourceManager.GetString("IncorrectDataMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect Data.
+        /// </summary>
+        public static string IncorrectDataMessageTitle {
+            get {
+                return ResourceManager.GetString("IncorrectDataMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect Email.
+        /// </summary>
+        public static string IncorrectEmail {
+            get {
+                return ResourceManager.GetString("IncorrectEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The email you entered does not correspond to the structure of an email. Please enter a valid email.
+        /// </summary>
+        public static string IncorrectEmailDetails {
+            get {
+                return ResourceManager.GetString("IncorrectEmailDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect Passwords.
+        /// </summary>
+        public static string IncorrectPasswords {
+            get {
+                return ResourceManager.GetString("IncorrectPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The code you entered is not correct. Please enter the one that was sent to your email.
+        /// </summary>
+        public static string IncorrectPasswordsDetails {
+            get {
+                return ResourceManager.GetString("IncorrectPasswordsDetails", resourceCulture);
             }
         }
         
@@ -205,6 +430,42 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The data was successfully modified..
+        /// </summary>
+        public static string ModifyAccountMessage {
+            get {
+                return ResourceManager.GetString("ModifyAccountMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modify Account.
+        /// </summary>
+        public static string ModifyAccountMessageTitle {
+            get {
+                return ResourceManager.GetString("ModifyAccountMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please modify at least one data..
+        /// </summary>
+        public static string ModifyLeastDataMessage {
+            get {
+                return ResourceManager.GetString("ModifyLeastDataMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modify Data.
+        /// </summary>
+        public static string ModifyLeastDataMessageTile {
+            get {
+                return ResourceManager.GetString("ModifyLeastDataMessageTile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Name: .
         /// </summary>
         public static string Name {
@@ -232,11 +493,65 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The account was not registered, please try again later..
+        /// </summary>
+        public static string NoAccountRegisteredMessage {
+            get {
+                return ResourceManager.GetString("NoAccountRegisteredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password was not changed, please try again later..
+        /// </summary>
+        public static string NoChangePasswordMessage {
+            get {
+                return ResourceManager.GetString("NoChangePasswordMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The account was not deleted. Please try again later..
+        /// </summary>
+        public static string NoDeleteAccountMessage {
+            get {
+                return ResourceManager.GetString("NoDeleteAccountMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The data was not modified, please try again later..
+        /// </summary>
+        public static string NoModifyAccountMessage {
+            get {
+                return ResourceManager.GetString("NoModifyAccountMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password: .
         /// </summary>
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password changed successfully.
+        /// </summary>
+        public static string PasswordChanged {
+            get {
+                return ResourceManager.GetString("PasswordChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password has been modified successfully you can now enter the game.
+        /// </summary>
+        public static string PasswordChangedDetails {
+            get {
+                return ResourceManager.GetString("PasswordChangedDetails", resourceCulture);
             }
         }
         
@@ -295,6 +610,42 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The email is already registered. Please change it..
+        /// </summary>
+        public static string RegisteredEmailMessage {
+            get {
+                return ResourceManager.GetString("RegisteredEmailMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The nickname and email are already registered. Please change them..
+        /// </summary>
+        public static string RegisteredEmailNickNameMessage {
+            get {
+                return ResourceManager.GetString("RegisteredEmailNickNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The nickname is already registered. Please change it..
+        /// </summary>
+        public static string RegisteredNickNameMessage {
+            get {
+                return ResourceManager.GetString("RegisteredNickNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Repeated Data.
+        /// </summary>
+        public static string RepeatedDataMessageTitle {
+            get {
+                return ResourceManager.GetString("RepeatedDataMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Your score is:.
         /// </summary>
         public static string Score {
@@ -309,6 +660,24 @@ namespace hangmanGame.Properties {
         public static string SendConfirmation_Button {
             get {
                 return ResourceManager.GetString("SendConfirmation_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Send.
+        /// </summary>
+        public static string SendMessage_Button {
+            get {
+                return ResourceManager.GetString("SendMessage_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Settings.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
         
@@ -376,6 +745,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a HangmanGame.
+        /// </summary>
+        public static string TitlePlay {
+            get {
+                return ResourceManager.GetString("TitlePlay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Recover Account.
         /// </summary>
         public static string TitleRecoverAccount {
@@ -426,6 +804,15 @@ namespace hangmanGame.Properties {
         public static string ValidatePassword {
             get {
                 return ResourceManager.GetString("ValidatePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong credentials.
+        /// </summary>
+        public static string WrongCredentials {
+            get {
+                return ResourceManager.GetString("WrongCredentials", resourceCulture);
             }
         }
     }

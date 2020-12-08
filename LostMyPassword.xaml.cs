@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Forms;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace hangmanGame
 {
@@ -19,6 +9,7 @@ namespace hangmanGame
 	public partial class LostMyPassword : Window, MessageService.IPlayerManagerCallback
 	{
 		private bool Response;
+		
 		public LostMyPassword()
 		{
 			InitializeComponent();
@@ -26,43 +17,33 @@ namespace hangmanGame
 
 		public void PlayerResponseBoolean(bool response)
 		{
-			Console.WriteLine(response);
 			Response = response;
 		}
 
-		private void Cancel(object sender, RoutedEventArgs e)
+		private void Cancel(object sender, RoutedEventArgs eventCancel)
 		{
 			MainWindow main = new MainWindow();
 			main.Show();
 			this.Close();
 		}
 
-		private void SendRecoveryCode(object sender, RoutedEventArgs e)
+		private void SendRecoveryCode(object sender, RoutedEventArgs eventSendCode)
 		{
 			if (ValidateEmail())
 			{
-				bool emailExist = SearchEmail();
-
-				if (emailExist )
+				if (SearchEmail())
                 {
 					InstanceContext instanceContext = new InstanceContext(this);
 					MessageService.PlayerManagerClient sendCode = new MessageService.PlayerManagerClient(instanceContext);
 					int code = ValidationData.GenerateConfirmationCode();
 					sendCode.SendEmail(tbEmail.Text, code);
-
-					RecoverAccount.Code = code;
-					RecoverAccount.Email = tbEmail.Text;
 					RecoverAccount recover = new RecoverAccount();
+					recover.EmailReceived(tbEmail.Text);
+					recover.CodeReceived(code);
 					recover.Show();
 					this.Close();
 				}
-				else
-                {
-					MainWindow main = new MainWindow();
-					main.Show();
-					this.Close();
-				}
-			}
+			} 
 		}
 
 		private bool SearchEmail()
@@ -76,6 +57,13 @@ namespace hangmanGame
             {
 				emailExist = true;
             }
+			else
+            {
+				tbEmail.BorderBrush = Brushes.Red;
+				tbValidateEmail.BorderBrush = Brushes.Red;
+				System.Windows.Forms.MessageBox.Show(Properties.Resources.EmailNotFoundDetails, Properties.Resources.EmailNotFound
+					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
 
 			return emailExist;
         }
@@ -90,14 +78,16 @@ namespace hangmanGame
 
 				if (email.Equals(validateEmail) && ValidationData.ValidateEmail(email) && ValidationData.ValidateEmail(validateEmail))
 				{
-					tbEmail.Background = Brushes.LightGreen;
-					tbValidateEmail.Background = Brushes.LightGreen;
+					tbEmail.BorderBrush = Brushes.LightGreen;
+					tbValidateEmail.BorderBrush = Brushes.LightGreen;
 					isValid = true;
 				}
 				else
 				{
-					tbEmail.Background = Brushes.Red;
-					tbValidateEmail.Background = Brushes.Red;
+					tbEmail.BorderBrush = Brushes.Red;
+					tbValidateEmail.BorderBrush = Brushes.Red;
+					System.Windows.Forms.MessageBox.Show(Properties.Resources.IncorrectEmailDetails, Properties.Resources.IncorrectEmail
+					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				}
 			}
 			return isValid;
