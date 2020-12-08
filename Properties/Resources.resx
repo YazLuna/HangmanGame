@@ -156,9 +156,6 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm Password: </value>
   </data>
-  <data name="CorrectPassword" xml:space="preserve">
-    <value>Between 8 and 15 characters long, numbers and letters, at least one capital letter and one special character (# _ @)</value>
-  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Current Password: </value>
   </data>
@@ -174,11 +171,26 @@
   <data name="Email" xml:space="preserve">
     <value>Email: </value>
   </data>
+  <data name="EmailNotFound" xml:space="preserve">
+    <value>Email not found</value>
+  </data>
+  <data name="EmailNotFoundDetails" xml:space="preserve">
+    <value>The email you entered does not correspond to that of any active account</value>
+  </data>
   <data name="EnteredWrongCredentials" xml:space="preserve">
     <value>You entered invalid credentials. Please enter correct data or register.</value>
   </data>
   <data name="ErrorCodeConfirmation" xml:space="preserve">
     <value>Enter only 6-digit numbers.</value>
+  </data>
+  <data name="ErrorCodeDetails" xml:space="preserve">
+    <value>The code you entered is not correct. Please enter the one that was sent to your email</value>
+  </data>
+  <data name="ErrorDataBase" xml:space="preserve">
+    <value>Password not modified</value>
+  </data>
+  <data name="ErrorDataBaseDetails" xml:space="preserve">
+    <value>There is no connection to the database. Please try again later</value>
   </data>
   <data name="ErrorEmail" xml:space="preserve">
     <value>Enter a valid email structure "maria_12@gmail.com".</value>
@@ -203,6 +215,18 @@
   </data>
   <data name="IncorrectDataMessageTitle" xml:space="preserve">
     <value>Incorrect Data</value>
+  </data>
+  <data name="IncorrectEmail" xml:space="preserve">
+    <value>Incorrect Email</value>
+  </data>
+  <data name="IncorrectEmailDetails" xml:space="preserve">
+    <value>The email you entered does not correspond to the structure of an email. Please enter a valid email</value>
+  </data>
+  <data name="IncorrectPasswords" xml:space="preserve">
+    <value>Incorrect Passwords</value>
+  </data>
+  <data name="IncorrectPasswordsDetails" xml:space="preserve">
+    <value>The code you entered is not correct. Please enter the one that was sent to your email</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Last Name: </value>
@@ -252,6 +276,12 @@
   <data name="Password" xml:space="preserve">
     <value>Password: </value>
   </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Password changed successfully</value>
+  </data>
+  <data name="PasswordChangedDetails" xml:space="preserve">
+    <value>The password has been modified successfully you can now enter the game</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>Player</value>
   </data>
@@ -290,6 +320,9 @@
   </data>
   <data name="SendMessage_Button" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="TitleChangePassword" xml:space="preserve">
     <value>Change Password</value>

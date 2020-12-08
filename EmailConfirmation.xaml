@@ -48,7 +48,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Name="btnSend" HorizontalAlignment="Center"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.SendConfirmation_Button}" Click="SendCode"/>
+            <Button Grid.Column="0" Name="btnSend" HorizontalAlignment="Center"  Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.SendConfirmation_Button}" Click="SendCode"/>
             <Button Grid.Column="1" HorizontalAlignment="Center"  Name="btnAccept" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}" Click="Accept"/>
         </Grid>
     </Grid>

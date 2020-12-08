@@ -87,8 +87,8 @@
                 <RowDefinition Height="120"></RowDefinition>
                 <RowDefinition Height="120"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Name="btnChangePassword"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Name="btnDelete"  Style="{StaticResource buttonLogIn}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Name="btnChangePassword"  Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.ChangePassword_Button}" Click="ChangePassword"></Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Name="btnDelete"  Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.DeleteAccount_Button}" Click="Delete"></Button>
             <Image Grid.Column="1" Grid.Row="0" Name="imageDelteAccount" Source="image/iconoDeleteAccount.png"></Image>
             <Image Grid.Column="1" Grid.Row="1" Name="imageChangePassword" Source="image/changePassword.png" ></Image>
         </Grid>
