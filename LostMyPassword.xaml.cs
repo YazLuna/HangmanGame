@@ -20,14 +20,14 @@ namespace hangmanGame
 			Response = response;
 		}
 
-		private void Cancel(object sender, RoutedEventArgs e)
+		private void Cancel(object sender, RoutedEventArgs eventCancel)
 		{
 			MainWindow main = new MainWindow();
 			main.Show();
 			this.Close();
 		}
 
-		private void SendRecoveryCode(object sender, RoutedEventArgs e)
+		private void SendRecoveryCode(object sender, RoutedEventArgs eventSendCode)
 		{
 			if (ValidateEmail())
 			{
@@ -37,10 +37,9 @@ namespace hangmanGame
 					MessageService.PlayerManagerClient sendCode = new MessageService.PlayerManagerClient(instanceContext);
 					int code = ValidationData.GenerateConfirmationCode();
 					sendCode.SendEmail(tbEmail.Text, code);
-
-					RecoverAccount.Code = code;
-					RecoverAccount.Email = tbEmail.Text;
 					RecoverAccount recover = new RecoverAccount();
+					recover.EmailReceived(tbEmail.Text);
+					recover.CodeReceived(code);
 					recover.Show();
 					this.Close();
 				}
@@ -62,7 +61,7 @@ namespace hangmanGame
             {
 				tbEmail.BorderBrush = Brushes.Red;
 				tbValidateEmail.BorderBrush = Brushes.Red;
-				System.Windows.Forms.MessageBox.Show("This email is not registered", "Email not found" 
+				System.Windows.Forms.MessageBox.Show(Properties.Resources.EmailNotFoundDetails, Properties.Resources.EmailNotFound
 					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 
@@ -87,7 +86,7 @@ namespace hangmanGame
 				{
 					tbEmail.BorderBrush = Brushes.Red;
 					tbValidateEmail.BorderBrush = Brushes.Red;
-					System.Windows.Forms.MessageBox.Show("You wrote a wrong email", "Email incorrect"
+					System.Windows.Forms.MessageBox.Show(Properties.Resources.IncorrectEmailDetails, Properties.Resources.IncorrectEmail
 					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				}
 			}

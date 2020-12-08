@@ -1,48 +1,90 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
+using System.Windows.Input;
 
 namespace hangmanGame
 {
 	[CallbackBehavior(UseSynchronizationContext = false)]
 	public partial class RecoverAccount : Window, MessageService.IPlayerManagerCallback
 	{
-		private bool Response;
-		public static int Code;
-		public static string Email;
+		private bool response;
+		private static int code;
+		private static string emailAccount;
 		public RecoverAccount()
 		{
 			InitializeComponent();
 		}
+		public void EmailReceived(string email)
+		{
+			emailAccount = email;
+		}
+
+		public void CodeReceived(int codeSend)
+		{
+			code = codeSend;
+		}
 
 		public void PlayerResponseBoolean(bool response)
 		{
-			Response = response;
+			this.response = response;
 		}
 
-		private void Cancel(object sender, RoutedEventArgs e)
+		private void Password_MouseEnter(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		{
+			tbNewPassword.Visibility = Visibility.Visible;
+			pbNewPassword.Visibility = Visibility.Hidden;
+			tbNewPassword.Text = pbNewPassword.Password;
+		}
+		private void Password_MouseLeave(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		{
+			tbNewPassword.Visibility = Visibility.Hidden;
+			pbNewPassword.Visibility = Visibility.Visible;
+			tbNewPassword.Text = String.Empty;
+		}
+
+		private void ValidatePassword_MouseEnter(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		{
+			tbValidatePassword.Visibility = Visibility.Visible;
+			pbValidatePassword.Visibility = Visibility.Hidden;
+			tbValidatePassword.Text = pbNewPassword.Password;
+		}
+		private void ValidatePassword_MouseLeave(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		{
+			tbValidatePassword.Visibility = Visibility.Hidden;
+			pbValidatePassword.Visibility = Visibility.Visible;
+			tbValidatePassword.Text = String.Empty;
+		}
+
+		private void ProhibitSpace(object sender, System.Windows.Input.KeyEventArgs eventSpaces)
+		{
+			if (eventSpaces.Key == Key.Space)
+				eventSpaces.Handled = true;
+		}
+		private void Cancel(object sender, RoutedEventArgs eventCancel)
 		{
 			MainWindow main = new MainWindow();
 			main.Show();
 			this.Close();
 		}
 
-		private void Send(object sender, RoutedEventArgs e)
+		private void Send(object sender, RoutedEventArgs eventSend)
 		{ 
 			if (ValidatePassword() && ValidateCode())
 			{
 				InstanceContext instanceContext = new InstanceContext(this);
 				MessageService.PlayerManagerClient changePassword = new MessageService.PlayerManagerClient(instanceContext);
-				changePassword.ChangePassword(Email, Security.Encrypt(tbNewPassword.Text));
-				if (Response)
+				changePassword.ChangePassword(emailAccount, Security.Encrypt(tbNewPassword.Text));
+				if (response)
                 {
-						System.Windows.Forms.MessageBox.Show("The password has been modified successfully you can now enter the game", "Password changed successfully"
+						System.Windows.Forms.MessageBox.Show(Properties.Resources.PasswordChangedDetails, Properties.Resources.PasswordChanged
 					, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				} 
 				else
                 {
-					System.Windows.Forms.MessageBox.Show("There is no connection to the database. Try again later", "Password not modified"
+					System.Windows.Forms.MessageBox.Show(Properties.Resources.ErrorDataBaseDetails, Properties.Resources.ErrorDataBase
 					, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				MainWindow main = new MainWindow();
@@ -56,7 +98,7 @@ namespace hangmanGame
         {
 			bool isValid = false;
 
-			if (tbCode.Text != null && ValidationData.ValidateConfirmationCode(tbCode.Text) && Code == int.Parse(tbCode.Text))
+			if (tbCode.Text != null && ValidationData.ValidateConfirmationCode(tbCode.Text) && code == int.Parse(tbCode.Text))
 			{
 				tbCode.BorderBrush = Brushes.LightGreen;
 				isValid = true;
@@ -64,7 +106,7 @@ namespace hangmanGame
 			else
 			{
 				tbCode.BorderBrush = Brushes.Red;
-				System.Windows.Forms.MessageBox.Show("The code you entered is not correct", "Error Code"
+				System.Windows.Forms.MessageBox.Show(Properties.Resources.ErrorCodeDetails, Properties.Resources.ErrorCodeConfirmation
 					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 
@@ -75,19 +117,19 @@ namespace hangmanGame
 		{
 			bool isValid = false;
 			
-			if( tbNewPassword.Text != null && tbValidatePassword.Text != null && tbValidatePassword.Text.Equals(tbNewPassword.Text) &&
-				ValidationData.ValidatePassword(tbNewPassword.Text) && ValidationData.ValidatePassword(tbValidatePassword.Text))
+			if( pbNewPassword.Password != null && pbValidatePassword.Password != null && pbValidatePassword.Password.Equals(pbNewPassword.Password) &&
+				ValidationData.ValidatePassword(pbNewPassword.Password) && ValidationData.ValidatePassword(pbValidatePassword.Password))
 			{
-				tbNewPassword.BorderBrush = Brushes.LightGreen;
-				tbValidatePassword.BorderBrush = Brushes.LightGreen;
+				pbNewPassword.BorderBrush = Brushes.LightGreen;
+				pbValidatePassword.BorderBrush = Brushes.LightGreen;
 				isValid = true;
 			} 
 			else
             {
-				tbNewPassword.BorderBrush = Brushes.Red;
-				tbValidatePassword.BorderBrush = Brushes.Red;
+				pbNewPassword.BorderBrush = Brushes.Red;
+				pbValidatePassword.BorderBrush = Brushes.Red;
 				ValidateCode();
-				System.Windows.Forms.MessageBox.Show("The passwords you entered are not correct", "Incorrect passwords"
+				System.Windows.Forms.MessageBox.Show(Properties.Resources.IncorrectPasswordsDetails, Properties.Resources.IncorrectPasswords
 					, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			return isValid;

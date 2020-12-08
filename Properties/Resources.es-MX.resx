@@ -156,9 +156,6 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirmar contraseña: </value>
   </data>
-  <data name="CorrectPassword" xml:space="preserve">
-    <value>Debe tener una longitud entre 8 y 15 caracteres, numeros y letras, por lo menos una letra mayuscula y un caracter especial (#_@)</value>
-  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Contraseña actual: </value>
   </data>
@@ -172,10 +169,28 @@
     <value>Eliminar</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>Correo Electrónico: </value>
+    <value>Correo: </value>
+  </data>
+  <data name="EmailNotFound" xml:space="preserve">
+    <value>Correo no encontrado</value>
+  </data>
+  <data name="EmailNotFoundDetails" xml:space="preserve">
+    <value>El email que ingresaste no corresponde al de ninguna cuenta activa</value>
+  </data>
+  <data name="EnteredWrongCredentials" xml:space="preserve">
+    <value>Ingresaste credenciales inválidas. Por favor ingresa datos correctos o registrate.</value>
   </data>
   <data name="ErrorCodeConfirmation" xml:space="preserve">
     <value>Ingresar sólo números de 6 cifras.</value>
+  </data>
+  <data name="ErrorCodeDetails" xml:space="preserve">
+    <value>El código que ingresó no es correcto. Ingrese el que se envió a su correo electrónico</value>
+  </data>
+  <data name="ErrorDataBase" xml:space="preserve">
+    <value>Contraseña no modificada</value>
+  </data>
+  <data name="ErrorDataBaseDetails" xml:space="preserve">
+    <value>No hay conexión a la base de datos. Por favor, inténtelo de nuevo más tarde</value>
   </data>
   <data name="ErrorEmail" xml:space="preserve">
     <value>Ingresar una estructura válida de correo el "maria_12@gmail.com".</value>
@@ -200,6 +215,18 @@
   </data>
   <data name="IncorrectDataMessageTitle" xml:space="preserve">
     <value>Datos Incorrectos</value>
+  </data>
+  <data name="IncorrectEmail" xml:space="preserve">
+    <value>Correo Incorrecto</value>
+  </data>
+  <data name="IncorrectEmailDetails" xml:space="preserve">
+    <value>El correo que ingresaste no corresponde a la estructura de un email. Por favor ingresa un correo válido</value>
+  </data>
+  <data name="IncorrectPasswords" xml:space="preserve">
+    <value>Contraseñas incorrectas</value>
+  </data>
+  <data name="IncorrectPasswordsDetails" xml:space="preserve">
+    <value>Las contraseñas que ingresó no son correctas, las contraseñas deben ser las mismas. Por favor intentelo de nuevo</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Apellido: </value>
@@ -249,6 +276,12 @@
   <data name="Password" xml:space="preserve">
     <value>Contraseña: </value>
   </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Modificación de contraseña exitosa</value>
+  </data>
+  <data name="PasswordChangedDetails" xml:space="preserve">
+    <value>La contraseña se ha modificado correctamente, ahora puede ingresar al juego</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>Jugador</value>
   </data>
@@ -287,6 +320,9 @@
   </data>
   <data name="SendMessage_Button" xml:space="preserve">
     <value>Enviar</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configuraciones</value>
   </data>
   <data name="TitleChangePassword" xml:space="preserve">
     <value>Cambiar contraseña</value>
@@ -329,5 +365,8 @@
   </data>
   <data name="ValidatePassword" xml:space="preserve">
     <value>Verifique su nueva contraseña:</value>
+  </data>
+  <data name="WrongCredentials" xml:space="preserve">
+    <value>Credenciales Incorrectas</value>
   </data>
 </root>

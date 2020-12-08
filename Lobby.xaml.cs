@@ -7,22 +7,16 @@ using System.Windows;
 
 namespace hangmanGame
 {
-	/// <summary>
-	/// Lógica de interacción para Window2.xaml
-	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
 	public partial class Lobby : Window, MessageService.IPlayerManagerCallback, MessageService.IInformationPlayerManagerCallback, MessageService.IPlayerScoresManagerCallback
 	{
-		public static string Email;
-		private string emailAccount;
-		private string Nickname;
-		private Nullable <int> Score;
-		private ServicePlayer[] ServicePlayers;
+		private static string emailAccount;
+		private string nickname;
+		private Nullable <int> score;
+		private ServicePlayer[] servicePlayers;
 		public Lobby()
 		{
 			InitializeComponent();
-			ColocatePersonalInformation();
-			ColocateBestScores();
 		}
 
         public void EmailReceived(string email)
@@ -32,21 +26,19 @@ namespace hangmanGame
 
 		public void PlayerResponseInformation(ServicePlayer response)
 		{
-			Nickname = response.NickName;
-			Score = response.ScoreObtained;
+			nickname = response.NickName;
+			score = response.ScoreObtained;
 		}
 
 		public void PlayerResponseList(ServicePlayer[] responseList)
 		{
-			ServicePlayers = responseList;
+			servicePlayers = responseList;
 		}
 
 		public void PlayerResponseBoolean(bool response)
 		{
 			Console.WriteLine(response);
 		}
-
-
 
 		private void LogOut(object sender, RoutedEventArgs e)
 		{
@@ -55,7 +47,12 @@ namespace hangmanGame
 			this.Close();
 		}
 
-        private void UpdateAccount(object sender, RoutedEventArgs e)
+		private void ManageSettings(object sender, RoutedEventArgs e)
+		{
+			
+		}
+
+		private void UpdateAccount(object sender, RoutedEventArgs e)
         {
             ModifyAccount modifyAccount = new ModifyAccount();
             modifyAccount.EmailReceived(emailAccount);
@@ -71,23 +68,23 @@ namespace hangmanGame
 			this.Close();
 		}
 
-		private void ColocateBestScores ()
+		public void ColocateBestScores ()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.PlayerScoresManagerClient searchBestScores = new MessageService.PlayerScoresManagerClient(instanceContext);
 			searchBestScores.SearchBestScoresPlayer();
+	
+			dgBestScores.ItemsSource = servicePlayers;
 
-			dgBestScores.ItemsSource = ServicePlayers;
 		}
 
-		private void ColocatePersonalInformation()
+		public void ColocatePersonalInformation()
         {
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.InformationPlayerManagerClient personalInformation = new MessageService.InformationPlayerManagerClient(instanceContext);
-			personalInformation.SearchInformationPlayer(Email);
-			lbNickname.Content = Nickname;
-			lbScore.Content = Score;
+			personalInformation.SearchInformationPlayer(emailAccount);
+			lbNickname.Content = nickname;
+			lbScore.Content = score;
 		}
-
     }
 }
