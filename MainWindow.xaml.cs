@@ -43,6 +43,7 @@ namespace hangmanGame
 					pbPassword.BorderBrush = Brushes.LightGreen;
 					Lobby.Email = email;
 					Lobby lobby = new Lobby();
+					lobby.EmailReceived(email);
 					lobby.Show();
 					this.Close();
 				}
