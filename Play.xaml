@@ -2,15 +2,43 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:p = "clr-namespace:hangmanGame.Properties"
-		Title="{x:Static p:Resources.TitleGame}" Height="650" Width="1000" Background="#FFCFF6FF">
+        WindowState = "Maximized"
+		Title="{x:Static p:Resources.TitleGame}" Height="750" Width="1350" Background="#FFCFF6FF">
+
     <Grid>
-        <Grid Background="DarkBlue" HorizontalAlignment="Left" Height="363" Margin="538,246,0,0" VerticalAlignment="Top" Width="444">
-            <Button  Name="btnSendMessage" Style="{StaticResource buttonSend}" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,328,10,0" Width="114" Height="25" Click="SendMessage"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="185"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Name="lbNameGame" Grid.Row="0" Content="{x:Static p:Resources.TitleGame}"  Style="{StaticResource labelStyle}" Margin="151,10,0,0" Width="1012" FontSize="50" Height="76"></Label>
+
+        <Label Name="a" Grid.Row="1" Content="{x:Static p:Resources.PhraseScore}"  Style="{StaticResource labelStyle}" Margin="101,10,0,0"  ></Label>
+        <Label Name="ab" Grid.Row="1" Content="{x:Static p:Resources.CurrentScore}"  Style="{StaticResource labelStyle}" Margin="384,10,0,0" ></Label>
+        <Label Name="ac" Grid.Row="1" Content="{x:Static p:Resources.Cost}"  Style="{StaticResource labelStyle}" Margin="101,111,0,0" RenderTransformOrigin="-0.298,0.757" ></Label>
+        <Label Name="ad" Grid.Row="1" Content="{x:Static p:Resources.WrongLetters}"  Style="{StaticResource labelStyle}" Margin="384,143,0,0" ></Label>
+        <TextBox  Grid.Row="1" Margin="619,10,649,138" ></TextBox>
+
+        <Grid Grid.Row="2" Background="DarkBlue" HorizontalAlignment="Left" Height="363" Margin="888,76,0,0" VerticalAlignment="Top" Width="444">
+            <Button  Name="btnSendMessage" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,329,10,9" Width="114" Height="25" Click="SendMessage"/>
             <ListBox Name="lstConnectedPlayers" HorizontalAlignment="Left" Height="304" Margin="320,19,0,0" VerticalAlignment="Top" Width="114" />
-            <TextBox Name="tbChat" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
+            <ListBox Name="lstChat" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
             <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,328,0,0" VerticalAlignment="Top" Width="305"/>
         </Grid>
-        <Button HorizontalAlignment="Left" Margin="50,33,0,0" VerticalAlignment="Top" Width="74" Click="Exit" Height="37"/>
+        <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74" Click="Exit" Height="37"/>
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgStart" Source="image/StartGame.png" Margin="10,0,936,32"   />
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgOneError" Source="image/OneError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgTwoError" Source="image/TwoError.png"  Margin="10,0,936,32" Visibility="Hidden"   />
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgThreeError" Source="image/ThreeError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgFourError" Source="image/FourError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgFiveError" Source="image/FiveError.png"  Margin="10,0,936,32" Visibility="Hidden"   />
+        <Image Grid.Row="2" Grid.Column ="0" Name="imgSixError" Source="image/SixError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
+        <TextBox  Grid.Row="1" Margin="534,140,698,8" />
+        <TextBox  Grid.Row="1" Margin="384,70,414,78" Visibility="Hidden" />
+        <PasswordBox  Grid.Row="1" Margin="329,62,469,74" />
+        <Button Grid.Row="1" Margin="101,62,1018,0" Content="{x:Static p:Resources.UnlockTrack}" Style="{StaticResource buttonBlue}" Height="49" Width="223"></Button>
 
     </Grid>
+
+
 </Window>

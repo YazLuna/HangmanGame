@@ -11,7 +11,7 @@ namespace hangmanGame
 	public partial class Lobby : Window, MessageService.IPlayerManagerCallback, MessageService.IInformationPlayerManagerCallback, MessageService.IPlayerScoresManagerCallback
 	{
 		private static string emailAccount;
-		private string nickname;
+		private static string nickname;
 		private Nullable <int> score;
 		private ServicePlayer[] servicePlayers;
 		public Lobby()
@@ -64,6 +64,11 @@ namespace hangmanGame
 		private void Play(object sender, RoutedEventArgs e)
 		{
 			Play play = new Play();
+			play.EmailReceived(emailAccount);
+			play.NickNameReceived(nickname);
+			play.ConnectToChat();
+			play.SearchSentence();
+			play.ColocateSentence();
 			play.Show();
 			this.Close();
 		}
@@ -73,8 +78,11 @@ namespace hangmanGame
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.PlayerScoresManagerClient searchBestScores = new MessageService.PlayerScoresManagerClient(instanceContext);
 			searchBestScores.SearchBestScoresPlayer();
-	
 			dgBestScores.ItemsSource = servicePlayers;
+			for (int index = 0; index < servicePlayers.Length; index++ )
+            {
+
+            }
 
 		}
 

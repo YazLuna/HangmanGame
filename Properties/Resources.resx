@@ -156,8 +156,14 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm Password: </value>
   </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Cost:</value>
+  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Current Password: </value>
+  </data>
+  <data name="CurrentScore" xml:space="preserve">
+    <value>Current sentence score:</value>
   </data>
   <data name="DeleteAccountMessage" xml:space="preserve">
     <value>The account was successfully deleted.</value>
@@ -282,6 +288,9 @@
   <data name="PasswordChangedDetails" xml:space="preserve">
     <value>The password has been modified successfully you can now enter the game</value>
   </data>
+  <data name="PhraseScore" xml:space="preserve">
+    <value>Phrase score:</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>Player</value>
   </data>
@@ -357,6 +366,9 @@
   <data name="TitleWelcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
+  <data name="UnlockTrack" xml:space="preserve">
+    <value>Unlock Track</value>
+  </data>
   <data name="UpdateAccount_Button" xml:space="preserve">
     <value>Update Account</value>
   </data>
@@ -368,5 +380,8 @@
   </data>
   <data name="WrongCredentials" xml:space="preserve">
     <value>Wrong credentials</value>
+  </data>
+  <data name="WrongLetters" xml:space="preserve">
+    <value>Wrong letters:</value>
   </data>
 </root>
