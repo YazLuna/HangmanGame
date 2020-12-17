@@ -36,11 +36,11 @@
             <Label Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.BestScores}" Width="403" Margin="38,0,0,0" />
             <Button Name="btnSettings" Grid.Column="0" Content="{x:Static p:Resources.Settings}" Style="{StaticResource buttonBlue}" Click="ManageSettings" Width="182" Height="61" Margin="59,115,59,-55"/>
             <Button Name="btnLogOuft" Grid.Column="0" Content="{x:Static p:Resources.LogOut_Button}" Style="{StaticResource buttonCancel}" Click="LogOut" Width="182" Height="60" Margin="59,196,59,-135"/>
-            <DataGrid Name="dgBestScores" IsReadOnly="True" HorizontalAlignment="Left" Height="242" VerticalAlignment="Top" Width="406" Margin="35,37,0,-159" Grid.Column="1">
+            <DataGrid Name="dgBestScores" IsReadOnly="True" HorizontalAlignment="Left" Height="242" VerticalAlignment="Top" Width="406" Margin="35,37,0,-159" Grid.Column="1" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="dcPosition" Width ="90" Header="{x:Static p:Resources.Position}" Binding="{Binding Position}" />
-                    <DataGridTextColumn x:Name="dcPlayer" Width="200" Header="{x:Static p:Resources.Player}" Binding="{Binding Player}" />
-                    <DataGridTextColumn x:Name="dcScore" Header="{x:Static p:Resources.AccumulatedScore}" Binding="{Binding Score}" />
+                    <DataGridTextColumn x:Name="dcPosition" Width ="90" Header="{x:Static p:Resources.Position}" />
+                    <DataGridTextColumn x:Name="dcPlayer" Width="200" Header="{x:Static p:Resources.Player}" Binding="{Binding NickName}" />
+                    <DataGridTextColumn x:Name="dcScore" Header="{x:Static p:Resources.AccumulatedScore}" Binding="{Binding ScoreObtained}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
