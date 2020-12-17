@@ -886,7 +886,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -895,7 +895,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -904,7 +904,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -913,7 +913,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -922,7 +922,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -931,7 +931,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

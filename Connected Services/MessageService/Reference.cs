@@ -388,6 +388,8 @@ namespace hangmanGame.MessageService {
         }
     }
     
+<<<<<<< HEAD
+=======
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceSentence", Namespace="http://schemas.datacontract.org/2004/07/HangmanGameService")]
@@ -497,6 +499,7 @@ namespace hangmanGame.MessageService {
         }
     }
     
+>>>>>>> master
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IHangmanGameService", CallbackContract=typeof(hangmanGame.MessageService.IHangmanGameServiceCallback))]
     public interface IHangmanGameService {

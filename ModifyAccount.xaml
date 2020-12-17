@@ -18,7 +18,7 @@
             <ColumnDefinition Width="410"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkMagenta" Height="80" Grid.ColumnSpan="3"></Rectangle>
+        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkBlue" Height="80" Grid.ColumnSpan="3"></Rectangle>
         <Label Grid.Row="0" VerticalAlignment="Center" Height="80" Grid.ColumnSpan="3" HorizontalAlignment="Center" Style="{StaticResource GeneralTextStyle}" Content = "{x:Static p:Resources.TitleModifyAccount}"/>
 
         <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
