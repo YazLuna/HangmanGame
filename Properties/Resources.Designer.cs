@@ -178,11 +178,29 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cost: 500.
+        /// </summary>
+        public static string Cost {
+            get {
+                return ResourceManager.GetString("Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Current Password: .
         /// </summary>
         public static string CurrentPassword {
             get {
                 return ResourceManager.GetString("CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Current sentence score:.
+        /// </summary>
+        public static string CurrentScore {
+            get {
+                return ResourceManager.GetString("CurrentScore", resourceCulture);
             }
         }
         
@@ -556,6 +574,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Phrase score:.
+        /// </summary>
+        public static string PhraseScore {
+            get {
+                return ResourceManager.GetString("PhraseScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Play.
         /// </summary>
         public static string Play_Button {
@@ -781,6 +808,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Unlock Hint.
+        /// </summary>
+        public static string UnlockHint {
+            get {
+                return ResourceManager.GetString("UnlockHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Update Account.
         /// </summary>
         public static string UpdateAccount_Button {
@@ -813,6 +849,15 @@ namespace hangmanGame.Properties {
         public static string WrongCredentials {
             get {
                 return ResourceManager.GetString("WrongCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong letters:.
+        /// </summary>
+        public static string WrongLetters {
+            get {
+                return ResourceManager.GetString("WrongLetters", resourceCulture);
             }
         }
     }
