@@ -228,7 +228,7 @@ namespace hangmanGame
             if (isValidName)
             {
                 tbName.BorderBrush = Brushes.Green;
-                playerEdit.NamePlayer = tbName.Text;
+                playerEdit.NamePlayer = ValidationData.DeleteSpaceWord(tbName.Text);
             }
             else
             {
@@ -247,7 +247,7 @@ namespace hangmanGame
             if (isValidLastName)
             {
                 tbLastName.BorderBrush = Brushes.Green;
-                playerEdit.LastName = tbLastName.Text;
+                playerEdit.LastName = ValidationData.DeleteSpaceWord(tbLastName.Text);
             }
             else
             {

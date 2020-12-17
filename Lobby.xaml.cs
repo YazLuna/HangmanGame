@@ -49,7 +49,11 @@ namespace hangmanGame
 
 		private void ManageSettings(object sender, RoutedEventArgs e)
 		{
-			
+			Setting setting = new Setting();
+			setting.InicilizateComboBox();
+			setting.InitializeValueSound();
+			setting.Show();
+			this.Close();
 		}
 
 		private void UpdateAccount(object sender, RoutedEventArgs e)

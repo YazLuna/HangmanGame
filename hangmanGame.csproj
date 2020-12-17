@@ -107,6 +107,9 @@
     <Compile Include="ChangePassword.xaml.cs">
       <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\MessageService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +152,10 @@
     <Compile Include="Security.cs" />
     <Compile Include="ValidationData.cs" />
     <Page Include="ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -284,6 +291,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\hangmanGameLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\prisoner1.mp3" />
+    <Resource Include="image\sound.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

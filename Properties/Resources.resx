@@ -177,6 +177,9 @@
   <data name="EmailNotFoundDetails" xml:space="preserve">
     <value>The email you entered does not correspond to that of any active account</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="EnteredWrongCredentials" xml:space="preserve">
     <value>You entered invalid credentials. Please enter correct data or register.</value>
   </data>
@@ -202,7 +205,7 @@
     <value>Enter only letters and numbers.</value>
   </data>
   <data name="ErrorPassword" xml:space="preserve">
-    <value>Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-9).</value>
+    <value>Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-15).</value>
   </data>
   <data name="IncorrectCodeMessage" xml:space="preserve">
     <value>Please enter the correct confirmation code.</value>
@@ -227,6 +230,9 @@
   </data>
   <data name="IncorrectPasswordsDetails" xml:space="preserve">
     <value>The code you entered is not correct. Please enter the one that was sent to your email</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language: </value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Last Name: </value>
@@ -324,6 +330,12 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="Sound" xml:space="preserve">
+    <value>Sound: </value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
   <data name="TitleChangePassword" xml:space="preserve">
     <value>Change Password</value>
   </data>
@@ -353,6 +365,9 @@
   </data>
   <data name="TitleRegistry" xml:space="preserve">
     <value>Create Account</value>
+  </data>
+  <data name="TitleSetting" xml:space="preserve">
+    <value>Setting</value>
   </data>
   <data name="TitleWelcome" xml:space="preserve">
     <value>Welcome</value>

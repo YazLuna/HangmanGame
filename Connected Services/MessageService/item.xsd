@@ -39,19 +39,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceReportMisConduct" nillable="true" type="tns:ServiceReportMisConduct" />
-  <xs:complexType name="ArrayOfServicePlayerList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicePlayerList" nillable="true" type="tns:ServicePlayerList" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfServicePlayerList" nillable="true" type="tns:ArrayOfServicePlayerList" />
-  <xs:complexType name="ServicePlayerList">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ScoreObtained" nillable="true" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServicePlayerList" nillable="true" type="tns:ServicePlayerList" />
   <xs:complexType name="ArrayOfServicePlayer">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicePlayer" nillable="true" type="tns:ServicePlayer" />

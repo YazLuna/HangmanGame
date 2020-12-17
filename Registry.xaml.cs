@@ -206,8 +206,8 @@ namespace hangmanGame
 
 				MessageService.ServicePlayer accountPlayer = new MessageService.ServicePlayer();
 				accountPlayer.NickName = nickname;
-				accountPlayer.NamePlayer = name;
-				accountPlayer.LastName = lastName;
+				accountPlayer.NamePlayer = ValidationData.DeleteSpaceWord(name);
+				accountPlayer.LastName = ValidationData.DeleteSpaceWord(lastName);
 				accountPlayer.StatusPlayer = "Active";
 
 				InstanceContext instanceContext = new InstanceContext(this);

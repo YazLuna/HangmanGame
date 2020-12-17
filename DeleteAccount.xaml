@@ -11,7 +11,7 @@
             <RowDefinition Height="380"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkMagenta" Height="80"></Rectangle>
+        <Rectangle Grid.Row="0" VerticalAlignment="Top" Fill="DarkBlue" Height="80"></Rectangle>
         <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="80" Style="{StaticResource GeneralTextStyle}" Content = "{x:Static p:Resources.TitleDeleteAccount}" />
 
         <Grid HorizontalAlignment="Center" Grid.Row="1"  VerticalAlignment="Center">

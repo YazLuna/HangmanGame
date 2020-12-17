@@ -237,7 +237,7 @@
   <xs:element name="PlayerResponseList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="responseList" nillable="true" type="q6:ArrayOfServicePlayerList" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="responseList" nillable="true" type="q6:ArrayOfServicePlayer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
