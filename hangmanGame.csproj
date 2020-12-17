@@ -293,11 +293,25 @@
     <Resource Include="image\error.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Resource Include="image\hangmanGameLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="image\prisoner1.mp3" />
     <Resource Include="image\sound.png" />
+=======
+    <Resource Include="image\StartGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\OneError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\FiveError.png" />
+    <Resource Include="image\FourError.png" />
+    <Resource Include="image\SixError.png" />
+    <Resource Include="image\ThreeError.png" />
+    <Resource Include="image\TwoError.png" />
+>>>>>>> master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

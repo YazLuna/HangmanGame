@@ -45,4 +45,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfServicePlayer" nillable="true" type="tns:ArrayOfServicePlayer" />
+  <xs:complexType name="ServiceSentence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Hint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSentence" type="xs:int" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScoreSentence" type="xs:int" />
+      <xs:element minOccurs="0" name="SentenceWord" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceSentence" nillable="true" type="tns:ServiceSentence" />
 </xs:schema>
