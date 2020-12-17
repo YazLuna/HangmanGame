@@ -29,7 +29,6 @@ namespace hangmanGame
 		public Play()
 		{
 			InitializeComponent();
-  
 		}
 
 		public void EmailReceived(string email)
@@ -64,6 +63,36 @@ namespace hangmanGame
 			}
 		}
 
+		private void Reload(object sender, RoutedEventArgs e)
+		{
+			
+				for (int index = 0; index < messagesIn.Length; index++)
+				{
+					lstChat.Items.Add(messagesIn[index]);
+				}
+			
+		}
+
+		private void UnlockHint(object sender, RoutedEventArgs e)
+		{
+			pbHint.Visibility = Visibility.Hidden;
+			tbHint.Visibility = Visibility.Visible;
+			tbCurrentScore.Text = (int.Parse(tbCurrentScore.Text) - 500).ToString();
+		}
+
+		public void SearchSentence()
+		{
+			InstanceContext instanceContext = new InstanceContext(this);
+			MessageService.PlayManagerClient playManager = new MessageService.PlayManagerClient(instanceContext);
+			playManager.SearchSentence("en");
+		}
+		public void ColocateSentence()
+		{
+			tbCurrentScore.Text = (sentence.ScoreSentence).ToString();
+			pbHint.Password = sentence.Hint;
+			tbHint.Text = sentence.Hint;
+		}
+
 		public void ConnectToChat()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
@@ -85,9 +114,8 @@ namespace hangmanGame
 			{
 				lstChat.Items.Add(messagesIn[index]);
 			}
-			
-		
 		}
+
 
 		public void ChatResponseBoolean(bool response)
 		{
@@ -107,6 +135,7 @@ namespace hangmanGame
 		public void PlayerEntryMessage(string[] response)
 		{
 			messagesIn = response;
+			
 		}
 
         public void SentenceFound(ServiceSentence responseSentence)
@@ -114,15 +143,5 @@ namespace hangmanGame
 			sentence = responseSentence;
         }
 
-		public void SearchSentence ()
-        {
-			InstanceContext instanceContext = new InstanceContext(this);
-			MessageService.PlayManagerClient playManager = new MessageService.PlayManagerClient(instanceContext);
-			playManager.SearchSentence("en");
-		}
-		public void ColocateSentence()
-        {
-			tbMessage.Text = sentence.SentenceWord;
-        }
     }
 }

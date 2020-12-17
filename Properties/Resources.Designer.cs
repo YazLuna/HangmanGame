@@ -178,7 +178,7 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cost:.
+        ///   Busca una cadena traducida similar a Cost: 500.
         /// </summary>
         public static string Cost {
             get {
@@ -808,11 +808,11 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Unlock Track.
+        ///   Busca una cadena traducida similar a Unlock Hint.
         /// </summary>
-        public static string UnlockTrack {
+        public static string UnlockHint {
             get {
-                return ResourceManager.GetString("UnlockTrack", resourceCulture);
+                return ResourceManager.GetString("UnlockHint", resourceCulture);
             }
         }
         

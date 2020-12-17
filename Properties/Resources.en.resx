@@ -157,7 +157,7 @@
     <value>Confirm Password: </value>
   </data>
   <data name="Cost" xml:space="preserve">
-    <value>Cost:</value>
+    <value>Cost: 500</value>
   </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Current Password: </value>
@@ -366,8 +366,8 @@
   <data name="TitleWelcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
-  <data name="UnlockTrack" xml:space="preserve">
-    <value>Unlock Track</value>
+  <data name="UnlockHint" xml:space="preserve">
+    <value>Unlock Hint</value>
   </data>
   <data name="UpdateAccount_Button" xml:space="preserve">
     <value>Update Account</value>
