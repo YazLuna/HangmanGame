@@ -76,8 +76,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="85"/>
             </Grid.RowDefinitions>
-            <Button Name ="btnCancel" Grid.Column ="1" Style="{StaticResource buttonCancel}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel" Margin="31,5,197,0" Width="122"/>
-            <Button Name ="btnSend" Grid.Column ="0" FontSize="20" Style="{StaticResource buttonRegister}" Content = "{x:Static p:Resources.Accept_button}" Click="Send" RenderTransformOrigin="1.512,0.51" Margin="233,5,29,0" Width="138"/>
+            <Button Name ="btnCancel" Grid.Column ="1" Style="{StaticResource buttonGray}" Content = "{x:Static p:Resources.Cancel_Button}" Click="Cancel" Margin="31,5,197,0" Width="122"/>
+            <Button Name ="btnSend" Grid.Column ="0" FontSize="20" Style="{StaticResource buttonGreen}" Content = "{x:Static p:Resources.Accept_Button}" Click="Send" RenderTransformOrigin="1.512,0.51" Margin="233,5,29,0" Width="138"/>
         </Grid>
     </Grid>
 </Window>

@@ -3,16 +3,17 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.ServiceModel;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class ChangePassword : Window, MessageService.IPlayerManagerCallback
+    public partial class ChangePassword : Window, IPlayerManagerCallback
     {
         private bool isValidNewPassword;
         private bool isValidPassword;
         private bool responseBoolean;
-        private static MessageService.ServiceAccount account;
+        private static ServiceAccount account;
         public ChangePassword()
         {
             InitializeComponent();
@@ -21,37 +22,35 @@ namespace hangmanGame
         {
             responseBoolean = response;
         }
-        public void AccountReceived (MessageService.ServiceAccount serviceAccount)
+        public void AccountReceived (ServiceAccount serviceAccount)
         {
             account = serviceAccount;
         }
-
-        private void Password_MouseEnter(Object sender, MouseEventArgs e)
+        private void Password_MouseEnter(Object sender, MouseEventArgs mouseEventArgs)
         {
-
             tbNewPassword.Visibility = Visibility.Visible;
             pbNewPassword.Visibility = Visibility.Hidden;
             tbNewPassword.Text = pbNewPassword.Password;
         }
-        private void Passwrod_MouseLeave(Object sender, MouseEventArgs e)
+        private void Passwrod_MouseLeave(Object sender, MouseEventArgs mouseEventArgs)
         {
             tbNewPassword.Visibility = Visibility.Hidden;
             pbNewPassword.Visibility = Visibility.Visible;
             tbNewPassword.Text = String.Empty;
         }
-        private void ConfirmationPassword_MouseEnter2(Object sender2, MouseEventArgs e2)
+        private void ConfirmationPassword_MouseEnter(Object sender, MouseEventArgs mouseEventArgs)
         {
             tbConfirmationPassword.Visibility = Visibility.Visible;
             pbConfirmationPassword.Visibility = Visibility.Hidden;
             tbConfirmationPassword.Text = pbConfirmationPassword.Password;
         }
-        private void ConfirmationPassword_MouseLeave2(Object sender2, MouseEventArgs e2)
+        private void ConfirmationPassword_MouseLeave(Object sender, MouseEventArgs mouseEventArgs)
         {
             tbConfirmationPassword.Visibility = Visibility.Hidden;
             pbConfirmationPassword.Visibility = Visibility.Visible;
             tbConfirmationPassword.Text = String.Empty;
         }
-        private void Error_MouseEnter(Object objectImg, MouseEventArgs e2)
+        private void Error_MouseEnter(Object objectImg, MouseEventArgs mouseEventArgs)
         {
             bool isImgCurrentPassword;
             isImgCurrentPassword = objectImg.Equals(imgErrorCurrentPassword);
@@ -73,8 +72,7 @@ namespace hangmanGame
                 }
             }
         }
-
-        private void Error_MouseLeave(Object objectImg, MouseEventArgs e2)
+        private void Error_MouseLeave(Object objectImg, MouseEventArgs mouseEventArgs)
         {
             bool isImgCurrentPassword;
             isImgCurrentPassword = objectImg.Equals(imgErrorCurrentPassword);
@@ -96,12 +94,12 @@ namespace hangmanGame
                 }
             }
         }
-        private void prohibitSpace(object sender, KeyEventArgs e)
+        private void prohibitSpace(object sender, KeyEventArgs keyEvent)
         {
-            if (e.Key == Key.Space)
-                e.Handled = true;
+            if (keyEvent.Key == Key.Space)
+                keyEvent.Handled = true;
         }
-        private void ChangeAccountPassword(object sender, RoutedEventArgs e)
+        private void ChangeAccountPassword(object sender, RoutedEventArgs routedEventArgs)
         {
             imgErrorConfirmationPassword.Visibility = Visibility.Hidden;
             imgErrorCurrentPassword.Visibility = Visibility.Hidden;
@@ -116,15 +114,15 @@ namespace hangmanGame
             {
                 string passwordEncrypt = Security.Encrypt(pbNewPassword.Password);
                 InstanceContext instanceContext = new InstanceContext(this);
-                MessageService.PlayerManagerClient playerManager = new MessageService.PlayerManagerClient(instanceContext);
+                PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
                 playerManager.ChangePassword(account.Email, passwordEncrypt);
                 if (responseBoolean)
                 {
-                    MessageBox.Show(Properties.Resources.ChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    OpenMessageBox(Properties.Resources.ChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Resources.NoChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    OpenMessageBox(Properties.Resources.NoChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
                 }
                 ModifyAccount modifyAccount = new ModifyAccount();
                 modifyAccount.AccountReceived();
@@ -132,11 +130,13 @@ namespace hangmanGame
                 this.Close();
             }
             else{
-                MessageBox.Show(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectDataMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                OpenMessageBox(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
             }
-            
         }
-
+        private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
+        {
+            MessageBox.Show(textMessage, titleMessage, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, messageBoxImage);
+        }
         private void ValidatePassword()
         {
             isValidPassword = false;
@@ -191,11 +191,10 @@ namespace hangmanGame
                 isValidNewPassword = true;
             }
         }
-
-        private void Cancel(object sender, RoutedEventArgs e)
+        private void Exit(object sender, RoutedEventArgs routedEventArgs)
         {
             ModifyAccount modifyAccount = new ModifyAccount();
-            modifyAccount.InicializateDataPlayer();
+            modifyAccount.InitializeDataPlayer();
             modifyAccount.Show();
             this.Close();
         }

@@ -22,12 +22,12 @@
 				<RowDefinition Height="85"/>
 				<RowDefinition Height="85"/>
 			</Grid.RowDefinitions>
-			<Label Grid.Row="0" Grid.Column ="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" Margin="0,10,0,0" Width="146" ></Label>
+			<Label Grid.Row="0" Grid.Column ="1" Style="{StaticResource labelStyle}" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Content = "{x:Static p:Resources.Email}" Margin="0,10,0,0" Width="146" ></Label>
 			<TextBox Grid.Row="0" Grid.Column ="1" Name="tbEmail" Margin="146,10,32,38"  ></TextBox>
-			<Label Grid.Row="1" Grid.Column ="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" Margin="0,18,0,0" Width="146"></Label>
+            <Label Grid.Row="1" Grid.Column ="1" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Password}" Margin="0,18,0,0" Width="146"></Label>
 			<PasswordBox Grid.Row="1" Grid.Column ="1" Name="pbPassword" PasswordChar="*" Margin="146,18,32,30"/>
-			<Button Grid.Row="2" Grid.Column ="1" Style="{StaticResource buttonRegister}" FontSize="15" Content = "{x:Static p:Resources.TitleRegistry}" Click="CreateAccount" Margin="237,30,15,0" Width="158"></Button>
-			<Button Grid.Row="2" Grid.Column ="1" Style="{StaticResource buttonCancel}" FontSize="15" Content = "{x:Static p:Resources.TitleLostMyPassword}" Click="LostMyPassword" Width="217" Height="41" Margin="15,31,178,0"></Button>
+			<Button Grid.Row="2" Grid.Column ="1" Style="{StaticResource buttonGreen}" FontSize="15" Content = "{x:Static p:Resources.TitleRegistry}" Click="CreateAccount" Margin="237,30,15,0" Width="158"></Button>
+			<Button Grid.Row="2" Grid.Column ="1" Style="{StaticResource buttonGray}" FontSize="15" Content = "{x:Static p:Resources.TitleLostMyPassword}" Click="LostMyPassword" Width="217" Height="41" Margin="15,31,178,0"></Button>
 			<Image Grid.Column ="0" Name="imageMan" Source="image/man.png" Margin="175,25,25,-7" Grid.RowSpan="3" />
 			<Image Grid.Column ="0" Name="imageHangmanGame" Source="image/hangmanGame.png" Margin="0,0,81,0" Grid.RowSpan="3" ></Image>
 			<Image Grid.Column="1" Grid.Row="1"

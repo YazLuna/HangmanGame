@@ -18,7 +18,7 @@
                 <RowDefinition Height="120"/>
             </Grid.RowDefinitions>
             <Button Name="btnUpdateAccount" Content="{x:Static p:Resources.UpdateAccount_Button}" FontSize="12" Style="{StaticResource buttonBlue}" Click="UpdateAccount" Margin="516,56,-10,0" Width="195" />
-            <Label Margin="10,15,0,0" HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.TitleWelcome}" Width="179" />
+            <Label Margin="10,15,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.TitleWelcome}" Width="179" />
             <Label Margin="10,56,0,0" HorizontalContentAlignment="Right" Style="{StaticResource textStyle}" Content = "{x:Static p:Resources.Score}" Width="179" />
             <Label Name="lbNickname" HorizontalContentAlignment="Left" Style="{StaticResource labelStyle}" HorizontalAlignment="Left" Margin="189,15,0,0" VerticalAlignment="Top" Width="265" Height="36"/>
             <Label Name="lbScore" HorizontalContentAlignment="Left" Style="{StaticResource textStyle}" HorizontalAlignment="Left" Margin="191,56,0,0" VerticalAlignment="Top" Height="30" Width="277"/>
@@ -35,7 +35,7 @@
             <Button Name="btnPlay" Content="{x:Static p:Resources.Play_Button}" Style="{StaticResource buttonPlay}" Click="Play" Width="182" Height="93"/>
             <Label Grid.Column="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.BestScores}" Width="403" Margin="38,0,0,0" />
             <Button Name="btnSettings" Grid.Column="0" Content="{x:Static p:Resources.Settings}" Style="{StaticResource buttonBlue}" Click="ManageSettings" Width="182" Height="61" Margin="59,115,59,-55"/>
-            <Button Name="btnLogOuft" Grid.Column="0" Content="{x:Static p:Resources.LogOut_Button}" Style="{StaticResource buttonCancel}" Click="LogOut" Width="182" Height="60" Margin="59,196,59,-135"/>
+            <Button Name="btnLogOuft" Grid.Column="0" Content="{x:Static p:Resources.LogOut_Button}" Style="{StaticResource buttonGray}" Click="LogOut" Width="182" Height="60" Margin="59,196,59,-135"/>
             <DataGrid Name="dgBestScores" IsReadOnly="True" HorizontalAlignment="Left" Height="242" VerticalAlignment="Top" Width="406" Margin="35,37,0,-159" Grid.Column="1" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="dcPosition" Width ="90" Header="{x:Static p:Resources.Position}" />

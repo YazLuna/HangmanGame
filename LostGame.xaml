@@ -1,0 +1,20 @@
+﻿<Window x:Class="hangmanGame.LostGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x= "http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:p = "clr-namespace:hangmanGame.Properties"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        Title="{x:Static p:Resources.TitleLostGame}" Height="400" Width="400" Background="#FFCFF6FF">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"  Content="{x:Static p:Resources.TitleLostGame}"  Style="{StaticResource GameLostTitleStyle}"></Label>
+        <Label Grid.Row="1"  Content="{x:Static p:Resources.LostGame}" Style="{StaticResource GameLostStyle}"> </Label>
+        <Image Grid.Row ="2" Source="image/SixError.png" HorizontalAlignment="Center" />
+        <Button Grid.Row="3"  Click="AcceptLostGame" Content="{x:Static p:Resources.Accept_Button}" Style="{StaticResource buttonGreen}" Height="40" Width="150" VerticalAlignment="Center" FontSize="15"/>
+    </Grid>
+</Window>

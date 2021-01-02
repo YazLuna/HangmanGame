@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace hangmanGame
@@ -15,7 +11,6 @@ namespace hangmanGame
 			int code = random.Next(100000, 999999);
 			return code;
 		}
-
 		public static bool ValidatePassword(string password)
 		{
 			bool isValidPassword = false;
@@ -23,7 +18,7 @@ namespace hangmanGame
 			var hasUpperChar = new Regex(@"[A-Z]+");
 			var hasMiniMaxChars = new Regex(@".{8,15}");
 			var hasLowerChar = new Regex(@"[a-z]+");
-			var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
+			var hasSymbols = new Regex(@"[@#_]");
 			if (hasNumber.IsMatch(password) && hasUpperChar.IsMatch(password) &&
 				hasMiniMaxChars.IsMatch(password) && hasLowerChar.IsMatch(password) && hasSymbols.IsMatch(password))
 			{
@@ -31,7 +26,6 @@ namespace hangmanGame
 			}
 			return isValidPassword;
 		}
-
 		public static bool ValidateNameComplete(string name)
 		{
 			bool isValidNameComplete = false;
@@ -40,15 +34,13 @@ namespace hangmanGame
 			isValidNameComplete = regexName.IsMatch(name);
 			return isValidNameComplete;
 		}
-
 		public static bool ValidateEmail(string email)
 		{
 			bool isValidEmail = false;
-			Regex regexEmail = new Regex("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
+			Regex regexEmail = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
 			isValidEmail = regexEmail.IsMatch(email);
 			return isValidEmail;
 		}
-
 		public static bool ValidateNickName(string nickName)
 		{
 			bool isValidNickName = false;
@@ -56,7 +48,6 @@ namespace hangmanGame
 			isValidNickName = regexNickName.IsMatch(nickName);
 			return isValidNickName;
 		}
-
 		public static bool ValidateConfirmationCode(string confirmationCode)
 		{
 			bool isValidConfirmationCode = false;
@@ -64,7 +55,6 @@ namespace hangmanGame
 			isValidConfirmationCode = regexConfirmation.IsMatch(confirmationCode);
 			return isValidConfirmationCode;
 		}
-
 		public static string DeleteSpaceWord(string words)
 		{
 			while (words.Contains("  "))

@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Accept_button" xml:space="preserve">
+  <data name="Accept_Button" xml:space="preserve">
     <value>Accept</value>
   </data>
   <data name="AccountRegistrationMessage" xml:space="preserve">
@@ -129,11 +129,29 @@
   <data name="AccumulatedScore" xml:space="preserve">
     <value>Accumulated Score</value>
   </data>
+  <data name="AdditionalContext" xml:space="preserve">
+    <value>Give us additional context about the report</value>
+  </data>
+  <data name="AdditionalContextReport" xml:space="preserve">
+    <value>Addtional Context</value>
+  </data>
   <data name="BestScores" xml:space="preserve">
     <value>BEST SCORES</value>
   </data>
   <data name="Cancel_Button" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="CategoryAS" xml:space="preserve">
+    <value>Category: American Series</value>
+  </data>
+  <data name="CategoryM" xml:space="preserve">
+    <value>Category: Movie</value>
+  </data>
+  <data name="CategoryS" xml:space="preserve">
+    <value>Category: Song</value>
+  </data>
+  <data name="CategoryV" xml:space="preserve">
+    <value>Category: Videogame</value>
   </data>
   <data name="ChangePasswordMessage" xml:space="preserve">
     <value>The password was changed successfully.</value>
@@ -146,6 +164,9 @@
   </data>
   <data name="Change_Button" xml:space="preserve">
     <value>Change</value>
+  </data>
+  <data name="Check_Button" xml:space="preserve">
+    <value>Check</value>
   </data>
   <data name="ConfirmationCode" xml:space="preserve">
     <value>Confirmation Code: </value>
@@ -164,6 +185,9 @@
   </data>
   <data name="CurrentScore" xml:space="preserve">
     <value>Current sentence score:</value>
+  </data>
+  <data name="DateHour" xml:space="preserve">
+    <value>Date and Hour</value>
   </data>
   <data name="DeleteAccountMessage" xml:space="preserve">
     <value>The account was successfully deleted.</value>
@@ -213,6 +237,13 @@
   <data name="ErrorPassword" xml:space="preserve">
     <value>Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-15).</value>
   </data>
+  <data name="GoOut_Button" xml:space="preserve">
+    <value>Go out</value>
+  </data>
+  <data name="HateMotive" xml:space="preserve">
+    <value>EXPRESSIONS OF HATE 
+Racism, sexism, homophobia, etc.</value>
+  </data>
   <data name="IncorrectCodeMessage" xml:space="preserve">
     <value>Please enter the correct confirmation code.</value>
   </data>
@@ -237,6 +268,9 @@
   <data name="IncorrectPasswordsDetails" xml:space="preserve">
     <value>The code you entered is not correct. Please enter the one that was sent to your email</value>
   </data>
+  <data name="IndicateReport" xml:space="preserve">
+    <value>Please tell us the reasons why you want to report this player.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Language: </value>
   </data>
@@ -246,8 +280,17 @@
   <data name="LogOut_Button" xml:space="preserve">
     <value>Log Out</value>
   </data>
+  <data name="LostGame" xml:space="preserve">
+    <value>You have hanged yourself</value>
+  </data>
+  <data name="LostMessage" xml:space="preserve">
+    <value>In the next one be faster</value>
+  </data>
   <data name="MessageConfirmation" xml:space="preserve">
     <value>Please check your email to confirm your email and continue with the account creation process.</value>
+  </data>
+  <data name="Mistakes" xml:space="preserve">
+    <value>Mistakes:</value>
   </data>
   <data name="ModifyAccountMessage" xml:space="preserve">
     <value>The data was successfully modified.</value>
@@ -285,6 +328,12 @@
   <data name="NoModifyAccountMessage" xml:space="preserve">
     <value>The data was not modified, please try again later.</value>
   </data>
+  <data name="NoOpenMatchMessage" xml:space="preserve">
+    <value>Please wait for the current game to finish to play a new one.</value>
+  </data>
+  <data name="OffensiveMotive" xml:space="preserve">
+    <value>OFFENSIVE OR INAPPROPRIATE NAME</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password: </value>
   </data>
@@ -302,6 +351,9 @@
   </data>
   <data name="Play_Button" xml:space="preserve">
     <value>Play</value>
+  </data>
+  <data name="PointsEarned" xml:space="preserve">
+    <value>Points Earned: </value>
   </data>
   <data name="Position" xml:space="preserve">
     <value>Position</value>
@@ -324,8 +376,29 @@
   <data name="Register_Button" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="ReminderReport" xml:space="preserve">
+    <value>Please remember that 10 reports will lock your account.</value>
+  </data>
   <data name="RepeatedDataMessageTitle" xml:space="preserve">
     <value>Repeated Data</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="ReportIcono_Button" xml:space="preserve">
+    <value>!</value>
+  </data>
+  <data name="ReportList_Button" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ReportPlayerErrorMessage" xml:space="preserve">
+    <value>The player cannot be reported. Please try again later.</value>
+  </data>
+  <data name="ReportPlayerMessage" xml:space="preserve">
+    <value>The player was successfully reported.</value>
+  </data>
+  <data name="Report_Button" xml:space="preserve">
+    <value>Report</value>
   </data>
   <data name="Score" xml:space="preserve">
     <value>Your score is:</value>
@@ -345,6 +418,15 @@
   <data name="Spanish" xml:space="preserve">
     <value>Spanish</value>
   </data>
+  <data name="Start_Button" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TileReportList" xml:space="preserve">
+    <value>List of reports</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time: </value>
+  </data>
   <data name="TitleChangePassword" xml:space="preserve">
     <value>Change Password</value>
   </data>
@@ -357,11 +439,20 @@
   <data name="TitleGame" xml:space="preserve">
     <value>Hangman Game</value>
   </data>
+  <data name="TitleGameOver" xml:space="preserve">
+    <value>Game Over</value>
+  </data>
   <data name="TitleLogIn" xml:space="preserve">
     <value>Log in</value>
   </data>
+  <data name="TitleLostGame" xml:space="preserve">
+    <value>Lost Game</value>
+  </data>
   <data name="TitleLostMyPassword" xml:space="preserve">
     <value>Lost My Password</value>
+  </data>
+  <data name="TitleMatch" xml:space="preserve">
+    <value>Match</value>
   </data>
   <data name="TitleModifyAccount" xml:space="preserve">
     <value>Modify Account</value>
@@ -372,14 +463,29 @@
   <data name="TitleRecoverAccount" xml:space="preserve">
     <value>Recover Account</value>
   </data>
+  <data name="TitleRegisterReportMessage" xml:space="preserve">
+    <value>Report Player</value>
+  </data>
   <data name="TitleRegistry" xml:space="preserve">
     <value>Create Account</value>
+  </data>
+  <data name="TitleReport" xml:space="preserve">
+    <value>Report a player</value>
   </data>
   <data name="TitleSetting" xml:space="preserve">
     <value>Setting</value>
   </data>
+  <data name="TitleWaitingRoom" xml:space="preserve">
+    <value>Waiting room</value>
+  </data>
   <data name="TitleWelcome" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="TypeReport" xml:space="preserve">
+    <value>Type Report</value>
+  </data>
+  <data name="TypeReportErrorMessage" xml:space="preserve">
+    <value>Choose a type of report.</value>
   </data>
   <data name="UnlockHint" xml:space="preserve">
     <value>Unlock Hint</value>
@@ -387,16 +493,32 @@
   <data name="UpdateAccount_Button" xml:space="preserve">
     <value>Update Account</value>
   </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
   <data name="ValidateEmail" xml:space="preserve">
     <value>Validate your Email:</value>
   </data>
   <data name="ValidatePassword" xml:space="preserve">
     <value>Verify your new password:</value>
   </data>
+  <data name="VerbalMotive" xml:space="preserve">
+    <value>VERBAL ABUSE
+Offensive language, Harassment</value>
+  </data>
+  <data name="WaitingPlayers" xml:space="preserve">
+    <value>Waiting for other players...</value>
+  </data>
+  <data name="Winner" xml:space="preserve">
+    <value>Winner: </value>
+  </data>
+  <data name="WinnerMessage" xml:space="preserve">
+    <value>Great you saved yourself</value>
+  </data>
   <data name="WrongCredentials" xml:space="preserve">
     <value>Wrong credentials</value>
   </data>
   <data name="WrongLetters" xml:space="preserve">
-    <value>Wrong letters:</value>
+    <value>Letter:</value>
   </data>
 </root>

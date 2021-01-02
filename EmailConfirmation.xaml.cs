@@ -2,14 +2,15 @@
 using System.Windows;
 using System.Windows.Input;
 using System.ServiceModel;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class EmailConfirmation : Window, MessageService.IPlayerManagerCallback
+    public partial class EmailConfirmation : Window, IPlayerManagerCallback
     {
-        private MessageService.ServiceAccount account;
-        private MessageService.ServicePlayer accountPlayer;
+        private ServiceAccount account;
+        private ServicePlayer accountPlayer;
         private bool responseConfirmation;
         public EmailConfirmation()
         {
@@ -19,44 +20,42 @@ namespace hangmanGame
         {
             responseConfirmation = response;
         }
-
-        public void AccountReceive(MessageService.ServiceAccount accountReceive)
+        public void AccountReceive(ServiceAccount accountReceive)
         {
-            account = new MessageService.ServiceAccount();
+            account = new ServiceAccount();
             account = accountReceive;
         }
-
-        public void PlayerReceive(MessageService.ServicePlayer player)
+        public void PlayerReceive(ServicePlayer player)
         {
-            accountPlayer = new MessageService.ServicePlayer();
+            accountPlayer = new ServicePlayer();
             accountPlayer = player;
         }
-
         public void SendConfirmationCode()
         {
             InstanceContext instanceContext = new InstanceContext(this);
-            MessageService.PlayerManagerClient sendConfirmation = new MessageService.PlayerManagerClient(instanceContext);
+            PlayerManagerClient sendConfirmation = new PlayerManagerClient(instanceContext);
             sendConfirmation.SendEmail(account.Email, account.ConfirmationCode);
         }
-
-        private void SendCode(object sender, RoutedEventArgs e)
+        private void prohibitSpace(object sender, KeyEventArgs keyEvent)
+        {
+            if (keyEvent.Key == Key.Space)
+                keyEvent.Handled = true;
+        }
+        private void SendCodeConfirmation(object sender, RoutedEventArgs routedEventArgs)
         {
             int codeConfirmation = ValidationData.GenerateConfirmationCode();
             account.ConfirmationCode = codeConfirmation;
             SendConfirmationCode();
         }
-
-        private void Error_MouseEnter(Object objectImg, MouseEventArgs e2)
+        private void Error_MouseEnter(Object objectImg, MouseEventArgs mouseEventArgs)
         {
             lbErrorCodeConfirmation.Visibility = Visibility.Visible;
         }
-
-        private void Error_MouseLeave(Object objectImg, MouseEventArgs e2)
+        private void Error_MouseLeave(Object objectImg, MouseEventArgs mouseEventArgs)
         {
             lbErrorCodeConfirmation.Visibility = Visibility.Hidden;
         }
-
-        private void Accept(object sender, RoutedEventArgs e)
+        private void AcceptCodeConfirmation(object sender, RoutedEventArgs routedEventArgs)
         {
             imgErrorCodeConfirmation.Visibility = Visibility.Hidden;
             bool isValidConfirmationCode;
@@ -65,26 +64,29 @@ namespace hangmanGame
             {
                 int codeConfirmation = int.Parse(tbConfirmationCode.Text);
                 InstanceContext instanceContext = new InstanceContext(this);
-                MessageService.PlayerManagerClient registry = new MessageService.PlayerManagerClient(instanceContext);
+                PlayerManagerClient registry = new PlayerManagerClient(instanceContext);
                 registry.Register(account, accountPlayer);
                 if (responseConfirmation)
                 {
-                    MessageBox.Show(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    OpenMessageBox(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
                 }
             }
             else
             {
                 imgErrorCodeConfirmation.Visibility = Visibility.Visible;
-                MessageBox.Show(Properties.Resources.IncorrectCodeMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                OpenMessageBox(Properties.Resources.IncorrectCodeMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
             }
-
+        }
+        private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
+        {
+            MessageBox.Show(textMessage, titleMessage, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, messageBoxImage);
         }
     }
 }
