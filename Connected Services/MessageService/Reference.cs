@@ -272,9 +272,6 @@ namespace hangmanGame.MessageService {
         private string IdReportingPlayerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private hangmanGame.MessageService.ServicePlayer ServicePlayerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeReportField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -353,19 +350,6 @@ namespace hangmanGame.MessageService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public hangmanGame.MessageService.ServicePlayer ServicePlayer {
-            get {
-                return this.ServicePlayerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServicePlayerField, value) != true)) {
-                    this.ServicePlayerField = value;
-                    this.RaisePropertyChanged("ServicePlayer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TypeReport {
             get {
                 return this.TypeReportField;
@@ -388,8 +372,6 @@ namespace hangmanGame.MessageService {
         }
     }
     
-<<<<<<< HEAD
-=======
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceSentence", Namespace="http://schemas.datacontract.org/2004/07/HangmanGameService")]
@@ -400,19 +382,25 @@ namespace hangmanGame.MessageService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string HintField;
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HintEnglishField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HintSpanishField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdSentenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LanguageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ScoreSentenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SentenceWordField;
+        private string SentenceWordEnglishField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SentenceWordSpanishField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -425,14 +413,40 @@ namespace hangmanGame.MessageService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Hint {
+        public string Category {
             get {
-                return this.HintField;
+                return this.CategoryField;
             }
             set {
-                if ((object.ReferenceEquals(this.HintField, value) != true)) {
-                    this.HintField = value;
-                    this.RaisePropertyChanged("Hint");
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HintEnglish {
+            get {
+                return this.HintEnglishField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HintEnglishField, value) != true)) {
+                    this.HintEnglishField = value;
+                    this.RaisePropertyChanged("HintEnglish");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HintSpanish {
+            get {
+                return this.HintSpanishField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HintSpanishField, value) != true)) {
+                    this.HintSpanishField = value;
+                    this.RaisePropertyChanged("HintSpanish");
                 }
             }
         }
@@ -451,19 +465,6 @@ namespace hangmanGame.MessageService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Language {
-            get {
-                return this.LanguageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LanguageField, value) != true)) {
-                    this.LanguageField = value;
-                    this.RaisePropertyChanged("Language");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int ScoreSentence {
             get {
                 return this.ScoreSentenceField;
@@ -477,14 +478,27 @@ namespace hangmanGame.MessageService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SentenceWord {
+        public string SentenceWordEnglish {
             get {
-                return this.SentenceWordField;
+                return this.SentenceWordEnglishField;
             }
             set {
-                if ((object.ReferenceEquals(this.SentenceWordField, value) != true)) {
-                    this.SentenceWordField = value;
-                    this.RaisePropertyChanged("SentenceWord");
+                if ((object.ReferenceEquals(this.SentenceWordEnglishField, value) != true)) {
+                    this.SentenceWordEnglishField = value;
+                    this.RaisePropertyChanged("SentenceWordEnglish");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SentenceWordSpanish {
+            get {
+                return this.SentenceWordSpanishField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SentenceWordSpanishField, value) != true)) {
+                    this.SentenceWordSpanishField = value;
+                    this.RaisePropertyChanged("SentenceWordSpanish");
                 }
             }
         }
@@ -499,7 +513,6 @@ namespace hangmanGame.MessageService {
         }
     }
     
->>>>>>> master
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IHangmanGameService", CallbackContract=typeof(hangmanGame.MessageService.IHangmanGameServiceCallback))]
     public interface IHangmanGameService {
@@ -1053,57 +1066,177 @@ namespace hangmanGame.MessageService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IPlayManager", CallbackContract=typeof(hangmanGame.MessageService.IPlayManagerCallback))]
-    public interface IPlayManager {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IPlayConnect", CallbackContract=typeof(hangmanGame.MessageService.IPlayConnectCallback))]
+    public interface IPlayConnect {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayManager/SearchSentence", ReplyAction="http://tempuri.org/IPlayManager/SearchSentenceResponse")]
-        void SearchSentence(string lenguage);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerConnect", ReplyAction="http://tempuri.org/IPlayConnect/PlayerConnectResponse")]
+        void PlayerConnect(string nickname);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayManager/SearchSentence", ReplyAction="http://tempuri.org/IPlayManager/SearchSentenceResponse")]
-        System.Threading.Tasks.Task SearchSentenceAsync(string lenguage);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerConnect", ReplyAction="http://tempuri.org/IPlayConnect/PlayerConnectResponse")]
+        System.Threading.Tasks.Task PlayerConnectAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerDisconnect", ReplyAction="http://tempuri.org/IPlayConnect/PlayerDisconnectResponse")]
+        void PlayerDisconnect(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerDisconnect", ReplyAction="http://tempuri.org/IPlayConnect/PlayerDisconnectResponse")]
+        System.Threading.Tasks.Task PlayerDisconnectAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/StartGame", ReplyAction="http://tempuri.org/IPlayConnect/StartGameResponse")]
+        void StartGame(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/StartGame", ReplyAction="http://tempuri.org/IPlayConnect/StartGameResponse")]
+        System.Threading.Tasks.Task StartGameAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/VerifyGameStart", ReplyAction="http://tempuri.org/IPlayConnect/VerifyGameStartResponse")]
+        void VerifyGameStart();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/VerifyGameStart", ReplyAction="http://tempuri.org/IPlayConnect/VerifyGameStartResponse")]
+        System.Threading.Tasks.Task VerifyGameStartAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPlayManagerCallback {
+    public interface IPlayConnectCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayManager/SentenceFound", ReplyAction="http://tempuri.org/IPlayManager/SentenceFoundResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerConnectList", ReplyAction="http://tempuri.org/IPlayConnect/PlayerConnectListResponse")]
+        void PlayerConnectList(hangmanGame.MessageService.ServicePlayer[] servicePlayerList);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/IsStarGame", ReplyAction="http://tempuri.org/IPlayConnect/IsStarGameResponse")]
+        void IsStarGame([System.ServiceModel.MessageParameterAttribute(Name="isStarGame")] bool isStarGame1);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/SentenceFound", ReplyAction="http://tempuri.org/IPlayConnect/SentenceFoundResponse")]
         void SentenceFound(hangmanGame.MessageService.ServiceSentence responseSentence);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPlayManagerChannel : hangmanGame.MessageService.IPlayManager, System.ServiceModel.IClientChannel {
+    public interface IPlayConnectChannel : hangmanGame.MessageService.IPlayConnect, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PlayManagerClient : System.ServiceModel.DuplexClientBase<hangmanGame.MessageService.IPlayManager>, hangmanGame.MessageService.IPlayManager {
+    public partial class PlayConnectClient : System.ServiceModel.DuplexClientBase<hangmanGame.MessageService.IPlayConnect>, hangmanGame.MessageService.IPlayConnect {
         
-        public PlayManagerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+        public PlayConnectClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
         }
         
-        public PlayManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+        public PlayConnectClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
                 base(callbackInstance, endpointConfigurationName) {
         }
         
-        public PlayManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+        public PlayConnectClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
                 base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public PlayManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PlayConnectClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public PlayManagerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PlayConnectClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void SearchSentence(string lenguage) {
-            base.Channel.SearchSentence(lenguage);
+        public void PlayerConnect(string nickname) {
+            base.Channel.PlayerConnect(nickname);
         }
         
-        public System.Threading.Tasks.Task SearchSentenceAsync(string lenguage) {
-            return base.Channel.SearchSentenceAsync(lenguage);
+        public System.Threading.Tasks.Task PlayerConnectAsync(string nickname) {
+            return base.Channel.PlayerConnectAsync(nickname);
+        }
+        
+        public void PlayerDisconnect(string nickname) {
+            base.Channel.PlayerDisconnect(nickname);
+        }
+        
+        public System.Threading.Tasks.Task PlayerDisconnectAsync(string nickname) {
+            return base.Channel.PlayerDisconnectAsync(nickname);
+        }
+        
+        public void StartGame(string nickname) {
+            base.Channel.StartGame(nickname);
+        }
+        
+        public System.Threading.Tasks.Task StartGameAsync(string nickname) {
+            return base.Channel.StartGameAsync(nickname);
+        }
+        
+        public void VerifyGameStart() {
+            base.Channel.VerifyGameStart();
+        }
+        
+        public System.Threading.Tasks.Task VerifyGameStartAsync() {
+            return base.Channel.VerifyGameStartAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IReportManager", CallbackContract=typeof(hangmanGame.MessageService.IReportManagerCallback))]
+    public interface IReportManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReportManager/ReportPlayer", ReplyAction="http://tempuri.org/IReportManager/ReportPlayerResponse")]
+        void ReportPlayer(hangmanGame.MessageService.ServiceReportMisConduct serviceReportMisConduct);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReportManager/ReportPlayer", ReplyAction="http://tempuri.org/IReportManager/ReportPlayerResponse")]
+        System.Threading.Tasks.Task ReportPlayerAsync(hangmanGame.MessageService.ServiceReportMisConduct serviceReportMisConduct);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReportManager/ReportList", ReplyAction="http://tempuri.org/IReportManager/ReportListResponse")]
+        void ReportList(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReportManager/ReportList", ReplyAction="http://tempuri.org/IReportManager/ReportListResponse")]
+        System.Threading.Tasks.Task ReportListAsync(string nickname);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IReportManagerCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReportManager/ResponseReportPlayer", ReplyAction="http://tempuri.org/IReportManager/ResponseReportPlayerResponse")]
+        void ResponseReportPlayer(bool isReport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReportManager/ResponseReportList", ReplyAction="http://tempuri.org/IReportManager/ResponseReportListResponse")]
+        void ResponseReportList(hangmanGame.MessageService.ServiceReportMisConduct[] reportMisConducts);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IReportManagerChannel : hangmanGame.MessageService.IReportManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ReportManagerClient : System.ServiceModel.DuplexClientBase<hangmanGame.MessageService.IReportManager>, hangmanGame.MessageService.IReportManager {
+        
+        public ReportManagerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public ReportManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public ReportManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ReportManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ReportManagerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void ReportPlayer(hangmanGame.MessageService.ServiceReportMisConduct serviceReportMisConduct) {
+            base.Channel.ReportPlayer(serviceReportMisConduct);
+        }
+        
+        public System.Threading.Tasks.Task ReportPlayerAsync(hangmanGame.MessageService.ServiceReportMisConduct serviceReportMisConduct) {
+            return base.Channel.ReportPlayerAsync(serviceReportMisConduct);
+        }
+        
+        public void ReportList(string nickname) {
+            base.Channel.ReportList(nickname);
+        }
+        
+        public System.Threading.Tasks.Task ReportListAsync(string nickname) {
+            return base.Channel.ReportListAsync(nickname);
         }
     }
 }

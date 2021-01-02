@@ -3,6 +3,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:p = "clr-namespace:hangmanGame.Properties"
         WindowState = "Maximized"
+        Closing ="WindowClosing"
 		Title="{x:Static p:Resources.TitleGame}" Height="750" Width="1350" Background="#FFCFF6FF">
 
     <Grid>
@@ -11,36 +12,108 @@
             <RowDefinition Height="185"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Label Name="lbNameGame" Grid.Row="0" Content="{x:Static p:Resources.TitleGame}"  Style="{StaticResource labelStyle}" Margin="151,10,0,0" Width="1012" FontSize="50" Height="76"></Label>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="990"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Name="lbNameGame" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static p:Resources.TitleGame}"  Style="{StaticResource labelStyle}" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
 
-        <Label Grid.Row="1" Content="{x:Static p:Resources.PhraseScore}" HorizontalContentAlignment="Right"  Style="{StaticResource labelStyle}" Margin="101,10,0,0" Width="214"  ></Label>
-        <Label Grid.Row="1" Content="{x:Static p:Resources.CurrentScore}" HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}" Margin="425,10,0,0" Width="306" ></Label>
-        <Label Grid.Row="1" Content="{x:Static p:Resources.Cost}"  Style="{StaticResource labelStyle}" Margin="101,111,0,0" RenderTransformOrigin="-0.298,0.757" Width="147" ></Label>
-        <Label Grid.Row="1" Content="{x:Static p:Resources.WrongLetters}"  HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}" Margin="346,143,0,0" Width="183" ></Label>
-        <TextBox  Name="tbCurrentScore" Grid.Row="1" Margin="736,10,532,138" ></TextBox>
-        <Label Name="lbScore" Grid.Row="1"  Style="{StaticResource labelStyle}" HorizontalContentAlignment="Left" Margin="329,10,0,0" Height="37" Width="96"  ></Label>
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Content="{x:Static p:Resources.PhraseScore}" HorizontalContentAlignment="Right" VerticalAlignment="Top" Style="{StaticResource labelStyle}"></Label>
+            <Label Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Right" Content="{x:Static p:Resources.CurrentScore}" VerticalAlignment="Top" HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}" ></Label>
+            <TextBox  HorizontalAlignment="Left" Grid.Row="0"  Grid.Column="3" Name="tbCurrentScore" Height="40" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" IsReadOnly="True"></TextBox>
+            <Label Grid.Row="0"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Name="lbScore" Style="{StaticResource labelStyle}" HorizontalContentAlignment="Left" Height="37" Width="96"></Label>
+            <Label Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static p:Resources.Cost}"  Style="{StaticResource labelStyle}"></Label>
 
-        <Grid Grid.Row="2" Background="DarkBlue" HorizontalAlignment="Left" Height="363" Margin="888,76,0,0" VerticalAlignment="Top" Width="444">
-            <Button  Name="btnSendMessage" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,329,10,9" Width="114" Height="25" Click="SendMessage"/>
-            <ListBox Name="lstConnectedPlayers" HorizontalAlignment="Left" Height="304" Margin="320,19,0,0" VerticalAlignment="Top" Width="114" />
-            <ListBox Name="lstChat" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
-            <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,328,0,0" VerticalAlignment="Top" Width="305"/>
-            <Button   Content="{x:Static p:Resources.SendMessage_Button}"  Margin="-126,328,456,10" Width="114" Height="25" Click="Reload"/>
+            <Label Name="lbCategory" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Grid.ColumnSpan="2" HorizontalContentAlignment="Right" VerticalAlignment="Top" Style="{StaticResource labelStyle}"></Label>
+            <Label Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Content="{x:Static p:Resources.WrongLetters}"  HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}"></Label>
+            <TextBox Name="tbWrongLetters" VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" Grid.Row="2"  Grid.Column="2" Height="40" Width="125" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button  HorizontalAlignment="Right" Grid.Row="2"  Grid.Column="2" Click="Check" Content="{x:Static p:Resources.Check_Button}" Style="{StaticResource buttonGreen}" Height="49" Width="150" />
+
+            <TextBox  VerticalContentAlignment="Center" FontFamily="Arial" FontSize="15" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" Name="tbHint" Visibility="Hidden" Height="50" IsReadOnly="True"/>
+            <PasswordBox FontFamily="Arial" FontSize="15" VerticalContentAlignment="Center" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" Name="pbHint" Height="50" IsEnabled="False"/>
+            <Button  Name="btnUnlockHint" HorizontalAlignment="Right" Grid.Row="1"  Grid.Column="0" Click="UnlockHint" Content="{x:Static p:Resources.UnlockHint}" Style="{StaticResource buttonBlue}" Height="49" Width="223"></Button>
         </Grid>
-        <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74" Click="Exit" Height="37"/>
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgStart" Source="image/StartGame.png" Margin="10,0,936,32"   />
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgOneError" Source="image/OneError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgTwoError" Source="image/TwoError.png"  Margin="10,0,936,32" Visibility="Hidden"   />
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgThreeError" Source="image/ThreeError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgFourError" Source="image/FourError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgFiveError" Source="image/FiveError.png"  Margin="10,0,936,32" Visibility="Hidden"   />
-        <Image Grid.Row="2" Grid.Column ="0" Name="imgSixError" Source="image/SixError.png"  Margin="10,0,936,32" Visibility="Hidden"  />
-        <TextBox  Name="tbWrongLetters" Grid.Row="1" Margin="534,140,698,8" />
-        <TextBox  Name="tbHint" Grid.Row="1" Margin="346,62,452,74" Visibility="Hidden" />
-        <PasswordBox  Name="pbHint" Grid.Row="1" Margin="346,62,452,74" />
-        <Button Click="UnlockHint" Grid.Row="1" Margin="101,62,1018,0" Content="{x:Static p:Resources.UnlockHint}" Style="{StaticResource buttonBlue}" Height="49" Width="223"></Button>
+        <Button  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" BorderBrush="Transparent" Width="60" Click="Exit" Height="60" Background="Transparent">
+            <Image Grid.Row="1" Name="imageChangePassword" Source="image/behind.png" ></Image>
+        </Button>
 
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="444"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Name="gdSentence" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <Grid Grid.Column="2" Background="DarkBlue" HorizontalAlignment="Right" Height="363" VerticalAlignment="Top" Width="444">
+                <Button  Name="btnSendMessage" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,329,10,9" Width="114" Height="25" Click="SendMessage"/>
+                <ListBox Name="lstConnectedPlayers" HorizontalAlignment="Left" Height="304" Margin="320,19,0,0" VerticalAlignment="Top" Width="114" />
+                <ListBox Name="lstChat" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
+                <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,328,0,0" VerticalAlignment="Top" Width="305"/>
+                <Button   Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,298,10,40" Width="114" Height="25" Click="Reload"/>
+            </Grid>
+            <Image Grid.Column ="0" Name="imgStart" Source="image/StartGame.png" HorizontalAlignment="Left" />
+            <Image Grid.Column ="0" Name="imgOneError" Source="image/OneError.png"  Visibility="Hidden" HorizontalAlignment="Left" />
+            <Image Grid.Column ="0" Name="imgTwoError" Source="image/TwoError.png"  Visibility="Hidden" HorizontalAlignment="Left"  />
+            <Image Grid.Column ="0" Name="imgThreeError" Source="image/ThreeError.png" Visibility="Hidden" HorizontalAlignment="Left" />
+            <Image Grid.Column ="0" Name="imgFourError" Source="image/FourError.png"  Visibility="Hidden" HorizontalAlignment="Left" />
+            <Image Grid.Column ="0" Name="imgFiveError" Source="image/FiveError.png"  Visibility="Hidden" HorizontalAlignment="Left" />
+            <Image Grid.Column ="0" Name="imgSixError" Source="image/SixError.png"  Visibility="Hidden" HorizontalAlignment="Left" />
+        </Grid>
+        <ListView Name="lvReport" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource listViewReport}" Height="160" Width="280" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Header="{x:Static p:Resources.User}" 
+                            DisplayMemberBinding="{Binding Nickname}" Width="170"/>
+                    <GridViewColumn Header="{x:Static p:Resources.Report}" 
+                             Width="110">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnReport" Content="{x:Static p:Resources.ReportIcono_Button}" Height="40" Width="50" Style="{StaticResource buttonReport}" Click="Report" CommandParameter="{Binding Nickname}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
-
-
 </Window>

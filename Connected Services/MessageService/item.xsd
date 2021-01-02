@@ -34,7 +34,6 @@
       <xs:element minOccurs="0" name="IdReportMisConduct" type="xs:int" />
       <xs:element minOccurs="0" name="IdReportedPlayer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdReportingPlayer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ServicePlayer" nillable="true" type="tns:ServicePlayer" />
       <xs:element minOccurs="0" name="TypeReport" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -47,11 +46,13 @@
   <xs:element name="ArrayOfServicePlayer" nillable="true" type="tns:ArrayOfServicePlayer" />
   <xs:complexType name="ServiceSentence">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Hint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HintEnglish" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HintSpanish" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdSentence" type="xs:int" />
-      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ScoreSentence" type="xs:int" />
-      <xs:element minOccurs="0" name="SentenceWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentenceWordEnglish" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentenceWordSpanish" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceSentence" nillable="true" type="tns:ServiceSentence" />

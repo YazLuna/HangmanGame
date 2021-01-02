@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 
 namespace hangmanGame
 {
@@ -16,12 +8,10 @@ namespace hangmanGame
     {
         private static string language;
         private static double valueSound;
-
         public Setting()
         {
             InitializeComponent();
         }
-
         public static void LanguageReceive(string languageReceive)
         {
             language = languageReceive;
@@ -30,13 +20,27 @@ namespace hangmanGame
         {
             valueSound = soundReceive;
         }
-
         public void InitializeValueSound()
         {
             double valueSliderSound = valueSound * 100;
             sliderSound.Value = valueSliderSound;
         }
-        private void Cancel(object sender, RoutedEventArgs e)
+        public void InitializeComboBox()
+        {
+            if(language == "en")
+            {
+                cbLanguage.SelectedIndex = Number.NumberValue(NumberValues.ZERO);
+                cbIOption1.Content = Properties.Resources.English;
+                cbIOption2.Content = Properties.Resources.Spanish;
+            }
+            else
+            {
+                cbLanguage.SelectedIndex = Number.NumberValue(NumberValues.ZERO);
+                cbIOption1.Content = Properties.Resources.Spanish;
+                cbIOption2.Content = Properties.Resources.English;
+            }
+        }
+        private void Exit(object sender, RoutedEventArgs routedEventArgs)
         {
             Lobby lobby = new Lobby();
             lobby.ColocateBestScores();
@@ -44,28 +48,13 @@ namespace hangmanGame
             lobby.Show();
             this.Close();
         }
-
-        public void InicilizateComboBox()
-        {
-            if(language == "en")
-            {
-                cbLanguage.SelectedIndex = 0;
-                cbIOption1.Content = Properties.Resources.English;
-                cbIOption2.Content = Properties.Resources.Spanish;
-            }
-            else
-            {
-                cbLanguage.SelectedIndex = 0;
-                cbIOption1.Content = Properties.Resources.Spanish;
-                cbIOption2.Content = Properties.Resources.English;
-            }
-        }
-        private void ChangeSetting(object sender, RoutedEventArgs e)
+        private void ChangeSetting(object sender, RoutedEventArgs routedEventArgs)
         {
             if(cbLanguage.Text == Properties.Resources.Spanish)
             {
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-MX");
                 language = "es-Mx";
+                Play.LanguageReceive(language);
             }
             else
             {
@@ -73,6 +62,7 @@ namespace hangmanGame
                 {
                     System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
                     language = "en";
+                    Play.LanguageReceive(language);
                 }
             }
             Lobby lobby = new Lobby();
@@ -81,8 +71,7 @@ namespace hangmanGame
             lobby.Show();
             this.Close();
         }
-
-        private void ChangedSound(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void ChangedSound(object sender, RoutedPropertyChangedEventArgs<double> routedPropertyChangedEvent)
         {
             Slider slider = sender as Slider;
             if (slider != null)
