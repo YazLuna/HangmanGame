@@ -63,9 +63,9 @@ namespace hangmanGame.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Accept.
         /// </summary>
-        public static string Accept_button {
+        public static string Accept_Button {
             get {
-                return ResourceManager.GetString("Accept_button", resourceCulture);
+                return ResourceManager.GetString("Accept_Button", resourceCulture);
             }
         }
         
@@ -97,6 +97,24 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Give us additional context about the report.
+        /// </summary>
+        public static string AdditionalContext {
+            get {
+                return ResourceManager.GetString("AdditionalContext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Addtional Context.
+        /// </summary>
+        public static string AdditionalContextReport {
+            get {
+                return ResourceManager.GetString("AdditionalContextReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a BEST SCORES.
         /// </summary>
         public static string BestScores {
@@ -111,6 +129,42 @@ namespace hangmanGame.Properties {
         public static string Cancel_Button {
             get {
                 return ResourceManager.GetString("Cancel_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Category: American Series.
+        /// </summary>
+        public static string CategoryAS {
+            get {
+                return ResourceManager.GetString("CategoryAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Category: Movie.
+        /// </summary>
+        public static string CategoryM {
+            get {
+                return ResourceManager.GetString("CategoryM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Category: Song.
+        /// </summary>
+        public static string CategoryS {
+            get {
+                return ResourceManager.GetString("CategoryS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Category: Videogame.
+        /// </summary>
+        public static string CategoryV {
+            get {
+                return ResourceManager.GetString("CategoryV", resourceCulture);
             }
         }
         
@@ -147,6 +201,15 @@ namespace hangmanGame.Properties {
         public static string ChangePasswordMessageTitle {
             get {
                 return ResourceManager.GetString("ChangePasswordMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Check.
+        /// </summary>
+        public static string Check_Button {
+            get {
+                return ResourceManager.GetString("Check_Button", resourceCulture);
             }
         }
         
@@ -205,6 +268,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Date and Hour.
+        /// </summary>
+        public static string DateHour {
+            get {
+                return ResourceManager.GetString("DateHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Delete.
         /// </summary>
         public static string DeleteAccount_Button {
@@ -255,6 +327,15 @@ namespace hangmanGame.Properties {
         public static string EmailNotFoundDetails {
             get {
                 return ResourceManager.GetString("EmailNotFoundDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a English.
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
             }
         }
         
@@ -331,11 +412,30 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-9)..
+        ///   Busca una cadena traducida similar a Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-15)..
         /// </summary>
         public static string ErrorPassword {
             get {
                 return ResourceManager.GetString("ErrorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Go out.
+        /// </summary>
+        public static string GoOut_Button {
+            get {
+                return ResourceManager.GetString("GoOut_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a EXPRESSIONS OF HATE 
+        ///Racism, sexism, homophobia, etc..
+        /// </summary>
+        public static string HateMotive {
+            get {
+                return ResourceManager.GetString("HateMotive", resourceCulture);
             }
         }
         
@@ -412,6 +512,24 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please tell us the reasons why you want to report this player..
+        /// </summary>
+        public static string IndicateReport {
+            get {
+                return ResourceManager.GetString("IndicateReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Language: .
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Last Name: .
         /// </summary>
         public static string LastName {
@@ -430,11 +548,38 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You have hanged yourself.
+        /// </summary>
+        public static string LostGame {
+            get {
+                return ResourceManager.GetString("LostGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a In the next one be faster.
+        /// </summary>
+        public static string LostMessage {
+            get {
+                return ResourceManager.GetString("LostMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please check your email to confirm your email and continue with the account creation process..
         /// </summary>
         public static string MessageConfirmation {
             get {
                 return ResourceManager.GetString("MessageConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mistakes:.
+        /// </summary>
+        public static string Mistakes {
+            get {
+                return ResourceManager.GetString("Mistakes", resourceCulture);
             }
         }
         
@@ -547,6 +692,24 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please wait for the current game to finish to play a new one..
+        /// </summary>
+        public static string NoOpenMatchMessage {
+            get {
+                return ResourceManager.GetString("NoOpenMatchMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a OFFENSIVE OR INAPPROPRIATE NAME.
+        /// </summary>
+        public static string OffensiveMotive {
+            get {
+                return ResourceManager.GetString("OffensiveMotive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password: .
         /// </summary>
         public static string Password {
@@ -597,6 +760,15 @@ namespace hangmanGame.Properties {
         public static string Player {
             get {
                 return ResourceManager.GetString("Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Points Earned: .
+        /// </summary>
+        public static string PointsEarned {
+            get {
+                return ResourceManager.GetString("PointsEarned", resourceCulture);
             }
         }
         
@@ -664,11 +836,74 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please remember that 10 reports will lock your account..
+        /// </summary>
+        public static string ReminderReport {
+            get {
+                return ResourceManager.GetString("ReminderReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Repeated Data.
         /// </summary>
         public static string RepeatedDataMessageTitle {
             get {
                 return ResourceManager.GetString("RepeatedDataMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Report.
+        /// </summary>
+        public static string Report {
+            get {
+                return ResourceManager.GetString("Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Report.
+        /// </summary>
+        public static string Report_Button {
+            get {
+                return ResourceManager.GetString("Report_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a !.
+        /// </summary>
+        public static string ReportIcono_Button {
+            get {
+                return ResourceManager.GetString("ReportIcono_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reports.
+        /// </summary>
+        public static string ReportList_Button {
+            get {
+                return ResourceManager.GetString("ReportList_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The player cannot be reported. Please try again later..
+        /// </summary>
+        public static string ReportPlayerErrorMessage {
+            get {
+                return ResourceManager.GetString("ReportPlayerErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The player was successfully reported..
+        /// </summary>
+        public static string ReportPlayerMessage {
+            get {
+                return ResourceManager.GetString("ReportPlayerMessage", resourceCulture);
             }
         }
         
@@ -709,6 +944,51 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sound: .
+        /// </summary>
+        public static string Sound {
+            get {
+                return ResourceManager.GetString("Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Spanish.
+        /// </summary>
+        public static string Spanish {
+            get {
+                return ResourceManager.GetString("Spanish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Start.
+        /// </summary>
+        public static string Start_Button {
+            get {
+                return ResourceManager.GetString("Start_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a List of reports.
+        /// </summary>
+        public static string TileReportList {
+            get {
+                return ResourceManager.GetString("TileReportList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Time: .
+        /// </summary>
+        public static string Time {
+            get {
+                return ResourceManager.GetString("Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Change Password.
         /// </summary>
         public static string TitleChangePassword {
@@ -745,6 +1025,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Game Over.
+        /// </summary>
+        public static string TitleGameOver {
+            get {
+                return ResourceManager.GetString("TitleGameOver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Log in.
         /// </summary>
         public static string TitleLogIn {
@@ -754,11 +1043,29 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lost Game.
+        /// </summary>
+        public static string TitleLostGame {
+            get {
+                return ResourceManager.GetString("TitleLostGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Lost My Password.
         /// </summary>
         public static string TitleLostMyPassword {
             get {
                 return ResourceManager.GetString("TitleLostMyPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Match.
+        /// </summary>
+        public static string TitleMatch {
+            get {
+                return ResourceManager.GetString("TitleMatch", resourceCulture);
             }
         }
         
@@ -790,6 +1097,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Report Player.
+        /// </summary>
+        public static string TitleRegisterReportMessage {
+            get {
+                return ResourceManager.GetString("TitleRegisterReportMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create Account.
         /// </summary>
         public static string TitleRegistry {
@@ -799,11 +1115,56 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Report a player.
+        /// </summary>
+        public static string TitleReport {
+            get {
+                return ResourceManager.GetString("TitleReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Setting.
+        /// </summary>
+        public static string TitleSetting {
+            get {
+                return ResourceManager.GetString("TitleSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Waiting room.
+        /// </summary>
+        public static string TitleWaitingRoom {
+            get {
+                return ResourceManager.GetString("TitleWaitingRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Welcome.
         /// </summary>
         public static string TitleWelcome {
             get {
                 return ResourceManager.GetString("TitleWelcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Type Report.
+        /// </summary>
+        public static string TypeReport {
+            get {
+                return ResourceManager.GetString("TypeReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Choose a type of report..
+        /// </summary>
+        public static string TypeReportErrorMessage {
+            get {
+                return ResourceManager.GetString("TypeReportErrorMessage", resourceCulture);
             }
         }
         
@@ -826,6 +1187,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Validate your Email:.
         /// </summary>
         public static string ValidateEmail {
@@ -844,6 +1214,43 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a VERBAL ABUSE
+        ///Offensive language, Harassment.
+        /// </summary>
+        public static string VerbalMotive {
+            get {
+                return ResourceManager.GetString("VerbalMotive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Waiting for other players....
+        /// </summary>
+        public static string WaitingPlayers {
+            get {
+                return ResourceManager.GetString("WaitingPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Winner: .
+        /// </summary>
+        public static string Winner {
+            get {
+                return ResourceManager.GetString("Winner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Great you saved yourself.
+        /// </summary>
+        public static string WinnerMessage {
+            get {
+                return ResourceManager.GetString("WinnerMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Wrong credentials.
         /// </summary>
         public static string WrongCredentials {
@@ -853,7 +1260,7 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Wrong letters:.
+        ///   Busca una cadena traducida similar a Letter:.
         /// </summary>
         public static string WrongLetters {
             get {

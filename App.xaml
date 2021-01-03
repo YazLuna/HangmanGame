@@ -21,6 +21,20 @@
             <Setter Property="Label.FontSize" Value="33"></Setter>
             <Setter Property="Label.Foreground" Value="White"></Setter>
         </Style>
+        
+        <Style x:Key="ReportStyle">
+            <Setter Property="Label.FontFamily" Value="Arial"></Setter>
+            <Setter Property="Label.FontSize" Value="13"></Setter>
+            <Setter Property="Label.HorizontalAlignment" Value="Left" />
+            <Setter Property="Label.VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="DeleteStyle">
+            <Setter Property="Label.FontFamily" Value="Arial"></Setter>
+            <Setter Property="Label.FontSize" Value="20"></Setter>
+            <Setter Property="Label.HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="Label.VerticalAlignment" Value="Top"></Setter>
+        </Style>
 
         <Style x:Key="ErrorTextStyle">
             <Setter Property="Label.HorizontalAlignment" Value="Left" />
@@ -32,13 +46,49 @@
 
         <Style x:Key="labelStyle" TargetType="{x:Type Label}">
 			<Setter Property="VerticalAlignment" Value="Top" />
-			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
 			<Setter Property="FontWeight" Value="Bold" />
 			<Setter Property="Margin" Value="0,0,0,5"/>
-			<Setter Property="Label.FontSize" Value="20"></Setter>
-            <Setter Property="Label.HorizontalContentAlignment" Value="Center"></Setter>
-		  
-		</Style>
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
+
+        <Style x:Key="GameLostTitleStyle" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="GameOverStyle" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="GameOverTextStyle" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="DarkBlue"></Setter>
+        </Style>
+
+        <Style x:Key="GameLostStyle" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="DarkBlue"></Setter>
+        </Style>
 
         <Style x:Key="textStyle" TargetType="{x:Type Label}">
             <Setter Property="VerticalAlignment" Value="Top" />
@@ -57,11 +107,30 @@
 			<Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Padding" Value="10,10,10,10"></Setter>
 			<Setter Property="Margin" Value="5,5,5,5" />
-			<Setter Property="Background" Value="#FF21007A"></Setter>
-			
-		</Style>
+            <Setter Property="Background" Value="#FF21007A"></Setter>
+        </Style>
 
-        <Style x:Key="buttonRegister" TargetType="{x:Type Button}">
+        <Style x:Key="buttonReport" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Background" Value="DarkViolet"></Setter>
+        </Style>
+
+        <Style x:Key="listViewReport" TargetType="{x:Type ListView}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Arial"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="Background" Value="Lavender"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        </Style>
+
+        <Style x:Key="buttonGreen" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="FontSize" Value="20"></Setter>
@@ -83,7 +152,7 @@
 
         </Style>
 
-        <Style x:Key="buttonCancel" TargetType="{x:Type Button}">
+        <Style x:Key="buttonGray" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"></Setter>

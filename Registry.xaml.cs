@@ -4,11 +4,12 @@ using System.ServiceModel;
 using System.Windows;
 using System.Windows.Media;
 using System.Text.RegularExpressions;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Registry : Window, MessageService.IPlayerManagerCallback
+	public partial class Registry : Window, IPlayerManagerCallback
 	{
 		private bool isValidName;
 		private bool isValidLastName;
@@ -20,39 +21,35 @@ namespace hangmanGame
 		{
 			InitializeComponent();
 		}
-
 		public void PlayerResponseBoolean(bool response)
 		{
 			responseBoolean = response;
 		}
-
-		private void Password_MouseEnter(Object sender, MouseEventArgs e)
+		private void Password_MouseEnter(Object sender, MouseEventArgs mouseEventArgs)
 		{
-
 			tbPassword.Visibility = Visibility.Visible;
 			pbPassword.Visibility = Visibility.Hidden;
 			tbPassword.Text = pbPassword.Password;
 		}
-		private void Password_MouseLeave(Object sender, MouseEventArgs e)
+		private void Password_MouseLeave(Object sender, MouseEventArgs mouseEventArgs)
 		{
 			tbPassword.Visibility = Visibility.Hidden;
 			pbPassword.Visibility = Visibility.Visible;
 			tbPassword.Text = String.Empty;
 		}
-		private void ConfirmationPassword_MouseEnter(Object sender2, MouseEventArgs e2)
+		private void ConfirmationPassword_MouseEnter(Object sender, MouseEventArgs mouseEventArgs)
 		{
 			tbConfirmationPassword.Visibility = Visibility.Visible;
 			pbConfirmationPassword.Visibility = Visibility.Hidden;
 			tbConfirmationPassword.Text = pbConfirmationPassword.Password;
 		}
-		private void ConfirmationPassword_MouseLeave(Object sender2, MouseEventArgs e2)
+		private void ConfirmationPassword_MouseLeave(Object sender, MouseEventArgs mouseEventArgs)
 		{
 			tbConfirmationPassword.Visibility = Visibility.Hidden;
 			pbConfirmationPassword.Visibility = Visibility.Visible;
 			tbConfirmationPassword.Text = String.Empty;
 		}
-
-		private void Error_MouseEnter(Object objectImg, MouseEventArgs e2)
+		private void Error_MouseEnter(Object objectImg, MouseEventArgs mouseEventArgs)
 		{
 			bool isImgName;
 			isImgName = objectImg.Equals(imgErrorName);
@@ -101,7 +98,7 @@ namespace hangmanGame
 				}
 			}
 		}
-		private void Error_MouseLeave(Object objectImg, MouseEventArgs e2)
+		private void Error_MouseLeave(Object objectImg, MouseEventArgs mouseEventArgs)
 		{
 			bool isImgName;
 			isImgName = objectImg.Equals(imgErrorName);
@@ -149,45 +146,39 @@ namespace hangmanGame
 					}
 				}
 			}
-			
 		}
-
-
-		private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs e)
+		private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
 		{
-			bool resultado = Regex.IsMatch(e.Text, @"^[a-zA-Z]+${3,50}");
+			bool resultado = Regex.IsMatch(textCompositionEvent.Text, @"^[a-zA-Z]+${3,50}");
 			if (!resultado)
 			{
-				e.Handled = true;
+				textCompositionEvent.Handled = true;
 			}
 			else
 			{
-				e.Handled = false;
+				textCompositionEvent.Handled = false;
 			}
 		}
-
-		private void prohibitSpace(object sender, KeyEventArgs e)
+		private void prohibitSpace(object sender, KeyEventArgs keyEvent)
 		{
-			if (e.Key == Key.Space)
-				e.Handled = true;
+			if (keyEvent.Key == Key.Space)
+				keyEvent.Handled = true;
 		}
-
-		private void prohibitAllowSpecialChar(object sender, KeyEventArgs e)
+		private void prohibitAllowSpecialChar(object sender, KeyEventArgs keyEvent)
 		{
-			if (((e.Key < Key.NumPad0) || (e.Key > Key.NumPad9)) && ((e.Key < Key.A) || (e.Key > Key.Z)))
+			if (((keyEvent.Key < Key.NumPad0) || (keyEvent.Key > Key.NumPad9)) && ((keyEvent.Key < Key.A) || (keyEvent.Key > Key.Z)) &&
+				((keyEvent.Key < Key.D0) || (keyEvent.Key > Key.D9)))
 			{
-				e.Handled = true;
+				keyEvent.Handled = true;
 			}
 		}
-
-		private void Cancel(object sender, RoutedEventArgs e)
+		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{
 			MainWindow main = new MainWindow();
 			main.Show();
 			this.Close();
 		}
-
-		private void RegisterPlayer(object sender, RoutedEventArgs e)
+		private void RegisterPlayer(object sender, RoutedEventArgs routedEventArgs)
 		{
 			bool isValidData = ValidateDataPlaye();
 			if (isValidData)
@@ -199,19 +190,19 @@ namespace hangmanGame
 				string password = Security.Encrypt(pbPassword.Password);
 				int codeConfirmation = ValidationData.GenerateConfirmationCode();
 
-				MessageService.ServiceAccount account = new MessageService.ServiceAccount();
+				ServiceAccount account = new ServiceAccount();
 				account.PasswordAccount = password;
 				account.Email = email;
 				account.ConfirmationCode = codeConfirmation;
 
-				MessageService.ServicePlayer accountPlayer = new MessageService.ServicePlayer();
+				ServicePlayer accountPlayer = new ServicePlayer();
 				accountPlayer.NickName = nickname;
-				accountPlayer.NamePlayer = name;
-				accountPlayer.LastName = lastName;
+				accountPlayer.NamePlayer = ValidationData.DeleteSpaceWord(name);
+				accountPlayer.LastName = ValidationData.DeleteSpaceWord(lastName);
 				accountPlayer.StatusPlayer = "Active";
 
 				InstanceContext instanceContext = new InstanceContext(this);
-				MessageService.PlayerManagerClient validatePlayer = new MessageService.PlayerManagerClient(instanceContext);
+				PlayerManagerClient validatePlayer = new PlayerManagerClient(instanceContext);
 				validatePlayer.SearchNickNamePlayer(nickname);
 				bool isValidRepeatNickName = responseBoolean;
 				validatePlayer.SearchEmailPlayer(email);
@@ -219,19 +210,19 @@ namespace hangmanGame
 
 				if(isValidRepeatEmail && isValidRepeatNickName)
                 {
-					MessageBox.Show(Properties.Resources.RegisteredEmailNickNameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+					OpenMessageBox(Properties.Resources.RegisteredEmailNickNameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if (isValidRepeatEmail)
                     {
-						MessageBox.Show(Properties.Resources.RegisteredEmailMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+						OpenMessageBox(Properties.Resources.RegisteredEmailMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
 					}
                     else
                     {
                         if (isValidRepeatNickName)
                         {
-							MessageBox.Show(Properties.Resources.RegisteredNickNameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+							OpenMessageBox(Properties.Resources.RegisteredNickNameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
 						}
                         else
                         {
@@ -247,11 +238,13 @@ namespace hangmanGame
 			}
 			else
 			{
-				MessageBox.Show(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectDataMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+				OpenMessageBox(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
 			}
-
 		}
-
+		private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
+		{
+			MessageBox.Show(textMessage, titleMessage, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, messageBoxImage);
+		}
 		private bool ValidateDataPlaye()
 		{
 			bool isValidDataPlayer = false;
@@ -288,7 +281,6 @@ namespace hangmanGame
 			}
 			return isValidDataPlayer;
 		}
-
 		private void ValidateName()
 		{
 			isValidName = ValidationData.ValidateNameComplete(tbName.Text);
@@ -302,7 +294,6 @@ namespace hangmanGame
 				imgErrorName.Visibility = Visibility.Visible;
 			}
 		}
-
 		private void ValidateLastName()
 		{
 			isValidLastName = ValidationData.ValidateNameComplete(tbLastName.Text);
@@ -316,7 +307,6 @@ namespace hangmanGame
 				imgErrorLastName.Visibility = Visibility.Visible;
 			}
 		}
-
 		private void ValidateEmail()
 		{
 			isValidEmail = ValidationData.ValidateEmail(tbEmail.Text);
@@ -330,7 +320,6 @@ namespace hangmanGame
 				imgErrorEmail.Visibility = Visibility.Visible;
 			}
 		}
-
 		private void ValidatePassword()
 		{
 			bool isValidatePassword;
@@ -370,7 +359,6 @@ namespace hangmanGame
 				isValidPassword = true;
 			}
 		}
-
 		private void ValidateNickName()
 		{
 			isValidNickName = ValidationData.ValidateNickName(tbNickName.Text);

@@ -1,16 +1,16 @@
 ﻿
 using System.Windows;
 using System.ServiceModel;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class DeleteAccount : Window, MessageService.IPlayerManagerCallback
+    public partial class DeleteAccount : Window, IPlayerManagerCallback
     {
-        private static MessageService.ServiceAccount account;
-        private static MessageService.ServicePlayer player;
+        private static ServiceAccount account;
+        private static ServicePlayer player;
         private bool responseBoolean;
-
         public DeleteAccount()
         {
             InitializeComponent();
@@ -19,45 +19,45 @@ namespace hangmanGame
         {
             responseBoolean = response;
         }
-        public void AccountReceived(MessageService.ServiceAccount accountReceived)
+        public void AccountReceived(ServiceAccount accountReceived)
         {
             account = accountReceived;
             lEmail.Content = account.Email;
             string password = Security.Decrypt(account.PasswordAccount);
             lPassword.Content = password;
         }
-
-        public void PlayerReceived(MessageService.ServicePlayer playerReceived)
+        public void PlayerReceived(ServicePlayer playerReceived)
         {
             player = playerReceived;
             lName.Content = player.NamePlayer;
             lLastName.Content = player.LastName;
             lNickName.Content = player.NickName;
         }
-
-        private void Delete(object sender, RoutedEventArgs e) {
+        private void DeleteAccountPlayer(object sender, RoutedEventArgs routedEventArgs) {
             InstanceContext instanceContext = new InstanceContext(this);
-            MessageService.PlayerManagerClient playerManager = new MessageService.PlayerManagerClient(instanceContext);
+            PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
             playerManager.DeleteAccountPlayer(player.NickName);
             bool isDeletePlayer = responseBoolean;
             if (isDeletePlayer)
             {
-                MessageBox.Show(Properties.Resources.DeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                OpenMessageBox(Properties.Resources.DeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
                 MainWindow main = new MainWindow();
                 main.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show(Properties.Resources.NoDeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                OpenMessageBox(Properties.Resources.NoDeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
             }
-            
         }
-
-        private void Cancel(object sender, RoutedEventArgs e)
+        private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
+        {
+            MessageBox.Show(textMessage, titleMessage, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, messageBoxImage);
+        }
+        private void Exit(object sender, RoutedEventArgs routedEventArgs)
         {
             ModifyAccount modifyAccount = new ModifyAccount();
-            modifyAccount.InicializateDataPlayer();
+            modifyAccount.InitializeDataPlayer();
             modifyAccount.Show();
             this.Close();
         }

@@ -174,7 +174,36 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="NetTcpBinding_IPlayManager_policy">
+  <wsp:Policy wsu:Id="NetTcpBinding_IPlayConnect_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IReportManager_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -397,17 +426,71 @@
   <wsdl:message name="IInformationPlayerManager_PlayerResponseInformation_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerResponseInformationResponse" />
   </wsdl:message>
-  <wsdl:message name="IPlayManager_SearchSentence_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchSentence" />
+  <wsdl:message name="IPlayConnect_PlayerConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerConnect" />
   </wsdl:message>
-  <wsdl:message name="IPlayManager_SearchSentence_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchSentenceResponse" />
+  <wsdl:message name="IPlayConnect_PlayerConnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerConnectResponse" />
   </wsdl:message>
-  <wsdl:message name="IPlayManager_SentenceFound_OutputCallbackMessage">
+  <wsdl:message name="IPlayConnect_PlayerDisconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerDisconnect" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerDisconnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerDisconnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_StartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartGame" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_StartGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_VerifyGameStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyGameStart" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_VerifyGameStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyGameStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerConnectList_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerConnectList" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerConnectList_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerConnectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_IsStarGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsStarGame" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_IsStarGame_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsStarGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_SentenceFound_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:SentenceFound" />
   </wsdl:message>
-  <wsdl:message name="IPlayManager_SentenceFound_InputCallbackMessage">
+  <wsdl:message name="IPlayConnect_SentenceFound_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:SentenceFoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ReportPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ReportPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ReportList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportList" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ReportList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ResponseReportPlayer_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ResponseReportPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ResponseReportPlayer_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ResponseReportPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ResponseReportList_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ResponseReportList" />
+  </wsdl:message>
+  <wsdl:message name="IReportManager_ResponseReportList_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ResponseReportListResponse" />
   </wsdl:message>
   <wsdl:portType name="IHangmanGameService">
     <wsdl:operation name="SendOperation">
@@ -545,14 +628,52 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IInformationPlayerManager/PlayerResponseInformationResponse" message="tns:IInformationPlayerManager_PlayerResponseInformation_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:portType name="IPlayManager">
-    <wsdl:operation name="SearchSentence">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPlayManager/SearchSentence" message="tns:IPlayManager_SearchSentence_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPlayManager/SearchSentenceResponse" message="tns:IPlayManager_SearchSentence_OutputMessage" />
+  <wsdl:portType name="IPlayConnect">
+    <wsdl:operation name="PlayerConnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnect" message="tns:IPlayConnect_PlayerConnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectResponse" message="tns:IPlayConnect_PlayerConnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerDisconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerDisconnect" message="tns:IPlayConnect_PlayerDisconnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerDisconnectResponse" message="tns:IPlayConnect_PlayerDisconnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/StartGame" message="tns:IPlayConnect_StartGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/StartGameResponse" message="tns:IPlayConnect_StartGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyGameStart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/VerifyGameStart" message="tns:IPlayConnect_VerifyGameStart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/VerifyGameStartResponse" message="tns:IPlayConnect_VerifyGameStart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerConnectList">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectList" message="tns:IPlayConnect_PlayerConnectList_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectListResponse" message="tns:IPlayConnect_PlayerConnectList_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsStarGame">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/IsStarGame" message="tns:IPlayConnect_IsStarGame_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/IsStarGameResponse" message="tns:IPlayConnect_IsStarGame_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="SentenceFound">
-      <wsdl:output wsaw:Action="http://tempuri.org/IPlayManager/SentenceFound" message="tns:IPlayManager_SentenceFound_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IPlayManager/SentenceFoundResponse" message="tns:IPlayManager_SentenceFound_InputCallbackMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/SentenceFound" message="tns:IPlayConnect_SentenceFound_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/SentenceFoundResponse" message="tns:IPlayConnect_SentenceFound_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IReportManager">
+    <wsdl:operation name="ReportPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ReportPlayer" message="tns:IReportManager_ReportPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ReportPlayerResponse" message="tns:IReportManager_ReportPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ReportList" message="tns:IReportManager_ReportList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ReportListResponse" message="tns:IReportManager_ReportList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResponseReportPlayer">
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ResponseReportPlayer" message="tns:IReportManager_ResponseReportPlayer_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ResponseReportPlayerResponse" message="tns:IReportManager_ResponseReportPlayer_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResponseReportList">
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ResponseReportList" message="tns:IReportManager_ResponseReportList_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ResponseReportListResponse" message="tns:IReportManager_ResponseReportList_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IHangmanGameService" type="tns:IHangmanGameService">
@@ -858,11 +979,56 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="NetTcpBinding_IPlayManager" type="tns:IPlayManager">
-    <wsp:PolicyReference URI="#NetTcpBinding_IPlayManager_policy" />
+  <wsdl:binding name="NetTcpBinding_IPlayConnect" type="tns:IPlayConnect">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPlayConnect_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="SearchSentence">
-      <soap12:operation soapAction="http://tempuri.org/IPlayManager/SearchSentence" style="document" />
+    <wsdl:operation name="PlayerConnect">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerDisconnect">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerDisconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/StartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyGameStart">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/VerifyGameStart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerConnectList">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerConnectList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStarGame">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/IsStarGame" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -871,7 +1037,47 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SentenceFound">
-      <soap12:operation soapAction="http://tempuri.org/IPlayManager/SentenceFound" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/SentenceFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IReportManager" type="tns:IReportManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IReportManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ReportPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IReportManager/ReportPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportList">
+      <soap12:operation soapAction="http://tempuri.org/IReportManager/ReportList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResponseReportPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IReportManager/ResponseReportPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResponseReportList">
+      <soap12:operation soapAction="http://tempuri.org/IReportManager/ResponseReportList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -886,7 +1092,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -895,7 +1101,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -904,7 +1110,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -913,7 +1119,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -922,7 +1128,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -931,16 +1137,25 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
-    <wsdl:port name="NetTcpBinding_IPlayManager" binding="tns:NetTcpBinding_IPlayManager">
+    <wsdl:port name="NetTcpBinding_IPlayConnect" binding="tns:NetTcpBinding_IPlayConnect">
       <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IReportManager" binding="tns:NetTcpBinding_IReportManager">
+      <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

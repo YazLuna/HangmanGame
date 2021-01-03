@@ -107,10 +107,27 @@
     <Compile Include="ChangePassword.xaml.cs">
       <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CharacterSentence.cs" />
     <Compile Include="Connected Services\MessageService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="GameOver.xaml.cs">
+      <DependentUpon>GameOver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LostGame.xaml.cs">
+      <DependentUpon>LostGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Number.cs" />
+    <Compile Include="Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportList.xaml.cs">
+      <DependentUpon>ReportList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="EmailConfirmation.xaml.cs">
       <DependentUpon>EmailConfirmation.xaml</DependentUpon>
@@ -148,7 +165,30 @@
     </Compile>
     <Compile Include="Security.cs" />
     <Compile Include="ValidationData.cs" />
+    <Compile Include="WaitingRoom.xaml.cs">
+      <DependentUpon>WaitingRoom.xaml</DependentUpon>
+    </Compile>
     <Page Include="ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameOver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LostGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lobby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaitingRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -265,38 +309,35 @@
     <Resource Include="image\iconoDeleteAccount.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MessageService\" />
+    <Resource Include="image\error.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="image\hangmanGameLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\report.png" />
+    <Resource Include="image\trophy.png" />
     <None Include="Connected Services\MessageService\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\MessageService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\MessageService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\MessageService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="image\error.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="image\playerConnect.png" />
+    <Resource Include="image\behind.png" />
+    <Content Include="image\prisoner1.mp3" />
+    <Resource Include="image\sound.png" />
     <Resource Include="image\StartGame.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="image\OneError.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="image\FiveError.png" />
     <Resource Include="image\FourError.png" />
     <Resource Include="image\SixError.png" />
     <Resource Include="image\ThreeError.png" />
     <Resource Include="image\TwoError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MessageService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

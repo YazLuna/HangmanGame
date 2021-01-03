@@ -7,12 +7,16 @@ using System.Windows;
 namespace hangmanGame
 {
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Lobby : Window, MessageService.IPlayerManagerCallback, MessageService.IInformationPlayerManagerCallback, MessageService.IPlayerScoresManagerCallback
+	public partial class Lobby : Window, IPlayConnectCallback, IInformationPlayerManagerCallback, IPlayerScoresManagerCallback
 	{
 		private static string emailAccount;
 		private static string nickname;
 		private Nullable <int> score;
 		private ServicePlayer[] servicePlayers;
+		private static ServicePlayer[] servicePlayersConnect;
+		private static bool isStartGameCurrent;
+		private ServiceSentence sentence;
+
 		public Lobby()
 		{
 			InitializeComponent();
@@ -34,11 +38,6 @@ namespace hangmanGame
 			servicePlayers = responseList;
 		}
 
-		public void PlayerResponseBoolean(bool response)
-		{
-			Console.WriteLine(response);
-		}
-
 		private void LogOut(object sender, RoutedEventArgs e)
 		{
 			MainWindow main = new MainWindow();
@@ -48,7 +47,11 @@ namespace hangmanGame
 
 		private void ManageSettings(object sender, RoutedEventArgs e)
 		{
-			
+			Setting setting = new Setting();
+			setting.InitializeComboBox();
+			setting.InitializeValueSound();
+			setting.Show();
+			this.Close();
 		}
 
 		private void UpdateAccount(object sender, RoutedEventArgs e)
@@ -59,17 +62,29 @@ namespace hangmanGame
             modifyAccount.Show();
             this.Close();
         }
+		public void NickNameReceived(string nicknamePlayer)
+		{
+			nickname = nicknamePlayer;
+		}
 
 		private void Play(object sender, RoutedEventArgs e)
 		{
-			Play play = new Play();
-			play.EmailReceived(emailAccount);
-			play.NickNameReceived(nickname);
-			play.ConnectToChat();
-			play.SearchSentence();
-			play.ColocateSentence();
-			play.Show();
-			this.Close();
+			InstanceContext instanceContext = new InstanceContext(this);
+			MessageService.PlayConnectClient playConnectClient = new MessageService.PlayConnectClient(instanceContext);
+			playConnectClient.VerifyGameStart();
+			if (isStartGameCurrent)
+            {
+				MessageBox.Show(Properties.Resources.NoOpenMatchMessage, Properties.Resources.TitleMatch, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+			}
+            else
+            {
+				WaitingRoom waitingRoom = new WaitingRoom();
+				waitingRoom.NickNameReceived(nickname);
+				waitingRoom.EmailReceived(emailAccount);
+				waitingRoom.ObtainListPlayer();
+				waitingRoom.Show();
+				this.Close();
+			}	
 		}
 
 		public void ColocateBestScores ()
@@ -84,7 +99,6 @@ namespace hangmanGame
             }
 
 		}
-
 		public void ColocatePersonalInformation()
         {
 			InstanceContext instanceContext = new InstanceContext(this);
@@ -92,6 +106,20 @@ namespace hangmanGame
 			personalInformation.SearchInformationPlayer(emailAccount);
 			lbNickname.Content = nickname;
 			lbScore.Content = score;
+		}
+        public void PlayerConnectList(ServicePlayer[] servicePlayerList)
+        {
+			servicePlayersConnect = servicePlayerList;
+
+		}
+        public void IsStarGame(bool isStarGame)
+        {
+			isStartGameCurrent = isStarGame;
+		}
+        public void SentenceFound(ServiceSentence responseSentence)
+        {
+			sentence = responseSentence;
+
 		}
     }
 }

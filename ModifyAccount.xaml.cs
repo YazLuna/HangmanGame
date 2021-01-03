@@ -4,42 +4,38 @@ using System.ServiceModel;
 using System.Windows;
 using System.Windows.Media;
 using System.Text.RegularExpressions;
-
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class ModifyAccount : Window, MessageService.IPlayerManagerCallback, MessageService.IAccountManagerCallback
+    public partial class ModifyAccount : Window, IPlayerManagerCallback, IAccountManagerCallback
     {
-        private static MessageService.ServiceAccount account;
-        private static MessageService.ServicePlayer player;
+        private static ServiceAccount account;
+        private static ServicePlayer player;
         private static string emailAccount;
         private bool responseBoolean;
         private bool isValidData;
         private bool isUpdateEmail;
         private bool isUpdateData;
         private string emailEdit;
-        private MessageService.ServicePlayer playerEdit;
+        private ServicePlayer playerEdit;
         public ModifyAccount()
         {
             InitializeComponent();
         }
-
-        public void AccountResponseAccount(MessageService.ServiceAccount serviceAccount)
+        public void AccountResponseAccount(ServiceAccount serviceAccount)
         {
             account = serviceAccount;
         }
-
-        public void AccountResponsePlayer(MessageService.ServicePlayer servicePlayer)
+        public void AccountResponsePlayer(ServicePlayer servicePlayer)
         {
             player = servicePlayer;
         }
-
         public void PlayerResponseBoolean(bool response)
         {
             responseBoolean = response;
         }
-
         public void EmailReceived (string emailReceive)
         {
             emailAccount = emailReceive;
@@ -47,21 +43,19 @@ namespace hangmanGame
         public void AccountReceived()
         {
             InstanceContext instanceContext = new InstanceContext(this);
-            MessageService.AccountManagerClient getPlayer = new MessageService.AccountManagerClient(instanceContext);
+            AccountManagerClient getPlayer = new AccountManagerClient(instanceContext);
             getPlayer.SearchAccount(emailAccount);
             string nickName = account.NickName;
             getPlayer.SearchPlayer(nickName);
-            InicializateDataPlayer();
+            InitializeDataPlayer();
         }
-
-        public void InicializateDataPlayer()
+        public void InitializeDataPlayer()
         {
             tbEmail.Text = account.Email;
             tbName.Text = player.NamePlayer;
             tbLastName.Text = player.LastName;
         }
-
-        private void Error_MouseEnter(Object objectImg, MouseEventArgs e2)
+        private void Error_MouseEnter(Object objectImg, MouseEventArgs mouseEventArgs)
         {
             bool isImgName;
             isImgName = objectImg.Equals(imgErrorName);
@@ -83,7 +77,7 @@ namespace hangmanGame
                 }
             }
         }
-        private void Error_MouseLeave(Object objectImg, MouseEventArgs e2)
+        private void Error_MouseLeave(Object objectImg, MouseEventArgs mouseEventArgs)
         {
             bool isImgName;
             isImgName = objectImg.Equals(imgErrorName);
@@ -106,8 +100,7 @@ namespace hangmanGame
             }
 
         }
-
-        private void Cancel(object sender, RoutedEventArgs e)
+        private void Cancel(object sender, RoutedEventArgs routedEventArgs)
         {
             Lobby lobby = new Lobby();
             lobby.EmailReceived(emailAccount);
@@ -116,16 +109,23 @@ namespace hangmanGame
             lobby.Show();
             this.Close();
         }
-
-        private void ChangePassword(object sender, RoutedEventArgs e)
+        private void ReportList(object sender, RoutedEventArgs routedEventArgs)
+        {
+            ReportList reportList = new ReportList();
+            reportList.NickNameReceived(player.NickName);
+            reportList.EmailReceived(account.Email);
+            reportList.ColocateReports();
+            reportList.Show();
+            this.Close();
+        }
+        private void ChangePassword(object sender, RoutedEventArgs routedEventArgs)
         {
             ChangePassword changePassword = new ChangePassword();
             changePassword.AccountReceived(account);
             changePassword.Show();
             this.Close();
         }
-
-        private void Delete(object sender, RoutedEventArgs e)
+        private void Delete(object sender, RoutedEventArgs routedEventArgs)
         {
             DeleteAccount deleteAccount = new DeleteAccount();
             deleteAccount.AccountReceived(account);
@@ -133,26 +133,23 @@ namespace hangmanGame
             deleteAccount.Show();
             this.Close();
         }
-
-        private void Modify(object sender, RoutedEventArgs e)
+        private void Modify(object sender, RoutedEventArgs routedEventArgs)
         {
-            playerEdit = new MessageService.ServicePlayer();
+            playerEdit = new ServicePlayer();
             emailEdit = null;
             ValidateDataAccount();
-            if(isUpdateData || emailEdit!= null)
+            if(isUpdateData || !String.IsNullOrEmpty(emailEdit))
             {
                 if (isValidData)
                 {
                     InstanceContext instanceContext = new InstanceContext(this);
-                    MessageService.PlayerManagerClient playerManager = new MessageService.PlayerManagerClient(instanceContext);
+                    PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
                     bool isValidRepeatEmail = false;
                     if (isUpdateEmail)
                     {
                         playerManager.SearchRepeatEmailAccount(emailEdit,account.IdAccount);
                         isValidRepeatEmail = responseBoolean;
                     }
-                   
-                    string message= "";
                     bool updateEmail = false;
                     if(isUpdateEmail && !isValidRepeatEmail)
                     {
@@ -167,13 +164,12 @@ namespace hangmanGame
                     }
                     if (updatePlayer || updateEmail)
                     {
-                        message = Properties.Resources.ModifyAccountMessage;
+                        OpenMessageBox(Properties.Resources.ModifyAccountMessage, Properties.Resources.ModifyAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
                     }
                     else
                     {
-                        message = Properties.Resources.NoModifyAccountMessage;
+                        OpenMessageBox(Properties.Resources.NoModifyAccountMessage, Properties.Resources.ModifyAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
                     }
-                    MessageBox.Show(message,Properties.Resources.ModifyAccountMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
                     Lobby lobby = new Lobby();
                     if (isUpdateEmail)
                     {
@@ -186,17 +182,19 @@ namespace hangmanGame
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                    OpenMessageBox(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
                     isUpdateData = false;
                 }
             }
             else
             {
-                MessageBox.Show(Properties.Resources.ModifyLeastDataMessage, Properties.Resources.ModifyLeastDataMessageTile, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+                OpenMessageBox(Properties.Resources.ModifyLeastDataMessage, Properties.Resources.ModifyLeastDataMessageTile, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
             }
-
         }
-
+        private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
+        {
+            MessageBox.Show(textMessage, titleMessage, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, messageBoxImage);
+        }
         private void ValidateDataAccount()
         {
             isValidData = true;
@@ -218,8 +216,6 @@ namespace hangmanGame
                 ValidateEmail();
             }
         }
-
-
         private void ValidateName()
         {
             bool isValidName;
@@ -228,7 +224,7 @@ namespace hangmanGame
             if (isValidName)
             {
                 tbName.BorderBrush = Brushes.Green;
-                playerEdit.NamePlayer = tbName.Text;
+                playerEdit.NamePlayer = ValidationData.DeleteSpaceWord(tbName.Text);
             }
             else
             {
@@ -238,7 +234,6 @@ namespace hangmanGame
             }
             isUpdateData = true;
         }
-
         private void ValidateLastName()
         {
             bool isValidLastName;
@@ -247,7 +242,7 @@ namespace hangmanGame
             if (isValidLastName)
             {
                 tbLastName.BorderBrush = Brushes.Green;
-                playerEdit.LastName = tbLastName.Text;
+                playerEdit.LastName = ValidationData.DeleteSpaceWord(tbLastName.Text);
             }
             else
             {
@@ -257,7 +252,6 @@ namespace hangmanGame
             }
             isUpdateData = true;
         }
-
         private void ValidateEmail()
         {
             bool isValidEmail;
@@ -276,22 +270,21 @@ namespace hangmanGame
             }
             emailEdit = tbEmail.Text;
         }
-        private void prohibitSpace(object sender, KeyEventArgs e)
+        private void prohibitSpace(object sender, KeyEventArgs keyEvent)
         {
-            if (e.Key == Key.Space)
-                e.Handled = true;
+            if (keyEvent.Key == Key.Space)
+                keyEvent.Handled = true;
         }
-
-        private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs e)
+        private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
         {
-            bool resultado = Regex.IsMatch(e.Text, @"^[a-zA-Z]+${3,50}");
+            bool resultado = Regex.IsMatch(textCompositionEvent.Text, @"^[a-zA-Z]+${3,50}");
             if (!resultado)
             {
-                e.Handled = true;
+                textCompositionEvent.Handled = true;
             }
             else
             {
-                e.Handled = false;
+                textCompositionEvent.Handled = false;
             }
         }
     }
