@@ -38,7 +38,7 @@
             <Button Name="btnLogOuft" Grid.Column="0" Content="{x:Static p:Resources.LogOut_Button}" Style="{StaticResource buttonGray}" Click="LogOut" Width="182" Height="60" Margin="59,196,59,-135"/>
             <DataGrid Name="dgBestScores" IsReadOnly="True" HorizontalAlignment="Left" Height="242" VerticalAlignment="Top" Width="406" Margin="35,37,0,-159" Grid.Column="1" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="dcPosition" Width ="90" Header="{x:Static p:Resources.Position}" />
+                    <DataGridTextColumn x:Name="dcPosition" Width ="80" Header="{x:Static p:Resources.Position}" Binding="{Binding Position}" />
                     <DataGridTextColumn x:Name="dcPlayer" Width="200" Header="{x:Static p:Resources.Player}" Binding="{Binding NickName}" />
                     <DataGridTextColumn x:Name="dcScore" Header="{x:Static p:Resources.AccumulatedScore}" Binding="{Binding ScoreObtained}" />
                 </DataGrid.Columns>

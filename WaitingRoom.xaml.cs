@@ -16,6 +16,7 @@ namespace hangmanGame
         private static bool isStartGameCurrent;
         private ServiceSentence sentence;
         private bool isClosing = true;
+        private ServiceWinner serviceWinner = new ServiceWinner();
         public WaitingRoom()
         {
             InitializeComponent();
@@ -106,6 +107,11 @@ namespace hangmanGame
         {
             base.OnClosing(eventCancel);
             eventCancel.Cancel = isClosing;
+        }
+
+        public void PlayerWinner(ServiceWinner playerWinner)
+        {
+            serviceWinner = playerWinner; 
         }
     }
 }
