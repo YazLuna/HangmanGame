@@ -450,6 +450,12 @@
   <wsdl:message name="IPlayConnect_VerifyGameStart_OutputMessage">
     <wsdl:part name="parameters" element="tns:VerifyGameStartResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlayConnect_GameOver_InputMessage">
+    <wsdl:part name="parameters" element="tns:GameOver" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_GameOver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GameOverResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlayConnect_PlayerConnectList_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerConnectList" />
   </wsdl:message>
@@ -467,6 +473,12 @@
   </wsdl:message>
   <wsdl:message name="IPlayConnect_SentenceFound_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:SentenceFoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerWinner_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerWinner" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerWinner_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerWinnerResponse" />
   </wsdl:message>
   <wsdl:message name="IReportManager_ReportPlayer_InputMessage">
     <wsdl:part name="parameters" element="tns:ReportPlayer" />
@@ -645,6 +657,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/VerifyGameStart" message="tns:IPlayConnect_VerifyGameStart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/VerifyGameStartResponse" message="tns:IPlayConnect_VerifyGameStart_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GameOver">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/GameOver" message="tns:IPlayConnect_GameOver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/GameOverResponse" message="tns:IPlayConnect_GameOver_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PlayerConnectList">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectList" message="tns:IPlayConnect_PlayerConnectList_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectListResponse" message="tns:IPlayConnect_PlayerConnectList_InputCallbackMessage" />
@@ -656,6 +672,10 @@
     <wsdl:operation name="SentenceFound">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/SentenceFound" message="tns:IPlayConnect_SentenceFound_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/SentenceFoundResponse" message="tns:IPlayConnect_SentenceFound_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerWinner">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerWinner" message="tns:IPlayConnect_PlayerWinner_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerWinnerResponse" message="tns:IPlayConnect_PlayerWinner_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IReportManager">
@@ -1018,6 +1038,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GameOver">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/GameOver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PlayerConnectList">
       <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerConnectList" style="document" />
       <wsdl:input>
@@ -1038,6 +1067,15 @@
     </wsdl:operation>
     <wsdl:operation name="SentenceFound">
       <soap12:operation soapAction="http://tempuri.org/IPlayConnect/SentenceFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerWinner">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerWinner" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1092,7 +1130,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1101,7 +1139,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1110,7 +1148,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1119,7 +1157,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1128,7 +1166,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1137,7 +1175,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1146,7 +1184,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1155,7 +1193,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

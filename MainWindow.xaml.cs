@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.ServiceModel;
 using System.Windows.Forms;
@@ -15,6 +14,7 @@ namespace hangmanGame
 		{
 			InitializeComponent();
 		}
+
 		private void Password_MouseEnter(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
 		{
 			tbPassword.Visibility = Visibility.Visible;

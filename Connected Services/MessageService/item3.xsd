@@ -423,10 +423,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GameOver">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="serviceWinner" nillable="true" type="q10:ServiceWinner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameOverResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PlayerConnectList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="servicePlayerList" nillable="true" type="q10:ArrayOfServicePlayer" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="servicePlayerList" nillable="true" type="q11:ArrayOfServicePlayer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -450,7 +462,7 @@
   <xs:element name="SentenceFound">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="responseSentence" nillable="true" type="q11:ServiceSentence" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="responseSentence" nillable="true" type="q12:ServiceSentence" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -459,10 +471,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="PlayerWinner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="playerWinner" nillable="true" type="q13:ServiceWinner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlayerWinnerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ReportPlayer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="serviceReportMisConduct" nillable="true" type="q12:ServiceReportMisConduct" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="serviceReportMisConduct" nillable="true" type="q14:ServiceReportMisConduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -498,7 +522,7 @@
   <xs:element name="ResponseReportList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="reportMisConducts" nillable="true" type="q13:ArrayOfServiceReportMisConduct" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="reportMisConducts" nillable="true" type="q15:ArrayOfServiceReportMisConduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

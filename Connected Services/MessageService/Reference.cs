@@ -141,6 +141,9 @@ namespace hangmanGame.MessageService {
         private string NickNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> ScoreObtainedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -194,6 +197,19 @@ namespace hangmanGame.MessageService {
                 if ((object.ReferenceEquals(this.NickNameField, value) != true)) {
                     this.NickNameField = value;
                     this.RaisePropertyChanged("NickName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((this.PositionField.Equals(value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
                 }
             }
         }
@@ -358,6 +374,99 @@ namespace hangmanGame.MessageService {
                 if ((object.ReferenceEquals(this.TypeReportField, value) != true)) {
                     this.TypeReportField = value;
                     this.RaisePropertyChanged("TypeReport");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceWinner", Namespace="http://schemas.datacontract.org/2004/07/HangmanGameService")]
+    [System.SerializableAttribute()]
+    public partial class ServiceWinner : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MistakesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NickNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PointsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Mistakes {
+            get {
+                return this.MistakesField;
+            }
+            set {
+                if ((this.MistakesField.Equals(value) != true)) {
+                    this.MistakesField = value;
+                    this.RaisePropertyChanged("Mistakes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NickName {
+            get {
+                return this.NickNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NickNameField, value) != true)) {
+                    this.NickNameField = value;
+                    this.RaisePropertyChanged("NickName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Points {
+            get {
+                return this.PointsField;
+            }
+            set {
+                if ((this.PointsField.Equals(value) != true)) {
+                    this.PointsField = value;
+                    this.RaisePropertyChanged("Points");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
                 }
             }
         }
@@ -1092,6 +1201,12 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/VerifyGameStart", ReplyAction="http://tempuri.org/IPlayConnect/VerifyGameStartResponse")]
         System.Threading.Tasks.Task VerifyGameStartAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GameOver", ReplyAction="http://tempuri.org/IPlayConnect/GameOverResponse")]
+        void GameOver(hangmanGame.MessageService.ServiceWinner serviceWinner);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GameOver", ReplyAction="http://tempuri.org/IPlayConnect/GameOverResponse")]
+        System.Threading.Tasks.Task GameOverAsync(hangmanGame.MessageService.ServiceWinner serviceWinner);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1105,6 +1220,9 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/SentenceFound", ReplyAction="http://tempuri.org/IPlayConnect/SentenceFoundResponse")]
         void SentenceFound(hangmanGame.MessageService.ServiceSentence responseSentence);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerWinner", ReplyAction="http://tempuri.org/IPlayConnect/PlayerWinnerResponse")]
+        void PlayerWinner([System.ServiceModel.MessageParameterAttribute(Name="playerWinner")] hangmanGame.MessageService.ServiceWinner playerWinner1);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1165,6 +1283,14 @@ namespace hangmanGame.MessageService {
         
         public System.Threading.Tasks.Task VerifyGameStartAsync() {
             return base.Channel.VerifyGameStartAsync();
+        }
+        
+        public void GameOver(hangmanGame.MessageService.ServiceWinner serviceWinner) {
+            base.Channel.GameOver(serviceWinner);
+        }
+        
+        public System.Threading.Tasks.Task GameOverAsync(hangmanGame.MessageService.ServiceWinner serviceWinner) {
+            return base.Channel.GameOverAsync(serviceWinner);
         }
     }
     
