@@ -258,19 +258,19 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetNewMessage">
+  <xs:element name="GetNewMessages">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetNewMessageResponse">
+  <xs:element name="GetNewMessagesResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="SendNewMessage">
+  <xs:element name="SendNewMessages">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="newMessage" nillable="true" type="xs:string" />
@@ -278,7 +278,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SendNewMessageResponse">
+  <xs:element name="SendNewMessagesResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -341,14 +341,14 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="PlayerEntryMessage">
+  <xs:element name="PlayerEntryMessages">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="responseListString" nillable="true" type="q8:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="PlayerEntryMessageResponse">
+  <xs:element name="PlayerEntryMessagesResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -435,6 +435,31 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetNewMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMessageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNewMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNewMessageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PlayerConnectList">
     <xs:complexType>
       <xs:sequence>
@@ -483,10 +508,34 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="PlayerEntryMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="responseListString" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlayerEntryMessageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlayerEntryOneMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="responseListString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlayerEntryOneMessageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ReportPlayer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="serviceReportMisConduct" nillable="true" type="q14:ServiceReportMisConduct" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="serviceReportMisConduct" nillable="true" type="q15:ServiceReportMisConduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -522,7 +571,7 @@
   <xs:element name="ResponseReportList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="reportMisConducts" nillable="true" type="q15:ArrayOfServiceReportMisConduct" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="reportMisConducts" nillable="true" type="q16:ArrayOfServiceReportMisConduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

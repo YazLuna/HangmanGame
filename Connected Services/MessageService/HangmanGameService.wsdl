@@ -366,17 +366,17 @@
   <wsdl:message name="IChatManager_ClientConnect_OutputMessage">
     <wsdl:part name="parameters" element="tns:ClientConnectResponse" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_GetNewMessage_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNewMessage" />
+  <wsdl:message name="IChatManager_GetNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessages" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_GetNewMessage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNewMessageResponse" />
+  <wsdl:message name="IChatManager_GetNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessagesResponse" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_SendNewMessage_InputMessage">
-    <wsdl:part name="parameters" element="tns:SendNewMessage" />
+  <wsdl:message name="IChatManager_SendNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendNewMessages" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_SendNewMessage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SendNewMessageResponse" />
+  <wsdl:message name="IChatManager_SendNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendNewMessagesResponse" />
   </wsdl:message>
   <wsdl:message name="IChatManager_GetAllPlayers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPlayers" />
@@ -408,11 +408,11 @@
   <wsdl:message name="IChatManager_ChatResponseList_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ChatResponseListResponse" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_PlayerEntryMessage_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:PlayerEntryMessage" />
+  <wsdl:message name="IChatManager_PlayerEntryMessages_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryMessages" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_PlayerEntryMessage_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:PlayerEntryMessageResponse" />
+  <wsdl:message name="IChatManager_PlayerEntryMessages_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryMessagesResponse" />
   </wsdl:message>
   <wsdl:message name="IInformationPlayerManager_SearchInformationPlayer_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchInformationPlayer" />
@@ -456,6 +456,18 @@
   <wsdl:message name="IPlayConnect_GameOver_OutputMessage">
     <wsdl:part name="parameters" element="tns:GameOverResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlayConnect_GetNewMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessage" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_GetNewMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_SendNewMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendNewMessage" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_SendNewMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendNewMessageResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlayConnect_PlayerConnectList_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerConnectList" />
   </wsdl:message>
@@ -479,6 +491,18 @@
   </wsdl:message>
   <wsdl:message name="IPlayConnect_PlayerWinner_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerWinnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerEntryMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryMessage" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerEntryMessage_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerEntryOneMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryOneMessage" />
+  </wsdl:message>
+  <wsdl:message name="IPlayConnect_PlayerEntryOneMessage_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerEntryOneMessageResponse" />
   </wsdl:message>
   <wsdl:message name="IReportManager_ReportPlayer_InputMessage">
     <wsdl:part name="parameters" element="tns:ReportPlayer" />
@@ -597,13 +621,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ClientConnect" message="tns:IChatManager_ClientConnect_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ClientConnectResponse" message="tns:IChatManager_ClientConnect_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetNewMessage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/GetNewMessage" message="tns:IChatManager_GetNewMessage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/GetNewMessageResponse" message="tns:IChatManager_GetNewMessage_OutputMessage" />
+    <wsdl:operation name="GetNewMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/GetNewMessages" message="tns:IChatManager_GetNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/GetNewMessagesResponse" message="tns:IChatManager_GetNewMessages_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SendNewMessage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/SendNewMessage" message="tns:IChatManager_SendNewMessage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/SendNewMessageResponse" message="tns:IChatManager_SendNewMessage_OutputMessage" />
+    <wsdl:operation name="SendNewMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/SendNewMessages" message="tns:IChatManager_SendNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/SendNewMessagesResponse" message="tns:IChatManager_SendNewMessages_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllPlayers">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/GetAllPlayers" message="tns:IChatManager_GetAllPlayers_InputMessage" />
@@ -625,9 +649,9 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ChatResponseList" message="tns:IChatManager_ChatResponseList_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ChatResponseListResponse" message="tns:IChatManager_ChatResponseList_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PlayerEntryMessage">
-      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/PlayerEntryMessage" message="tns:IChatManager_PlayerEntryMessage_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/PlayerEntryMessageResponse" message="tns:IChatManager_PlayerEntryMessage_InputCallbackMessage" />
+    <wsdl:operation name="PlayerEntryMessages">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/PlayerEntryMessages" message="tns:IChatManager_PlayerEntryMessages_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/PlayerEntryMessagesResponse" message="tns:IChatManager_PlayerEntryMessages_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IInformationPlayerManager">
@@ -661,6 +685,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/GameOver" message="tns:IPlayConnect_GameOver_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/GameOverResponse" message="tns:IPlayConnect_GameOver_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetNewMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/GetNewMessage" message="tns:IPlayConnect_GetNewMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/GetNewMessageResponse" message="tns:IPlayConnect_GetNewMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNewMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/SendNewMessage" message="tns:IPlayConnect_SendNewMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/SendNewMessageResponse" message="tns:IPlayConnect_SendNewMessage_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PlayerConnectList">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectList" message="tns:IPlayConnect_PlayerConnectList_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerConnectListResponse" message="tns:IPlayConnect_PlayerConnectList_InputCallbackMessage" />
@@ -676,6 +708,14 @@
     <wsdl:operation name="PlayerWinner">
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerWinner" message="tns:IPlayConnect_PlayerWinner_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerWinnerResponse" message="tns:IPlayConnect_PlayerWinner_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerEntryMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerEntryMessage" message="tns:IPlayConnect_PlayerEntryMessage_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerEntryMessageResponse" message="tns:IPlayConnect_PlayerEntryMessage_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerEntryOneMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayConnect/PlayerEntryOneMessage" message="tns:IPlayConnect_PlayerEntryOneMessage_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerEntryOneMessageResponse" message="tns:IPlayConnect_PlayerEntryOneMessage_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IReportManager">
@@ -904,8 +944,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNewMessage">
-      <soap12:operation soapAction="http://tempuri.org/IChatManager/GetNewMessage" style="document" />
+    <wsdl:operation name="GetNewMessages">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/GetNewMessages" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -913,8 +953,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SendNewMessage">
-      <soap12:operation soapAction="http://tempuri.org/IChatManager/SendNewMessage" style="document" />
+    <wsdl:operation name="SendNewMessages">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/SendNewMessages" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -967,8 +1007,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PlayerEntryMessage">
-      <soap12:operation soapAction="http://tempuri.org/IChatManager/PlayerEntryMessage" style="document" />
+    <wsdl:operation name="PlayerEntryMessages">
+      <soap12:operation soapAction="http://tempuri.org/IChatManager/PlayerEntryMessages" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1047,6 +1087,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetNewMessage">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/GetNewMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNewMessage">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/SendNewMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PlayerConnectList">
       <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerConnectList" style="document" />
       <wsdl:input>
@@ -1076,6 +1134,24 @@
     </wsdl:operation>
     <wsdl:operation name="PlayerWinner">
       <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerWinner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerEntryMessage">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerEntryMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerEntryOneMessage">
+      <soap12:operation soapAction="http://tempuri.org/IPlayConnect/PlayerEntryOneMessage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

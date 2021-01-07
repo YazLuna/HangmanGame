@@ -1009,17 +1009,17 @@ namespace hangmanGame.MessageService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ClientConnect", ReplyAction="http://tempuri.org/IChatManager/ClientConnectResponse")]
         System.Threading.Tasks.Task ClientConnectAsync(string nickname);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetNewMessage", ReplyAction="http://tempuri.org/IChatManager/GetNewMessageResponse")]
-        void GetNewMessage(string nickname);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetNewMessages", ReplyAction="http://tempuri.org/IChatManager/GetNewMessagesResponse")]
+        void GetNewMessages(string nickname);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetNewMessage", ReplyAction="http://tempuri.org/IChatManager/GetNewMessageResponse")]
-        System.Threading.Tasks.Task GetNewMessageAsync(string nickname);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetNewMessages", ReplyAction="http://tempuri.org/IChatManager/GetNewMessagesResponse")]
+        System.Threading.Tasks.Task GetNewMessagesAsync(string nickname);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessage", ReplyAction="http://tempuri.org/IChatManager/SendNewMessageResponse")]
-        void SendNewMessage(string newMessage, string nickname);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessages", ReplyAction="http://tempuri.org/IChatManager/SendNewMessagesResponse")]
+        void SendNewMessages(string newMessage, string nickname);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessage", ReplyAction="http://tempuri.org/IChatManager/SendNewMessageResponse")]
-        System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessages", ReplyAction="http://tempuri.org/IChatManager/SendNewMessagesResponse")]
+        System.Threading.Tasks.Task SendNewMessagesAsync(string newMessage, string nickname);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetAllPlayers", ReplyAction="http://tempuri.org/IChatManager/GetAllPlayersResponse")]
         void GetAllPlayers();
@@ -1046,8 +1046,8 @@ namespace hangmanGame.MessageService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponseList", ReplyAction="http://tempuri.org/IChatManager/ChatResponseListResponse")]
         void ChatResponseList(hangmanGame.MessageService.ServicePlayer[] responseList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/PlayerEntryMessage", ReplyAction="http://tempuri.org/IChatManager/PlayerEntryMessageResponse")]
-        void PlayerEntryMessage(string[] responseListString);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/PlayerEntryMessages", ReplyAction="http://tempuri.org/IChatManager/PlayerEntryMessagesResponse")]
+        void PlayerEntryMessages(string[] responseListString);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1086,20 +1086,20 @@ namespace hangmanGame.MessageService {
             return base.Channel.ClientConnectAsync(nickname);
         }
         
-        public void GetNewMessage(string nickname) {
-            base.Channel.GetNewMessage(nickname);
+        public void GetNewMessages(string nickname) {
+            base.Channel.GetNewMessages(nickname);
         }
         
-        public System.Threading.Tasks.Task GetNewMessageAsync(string nickname) {
-            return base.Channel.GetNewMessageAsync(nickname);
+        public System.Threading.Tasks.Task GetNewMessagesAsync(string nickname) {
+            return base.Channel.GetNewMessagesAsync(nickname);
         }
         
-        public void SendNewMessage(string newMessage, string nickname) {
-            base.Channel.SendNewMessage(newMessage, nickname);
+        public void SendNewMessages(string newMessage, string nickname) {
+            base.Channel.SendNewMessages(newMessage, nickname);
         }
         
-        public System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname) {
-            return base.Channel.SendNewMessageAsync(newMessage, nickname);
+        public System.Threading.Tasks.Task SendNewMessagesAsync(string newMessage, string nickname) {
+            return base.Channel.SendNewMessagesAsync(newMessage, nickname);
         }
         
         public void GetAllPlayers() {
@@ -1207,6 +1207,18 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GameOver", ReplyAction="http://tempuri.org/IPlayConnect/GameOverResponse")]
         System.Threading.Tasks.Task GameOverAsync(hangmanGame.MessageService.ServiceWinner serviceWinner);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GetNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/GetNewMessageResponse")]
+        void GetNewMessage(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GetNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/GetNewMessageResponse")]
+        System.Threading.Tasks.Task GetNewMessageAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/SendNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/SendNewMessageResponse")]
+        void SendNewMessage(string newMessage, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/SendNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/SendNewMessageResponse")]
+        System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1223,6 +1235,12 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerWinner", ReplyAction="http://tempuri.org/IPlayConnect/PlayerWinnerResponse")]
         void PlayerWinner([System.ServiceModel.MessageParameterAttribute(Name="playerWinner")] hangmanGame.MessageService.ServiceWinner playerWinner1);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerEntryMessage", ReplyAction="http://tempuri.org/IPlayConnect/PlayerEntryMessageResponse")]
+        void PlayerEntryMessage(string[] responseListString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerEntryOneMessage", ReplyAction="http://tempuri.org/IPlayConnect/PlayerEntryOneMessageResponse")]
+        void PlayerEntryOneMessage(string responseListString);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1291,6 +1309,22 @@ namespace hangmanGame.MessageService {
         
         public System.Threading.Tasks.Task GameOverAsync(hangmanGame.MessageService.ServiceWinner serviceWinner) {
             return base.Channel.GameOverAsync(serviceWinner);
+        }
+        
+        public void GetNewMessage(string nickname) {
+            base.Channel.GetNewMessage(nickname);
+        }
+        
+        public System.Threading.Tasks.Task GetNewMessageAsync(string nickname) {
+            return base.Channel.GetNewMessageAsync(nickname);
+        }
+        
+        public void SendNewMessage(string newMessage, string nickname) {
+            base.Channel.SendNewMessage(newMessage, nickname);
+        }
+        
+        public System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname) {
+            return base.Channel.SendNewMessageAsync(newMessage, nickname);
         }
     }
     
