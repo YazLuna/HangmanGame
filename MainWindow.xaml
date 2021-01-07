@@ -46,5 +46,5 @@
 			</Grid.ColumnDefinitions>
 			<Button Style="{StaticResource buttonBlue}" Content = "{x:Static p:Resources.TitleLogIn}" Click="LogIn" Width="170" Margin="56,0"/>
 		</Grid>
-	</Grid>
+        </Grid>
 </Window>

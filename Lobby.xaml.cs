@@ -1,8 +1,8 @@
 ﻿using hangmanGame.MessageService;
 using System;
-
 using System.ServiceModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace hangmanGame
 {
@@ -11,21 +11,24 @@ namespace hangmanGame
 	{
 		private static string emailAccount;
 		private static string nickname;
-		private Nullable <int> score;
+		private Nullable<int> score;
 		private ServicePlayer[] servicePlayers;
 		private static ServicePlayer[] servicePlayersConnect;
 		private static bool isStartGameCurrent;
 		private ServiceSentence sentence;
+		private ServiceWinner serviceWinner;
+		private string[] responseList;
+		private string response;
 
 		public Lobby()
 		{
 			InitializeComponent();
 		}
 
-        public void EmailReceived(string email)
-        {
-            emailAccount = email;
-        }
+		public void EmailReceived(string email)
+		{
+			emailAccount = email;
+		}
 
 		public void PlayerResponseInformation(ServicePlayer response)
 		{
@@ -55,13 +58,13 @@ namespace hangmanGame
 		}
 
 		private void UpdateAccount(object sender, RoutedEventArgs e)
-        {
-            ModifyAccount modifyAccount = new ModifyAccount();
-            modifyAccount.EmailReceived(emailAccount);
-            modifyAccount.AccountReceived();
-            modifyAccount.Show();
-            this.Close();
-        }
+		{
+			ModifyAccount modifyAccount = new ModifyAccount();
+			modifyAccount.EmailReceived(emailAccount);
+			modifyAccount.AccountReceived();
+			modifyAccount.Show();
+			this.Close();
+		}
 		public void NickNameReceived(string nicknamePlayer)
 		{
 			nickname = nicknamePlayer;
@@ -73,53 +76,61 @@ namespace hangmanGame
 			MessageService.PlayConnectClient playConnectClient = new MessageService.PlayConnectClient(instanceContext);
 			playConnectClient.VerifyGameStart();
 			if (isStartGameCurrent)
-            {
+			{
 				MessageBox.Show(Properties.Resources.NoOpenMatchMessage, Properties.Resources.TitleMatch, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
 			}
-            else
-            {
+			else
+			{
 				WaitingRoom waitingRoom = new WaitingRoom();
 				waitingRoom.NickNameReceived(nickname);
 				waitingRoom.EmailReceived(emailAccount);
 				waitingRoom.ObtainListPlayer();
 				waitingRoom.Show();
 				this.Close();
-			}	
+			}
 		}
 
-		public void ColocateBestScores ()
+		public void ColocateBestScores()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.PlayerScoresManagerClient searchBestScores = new MessageService.PlayerScoresManagerClient(instanceContext);
 			searchBestScores.SearchBestScoresPlayer();
 			dgBestScores.ItemsSource = servicePlayers;
-			for (int index = 0; index < servicePlayers.Length; index++ )
-            {
-
-            }
-
 		}
 		public void ColocatePersonalInformation()
-        {
+		{
 			InstanceContext instanceContext = new InstanceContext(this);
 			MessageService.InformationPlayerManagerClient personalInformation = new MessageService.InformationPlayerManagerClient(instanceContext);
 			personalInformation.SearchInformationPlayer(emailAccount);
 			lbNickname.Content = nickname;
 			lbScore.Content = score;
 		}
-        public void PlayerConnectList(ServicePlayer[] servicePlayerList)
-        {
+		public void PlayerConnectList(ServicePlayer[] servicePlayerList)
+		{
 			servicePlayersConnect = servicePlayerList;
-
 		}
-        public void IsStarGame(bool isStarGame)
-        {
+		public void IsStarGame(bool isStarGame)
+		{
 			isStartGameCurrent = isStarGame;
 		}
-        public void SentenceFound(ServiceSentence responseSentence)
-        {
+		public void SentenceFound(ServiceSentence responseSentence)
+		{
 			sentence = responseSentence;
+		}
 
+        public void PlayerWinner(ServiceWinner playerWinner)
+        {
+			serviceWinner = playerWinner;
+        }
+
+        public void PlayerEntryMessage(string[] responseListString)
+        {
+			responseList = responseListString;
+		}
+
+        public void PlayerEntryOneMessage(string responseListString)
+        {
+			response = responseListString;
 		}
     }
 }

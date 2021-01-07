@@ -15,6 +15,7 @@
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NamePlayer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
       <xs:element minOccurs="0" name="ScoreObtained" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ServiceReportMisConduct" nillable="true" type="tns:ArrayOfServiceReportMisConduct" />
       <xs:element minOccurs="0" name="StatusPlayer" nillable="true" type="xs:string" />
@@ -44,6 +45,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfServicePlayer" nillable="true" type="tns:ArrayOfServicePlayer" />
+  <xs:complexType name="ServiceWinner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mistakes" type="xs:int" />
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceWinner" nillable="true" type="tns:ServiceWinner" />
   <xs:complexType name="ServiceSentence">
     <xs:sequence>
       <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />

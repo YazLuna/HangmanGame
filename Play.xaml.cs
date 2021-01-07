@@ -1,22 +1,21 @@
 ﻿using hangmanGame.MessageService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace hangmanGame
 {
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Play : Window, IChatManagerCallback, IPlayConnectCallback
+	public partial class Play : Window, IPlayConnectCallback
 	{
 		private static string emailAccount;
 		private static string nickname;
-		private ServicePlayer[] playersConnected;
-		private string[] messagesIn;
-		private string responseString;
-		private bool responseBool;
 		private ServiceSentence sentence;
 		private static bool isStartGameCurrent;
 		private static ServicePlayer[] servicePlayersConnect;
@@ -28,10 +27,15 @@ namespace hangmanGame
 		private List<string> listCharacterPass = new List<string>();
 		private int countLetters = Number.NumberValue(NumberValues.ZERO);
 		private int lengthSentence;
-		private static bool isReportPlayer; 
+		private static bool isReportPlayer;
+		private DispatcherTimer dispatcher = new DispatcherTimer();
+		private int time = 200;
+		private SynchronizationContext synchronizationContext;
 		public Play()
 		{
 			InitializeComponent();
+			synchronizationContext = SynchronizationContext.Current;
+			CreateTimer();
 		}
 		public void EmailReceived(string email)
 		{
@@ -62,6 +66,13 @@ namespace hangmanGame
 		{
 			servicePlayersConnect = servicePlayerList;
 		}
+
+		public void ChatReceived(string[] chat)
+		{
+			messagesIn = chat;
+			synchronizationContext.Post(objectPlayer => ReloadChat(chat), null);
+		}
+
 		public static void LanguageReceive(string languageReceive)
 		{
 			language = languageReceive;
@@ -87,7 +98,14 @@ namespace hangmanGame
 			{
 				pbHint.Password = sentence.HintEnglish;
 				tbHint.Text = sentence.HintEnglish;
-				sentenceWork = sentence.SentenceWordEnglish;
+				if (string.IsNullOrEmpty(sentence.SentenceWordEnglish))
+				{
+					sentenceWork = sentence.SentenceWordSpanish;
+				}
+				else
+				{
+					sentenceWork = sentence.SentenceWordEnglish;
+				}
 			}
 			ColocateCategory();
 			ColocateSentenceWork();
@@ -106,45 +124,20 @@ namespace hangmanGame
 					{
 						Nickname = player.NickName
 					});
+					
+					lstConnectedPlayers.Items.Add(player.NickName);
+					
 				}
 			}
 		}
 		public void ConnectToChat()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
-			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
-			chatManager.ClientConnect(nickname);
+			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
+			//chatManager.ClientConnect(nickname);
 			chatManager.GetNewMessage(nickname);
-			chatManager.GetAllPlayers();
-			CreateChat();
-		}
-		private void CreateChat()
-		{
-			for (int index = Number.NumberValue(NumberValues.ZERO); index < playersConnected.Length; index++)
-			{
-				lstConnectedPlayers.Items.Add(playersConnected[index].NickName);
-			}
-			for (int index = Number.NumberValue(NumberValues.ZERO); index < messagesIn.Length; index++)
-			{
-				lstChat.Items.Add(messagesIn[index]);
-			}
-		}
-		public void ChatResponseBoolean(bool response)
-		{
-			responseBool = response;
-		}
-		public void ChatResponse(string response)
-		{
-			responseString = response;
-		}
-		public void ChatResponseList(ServicePlayer[] response)
-		{
-			playersConnected = response;
-		}
-		public void PlayerEntryMessage(string[] response)
-		{
-			messagesIn = response;
-
+			//chatManager.GetAllPlayers();
+			//CreateChat();
 		}
 		private void ColocateSentenceWork()
 		{
@@ -152,7 +145,7 @@ namespace hangmanGame
 			int indexColumn = Number.NumberValue(NumberValues.ZERO);
 			lengthSentence = sentenceWork.Length;
 			listCharacterSentence = new List<CharacterSentence>();
-			for (int indexSentence = 0; indexSentence < lengthSentence; indexSentence++)
+			for (int indexSentence = 0; indexSentence < sentenceWork.Length; indexSentence++)
 			{
 				if (indexColumn == Number.NumberValue(NumberValues.TEN))
 				{
@@ -162,6 +155,7 @@ namespace hangmanGame
 				if (sentenceWork.ElementAt(indexSentence).Equals(' '))
 				{
 					indexColumn++;
+					lengthSentence--;
 				}
 				else
 				{
@@ -196,7 +190,7 @@ namespace hangmanGame
 				}
 				else
 				{
-					if (sentence.Category.Equals("AS"))
+					if (sentence.Category.Equals("SA"))
 					{
 						lbCategory.Content = Properties.Resources.CategoryAS;
 					}
@@ -212,36 +206,22 @@ namespace hangmanGame
 			InstanceContext instanceContext = new InstanceContext(this);
 			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
 			playConnect.PlayerDisconnect(nickname);
+			dispatcher.Stop();
 		}
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
-			playConnect.PlayerDisconnect(nickname);
-			Lobby lobby = new Lobby();
-			lobby.EmailReceived(emailAccount);
-			lobby.ColocateBestScores();
-			lobby.ColocatePersonalInformation();
-			lobby.Show();
-			this.Close();
+			MissGame();
 		}
 		private void SendMessage(object sender, RoutedEventArgs routedEventArgs)
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
-			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
+			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
 			if (tbMessage.Text != null)
             {
 				chatManager.SendNewMessage(tbMessage.Text, nickname);
 				lstChat.Items.Add(tbMessage.Text);
 				tbMessage.Text = null;	
 			}
-		}
-		private void Reload(object sender, RoutedEventArgs routedEventArgs)
-		{
-			for (int index = Number.NumberValue(NumberValues.ZERO); index < messagesIn.Length; index++)
-			{
-				lstChat.Items.Add(messagesIn[index]);
-			}			
 		}
 		private void UnlockHint(object sender, RoutedEventArgs routedEventArgs)
 		{
@@ -263,11 +243,7 @@ namespace hangmanGame
 					break;
                 }
             }
-            if (isLetterPass)
-            {
-				//Mensaje de que ya se ingreso esa letra
-            }
-            else
+            if (!isLetterPass)
             {
 				foreach (CharacterSentence characterSentence in listCharacterSentence)
 				{
@@ -285,27 +261,29 @@ namespace hangmanGame
 						gdSentence.Children.Remove(tbCharacter);
 						tbCharacter.Text = characterSentence.Character.ToString();
 						gdSentence.Children.Add(tbCharacter);
+						countLetters++;
 					}
 				}
                 if (isAcceptLetter)
                 {
 					tbCurrentScore.Text = (int.Parse(tbCurrentScore.Text) + 100).ToString();
 					listCharacterPass.Add(wrongLetters.ToUpper());
-					countLetters++;
                     if (countLetters == lengthSentence)
                     {
-						//Termina la partida y se manda los datos del ganador al servidor
+						time -= (int)lbTimer.Content;
+						btnCheck.IsEnabled = false;
+						btnUnlockHint.IsEnabled = false;
                     }
 				}
                 else
                 {
 					tbCurrentScore.Text = (int.Parse(tbCurrentScore.Text) - 100).ToString();
 					countError++;
-					imageError();
+					ImageError();
 				}
 			}
         }
-		private void imageError()
+		private void ImageError()
         {
             if (countError == Number.NumberValue(NumberValues.ONE))
             {
@@ -344,26 +322,30 @@ namespace hangmanGame
                             {
 								imgFiveError.Visibility = Visibility.Hidden;
 								imgSixError.Visibility = Visibility.Visible;
-								//Perdio la partida
-								InstanceContext instanceContext = new InstanceContext(this);
-								PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
-								//Hacer un metodo en el servidor para ver si ya partida ya termino
-								playConnect.PlayerDisconnect(nickname);
-								LostGame lostGame = new LostGame();
-								lostGame.Owner = this;
-								lostGame.ShowDialog();
-								Lobby lobby = new Lobby();
-								lobby.EmailReceived(emailAccount);
-								lobby.ColocateBestScores();
-								lobby.ColocatePersonalInformation();
-								lobby.Show();
-								this.Close();
+								MissGame();
 							}
 						}
 					}
 				}
 			}
         }	
+
+		private void MissGame()
+        {
+			dispatcher.Stop();
+			InstanceContext instanceContext = new InstanceContext(this);
+			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
+			playConnect.PlayerDisconnect(nickname);
+			LostGame lostGame = new LostGame();
+			lostGame.Owner = this;
+			lostGame.ShowDialog();
+			Lobby lobby = new Lobby();
+			lobby.EmailReceived(emailAccount);
+			lobby.ColocateBestScores();
+			lobby.ColocatePersonalInformation();
+			lobby.Show();
+			this.Close();
+		}
 		private void Report(object objectReport, RoutedEventArgs routedEventArgs)
 		{
 			Button btnReportPlayer = (Button)objectReport;
@@ -377,6 +359,82 @@ namespace hangmanGame
 				btnReportPlayer.IsEnabled = false;
             }
 			isReportPlayer = false;
+		}
+
+		private void CreateTimer()
+        {
+			dispatcher.Interval = new TimeSpan(0, 0, 0, 0, 1000);
+			int time = 50;
+			dispatcher.Tick += (a, b) =>
+			{
+				lbTimer.Content = time--;
+				if(time == Number.NumberValue(NumberValues.ZERO))
+                {
+					lbTimer.Content = time--;
+					dispatcher.Stop();
+					EndGame();
+                }
+			};
+			dispatcher.Start();
+		}
+
+		private void EndGame()
+        {
+			InstanceContext instanceContext = new InstanceContext(this);
+			PlayConnectClient endGame = new PlayConnectClient(instanceContext);
+			ServiceWinner serviceWinner = new ServiceWinner();
+			serviceWinner.NickName = nickname;
+			serviceWinner.Points = Int32.Parse(tbCurrentScore.Text);
+			serviceWinner.Time = time;
+			serviceWinner.Mistakes = countError;
+			endGame.GameOver(serviceWinner);
+		}
+
+        public void PlayerWinner(ServiceWinner playerWinner)
+        {
+			synchronizationContext.Post(objectPlayer => OpenGameOver(playerWinner), null);
+		}
+
+		public void OpenGameOver (ServiceWinner playerWinner)
+        {
+			GameOver gameOver = new GameOver();
+			gameOver.InitializeServiceWinner(playerWinner, nickname);
+			gameOver.ShowDialog();
+			Lobby lobby = new Lobby();
+			lobby.EmailReceived(emailAccount);
+			lobby.ColocateBestScores();
+			lobby.ColocatePersonalInformation();
+			lobby.Show();
+			this.Close();
+        }
+
+		public void PlayerEntryMessage(string[] response)
+		{
+			messagesIn = response;
+			synchronizationContext.Post(objectPlayer => ReloadChat(response), null);
+		}
+
+		public void ReloadChat(string[] response)
+        {
+			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
+			//{
+				lstChat.Items.Add(response);
+
+			//}
+		}
+
+		public void ReloadChatone(string response)
+		{
+			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
+			//{
+			lstChat.Items.Add(response);
+
+			//}
+		}
+
+		public void PlayerEntryOneMessage(string responseListString)
+        {
+			synchronizationContext.Post(objectPlayer => ReloadChatone(responseListString), null);
 		}
     }
 }

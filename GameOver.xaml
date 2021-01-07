@@ -29,17 +29,17 @@
             <Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Mistakes}" Style="{StaticResource GameOverStyle}"></Label>
             <Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.PointsEarned}" Style="{StaticResource GameOverStyle}"></Label>
 
-            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
-            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
-            <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
-            <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
+            <Label Name="lbNicname" Grid.Row="0" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
+            <Label Name="lbTime" Grid.Row="1" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
+            <Label Name="lbMistakes" Grid.Row="2" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
+            <Label Name="lbPoints" Grid.Row="3" Grid.Column="1" Style="{StaticResource GameOverTextStyle}"></Label>
         </Grid>
         
-        <Image Grid.Row ="2" Source="image/hangmanGame.png" Margin="47,0,223,0"/>
-        <Image Grid.Row ="2" Source="image/man.png" Margin="155,0,139,0"/>
-        <Image Grid.Row ="2" Source="image/trophy.png" Margin="244,22,68,10" Width="80"/>
-        <Image Grid.Row ="2" Source="image/SixError.png" HorizontalAlignment="Center" Visibility="Hidden"/>
-        <Label Grid.Row="3" Style="{StaticResource GameOverTextStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Image Name="imgHagmanGame" Grid.Row ="2" Source="image/hangmanGame.png" Margin="47,0,223,0"/>
+        <Image Name="imgMan" Grid.Row ="2" Source="image/man.png" Margin="155,0,139,0"/>
+        <Image Name="imgTrophy" Grid.Row ="2" Source="image/trophy.png" Margin="244,22,68,10" Width="80"/>
+        <Image Name="imgSixError" Grid.Row ="2" Source="image/SixError.png" HorizontalAlignment="Center" Visibility="Hidden"/>
+        <Label Name="lbMessage" Grid.Row="3" Content="{x:Static p:Resources.WinnerMessage}" Style="{StaticResource GameOverTextStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <Button Grid.Row="4" Click="AcceptGameOver" Content="{x:Static p:Resources.Accept_Button}" Style="{StaticResource buttonGreen}" Height="40" Width="120" FontSize="15"/>
     </Grid>
 </Window>
