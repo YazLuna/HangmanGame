@@ -2,8 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:p = "clr-namespace:hangmanGame.Properties"
+        Closing="WindowClosing"
         WindowState = "Maximized"
-        Closing ="WindowClosing"
+       
 		Title="{x:Static p:Resources.TitleGame}" Height="750" Width="1350" Background="#FFCFF6FF">
 
     <Grid>
@@ -35,11 +36,14 @@
             <TextBox  HorizontalAlignment="Left" Grid.Row="0"  Grid.Column="3" Name="tbCurrentScore" Height="40" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" IsReadOnly="True"></TextBox>
             <Label Grid.Row="0"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Name="lbScore" Style="{StaticResource labelStyle}" HorizontalContentAlignment="Left" Height="37" Width="96"></Label>
             <Label Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static p:Resources.Cost}"  Style="{StaticResource labelStyle}"></Label>
+            <Image Name="imgTimer" Source="image/Timer.png" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            <Label Style="{StaticResource labelStyle}" Grid.Row="2" Grid.Column="3" HorizontalContentAlignment="Center" Name="lbTimer" HorizontalAlignment="Center" Margin="37,15,33,14" Width="80"/>
+
 
             <Label Name="lbCategory" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Grid.ColumnSpan="2" HorizontalContentAlignment="Right" VerticalAlignment="Top" Style="{StaticResource labelStyle}"></Label>
             <Label Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Content="{x:Static p:Resources.WrongLetters}"  HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}"></Label>
             <TextBox Name="tbWrongLetters" VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" Grid.Row="2"  Grid.Column="2" Height="40" Width="125" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button  HorizontalAlignment="Right" Grid.Row="2"  Grid.Column="2" Click="Check" Content="{x:Static p:Resources.Check_Button}" Style="{StaticResource buttonGreen}" Height="49" Width="150" />
+            <Button Name="btnCheck"  HorizontalAlignment="Right" Grid.Row="2"  Grid.Column="2" Click="Check" Content="{x:Static p:Resources.Check_Button}" Style="{StaticResource buttonGreen}" Height="49" Width="150" />
 
             <TextBox  VerticalContentAlignment="Center" FontFamily="Arial" FontSize="15" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" Name="tbHint" Visibility="Hidden" Height="50" IsReadOnly="True"/>
             <PasswordBox FontFamily="Arial" FontSize="15" VerticalContentAlignment="Center" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" Name="pbHint" Height="50" IsEnabled="False"/>
@@ -84,12 +88,11 @@
                 </Grid.RowDefinitions>
             </Grid>
 
-            <Grid Grid.Column="2" Background="DarkBlue" HorizontalAlignment="Right" Height="363" VerticalAlignment="Top" Width="444">
+            <Grid Grid.Column="1" Background="DarkBlue" HorizontalAlignment="Right" Height="363" VerticalAlignment="Top" Width="444" Grid.ColumnSpan="2" Margin="0,76,10,0">
                 <Button  Name="btnSendMessage" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,329,10,9" Width="114" Height="25" Click="SendMessage"/>
                 <ListBox Name="lstConnectedPlayers" HorizontalAlignment="Left" Height="304" Margin="320,19,0,0" VerticalAlignment="Top" Width="114" />
                 <ListBox Name="lstChat" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
                 <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,328,0,0" VerticalAlignment="Top" Width="305"/>
-                <Button   Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,298,10,40" Width="114" Height="25" Click="Reload"/>
             </Grid>
             <Image Grid.Column ="0" Name="imgStart" Source="image/StartGame.png" HorizontalAlignment="Left" />
             <Image Grid.Column ="0" Name="imgOneError" Source="image/OneError.png"  Visibility="Hidden" HorizontalAlignment="Left" />

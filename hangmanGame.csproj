@@ -315,6 +315,7 @@
     <Resource Include="image\hangmanGameLogo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="image\Timer.png" />
     <Resource Include="image\report.png" />
     <Resource Include="image\trophy.png" />
     <None Include="Connected Services\MessageService\item.disco" />
