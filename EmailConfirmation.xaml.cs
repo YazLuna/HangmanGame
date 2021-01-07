@@ -68,15 +68,15 @@ namespace hangmanGame
                 registry.Register(account, accountPlayer);
                 if (responseConfirmation)
                 {
-                    OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    this.Close();
+                    OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);  
                 }
                 else
                 {
                     OpenMessageBox(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
                 }
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
             else
             {
