@@ -12,14 +12,10 @@ using System.Threading;
 namespace hangmanGame
 {
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Play : Window, IChatManagerCallback, IPlayConnectCallback
+	public partial class Play : Window, IPlayConnectCallback
 	{
 		private static string emailAccount;
 		private static string nickname;
-		private ServicePlayer[] playersConnected;
-		private string[] messagesIn;
-		private string responseString;
-		private bool responseBool;
 		private ServiceSentence sentence;
 		private static bool isStartGameCurrent;
 		private static ServicePlayer[] servicePlayersConnect;
@@ -33,8 +29,8 @@ namespace hangmanGame
 		private int lengthSentence;
 		private static bool isReportPlayer;
 		private DispatcherTimer dispatcher = new DispatcherTimer();
-		private int time;
-		private readonly SynchronizationContext synchronizationContext;
+		private int time = 200;
+		private SynchronizationContext synchronizationContext;
 		public Play()
 		{
 			InitializeComponent();
@@ -70,6 +66,13 @@ namespace hangmanGame
 		{
 			servicePlayersConnect = servicePlayerList;
 		}
+
+		public void ChatReceived(string[] chat)
+		{
+			messagesIn = chat;
+			synchronizationContext.Post(objectPlayer => ReloadChat(chat), null);
+		}
+
 		public static void LanguageReceive(string languageReceive)
 		{
 			language = languageReceive;
@@ -121,45 +124,20 @@ namespace hangmanGame
 					{
 						Nickname = player.NickName
 					});
+					
+					lstConnectedPlayers.Items.Add(player.NickName);
+					
 				}
 			}
 		}
 		public void ConnectToChat()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
-			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
-			chatManager.ClientConnect(nickname);
+			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
+			//chatManager.ClientConnect(nickname);
 			chatManager.GetNewMessage(nickname);
-			chatManager.GetAllPlayers();
-			CreateChat();
-		}
-		private void CreateChat()
-		{
-			for (int index = Number.NumberValue(NumberValues.ZERO); index < playersConnected.Length; index++)
-			{
-				lstConnectedPlayers.Items.Add(playersConnected[index].NickName);
-			}
-			for (int index = Number.NumberValue(NumberValues.ZERO); index < messagesIn.Length; index++)
-			{
-				lstChat.Items.Add(messagesIn[index]);
-			}
-		}
-		public void ChatResponseBoolean(bool response)
-		{
-			responseBool = response;
-		}
-		public void ChatResponse(string response)
-		{
-			responseString = response;
-		}
-		public void ChatResponseList(ServicePlayer[] response)
-		{
-			playersConnected = response;
-		}
-		public void PlayerEntryMessage(string[] response)
-		{
-			messagesIn = response;
-
+			//chatManager.GetAllPlayers();
+			//CreateChat();
 		}
 		private void ColocateSentenceWork()
 		{
@@ -228,6 +206,7 @@ namespace hangmanGame
 			InstanceContext instanceContext = new InstanceContext(this);
 			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
 			playConnect.PlayerDisconnect(nickname);
+			dispatcher.Stop();
 		}
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{
@@ -236,20 +215,13 @@ namespace hangmanGame
 		private void SendMessage(object sender, RoutedEventArgs routedEventArgs)
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
-			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
+			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
 			if (tbMessage.Text != null)
             {
 				chatManager.SendNewMessage(tbMessage.Text, nickname);
 				lstChat.Items.Add(tbMessage.Text);
 				tbMessage.Text = null;	
 			}
-		}
-		private void Reload(object sender, RoutedEventArgs routedEventArgs)
-		{
-			for (int index = Number.NumberValue(NumberValues.ZERO); index < messagesIn.Length; index++)
-			{
-				lstChat.Items.Add(messagesIn[index]);
-			}			
 		}
 		private void UnlockHint(object sender, RoutedEventArgs routedEventArgs)
 		{
@@ -298,7 +270,7 @@ namespace hangmanGame
 					listCharacterPass.Add(wrongLetters.ToUpper());
                     if (countLetters == lengthSentence)
                     {
-						time = (int)lbTimer.Content;
+						time -= (int)lbTimer.Content;
 						btnCheck.IsEnabled = false;
 						btnUnlockHint.IsEnabled = false;
                     }
@@ -392,12 +364,13 @@ namespace hangmanGame
 		private void CreateTimer()
         {
 			dispatcher.Interval = new TimeSpan(0, 0, 0, 0, 1000);
-			int time = 200;
+			int time = 50;
 			dispatcher.Tick += (a, b) =>
 			{
 				lbTimer.Content = time--;
 				if(time == Number.NumberValue(NumberValues.ZERO))
                 {
+					lbTimer.Content = time--;
 					dispatcher.Stop();
 					EndGame();
                 }
@@ -434,5 +407,34 @@ namespace hangmanGame
 			lobby.Show();
 			this.Close();
         }
+
+		public void PlayerEntryMessage(string[] response)
+		{
+			messagesIn = response;
+			synchronizationContext.Post(objectPlayer => ReloadChat(response), null);
+		}
+
+		public void ReloadChat(string[] response)
+        {
+			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
+			//{
+				lstChat.Items.Add(response);
+
+			//}
+		}
+
+		public void ReloadChatone(string response)
+		{
+			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
+			//{
+			lstChat.Items.Add(response);
+
+			//}
+		}
+
+		public void PlayerEntryOneMessage(string responseListString)
+        {
+			synchronizationContext.Post(objectPlayer => ReloadChatone(responseListString), null);
+		}
     }
 }
