@@ -50,14 +50,14 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchNickNamePlayer">
+  <xs:element name="SearchNicknamePlayer">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchNickNamePlayerResponse">
+  <xs:element name="SearchNicknamePlayerResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -113,7 +113,7 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchRepeatNickNamePlayer">
+  <xs:element name="SearchRepeatNicknamePlayer">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="nickNameEdit" nillable="true" type="xs:string" />
@@ -121,7 +121,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchRepeatNickNamePlayerResponse">
+  <xs:element name="SearchRepeatNicknamePlayerResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

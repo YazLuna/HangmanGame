@@ -17,8 +17,6 @@ namespace hangmanGame
 		private ServiceSentence sentence;
 		private bool isClosing = true;
 		private ServiceWinner serviceWinner = new ServiceWinner();
-		private string[] responseList;
-		private string response;
 		public WaitingRoom()
 		{
 			InitializeComponent();
@@ -71,7 +69,7 @@ namespace hangmanGame
 			play.ListPlayerConnectReceived(servicePlayers);
 			play.ColocateSentence();
 			play.ColocatePlayer();
-			//play.ConnectToChat();
+			play.ConnectToChat();
 			play.Show();
 			isClosing = false;
 			this.Close();
@@ -114,16 +112,6 @@ namespace hangmanGame
 		public void PlayerWinner(ServiceWinner playerWinner)
 		{
 			serviceWinner = playerWinner; 
-		}
-
-        public void PlayerEntryMessage(string[] responseListString)
-        {
-			responseList = responseListString;
-        }
-
-        public void PlayerEntryOneMessage(string responseListString)
-        {
-			response = responseListString;
 		}
     }
 }

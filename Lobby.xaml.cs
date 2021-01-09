@@ -17,8 +17,6 @@ namespace hangmanGame
 		private static bool isStartGameCurrent;
 		private ServiceSentence sentence;
 		private ServiceWinner serviceWinner;
-		private string[] responseList;
-		private string response;
 
 		public Lobby()
 		{
@@ -123,14 +121,5 @@ namespace hangmanGame
 			serviceWinner = playerWinner;
         }
 
-        public void PlayerEntryMessage(string[] responseListString)
-        {
-			responseList = responseListString;
-		}
-
-        public void PlayerEntryOneMessage(string responseListString)
-        {
-			response = responseListString;
-		}
     }
 }

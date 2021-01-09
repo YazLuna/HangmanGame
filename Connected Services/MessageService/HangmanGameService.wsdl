@@ -264,11 +264,11 @@
   <wsdl:message name="IPlayerManager_Register_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchNickNamePlayer_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchNickNamePlayer" />
+  <wsdl:message name="IPlayerManager_SearchNicknamePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNicknamePlayer" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchNickNamePlayer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchNickNamePlayerResponse" />
+  <wsdl:message name="IPlayerManager_SearchNicknamePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNicknamePlayerResponse" />
   </wsdl:message>
   <wsdl:message name="IPlayerManager_SendEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:SendEmail" />
@@ -294,11 +294,11 @@
   <wsdl:message name="IPlayerManager_SearchRepeatEmailAccount_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchRepeatEmailAccountResponse" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchRepeatNickNamePlayer_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchRepeatNickNamePlayer" />
+  <wsdl:message name="IPlayerManager_SearchRepeatNicknamePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatNicknamePlayer" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchRepeatNickNamePlayer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchRepeatNickNamePlayerResponse" />
+  <wsdl:message name="IPlayerManager_SearchRepeatNicknamePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatNicknamePlayerResponse" />
   </wsdl:message>
   <wsdl:message name="IPlayerManager_UpdateEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateEmail" />
@@ -547,9 +547,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/Register" message="tns:IPlayerManager_Register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/RegisterResponse" message="tns:IPlayerManager_Register_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SearchNickNamePlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayer" message="tns:IPlayerManager_SearchNickNamePlayer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayerResponse" message="tns:IPlayerManager_SearchNickNamePlayer_OutputMessage" />
+    <wsdl:operation name="SearchNicknamePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchNicknamePlayer" message="tns:IPlayerManager_SearchNicknamePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchNicknamePlayerResponse" message="tns:IPlayerManager_SearchNicknamePlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SendEmail" message="tns:IPlayerManager_SendEmail_InputMessage" />
@@ -567,9 +567,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccount" message="tns:IPlayerManager_SearchRepeatEmailAccount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccountResponse" message="tns:IPlayerManager_SearchRepeatEmailAccount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SearchRepeatNickNamePlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer" message="tns:IPlayerManager_SearchRepeatNickNamePlayer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayerResponse" message="tns:IPlayerManager_SearchRepeatNickNamePlayer_OutputMessage" />
+    <wsdl:operation name="SearchRepeatNicknamePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNicknamePlayer" message="tns:IPlayerManager_SearchRepeatNicknamePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNicknamePlayerResponse" message="tns:IPlayerManager_SearchRepeatNicknamePlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/UpdateEmail" message="tns:IPlayerManager_UpdateEmail_InputMessage" />
@@ -779,8 +779,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchNickNamePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchNickNamePlayer" style="document" />
+    <wsdl:operation name="SearchNicknamePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchNicknamePlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -824,8 +824,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchRepeatNickNamePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer" style="document" />
+    <wsdl:operation name="SearchRepeatNicknamePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchRepeatNicknamePlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

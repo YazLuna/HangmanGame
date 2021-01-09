@@ -203,7 +203,7 @@ namespace hangmanGame
 
 				InstanceContext instanceContext = new InstanceContext(this);
 				PlayerManagerClient validatePlayer = new PlayerManagerClient(instanceContext);
-				validatePlayer.SearchNickNamePlayer(nickname);
+				validatePlayer.SearchNicknamePlayer(nickname);
 				bool isValidRepeatNickName = responseBoolean;
 				validatePlayer.SearchEmailPlayer(email);
 				bool isValidRepeatEmail = responseBoolean;

@@ -12,7 +12,7 @@ using System.Threading;
 namespace hangmanGame
 {
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Play : Window, IPlayConnectCallback
+	public partial class Play : Window, IPlayConnectCallback, IChatManagerCallback
 	{
 		private static string emailAccount;
 		private static string nickname;
@@ -30,7 +30,9 @@ namespace hangmanGame
 		private static bool isReportPlayer;
 		private DispatcherTimer dispatcher = new DispatcherTimer();
 		private int time = 200;
+		private bool connectchat;
 		private SynchronizationContext synchronizationContext;
+		private string[] messagesIn;
 		public Play()
 		{
 			InitializeComponent();
@@ -65,12 +67,6 @@ namespace hangmanGame
 		public void PlayerConnectList(ServicePlayer[] servicePlayerList)
 		{
 			servicePlayersConnect = servicePlayerList;
-		}
-
-		public void ChatReceived(string[] chat)
-		{
-			messagesIn = chat;
-			synchronizationContext.Post(objectPlayer => ReloadChat(chat), null);
 		}
 
 		public static void LanguageReceive(string languageReceive)
@@ -129,15 +125,6 @@ namespace hangmanGame
 					
 				}
 			}
-		}
-		public void ConnectToChat()
-		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
-			//chatManager.ClientConnect(nickname);
-			chatManager.GetNewMessage(nickname);
-			//chatManager.GetAllPlayers();
-			//CreateChat();
 		}
 		private void ColocateSentenceWork()
 		{
@@ -211,17 +198,6 @@ namespace hangmanGame
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{
 			MissGame();
-		}
-		private void SendMessage(object sender, RoutedEventArgs routedEventArgs)
-		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
-			if (tbMessage.Text != null)
-            {
-				chatManager.SendNewMessage(tbMessage.Text, nickname);
-				lstChat.Items.Add(tbMessage.Text);
-				tbMessage.Text = null;	
-			}
 		}
 		private void UnlockHint(object sender, RoutedEventArgs routedEventArgs)
 		{
@@ -408,22 +384,40 @@ namespace hangmanGame
 			this.Close();
         }
 
-		public void PlayerEntryMessage(string[] response)
+		private void SendMessage(object sender, RoutedEventArgs routedEventArgs)
 		{
-			messagesIn = response;
-			synchronizationContext.Post(objectPlayer => ReloadChat(response), null);
+			InstanceContext instanceContext = new InstanceContext(this);
+			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
+			if (tbMessage.Text != null)
+			{
+				chatManager.SendNewMessages(tbMessage.Text, nickname);
+				lstChat.Items.Add(tbMessage.Text);
+				tbMessage.Text = null;
+			}
+		}
+
+		public void ConnectToChat()
+		{
+			InstanceContext instanceContext = new InstanceContext(this);
+			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
+			chatManager.ClientConnect(nickname);
+			//chatManager.GetNewMessage(nickname);
+			//chatManager.GetAllPlayers();
+			//CreateChat();
+		}
+
+        public void ChatResponseBoolean(bool responseBoolean)
+        {
+			connectchat = responseBoolean;
+        }
+
+        public void PlayerEntryMessages(string[] responseListString)
+        {
+			messagesIn = responseListString;
+			synchronizationContext.Post(objectPlayer => ReloadChat(responseListString), null);
 		}
 
 		public void ReloadChat(string[] response)
-        {
-			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
-			//{
-				lstChat.Items.Add(response);
-
-			//}
-		}
-
-		public void ReloadChatone(string response)
 		{
 			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
 			//{
@@ -432,9 +426,5 @@ namespace hangmanGame
 			//}
 		}
 
-		public void PlayerEntryOneMessage(string responseListString)
-        {
-			synchronizationContext.Post(objectPlayer => ReloadChatone(responseListString), null);
-		}
-    }
+	}
 }
