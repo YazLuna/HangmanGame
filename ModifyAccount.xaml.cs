@@ -136,9 +136,9 @@ namespace hangmanGame
         private void Modify(object sender, RoutedEventArgs routedEventArgs)
         {
             playerEdit = new ServicePlayer();
-            emailEdit = null;
+            emailEdit = account.Email;
             ValidateDataAccount();
-            if(isUpdateData || !String.IsNullOrEmpty(emailEdit))
+            if(isUpdateData || !emailEdit.Equals(emailAccount))
             {
                 if (isValidData)
                 {
@@ -212,7 +212,7 @@ namespace hangmanGame
             }
             if (tbEmail.Text != account.Email)
             {
-                imgErrorEmail.Visibility = Visibility.Visible;
+                imgErrorEmail.Visibility = Visibility.Hidden;
                 ValidateEmail();
             }
         }
