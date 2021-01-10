@@ -17,28 +17,10 @@
       <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Position" type="xs:int" />
       <xs:element minOccurs="0" name="ScoreObtained" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="ServiceReportMisConduct" nillable="true" type="tns:ArrayOfServiceReportMisConduct" />
       <xs:element minOccurs="0" name="StatusPlayer" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServicePlayer" nillable="true" type="tns:ServicePlayer" />
-  <xs:complexType name="ArrayOfServiceReportMisConduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceReportMisConduct" nillable="true" type="tns:ServiceReportMisConduct" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfServiceReportMisConduct" nillable="true" type="tns:ArrayOfServiceReportMisConduct" />
-  <xs:complexType name="ServiceReportMisConduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AdditionalContext" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DateHour" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="IdReportMisConduct" type="xs:int" />
-      <xs:element minOccurs="0" name="IdReportedPlayer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IdReportingPlayer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TypeReport" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServiceReportMisConduct" nillable="true" type="tns:ServiceReportMisConduct" />
   <xs:complexType name="ArrayOfServicePlayer">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicePlayer" nillable="true" type="tns:ServicePlayer" />
@@ -66,4 +48,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceSentence" nillable="true" type="tns:ServiceSentence" />
+  <xs:complexType name="ServiceReportMisConduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalContext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateHour" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdReportedPlayer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdReportingPlayer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeReport" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceReportMisConduct" nillable="true" type="tns:ServiceReportMisConduct" />
+  <xs:complexType name="ArrayOfServiceReportMisConduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceReportMisConduct" nillable="true" type="tns:ServiceReportMisConduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceReportMisConduct" nillable="true" type="tns:ArrayOfServiceReportMisConduct" />
 </xs:schema>

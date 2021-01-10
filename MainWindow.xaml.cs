@@ -3,35 +3,47 @@ using System.Windows;
 using System.Windows.Media;
 using System.ServiceModel;
 using System.Windows.Forms;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class works as the main menu of the game where you can login, create an account or recover an account
+	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class MainWindow : Window, MessageService.IPlayerManagerCallback
+	public partial class MainWindow : Window, IPlayerManagerCallback
 	{
 		private bool responseGeneral;
+
+		/// <summary>
+		/// This is the constructor of the class that allows to start its components
+		/// </summary>
 		public MainWindow()
 		{
 			InitializeComponent();
 		}
 
-		private void Password_MouseEnter(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
-		{
-			tbPassword.Visibility = Visibility.Visible;
-			pbPassword.Visibility = Visibility.Hidden;
-			tbPassword.Text = pbPassword.Password;
-		}
-		private void Password_MouseLeave(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
-		{
-			tbPassword.Visibility = Visibility.Hidden;
-			pbPassword.Visibility = Visibility.Visible;
-			tbPassword.Text = String.Empty;
-		}
+		/// <summary>
+		/// This method saves the callback response from IplayerManagerCallback
+		/// </summary>
+		/// <param name="response">The response obtained when calling the server method.</param>
 		public void PlayerResponseBoolean(bool response)
 		{
 			responseGeneral = response;
 		}
 
+		private void Password_MouseEnter(object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		{
+			tbPassword.Visibility = Visibility.Visible;
+			pbPassword.Visibility = Visibility.Hidden;
+			tbPassword.Text = pbPassword.Password;
+		}
+		private void Password_MouseLeave(object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		{
+			tbPassword.Visibility = Visibility.Hidden;
+			pbPassword.Visibility = Visibility.Visible;
+			tbPassword.Text = String.Empty;
+		}
 		private void CreateAccount(object sender, RoutedEventArgs eventCreate)
 		{
 			Registry registry = new Registry();
@@ -45,9 +57,16 @@ namespace hangmanGame
             {
 				string email = tbEmail.Text;
 				string password = Security.Encrypt(pbPassword.Password);
-				InstanceContext instanceContext = new InstanceContext(this);
-				MessageService.PlayerManagerClient logIn = new MessageService.PlayerManagerClient(instanceContext);
-				logIn.LogIn(email, password);
+				try
+                {
+					InstanceContext instanceContext = new InstanceContext(this);
+					PlayerManagerClient logIn = new PlayerManagerClient(instanceContext);
+					logIn.LogIn(email, password);
+				} catch (Exception e)
+                {
+					Console.WriteLine(e);
+                }
+				
 				if (responseGeneral)
 				{
 					tbEmail.BorderBrush = Brushes.LightGreen;
@@ -88,7 +107,7 @@ namespace hangmanGame
 			tbEmail.BorderBrush = Brushes.Red;
 			pbPassword.BorderBrush = Brushes.Red;
 			System.Windows.Forms.MessageBox.Show(Properties.Resources.EnteredWrongCredentials, Properties.Resources.WrongCredentials
-						, System.Windows.Forms.MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 		}
 
 		private void LostMyPassword(object sender, RoutedEventArgs eventLost)

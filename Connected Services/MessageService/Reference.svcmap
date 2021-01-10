@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0801a397-f130-4f14-9a3a-bd200691088d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3f521835-e767-4453-993f-c58cda615e80" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,11 @@
     <MetadataSource Address="http://localhost:8080" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="4dedbcea-c696-4de8-b715-94c9b42579e3" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd2" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="4fc80697-d42e-485c-9ecd-ac939854d882" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
-    <MetadataFile FileName="HangmanGameService.wsdl" MetadataType="Wsdl" ID="88c26eff-42bd-4d16-a3ef-13a6d85c63ef" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="011cb879-3710-49d2-ae87-d7fe6b48d67b" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="9c7dafe7-2a9e-4fae-86ae-ad79767d19ee" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd3" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="5de00f2a-5921-4f04-862a-c5755fd9e178" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="1780826b-e639-495d-8bdc-e88c231ae23d" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="b6a8aabd-b1ac-4784-b9d0-df2bf3d1358b" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="5c1b9602-8811-47ae-a585-66c7d4047bf1" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
+    <MetadataFile FileName="HangmanGameService.wsdl" MetadataType="Wsdl" ID="b6f0c338-0c32-4f0b-903e-27267282ae0d" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="f108f6aa-37e2-47e9-97a1-b53c9d93aacc" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
