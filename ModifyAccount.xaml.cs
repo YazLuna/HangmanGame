@@ -8,6 +8,9 @@ using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Modify Account window
+    /// </summary>
     [CallbackBehavior(UseSynchronizationContext = false)]
     public partial class ModifyAccount : Window, IPlayerManagerCallback, IAccountManagerCallback
     {
@@ -20,40 +23,97 @@ namespace hangmanGame
         private bool isUpdateData;
         private string emailEdit;
         private ServicePlayer playerEdit;
+
+        /// <summary>
+        /// Constructor for Modify Account class
+        /// </summary>
         public ModifyAccount()
         {
             InitializeComponent();
+            ProhibitPaste();
         }
-        public void AccountResponseAccount(ServiceAccount serviceAccount)
+
+        /// <summary>
+        /// IAccountManager response method
+        /// </summary>
+        /// <param name="serviceAccount">The service account</param>
+        public void AccountPlayerResponse(ServiceAccount serviceAccount)
         {
             account = serviceAccount;
         }
-        public void AccountResponsePlayer(ServicePlayer servicePlayer)
+
+        /// <summary>
+        /// IAccountManager response method
+        /// </summary>
+        /// <param name="servicePlayer">The service player </param>
+        public void PlayerResponse(ServicePlayer servicePlayer)
         {
             player = servicePlayer;
         }
+
+        /// <summary>
+        /// IPlayerManager response method
+        /// </summary>
+        /// <param name="response">Server response</param>
         public void PlayerResponseBoolean(bool response)
         {
             responseBoolean = response;
         }
+
+        /// <summary>
+        /// Method to receive the player's email
+        /// </summary>
+        /// <param name="emailReceive">The email of the player</param>
         public void EmailReceived (string emailReceive)
         {
             emailAccount = emailReceive;
         }
-        public void AccountReceived()
+
+        /// <summary>
+        /// Method to obtain the player's account
+        /// </summary>
+        public void ObtainAccount()
         {
             InstanceContext instanceContext = new InstanceContext(this);
             AccountManagerClient getPlayer = new AccountManagerClient(instanceContext);
             getPlayer.SearchAccount(emailAccount);
-            string nickName = account.NickName;
-            getPlayer.SearchPlayer(nickName);
+            string nickname = account.NickName;
+            getPlayer.SearchPlayer(nickname);
             InitializeDataPlayer();
         }
+
+        /// <summary>
+        /// Method to initialize player data in components
+        /// </summary>
         public void InitializeDataPlayer()
         {
             tbEmail.Text = account.Email;
             tbName.Text = player.NamePlayer;
             tbLastName.Text = player.LastName;
+        }
+        private void ProhibitPaste()
+        {
+            CommandManager.AddPreviewCanExecuteHandler(tbName, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(tbName, OnPreviewExecuted);
+            CommandManager.AddPreviewCanExecuteHandler(tbEmail, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(tbEmail, OnPreviewExecuted);
+            CommandManager.AddPreviewCanExecuteHandler(tbLastName, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(tbLastName, OnPreviewExecuted);
+        }
+        private void OnPreviewCanExecute(object sender, CanExecuteRoutedEventArgs canExecuteRoutedEventArgs)
+        {
+            if (canExecuteRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                canExecuteRoutedEventArgs.CanExecute = true;
+                canExecuteRoutedEventArgs.Handled = true;
+            }
+        }
+        private void OnPreviewExecuted(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
+        {
+            if (executedRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                executedRoutedEventArgs.Handled = true;
+            }
         }
         private void Error_MouseEnter(Object objectImg, MouseEventArgs mouseEventArgs)
         {
@@ -112,7 +172,7 @@ namespace hangmanGame
         private void ReportList(object sender, RoutedEventArgs routedEventArgs)
         {
             ReportList reportList = new ReportList();
-            reportList.NickNameReceived(player.NickName);
+            reportList.NicknameReceived(player.NickName);
             reportList.EmailReceived(account.Email);
             reportList.ColocateReports();
             reportList.Show();
@@ -200,19 +260,22 @@ namespace hangmanGame
             isValidData = true;
             isUpdateData = false;
             isUpdateEmail = false;
+            imgErrorName.Visibility = Visibility.Hidden;
+            imgErrorLastName.Visibility = Visibility.Hidden;
+            imgErrorEmail.Visibility = Visibility.Hidden;
+            tbEmail.BorderBrush = Brushes.Transparent;
+            tbLastName.BorderBrush = Brushes.Transparent;
+            tbName.BorderBrush = Brushes.Transparent;
             if (tbName.Text != player.NamePlayer)
             {
-                imgErrorName.Visibility = Visibility.Hidden;
                 ValidateName();
             }
             if (tbLastName.Text != player.LastName)
             {
-                imgErrorLastName.Visibility = Visibility.Hidden;
                 ValidateLastName();
             }
             if (tbEmail.Text != account.Email)
             {
-                imgErrorEmail.Visibility = Visibility.Hidden;
                 ValidateEmail();
             }
         }
@@ -270,12 +333,12 @@ namespace hangmanGame
             }
             emailEdit = tbEmail.Text;
         }
-        private void prohibitSpace(object sender, KeyEventArgs keyEvent)
+        private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
                 keyEvent.Handled = true;
         }
-        private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
+        private void ProhibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
         {
             bool resultado = Regex.IsMatch(textCompositionEvent.Text, @"^[a-zA-Z]+${3,50}");
             if (!resultado)

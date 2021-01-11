@@ -39,7 +39,7 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Label Height="35" Grid.Column="0" Style="{StaticResource labelStyle}" Content ="{x:Static p:Resources.Name}" />
-            <TextBox VerticalAlignment="Top" Height="35"  Grid.Column="1" x:Name="tbName"  PreviewTextInput="prohibitNumberAllowSpecialChar" FontSize="15" FontFamily="Arial"/>
+            <TextBox VerticalAlignment="Top" Height="35"  Grid.Column="1" x:Name="tbName"  PreviewTextInput="ProhibitNumberAllowSpecialChar" FontSize="15" FontFamily="Arial"/>
             <Image Grid.Column="2" Grid.Row="0" Visibility="Hidden"
                  Name="imgErrorName"
                  Stretch="Fill"
@@ -52,7 +52,7 @@
             <Label Name="lbErrorName" Height="23" Visibility="Hidden" Style="{StaticResource ErrorTextStyle}" Content ="{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="1"></Label> 
             
             <Label Height="35" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" Grid.Row="2" />
-            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbLastName" PreviewTextInput="prohibitNumberAllowSpecialChar" Grid.Column="1" Grid.Row="2" FontSize="15" FontFamily="Arial"/>
+            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbLastName" PreviewTextInput="ProhibitNumberAllowSpecialChar" Grid.Column="1" Grid.Row="2" FontSize="15" FontFamily="Arial"/>
             <Image Grid.Column="2" Grid.Row="2" Visibility="Hidden"
                  Name="imgErrorLastName"
                  Stretch="Fill"
@@ -64,10 +64,10 @@
             </Image>
             <Label Name="lbErrorLastName" Height="23" Visibility="Hidden" Style="{StaticResource ErrorTextStyle}" Content ="{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="3"></Label>
 
-            <Label Height="35" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" Grid.Row="4"/>
-            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbNickName" PreviewKeyDown="prohibitSpace" KeyDown="prohibitAllowSpecialChar" Grid.Column="1" Grid.Row="4" FontSize="15" FontFamily="Arial"/>
+            <Label Height="35" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Nickname}" Grid.Row="4"/>
+            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbNickname" PreviewKeyDown="ProhibitSpace" KeyDown="ProhibitAllowSpecialChar" Grid.Column="1" Grid.Row="4" FontSize="15" FontFamily="Arial"/>
             <Image Grid.Column="2" Grid.Row="4" Visibility="Hidden"
-                 Name="imgErrorNickName"
+                 Name="imgErrorNickname"
                  Stretch="Fill"
                  Width="19" Height="22" MouseLeave="Error_MouseLeave" MouseEnter="Error_MouseEnter"
                  VerticalAlignment="Top" HorizontalAlignment="Right">
@@ -75,10 +75,10 @@
                     <BitmapImage UriSource="image/error.png"/>
                 </Image.Source>
             </Image>
-            <Label Name="lbErrorNickName" Height="23" Visibility="Hidden" Style="{StaticResource ErrorTextStyle}" Content ="{x:Static p:Resources.ErrorNickName}" Grid.Column="1" Grid.Row="5"></Label>
+            <Label Name="lbErrorNickname" Height="23" Visibility="Hidden" Style="{StaticResource ErrorTextStyle}" Content ="{x:Static p:Resources.ErrorNickname}" Grid.Column="1" Grid.Row="5"></Label>
 
             <Label Height="35" Style="{StaticResource labelStyle}" Content ="{x:Static p:Resources.Email}" Grid.Row="6" />
-            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbEmail" PreviewKeyDown="prohibitSpace" Grid.Row="6" Grid.Column="1" FontSize="15" FontFamily="Arial"/>
+            <TextBox VerticalAlignment="Top" Height="35" x:Name="tbEmail" PreviewKeyDown="ProhibitSpace" Grid.Row="6" Grid.Column="1" FontSize="15" FontFamily="Arial"/>
             <Image Grid.Column="2" Grid.Row="6" Visibility="Hidden"
                  Name="imgErrorEmail"
                  Stretch="Fill"
@@ -96,7 +96,7 @@
                  IsReadOnly="True"
                  Visibility="Hidden" Grid.Row="8" FontSize="15" FontFamily="Arial"/>
             <PasswordBox VerticalAlignment="Top" Height="35" Grid.Column="1" x:Name="pbPassword"
-             Visibility="Visible" PreviewKeyDown="prohibitSpace" Grid.Row="8" FontSize="15" FontFamily="Arial"/>
+             Visibility="Visible" PreviewKeyDown="ProhibitSpace" Grid.Row="8" FontSize="15" FontFamily="Arial"/>
             <Image Grid.Column="2" Grid.Row="8"
                  Name="imgEyePassword"
                  Stretch="Fill"
@@ -125,7 +125,7 @@
                  Visibility="Hidden" Height="35" VerticalAlignment="Top" FontSize="15" FontFamily="Arial">
             </TextBox>
             <PasswordBox Grid.Column="1" Grid.Row="10" Name="pbConfirmationPassword"
-             Visibility="Visible" PreviewKeyDown="prohibitSpace" Height="35" VerticalAlignment="Top" FontSize="15" FontFamily="Arial"/>
+             Visibility="Visible" PreviewKeyDown="ProhibitSpace" Height="35" VerticalAlignment="Top" FontSize="15" FontFamily="Arial"/>
             <Image Grid.Column="2" Grid.Row="10"
                  Name="imgEyeConfirmationPassword"
                  Stretch="Fill"

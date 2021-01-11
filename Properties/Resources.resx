@@ -231,7 +231,7 @@
   <data name="ErrorNameComplete" xml:space="preserve">
     <value>Enter only letters.</value>
   </data>
-  <data name="ErrorNickName" xml:space="preserve">
+  <data name="ErrorNickname" xml:space="preserve">
     <value>Enter only letters and numbers.</value>
   </data>
   <data name="ErrorPassword" xml:space="preserve">
@@ -313,7 +313,7 @@ Racism, sexism, homophobia, etc.</value>
   <data name="NewPassword" xml:space="preserve">
     <value>New Password: </value>
   </data>
-  <data name="NickName" xml:space="preserve">
+  <data name="Nickname" xml:space="preserve">
     <value>NickName: </value>
   </data>
   <data name="NoAccountRegisteredMessage" xml:space="preserve">
@@ -367,10 +367,10 @@ Racism, sexism, homophobia, etc.</value>
   <data name="RegisteredEmailMessage" xml:space="preserve">
     <value>The email is already registered. Please change it.</value>
   </data>
-  <data name="RegisteredEmailNickNameMessage" xml:space="preserve">
+  <data name="RegisteredEmailNicknameMessage" xml:space="preserve">
     <value>The nickname and email are already registered. Please change them.</value>
   </data>
-  <data name="RegisteredNickNameMessage" xml:space="preserve">
+  <data name="RegisteredNicknameMessage" xml:space="preserve">
     <value>The nickname is already registered. Please change it.</value>
   </data>
   <data name="Register_Button" xml:space="preserve">

@@ -30,8 +30,8 @@
             <Label Height="35" Grid.Column="0" Grid.Row="1" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
             <Label Name="lLastName" Grid.Column="1" Grid.Row="1" Style="{StaticResource DeleteStyle}" Height="35"/>
             
-            <Label Height="35" Grid.Column="0" Grid.Row="2" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.NickName}" />
-            <Label Name="lNickName" Grid.Column="1" Grid.Row="2" Style="{StaticResource DeleteStyle}" Height="35"/>
+            <Label Height="35" Grid.Column="0" Grid.Row="2" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Nickname}" />
+            <Label Name="lNickname" Grid.Column="1" Grid.Row="2" Style="{StaticResource DeleteStyle}" Height="35"/>
             
             <Label Height="35" Grid.Column="0" Grid.Row="3" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
             <Label Name="lEmail" Grid.Column="1" Grid.Row="3" Style="{StaticResource DeleteStyle}" Height="35"/>

@@ -41,7 +41,7 @@ namespace hangmanGame
 		{
 			emailAccount = email;
 		}
-		public void NickNameReceived(string nicknamePlayer)
+		public void NicknameReceived(string nicknamePlayer)
 		{
 			nickname = nicknamePlayer;
 		}
@@ -69,7 +69,7 @@ namespace hangmanGame
 
 		public void ChatReceived(string[] chat)
 		{
-			messagesIn = chat;
+			//messagesIn = chat;
 			synchronizationContext.Post(objectPlayer => ReloadChat(chat), null);
 		}
 
@@ -349,10 +349,10 @@ namespace hangmanGame
 		private void Report(object objectReport, RoutedEventArgs routedEventArgs)
 		{
 			Button btnReportPlayer = (Button)objectReport;
-			string nickNamePlayer = btnReportPlayer.CommandParameter as string;
+			string nicknamePlayer = btnReportPlayer.CommandParameter as string;
 			Report report = new Report();
-			report.NickNameReportedReceived(nickNamePlayer);
-			report.NickNameReceived(nickname);
+			report.NicknameReportedReceived(nicknamePlayer);
+			report.NicknameReceived(nickname);
 			report.ShowDialog();
             if (isReportPlayer)
             {
@@ -410,7 +410,7 @@ namespace hangmanGame
 
 		public void PlayerEntryMessage(string[] response)
 		{
-			messagesIn = response;
+			//messagesIn = response;
 			synchronizationContext.Post(objectPlayer => ReloadChat(response), null);
 		}
 

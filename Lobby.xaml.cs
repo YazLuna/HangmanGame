@@ -61,7 +61,7 @@ namespace hangmanGame
 		{
 			ModifyAccount modifyAccount = new ModifyAccount();
 			modifyAccount.EmailReceived(emailAccount);
-			modifyAccount.AccountReceived();
+			modifyAccount.ObtainAccount();
 			modifyAccount.Show();
 			this.Close();
 		}
@@ -82,7 +82,7 @@ namespace hangmanGame
 			else
 			{
 				WaitingRoom waitingRoom = new WaitingRoom();
-				waitingRoom.NickNameReceived(nickname);
+				waitingRoom.NicknameReceived(nickname);
 				waitingRoom.EmailReceived(emailAccount);
 				waitingRoom.ObtainListPlayer();
 				waitingRoom.Show();
