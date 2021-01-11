@@ -11,17 +11,18 @@ using System.Threading;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class allows all the management of the game and the chat.
+	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class Play : Window, IPlayConnectCallback
+	public partial class Play : Window, IPlayConnectCallback, IChatManagerCallback
 	{
 		private static string emailAccount;
 		private static string nickname;
 		private ServiceSentence sentence;
-		private static bool isStartGameCurrent;
-		private static ServicePlayer[] servicePlayersConnect;
 		private ServicePlayer[] servicePlayerConnectList;
 		private static string language;
-		private string sentenceWork;
+		private string sentenceWork; 
 		private List<CharacterSentence> listCharacterSentence;
 		private int countError = Number.NumberValue(NumberValues.ZERO);
 		private List<string> listCharacterPass = new List<string>();
@@ -31,52 +32,96 @@ namespace hangmanGame
 		private DispatcherTimer dispatcher = new DispatcherTimer();
 		private int time = 200;
 		private SynchronizationContext synchronizationContext;
+		private static bool isStartGameCurrent;
+		private static ServicePlayer[] servicePlayersConnect;
+		private bool connectchat;
+
+		/// <summary>
+		/// This method is the constructor of the class that initializes its components and saves the thread
+		/// </summary>
 		public Play()
 		{
 			InitializeComponent();
 			synchronizationContext = SynchronizationContext.Current;
 			CreateTimer();
 		}
+
+		/// <summary>
+		/// Save the email of the player who receives from another class
+		/// </summary>
+		/// <param name="email">Player's email.</param>
 		public void EmailReceived(string email)
 		{
 			emailAccount = email;
 		}
+
+		/// <summary>
+		/// Save the nickname of the player who receives from another class
+		/// </summary>
+		/// <param name="nicknamePlayer">Player's nickname.</param>
 		public void NicknameReceived(string nicknamePlayer)
 		{
 			nickname = nicknamePlayer;
 		}
+
+		/// <summary>
+		/// Save the player so that it can be reported
+		/// </summary>
+		/// <param name="isReport">If is report.</param>
 		public static void ReportPlayerReceived(bool isReport)
         {
 			isReportPlayer = isReport;
         }
+
+		/// <summary>
+		/// Save the sentence who receives from another class
+		/// </summary>
+		/// <param name="sentenceReceived">Sentence to play.</param>
 		public void SentenceReceived(ServiceSentence sentenceReceived)
 		{
 			sentence = sentenceReceived;
 		}
+
+		/// <summary>
+		/// Save the sentence who will be in the game
+		/// </summary>
+		/// <param name="responseSentence">Sentence who will be in the game.</param>
 		public void SentenceFound(ServiceSentence responseSentence)
 		{
 			sentence = responseSentence;
 		}
+
+		/// <summary>
+		/// Save the list of players who will be in the game
+		/// </summary>
+		/// <param name="servicePlayers">List of players who will be in the game.</param>
 		public void ListPlayerConnectReceived(ServicePlayer[] servicePlayers)
         {
 			servicePlayerConnectList = servicePlayers;
 
 		}
+		
+		/// <summary>
+		/// This method saves the list of connected players response from IPlayManagerCallback
+		/// </summary>
+		/// <param name="servicePlayerList">The response obtained when calling the server method.</param>
 		public void PlayerConnectList(ServicePlayer[] servicePlayerList)
 		{
 			servicePlayersConnect = servicePlayerList;
 		}
 
-		public void ChatReceived(string[] chat)
-		{
-			//messagesIn = chat;
-			synchronizationContext.Post(objectPlayer => ReloadChat(chat), null);
-		}
-
+		/// <summary>
+		/// Save the lenguage of the player who receives from another class
+		/// </summary>
+		/// <param name="languageReceive">Player's lenguage.</param>
 		public static void LanguageReceive(string languageReceive)
 		{
 			language = languageReceive;
 		}
+
+		/// <summary>
+		/// This method places the sentence on the game board
+		/// </summary>
 		public void ColocateSentence()
 		{
 			tbCurrentScore.Text = (sentence.ScoreSentence).ToString();
@@ -110,10 +155,19 @@ namespace hangmanGame
 			ColocateCategory();
 			ColocateSentenceWork();
 		}
+
+		/// <summary>
+		/// This method saves if there is an active game or not response from IPlayManagerCallback
+		/// </summary>
+		/// <param name="isStarGame">The response obtained when calling the server method.</param>
 		public void IsStarGame(bool isStarGame)
 		{
 			isStartGameCurrent = isStarGame;
 		}
+
+		/// <summary>
+		/// This method places the player on the game board
+		/// </summary>
 		public void ColocatePlayer()
 		{
 			foreach (ServicePlayer player in servicePlayerConnectList)
@@ -129,15 +183,6 @@ namespace hangmanGame
 					
 				}
 			}
-		}
-		public void ConnectToChat()
-		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
-			//chatManager.ClientConnect(nickname);
-			chatManager.GetNewMessage(nickname);
-			//chatManager.GetAllPlayers();
-			//CreateChat();
 		}
 		private void ColocateSentenceWork()
 		{
@@ -206,22 +251,14 @@ namespace hangmanGame
 			InstanceContext instanceContext = new InstanceContext(this);
 			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
 			playConnect.PlayerDisconnect(nickname);
+			InstanceContext instanceContextChat = new InstanceContext(this);
+			ChatManagerClient chatManagerClient = new ChatManagerClient(instanceContextChat);
+			chatManagerClient.RemoveUser(nickname);
 			dispatcher.Stop();
 		}
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{
 			MissGame();
-		}
-		private void SendMessage(object sender, RoutedEventArgs routedEventArgs)
-		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient chatManager = new PlayConnectClient(instanceContext);
-			if (tbMessage.Text != null)
-            {
-				chatManager.SendNewMessage(tbMessage.Text, nickname);
-				lstChat.Items.Add(tbMessage.Text);
-				tbMessage.Text = null;	
-			}
 		}
 		private void UnlockHint(object sender, RoutedEventArgs routedEventArgs)
 		{
@@ -329,13 +366,15 @@ namespace hangmanGame
 				}
 			}
         }	
-
 		private void MissGame()
         {
 			dispatcher.Stop();
 			InstanceContext instanceContext = new InstanceContext(this);
 			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
 			playConnect.PlayerDisconnect(nickname);
+			InstanceContext instanceContextChat = new InstanceContext(this);
+			ChatManagerClient chatManagerClient = new ChatManagerClient(instanceContextChat);
+			chatManagerClient.RemoveUser(nickname);
 			LostGame lostGame = new LostGame();
 			lostGame.Owner = this;
 			lostGame.ShowDialog();
@@ -390,11 +429,19 @@ namespace hangmanGame
 			endGame.GameOver(serviceWinner);
 		}
 
-        public void PlayerWinner(ServiceWinner playerWinner)
+		/// <summary>
+		/// Save the winner player
+		/// </summary>
+		/// <param name="playerWinner">Save the winning player data.</param>
+		public void PlayerWinner(ServiceWinner playerWinner)
         {
 			synchronizationContext.Post(objectPlayer => OpenGameOver(playerWinner), null);
 		}
 
+		/// <summary>
+		/// Open the game termination window
+		/// </summary>
+		/// <param name="playerWinner">Save the winning player data.</param>
 		public void OpenGameOver (ServiceWinner playerWinner)
         {
 			GameOver gameOver = new GameOver();
@@ -408,22 +455,55 @@ namespace hangmanGame
 			this.Close();
         }
 
-		public void PlayerEntryMessage(string[] response)
+		private void SendMessage(object sender, RoutedEventArgs routedEventArgs)
 		{
-			//messagesIn = response;
-			synchronizationContext.Post(objectPlayer => ReloadChat(response), null);
+			InstanceContext instanceContext = new InstanceContext(this);
+			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
+			if (tbMessage.Text != null)
+			{
+				chatManager.SendNewMessages(tbMessage.Text, nickname);
+				//lstChat.Items.Add(tbMessage.Text);
+				tbMessage.Text = null;
+			}
 		}
 
-		public void ReloadChat(string[] response)
+		/// <summary>
+		/// This method connect a player to chat
+		/// </summary>
+		public void ConnectToChat()
+		{
+			InstanceContext instanceContext = new InstanceContext(this);
+			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
+			chatManager.ClientConnect(nickname);
+			//chatManager.GetNewMessage(nickname);
+			//chatManager.GetAllPlayers();
+			//CreateChat();
+		}
+
+		/// <summary>
+		/// This method saves chat response from IChatManagerCallback
+		/// </summary>
+		/// <param name="responseBoolean">The response obtained when calling the server method.</param>
+		public void ChatResponseBoolean(bool responseBoolean)
         {
-			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
-			//{
-				lstChat.Items.Add(response);
+			connectchat = responseBoolean;
+        }
 
-			//}
+		/// <summary>
+		/// This method saves a chat message response from IChatManagerCallback
+		/// </summary>
+		/// <param name="responseListString">The response obtained when calling the server method.</param>
+		public void PlayerEntryMessages(string responseListString)
+        {
+			//messagesIn = responseListString;
+			synchronizationContext.Post(objectPlayer => ReloadChat(responseListString), null);
 		}
 
-		public void ReloadChatone(string response)
+		/// <summary>
+		/// Update the graphical interface of the chat with the new messages
+		/// </summary>
+		/// <param name="response">Is the new message.</param>
+		public void ReloadChat(string response)
 		{
 			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
 			//{
@@ -432,9 +512,5 @@ namespace hangmanGame
 			//}
 		}
 
-		public void PlayerEntryOneMessage(string responseListString)
-        {
-			synchronizationContext.Post(objectPlayer => ReloadChatone(responseListString), null);
-		}
     }
 }

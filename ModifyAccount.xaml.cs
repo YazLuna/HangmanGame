@@ -37,7 +37,7 @@ namespace hangmanGame
         /// IAccountManager response method
         /// </summary>
         /// <param name="serviceAccount">The service account</param>
-        public void AccountPlayerResponse(ServiceAccount serviceAccount)
+        public void AccountResponseAccount(ServiceAccount serviceAccount)
         {
             account = serviceAccount;
         }
@@ -46,7 +46,7 @@ namespace hangmanGame
         /// IAccountManager response method
         /// </summary>
         /// <param name="servicePlayer">The service player </param>
-        public void PlayerResponse(ServicePlayer servicePlayer)
+        public void AccountResponsePlayer(ServicePlayer servicePlayer)
         {
             player = servicePlayer;
         }

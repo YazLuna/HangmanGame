@@ -2,22 +2,33 @@
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class allows you to take the first step to recover the account of a player who has forgotten his password
+	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class LostMyPassword : Window, MessageService.IPlayerManagerCallback
+	public partial class LostMyPassword : Window, IPlayerManagerCallback
 	{
-		private bool Response;
-		
+		private bool response;
+
+		/// <summary>
+		/// This is the constructor that allows you to initialize the components of the class
+		/// </summary>
 		public LostMyPassword()
 		{
 			InitializeComponent();
 		}
 
-		public void PlayerResponseBoolean(bool response)
+		/// <summary>
+		/// This method saves the response from the IPlayerManager callback
+		/// </summary>
+		/// <param name="responseCallback">The response obtained when calling the server method.</param>
+		public void PlayerResponseBoolean(bool responseCallback)
 		{
-			Response = response;
+			response = responseCallback;
 		}
 
 		private void Cancel(object sender, RoutedEventArgs eventCancel)
@@ -34,7 +45,7 @@ namespace hangmanGame
 				if (SearchEmail())
                 {
 					InstanceContext instanceContext = new InstanceContext(this);
-					MessageService.PlayerManagerClient sendCode = new MessageService.PlayerManagerClient(instanceContext);
+					PlayerManagerClient sendCode = new PlayerManagerClient(instanceContext);
 					int code = ValidationData.GenerateConfirmationCode();
 					sendCode.SendEmail(tbEmail.Text, code);
 					RecoverAccount recover = new RecoverAccount();
@@ -51,9 +62,9 @@ namespace hangmanGame
 			bool emailExist = false;
 
 			InstanceContext instanceContext = new InstanceContext(this);
-			MessageService.PlayerManagerClient searchEmail = new MessageService.PlayerManagerClient(instanceContext);
+			PlayerManagerClient searchEmail = new PlayerManagerClient(instanceContext);
 			searchEmail.SearchEmailPlayer(tbEmail.Text);
-			if (Response)
+			if (response)
             {
 				emailExist = true;
             }
