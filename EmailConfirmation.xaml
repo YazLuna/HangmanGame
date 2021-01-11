@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="26"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Height="50" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.ConfirmationCode}" />
-            <TextBox Grid.Column="1" Grid.Row="0" Width="270" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"  Name="tbConfirmationCode" FontFamily="Arial" FontSize="15" PreviewKeyDown="prohibitSpace"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="0" Width="270" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"  Name="tbConfirmationCode" FontFamily="Arial" FontSize="15" PreviewKeyDown="ProhibitSpace"></TextBox>
             <Image Grid.Column="2" Grid.Row="0" Visibility="Hidden"
                  Name="imgErrorCodeConfirmation"
                  Stretch="Fill"

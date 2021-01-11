@@ -5,6 +5,9 @@ using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class is from the Report List window
+	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
 	public partial class ReportList : Window, IReportManagerCallback
 	{
@@ -12,26 +15,54 @@ namespace hangmanGame
 		private static string nickname;
 		private ServiceReportMisConduct[] reportList;
 		private bool isReportPlayer;
+
+		/// <summary>
+		/// Constructor of Report List class
+		/// </summary>
 		public ReportList()
         {
             InitializeComponent();
         }
+
+		/// <summary>
+		/// Method to receive the player's email
+		/// </summary>
+		/// <param name="email">Email of the player</param>
 		public void EmailReceived(string email)
 		{
 			emailAccount = email;
 		}
-		public void NickNameReceived(string nicknamePlayer)
+
+		/// <summary>
+		/// Method to receive the player's nickname
+		/// </summary>
+		/// <param name="nicknamePlayer">Nickname of the player</param>
+		public void NicknameReceived(string nicknamePlayer)
 		{
 			nickname = nicknamePlayer;
 		}
+
+		/// <summary>
+		/// IReportManagerCallback response method
+		/// </summary>
+		/// <param name="isReport">If the player was reported</param>
 		public void ResponseReportPlayer(bool isReport)
 		{
 			isReportPlayer = isReport;
 		}
+
+		/// <summary>
+		/// IReportManagerCallback response method
+		/// </summary>
+		/// <param name="reportMisConducts">List of reports</param>
 		public void ResponseReportList(ServiceReportMisConduct[] reportMisConducts)
 		{
 			reportList = reportMisConducts;
 		}
+
+		/// <summary>
+		/// Method to place the reports in the table lvReportList
+		/// </summary>
 		public void ColocateReports()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);

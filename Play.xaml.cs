@@ -388,10 +388,10 @@ namespace hangmanGame
 		private void Report(object objectReport, RoutedEventArgs routedEventArgs)
 		{
 			Button btnReportPlayer = (Button)objectReport;
-			string nickNamePlayer = btnReportPlayer.CommandParameter as string;
+			string nicknamePlayer = btnReportPlayer.CommandParameter as string;
 			Report report = new Report();
-			report.NickNameReportedReceived(nickNamePlayer);
-			report.NickNameReceived(nickname);
+			report.NicknameReportedReceived(nicknamePlayer);
+			report.NicknameReceived(nickname);
 			report.ShowDialog();
             if (isReportPlayer)
             {

@@ -7,6 +7,9 @@ using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Change Password window
+    /// </summary>
     [CallbackBehavior(UseSynchronizationContext = false)]
     public partial class ChangePassword : Window, IPlayerManagerCallback
     {
@@ -14,17 +17,56 @@ namespace hangmanGame
         private bool isValidPassword;
         private bool responseBoolean;
         private static ServiceAccount account;
+
+        /// <summary>
+        /// Constructor of the Change Password class
+        /// </summary>
         public ChangePassword()
         {
             InitializeComponent();
+            ProhibitPaste();
         }
+
+        /// <summary>
+        /// IPlayerManagerCallback response method
+        /// </summary>
+        /// <param name="response">Server response</param>
         public void PlayerResponseBoolean(bool response)
         {
             responseBoolean = response;
         }
+
+        /// <summary>
+        /// Method to receive the player's account
+        /// </summary>
+        /// <param name="serviceAccount">The player's account</param>
         public void AccountReceived (ServiceAccount serviceAccount)
         {
             account = serviceAccount;
+        }
+        private void ProhibitPaste()
+        {
+            CommandManager.AddPreviewCanExecuteHandler(pbPassword, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(pbPassword, OnPreviewExecuted);
+            CommandManager.AddPreviewCanExecuteHandler(pbNewPassword, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(pbNewPassword, OnPreviewExecuted);
+            CommandManager.AddPreviewCanExecuteHandler(pbConfirmationPassword, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(pbConfirmationPassword, OnPreviewExecuted);
+        }
+        private void OnPreviewCanExecute(object sender, CanExecuteRoutedEventArgs canExecuteRoutedEventArgs)
+        {
+            if (canExecuteRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                canExecuteRoutedEventArgs.CanExecute = true;
+                canExecuteRoutedEventArgs.Handled = true;
+            }
+        }
+        private void OnPreviewExecuted(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
+        {
+            if (executedRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                executedRoutedEventArgs.Handled = true;
+            }
         }
         private void Password_MouseEnter(Object sender, MouseEventArgs mouseEventArgs)
         {
@@ -94,7 +136,7 @@ namespace hangmanGame
                 }
             }
         }
-        private void prohibitSpace(object sender, KeyEventArgs keyEvent)
+        private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
                 keyEvent.Handled = true;
@@ -125,7 +167,7 @@ namespace hangmanGame
                     OpenMessageBox(Properties.Resources.NoChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
                 }
                 ModifyAccount modifyAccount = new ModifyAccount();
-                modifyAccount.AccountReceived();
+                modifyAccount.ObtainAccount();
                 modifyAccount.Show();
                 this.Close();
             }

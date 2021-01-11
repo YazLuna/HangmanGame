@@ -405,9 +405,9 @@ namespace hangmanGame.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Enter only letters and numbers..
         /// </summary>
-        public static string ErrorNickName {
+        public static string ErrorNickname {
             get {
-                return ResourceManager.GetString("ErrorNickName", resourceCulture);
+                return ResourceManager.GetString("ErrorNickname", resourceCulture);
             }
         }
         
@@ -667,9 +667,9 @@ namespace hangmanGame.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a NickName: .
         /// </summary>
-        public static string NickName {
+        public static string Nickname {
             get {
-                return ResourceManager.GetString("NickName", resourceCulture);
+                return ResourceManager.GetString("Nickname", resourceCulture);
             }
         }
         
@@ -838,18 +838,18 @@ namespace hangmanGame.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a The nickname and email are already registered. Please change them..
         /// </summary>
-        public static string RegisteredEmailNickNameMessage {
+        public static string RegisteredEmailNicknameMessage {
             get {
-                return ResourceManager.GetString("RegisteredEmailNickNameMessage", resourceCulture);
+                return ResourceManager.GetString("RegisteredEmailNicknameMessage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a The nickname is already registered. Please change it..
         /// </summary>
-        public static string RegisteredNickNameMessage {
+        public static string RegisteredNicknameMessage {
             get {
-                return ResourceManager.GetString("RegisteredNickNameMessage", resourceCulture);
+                return ResourceManager.GetString("RegisteredNicknameMessage", resourceCulture);
             }
         }
         

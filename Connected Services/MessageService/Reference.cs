@@ -805,11 +805,11 @@ namespace hangmanGame.MessageService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAccountManagerCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountResponseAccount", ReplyAction="http://tempuri.org/IAccountManager/AccountResponseAccountResponse")]
-        void AccountResponseAccount(hangmanGame.MessageService.ServiceAccount serviceAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountPlayerResponse", ReplyAction="http://tempuri.org/IAccountManager/AccountPlayerResponseResponse")]
+        void AccountPlayerResponse(hangmanGame.MessageService.ServiceAccount serviceAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountResponsePlayer", ReplyAction="http://tempuri.org/IAccountManager/AccountResponsePlayerResponse")]
-        void AccountResponsePlayer(hangmanGame.MessageService.ServicePlayer servicePlayer);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/PlayerResponse", ReplyAction="http://tempuri.org/IAccountManager/PlayerResponseResponse")]
+        void PlayerResponse(hangmanGame.MessageService.ServicePlayer servicePlayer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

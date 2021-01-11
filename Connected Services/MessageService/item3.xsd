@@ -177,26 +177,26 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="AccountResponseAccount">
+  <xs:element name="AccountPlayerResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="serviceAccount" nillable="true" type="q4:ServiceAccount" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AccountResponseAccountResponse">
+  <xs:element name="AccountPlayerResponseResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="AccountResponsePlayer">
+  <xs:element name="PlayerResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HangmanGameService" minOccurs="0" name="servicePlayer" nillable="true" type="q5:ServicePlayer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AccountResponsePlayerResponse">
+  <xs:element name="PlayerResponseResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

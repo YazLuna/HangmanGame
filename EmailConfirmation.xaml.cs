@@ -6,37 +6,84 @@ using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Email Confirmation window
+    /// </summary>
     [CallbackBehavior(UseSynchronizationContext = false)]
     public partial class EmailConfirmation : Window, IPlayerManagerCallback
     {
         private ServiceAccount account;
         private ServicePlayer accountPlayer;
         private bool responseConfirmation;
+
+        /// <summary>
+        /// Constructor of the Email Confirmation class
+        /// </summary>
         public EmailConfirmation()
         {
             InitializeComponent();
+            ProhibitPaste();
         }
+
+        /// <summary>
+        /// Implemented method of the IPlayerManagerCallback
+        /// </summary>
+        /// <param name="response">Server response</param>
         public void PlayerResponseBoolean(bool response)
         {
             responseConfirmation = response;
         }
-        public void AccountReceive(ServiceAccount accountReceive)
+
+        /// <summary>
+        /// Method to receive the player's account
+        /// </summary>
+        /// <param name="accountReceived">The account of the player</param>
+        public void AccountReceived(ServiceAccount accountReceived)
         {
             account = new ServiceAccount();
-            account = accountReceive;
+            account = accountReceived;
         }
-        public void PlayerReceive(ServicePlayer player)
+
+        /// <summary>
+        /// Method to receive player data
+        /// </summary>
+        /// <param name="playerReceived">The data player</param>
+        public void PlayerReceived(ServicePlayer playerReceived)
         {
             accountPlayer = new ServicePlayer();
-            accountPlayer = player;
+            accountPlayer = playerReceived;
         }
+
+        /// <summary>
+        /// Method to send the confirmation code
+        /// </summary>
         public void SendConfirmationCode()
         {
             InstanceContext instanceContext = new InstanceContext(this);
             PlayerManagerClient sendConfirmation = new PlayerManagerClient(instanceContext);
             sendConfirmation.SendEmail(account.Email, account.ConfirmationCode);
         }
-        private void prohibitSpace(object sender, KeyEventArgs keyEvent)
+        private void ProhibitPaste()
+        {
+            CommandManager.AddPreviewCanExecuteHandler(tbConfirmationCode, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(tbConfirmationCode, OnPreviewExecuted);
+        }
+        private void OnPreviewCanExecute(object sender, CanExecuteRoutedEventArgs canExecuteRoutedEventArgs)
+        {
+            if (canExecuteRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                canExecuteRoutedEventArgs.CanExecute = true;
+                canExecuteRoutedEventArgs.Handled = true;
+            }
+        }
+        private void OnPreviewExecuted(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
+        {
+            if (executedRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                executedRoutedEventArgs.Handled = true;
+            }
+        }
+        private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
                 keyEvent.Handled = true;

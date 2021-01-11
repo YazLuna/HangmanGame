@@ -4,27 +4,52 @@ using System.Windows.Controls;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Setting window
+    /// </summary>
     public partial class Setting : Window
     {
         private static string language;
         private static double valueSound;
+
+        /// <summary>
+        /// Constructor of the Setting class
+        /// </summary>
         public Setting()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Method you receive in application language
+        /// </summary>
+        /// <param name="languageReceive"></param>
         public static void LanguageReceive(string languageReceive)
         {
             language = languageReceive;
         }
+
+        /// <summary>
+        /// Method that receives the volume value from the application
+        /// </summary>
+        /// <param name="soundReceive"></param>
         public static void ValueSoundReceive(double soundReceive)
         {
             valueSound = soundReceive;
         }
+
+        /// <summary>
+        /// Method that initializes the volume value in the sliderSound component
+        /// </summary>
         public void InitializeValueSound()
         {
             double valueSliderSound = valueSound * 100;
             sliderSound.Value = valueSliderSound;
         }
+
+        /// <summary>
+        /// Method that initializes the languages in the comboBox
+        /// </summary>
         public void InitializeComboBox()
         {
             if(language == "en")
