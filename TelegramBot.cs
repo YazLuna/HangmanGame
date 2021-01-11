@@ -2,13 +2,20 @@
 using System.IO;
 using Telegram.Bot;
 
-
 namespace hangmanGame
 {
+    /// <summary>
+	/// This class connects the system to a telegram bot
+	/// </summary>
     public class TelegramBot
     {
-        private static string idGroup = "-1001448987677";
+        private static readonly string idGroup = "-1001448987677";
         private static readonly TelegramBotClient telegramBotClient = new TelegramBotClient("1467307763:AAFeNhCkY01af8lRoMeZZuHOZTg-E_w7HAM");
+
+        /// <summary>
+        /// This method sends the exception to telegram
+        /// </summary>
+        /// <param name="exception">The exception to send</param>
         public static void SendToTelegram(Exception exception)
         {
             try

@@ -59,7 +59,7 @@ namespace hangmanGame
 		/// Save the nickname of the player who receives from another class
 		/// </summary>
 		/// <param name="nicknamePlayer">Player's nickname.</param>
-		public void NickNameReceived(string nicknamePlayer)
+		public void NicknameReceived(string nicknamePlayer)
 		{
 			nickname = nicknamePlayer;
 		}
