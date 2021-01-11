@@ -107,7 +107,7 @@ namespace hangmanGame
 			play.ListPlayerConnectReceived(servicePlayers);
 			play.ColocateSentence();
 			play.ColocatePlayer();
-			//play.ConnectToChat();
+			play.ConnectToChat();
 			play.Show();
 			isClosing = false;
 			this.Close();

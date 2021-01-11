@@ -421,6 +421,24 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Connection Error.
+        /// </summary>
+        public static string ErrorService {
+            get {
+                return ResourceManager.GetString("ErrorService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Can not connect to server. Please try again later..
+        /// </summary>
+        public static string ErrorServiceDetails {
+            get {
+                return ResourceManager.GetString("ErrorServiceDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Go out.
         /// </summary>
         public static string GoOut_Button {

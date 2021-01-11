@@ -4,54 +4,75 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Input;
+using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class allows you to do the second and last step to recover the account of a player who has forgotten his password
+	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class RecoverAccount : Window, MessageService.IPlayerManagerCallback
+	public partial class RecoverAccount : Window, IPlayerManagerCallback
 	{
 		private bool response;
 		private static int code;
 		private static string emailAccount;
+
+		/// <summary>
+		/// This is the constructor of the class that allows to start its components
+		/// </summary>
 		public RecoverAccount()
 		{
 			InitializeComponent();
 		}
+
+		/// <summary>
+		/// This method allows saving an email received by another class
+		/// </summary>
+		/// <param name="email">Player's email received by another class.</param>
 		public void EmailReceived(string email)
 		{
 			emailAccount = email;
 		}
 
+		/// <summary>
+		/// This method allows saving a code received by another class
+		/// </summary>
+		/// <param name="codeSend">Player's code received by another class.</param>
 		public void CodeReceived(int codeSend)
 		{
 			code = codeSend;
 		}
 
+		/// <summary>
+		/// This method saves the callback response from IplayerManagerCallback
+		/// </summary>
+		/// <param name="response">The response obtained when calling the server method.</param>
 		public void PlayerResponseBoolean(bool response)
 		{
 			this.response = response;
 		}
 
-		private void Password_MouseEnter(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		private void Password_MouseEnter(object sender, System.Windows.Input.MouseEventArgs eventMouse)
 		{
 			tbNewPassword.Visibility = Visibility.Visible;
 			pbNewPassword.Visibility = Visibility.Hidden;
 			tbNewPassword.Text = pbNewPassword.Password;
 		}
-		private void Password_MouseLeave(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		private void Password_MouseLeave(object sender, System.Windows.Input.MouseEventArgs eventMouse)
 		{
 			tbNewPassword.Visibility = Visibility.Hidden;
 			pbNewPassword.Visibility = Visibility.Visible;
 			tbNewPassword.Text = String.Empty;
 		}
 
-		private void ValidatePassword_MouseEnter(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		private void ValidatePassword_MouseEnter(object sender, System.Windows.Input.MouseEventArgs eventMouse)
 		{
 			tbValidatePassword.Visibility = Visibility.Visible;
 			pbValidatePassword.Visibility = Visibility.Hidden;
 			tbValidatePassword.Text = pbNewPassword.Password;
 		}
-		private void ValidatePassword_MouseLeave(Object sender, System.Windows.Input.MouseEventArgs eventMouse)
+		private void ValidatePassword_MouseLeave(object sender, System.Windows.Input.MouseEventArgs eventMouse)
 		{
 			tbValidatePassword.Visibility = Visibility.Hidden;
 			pbValidatePassword.Visibility = Visibility.Visible;
@@ -75,7 +96,7 @@ namespace hangmanGame
 			if (ValidatePassword() && ValidateCode())
 			{
 				InstanceContext instanceContext = new InstanceContext(this);
-				MessageService.PlayerManagerClient changePassword = new MessageService.PlayerManagerClient(instanceContext);
+				PlayerManagerClient changePassword = new PlayerManagerClient(instanceContext);
 				changePassword.ChangePassword(emailAccount, Security.Encrypt(tbNewPassword.Text));
 				if (response)
                 {

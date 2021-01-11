@@ -147,9 +147,6 @@ namespace hangmanGame.MessageService {
         private System.Nullable<int> ScoreObtainedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private hangmanGame.MessageService.ServiceReportMisConduct[] ServiceReportMisConductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusPlayerField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -228,19 +225,6 @@ namespace hangmanGame.MessageService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public hangmanGame.MessageService.ServiceReportMisConduct[] ServiceReportMisConduct {
-            get {
-                return this.ServiceReportMisConductField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServiceReportMisConductField, value) != true)) {
-                    this.ServiceReportMisConductField = value;
-                    this.RaisePropertyChanged("ServiceReportMisConduct");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string StatusPlayer {
             get {
                 return this.StatusPlayerField;
@@ -249,131 +233,6 @@ namespace hangmanGame.MessageService {
                 if ((object.ReferenceEquals(this.StatusPlayerField, value) != true)) {
                     this.StatusPlayerField = value;
                     this.RaisePropertyChanged("StatusPlayer");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReportMisConduct", Namespace="http://schemas.datacontract.org/2004/07/HangmanGameService")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReportMisConduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AdditionalContextField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateHourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdReportMisConductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdReportedPlayerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdReportingPlayerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TypeReportField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AdditionalContext {
-            get {
-                return this.AdditionalContextField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdditionalContextField, value) != true)) {
-                    this.AdditionalContextField = value;
-                    this.RaisePropertyChanged("AdditionalContext");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateHour {
-            get {
-                return this.DateHourField;
-            }
-            set {
-                if ((this.DateHourField.Equals(value) != true)) {
-                    this.DateHourField = value;
-                    this.RaisePropertyChanged("DateHour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdReportMisConduct {
-            get {
-                return this.IdReportMisConductField;
-            }
-            set {
-                if ((this.IdReportMisConductField.Equals(value) != true)) {
-                    this.IdReportMisConductField = value;
-                    this.RaisePropertyChanged("IdReportMisConduct");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IdReportedPlayer {
-            get {
-                return this.IdReportedPlayerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdReportedPlayerField, value) != true)) {
-                    this.IdReportedPlayerField = value;
-                    this.RaisePropertyChanged("IdReportedPlayer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IdReportingPlayer {
-            get {
-                return this.IdReportingPlayerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdReportingPlayerField, value) != true)) {
-                    this.IdReportingPlayerField = value;
-                    this.RaisePropertyChanged("IdReportingPlayer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TypeReport {
-            get {
-                return this.TypeReportField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeReportField, value) != true)) {
-                    this.TypeReportField = value;
-                    this.RaisePropertyChanged("TypeReport");
                 }
             }
         }
@@ -622,58 +481,112 @@ namespace hangmanGame.MessageService {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MessageService.IHangmanGameService", CallbackContract=typeof(hangmanGame.MessageService.IHangmanGameServiceCallback))]
-    public interface IHangmanGameService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHangmanGameService/SendOperation", ReplyAction="http://tempuri.org/IHangmanGameService/SendOperationResponse")]
-        void SendOperation();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHangmanGameService/SendOperation", ReplyAction="http://tempuri.org/IHangmanGameService/SendOperationResponse")]
-        System.Threading.Tasks.Task SendOperationAsync();
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IHangmanGameServiceCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHangmanGameService/Response", ReplyAction="http://tempuri.org/IHangmanGameService/ResponseResponse")]
-        void Response(int result);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IHangmanGameServiceChannel : hangmanGame.MessageService.IHangmanGameService, System.ServiceModel.IClientChannel {
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class HangmanGameServiceClient : System.ServiceModel.DuplexClientBase<hangmanGame.MessageService.IHangmanGameService>, hangmanGame.MessageService.IHangmanGameService {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReportMisConduct", Namespace="http://schemas.datacontract.org/2004/07/HangmanGameService")]
+    [System.SerializableAttribute()]
+    public partial class ServiceReportMisConduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        public HangmanGameServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AdditionalContextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateHourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdReportedPlayerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdReportingPlayerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeReportField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
         }
         
-        public HangmanGameServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AdditionalContext {
+            get {
+                return this.AdditionalContextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdditionalContextField, value) != true)) {
+                    this.AdditionalContextField = value;
+                    this.RaisePropertyChanged("AdditionalContext");
+                }
+            }
         }
         
-        public HangmanGameServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateHour {
+            get {
+                return this.DateHourField;
+            }
+            set {
+                if ((this.DateHourField.Equals(value) != true)) {
+                    this.DateHourField = value;
+                    this.RaisePropertyChanged("DateHour");
+                }
+            }
         }
         
-        public HangmanGameServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IdReportedPlayer {
+            get {
+                return this.IdReportedPlayerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdReportedPlayerField, value) != true)) {
+                    this.IdReportedPlayerField = value;
+                    this.RaisePropertyChanged("IdReportedPlayer");
+                }
+            }
         }
         
-        public HangmanGameServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IdReportingPlayer {
+            get {
+                return this.IdReportingPlayerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdReportingPlayerField, value) != true)) {
+                    this.IdReportingPlayerField = value;
+                    this.RaisePropertyChanged("IdReportingPlayer");
+                }
+            }
         }
         
-        public void SendOperation() {
-            base.Channel.SendOperation();
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TypeReport {
+            get {
+                return this.TypeReportField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeReportField, value) != true)) {
+                    this.TypeReportField = value;
+                    this.RaisePropertyChanged("TypeReport");
+                }
+            }
         }
         
-        public System.Threading.Tasks.Task SendOperationAsync() {
-            return base.Channel.SendOperationAsync();
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -892,11 +805,11 @@ namespace hangmanGame.MessageService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAccountManagerCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountPlayerResponse", ReplyAction="http://tempuri.org/IAccountManager/AccountPlayerResponseResponse")]
-        void AccountPlayerResponse(hangmanGame.MessageService.ServiceAccount serviceAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountResponseAccount", ReplyAction="http://tempuri.org/IAccountManager/AccountResponseAccountResponse")]
+        void AccountResponseAccount(hangmanGame.MessageService.ServiceAccount serviceAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/PlayerResponse", ReplyAction="http://tempuri.org/IAccountManager/PlayerResponseResponse")]
-        void PlayerResponse(hangmanGame.MessageService.ServicePlayer servicePlayer);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountManager/AccountResponsePlayer", ReplyAction="http://tempuri.org/IAccountManager/AccountResponsePlayerResponse")]
+        void AccountResponsePlayer(hangmanGame.MessageService.ServicePlayer servicePlayer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1021,12 +934,6 @@ namespace hangmanGame.MessageService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/SendNewMessages", ReplyAction="http://tempuri.org/IChatManager/SendNewMessagesResponse")]
         System.Threading.Tasks.Task SendNewMessagesAsync(string newMessage, string nickname);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetAllPlayers", ReplyAction="http://tempuri.org/IChatManager/GetAllPlayersResponse")]
-        void GetAllPlayers();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/GetAllPlayers", ReplyAction="http://tempuri.org/IChatManager/GetAllPlayersResponse")]
-        System.Threading.Tasks.Task GetAllPlayersAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/RemoveUser", ReplyAction="http://tempuri.org/IChatManager/RemoveUserResponse")]
         void RemoveUser(string nickname);
         
@@ -1040,14 +947,8 @@ namespace hangmanGame.MessageService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponseBoolean", ReplyAction="http://tempuri.org/IChatManager/ChatResponseBooleanResponse")]
         void ChatResponseBoolean(bool responseBoolean);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponse", ReplyAction="http://tempuri.org/IChatManager/ChatResponseResponse")]
-        void ChatResponse(string responseString);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/ChatResponseList", ReplyAction="http://tempuri.org/IChatManager/ChatResponseListResponse")]
-        void ChatResponseList(hangmanGame.MessageService.ServicePlayer[] responseList);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatManager/PlayerEntryMessages", ReplyAction="http://tempuri.org/IChatManager/PlayerEntryMessagesResponse")]
-        void PlayerEntryMessages(string[] responseListString);
+        void PlayerEntryMessages(string responseListString);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1100,14 +1001,6 @@ namespace hangmanGame.MessageService {
         
         public System.Threading.Tasks.Task SendNewMessagesAsync(string newMessage, string nickname) {
             return base.Channel.SendNewMessagesAsync(newMessage, nickname);
-        }
-        
-        public void GetAllPlayers() {
-            base.Channel.GetAllPlayers();
-        }
-        
-        public System.Threading.Tasks.Task GetAllPlayersAsync() {
-            return base.Channel.GetAllPlayersAsync();
         }
         
         public void RemoveUser(string nickname) {
@@ -1207,18 +1100,6 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GameOver", ReplyAction="http://tempuri.org/IPlayConnect/GameOverResponse")]
         System.Threading.Tasks.Task GameOverAsync(hangmanGame.MessageService.ServiceWinner serviceWinner);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GetNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/GetNewMessageResponse")]
-        void GetNewMessage(string nickname);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/GetNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/GetNewMessageResponse")]
-        System.Threading.Tasks.Task GetNewMessageAsync(string nickname);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/SendNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/SendNewMessageResponse")]
-        void SendNewMessage(string newMessage, string nickname);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/SendNewMessage", ReplyAction="http://tempuri.org/IPlayConnect/SendNewMessageResponse")]
-        System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1235,12 +1116,6 @@ namespace hangmanGame.MessageService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerWinner", ReplyAction="http://tempuri.org/IPlayConnect/PlayerWinnerResponse")]
         void PlayerWinner([System.ServiceModel.MessageParameterAttribute(Name="playerWinner")] hangmanGame.MessageService.ServiceWinner playerWinner1);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerEntryMessage", ReplyAction="http://tempuri.org/IPlayConnect/PlayerEntryMessageResponse")]
-        void PlayerEntryMessage(string[] responseListString);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayConnect/PlayerEntryOneMessage", ReplyAction="http://tempuri.org/IPlayConnect/PlayerEntryOneMessageResponse")]
-        void PlayerEntryOneMessage(string responseListString);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1309,22 +1184,6 @@ namespace hangmanGame.MessageService {
         
         public System.Threading.Tasks.Task GameOverAsync(hangmanGame.MessageService.ServiceWinner serviceWinner) {
             return base.Channel.GameOverAsync(serviceWinner);
-        }
-        
-        public void GetNewMessage(string nickname) {
-            base.Channel.GetNewMessage(nickname);
-        }
-        
-        public System.Threading.Tasks.Task GetNewMessageAsync(string nickname) {
-            return base.Channel.GetNewMessageAsync(nickname);
-        }
-        
-        public void SendNewMessage(string newMessage, string nickname) {
-            base.Channel.SendNewMessage(newMessage, nickname);
-        }
-        
-        public System.Threading.Tasks.Task SendNewMessageAsync(string newMessage, string nickname) {
-            return base.Channel.SendNewMessageAsync(newMessage, nickname);
         }
     }
     
