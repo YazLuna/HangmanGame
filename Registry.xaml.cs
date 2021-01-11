@@ -8,22 +8,65 @@ using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class is from the Registry window
+	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
 	public partial class Registry : Window, IPlayerManagerCallback
 	{
 		private bool isValidName;
 		private bool isValidLastName;
-		private bool isValidNickName;
+		private bool isValidNickname;
 		private bool isValidEmail;
 		private bool isValidPassword;
 		private bool responseBoolean;
+
+		/// <summary>
+		/// Constructor of the Registry class
+		/// </summary>
 		public Registry()
 		{
 			InitializeComponent();
+			ProhibitPaste();
 		}
+
+		/// <summary>
+		/// IPlayerManagerCallback response method
+		/// </summary>
+		/// <param name="response">Server response</param>
 		public void PlayerResponseBoolean(bool response)
 		{
 			responseBoolean = response;
+		}
+		private void ProhibitPaste()
+		{
+			CommandManager.AddPreviewCanExecuteHandler(tbName, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(tbName, OnPreviewExecuted);
+			CommandManager.AddPreviewCanExecuteHandler(tbEmail, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(tbEmail, OnPreviewExecuted);
+			CommandManager.AddPreviewCanExecuteHandler(tbLastName, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(tbLastName, OnPreviewExecuted);
+			CommandManager.AddPreviewCanExecuteHandler(tbNickname, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(tbNickname, OnPreviewExecuted);
+			CommandManager.AddPreviewCanExecuteHandler(pbPassword, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(pbPassword, OnPreviewExecuted);
+			CommandManager.AddPreviewCanExecuteHandler(pbConfirmationPassword, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(pbConfirmationPassword, OnPreviewExecuted);
+		}
+		private void OnPreviewCanExecute(object sender, CanExecuteRoutedEventArgs canExecuteRoutedEventArgs)
+		{
+			if (canExecuteRoutedEventArgs.Command == ApplicationCommands.Paste)
+			{
+				canExecuteRoutedEventArgs.CanExecute = true;
+				canExecuteRoutedEventArgs.Handled = true;
+			}
+		}
+		private void OnPreviewExecuted(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
+		{
+			if (executedRoutedEventArgs.Command == ApplicationCommands.Paste)
+			{
+				executedRoutedEventArgs.Handled = true;
+			}
 		}
 		private void Password_MouseEnter(Object sender, MouseEventArgs mouseEventArgs)
 		{
@@ -67,11 +110,11 @@ namespace hangmanGame
 				}
 				else
 				{
-					bool isImgNickName;
-					isImgNickName = objectImg.Equals(imgErrorNickName);
-					if (isImgNickName)
+					bool isImgNickname;
+					isImgNickname = objectImg.Equals(imgErrorNickname);
+					if (isImgNickname)
 					{
-						lbErrorNickName.Visibility = Visibility.Visible;
+						lbErrorNickname.Visibility = Visibility.Visible;
 					}
 					else
 					{
@@ -116,11 +159,11 @@ namespace hangmanGame
 				}
                 else
                 {
-					bool isImgNickName;
-					isImgNickName = objectImg.Equals(imgErrorNickName);
-                    if (isImgNickName)
+					bool isImgNickname;
+					isImgNickname = objectImg.Equals(imgErrorNickname);
+                    if (isImgNickname)
                     {
-						lbErrorNickName.Visibility = Visibility.Hidden;
+						lbErrorNickname.Visibility = Visibility.Hidden;
 					}
                     else
                     {
@@ -147,7 +190,7 @@ namespace hangmanGame
 				}
 			}
 		}
-		private void prohibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
+		private void ProhibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
 		{
 			bool resultado = Regex.IsMatch(textCompositionEvent.Text, @"^[a-zA-Z]+${3,50}");
 			if (!resultado)
@@ -159,12 +202,12 @@ namespace hangmanGame
 				textCompositionEvent.Handled = false;
 			}
 		}
-		private void prohibitSpace(object sender, KeyEventArgs keyEvent)
+		private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
 		{
 			if (keyEvent.Key == Key.Space)
 				keyEvent.Handled = true;
 		}
-		private void prohibitAllowSpecialChar(object sender, KeyEventArgs keyEvent)
+		private void ProhibitAllowSpecialChar(object sender, KeyEventArgs keyEvent)
 		{
 			if (((keyEvent.Key < Key.NumPad0) || (keyEvent.Key > Key.NumPad9)) && ((keyEvent.Key < Key.A) || (keyEvent.Key > Key.Z)) &&
 				((keyEvent.Key < Key.D0) || (keyEvent.Key > Key.D9)))
@@ -185,7 +228,7 @@ namespace hangmanGame
 			{
 				string name = tbName.Text;
 				string lastName = tbLastName.Text;
-				string nickname = tbNickName.Text;
+				string nickname = tbNickname.Text;
 				string email = tbEmail.Text;
 				string password = Security.Encrypt(pbPassword.Password);
 				int codeConfirmation = ValidationData.GenerateConfirmationCode();
@@ -203,14 +246,14 @@ namespace hangmanGame
 
 				InstanceContext instanceContext = new InstanceContext(this);
 				PlayerManagerClient validatePlayer = new PlayerManagerClient(instanceContext);
-				validatePlayer.SearchNickNamePlayer(nickname);
-				bool isValidRepeatNickName = responseBoolean;
+				validatePlayer.SearchNicknamePlayer(nickname);
+				bool isValidRepeatNickname = responseBoolean;
 				validatePlayer.SearchEmailPlayer(email);
 				bool isValidRepeatEmail = responseBoolean;
 
-				if(isValidRepeatEmail && isValidRepeatNickName)
+				if(isValidRepeatEmail && isValidRepeatNickname)
                 {
-					OpenMessageBox(Properties.Resources.RegisteredEmailNickNameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
+					OpenMessageBox(Properties.Resources.RegisteredEmailNicknameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -220,15 +263,15 @@ namespace hangmanGame
 					}
                     else
                     {
-                        if (isValidRepeatNickName)
+                        if (isValidRepeatNickname)
                         {
-							OpenMessageBox(Properties.Resources.RegisteredNickNameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
+							OpenMessageBox(Properties.Resources.RegisteredNicknameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
 						}
                         else
                         {
 							EmailConfirmation emailConfirmation = new EmailConfirmation();
-							emailConfirmation.AccountReceive(account);
-							emailConfirmation.PlayerReceive(accountPlayer);
+							emailConfirmation.AccountReceived(account);
+							emailConfirmation.PlayerReceived(accountPlayer);
 							emailConfirmation.SendConfirmationCode();
 							emailConfirmation.Show();
 							this.Close();
@@ -250,13 +293,13 @@ namespace hangmanGame
 			bool isValidDataPlayer = false;
 			isValidName = false;
 			isValidLastName = false;
-			isValidNickName = false;
+			isValidNickname = false;
 			isValidEmail = false;
 			isValidPassword = false;
 
 			tbName.BorderBrush = Brushes.Transparent;
 			tbLastName.BorderBrush = Brushes.Transparent;
-			tbNickName.BorderBrush = Brushes.Transparent;
+			tbNickname.BorderBrush = Brushes.Transparent;
 			tbEmail.BorderBrush = Brushes.Transparent;
 			pbPassword.BorderBrush = Brushes.Transparent;
 			pbConfirmationPassword.BorderBrush = Brushes.Transparent;
@@ -265,16 +308,16 @@ namespace hangmanGame
 			imgErrorPassword.Visibility = Visibility.Hidden;
 			imgErrorName.Visibility = Visibility.Hidden;
 			imgErrorLastName.Visibility = Visibility.Hidden;
-			imgErrorNickName.Visibility = Visibility.Hidden;
+			imgErrorNickname.Visibility = Visibility.Hidden;
 			imgErrorEmail.Visibility = Visibility.Hidden;
 
 			ValidateName();
 			ValidateLastName();
-			ValidateNickName();
+			ValidateNickname();
 			ValidateEmail();
 			ValidatePassword();
 
-			if (isValidName && isValidLastName && isValidNickName && isValidEmail && isValidPassword)
+			if (isValidName && isValidLastName && isValidNickname && isValidEmail && isValidPassword)
 			{
 				isValidDataPlayer = true;
 
@@ -359,17 +402,17 @@ namespace hangmanGame
 				isValidPassword = true;
 			}
 		}
-		private void ValidateNickName()
+		private void ValidateNickname()
 		{
-			isValidNickName = ValidationData.ValidateNickName(tbNickName.Text);
-			if (isValidNickName)
+			isValidNickname = ValidationData.ValidateNickname(tbNickname.Text);
+			if (isValidNickname)
 			{
-				tbNickName.BorderBrush = Brushes.Green;
+				tbNickname.BorderBrush = Brushes.Green;
 			}
 			else
 			{
-				tbNickName.BorderBrush = Brushes.Red;
-				imgErrorNickName.Visibility = Visibility.Visible;
+				tbNickname.BorderBrush = Brushes.Red;
+				imgErrorNickname.Visibility = Visibility.Visible;
 			}
 		}
 	}

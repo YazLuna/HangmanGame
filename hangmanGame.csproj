@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\DocumentationHangmanGame.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -318,6 +319,8 @@
     <Resource Include="image\Timer.png" />
     <Resource Include="image\report.png" />
     <Resource Include="image\trophy.png" />
+    <Resource Include="image\playerConnect.png" />
+    <Resource Include="image\behind.png" />
     <None Include="Connected Services\MessageService\item.disco" />
     <None Include="Connected Services\MessageService\configuration91.svcinfo" />
     <None Include="Connected Services\MessageService\configuration.svcinfo" />
@@ -325,8 +328,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Resource Include="image\playerConnect.png" />
-    <Resource Include="image\behind.png" />
     <Content Include="image\prisoner1.mp3" />
     <Resource Include="image\sound.png" />
     <Resource Include="image\StartGame.png" />

@@ -2,9 +2,13 @@
 using System.ServiceModel;
 using System.Windows;
 using hangmanGame.MessageService;
+using System.Windows.Input;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Report window
+    /// </summary>
     [CallbackBehavior(UseSynchronizationContext = false)]
     public partial class Report : Window, IReportManagerCallback
     {
@@ -12,25 +16,70 @@ namespace hangmanGame
         private static string nicknameReported;
         private static string nickname;
         private ServiceReportMisConduct[] reportList;
+
+        /// <summary>
+        /// Constructor of Report class 
+        /// </summary>
         public Report()
         {
             InitializeComponent();
+            ProhibitPaste();
         }
+
+        /// <summary>
+        /// IReportManagerCallback response method
+        /// </summary>
+        /// <param name="reportMisConducts">List of reports</param>
         public void ResponseReportList(ServiceReportMisConduct[] reportMisConducts)
         {
             reportList = reportMisConducts;
         }
+
+        /// <summary>
+        /// IReportManagerCallback response method
+        /// </summary>
+        /// <param name="isReport">If the player was reported</param>
         public void ResponseReportPlayer(bool isReport)
         {
             isReportPlayer = isReport;
         }
-        public void NickNameReportedReceived(string nicknamePlayerReported)
+
+        /// <summary>
+        /// Method to receive the nickname of the player to report
+        /// </summary>
+        /// <param name="nicknamePlayerReported">Nickname of the player reported</param>
+        public void NicknameReportedReceived(string nicknamePlayerReported)
         {
             nicknameReported = nicknamePlayerReported;
         }
-        public void NickNameReceived(string nicknamePlayer)
+
+        /// <summary>
+        /// Method to receive the player's nickname
+        /// </summary>
+        /// <param name="nicknamePlayer">Nickname of the player</param>
+        public void NicknameReceived(string nicknamePlayer)
         {
             nickname = nicknamePlayer;
+        }
+        private void ProhibitPaste()
+        {
+            CommandManager.AddPreviewCanExecuteHandler(tbContext, OnPreviewCanExecute);
+            CommandManager.AddPreviewExecutedHandler(tbContext, OnPreviewExecuted);
+        }
+        private void OnPreviewCanExecute(object sender, CanExecuteRoutedEventArgs canExecuteRoutedEventArgs)
+        {
+            if (canExecuteRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                canExecuteRoutedEventArgs.CanExecute = true;
+                canExecuteRoutedEventArgs.Handled = true;
+            }
+        }
+        private void OnPreviewExecuted(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
+        {
+            if (executedRoutedEventArgs.Command == ApplicationCommands.Paste)
+            {
+                executedRoutedEventArgs.Handled = true;
+            }
         }
         private void ReportPlayer(object sender, RoutedEventArgs routedEventArgs)
         {

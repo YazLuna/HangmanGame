@@ -2,8 +2,14 @@
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Lost Game window
+    /// </summary>
     public partial class LostGame : Window
     {
+        /// <summary>
+        /// Constructor of the Lost Game class
+        /// </summary>
         public LostGame()
         {
             InitializeComponent();

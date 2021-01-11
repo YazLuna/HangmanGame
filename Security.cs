@@ -2,8 +2,16 @@
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is for passwords
+    /// </summary>
     public static class Security
     {
+        /// <summary>
+        /// Method that encrypts a password
+        /// </summary>
+        /// <param name="password">The password</param>
+        /// <returns>Encrypted password</returns>
         public static string Encrypt(string password)
         {
             string passwordEncrypt = string.Empty;
@@ -12,6 +20,11 @@ namespace hangmanGame
             return passwordEncrypt;
         }
 
+        /// <summary>
+        /// Method that decrypts a password
+        /// </summary>
+        /// <param name="password">The password</param>
+        /// <returns>Decrypted password</returns>
         public static string Decrypt(string password)
         {
             string passwordDecrypt = string.Empty;

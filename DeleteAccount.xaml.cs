@@ -5,20 +5,37 @@ using hangmanGame.MessageService;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the Delete Account window
+    /// </summary>
     [CallbackBehavior(UseSynchronizationContext = false)]
     public partial class DeleteAccount : Window, IPlayerManagerCallback
     {
         private static ServiceAccount account;
         private static ServicePlayer player;
         private bool responseBoolean;
+
+        /// <summary>
+        /// Constructor for Delete Account class
+        /// </summary>
         public DeleteAccount()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Implemented method of the IPlayerManagerCallback
+        /// </summary>
+        /// <param name="response">Server response</param>
         public void PlayerResponseBoolean(bool response)
         {
             responseBoolean = response;
         }
+
+        /// <summary>
+        /// Method to receive the player's account
+        /// </summary>
+        /// <param name="accountReceived">The account of the player</param>
         public void AccountReceived(ServiceAccount accountReceived)
         {
             account = accountReceived;
@@ -26,12 +43,17 @@ namespace hangmanGame
             string password = Security.Decrypt(account.PasswordAccount);
             lPassword.Content = password;
         }
+
+        /// <summary>
+        /// Method to receive player data
+        /// </summary>
+        /// <param name="playerReceived">The data player</param>
         public void PlayerReceived(ServicePlayer playerReceived)
         {
             player = playerReceived;
             lName.Content = player.NamePlayer;
             lLastName.Content = player.LastName;
-            lNickName.Content = player.NickName;
+            lNickname.Content = player.NickName;
         }
         private void DeleteAccountPlayer(object sender, RoutedEventArgs routedEventArgs) {
             InstanceContext instanceContext = new InstanceContext(this);

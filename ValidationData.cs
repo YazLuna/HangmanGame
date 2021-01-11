@@ -3,14 +3,27 @@ using System.Text.RegularExpressions;
 
 namespace hangmanGame
 {
+	/// <summary>
+	/// This class validates a player's data
+	/// </summary>
 	public static class ValidationData
 	{
+		/// <summary>
+		/// Method that generates the confirmation code
+		/// </summary>
+		/// <returns>Code of Confirmation</returns>
 		public static int GenerateConfirmationCode()
 		{
 			Random random = new Random();
 			int code = random.Next(100000, 999999);
 			return code;
 		}
+
+		/// <summary>
+		/// Method that validates the password
+		/// </summary>
+		/// <param name="password">The password</param>
+		/// <returns>If the password is correct</returns>
 		public static bool ValidatePassword(string password)
 		{
 			bool isValidPassword = false;
@@ -26,6 +39,12 @@ namespace hangmanGame
 			}
 			return isValidPassword;
 		}
+
+		/// <summary>
+		/// Method that validates the player's name
+		/// </summary>
+		/// <param name="name">The name of the player</param>
+		/// <returns>If the name is correct</returns>
 		public static bool ValidateNameComplete(string name)
 		{
 			bool isValidNameComplete = false;
@@ -34,6 +53,12 @@ namespace hangmanGame
 			isValidNameComplete = regexName.IsMatch(name);
 			return isValidNameComplete;
 		}
+
+		/// <summary>
+		/// Method that validates the player's email
+		/// </summary>
+		/// <param name="email">Email of the player</param>
+		/// <returns>If the email is correct</returns>
 		public static bool ValidateEmail(string email)
 		{
 			bool isValidEmail = false;
@@ -41,13 +66,25 @@ namespace hangmanGame
 			isValidEmail = regexEmail.IsMatch(email);
 			return isValidEmail;
 		}
-		public static bool ValidateNickName(string nickName)
+
+		/// <summary>
+		/// Method that validates the player's nickname
+		/// </summary>
+		/// <param name="nickname">Nickname of the player</param>
+		/// <returns>If the nickname is correct</returns>
+		public static bool ValidateNickname(string nickname)
 		{
-			bool isValidNickName = false;
-			Regex regexNickName = new Regex(@"^[a-zA-Z0-9]{3,50}$");
-			isValidNickName = regexNickName.IsMatch(nickName);
-			return isValidNickName;
+			bool isValidNickname = false;
+			Regex regexNickname = new Regex(@"^[a-zA-Z0-9]{3,50}$");
+			isValidNickname = regexNickname.IsMatch(nickname);
+			return isValidNickname;
 		}
+
+		/// <summary>
+		/// Method that validates the player's confirmation code
+		/// </summary>
+		/// <param name="confirmationCode">Confirmation code</param>
+		/// <returns>If the confirmation code is correct</returns>
 		public static bool ValidateConfirmationCode(string confirmationCode)
 		{
 			bool isValidConfirmationCode = false;
@@ -55,6 +92,12 @@ namespace hangmanGame
 			isValidConfirmationCode = regexConfirmation.IsMatch(confirmationCode);
 			return isValidConfirmationCode;
 		}
+
+		/// <summary>
+		/// Method that removes spaces from more than one word
+		/// </summary>
+		/// <param name="words">Words</param>
+		/// <returns>The word without spaces</returns>
 		public static string DeleteSpaceWord(string words)
 		{
 			while (words.Contains("  "))

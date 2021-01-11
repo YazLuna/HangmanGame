@@ -264,11 +264,11 @@
   <wsdl:message name="IPlayerManager_Register_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchNickNamePlayer_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchNickNamePlayer" />
+  <wsdl:message name="IPlayerManager_SearchNicknamePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNicknamePlayer" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchNickNamePlayer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchNickNamePlayerResponse" />
+  <wsdl:message name="IPlayerManager_SearchNicknamePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNicknamePlayerResponse" />
   </wsdl:message>
   <wsdl:message name="IPlayerManager_SendEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:SendEmail" />
@@ -294,11 +294,11 @@
   <wsdl:message name="IPlayerManager_SearchRepeatEmailAccount_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchRepeatEmailAccountResponse" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchRepeatNickNamePlayer_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchRepeatNickNamePlayer" />
+  <wsdl:message name="IPlayerManager_SearchRepeatNicknamePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatNicknamePlayer" />
   </wsdl:message>
-  <wsdl:message name="IPlayerManager_SearchRepeatNickNamePlayer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchRepeatNickNamePlayerResponse" />
+  <wsdl:message name="IPlayerManager_SearchRepeatNicknamePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRepeatNicknamePlayerResponse" />
   </wsdl:message>
   <wsdl:message name="IPlayerManager_UpdateEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateEmail" />
@@ -336,17 +336,17 @@
   <wsdl:message name="IAccountManager_SearchPlayer_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchPlayerResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountManager_AccountResponseAccount_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:AccountResponseAccount" />
+  <wsdl:message name="IAccountManager_AccountPlayerResponse_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AccountPlayerResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountManager_AccountResponseAccount_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:AccountResponseAccountResponse" />
+  <wsdl:message name="IAccountManager_AccountPlayerResponse_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AccountPlayerResponseResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountManager_AccountResponsePlayer_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:AccountResponsePlayer" />
+  <wsdl:message name="IAccountManager_PlayerResponse_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountManager_AccountResponsePlayer_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:AccountResponsePlayerResponse" />
+  <wsdl:message name="IAccountManager_PlayerResponse_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerResponseResponse" />
   </wsdl:message>
   <wsdl:message name="IPlayerScoresManager_SearchBestScoresPlayer_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchBestScoresPlayer" />
@@ -547,9 +547,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/Register" message="tns:IPlayerManager_Register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/RegisterResponse" message="tns:IPlayerManager_Register_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SearchNickNamePlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayer" message="tns:IPlayerManager_SearchNickNamePlayer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchNickNamePlayerResponse" message="tns:IPlayerManager_SearchNickNamePlayer_OutputMessage" />
+    <wsdl:operation name="SearchNicknamePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchNicknamePlayer" message="tns:IPlayerManager_SearchNicknamePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchNicknamePlayerResponse" message="tns:IPlayerManager_SearchNicknamePlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SendEmail" message="tns:IPlayerManager_SendEmail_InputMessage" />
@@ -567,9 +567,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccount" message="tns:IPlayerManager_SearchRepeatEmailAccount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatEmailAccountResponse" message="tns:IPlayerManager_SearchRepeatEmailAccount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SearchRepeatNickNamePlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer" message="tns:IPlayerManager_SearchRepeatNickNamePlayer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayerResponse" message="tns:IPlayerManager_SearchRepeatNickNamePlayer_OutputMessage" />
+    <wsdl:operation name="SearchRepeatNicknamePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNicknamePlayer" message="tns:IPlayerManager_SearchRepeatNicknamePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayerManager/SearchRepeatNicknamePlayerResponse" message="tns:IPlayerManager_SearchRepeatNicknamePlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayerManager/UpdateEmail" message="tns:IPlayerManager_UpdateEmail_InputMessage" />
@@ -597,13 +597,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/SearchPlayer" message="tns:IAccountManager_SearchPlayer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/SearchPlayerResponse" message="tns:IAccountManager_SearchPlayer_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AccountResponseAccount">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/AccountResponseAccount" message="tns:IAccountManager_AccountResponseAccount_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/AccountResponseAccountResponse" message="tns:IAccountManager_AccountResponseAccount_InputCallbackMessage" />
+    <wsdl:operation name="AccountPlayerResponse">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/AccountPlayerResponse" message="tns:IAccountManager_AccountPlayerResponse_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/AccountPlayerResponseResponse" message="tns:IAccountManager_AccountPlayerResponse_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AccountResponsePlayer">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/AccountResponsePlayer" message="tns:IAccountManager_AccountResponsePlayer_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/AccountResponsePlayerResponse" message="tns:IAccountManager_AccountResponsePlayer_InputCallbackMessage" />
+    <wsdl:operation name="PlayerResponse">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountManager/PlayerResponse" message="tns:IAccountManager_PlayerResponse_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountManager/PlayerResponseResponse" message="tns:IAccountManager_PlayerResponse_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlayerScoresManager">
@@ -779,8 +779,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchNickNamePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchNickNamePlayer" style="document" />
+    <wsdl:operation name="SearchNicknamePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchNicknamePlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -824,8 +824,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchRepeatNickNamePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchRepeatNickNamePlayer" style="document" />
+    <wsdl:operation name="SearchRepeatNicknamePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IPlayerManager/SearchRepeatNicknamePlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -891,8 +891,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AccountResponseAccount">
-      <soap12:operation soapAction="http://tempuri.org/IAccountManager/AccountResponseAccount" style="document" />
+    <wsdl:operation name="AccountPlayerResponse">
+      <soap12:operation soapAction="http://tempuri.org/IAccountManager/AccountPlayerResponse" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -900,8 +900,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AccountResponsePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IAccountManager/AccountResponsePlayer" style="document" />
+    <wsdl:operation name="PlayerResponse">
+      <soap12:operation soapAction="http://tempuri.org/IAccountManager/PlayerResponse" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1206,7 +1206,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1215,7 +1215,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1224,7 +1224,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1233,7 +1233,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1242,7 +1242,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1251,7 +1251,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1260,7 +1260,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -1269,7 +1269,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+          <Upn>LAPTOP-N742IUP2\MARTHA</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

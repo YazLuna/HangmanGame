@@ -6,10 +6,17 @@ using System.Windows.Media;
 
 namespace hangmanGame
 {
+    /// <summary>
+    /// This class is from the application
+    /// </summary>
     public partial class App : Application
     {
         private static MediaElement mediaElement;
-        App()
+
+        /// <summary>
+        /// Constructor of the App class
+        /// </summary>
+        public App()
         {
             string language = "es-MX";
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
@@ -23,6 +30,11 @@ namespace hangmanGame
             mediaElement.LoadedBehavior = MediaState.Play;
             mediaElement.UnloadedBehavior = MediaState.Play;           
         }
+
+        /// <summary>
+        /// Method of changing the sound volume
+        /// </summary>
+        /// <param name="volumeReceive">The new volume</param>
         public static void ChangeVolumeMedia(double volumeReceive)
         {
             mediaElement.Volume = volumeReceive;

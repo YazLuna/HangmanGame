@@ -36,7 +36,7 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Label HorizontalAlignment="Right" Height="35" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Name}" />
-            <TextBox Height="35" Name="tbName" Grid.Row="0" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewTextInput="prohibitNumberAllowSpecialChar" />
+            <TextBox Height="35" Name="tbName" Grid.Row="0" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewTextInput="ProhibitNumberAllowSpecialChar" />
             <Image Grid.Column="2" Grid.Row="0" Visibility="Hidden"
                  Name="imgErrorName"
                  Stretch="Fill"
@@ -49,7 +49,7 @@
             <Label Name="lbErrorName" Height="23" Visibility="Hidden" Style="{StaticResource ErrorTextStyle}" Content = "{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="1"></Label>
 
             <Label Height="35" Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.LastName}" />
-            <TextBox Height="35" Name="tbLastName" Grid.Row="2" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewTextInput="prohibitNumberAllowSpecialChar" />
+            <TextBox Height="35" Name="tbLastName" Grid.Row="2" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewTextInput="ProhibitNumberAllowSpecialChar" />
             <Image Grid.Column="2" Grid.Row="2" Visibility="Hidden"
                  Name="imgErrorLastName"
                  Stretch="Fill"
@@ -62,7 +62,7 @@
             <Label Name="lbErrorLastName" Height="23" Visibility="Hidden" Style="{StaticResource ErrorTextStyle}" Content ="{x:Static p:Resources.ErrorNameComplete}" Grid.Column="1" Grid.Row="3"></Label>
 
             <Label Height="35" Grid.Row="4" Grid.Column="0" Style="{StaticResource labelStyle}" Content = "{x:Static p:Resources.Email}" />
-            <TextBox Height="35" Name="tbEmail" Grid.Row="4" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewKeyDown="prohibitSpace" />
+            <TextBox Height="35" Name="tbEmail" Grid.Row="4" Grid.Column="1" FontSize="15" FontFamily="Arial" PreviewKeyDown="ProhibitSpace" />
             <Image Grid.Column="2" Grid.Row="4" Visibility="Hidden"
                  Name="imgErrorEmail"
                  Stretch="Fill"
