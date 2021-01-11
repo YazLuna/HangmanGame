@@ -13,8 +13,8 @@ namespace hangmanGame
         /// <summary>
 		/// Method that receives the player's email
 		/// </summary>
-		/// <param name="obj">The telegram data/param>
-        /// /// <param name="exception">The exception to log</param>
+		/// <param name="obj">The telegram data</param>
+        /// <param name="exception">The exception to log</param>
         public static void Log(object obj, Exception exception)
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
