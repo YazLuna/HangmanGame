@@ -237,6 +237,12 @@
   <data name="ErrorPassword" xml:space="preserve">
     <value>Enter letters A-Z or a-z, 0-9 and characters @_#. Length (8-15).</value>
   </data>
+  <data name="ErrorService" xml:space="preserve">
+    <value>Connection Error</value>
+  </data>
+  <data name="ErrorServiceDetails" xml:space="preserve">
+    <value>Can not connect to server. Please try again later.</value>
+  </data>
   <data name="GoOut_Button" xml:space="preserve">
     <value>Go out</value>
   </data>

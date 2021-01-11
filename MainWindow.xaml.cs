@@ -62,26 +62,28 @@ namespace hangmanGame
 					InstanceContext instanceContext = new InstanceContext(this);
 					PlayerManagerClient logIn = new PlayerManagerClient(instanceContext);
 					logIn.LogIn(email, password);
-				} catch (Exception e)
+					if (responseGeneral)
+					{
+						tbEmail.BorderBrush = Brushes.LightGreen;
+						pbPassword.BorderBrush = Brushes.LightGreen;
+						Lobby lobby = new Lobby();
+						lobby.EmailReceived(email);
+						lobby.ColocateBestScores();
+						lobby.ColocatePersonalInformation();
+						lobby.Show();
+						this.Close();
+					}
+					else
+					{
+						WrongCredentials();
+					}
+				} catch (EndpointNotFoundException exception)
                 {
-					Console.WriteLine(e);
-                }
-				
-				if (responseGeneral)
-				{
-					tbEmail.BorderBrush = Brushes.LightGreen;
-					pbPassword.BorderBrush = Brushes.LightGreen;
-					Lobby lobby = new Lobby();
-					lobby.EmailReceived(email);
-					lobby.ColocateBestScores();
-					lobby.ColocatePersonalInformation();
-					lobby.Show();
-					this.Close();
+					TelegramBot.SendToTelegram(exception);
+					LogException.Log(this, exception);
+					LogException.ErrorConnectionService();
 				}
-				else
-				{
-					WrongCredentials();
-				}
+
 			}
 		}
 
