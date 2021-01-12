@@ -139,7 +139,9 @@ namespace hangmanGame
         private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
+            {
                 keyEvent.Handled = true;
+            }
         }
         private void ChangeAccountPassword(object sender, RoutedEventArgs routedEventArgs)
         {
@@ -155,22 +157,30 @@ namespace hangmanGame
             if(isValidPassword && isValidNewPassword)
             {
                 string passwordEncrypt = Security.Encrypt(pbNewPassword.Password);
-                InstanceContext instanceContext = new InstanceContext(this);
-                PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
-                playerManager.ChangePassword(account.Email, passwordEncrypt);
-                if (responseBoolean)
+                try
                 {
-                    OpenMessageBox(Properties.Resources.ChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
-                }
-                else
+                    InstanceContext instanceContext = new InstanceContext(this);
+                    PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
+                    playerManager.ChangePassword(account.Email, passwordEncrypt);
+                    if (responseBoolean)
+                    {
+                        OpenMessageBox(Properties.Resources.ChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        OpenMessageBox(Properties.Resources.NoChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    }
+                    ModifyAccount modifyAccount = new ModifyAccount();
+                    modifyAccount.ObtainAccount();
+                    modifyAccount.Show();
+                    this.Close();
+                } catch (EndpointNotFoundException exception)
                 {
-                    OpenMessageBox(Properties.Resources.NoChangePasswordMessage, Properties.Resources.ChangePasswordMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    TelegramBot.SendToTelegram(exception);
+                    LogException.Log(this, exception);
+                    LogException.ErrorConnectionService();
                 }
-                ModifyAccount modifyAccount = new ModifyAccount();
-                modifyAccount.ObtainAccount();
-                modifyAccount.Show();
-                this.Close();
-            }
+        }
             else{
                 OpenMessageBox(Properties.Resources.IncorrectDataMessage, Properties.Resources.IncorrectDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
             }

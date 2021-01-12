@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.ServiceModel;
 using hangmanGame.MessageService;
+using System.Windows.Media;
 
 namespace hangmanGame
 {
@@ -57,7 +58,7 @@ namespace hangmanGame
         /// <summary>
         /// Method to send the confirmation code
         /// </summary>
-        public void SendConfirmationCode()
+        public void SendConfirmationCodePlayer()
         {
             InstanceContext instanceContext = new InstanceContext(this);
             PlayerManagerClient sendConfirmation = new PlayerManagerClient(instanceContext);
@@ -86,13 +87,15 @@ namespace hangmanGame
         private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
+            {
                 keyEvent.Handled = true;
+            }
         }
         private void SendCodeConfirmation(object sender, RoutedEventArgs routedEventArgs)
         {
             int codeConfirmation = ValidationData.GenerateConfirmationCode();
             account.ConfirmationCode = codeConfirmation;
-            SendConfirmationCode();
+            SendConfirmationCodePlayer();
         }
         private void Error_MouseEnter(Object objectImg, MouseEventArgs mouseEventArgs)
         {
@@ -105,27 +108,48 @@ namespace hangmanGame
         private void AcceptCodeConfirmation(object sender, RoutedEventArgs routedEventArgs)
         {
             imgErrorCodeConfirmation.Visibility = Visibility.Hidden;
+            tbConfirmationCode.BorderBrush = Brushes.Transparent;
             bool isValidConfirmationCode;
             isValidConfirmationCode = ValidationData.ValidateConfirmationCode(tbConfirmationCode.Text);
             if (isValidConfirmationCode)
             {
-                InstanceContext instanceContext = new InstanceContext(this);
-                PlayerManagerClient registry = new PlayerManagerClient(instanceContext);
-                registry.Register(account, accountPlayer);
-                if (responseConfirmation)
+                bool isEqualConfirmationCode = ValidateEqualsConfirmationCode();
+                if (isEqualConfirmationCode)
                 {
-                    OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);  
+                    tbConfirmationCode.BorderBrush = Brushes.Green;
+                    try
+                    {
+                        InstanceContext instanceContext = new InstanceContext(this);
+                        PlayerManagerClient registry = new PlayerManagerClient(instanceContext);
+                        registry.Register(account, accountPlayer);
+                        if (responseConfirmation)
+                        {
+                            OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            OpenMessageBox(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (EndpointNotFoundException exception)
+                    {
+                        TelegramBot.SendToTelegram(exception);
+                        LogException.Log(this, exception);
+                        LogException.ErrorConnectionService();
+                    }
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
                 }
                 else
                 {
-                    OpenMessageBox(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    tbConfirmationCode.BorderBrush = Brushes.Red;
+                    OpenMessageBox(Properties.Resources.ErrorEqualConfirmationCodeMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
                 }
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
             }
             else
             {
+                tbConfirmationCode.BorderBrush = Brushes.Red;
                 imgErrorCodeConfirmation.Visibility = Visibility.Visible;
                 OpenMessageBox(Properties.Resources.IncorrectCodeMessage, Properties.Resources.IncorrectCodeMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
             }
@@ -133,6 +157,17 @@ namespace hangmanGame
         private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
         {
             MessageBox.Show(textMessage, titleMessage, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, messageBoxImage);
+        }
+
+        private bool ValidateEqualsConfirmationCode()
+        {
+            int codeConfirmation = int.Parse(tbConfirmationCode.Text);
+            bool isEqualConfirmationCode = false;
+            if (codeConfirmation == account.ConfirmationCode)
+            {
+                isEqualConfirmationCode = true;
+            }
+            return isEqualConfirmationCode;
         }
     }
 }

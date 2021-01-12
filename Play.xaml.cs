@@ -131,13 +131,13 @@ namespace hangmanGame
 			{
 				pbHint.Password = sentence.HintSpanish;
 				tbHint.Text = sentence.HintSpanish;
-				if (!string.IsNullOrEmpty(sentence.SentenceWordSpanish))
+				if (string.IsNullOrEmpty(sentence.SentenceWordSpanish))
 				{
-					sentenceWork = sentence.SentenceWordSpanish;
+					sentenceWork = sentence.SentenceWordEnglish;
 				}
 				else
 				{
-					sentenceWork = sentence.SentenceWordEnglish;
+					sentenceWork = sentence.SentenceWordSpanish;
 				}
 			}
 			else
@@ -246,12 +246,20 @@ namespace hangmanGame
 		}
 		private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs cancelEventArgs)
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
-			playConnect.PlayerDisconnect(nickname);
-			InstanceContext instanceContextChat = new InstanceContext(this);
-			ChatManagerClient chatManagerClient = new ChatManagerClient(instanceContextChat);
-			chatManagerClient.RemoveUser(nickname);
+            try {
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
+				playConnect.PlayerDisconnect(nickname);
+				InstanceContext instanceContextChat = new InstanceContext(this);
+				ChatManagerClient chatManagerClient = new ChatManagerClient(instanceContextChat);
+				chatManagerClient.RemoveUser(nickname);
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 			dispatcher.Stop();
 		}
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
@@ -368,12 +376,21 @@ namespace hangmanGame
 		private void MissGame()
         {
 			dispatcher.Stop();
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
-			playConnect.PlayerDisconnect(nickname);
-			InstanceContext instanceContextChat = new InstanceContext(this);
-			ChatManagerClient chatManagerClient = new ChatManagerClient(instanceContextChat);
-			chatManagerClient.RemoveUser(nickname);
+			try
+			{
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
+				playConnect.PlayerDisconnect(nickname);
+				InstanceContext instanceContextChat = new InstanceContext(this);
+				ChatManagerClient chatManagerClient = new ChatManagerClient(instanceContextChat);
+				chatManagerClient.RemoveUser(nickname);
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 			LostGame lostGame = new LostGame();
 			lostGame.Owner = this;
 			lostGame.ShowDialog();
@@ -417,14 +434,23 @@ namespace hangmanGame
 
 		private void EndGame()
         {
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient endGame = new PlayConnectClient(instanceContext);
-			ServiceWinner serviceWinner = new ServiceWinner();
-			serviceWinner.NickName = nickname;
-			serviceWinner.Points = Int32.Parse(tbCurrentScore.Text);
-			serviceWinner.Time = timeEnd;
-			serviceWinner.Mistakes = countError;
-			endGame.GameOver(serviceWinner);
+			try
+			{
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient endGame = new PlayConnectClient(instanceContext);
+				ServiceWinner serviceWinner = new ServiceWinner();
+				serviceWinner.NickName = nickname;
+				serviceWinner.Points = Int32.Parse(tbCurrentScore.Text);
+				serviceWinner.Time = time;
+				serviceWinner.Mistakes = countError;
+				endGame.GameOver(serviceWinner);
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 		}
 
 		/// <summary>

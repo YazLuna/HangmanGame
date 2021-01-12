@@ -205,7 +205,9 @@ namespace hangmanGame
 		private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
 		{
 			if (keyEvent.Key == Key.Space)
+			{
 				keyEvent.Handled = true;
+			}
 		}
 		private void ProhibitAllowSpecialChar(object sender, KeyEventArgs keyEvent)
 		{
@@ -243,41 +245,50 @@ namespace hangmanGame
 				accountPlayer.NamePlayer = ValidationData.DeleteSpaceWord(name);
 				accountPlayer.LastName = ValidationData.DeleteSpaceWord(lastName);
 				accountPlayer.StatusPlayer = "Active";
+				accountPlayer.ScoreObtained = 0;
 
-				InstanceContext instanceContext = new InstanceContext(this);
-				PlayerManagerClient validatePlayer = new PlayerManagerClient(instanceContext);
-				validatePlayer.SearchNicknamePlayer(nickname);
-				bool isValidRepeatNickname = responseBoolean;
-				validatePlayer.SearchEmailPlayer(email);
-				bool isValidRepeatEmail = responseBoolean;
+                try {
+					InstanceContext instanceContext = new InstanceContext(this);
+					PlayerManagerClient validatePlayer = new PlayerManagerClient(instanceContext);
+					validatePlayer.SearchNicknamePlayer(nickname);
+					bool isValidRepeatNickname = responseBoolean;
+					validatePlayer.SearchEmailPlayer(email);
+					bool isValidRepeatEmail = responseBoolean;
 
-				if(isValidRepeatEmail && isValidRepeatNickname)
-                {
-					OpenMessageBox(Properties.Resources.RegisteredEmailNicknameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (isValidRepeatEmail)
-                    {
-						OpenMessageBox(Properties.Resources.RegisteredEmailMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
+					if(isValidRepeatEmail && isValidRepeatNickname)
+					{
+						OpenMessageBox(Properties.Resources.RegisteredEmailNicknameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
 					}
-                    else
-                    {
-                        if (isValidRepeatNickname)
-                        {
-							OpenMessageBox(Properties.Resources.RegisteredNicknameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
+					else
+					{
+						if (isValidRepeatEmail)
+						{
+							OpenMessageBox(Properties.Resources.RegisteredEmailMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
 						}
-                        else
-                        {
-							EmailConfirmation emailConfirmation = new EmailConfirmation();
-							emailConfirmation.AccountReceived(account);
-							emailConfirmation.PlayerReceived(accountPlayer);
-							emailConfirmation.SendConfirmationCode();
-							emailConfirmation.Show();
-							this.Close();
+						else
+						{
+							if (isValidRepeatNickname)
+							{
+								OpenMessageBox(Properties.Resources.RegisteredNicknameMessage, Properties.Resources.RepeatedDataMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Warning);
+							}
+							else
+							{
+								EmailConfirmation emailConfirmation = new EmailConfirmation();
+								emailConfirmation.AccountReceived(account);
+								emailConfirmation.PlayerReceived(accountPlayer);
+								emailConfirmation.SendConfirmationCodePlayer();
+								emailConfirmation.Show();
+								this.Close();
+							}
 						}
-                    }
-                }
+					}
+				}
+				catch (EndpointNotFoundException exception)
+				{
+					TelegramBot.SendToTelegram(exception);
+					LogException.Log(this, exception);
+					LogException.ErrorConnectionService();
+				}
 			}
 			else
 			{

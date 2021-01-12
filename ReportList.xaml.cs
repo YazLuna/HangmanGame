@@ -55,10 +55,18 @@ namespace hangmanGame
 		/// </summary>
 		public void ColocateReports()
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			ReportListClient reportManagerClient = new ReportListClient(instanceContext);
-			reportManagerClient.ReportList(nickname);
-			lvReportList.ItemsSource = reportList;
+            try {
+				InstanceContext instanceContext = new InstanceContext(this);
+				ReportListClient reportListClient = new ReportListClient(instanceContext);
+				reportListClient.ReportList(nickname);
+				lvReportList.ItemsSource = reportList;
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 		}
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{

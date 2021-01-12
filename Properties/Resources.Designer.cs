@@ -394,6 +394,15 @@ namespace hangmanGame.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The confirmation code is not the same as the one sent..
+        /// </summary>
+        public static string ErrorEqualConfirmationCodeMessage {
+            get {
+                return ResourceManager.GetString("ErrorEqualConfirmationCodeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enter only letters..
         /// </summary>
         public static string ErrorNameComplete {

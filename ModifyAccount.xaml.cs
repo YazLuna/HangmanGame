@@ -74,12 +74,12 @@ namespace hangmanGame
         /// </summary>
         public void ObtainAccount()
         {
-            InstanceContext instanceContext = new InstanceContext(this);
-            AccountManagerClient getPlayer = new AccountManagerClient(instanceContext);
-            getPlayer.SearchAccount(emailAccount);
-            string nickname = account.NickName;
-            getPlayer.SearchPlayer(nickname);
-            InitializeDataPlayer();
+                InstanceContext instanceContext = new InstanceContext(this);
+                AccountManagerClient getPlayer = new AccountManagerClient(instanceContext);
+                getPlayer.SearchAccount(emailAccount);
+                string nickname = account.NickName;
+                getPlayer.SearchPlayer(nickname);
+                InitializeDataPlayer();
         }
 
         /// <summary>
@@ -158,7 +158,6 @@ namespace hangmanGame
                     lbErrorEmail.Visibility = Visibility.Hidden;
                 }
             }
-
         }
         private void Cancel(object sender, RoutedEventArgs routedEventArgs)
         {
@@ -202,43 +201,51 @@ namespace hangmanGame
             {
                 if (isValidData)
                 {
-                    InstanceContext instanceContext = new InstanceContext(this);
-                    PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
-                    bool isValidRepeatEmail = false;
-                    if (isUpdateEmail)
-                    {
-                        playerManager.SearchRepeatEmailAccount(emailEdit, account.IdAccount);
-                        isValidRepeatEmail = responseBoolean;
+                    try { 
+                        InstanceContext instanceContext = new InstanceContext(this);
+                        PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
+                        bool isValidRepeatEmail = false;
+                        if (isUpdateEmail)
+                        {
+                            playerManager.SearchRepeatEmailAccount(emailEdit,account.IdAccount);
+                            isValidRepeatEmail = responseBoolean;
+                        }
+                        bool updateEmail = false;
+                        if(isUpdateEmail && !isValidRepeatEmail)
+                        {
+                            playerManager.UpdateEmail(emailEdit, account.IdAccount);
+                            updateEmail = responseBoolean;
+                        }
+                        bool updatePlayer=false;
+                        if (isUpdateData)
+                        {
+                            playerManager.UpdatePlayer(player.NickName, playerEdit);
+                            updatePlayer = responseBoolean;
+                        }
+                        if (updatePlayer || updateEmail)
+                        {
+                            OpenMessageBox(Properties.Resources.ModifyAccountMessage, Properties.Resources.ModifyAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            OpenMessageBox(Properties.Resources.NoModifyAccountMessage, Properties.Resources.ModifyAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                        }
+                        Lobby lobby = new Lobby();
+                        if (isUpdateEmail)
+                        {
+                            lobby.EmailReceived(emailEdit);
+                        }
+                        lobby.ColocateBestScores();
+                        lobby.ColocatePersonalInformation();
+                        lobby.Show();
+                        this.Close();
                     }
-                    bool updateEmail = false;
-                    if (isUpdateEmail && !isValidRepeatEmail)
+                    catch (EndpointNotFoundException exception)
                     {
-                        playerManager.UpdateEmail(emailEdit, account.IdAccount);
-                        updateEmail = responseBoolean;
+                        TelegramBot.SendToTelegram(exception);
+                        LogException.Log(this, exception);
+                        LogException.ErrorConnectionService();
                     }
-                    bool updatePlayer = false;
-                    if (isUpdateData)
-                    {
-                        playerManager.UpdatePlayer(player.NickName, playerEdit);
-                        updatePlayer = responseBoolean;
-                    }
-                    if (updatePlayer || updateEmail)
-                    {
-                        OpenMessageBox(Properties.Resources.ModifyAccountMessage, Properties.Resources.ModifyAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        OpenMessageBox(Properties.Resources.NoModifyAccountMessage, Properties.Resources.ModifyAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
-                    }
-                    Lobby lobby = new Lobby();
-                    if (isUpdateEmail)
-                    {
-                        lobby.EmailReceived(emailEdit);
-                    }
-                    lobby.ColocateBestScores();
-                    lobby.ColocatePersonalInformation();
-                    lobby.Show();
-                    this.Close();
                 }
                 else
                 {
@@ -336,7 +343,9 @@ namespace hangmanGame
         private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
+            {
                 keyEvent.Handled = true;
+            }
         }
         private void ProhibitNumberAllowSpecialChar(object sender, TextCompositionEventArgs textCompositionEvent)
         {
