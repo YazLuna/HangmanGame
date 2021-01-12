@@ -57,8 +57,8 @@ namespace hangmanGame
 		{
             try {
 				InstanceContext instanceContext = new InstanceContext(this);
-				ReportManagerClient reportManagerClient = new ReportManagerClient(instanceContext);
-				reportManagerClient.ReportList(nickname);
+				ReportListClient reportListClient = new ReportListClient(instanceContext);
+				reportListClient.ReportList(nickname);
 				lvReportList.ItemsSource = reportList;
 			}
 			catch (EndpointNotFoundException exception)

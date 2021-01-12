@@ -245,6 +245,7 @@ namespace hangmanGame
 				accountPlayer.NamePlayer = ValidationData.DeleteSpaceWord(name);
 				accountPlayer.LastName = ValidationData.DeleteSpaceWord(lastName);
 				accountPlayer.StatusPlayer = "Active";
+				accountPlayer.ScoreObtained = 0;
 
                 try {
 					InstanceContext instanceContext = new InstanceContext(this);
@@ -275,7 +276,7 @@ namespace hangmanGame
 								EmailConfirmation emailConfirmation = new EmailConfirmation();
 								emailConfirmation.AccountReceived(account);
 								emailConfirmation.PlayerReceived(accountPlayer);
-								emailConfirmation.SendConfirmationCode();
+								emailConfirmation.SendConfirmationCodePlayer();
 								emailConfirmation.Show();
 								this.Close();
 							}

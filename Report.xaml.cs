@@ -105,8 +105,8 @@ namespace hangmanGame
                 try
                 {
                     InstanceContext instanceContext = new InstanceContext(this);
-                    ReportManagerClient reportManagerClient = new ReportManagerClient(instanceContext);
-                    reportManagerClient.ReportPlayer(serviceReportMisConduct);
+                    ReportPlayerClient reportPlayerClient = new ReportPlayerClient(instanceContext);
+                    reportPlayerClient.ReportPlayer(serviceReportMisConduct);
                     if (isReportPlayer)
                     {
                         OpenMessageBox(Properties.Resources.ReportPlayerMessage, Properties.Resources.TitleRegisterReportMessage, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);

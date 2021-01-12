@@ -74,20 +74,12 @@ namespace hangmanGame
         /// </summary>
         public void ObtainAccount()
         {
-            try
-            {
                 InstanceContext instanceContext = new InstanceContext(this);
                 AccountManagerClient getPlayer = new AccountManagerClient(instanceContext);
                 getPlayer.SearchAccount(emailAccount);
                 string nickname = account.NickName;
                 getPlayer.SearchPlayer(nickname);
                 InitializeDataPlayer();
-            } catch (EndpointNotFoundException exception)
-            {
-                TelegramBot.SendToTelegram(exception);
-                LogException.Log(this, exception);
-                LogException.ErrorConnectionService();
-            }
         }
 
         /// <summary>

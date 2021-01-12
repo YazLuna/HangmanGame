@@ -228,6 +228,9 @@
   <data name="ErrorEmail" xml:space="preserve">
     <value>Enter a valid email structure "maria_12@gmail.com".</value>
   </data>
+  <data name="ErrorEqualConfirmationCodeMessage" xml:space="preserve">
+    <value>The confirmation code is not the same as the one sent.</value>
+  </data>
   <data name="ErrorNameComplete" xml:space="preserve">
     <value>Enter only letters.</value>
   </data>

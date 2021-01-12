@@ -52,7 +52,7 @@ namespace hangmanGame
         /// </summary>
         public void InitializeComboBox()
         {
-            if(language == "en")
+            if(language.Equals("en"))
             {
                 cbLanguage.SelectedIndex = Number.NumberValue(NumberValues.ZERO);
                 cbIOption1.Content = Properties.Resources.English;
@@ -75,7 +75,7 @@ namespace hangmanGame
         }
         private void ChangeSetting(object sender, RoutedEventArgs routedEventArgs)
         {
-            if(cbLanguage.Text == Properties.Resources.Spanish)
+            if(cbLanguage.Text.Equals(Properties.Resources.Spanish))
             {
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-MX");
                 language = "es-Mx";
@@ -83,7 +83,7 @@ namespace hangmanGame
             }
             else
             {
-                if(cbLanguage.Text == Properties.Resources.English)
+                if(cbLanguage.Text.Equals(Properties.Resources.English))
                 {
                     System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
                     language = "en";

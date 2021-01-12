@@ -1,6 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
+
+
 
 namespace hangmanGame
 {

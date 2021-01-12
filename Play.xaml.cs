@@ -131,13 +131,13 @@ namespace hangmanGame
 			{
 				pbHint.Password = sentence.HintSpanish;
 				tbHint.Text = sentence.HintSpanish;
-				if (!string.IsNullOrEmpty(sentence.SentenceWordSpanish))
+				if (string.IsNullOrEmpty(sentence.SentenceWordSpanish))
 				{
-					sentenceWork = sentence.SentenceWordSpanish;
+					sentenceWork = sentence.SentenceWordEnglish;
 				}
 				else
 				{
-					sentenceWork = sentence.SentenceWordEnglish;
+					sentenceWork = sentence.SentenceWordSpanish;
 				}
 			}
 			else
