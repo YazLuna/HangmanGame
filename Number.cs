@@ -45,7 +45,7 @@ namespace hangmanGame
     /// <summary>
     /// This class is for numbers
     /// </summary>
-    public class Number {
+    public static class Number {
 
         /// <summary>
         /// Method that returns the number of the enumeration

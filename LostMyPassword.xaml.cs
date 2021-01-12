@@ -12,7 +12,7 @@ namespace hangmanGame
 	[CallbackBehavior(UseSynchronizationContext = false)]
 	public partial class LostMyPassword : Window, IPlayerManagerCallback
 	{
-		private bool response;
+		private bool responseCallback;
 
 		/// <summary>
 		/// This is the constructor that allows you to initialize the components of the class
@@ -25,24 +25,22 @@ namespace hangmanGame
 		/// <summary>
 		/// This method saves the response from the IPlayerManager callback
 		/// </summary>
-		/// <param name="responseCallback">The response obtained when calling the server method.</param>
-		public void PlayerResponseBoolean(bool responseCallback)
+		/// <param name="response">The response obtained when calling the server method.</param>
+		public void PlayerResponseBoolean(bool response)
 		{
-			response = responseCallback;
+			responseCallback = response;
 		}
 
 		private void Cancel(object sender, RoutedEventArgs eventCancel)
 		{
-			MainWindow main = new MainWindow();
-			main.Show();
-			this.Close();
+			CloseWindow();
 		}
 
 		private void SendRecoveryCode(object sender, RoutedEventArgs eventSendCode)
 		{
-			if (ValidateEmail())
+			if (ValidateEmail() && SearchEmail())
 			{
-				if (SearchEmail())
+				try
                 {
 					InstanceContext instanceContext = new InstanceContext(this);
 					PlayerManagerClient sendCode = new PlayerManagerClient(instanceContext);
@@ -54,31 +52,52 @@ namespace hangmanGame
 					recover.Show();
 					this.Close();
 				}
+				catch (EndpointNotFoundException exception)
+				{
+					TelegramBot.SendToTelegram(exception);
+					LogException.Log(this, exception);
+					LogException.ErrorConnectionService();
+					CloseWindow();
+				}
 			} 
 		}
 
 		private bool SearchEmail()
         {
 			bool emailExist = false;
-
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayerManagerClient searchEmail = new PlayerManagerClient(instanceContext);
-			searchEmail.SearchEmailPlayer(tbEmail.Text);
-			if (response)
+			try
             {
-				emailExist = true;
-            }
-			else
-            {
-				tbEmail.BorderBrush = Brushes.Red;
-				tbValidateEmail.BorderBrush = Brushes.Red;
-				System.Windows.Forms.MessageBox.Show(Properties.Resources.EmailNotFoundDetails, Properties.Resources.EmailNotFound
-					, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayerManagerClient searchEmail = new PlayerManagerClient(instanceContext);
+				searchEmail.SearchEmailPlayer(tbEmail.Text);
+				if (responseCallback)
+				{
+					emailExist = true;
+				}
+				else
+				{
+					tbEmail.BorderBrush = Brushes.Red;
+					tbValidateEmail.BorderBrush = Brushes.Red;
+					System.Windows.Forms.MessageBox.Show(Properties.Resources.EmailNotFoundDetails, Properties.Resources.EmailNotFound
+						, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
 			}
-
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+				CloseWindow();
+			}
 			return emailExist;
         }
 
+		private void CloseWindow()
+		{
+			MainWindow main = new MainWindow();
+			main.Show();
+			this.Close();
+		}
 		private bool ValidateEmail ()
         {
 			bool isValid = false;

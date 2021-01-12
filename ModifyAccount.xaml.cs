@@ -64,7 +64,7 @@ namespace hangmanGame
         /// Method to receive the player's email
         /// </summary>
         /// <param name="emailReceive">The email of the player</param>
-        public void EmailReceived (string emailReceive)
+        public void EmailReceived(string emailReceive)
         {
             emailAccount = emailReceive;
         }
@@ -198,7 +198,7 @@ namespace hangmanGame
             playerEdit = new ServicePlayer();
             emailEdit = account.Email;
             ValidateDataAccount();
-            if(isUpdateData || !emailEdit.Equals(emailAccount))
+            if (isUpdateData || !emailEdit.Equals(emailAccount))
             {
                 if (isValidData)
                 {
@@ -207,16 +207,16 @@ namespace hangmanGame
                     bool isValidRepeatEmail = false;
                     if (isUpdateEmail)
                     {
-                        playerManager.SearchRepeatEmailAccount(emailEdit,account.IdAccount);
+                        playerManager.SearchRepeatEmailAccount(emailEdit, account.IdAccount);
                         isValidRepeatEmail = responseBoolean;
                     }
                     bool updateEmail = false;
-                    if(isUpdateEmail && !isValidRepeatEmail)
+                    if (isUpdateEmail && !isValidRepeatEmail)
                     {
                         playerManager.UpdateEmail(emailEdit, account.IdAccount);
                         updateEmail = responseBoolean;
                     }
-                    bool updatePlayer=false;
+                    bool updatePlayer = false;
                     if (isUpdateData)
                     {
                         playerManager.UpdatePlayer(player.NickName, playerEdit);

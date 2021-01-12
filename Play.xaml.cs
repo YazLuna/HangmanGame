@@ -31,6 +31,7 @@ namespace hangmanGame
 		private static bool isReportPlayer;
 		private DispatcherTimer dispatcher = new DispatcherTimer();
 		private int time = 200;
+		private int timeEnd = 200;
 		private SynchronizationContext synchronizationContext;
 		private static bool isStartGameCurrent;
 		private static ServicePlayer[] servicePlayersConnect;
@@ -159,10 +160,10 @@ namespace hangmanGame
 		/// <summary>
 		/// This method saves if there is an active game or not response from IPlayManagerCallback
 		/// </summary>
-		/// <param name="isStarGame">The response obtained when calling the server method.</param>
-		public void IsStarGame(bool isStarGame)
+		/// <param name="isStarGameRun">The response obtained when calling the server method.</param>
+		public void IsStarGame(bool isStarGameRun)
 		{
-			isStartGameCurrent = isStarGame;
+			isStartGameCurrent = isStarGameRun;
 		}
 
 		/// <summary>
@@ -178,9 +179,6 @@ namespace hangmanGame
 					{
 						Nickname = player.NickName
 					});
-					
-					lstConnectedPlayers.Items.Add(player.NickName);
-					
 				}
 			}
 		}
@@ -307,7 +305,7 @@ namespace hangmanGame
 					listCharacterPass.Add(wrongLetters.ToUpper());
                     if (countLetters == lengthSentence)
                     {
-						time -= (int)lbTimer.Content;
+						timeEnd -= (int)lbTimer.Content;
 						btnCheck.IsEnabled = false;
 						btnUnlockHint.IsEnabled = false;
                     }
@@ -317,6 +315,7 @@ namespace hangmanGame
 					tbCurrentScore.Text = (int.Parse(tbCurrentScore.Text) - 100).ToString();
 					countError++;
 					ImageError();
+					lbWrongLetters.Content = lbWrongLetters.Content + " " + wrongLetters;
 				}
 			}
         }
@@ -403,14 +402,13 @@ namespace hangmanGame
 		private void CreateTimer()
         {
 			dispatcher.Interval = new TimeSpan(0, 0, 0, 0, 1000);
-			int time = 50;
 			dispatcher.Tick += (a, b) =>
 			{
 				lbTimer.Content = time--;
 				if(time == Number.NumberValue(NumberValues.ZERO))
                 {
-					lbTimer.Content = time--;
 					dispatcher.Stop();
+					lbTimer.Content = time--;
 					EndGame();
                 }
 			};
@@ -424,7 +422,7 @@ namespace hangmanGame
 			ServiceWinner serviceWinner = new ServiceWinner();
 			serviceWinner.NickName = nickname;
 			serviceWinner.Points = Int32.Parse(tbCurrentScore.Text);
-			serviceWinner.Time = time;
+			serviceWinner.Time = timeEnd;
 			serviceWinner.Mistakes = countError;
 			endGame.GameOver(serviceWinner);
 		}
@@ -432,10 +430,10 @@ namespace hangmanGame
 		/// <summary>
 		/// Save the winner player
 		/// </summary>
-		/// <param name="playerWinner">Save the winning player data.</param>
-		public void PlayerWinner(ServiceWinner playerWinner)
+		/// <param name="playerWinnerGame">Save the winning player data.</param>
+		public void PlayerWinner(ServiceWinner playerWinnerGame)
         {
-			synchronizationContext.Post(objectPlayer => OpenGameOver(playerWinner), null);
+			synchronizationContext.Post(objectPlayer => OpenGameOver(playerWinnerGame), null);
 		}
 
 		/// <summary>
@@ -462,7 +460,6 @@ namespace hangmanGame
 			if (tbMessage.Text != null)
 			{
 				chatManager.SendNewMessages(tbMessage.Text, nickname);
-				//lstChat.Items.Add(tbMessage.Text);
 				tbMessage.Text = null;
 			}
 		}
@@ -475,9 +472,6 @@ namespace hangmanGame
 			InstanceContext instanceContext = new InstanceContext(this);
 			ChatManagerClient chatManager = new ChatManagerClient(instanceContext);
 			chatManager.ClientConnect(nickname);
-			//chatManager.GetNewMessage(nickname);
-			//chatManager.GetAllPlayers();
-			//CreateChat();
 		}
 
 		/// <summary>
@@ -495,7 +489,6 @@ namespace hangmanGame
 		/// <param name="responseListString">The response obtained when calling the server method.</param>
 		public void PlayerEntryMessages(string responseListString)
         {
-			//messagesIn = responseListString;
 			synchronizationContext.Post(objectPlayer => ReloadChat(responseListString), null);
 		}
 
@@ -505,11 +498,7 @@ namespace hangmanGame
 		/// <param name="response">Is the new message.</param>
 		public void ReloadChat(string response)
 		{
-			//for (int index = Number.NumberValue(NumberValues.ZERO); index < response.Length; index++)
-			//{
 			lstChat.Items.Add(response);
-
-			//}
 		}
 
     }

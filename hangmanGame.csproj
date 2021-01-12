@@ -283,7 +283,7 @@
     <None Include="Connected Services\MessageService\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MessageService\item3.xsd">
+    <None Include="Connected Services\MessageService\item2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
