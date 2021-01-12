@@ -397,19 +397,19 @@ cbde.unreachable
 
 }
 func @_hangmanGame.MessageService.PlayerManagerClient.SearchRepeatNicknamePlayer$string.string$(none, none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :8) {
-^entry (%_nickNameEdit : none, %_nickNameCurrent : none):
+^entry (%_nicknameEdit : none, %_nicknameCurrent : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :47)
-cbde.store %_nickNameEdit, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :47)
+cbde.store %_nicknameEdit, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :47)
 %1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :68)
-cbde.store %_nickNameCurrent, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :68)
+cbde.store %_nicknameCurrent, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :754 :68)
 br ^0
 
 ^0: // SimpleBlock
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :12) // base (BaseExpression)
 %3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :12) // base.Channel (SimpleMemberAccessExpression)
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :52) // Not a variable of known type: nickNameEdit
-%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :66) // Not a variable of known type: nickNameCurrent
-%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :12) // base.Channel.SearchRepeatNicknamePlayer(nickNameEdit, nickNameCurrent) (InvocationExpression)
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :52) // Not a variable of known type: nicknameEdit
+%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :66) // Not a variable of known type: nicknameCurrent
+%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :755 :12) // base.Channel.SearchRepeatNicknamePlayer(nicknameEdit, nicknameCurrent) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
@@ -417,19 +417,19 @@ return
 
 }
 func @_hangmanGame.MessageService.PlayerManagerClient.SearchRepeatNicknamePlayerAsync$string.string$(none, none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :8) {
-^entry (%_nickNameEdit : none, %_nickNameCurrent : none):
+^entry (%_nicknameEdit : none, %_nicknameCurrent : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :75)
-cbde.store %_nickNameEdit, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :75)
+cbde.store %_nicknameEdit, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :75)
 %1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :96)
-cbde.store %_nickNameCurrent, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :96)
+cbde.store %_nicknameCurrent, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :758 :96)
 br ^0
 
 ^0: // JumpBlock
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :19) // base (BaseExpression)
 %3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :19) // base.Channel (SimpleMemberAccessExpression)
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :64) // Not a variable of known type: nickNameEdit
-%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :78) // Not a variable of known type: nickNameCurrent
-%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :19) // base.Channel.SearchRepeatNicknamePlayerAsync(nickNameEdit, nickNameCurrent) (InvocationExpression)
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :64) // Not a variable of known type: nicknameEdit
+%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :78) // Not a variable of known type: nicknameCurrent
+%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :19) // base.Channel.SearchRepeatNicknamePlayerAsync(nicknameEdit, nicknameCurrent) (InvocationExpression)
 return %6 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :759 :12)
 
 ^1: // ExitBlock
@@ -477,9 +477,9 @@ cbde.unreachable
 
 }
 func @_hangmanGame.MessageService.PlayerManagerClient.UpdatePlayer$string.hangmanGame.MessageService.ServicePlayer$(none, none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :770 :8) {
-^entry (%_nickName : none, %_servicePlayerEdit : none):
+^entry (%_nickname : none, %_servicePlayerEdit : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :770 :33)
-cbde.store %_nickName, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :770 :33)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :770 :33)
 %1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :770 :50)
 cbde.store %_servicePlayerEdit, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :770 :50)
 br ^0
@@ -487,9 +487,9 @@ br ^0
 ^0: // SimpleBlock
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :12) // base (BaseExpression)
 %3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :12) // base.Channel (SimpleMemberAccessExpression)
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :38) // Not a variable of known type: nickName
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :38) // Not a variable of known type: nickname
 %5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :48) // Not a variable of known type: servicePlayerEdit
-%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :12) // base.Channel.UpdatePlayer(nickName, servicePlayerEdit) (InvocationExpression)
+%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :771 :12) // base.Channel.UpdatePlayer(nickname, servicePlayerEdit) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
@@ -497,9 +497,9 @@ return
 
 }
 func @_hangmanGame.MessageService.PlayerManagerClient.UpdatePlayerAsync$string.hangmanGame.MessageService.ServicePlayer$(none, none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :774 :8) {
-^entry (%_nickName : none, %_servicePlayerEdit : none):
+^entry (%_nickname : none, %_servicePlayerEdit : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :774 :61)
-cbde.store %_nickName, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :774 :61)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :774 :61)
 %1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :774 :78)
 cbde.store %_servicePlayerEdit, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :774 :78)
 br ^0
@@ -507,9 +507,9 @@ br ^0
 ^0: // JumpBlock
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :19) // base (BaseExpression)
 %3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :19) // base.Channel (SimpleMemberAccessExpression)
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :50) // Not a variable of known type: nickName
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :50) // Not a variable of known type: nickname
 %5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :60) // Not a variable of known type: servicePlayerEdit
-%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :19) // base.Channel.UpdatePlayerAsync(nickName, servicePlayerEdit) (InvocationExpression)
+%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :19) // base.Channel.UpdatePlayerAsync(nickname, servicePlayerEdit) (InvocationExpression)
 return %6 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :775 :12)
 
 ^1: // ExitBlock
@@ -517,16 +517,16 @@ cbde.unreachable
 
 }
 func @_hangmanGame.MessageService.PlayerManagerClient.DeleteAccountPlayer$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :778 :8) {
-^entry (%_nickName : none):
+^entry (%_nickname : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :778 :40)
-cbde.store %_nickName, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :778 :40)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :778 :40)
 br ^0
 
 ^0: // SimpleBlock
 %1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :779 :12) // base (BaseExpression)
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :779 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :779 :45) // Not a variable of known type: nickName
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :779 :12) // base.Channel.DeleteAccountPlayer(nickName) (InvocationExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :779 :45) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :779 :12) // base.Channel.DeleteAccountPlayer(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
@@ -534,16 +534,16 @@ return
 
 }
 func @_hangmanGame.MessageService.PlayerManagerClient.DeleteAccountPlayerAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :782 :8) {
-^entry (%_nickName : none):
+^entry (%_nickname : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :782 :68)
-cbde.store %_nickName, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :782 :68)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :782 :68)
 br ^0
 
 ^0: // JumpBlock
 %1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :19) // base (BaseExpression)
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :57) // Not a variable of known type: nickName
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :19) // base.Channel.DeleteAccountPlayerAsync(nickName) (InvocationExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :57) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :19) // base.Channel.DeleteAccountPlayerAsync(nickname) (InvocationExpression)
 return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :783 :12)
 
 ^1: // ExitBlock
@@ -585,16 +585,16 @@ cbde.unreachable
 
 }
 func @_hangmanGame.MessageService.AccountManagerClient.SearchPlayer$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :850 :8) {
-^entry (%_nickName : none):
+^entry (%_nickname : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :850 :33)
-cbde.store %_nickName, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :850 :33)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :850 :33)
 br ^0
 
 ^0: // SimpleBlock
 %1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :851 :12) // base (BaseExpression)
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :851 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :851 :38) // Not a variable of known type: nickName
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :851 :12) // base.Channel.SearchPlayer(nickName) (InvocationExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :851 :38) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :851 :12) // base.Channel.SearchPlayer(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
@@ -602,16 +602,16 @@ return
 
 }
 func @_hangmanGame.MessageService.AccountManagerClient.SearchPlayerAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :854 :8) {
-^entry (%_nickName : none):
+^entry (%_nickname : none):
 %0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :854 :61)
-cbde.store %_nickName, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :854 :61)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :854 :61)
 br ^0
 
 ^0: // JumpBlock
 %1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :19) // base (BaseExpression)
 %2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :50) // Not a variable of known type: nickName
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :19) // base.Channel.SearchPlayerAsync(nickName) (InvocationExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :50) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :19) // base.Channel.SearchPlayerAsync(nickname) (InvocationExpression)
 return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :855 :12)
 
 ^1: // ExitBlock
@@ -646,409 +646,375 @@ return %2 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Se
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.ChatManagerClient.ClientConnect$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :981 :8) {
+func @_hangmanGame.MessageService.ChatManagerClient.ClientConnect$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :975 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :981 :34)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :981 :34)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :975 :34)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :975 :34)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :982 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :982 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :982 :39) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :982 :12) // base.Channel.ClientConnect(nickname) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :976 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :976 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :976 :39) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :976 :12) // base.Channel.ClientConnect(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.ChatManagerClient.ClientConnectAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :985 :8) {
+func @_hangmanGame.MessageService.ChatManagerClient.ClientConnectAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :979 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :985 :62)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :985 :62)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :979 :62)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :979 :62)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :986 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :986 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :986 :51) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :986 :19) // base.Channel.ClientConnectAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :986 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :980 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :980 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :980 :51) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :980 :19) // base.Channel.ClientConnectAsync(nickname) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :980 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.ChatManagerClient.GetNewMessages$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :989 :8) {
-^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :989 :35)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :989 :35)
-br ^0
-
-^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :990 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :990 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :990 :40) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :990 :12) // base.Channel.GetNewMessages(nickname) (InvocationExpression)
-br ^1
-
-^1: // ExitBlock
-return
-
-}
-func @_hangmanGame.MessageService.ChatManagerClient.GetNewMessagesAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :993 :8) {
-^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :993 :63)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :993 :63)
-br ^0
-
-^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :994 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :994 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :994 :52) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :994 :19) // base.Channel.GetNewMessagesAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :994 :12)
-
-^1: // ExitBlock
-cbde.unreachable
-
-}
-func @_hangmanGame.MessageService.ChatManagerClient.SendNewMessages$string.string$(none, none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :997 :8) {
+func @_hangmanGame.MessageService.ChatManagerClient.SendNewMessages$string.string$(none, none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :983 :8) {
 ^entry (%_newMessage : none, %_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :997 :36)
-cbde.store %_newMessage, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :997 :36)
-%1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :997 :55)
-cbde.store %_nickname, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :997 :55)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :983 :36)
+cbde.store %_newMessage, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :983 :36)
+%1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :983 :55)
+cbde.store %_nickname, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :983 :55)
 br ^0
 
 ^0: // SimpleBlock
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :998 :12) // base (BaseExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :998 :12) // base.Channel (SimpleMemberAccessExpression)
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :998 :41) // Not a variable of known type: newMessage
-%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :998 :53) // Not a variable of known type: nickname
-%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :998 :12) // base.Channel.SendNewMessages(newMessage, nickname) (InvocationExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :984 :12) // base (BaseExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :984 :12) // base.Channel (SimpleMemberAccessExpression)
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :984 :41) // Not a variable of known type: newMessage
+%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :984 :53) // Not a variable of known type: nickname
+%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :984 :12) // base.Channel.SendNewMessages(newMessage, nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.ChatManagerClient.SendNewMessagesAsync$string.string$(none, none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1001 :8) {
+func @_hangmanGame.MessageService.ChatManagerClient.SendNewMessagesAsync$string.string$(none, none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :987 :8) {
 ^entry (%_newMessage : none, %_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1001 :64)
-cbde.store %_newMessage, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1001 :64)
-%1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1001 :83)
-cbde.store %_nickname, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1001 :83)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :987 :64)
+cbde.store %_newMessage, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :987 :64)
+%1 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :987 :83)
+cbde.store %_nickname, %1 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :987 :83)
 br ^0
 
 ^0: // JumpBlock
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1002 :19) // base (BaseExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1002 :19) // base.Channel (SimpleMemberAccessExpression)
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1002 :53) // Not a variable of known type: newMessage
-%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1002 :65) // Not a variable of known type: nickname
-%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1002 :19) // base.Channel.SendNewMessagesAsync(newMessage, nickname) (InvocationExpression)
-return %6 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1002 :12)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :988 :19) // base (BaseExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :988 :19) // base.Channel (SimpleMemberAccessExpression)
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :988 :53) // Not a variable of known type: newMessage
+%5 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :988 :65) // Not a variable of known type: nickname
+%6 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :988 :19) // base.Channel.SendNewMessagesAsync(newMessage, nickname) (InvocationExpression)
+return %6 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :988 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.ChatManagerClient.RemoveUser$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1005 :8) {
+func @_hangmanGame.MessageService.ChatManagerClient.RemoveUser$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :991 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1005 :31)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1005 :31)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :991 :31)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :991 :31)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1006 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1006 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1006 :36) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1006 :12) // base.Channel.RemoveUser(nickname) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :992 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :992 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :992 :36) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :992 :12) // base.Channel.RemoveUser(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.ChatManagerClient.RemoveUserAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1009 :8) {
+func @_hangmanGame.MessageService.ChatManagerClient.RemoveUserAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :995 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1009 :59)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1009 :59)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :995 :59)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :995 :59)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1010 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1010 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1010 :48) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1010 :19) // base.Channel.RemoveUserAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1010 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :996 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :996 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :996 :48) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :996 :19) // base.Channel.RemoveUserAsync(nickname) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :996 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.InformationPlayerManagerClient.SearchInformationPlayer$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1060 :8) {
+func @_hangmanGame.MessageService.InformationPlayerManagerClient.SearchInformationPlayer$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1046 :8) {
 ^entry (%_email : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1060 :44)
-cbde.store %_email, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1060 :44)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1046 :44)
+cbde.store %_email, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1046 :44)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1061 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1061 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1061 :49) // Not a variable of known type: email
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1061 :12) // base.Channel.SearchInformationPlayer(email) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1047 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1047 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1047 :49) // Not a variable of known type: email
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1047 :12) // base.Channel.SearchInformationPlayer(email) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.InformationPlayerManagerClient.SearchInformationPlayerAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1064 :8) {
+func @_hangmanGame.MessageService.InformationPlayerManagerClient.SearchInformationPlayerAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1050 :8) {
 ^entry (%_email : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1064 :72)
-cbde.store %_email, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1064 :72)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1050 :72)
+cbde.store %_email, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1050 :72)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1065 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1065 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1065 :61) // Not a variable of known type: email
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1065 :19) // base.Channel.SearchInformationPlayerAsync(email) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1065 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1051 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1051 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1051 :61) // Not a variable of known type: email
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1051 :19) // base.Channel.SearchInformationPlayerAsync(email) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1051 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.PlayerConnect$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1148 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.PlayerConnect$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1134 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1148 :34)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1148 :34)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1134 :34)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1134 :34)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1149 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1149 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1149 :39) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1149 :12) // base.Channel.PlayerConnect(nickname) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1135 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1135 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1135 :39) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1135 :12) // base.Channel.PlayerConnect(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.PlayerConnectAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1152 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.PlayerConnectAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1138 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1152 :62)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1152 :62)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1138 :62)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1138 :62)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1153 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1153 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1153 :51) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1153 :19) // base.Channel.PlayerConnectAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1153 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1139 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1139 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1139 :51) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1139 :19) // base.Channel.PlayerConnectAsync(nickname) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1139 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.PlayerDisconnect$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1156 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.PlayerDisconnect$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1142 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1156 :37)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1156 :37)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1142 :37)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1142 :37)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1157 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1157 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1157 :42) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1157 :12) // base.Channel.PlayerDisconnect(nickname) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1143 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1143 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1143 :42) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1143 :12) // base.Channel.PlayerDisconnect(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.PlayerDisconnectAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1160 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.PlayerDisconnectAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1146 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1160 :65)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1160 :65)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1146 :65)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1146 :65)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1161 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1161 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1161 :54) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1161 :19) // base.Channel.PlayerDisconnectAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1161 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1147 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1147 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1147 :54) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1147 :19) // base.Channel.PlayerDisconnectAsync(nickname) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1147 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.StartGame$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1164 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.StartGame$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1150 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1164 :30)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1164 :30)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1150 :30)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1150 :30)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1165 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1165 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1165 :35) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1165 :12) // base.Channel.StartGame(nickname) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1151 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1151 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1151 :35) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1151 :12) // base.Channel.StartGame(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.StartGameAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1168 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.StartGameAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1154 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1168 :58)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1168 :58)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1154 :58)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1154 :58)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1169 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1169 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1169 :47) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1169 :19) // base.Channel.StartGameAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1169 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1155 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1155 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1155 :47) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1155 :19) // base.Channel.StartGameAsync(nickname) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1155 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.VerifyGameStart$$() -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1172 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.VerifyGameStart$$() -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1158 :8) {
 ^entry :
 br ^0
 
 ^0: // SimpleBlock
-%0 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1173 :12) // base (BaseExpression)
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1173 :12) // base.Channel (SimpleMemberAccessExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1173 :12) // base.Channel.VerifyGameStart() (InvocationExpression)
+%0 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1159 :12) // base (BaseExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1159 :12) // base.Channel (SimpleMemberAccessExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1159 :12) // base.Channel.VerifyGameStart() (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.VerifyGameStartAsync$$() -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1176 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.VerifyGameStartAsync$$() -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1162 :8) {
 ^entry :
 br ^0
 
 ^0: // JumpBlock
-%0 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1177 :19) // base (BaseExpression)
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1177 :19) // base.Channel (SimpleMemberAccessExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1177 :19) // base.Channel.VerifyGameStartAsync() (InvocationExpression)
-return %2 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1177 :12)
+%0 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1163 :19) // base (BaseExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1163 :19) // base.Channel (SimpleMemberAccessExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1163 :19) // base.Channel.VerifyGameStartAsync() (InvocationExpression)
+return %2 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1163 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.GameOver$hangmanGame.MessageService.ServiceWinner$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1180 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.GameOver$hangmanGame.MessageService.ServiceWinner$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1166 :8) {
 ^entry (%_serviceWinner : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1180 :29)
-cbde.store %_serviceWinner, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1180 :29)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1166 :29)
+cbde.store %_serviceWinner, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1166 :29)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1181 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1181 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1181 :34) // Not a variable of known type: serviceWinner
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1181 :12) // base.Channel.GameOver(serviceWinner) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1167 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1167 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1167 :34) // Not a variable of known type: serviceWinner
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1167 :12) // base.Channel.GameOver(serviceWinner) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.PlayConnectClient.GameOverAsync$hangmanGame.MessageService.ServiceWinner$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1184 :8) {
+func @_hangmanGame.MessageService.PlayConnectClient.GameOverAsync$hangmanGame.MessageService.ServiceWinner$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1170 :8) {
 ^entry (%_serviceWinner : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1184 :57)
-cbde.store %_serviceWinner, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1184 :57)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1170 :57)
+cbde.store %_serviceWinner, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1170 :57)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1185 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1185 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1185 :46) // Not a variable of known type: serviceWinner
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1185 :19) // base.Channel.GameOverAsync(serviceWinner) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1185 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1171 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1171 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1171 :46) // Not a variable of known type: serviceWinner
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1171 :19) // base.Channel.GameOverAsync(serviceWinner) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1171 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.ReportManagerClient.ReportPlayer$hangmanGame.MessageService.ServiceReportMisConduct$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1244 :8) {
+func @_hangmanGame.MessageService.ReportManagerClient.ReportPlayer$hangmanGame.MessageService.ServiceReportMisConduct$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1230 :8) {
 ^entry (%_serviceReportMisConduct : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1244 :33)
-cbde.store %_serviceReportMisConduct, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1244 :33)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1230 :33)
+cbde.store %_serviceReportMisConduct, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1230 :33)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1245 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1245 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1245 :38) // Not a variable of known type: serviceReportMisConduct
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1245 :12) // base.Channel.ReportPlayer(serviceReportMisConduct) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1231 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1231 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1231 :38) // Not a variable of known type: serviceReportMisConduct
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1231 :12) // base.Channel.ReportPlayer(serviceReportMisConduct) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.ReportManagerClient.ReportPlayerAsync$hangmanGame.MessageService.ServiceReportMisConduct$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1248 :8) {
+func @_hangmanGame.MessageService.ReportManagerClient.ReportPlayerAsync$hangmanGame.MessageService.ServiceReportMisConduct$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1234 :8) {
 ^entry (%_serviceReportMisConduct : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1248 :61)
-cbde.store %_serviceReportMisConduct, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1248 :61)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1234 :61)
+cbde.store %_serviceReportMisConduct, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1234 :61)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1249 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1249 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1249 :50) // Not a variable of known type: serviceReportMisConduct
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1249 :19) // base.Channel.ReportPlayerAsync(serviceReportMisConduct) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1249 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1235 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1235 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1235 :50) // Not a variable of known type: serviceReportMisConduct
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1235 :19) // base.Channel.ReportPlayerAsync(serviceReportMisConduct) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1235 :12)
 
 ^1: // ExitBlock
 cbde.unreachable
 
 }
-func @_hangmanGame.MessageService.ReportManagerClient.ReportList$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1252 :8) {
+func @_hangmanGame.MessageService.ReportManagerClient.ReportList$string$(none) -> () loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1238 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1252 :31)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1252 :31)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1238 :31)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1238 :31)
 br ^0
 
 ^0: // SimpleBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1253 :12) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1253 :12) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1253 :36) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1253 :12) // base.Channel.ReportList(nickname) (InvocationExpression)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1239 :12) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1239 :12) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1239 :36) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1239 :12) // base.Channel.ReportList(nickname) (InvocationExpression)
 br ^1
 
 ^1: // ExitBlock
 return
 
 }
-func @_hangmanGame.MessageService.ReportManagerClient.ReportListAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1256 :8) {
+func @_hangmanGame.MessageService.ReportManagerClient.ReportListAsync$string$(none) -> none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1242 :8) {
 ^entry (%_nickname : none):
-%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1256 :59)
-cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1256 :59)
+%0 = cbde.alloca none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1242 :59)
+cbde.store %_nickname, %0 : memref<none> loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1242 :59)
 br ^0
 
 ^0: // JumpBlock
-%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1257 :19) // base (BaseExpression)
-%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1257 :19) // base.Channel (SimpleMemberAccessExpression)
-%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1257 :48) // Not a variable of known type: nickname
-%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1257 :19) // base.Channel.ReportListAsync(nickname) (InvocationExpression)
-return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1257 :12)
+%1 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1243 :19) // base (BaseExpression)
+%2 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1243 :19) // base.Channel (SimpleMemberAccessExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1243 :48) // Not a variable of known type: nickname
+%4 = cbde.unknown : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1243 :19) // base.Channel.ReportListAsync(nickname) (InvocationExpression)
+return %4 : none loc("C:\\Users\\Ale_2\\source\\repos\\hangmanGame\\Connected Services\\MessageService\\Reference.cs" :1243 :12)
 
 ^1: // ExitBlock
 cbde.unreachable

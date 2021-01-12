@@ -10,12 +10,11 @@ namespace hangmanGame
     /// This class is from the Report window
     /// </summary>
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class Report : Window, IReportManagerCallback
+    public partial class Report : Window, IReportPlayerCallback
     {
         private bool isReportPlayer;
         private static string nicknameReported;
         private static string nickname;
-        private ServiceReportMisConduct[] reportList;
 
         /// <summary>
         /// Constructor of Report class 
@@ -24,15 +23,6 @@ namespace hangmanGame
         {
             InitializeComponent();
             ProhibitPaste();
-        }
-
-        /// <summary>
-        /// IReportManagerCallback response method
-        /// </summary>
-        /// <param name="reportMisConducts">List of reports</param>
-        public void ResponseReportList(ServiceReportMisConduct[] reportMisConducts)
-        {
-            reportList = reportMisConducts;
         }
 
         /// <summary>
@@ -113,7 +103,7 @@ namespace hangmanGame
             if (!string.IsNullOrEmpty(typeReport)){
                 serviceReportMisConduct.TypeReport = typeReport;
                 InstanceContext instanceContext = new InstanceContext(this);
-                ReportManagerClient reportManagerClient = new ReportManagerClient(instanceContext);
+                ReportPlayerClient reportManagerClient = new ReportPlayerClient(instanceContext);
                 reportManagerClient.ReportPlayer(serviceReportMisConduct);
                 if (isReportPlayer)
                 {

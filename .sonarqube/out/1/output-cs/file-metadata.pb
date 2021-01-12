@@ -2,7 +2,8 @@ G
 >C:\Users\Ale_2\source\repos\hangmanGame\ChangePassword.xaml.csutf-8E
 <C:\Users\Ale_2\source\repos\hangmanGame\CharacterSentence.csutf-8a
 VC:\Users\Ale_2\source\repos\hangmanGame\Connected Services\MessageService\Reference.csutf-8A
-8C:\Users\Ale_2\source\repos\hangmanGame\GameOver.xaml.csutf-8A
+8C:\Users\Ale_2\source\repos\hangmanGame\GameOver.xaml.csutf-8@
+7C:\Users\Ale_2\source\repos\hangmanGame\LogException.csutf-8A
 8C:\Users\Ale_2\source\repos\hangmanGame\LostGame.xaml.csutf-8:
 1C:\Users\Ale_2\source\repos\hangmanGame\Number.csutf-8?
 6C:\Users\Ale_2\source\repos\hangmanGame\Report.xaml.csutf-8C
@@ -18,7 +19,8 @@ KC:\Users\Ale_2\source\repos\hangmanGame\Properties\Resources.en.Designer.cs
 NC:\Users\Ale_2\source\repos\hangmanGame\Properties\Resources.es-MX.Designer.csutf-8F
 =C:\Users\Ale_2\source\repos\hangmanGame\DeleteAccount.xaml.csutf-8>
 5C:\Users\Ale_2\source\repos\hangmanGame\Lobby.xaml.csutf-8<
-3C:\Users\Ale_2\source\repos\hangmanGame\Security.csutf-8B
+3C:\Users\Ale_2\source\repos\hangmanGame\Security.csutf-8?
+6C:\Users\Ale_2\source\repos\hangmanGame\TelegramBot.csutf-8B
 9C:\Users\Ale_2\source\repos\hangmanGame\ValidationData.csutf-8D
 ;C:\Users\Ale_2\source\repos\hangmanGame\WaitingRoom.xaml.csutf-8<
 3C:\Users\Ale_2\source\repos\hangmanGame\App.xaml.csutf-8C

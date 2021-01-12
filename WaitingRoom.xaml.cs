@@ -16,7 +16,7 @@ namespace hangmanGame
 		private static string emailAccount;
 		private static string nickname;
 		private readonly SynchronizationContext synchronizationContext;
-		private static bool isStartGameCurrent;
+		private bool isStartGameCurrent;
 		private ServiceSentence sentence;
 		private bool isClosing = true;
 		private ServiceWinner serviceWinner = new ServiceWinner();
@@ -79,10 +79,10 @@ namespace hangmanGame
 		/// <summary>
 		/// Método de respuesta de IPlayConnectCallback
 		/// </summary>
-		/// <param name="isStarGame">If the game has already started</param>
-		public void IsStarGame(bool isStarGame)
+		/// <param name="isStarGameRun">If the game has already started</param>
+		public void IsStarGame(bool isStarGameRun)
 		{
-			isStartGameCurrent = isStarGame;
+			isStartGameCurrent = isStarGameRun;
 		}
 
 		/// <summary>
@@ -134,10 +134,10 @@ namespace hangmanGame
 		/// <summary>
 		/// IPlayConnectCallback response method receives game winner
 		/// </summary>
-		/// <param name="playerWinner">Game winner</param>
-		public void PlayerWinner(ServiceWinner playerWinner)
+		/// <param name="playerWinnerGame">Game winner</param>
+		public void PlayerWinner(ServiceWinner playerWinnerGame)
 		{
-			serviceWinner = playerWinner;
+			serviceWinner = playerWinnerGame;
 		}
 
 		/// <summary>
@@ -161,11 +161,11 @@ namespace hangmanGame
 		/// <summary>
 		/// Method that closes the Waiting Room window
 		/// </summary>
-		/// <param name="eventCancel">Cancellation event</param>
-		protected override void OnClosing(System.ComponentModel.CancelEventArgs eventCancel)
+		/// <param name="e">Cancellation event</param>
+		protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
 		{
-			base.OnClosing(eventCancel);
-			eventCancel.Cancel = isClosing;
+			base.OnClosing(e);
+			e.Cancel = isClosing;
 		}
 		private void StartGame(object sender, RoutedEventArgs routedEventArgs)
 		{

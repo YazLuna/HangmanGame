@@ -174,7 +174,36 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="NetTcpBinding_IReportManager_policy">
+  <wsp:Policy wsu:Id="NetTcpBinding_IReportPlayer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IReportList_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -324,12 +353,6 @@
   <wsdl:message name="IChatManager_ClientConnect_OutputMessage">
     <wsdl:part name="parameters" element="tns:ClientConnectResponse" />
   </wsdl:message>
-  <wsdl:message name="IChatManager_GetNewMessages_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNewMessages" />
-  </wsdl:message>
-  <wsdl:message name="IChatManager_GetNewMessages_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNewMessagesResponse" />
-  </wsdl:message>
   <wsdl:message name="IChatManager_SendNewMessages_InputMessage">
     <wsdl:part name="parameters" element="tns:SendNewMessages" />
   </wsdl:message>
@@ -420,28 +443,28 @@
   <wsdl:message name="IPlayConnect_PlayerWinner_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayerWinnerResponse" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_ReportPlayer_InputMessage">
+  <wsdl:message name="IReportPlayer_ReportPlayer_InputMessage">
     <wsdl:part name="parameters" element="tns:ReportPlayer" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_ReportPlayer_OutputMessage">
+  <wsdl:message name="IReportPlayer_ReportPlayer_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReportPlayerResponse" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_ReportList_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReportList" />
-  </wsdl:message>
-  <wsdl:message name="IReportManager_ReportList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReportListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IReportManager_ResponseReportPlayer_OutputCallbackMessage">
+  <wsdl:message name="IReportPlayer_ResponseReportPlayer_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ResponseReportPlayer" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_ResponseReportPlayer_InputCallbackMessage">
+  <wsdl:message name="IReportPlayer_ResponseReportPlayer_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ResponseReportPlayerResponse" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_ResponseReportList_OutputCallbackMessage">
+  <wsdl:message name="IReportList_ReportList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportList" />
+  </wsdl:message>
+  <wsdl:message name="IReportList_ReportList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportList_ResponseReportList_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ResponseReportList" />
   </wsdl:message>
-  <wsdl:message name="IReportManager_ResponseReportList_InputCallbackMessage">
+  <wsdl:message name="IReportList_ResponseReportList_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ResponseReportListResponse" />
   </wsdl:message>
   <wsdl:portType name="IPlayerManager">
@@ -527,10 +550,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/ClientConnect" message="tns:IChatManager_ClientConnect_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/ClientConnectResponse" message="tns:IChatManager_ClientConnect_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetNewMessages">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/GetNewMessages" message="tns:IChatManager_GetNewMessages_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/GetNewMessagesResponse" message="tns:IChatManager_GetNewMessages_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="SendNewMessages">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatManager/SendNewMessages" message="tns:IChatManager_SendNewMessages_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatManager/SendNewMessagesResponse" message="tns:IChatManager_SendNewMessages_OutputMessage" />
@@ -596,22 +615,24 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayConnect/PlayerWinnerResponse" message="tns:IPlayConnect_PlayerWinner_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:portType name="IReportManager">
+  <wsdl:portType name="IReportPlayer">
     <wsdl:operation name="ReportPlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ReportPlayer" message="tns:IReportManager_ReportPlayer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ReportPlayerResponse" message="tns:IReportManager_ReportPlayer_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ReportList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ReportList" message="tns:IReportManager_ReportList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ReportListResponse" message="tns:IReportManager_ReportList_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportPlayer/ReportPlayer" message="tns:IReportPlayer_ReportPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportPlayer/ReportPlayerResponse" message="tns:IReportPlayer_ReportPlayer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ResponseReportPlayer">
-      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ResponseReportPlayer" message="tns:IReportManager_ResponseReportPlayer_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ResponseReportPlayerResponse" message="tns:IReportManager_ResponseReportPlayer_InputCallbackMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportPlayer/ResponseReportPlayer" message="tns:IReportPlayer_ResponseReportPlayer_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportPlayer/ResponseReportPlayerResponse" message="tns:IReportPlayer_ResponseReportPlayer_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IReportList">
+    <wsdl:operation name="ReportList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportList/ReportList" message="tns:IReportList_ReportList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportList/ReportListResponse" message="tns:IReportList_ReportList_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ResponseReportList">
-      <wsdl:output wsaw:Action="http://tempuri.org/IReportManager/ResponseReportList" message="tns:IReportManager_ResponseReportList_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IReportManager/ResponseReportListResponse" message="tns:IReportManager_ResponseReportList_InputCallbackMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReportList/ResponseReportList" message="tns:IReportList_ResponseReportList_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IReportList/ResponseReportListResponse" message="tns:IReportList_ResponseReportList_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IPlayerManager" type="tns:IPlayerManager">
@@ -800,15 +821,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNewMessages">
-      <soap12:operation soapAction="http://tempuri.org/IChatManager/GetNewMessages" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SendNewMessages">
       <soap12:operation soapAction="http://tempuri.org/IChatManager/SendNewMessages" style="document" />
       <wsdl:input>
@@ -953,20 +965,11 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="NetTcpBinding_IReportManager" type="tns:IReportManager">
-    <wsp:PolicyReference URI="#NetTcpBinding_IReportManager_policy" />
+  <wsdl:binding name="NetTcpBinding_IReportPlayer" type="tns:IReportPlayer">
+    <wsp:PolicyReference URI="#NetTcpBinding_IReportPlayer_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="ReportPlayer">
-      <soap12:operation soapAction="http://tempuri.org/IReportManager/ReportPlayer" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ReportList">
-      <soap12:operation soapAction="http://tempuri.org/IReportManager/ReportList" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/IReportPlayer/ReportPlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -975,7 +978,20 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ResponseReportPlayer">
-      <soap12:operation soapAction="http://tempuri.org/IReportManager/ResponseReportPlayer" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/IReportPlayer/ResponseReportPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IReportList" type="tns:IReportList">
+    <wsp:PolicyReference URI="#NetTcpBinding_IReportList_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ReportList">
+      <soap12:operation soapAction="http://tempuri.org/IReportList/ReportList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -984,7 +1000,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ResponseReportList">
-      <soap12:operation soapAction="http://tempuri.org/IReportManager/ResponseReportList" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/IReportList/ResponseReportList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1048,7 +1064,16 @@
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
-    <wsdl:port name="NetTcpBinding_IReportManager" binding="tns:NetTcpBinding_IReportManager">
+    <wsdl:port name="NetTcpBinding_IReportPlayer" binding="tns:NetTcpBinding_IReportPlayer">
+      <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-KL1T53D2\Ale_2</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IReportList" binding="tns:NetTcpBinding_IReportList">
       <soap12:address location="net.tcp://localhost:8090/HangmanGameService" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/HangmanGameService</wsa10:Address>

@@ -42,6 +42,7 @@
 
             <Label Name="lbCategory" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Grid.ColumnSpan="2" HorizontalContentAlignment="Right" VerticalAlignment="Top" Style="{StaticResource labelStyle}"></Label>
             <Label Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Content="{x:Static p:Resources.WrongLetters}"  HorizontalContentAlignment="Right" Style="{StaticResource labelStyle}"></Label>
+            <Label Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Center"  HorizontalContentAlignment="Center" Name="lbWrongLetters" Style="{StaticResource labelStyle}" Margin="0,80,3,-39" Width="519" Grid.ColumnSpan="3" Grid.Column="1" Height="19"/>
             <TextBox Name="tbWrongLetters" VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" Grid.Row="2"  Grid.Column="2" Height="40" Width="125" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Button Name="btnCheck"  HorizontalAlignment="Right" Grid.Row="2"  Grid.Column="2" Click="Check" Content="{x:Static p:Resources.Check_Button}" Style="{StaticResource buttonGreen}" Height="49" Width="150" />
 
@@ -88,11 +89,10 @@
                 </Grid.RowDefinitions>
             </Grid>
 
-            <Grid Grid.Column="1" Background="DarkBlue" HorizontalAlignment="Right" Height="363" VerticalAlignment="Top" Width="444" Grid.ColumnSpan="2" Margin="0,76,10,0">
-                <Button  Name="btnSendMessage" Content="{x:Static p:Resources.SendMessage_Button}"  Margin="320,329,10,9" Width="114" Height="25" Click="SendMessage"/>
-                <ListBox Name="lstConnectedPlayers" HorizontalAlignment="Left" Height="304" Margin="320,19,0,0" VerticalAlignment="Top" Width="114" />
-                <ListBox Name="lstChat" HorizontalAlignment="Left" Height="304" Margin="10,19,0,0" VerticalAlignment="Top" Width="305"/>
-                <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,328,0,0" VerticalAlignment="Top" Width="305"/>
+            <Grid Grid.Column="2" Background="DarkBlue" HorizontalAlignment="Right" Height="429" VerticalAlignment="Top" Width="324" Margin="0,10,10,0">
+                <Button  Name="btnSendMessage" Background="Gray" Content="{x:Static p:Resources.SendMessage_Button}" Margin="217,394,10,10" Height="25" Click="SendMessage"/>
+                <ListBox Name="lstChat" HorizontalAlignment="Left" Height="379" Margin="10,10,0,0" VerticalAlignment="Top" Width="305"/>
+                <TextBox Name="tbMessage" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,394,0,0" VerticalAlignment="Top" Width="202"/>
             </Grid>
             <Image Grid.Column ="0" Name="imgStart" Source="image/StartGame.png" HorizontalAlignment="Left" />
             <Image Grid.Column ="0" Name="imgOneError" Source="image/OneError.png"  Visibility="Hidden" HorizontalAlignment="Left" />

@@ -53,6 +53,28 @@ namespace hangmanGame
 			this.response = response;
 		}
 
+		private void ProhibitPaste()
+		{
+			CommandManager.AddPreviewCanExecuteHandler(pbNewPassword, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(pbNewPassword, OnPreviewExecuted);
+			CommandManager.AddPreviewCanExecuteHandler(pbValidatePassword, OnPreviewCanExecute);
+			CommandManager.AddPreviewExecutedHandler(pbValidatePassword, OnPreviewExecuted);
+		}
+		private void OnPreviewCanExecute(object sender, CanExecuteRoutedEventArgs canExecuteRoutedEventArgs)
+		{
+			if (canExecuteRoutedEventArgs.Command == ApplicationCommands.Paste)
+			{
+				canExecuteRoutedEventArgs.CanExecute = true;
+				canExecuteRoutedEventArgs.Handled = true;
+			}
+		}
+		private void OnPreviewExecuted(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
+		{
+			if (executedRoutedEventArgs.Command == ApplicationCommands.Paste)
+			{
+				executedRoutedEventArgs.Handled = true;
+			}
+		}
 		private void Password_MouseEnter(object sender, System.Windows.Input.MouseEventArgs eventMouse)
 		{
 			tbNewPassword.Visibility = Visibility.Visible;
@@ -95,18 +117,27 @@ namespace hangmanGame
 		{ 
 			if (ValidatePassword() && ValidateCode())
 			{
-				InstanceContext instanceContext = new InstanceContext(this);
-				PlayerManagerClient changePassword = new PlayerManagerClient(instanceContext);
-				changePassword.ChangePassword(emailAccount, Security.Encrypt(tbNewPassword.Text));
-				if (response)
+				try
                 {
+					InstanceContext instanceContext = new InstanceContext(this);
+					PlayerManagerClient changePassword = new PlayerManagerClient(instanceContext);
+					changePassword.ChangePassword(emailAccount, Security.Encrypt(pbNewPassword.Password));
+					if (response)
+					{
 						System.Windows.Forms.MessageBox.Show(Properties.Resources.PasswordChangedDetails, Properties.Resources.PasswordChanged
 					, MessageBoxButtons.OK, MessageBoxIcon.Information);
-				} 
-				else
-                {
-					System.Windows.Forms.MessageBox.Show(Properties.Resources.ErrorDataBaseDetails, Properties.Resources.ErrorDataBase
-					, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					else
+					{
+						System.Windows.Forms.MessageBox.Show(Properties.Resources.ErrorDataBaseDetails, Properties.Resources.ErrorDataBase
+						, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				catch (EndpointNotFoundException exception)
+				{
+					TelegramBot.SendToTelegram(exception);
+					LogException.Log(this, exception);
+					LogException.ErrorConnectionService();
 				}
 				MainWindow main = new MainWindow();
 				main.Show();

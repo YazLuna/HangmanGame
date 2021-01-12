@@ -9,12 +9,11 @@ namespace hangmanGame
 	/// This class is from the Report List window
 	/// </summary>
 	[CallbackBehavior(UseSynchronizationContext = false)]
-	public partial class ReportList : Window, IReportManagerCallback
+	public partial class ReportList : Window, IReportListCallback
 	{
 		private static string emailAccount;
 		private static string nickname;
 		private ServiceReportMisConduct[] reportList;
-		private bool isReportPlayer;
 
 		/// <summary>
 		/// Constructor of Report List class
@@ -45,15 +44,6 @@ namespace hangmanGame
 		/// <summary>
 		/// IReportManagerCallback response method
 		/// </summary>
-		/// <param name="isReport">If the player was reported</param>
-		public void ResponseReportPlayer(bool isReport)
-		{
-			isReportPlayer = isReport;
-		}
-
-		/// <summary>
-		/// IReportManagerCallback response method
-		/// </summary>
 		/// <param name="reportMisConducts">List of reports</param>
 		public void ResponseReportList(ServiceReportMisConduct[] reportMisConducts)
 		{
@@ -66,13 +56,14 @@ namespace hangmanGame
 		public void ColocateReports()
 		{
 			InstanceContext instanceContext = new InstanceContext(this);
-			ReportManagerClient reportManagerClient = new ReportManagerClient(instanceContext);
+			ReportListClient reportManagerClient = new ReportListClient(instanceContext);
 			reportManagerClient.ReportList(nickname);
 			lvReportList.ItemsSource = reportList;
 		}
 		private void Exit(object sender, RoutedEventArgs routedEventArgs)
 		{
 			ModifyAccount modifyAccount = new ModifyAccount();
+			modifyAccount.EmailReceived(emailAccount);
 			modifyAccount.InitializeDataPlayer();
 			modifyAccount.Show();
 			this.Close();
