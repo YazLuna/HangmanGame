@@ -105,10 +105,19 @@ namespace hangmanGame
 		/// </summary>
 		public void ColocateBestScores()
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayerScoresManagerClient searchBestScores = new PlayerScoresManagerClient(instanceContext);
-			searchBestScores.SearchBestScoresPlayer();
-			dgBestScores.ItemsSource = servicePlayers;
+			try
+            {
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayerScoresManagerClient searchBestScores = new PlayerScoresManagerClient(instanceContext);
+				searchBestScores.SearchBestScoresPlayer();
+				dgBestScores.ItemsSource = servicePlayers;
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 		}
 
 		/// <summary>
@@ -116,11 +125,20 @@ namespace hangmanGame
 		/// </summary>
 		public void ColocatePersonalInformation()
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			InformationPlayerManagerClient personalInformation = new InformationPlayerManagerClient(instanceContext);
-			personalInformation.SearchInformationPlayer(emailAccount);
-			lbNickname.Content = nickname;
-			lbScore.Content = score;
+			try
+            {
+				InstanceContext instanceContext = new InstanceContext(this);
+				InformationPlayerManagerClient personalInformation = new InformationPlayerManagerClient(instanceContext);
+				personalInformation.SearchInformationPlayer(emailAccount);
+				lbNickname.Content = nickname;
+				lbScore.Content = score;
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 		}
 
 		private void LogOut(object sender, RoutedEventArgs e)
@@ -150,21 +168,30 @@ namespace hangmanGame
 
 		private void Play(object sender, RoutedEventArgs e)
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playConnectClient = new PlayConnectClient(instanceContext);
-			playConnectClient.VerifyGameStart();
-			if (isStartGameCurrent)
-			{
-				MessageBox.Show(Properties.Resources.NoOpenMatchMessage, Properties.Resources.TitleMatch, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+			try
+            {
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient playConnectClient = new PlayConnectClient(instanceContext);
+				playConnectClient.VerifyGameStart();
+				if (isStartGameCurrent)
+				{
+					MessageBox.Show(Properties.Resources.NoOpenMatchMessage, Properties.Resources.TitleMatch, (MessageBoxButton)System.Windows.Forms.MessageBoxButtons.OK, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Exclamation);
+				}
+				else
+				{
+					WaitingRoom waitingRoom = new WaitingRoom();
+					waitingRoom.NicknameReceived(nickname);
+					waitingRoom.EmailReceived(emailAccount);
+					waitingRoom.ObtainListPlayer();
+					waitingRoom.Show();
+					this.Close();
+				}
 			}
-			else
+			catch (EndpointNotFoundException exception)
 			{
-				WaitingRoom waitingRoom = new WaitingRoom();
-				waitingRoom.NicknameReceived(nickname);
-				waitingRoom.EmailReceived(emailAccount);
-				waitingRoom.ObtainListPlayer();
-				waitingRoom.Show();
-				this.Close();
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
 			}
 		}
 	}
