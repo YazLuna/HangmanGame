@@ -109,7 +109,6 @@ namespace hangmanGame
             isValidConfirmationCode = ValidationData.ValidateConfirmationCode(tbConfirmationCode.Text);
             if (isValidConfirmationCode)
             {
-                int codeConfirmation = int.Parse(tbConfirmationCode.Text);
                 InstanceContext instanceContext = new InstanceContext(this);
                 PlayerManagerClient registry = new PlayerManagerClient(instanceContext);
                 registry.Register(account, accountPlayer);

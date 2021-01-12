@@ -1,582 +1,3937 @@
-æò
+Ü≤
 >C:\Users\Ale_2\source\repos\hangmanGame\ChangePassword.xaml.cs
 	namespace 	
 hangmanGame
  
 {		 
-[
-
- 
-CallbackBehavior
-
- 
-(
-
- %
-UseSynchronizationContext
-
- /
-=
-
-0 1
-false
-
-2 7
-)
-
-7 8
-]
-
-8 9
-public 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext /
+=0 1
+false2 7
+)7 8
+]8 9
+public 
 
-partial 
-class 
-ChangePassword '
-:( )
-Window* 0
-,0 1"
-IPlayerManagerCallback2 H
-{ 
-private 
-bool 
-isValidNewPassword '
-;' (
-private 
-bool 
-isValidPassword $
-;$ %
-private 
-bool 
-responseBoolean $
-;$ %
-private 
-static 
-ServiceAccount %
-account& -
-;- .
-public 
-ChangePassword 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void !
-PlayerResponseBoolean )
-() *
-bool* .
-response/ 7
-)7 8
-{ 	
-responseBoolean 
-= 
-response &
-;& '
-} 	
-public 
-void 
-AccountReceived #
-($ %
-ServiceAccount% 3
-serviceAccount4 B
-)B C
-{ 	
-account 
-= 
-serviceAccount $
-;$ %
-} 	
-private 
-void 
-Password_MouseEnter (
-(( )
-Object) /
-sender0 6
-,6 7
-MouseEventArgs8 F
-mouseEventArgsG U
-)U V
-{ 	
-tbNewPassword 
-. 
-
-Visibility $
-=% &
-
-Visibility' 1
-.1 2
-Visible2 9
-;9 :
-pbNewPassword   
-.   
-
-Visibility   $
-=  % &
-
-Visibility  ' 1
-.  1 2
-Hidden  2 8
-;  8 9
-tbNewPassword!! 
-.!! 
-Text!! 
-=!!  
-pbNewPassword!!! .
-.!!. /
-Password!!/ 7
-;!!7 8
-}"" 	
-private## 
-void## 
-Passwrod_MouseLeave## (
-(##( )
-Object##) /
-sender##0 6
-,##6 7
-MouseEventArgs##8 F
-mouseEventArgs##G U
-)##U V
-{$$ 	
-tbNewPassword%% 
-.%% 
-
-Visibility%% $
-=%%% &
-
-Visibility%%' 1
-.%%1 2
-Hidden%%2 8
-;%%8 9
-pbNewPassword&& 
-.&& 
-
-Visibility&& $
-=&&% &
-
-Visibility&&' 1
-.&&1 2
-Visible&&2 9
-;&&9 :
-tbNewPassword'' 
-.'' 
-Text'' 
-=''  
-String''! '
-.''' (
-Empty''( -
-;''- .
-}(( 	
-private)) 
-void)) +
-ConfirmationPassword_MouseEnter)) 4
-())4 5
-Object))5 ;
-sender))< B
-,))B C
-MouseEventArgs))D R
-mouseEventArgs))S a
-)))a b
-{** 	"
-tbConfirmationPassword++ "
-.++" #
-
-Visibility++# -
-=++. /
-
-Visibility++0 :
-.++: ;
-Visible++; B
-;++B C"
-pbConfirmationPassword,, "
-.,," #
-
-Visibility,,# -
-=,,. /
-
-Visibility,,0 :
-.,,: ;
-Hidden,,; A
-;,,A B"
-tbConfirmationPassword-- "
-.--" #
-Text--# '
-=--( )"
-pbConfirmationPassword--* @
-.--@ A
-Password--A I
-;--I J
+partial 
+class 
+ChangePassword '
+:( )
+Window* 0
+,0 1"
+IPlayerManagerCallback2 H
+{ 
+private 
+bool 
+isValidNewPassword '
+;' (
+private 
+bool 
+isValidPassword $
+;$ %
+private 
+bool 
+responseBoolean $
+;$ %
+private 
+ServiceAccount 
+account &
+;& '
+public 
+ChangePassword 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+ProhibitPaste 
+( 
+) 
+; 
+} 	
+public"" 
+void"" !
+PlayerResponseBoolean"" )
+("") *
+bool""* .
+response""/ 7
+)""7 8
+{## 	
+responseBoolean$$ 
+=$$ 
+response$$ &
+;$$& '
+}%% 	
+public++ 
+void++ 
+AccountReceived++ #
+(++$ %
+ServiceAccount++% 3
+serviceAccount++4 B
+)++B C
+{,, 	
+account-- 
+=-- 
+serviceAccount-- $
+;--$ %
 }.. 	
 private// 
-void// +
-ConfirmationPassword_MouseLeave// 4
-(//4 5
-Object//5 ;
-sender//< B
-,//B C
-MouseEventArgs//D R
-mouseEventArgs//S a
-)//a b
-{00 	"
-tbConfirmationPassword11 "
-.11" #
+void// 
+ProhibitPaste// "
+(//" #
+)//# $
+{00 	
+CommandManager11 
+.11 '
+AddPreviewCanExecuteHandler11 6
+(116 7
 
-Visibility11# -
-=11. /
+pbPassword117 A
+,11A B
+OnPreviewCanExecute11C V
+)11V W
+;11W X
+CommandManager22 
+.22 %
+AddPreviewExecutedHandler22 4
+(224 5
 
-Visibility110 :
-.11: ;
-Hidden11; A
-;11A B"
-pbConfirmationPassword22 "
-.22" #
+pbPassword225 ?
+,22? @
+OnPreviewExecuted22A R
+)22R S
+;22S T
+CommandManager33 
+.33 '
+AddPreviewCanExecuteHandler33 6
+(336 7
+pbNewPassword337 D
+,33D E
+OnPreviewCanExecute33F Y
+)33Y Z
+;33Z [
+CommandManager44 
+.44 %
+AddPreviewExecutedHandler44 4
+(444 5
+pbNewPassword445 B
+,44B C
+OnPreviewExecuted44D U
+)44U V
+;44V W
+CommandManager55 
+.55 '
+AddPreviewCanExecuteHandler55 6
+(556 7"
+pbConfirmationPassword557 M
+,55M N
+OnPreviewCanExecute55O b
+)55b c
+;55c d
+CommandManager66 
+.66 %
+AddPreviewExecutedHandler66 4
+(664 5"
+pbConfirmationPassword665 K
+,66K L
+OnPreviewExecuted66M ^
+)66^ _
+;66_ `
+}77 	
+private88 
+void88 
+OnPreviewCanExecute88 (
+(88( )
+object88) /
+sender880 6
+,886 7%
+CanExecuteRoutedEventArgs888 Q%
+canExecuteRoutedEventArgs88R k
+)88k l
+{99 	
+if:: 
+(:: %
+canExecuteRoutedEventArgs:: )
+.::) *
+Command::* 1
+==::2 4
+ApplicationCommands::5 H
+.::H I
+Paste::I N
+)::N O
+{;; %
+canExecuteRoutedEventArgs<< )
+.<<) *
 
-Visibility22# -
-=22. /
+CanExecute<<* 4
+=<<5 6
+true<<7 ;
+;<<; <%
+canExecuteRoutedEventArgs== )
+.==) *
+Handled==* 1
+===2 3
+true==4 8
+;==8 9
+}>> 
+}?? 	
+private@@ 
+void@@ 
+OnPreviewExecuted@@ &
+(@@& '
+object@@' -
+sender@@. 4
+,@@4 5#
+ExecutedRoutedEventArgs@@6 M#
+executedRoutedEventArgs@@N e
+)@@e f
+{AA 	
+ifBB 
+(BB #
+executedRoutedEventArgsBB '
+.BB' (
+CommandBB( /
+==BB0 2
+ApplicationCommandsBB3 F
+.BBF G
+PasteBBG L
+)BBL M
+{CC #
+executedRoutedEventArgsDD '
+.DD' (
+HandledDD( /
+=DD0 1
+trueDD2 6
+;DD6 7
+}EE 
+}FF 	
+privateGG 
+voidGG 
+Password_MouseEnterGG (
+(GG( )
+ObjectGG) /
+senderGG0 6
+,GG6 7
+MouseEventArgsGG8 F
+mouseEventArgsGGG U
+)GGU V
+{HH 	
+tbNewPasswordII 
+.II 
 
-Visibility220 :
-.22: ;
-Visible22; B
-;22B C"
-tbConfirmationPassword33 "
-.33" #
-Text33# '
-=33( )
-String33* 0
-.330 1
-Empty331 6
-;336 7
-}44 	
-private55 
-void55 
-Error_MouseEnter55 %
-(55% &
-Object55& ,
-	objectImg55- 6
-,556 7
-MouseEventArgs558 F
-mouseEventArgs55G U
-)55U V
-{66 	
-bool77  
-isImgCurrentPassword77 %
-;77% & 
-isImgCurrentPassword88  
-=88! "
-	objectImg88# ,
-.88, -
-Equals88- 3
-(883 4#
-imgErrorCurrentPassword884 K
-)88K L
-;88L M
-if99 
-(99  
-isImgCurrentPassword99 $
-)99$ %
-{:: "
-lbErrorCurrentPassword;; &
-.;;& '
+VisibilityII $
+=II% &
 
-Visibility;;' 1
-=;;2 3
+VisibilityII' 1
+.II1 2
+VisibleII2 9
+;II9 :
+pbNewPasswordJJ 
+.JJ 
 
-Visibility;;4 >
-.;;> ?
-Visible;;? F
-;;;F G
+VisibilityJJ $
+=JJ% &
+
+VisibilityJJ' 1
+.JJ1 2
+HiddenJJ2 8
+;JJ8 9
+tbNewPasswordKK 
+.KK 
+TextKK 
+=KK  
+pbNewPasswordKK! .
+.KK. /
+PasswordKK/ 7
+;KK7 8
+}LL 	
+privateMM 
+voidMM 
+Passwrod_MouseLeaveMM (
+(MM( )
+ObjectMM) /
+senderMM0 6
+,MM6 7
+MouseEventArgsMM8 F
+mouseEventArgsMMG U
+)MMU V
+{NN 	
+tbNewPasswordOO 
+.OO 
+
+VisibilityOO $
+=OO% &
+
+VisibilityOO' 1
+.OO1 2
+HiddenOO2 8
+;OO8 9
+pbNewPasswordPP 
+.PP 
+
+VisibilityPP $
+=PP% &
+
+VisibilityPP' 1
+.PP1 2
+VisiblePP2 9
+;PP9 :
+tbNewPasswordQQ 
+.QQ 
+TextQQ 
+=QQ  
+StringQQ! '
+.QQ' (
+EmptyQQ( -
+;QQ- .
+}RR 	
+privateSS 
+voidSS +
+ConfirmationPassword_MouseEnterSS 4
+(SS4 5
+ObjectSS5 ;
+senderSS< B
+,SSB C
+MouseEventArgsSSD R
+mouseEventArgsSSS a
+)SSa b
+{TT 	"
+tbConfirmationPasswordUU "
+.UU" #
+
+VisibilityUU# -
+=UU. /
+
+VisibilityUU0 :
+.UU: ;
+VisibleUU; B
+;UUB C"
+pbConfirmationPasswordVV "
+.VV" #
+
+VisibilityVV# -
+=VV. /
+
+VisibilityVV0 :
+.VV: ;
+HiddenVV; A
+;VVA B"
+tbConfirmationPasswordWW "
+.WW" #
+TextWW# '
+=WW( )"
+pbConfirmationPasswordWW* @
+.WW@ A
+PasswordWWA I
+;WWI J
+}XX 	
+privateYY 
+voidYY +
+ConfirmationPassword_MouseLeaveYY 4
+(YY4 5
+ObjectYY5 ;
+senderYY< B
+,YYB C
+MouseEventArgsYYD R
+mouseEventArgsYYS a
+)YYa b
+{ZZ 	"
+tbConfirmationPassword[[ "
+.[[" #
+
+Visibility[[# -
+=[[. /
+
+Visibility[[0 :
+.[[: ;
+Hidden[[; A
+;[[A B"
+pbConfirmationPassword\\ "
+.\\" #
+
+Visibility\\# -
+=\\. /
+
+Visibility\\0 :
+.\\: ;
+Visible\\; B
+;\\B C"
+tbConfirmationPassword]] "
+.]]" #
+Text]]# '
+=]]( )
+String]]* 0
+.]]0 1
+Empty]]1 6
+;]]6 7
+}^^ 	
+private__ 
+void__ 
+Error_MouseEnter__ %
+(__% &
+Object__& ,
+	objectImg__- 6
+,__6 7
+MouseEventArgs__8 F
+mouseEventArgs__G U
+)__U V
+{`` 	
+boolaa  
+isImgCurrentPasswordaa %
+;aa% & 
+isImgCurrentPasswordbb  
+=bb! "
+	objectImgbb# ,
+.bb, -
+Equalsbb- 3
+(bb3 4#
+imgErrorCurrentPasswordbb4 K
+)bbK L
+;bbL M
+ifcc 
+(cc  
+isImgCurrentPasswordcc $
+)cc$ %
+{dd "
+lbErrorCurrentPasswordee &
+.ee& '
+
+Visibilityee' 1
+=ee2 3
+
+Visibilityee4 >
+.ee> ?
+Visibleee? F
+;eeF G
+}ff 
+elsegg 
+{hh 
+boolii 
+isImgNewPasswordii %
+;ii% &
+isImgNewPasswordjj  
+=jj! "
+	objectImgjj# ,
+.jj, -
+Equalsjj- 3
+(jj3 4
+imgErrorNewPasswordjj4 G
+)jjG H
+;jjH I
+ifkk 
+(kk 
+isImgNewPasswordkk $
+)kk$ %
+{ll 
+lbErrorNewPasswordmm &
+.mm& '
+
+Visibilitymm' 1
+=mm2 3
+
+Visibilitymm4 >
+.mm> ?
+Visiblemm? F
+;mmF G
+}nn 
+elseoo 
+{pp '
+lbErrorConfirmationPasswordqq /
+.qq/ 0
+
+Visibilityqq0 :
+=qq; <
+
+Visibilityqq= G
+.qqG H
+VisibleqqH O
+;qqO P
+}rr 
+}ss 
+}tt 	
+privateuu 
+voiduu 
+Error_MouseLeaveuu %
+(uu% &
+Objectuu& ,
+	objectImguu- 6
+,uu6 7
+MouseEventArgsuu8 F
+mouseEventArgsuuG U
+)uuU V
+{vv 	
+boolww  
+isImgCurrentPasswordww %
+;ww% & 
+isImgCurrentPasswordxx  
+=xx! "
+	objectImgxx# ,
+.xx, -
+Equalsxx- 3
+(xx3 4#
+imgErrorCurrentPasswordxx4 K
+)xxK L
+;xxL M
+ifyy 
+(yy  
+isImgCurrentPasswordyy $
+)yy$ %
+{zz "
+lbErrorCurrentPassword{{ &
+.{{& '
+
+Visibility{{' 1
+={{2 3
+
+Visibility{{4 >
+.{{> ?
+Hidden{{? E
+;{{E F
+}|| 
+else}} 
+{~~ 
+bool 
+isImgNewPassword %
+;% &
+isImgNewPassword
+ÄÄ  
+=
+ÄÄ! "
+	objectImg
+ÄÄ# ,
+.
+ÄÄ, -
+Equals
+ÄÄ- 3
+(
+ÄÄ3 4!
+imgErrorNewPassword
+ÄÄ4 G
+)
+ÄÄG H
+;
+ÄÄH I
+if
+ÅÅ 
+(
+ÅÅ 
+isImgNewPassword
+ÅÅ $
+)
+ÅÅ$ %
+{
+ÇÇ  
+lbErrorNewPassword
+ÉÉ &
+.
+ÉÉ& '
+
+Visibility
+ÉÉ' 1
+=
+ÉÉ2 3
+
+Visibility
+ÉÉ4 >
+.
+ÉÉ> ?
+Hidden
+ÉÉ? E
+;
+ÉÉE F
+}
+ÑÑ 
+else
+ÖÖ 
+{
+ÜÜ )
+lbErrorConfirmationPassword
+áá /
+.
+áá/ 0
+
+Visibility
+áá0 :
+=
+áá; <
+
+Visibility
+áá= G
+.
+ááG H
+Hidden
+ááH N
+;
+ááN O
+}
+àà 
+}
+ââ 
+}
+ää 	
+private
+ãã 
+void
+ãã 
+ProhibitSpace
+ãã "
+(
+ãã" #
+object
+ãã# )
+sender
+ãã* 0
+,
+ãã0 1
+KeyEventArgs
+ãã2 >
+keyEvent
+ãã? G
+)
+ããG H
+{
+åå 	
+if
+çç 
+(
+çç 
+keyEvent
+çç 
+.
+çç 
+Key
+çç 
+==
+çç 
+Key
+çç  #
+.
+çç# $
+Space
+çç$ )
+)
+çç) *
+keyEvent
+éé 
+.
+éé 
+Handled
+éé  
+=
+éé! "
+true
+éé# '
+;
+éé' (
+}
+èè 	
+private
+êê 
+void
+êê #
+ChangeAccountPassword
+êê *
+(
+êê* +
+object
+êê+ 1
+sender
+êê2 8
+,
+êê8 9
+RoutedEventArgs
+êê: I
+routedEventArgs
+êêJ Y
+)
+êêY Z
+{
+ëë 	*
+imgErrorConfirmationPassword
+íí (
+.
+íí( )
+
+Visibility
+íí) 3
+=
+íí4 5
+
+Visibility
+íí6 @
+.
+íí@ A
+Hidden
+ííA G
+;
+ííG H%
+imgErrorCurrentPassword
+ìì #
+.
+ìì# $
+
+Visibility
+ìì$ .
+=
+ìì/ 0
+
+Visibility
+ìì1 ;
+.
+ìì; <
+Hidden
+ìì< B
+;
+ììB C!
+imgErrorNewPassword
+îî 
+.
+îî  
+
+Visibility
+îî  *
+=
+îî+ ,
+
+Visibility
+îî- 7
+.
+îî7 8
+Hidden
+îî8 >
+;
+îî> ?$
+pbConfirmationPassword
+ïï "
+.
+ïï" #
+BorderBrush
+ïï# .
+=
+ïï/ 0
+Brushes
+ïï1 8
+.
+ïï8 9
+Transparent
+ïï9 D
+;
+ïïD E
+
+pbPassword
+ññ 
+.
+ññ 
+BorderBrush
+ññ "
+=
+ññ# $
+Brushes
+ññ% ,
+.
+ññ, -
+Transparent
+ññ- 8
+;
+ññ8 9
+pbNewPassword
+óó 
+.
+óó 
+BorderBrush
+óó %
+=
+óó& '
+Brushes
+óó( /
+.
+óó/ 0
+Transparent
+óó0 ;
+;
+óó; < 
+isValidNewPassword
+òò 
+=
+òò  
+false
+òò! &
+;
+òò& '
+ValidatePassword
+ôô 
+(
+ôô 
+)
+ôô 
+;
+ôô !
+ValidateNewPassword
+öö 
+(
+öö  
+)
+öö  !
+;
+öö! "
+if
+õõ 
+(
+õõ 
+isValidPassword
+õõ 
+&&
+õõ ! 
+isValidNewPassword
+õõ" 4
+)
+õõ4 5
+{
+úú 
+string
+ùù 
+passwordEncrypt
+ùù &
+=
+ùù' (
+Security
+ùù) 1
+.
+ùù1 2
+Encrypt
+ùù2 9
+(
+ùù9 :
+pbNewPassword
+ùù: G
+.
+ùùG H
+Password
+ùùH P
+)
+ùùP Q
+;
+ùùQ R
+InstanceContext
+ûû 
+instanceContext
+ûû  /
+=
+ûû0 1
+new
+ûû2 5
+InstanceContext
+ûû6 E
+(
+ûûE F
+this
+ûûF J
+)
+ûûJ K
+;
+ûûK L!
+PlayerManagerClient
+üü #
+playerManager
+üü$ 1
+=
+üü2 3
+new
+üü4 7!
+PlayerManagerClient
+üü8 K
+(
+üüK L
+instanceContext
+üüL [
+)
+üü[ \
+;
+üü\ ]
+playerManager
+†† 
+.
+†† 
+ChangePassword
+†† ,
+(
+††, -
+account
+††- 4
+.
+††4 5
+Email
+††5 :
+,
+††: ;
+passwordEncrypt
+††< K
+)
+††K L
+;
+††L M
+if
+°° 
+(
+°° 
+responseBoolean
+°° #
+)
+°°# $
+{
+¢¢ 
+OpenMessageBox
+££ "
+(
+££" #
+
+Properties
+££# -
+.
+££- .
+	Resources
+££. 7
+.
+££7 8#
+ChangePasswordMessage
+££8 M
+,
+££M N
+
+Properties
+££O Y
+.
+££Y Z
+	Resources
+££Z c
+.
+££c d(
+ChangePasswordMessageTitle
+££d ~
+,
+££~ 
+(££Ä Å
+MessageBoxImage££Å ê
+)££ê ë
+System££ë ó
+.££ó ò
+Windows££ò ü
+.££ü †
+Forms££† •
+.££• ¶
+MessageBoxIcon££¶ ¥
+.££¥ µ
+Information££µ ¿
+)££¿ ¡
+;££¡ ¬
+}
+§§ 
+else
+•• 
+{
+¶¶ 
+OpenMessageBox
+ßß "
+(
+ßß" #
+
+Properties
+ßß# -
+.
+ßß- .
+	Resources
+ßß. 7
+.
+ßß7 8%
+NoChangePasswordMessage
+ßß8 O
+,
+ßßO P
+
+Properties
+ßßQ [
+.
+ßß[ \
+	Resources
+ßß\ e
+.
+ßße f)
+ChangePasswordMessageTitleßßf Ä
+,ßßÄ Å
+(ßßÇ É
+MessageBoxImageßßÉ í
+)ßßí ì
+Systemßßì ô
+.ßßô ö
+Windowsßßö °
+.ßß° ¢
+Formsßß¢ ß
+.ßßß ®
+MessageBoxIconßß® ∂
+.ßß∂ ∑
+Errorßß∑ º
+)ßßº Ω
+;ßßΩ æ
+}
+®® 
+ModifyAccount
+©© 
+modifyAccount
+©© +
+=
+©©, -
+new
+©©. 1
+ModifyAccount
+©©2 ?
+(
+©©? @
+)
+©©@ A
+;
+©©A B
+modifyAccount
+™™ 
+.
+™™ 
+ObtainAccount
+™™ +
+(
+™™+ ,
+)
+™™, -
+;
+™™- .
+modifyAccount
+´´ 
+.
+´´ 
+Show
+´´ "
+(
+´´" #
+)
+´´# $
+;
+´´$ %
+this
+¨¨ 
+.
+¨¨ 
+Close
+¨¨ 
+(
+¨¨ 
+)
+¨¨ 
+;
+¨¨ 
+}
+≠≠ 
+else
+ÆÆ 
+{
+ÆÆ 
+OpenMessageBox
+ØØ 
+(
+ØØ 
+
+Properties
+ØØ )
+.
+ØØ) *
+	Resources
+ØØ* 3
+.
+ØØ3 4"
+IncorrectDataMessage
+ØØ4 H
+,
+ØØH I
+
+Properties
+ØØJ T
+.
+ØØT U
+	Resources
+ØØU ^
+.
+ØØ^ _'
+IncorrectDataMessageTitle
+ØØ_ x
+,
+ØØx y
+(
+ØØz {
+MessageBoxImageØØ{ ä
+)ØØä ã
+SystemØØã ë
+.ØØë í
+WindowsØØí ô
+.ØØô ö
+FormsØØö ü
+.ØØü †
+MessageBoxIconØØ† Æ
+.ØØÆ Ø
+WarningØØØ ∂
+)ØØ∂ ∑
+;ØØ∑ ∏
+}
+∞∞ 
+}
+±± 	
+private
+≤≤ 
+void
+≤≤ 
+OpenMessageBox
+≤≤ #
+(
+≤≤# $
+string
+≤≤$ *
+textMessage
+≤≤+ 6
+,
+≤≤6 7
+string
+≤≤8 >
+titleMessage
+≤≤? K
+,
+≤≤K L
+MessageBoxImage
+≤≤M \
+messageBoxImage
+≤≤] l
+)
+≤≤l m
+{
+≥≥ 	
+
+MessageBox
+¥¥ 
+.
+¥¥ 
+Show
+¥¥ 
+(
+¥¥ 
+textMessage
+¥¥ '
+,
+¥¥' (
+titleMessage
+¥¥) 5
+,
+¥¥5 6
+(
+¥¥7 8
+MessageBoxButton
+¥¥8 H
+)
+¥¥H I
+System
+¥¥I O
+.
+¥¥O P
+Windows
+¥¥P W
+.
+¥¥W X
+Forms
+¥¥X ]
+.
+¥¥] ^
+MessageBoxButtons
+¥¥^ o
+.
+¥¥o p
+OK
+¥¥p r
+,
+¥¥r s
+messageBoxImage¥¥t É
+)¥¥É Ñ
+;¥¥Ñ Ö
+}
+µµ 	
+private
+∂∂ 
+void
+∂∂ 
+ValidatePassword
+∂∂ %
+(
+∂∂% &
+)
+∂∂& '
+{
+∑∑ 	
+isValidPassword
+∏∏ 
+=
+∏∏ 
+false
+∏∏ #
+;
+∏∏# $
+string
+ππ 
+password
+ππ 
+=
+ππ 
+Security
+ππ &
+.
+ππ& '
+Decrypt
+ππ' .
+(
+ππ. /
+account
+ππ/ 6
+.
+ππ6 7
+PasswordAccount
+ππ7 F
+)
+ππF G
+;
+ππG H
+if
+∫∫ 
+(
+∫∫ 
+password
+∫∫ 
+==
+∫∫ 
+
+pbPassword
+∫∫ &
+.
+∫∫& '
+Password
+∫∫' /
+)
+∫∫/ 0
+{
+ªª 
+isValidPassword
+ºº 
+=
+ºº  !
+true
+ºº" &
+;
+ºº& '
+
+pbPassword
+ΩΩ 
+.
+ΩΩ 
+BorderBrush
+ΩΩ &
+=
+ΩΩ' (
+Brushes
+ΩΩ) 0
+.
+ΩΩ0 1
+Green
+ΩΩ1 6
+;
+ΩΩ6 7
+}
+ææ 
+else
+øø 
+{
+¿¿ 
+
+pbPassword
+¡¡ 
+.
+¡¡ 
+BorderBrush
+¡¡ &
+=
+¡¡' (
+Brushes
+¡¡) 0
+.
+¡¡0 1
+Red
+¡¡1 4
+;
+¡¡4 5%
+imgErrorCurrentPassword
+¬¬ '
+.
+¬¬' (
+
+Visibility
+¬¬( 2
+=
+¬¬3 4
+
+Visibility
+¬¬5 ?
+.
+¬¬? @
+Visible
+¬¬@ G
+;
+¬¬G H
+}
+√√ 
+}
+ƒƒ 	
+private
+≈≈ 
+void
+≈≈ !
+ValidateNewPassword
+≈≈ (
+(
+≈≈( )
+)
+≈≈) *
+{
+∆∆ 	
+bool
+««  
+isValidatePassword
+«« #
+;
+««# $
+bool
+»» ,
+isValidateConfirmationPassword
+»» /
+;
+»»/ 0 
+isValidatePassword
+…… 
+=
+……  
+ValidationData
+……! /
+.
+……/ 0
+ValidatePassword
+……0 @
+(
+……@ A
+pbNewPassword
+……A N
+.
+……N O
+Password
+……O W
+)
+……W X
+;
+……X Y,
+isValidateConfirmationPassword
+   *
+=
+  + ,
+ValidationData
+  - ;
+.
+  ; <
+ValidatePassword
+  < L
+(
+  L M$
+pbConfirmationPassword
+  M c
+.
+  c d
+Password
+  d l
+)
+  l m
+;
+  m n
+if
+ÀÀ 
+(
+ÀÀ 
+pbNewPassword
+ÀÀ 
+.
+ÀÀ 
+Password
+ÀÀ &
+!=
+ÀÀ' )$
+pbConfirmationPassword
+ÀÀ* @
+.
+ÀÀ@ A
+Password
+ÀÀA I
+)
+ÀÀI J
+{
+ÃÃ 
+pbNewPassword
+ÕÕ 
+.
+ÕÕ 
+BorderBrush
+ÕÕ )
+=
+ÕÕ* +
+Brushes
+ÕÕ, 3
+.
+ÕÕ3 4
+Red
+ÕÕ4 7
+;
+ÕÕ7 8$
+pbConfirmationPassword
+ŒŒ &
+.
+ŒŒ& '
+BorderBrush
+ŒŒ' 2
+=
+ŒŒ3 4
+Brushes
+ŒŒ5 <
+.
+ŒŒ< =
+Red
+ŒŒ= @
+;
+ŒŒ@ A!
+imgErrorNewPassword
+œœ #
+.
+œœ# $
+
+Visibility
+œœ$ .
+=
+œœ/ 0
+
+Visibility
+œœ1 ;
+.
+œœ; <
+Visible
+œœ< C
+;
+œœC D*
+imgErrorConfirmationPassword
+–– ,
+.
+––, -
+
+Visibility
+––- 7
+=
+––8 9
+
+Visibility
+––: D
+.
+––D E
+Visible
+––E L
+;
+––L M
+}
+—— 
+else
+““ 
+{
+”” 
+if
+‘‘ 
+(
+‘‘  
+isValidatePassword
+‘‘ &
+)
+‘‘& '
+{
+’’ 
+pbNewPassword
+÷÷ !
+.
+÷÷! "
+BorderBrush
+÷÷" -
+=
+÷÷. /
+Brushes
+÷÷0 7
+.
+÷÷7 8
+Green
+÷÷8 =
+;
+÷÷= >
+}
+◊◊ 
+else
+ÿÿ 
+{
+ŸŸ 
+pbNewPassword
+⁄⁄ !
+.
+⁄⁄! "
+BorderBrush
+⁄⁄" -
+=
+⁄⁄. /
+Brushes
+⁄⁄0 7
+.
+⁄⁄7 8
+Red
+⁄⁄8 ;
+;
+⁄⁄; <!
+imgErrorNewPassword
+€€ '
+.
+€€' (
+
+Visibility
+€€( 2
+=
+€€3 4
+
+Visibility
+€€5 ?
+.
+€€? @
+Visible
+€€@ G
+;
+€€G H
+}
+‹‹ 
+if
+›› 
+(
+›› ,
+isValidateConfirmationPassword
+›› 2
+)
+››2 3
+{
+ﬁﬁ $
+pbConfirmationPassword
+ﬂﬂ *
+.
+ﬂﬂ* +
+BorderBrush
+ﬂﬂ+ 6
+=
+ﬂﬂ7 8
+Brushes
+ﬂﬂ9 @
+.
+ﬂﬂ@ A
+Green
+ﬂﬂA F
+;
+ﬂﬂF G
+}
+‡‡ 
+else
+·· 
+{
+‚‚ $
+pbConfirmationPassword
+„„ *
+.
+„„* +
+BorderBrush
+„„+ 6
+=
+„„7 8
+Brushes
+„„9 @
+.
+„„@ A
+Red
+„„A D
+;
+„„D E*
+imgErrorConfirmationPassword
+‰‰ 0
+.
+‰‰0 1
+
+Visibility
+‰‰1 ;
+=
+‰‰< =
+
+Visibility
+‰‰> H
+.
+‰‰H I
+Visible
+‰‰I P
+;
+‰‰P Q
+}
+ÂÂ 
+}
+ÊÊ 
+if
+ÁÁ 
+(
+ÁÁ ,
+isValidateConfirmationPassword
+ÁÁ .
+&&
+ÁÁ/ 1 
+isValidatePassword
+ÁÁ2 D
+)
+ÁÁD E
+{
+ËË  
+isValidNewPassword
+ÈÈ "
+=
+ÈÈ# $
+true
+ÈÈ% )
+;
+ÈÈ) *
+}
+ÍÍ 
+}
+ÎÎ 	
+private
+ÏÏ 
+void
+ÏÏ 
+Exit
+ÏÏ 
+(
+ÏÏ 
+object
+ÏÏ  
+sender
+ÏÏ! '
+,
+ÏÏ' (
+RoutedEventArgs
+ÏÏ) 8
+routedEventArgs
+ÏÏ9 H
+)
+ÏÏH I
+{
+ÌÌ 	
+ModifyAccount
+ÓÓ 
+modifyAccount
+ÓÓ '
+=
+ÓÓ( )
+new
+ÓÓ* -
+ModifyAccount
+ÓÓ. ;
+(
+ÓÓ; <
+)
+ÓÓ< =
+;
+ÓÓ= >
+modifyAccount
+ÔÔ 
+.
+ÔÔ "
+InitializeDataPlayer
+ÔÔ .
+(
+ÔÔ. /
+)
+ÔÔ/ 0
+;
+ÔÔ0 1
+modifyAccount
+ 
+.
+ 
+Show
+ 
+(
+ 
+)
+  
+;
+  !
+this
+ÒÒ 
+.
+ÒÒ 
+Close
+ÒÒ 
+(
+ÒÒ 
+)
+ÒÒ 
+;
+ÒÒ 
+}
+ÚÚ 	
+}
+ÛÛ 
+}ÙÙ ¿
+<C:\Users\Ale_2\source\repos\hangmanGame\CharacterSentence.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public 
+
+class 
+CharacterSentence "
+{ 
+public 
+char 
+	Character 
+{ 
+get  #
+;# $
+set% (
+;( )
+}* +
+public 
+int 
+PositionRow 
+{  
+get! $
+;$ %
+set& )
+;) *
+}+ ,
+public 
+int 
+PositionColumn !
+{" #
+get$ '
+;' (
+set) ,
+;, -
+}. /
+} 
+} ä
+8C:\Users\Ale_2\source\repos\hangmanGame\GameOver.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public		 
+
+partial		 
+class		 
+GameOver		 !
+:		" #
+Window		$ *
+{
+
+ 
+public 
+GameOver 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+} 	
+public 
+void #
+InitializeServiceWinner +
+(, -
+ServiceWinner- :
+serviceWinner; H
+,H I
+stringJ P
+nicknameOwnerQ ^
+)^ _
+{ 	
+
+lbNickname 
+. 
+Content 
+=  
+serviceWinner! .
+.. /
+NickName/ 7
+;7 8
+
+lbMistakes 
+. 
+Content 
+=  
+serviceWinner! .
+.. /
+Mistakes/ 7
+.7 8
+ToString8 @
+(@ A
+)A B
+;B C
+lbPoints 
+. 
+Content 
+= 
+serviceWinner ,
+., -
+Points- 3
+;3 4
+lbTime 
+. 
+Content 
+= 
+serviceWinner *
+.* +
+Time+ /
+;/ 0
+if 
+( 
+serviceWinner 
+. 
+NickName &
+!=' )
+nicknameOwner* 7
+)7 8
+{ 
+	lbMessage   
+.   
+Content   !
+=  " #
+
+Properties  $ .
+.  . /
+	Resources  / 8
+.  8 9
+LostMessage  9 D
+;  D E
+imgSixError!! 
+.!! 
+
+Visibility!! &
+=!!' (
+
+Visibility!!) 3
+.!!3 4
+Visible!!4 ;
+;!!; <
+imgHagmanGame"" 
+."" 
+
+Visibility"" (
+="") *
+
+Visibility""+ 5
+.""5 6
+Hidden""6 <
+;""< =
+imgMan## 
+.## 
+
+Visibility## !
+=##" #
+
+Visibility##$ .
+.##. /
+Hidden##/ 5
+;##5 6
+	imgTrophy$$ 
+.$$ 
+
+Visibility$$ $
+=$$% &
+
+Visibility$$' 1
+.$$1 2
+Hidden$$2 8
+;$$8 9
+}%% 
+}&& 	
+private'' 
+void'' 
+AcceptGameOver'' #
+(''# $
+object''$ *
+sender''+ 1
+,''1 2
+RoutedEventArgs''3 B
+routedEventArgs''C R
+)''R S
+{(( 	
+this)) 
+.)) 
+Close)) 
+()) 
+))) 
+;)) 
+}** 	
+}++ 
+},, Ø
+7C:\Users\Ale_2\source\repos\hangmanGame\LogException.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public 
+
+static 
+class 
+LogException $
+{ 
+public 
+static 
+void 
+Log 
+( 
+object %
+obj& )
+,) *
+	Exception+ 4
+	exception5 >
+)> ?
+{ 	
+string 
+date 
+= 
+DateTime "
+." #
+Now# &
+.& '
+ToString' /
+(/ 0
+$str0 <
+)< =
+;= >
+string 
+time 
+= 
+DateTime "
+." #
+Now# &
+.& '
+ToString' /
+(/ 0
+$str0 :
+): ;
+;; <
+string 
+path 
+= 
+$str $
++% &
+date' +
++, -
+$str. 4
+;4 5
+string 
+pathDirectory  
+=! "
+$str# (
+;( )
+try 
+{ 
+if 
+( 
+! 
+	Directory 
+. 
+Exists $
+($ %
+pathDirectory% 2
+)2 3
+)3 4
+{4 5
+	Directory 
+. 
+CreateDirectory -
+(- .
+pathDirectory. ;
+); <
+;< =
+} 
+StreamWriter 
+streamWriter )
+=* +
+new, /
+StreamWriter0 <
+(< =
+path= A
+,A B
+trueC G
+)G H
+;H I
+
+StackTrace 
+
+stacktrace %
+=& '
+new( +
+
+StackTrace, 6
+(6 7
+)7 8
+;8 9
+streamWriter 
+. 
+	WriteLine &
+(& '
+obj' *
+.* +
+GetType+ 2
+(2 3
+)3 4
+.4 5
+FullName5 =
++> ?
+$str@ C
++D E
+timeF J
+)J K
+;K L
+streamWriter   
+.   
+	WriteLine   &
+(  & '
+
+stacktrace  ' 1
+.  1 2
+GetFrame  2 :
+(  : ;
+$num  ; <
+)  < =
+.  = >
+	GetMethod  > G
+(  G H
+)  H I
+.  I J
+Name  J N
++  O P
+$str  Q V
++  W X
+	exception  Y b
+.  b c
+ToString  c k
+(  k l
+)  l m
+)  m n
+;  n o
+streamWriter!! 
+.!! 
+	WriteLine!! &
+(!!& '
+$str!!' )
+)!!) *
+;!!* +
+streamWriter"" 
+."" 
+Flush"" "
+(""" #
+)""# $
+;""$ %
+streamWriter## 
+.## 
+Close## "
+(##" #
+)### $
+;##$ %
+}$$ 
+catch%% 
+(%% 
+IOException%% 
+exceptionLog%% +
+)%%+ ,
+{&& 
+TelegramBot'' 
+.'' 
+SendToTelegram'' *
+(''* +
+exceptionLog''+ 7
+)''7 8
+;''8 9
+}(( 
+})) 	
+public.. 
+static.. 
+void.. "
+ErrorConnectionService.. 1
+(..1 2
+)..2 3
+{// 	
+
+MessageBox00 
+.00 
+Show00 
+(00 
+
+Properties00 &
+.00& '
+	Resources00' 0
+.000 1
+ErrorServiceDetails001 D
+,00D E
+
+Properties00F P
+.00P Q
+	Resources00Q Z
+.00Z [
+ErrorService00[ g
+,11 
+MessageBoxButtons11 +
+.11+ ,
+OK11, .
+,11. /
+MessageBoxIcon110 >
+.11> ?
+Exclamation11? J
+)11J K
+;11K L
+}22 	
+}33 
+}66 ö
+8C:\Users\Ale_2\source\repos\hangmanGame\LostGame.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public 
+
+partial 
+class 
+LostGame !
+:" #
+Window$ *
+{		 
+public 
+LostGame 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+} 	
+private 
+void 
+AcceptLostGame #
+(# $
+object$ *
+sender+ 1
+,1 2
+RoutedEventArgs3 B
+routedEventArgsC R
+)R S
+{ 	
+this 
+. 
+Close 
+( 
+) 
+; 
+} 	
+} 
+} à	
+1C:\Users\Ale_2\source\repos\hangmanGame\Number.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public 
+
+enum 
+NumberValues 
+{ 
+ZERO 
+= 
+$num 
+, 
+ONE 
+= 
+$num 
+, 
+TWO 
+= 
+$num 
+, 
+THREE 
+= 
+$num 
+, 
+FOUR   
+=   
+$num   
+,   
+FIVE%% 
+=%% 
+$num%% 
+,%% 
+TEN** 
+=** 
+$num** 
+}++ 
+public00 
+
+static00 
+class00 
+Number00 
+{00  
+public77 
+static77 
+int77 
+NumberValue77 %
+(77% &
+NumberValues77& 2
+numberValues773 ?
+)77? @
+{88 	
+int99 
+number99 
+=99 
+(99 
+int99 
+)99 
+numberValues99 *
+;99* +
+return:: 
+number:: 
+;:: 
+};; 	
+}<< 
+}>> íS
+6C:\Users\Ale_2\source\repos\hangmanGame\Report.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext /
+=0 1
+false2 7
+)7 8
+]8 9
+public 
+
+partial 
+class 
+Report 
+:  !
+Window" (
+,( )"
+IReportManagerCallback* @
+{ 
+private 
+bool 
+isReportPlayer #
+;# $
+private 
+string 
+nicknameReported '
+;' (
+private 
+string 
+nickname 
+;  
+private #
+ServiceReportMisConduct '
+[' (
+]( )
+
+reportList* 4
+;4 5
+public 
+Report 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+ProhibitPaste 
+( 
+) 
+; 
+} 	
+public!! 
+void!! 
+ResponseReportList!! &
+(!!& '#
+ServiceReportMisConduct!!' >
+[!!> ?
+]!!? @
+reportMisConducts!!A R
+)!!R S
+{"" 	
+
+reportList## 
+=## 
+reportMisConducts## *
+;##* +
+}$$ 	
+public** 
+void**  
+ResponseReportPlayer** (
+(**( )
+bool**) -
+isReport**. 6
+)**6 7
+{++ 	
+isReportPlayer,, 
+=,, 
+isReport,, %
+;,,% &
+}-- 	
+public33 
+void33 $
+NicknameReportedReceived33 ,
+(33, -
+string33- 3"
+nicknamePlayerReported334 J
+)33J K
+{44 	
+nicknameReported55 
+=55 "
+nicknamePlayerReported55 5
+;555 6
+}66 	
+public<< 
+void<< 
+NicknameReceived<< $
+(<<$ %
+string<<% +
+nicknamePlayer<<, :
+)<<: ;
+{== 	
+nickname>> 
+=>> 
+nicknamePlayer>> %
+;>>% &
+}?? 	
+private@@ 
+void@@ 
+ProhibitPaste@@ "
+(@@" #
+)@@# $
+{AA 	
+CommandManagerBB 
+.BB '
+AddPreviewCanExecuteHandlerBB 6
+(BB6 7
+	tbContextBB7 @
+,BB@ A
+OnPreviewCanExecuteBBB U
+)BBU V
+;BBV W
+CommandManagerCC 
+.CC %
+AddPreviewExecutedHandlerCC 4
+(CC4 5
+	tbContextCC5 >
+,CC> ?
+OnPreviewExecutedCC@ Q
+)CCQ R
+;CCR S
+}DD 	
+privateEE 
+voidEE 
+OnPreviewCanExecuteEE (
+(EE( )
+objectEE) /
+senderEE0 6
+,EE6 7%
+CanExecuteRoutedEventArgsEE8 Q%
+canExecuteRoutedEventArgsEER k
+)EEk l
+{FF 	
+ifGG 
+(GG %
+canExecuteRoutedEventArgsGG )
+.GG) *
+CommandGG* 1
+==GG2 4
+ApplicationCommandsGG5 H
+.GGH I
+PasteGGI N
+)GGN O
+{HH %
+canExecuteRoutedEventArgsII )
+.II) *
+
+CanExecuteII* 4
+=II5 6
+trueII7 ;
+;II; <%
+canExecuteRoutedEventArgsJJ )
+.JJ) *
+HandledJJ* 1
+=JJ2 3
+trueJJ4 8
+;JJ8 9
+}KK 
+}LL 	
+privateMM 
+voidMM 
+OnPreviewExecutedMM &
+(MM& '
+objectMM' -
+senderMM. 4
+,MM4 5#
+ExecutedRoutedEventArgsMM6 M#
+executedRoutedEventArgsMMN e
+)MMe f
+{NN 	
+ifOO 
+(OO #
+executedRoutedEventArgsOO '
+.OO' (
+CommandOO( /
+==OO0 2
+ApplicationCommandsOO3 F
+.OOF G
+PasteOOG L
+)OOL M
+{PP #
+executedRoutedEventArgsQQ '
+.QQ' (
+HandledQQ( /
+=QQ0 1
+trueQQ2 6
+;QQ6 7
+}RR 
+}SS 	
+privateTT 
+voidTT 
+ReportPlayerTT !
+(TT! "
+objectTT" (
+senderTT) /
+,TT/ 0
+RoutedEventArgsTT1 @
+routedEventArgsTTA P
+)TTP Q
+{UU 	#
+ServiceReportMisConductVV ##
+serviceReportMisConductVV$ ;
+=VV< =
+newVV> A#
+ServiceReportMisConductVVB Y
+(VVY Z
+)VVZ [
+;VV[ \#
+serviceReportMisConductWW #
+.WW# $
+IdReportedPlayerWW$ 4
+=WW5 6
+nicknameReportedWW7 G
+;WWG H#
+serviceReportMisConductXX #
+.XX# $
+IdReportingPlayerXX$ 5
+=XX6 7
+nicknameXX8 @
+;XX@ A
+stringYY 
+dataContextYY 
+=YY  
+ValidationDataYY! /
+.YY/ 0
+DeleteSpaceWordYY0 ?
+(YY? @
+	tbContextYY@ I
+.YYI J
+TextYYJ N
+)YYN O
+;YYO P
+ifZZ 
+(ZZ 
+dataContextZZ 
+.ZZ 
+LengthZZ "
+>ZZ# $
+NumberZZ% +
+.ZZ+ ,
+NumberValueZZ, 7
+(ZZ7 8
+NumberValuesZZ8 D
+.ZZD E
+ZEROZZE I
+)ZZI J
+)ZZJ K
+{[[ #
+serviceReportMisConduct\\ '
+.\\' (
+AdditionalContext\\( 9
+=\\: ;
+dataContext\\< G
+;\\G H
+}]] 
+string^^ 
+
+typeReport^^ 
+=^^ 
+null^^  $
+;^^$ %
+if__ 
+(__ 
+	rbTypeOne__ 
+.__ 
+	IsChecked__ #
+==__$ &
+true__' +
+)__+ ,
+{`` 
+
+typeReportaa 
+=aa 
+
+Propertiesaa '
+.aa' (
+	Resourcesaa( 1
+.aa1 2
+VerbalMotiveaa2 >
+;aa> ?
+}bb 
+elsecc 
+{dd 
+ifee 
+(ee 
+	rbTypeTwoee 
+.ee 
+	IsCheckedee '
+==ee( *
+trueee+ /
+)ee/ 0
+{ff 
+
+typeReportgg 
+=gg  
+
+Propertiesgg! +
+.gg+ ,
+	Resourcesgg, 5
+.gg5 6
+OffensiveMotivegg6 E
+;ggE F
+}hh 
+elseii 
+{jj 
+ifkk 
+(kk 
+rbTypeThreekk #
+.kk# $
+	IsCheckedkk$ -
+==kk. 0
+truekk1 5
+)kk5 6
+{ll 
+
+typeReportmm "
+=mm# $
+
+Propertiesmm% /
+.mm/ 0
+	Resourcesmm0 9
+.mm9 :
+
+HateMotivemm: D
+;mmD E
+}nn 
+}oo 
+}pp 
+ifqq 
+(qq 
+!qq 
+stringqq 
+.qq 
+IsNullOrEmptyqq %
+(qq% &
+
+typeReportqq& 0
+)qq0 1
+)qq1 2
+{qq2 3#
+serviceReportMisConductrr '
+.rr' (
+
+TypeReportrr( 2
+=rr3 4
+
+typeReportrr5 ?
+;rr? @
+InstanceContextss 
+instanceContextss  /
+=ss0 1
+newss2 5
+InstanceContextss6 E
+(ssE F
+thisssF J
+)ssJ K
+;ssK L
+ReportManagerClienttt #
+reportManagerClienttt$ 7
+=tt8 9
+newtt: =
+ReportManagerClienttt> Q
+(ttQ R
+instanceContextttR a
+)tta b
+;ttb c
+reportManagerClientuu #
+.uu# $
+ReportPlayeruu$ 0
+(uu0 1#
+serviceReportMisConductuu1 H
+)uuH I
+;uuI J
+ifvv 
+(vv 
+isReportPlayervv "
+)vv" #
+{ww 
+OpenMessageBoxxx "
+(xx" #
+
+Propertiesxx# -
+.xx- .
+	Resourcesxx. 7
+.xx7 8
+ReportPlayerMessagexx8 K
+,xxK L
+
+PropertiesxxM W
+.xxW X
+	ResourcesxxX a
+.xxa b&
+TitleRegisterReportMessagexxb |
+,xx| }
+(xx~ 
+MessageBoxImage	xx é
+)
+xxé è
+System
+xxè ï
+.
+xxï ñ
+Windows
+xxñ ù
+.
+xxù û
+Forms
+xxû £
+.
+xx£ §
+MessageBoxIcon
+xx§ ≤
+.
+xx≤ ≥
+Information
+xx≥ æ
+)
+xxæ ø
+;
+xxø ¿
+}yy 
+elsezz 
+{{{ 
+OpenMessageBox|| "
+(||" #
+
+Properties||# -
+.||- .
+	Resources||. 7
+.||7 8$
+ReportPlayerErrorMessage||8 P
+,||P Q
+
+Properties||R \
+.||\ ]
+	Resources||] f
+.||f g'
+TitleRegisterReportMessage	||g Å
+,
+||Å Ç
+(
+||É Ñ
+MessageBoxImage
+||Ñ ì
+)
+||ì î
+System
+||î ö
+.
+||ö õ
+Windows
+||õ ¢
+.
+||¢ £
+Forms
+||£ ®
+.
+||® ©
+MessageBoxIcon
+||© ∑
+.
+||∑ ∏
+Error
+||∏ Ω
+)
+||Ω æ
+;
+||æ ø
+}}} 
+Play~~ 
+.~~  
+ReportPlayerReceived~~ )
+(~~) *
+isReportPlayer~~* 8
+)~~8 9
+;~~9 :
+this 
+. 
+Close 
+( 
+) 
+; 
+}
+ÄÄ 
+else
+ÅÅ 
+{
+ÇÇ 
+OpenMessageBox
+ÉÉ 
+(
+ÉÉ 
+
+Properties
+ÉÉ )
+.
+ÉÉ) *
+	Resources
+ÉÉ* 3
+.
+ÉÉ3 4$
+TypeReportErrorMessage
+ÉÉ4 J
+,
+ÉÉJ K
+
+Properties
+ÉÉL V
+.
+ÉÉV W
+	Resources
+ÉÉW `
+.
+ÉÉ` a'
+IncorrectDataMessageTitle
+ÉÉa z
+,
+ÉÉz {
+(
+ÉÉ| }
+MessageBoxImageÉÉ} å
+)ÉÉå ç
+SystemÉÉç ì
+.ÉÉì î
+WindowsÉÉî õ
+.ÉÉõ ú
+FormsÉÉú °
+.ÉÉ° ¢
+MessageBoxIconÉÉ¢ ∞
+.ÉÉ∞ ±
+ErrorÉÉ± ∂
+)ÉÉ∂ ∑
+;ÉÉ∑ ∏
+}
+ÑÑ 
+}
+ÖÖ 	
+private
+ÜÜ 
+void
+ÜÜ 
+OpenMessageBox
+ÜÜ #
+(
+ÜÜ# $
+string
+ÜÜ$ *
+textMessage
+ÜÜ+ 6
+,
+ÜÜ6 7
+string
+ÜÜ8 >
+titleMessage
+ÜÜ? K
+,
+ÜÜK L
+MessageBoxImage
+ÜÜM \
+messageBoxImage
+ÜÜ] l
+)
+ÜÜl m
+{
+áá 	
+
+MessageBox
+àà 
+.
+àà 
+Show
+àà 
+(
+àà 
+textMessage
+àà '
+,
+àà' (
+titleMessage
+àà) 5
+,
+àà5 6
+(
+àà7 8
+MessageBoxButton
+àà8 H
+)
+ààH I
+System
+ààI O
+.
+ààO P
+Windows
+ààP W
+.
+ààW X
+Forms
+ààX ]
+.
+àà] ^
+MessageBoxButtons
+àà^ o
+.
+àào p
+OK
+ààp r
+,
+ààr s
+messageBoxImageààt É
+)ààÉ Ñ
+;ààÑ Ö
+}
+ââ 	
+}
+ää 
+}ãã ö
+:C:\Users\Ale_2\source\repos\hangmanGame\ReportList.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext ,
+=- .
+false/ 4
+)4 5
+]5 6
+public 
+partial 
+class 
+
+ReportList  
+:! "
+Window# )
+,) *"
+IReportManagerCallback+ A
+{ 
+private 	
+static
+ 
+string 
+emailAccount $
+;$ %
+private 	
+string
+ 
+nickname 
+; 
+private 	#
+ServiceReportMisConduct
+ !
+[! "
+]" #
+
+reportList$ .
+;. /
+private 	
+bool
+ 
+isReportPlayer 
+; 
+public 
+
+ReportList	 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+} 	
+public 
+void	 
+EmailReceived 
+( 
+string "
+email# (
+)( )
+{   
+emailAccount!! 
+=!! 
+email!! 
+;!! 
+}"" 
+public(( 
+void((	 
+NicknameReceived(( 
+((( 
+string(( %
+nicknamePlayer((& 4
+)((4 5
+{)) 
+nickname** 
+=** 
+nicknamePlayer** 
+;** 
+}++ 
+public11 
+void11	  
+ResponseReportPlayer11 "
+(11" #
+bool11# '
+isReport11( 0
+)110 1
+{22 
+isReportPlayer33 
+=33 
+isReport33 
+;33 
+}44 
+public:: 
+void::	 
+ResponseReportList::  
+(::  !#
+ServiceReportMisConduct::! 8
+[::8 9
+]::9 :
+reportMisConducts::; L
+)::L M
+{;; 
+
+reportList<< 
+=<< 
+reportMisConducts<< !
+;<<! "
+}== 
+publicBB 
+voidBB	 
+ColocateReportsBB 
+(BB 
+)BB 
+{CC 
+InstanceContextDD 
+instanceContextDD "
+=DD# $
+newDD% (
+InstanceContextDD) 8
+(DD8 9
+thisDD9 =
+)DD= >
+;DD> ?
+ReportManagerClientEE 
+reportManagerClientEE *
+=EE+ ,
+newEE- 0
+ReportManagerClientEE1 D
+(EED E
+instanceContextEEE T
+)EET U
+;EEU V
+reportManagerClientFF 
+.FF 
+
+ReportListFF !
+(FF! "
+nicknameFF" *
+)FF* +
+;FF+ ,
+lvReportListGG 
+.GG 
+ItemsSourceGG 
+=GG 
+
+reportListGG (
+;GG( )
+}HH 
+privateII 	
+voidII
+ 
+ExitII 
+(II 
+objectII 
+senderII !
+,II! "
+RoutedEventArgsII# 2
+routedEventArgsII3 B
+)IIB C
+{JJ 
+ModifyAccountKK 
+modifyAccountKK 
+=KK  
+newKK! $
+ModifyAccountKK% 2
+(KK2 3
+)KK3 4
+;KK4 5
+modifyAccountLL 
+.LL  
+InitializeDataPlayerLL %
+(LL% &
+)LL& '
+;LL' (
+modifyAccountMM 
+.MM 
+ShowMM 
+(MM 
+)MM 
+;MM 
+thisNN 
+.NN 
+CloseNN 
+(NN 
+)NN 
+;NN 
+}OO 
+}PP 
+}QQ Ã9
+7C:\Users\Ale_2\source\repos\hangmanGame\Setting.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public
+
+ 
+
+partial
+
+ 
+class
+
+ 
+Setting
+
+  
+:
+
+! "
+Window
+
+# )
+{ 
+private 
+static 
+string 
+language &
+;& '
+private 
+static 
+double 
+
+valueSound (
+;( )
+public 
+Setting 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+} 	
+public 
+static 
+void 
+LanguageReceive *
+(* +
+string+ 1
+languageReceive2 A
+)A B
+{ 	
+language 
+= 
+languageReceive &
+;& '
+} 	
+public$$ 
+static$$ 
+void$$ 
+ValueSoundReceive$$ ,
+($$, -
+double$$- 3
+soundReceive$$4 @
+)$$@ A
+{%% 	
+
+valueSound&& 
+=&& 
+soundReceive&& %
+;&&% &
+}'' 	
+public,, 
+void,,  
+InitializeValueSound,, (
+(,,( )
+),,) *
+{-- 	
+double.. 
+valueSliderSound.. #
+=..$ %
+
+valueSound..& 0
+*..1 2
+$num..3 6
+;..6 7
+sliderSound// 
+.// 
+Value// 
+=// 
+valueSliderSound//  0
+;//0 1
+}00 	
+public55 
+void55 
+InitializeComboBox55 &
+(55& '
+)55' (
+{66 	
+if77 
+(77 
+language77 
+==77 
+$str77 
+)77  
+{88 
+
+cbLanguage99 
+.99 
+SelectedIndex99 (
+=99) *
+Number99+ 1
+.991 2
+NumberValue992 =
+(99= >
+NumberValues99> J
+.99J K
+ZERO99K O
+)99O P
+;99P Q
+
+cbIOption1:: 
+.:: 
+Content:: "
+=::# $
+
+Properties::% /
+.::/ 0
+	Resources::0 9
+.::9 :
+English::: A
+;::A B
+
+cbIOption2;; 
+.;; 
+Content;; "
+=;;# $
+
+Properties;;% /
+.;;/ 0
+	Resources;;0 9
+.;;9 :
+Spanish;;: A
+;;;A B
 }<< 
 else== 
-{>> 
-bool?? 
-isImgNewPassword?? %
-;??% &
-isImgNewPassword@@  
-=@@! "
-	objectImg@@# ,
-.@@, -
-Equals@@- 3
-(@@3 4
-imgErrorNewPassword@@4 G
-)@@G H
-;@@H I
-ifAA 
-(AA 
-isImgNewPasswordAA $
-)AA$ %
-{BB 
-lbErrorNewPasswordCC &
-.CC& '
+{>> 
 
-VisibilityCC' 1
-=CC2 3
+cbLanguage?? 
+.?? 
+SelectedIndex?? (
+=??) *
+Number??+ 1
+.??1 2
+NumberValue??2 =
+(??= >
+NumberValues??> J
+.??J K
+ZERO??K O
+)??O P
+;??P Q
 
-VisibilityCC4 >
-.CC> ?
-VisibleCC? F
-;CCF G
-}DD 
-elseEE 
-{FF '
-lbErrorConfirmationPasswordGG /
-.GG/ 0
+cbIOption1@@ 
+.@@ 
+Content@@ "
+=@@# $
 
-VisibilityGG0 :
-=GG; <
+Properties@@% /
+.@@/ 0
+	Resources@@0 9
+.@@9 :
+Spanish@@: A
+;@@A B
 
-VisibilityGG= G
-.GGG H
-VisibleGGH O
-;GGO P
-}HH 
-}II 
-}JJ 	
-privateKK 
-voidKK 
-Error_MouseLeaveKK %
-(KK% &
-ObjectKK& ,
-	objectImgKK- 6
-,KK6 7
-MouseEventArgsKK8 F
-mouseEventArgsKKG U
-)KKU V
-{LL 	
-boolMM  
-isImgCurrentPasswordMM %
-;MM% & 
-isImgCurrentPasswordNN  
-=NN! "
-	objectImgNN# ,
-.NN, -
-EqualsNN- 3
-(NN3 4#
-imgErrorCurrentPasswordNN4 K
-)NNK L
-;NNL M
-ifOO 
-(OO  
-isImgCurrentPasswordOO $
-)OO$ %
-{PP "
-lbErrorCurrentPasswordQQ &
-.QQ& '
+cbIOption2AA 
+.AA 
+ContentAA "
+=AA# $
 
-VisibilityQQ' 1
-=QQ2 3
+PropertiesAA% /
+.AA/ 0
+	ResourcesAA0 9
+.AA9 :
+EnglishAA: A
+;AAA B
+}BB 
+}CC 	
+privateDD 
+voidDD 
+ExitDD 
+(DD 
+objectDD  
+senderDD! '
+,DD' (
+RoutedEventArgsDD) 8
+routedEventArgsDD9 H
+)DDH I
+{EE 	
+LobbyFF 
+lobbyFF 
+=FF 
+newFF 
+LobbyFF #
+(FF# $
+)FF$ %
+;FF% &
+lobbyGG 
+.GG 
+ColocateBestScoresGG $
+(GG$ %
+)GG% &
+;GG& '
+lobbyHH 
+.HH '
+ColocatePersonalInformationHH -
+(HH- .
+)HH. /
+;HH/ 0
+lobbyII 
+.II 
+ShowII 
+(II 
+)II 
+;II 
+thisJJ 
+.JJ 
+CloseJJ 
+(JJ 
+)JJ 
+;JJ 
+}KK 	
+privateLL 
+voidLL 
+ChangeSettingLL "
+(LL" #
+objectLL# )
+senderLL* 0
+,LL0 1
+RoutedEventArgsLL2 A
+routedEventArgsLLB Q
+)LLQ R
+{MM 	
+ifNN 
+(NN 
 
-VisibilityQQ4 >
-.QQ> ?
-HiddenQQ? E
-;QQE F
-}RR 
-elseSS 
-{TT 
-boolUU 
-isImgNewPasswordUU %
-;UU% &
-isImgNewPasswordVV  
-=VV! "
-	objectImgVV# ,
-.VV, -
-EqualsVV- 3
-(VV3 4
-imgErrorNewPasswordVV4 G
+cbLanguageNN 
+.NN 
+TextNN 
+==NN !
+
+PropertiesNN" ,
+.NN, -
+	ResourcesNN- 6
+.NN6 7
+SpanishNN7 >
+)NN> ?
+{OO 
+SystemPP 
+.PP 
+	ThreadingPP  
+.PP  !
+ThreadPP! '
+.PP' (
+CurrentThreadPP( 5
+.PP5 6
+CurrentUICulturePP6 F
+=PPG H
+newPPI L
+SystemPPM S
+.PPS T
+GlobalizationPPT a
+.PPa b
+CultureInfoPPb m
+(PPm n
+$strPPn u
+)PPu v
+;PPv w
+languageQQ 
+=QQ 
+$strQQ "
+;QQ" #
+PlayRR 
+.RR 
+LanguageReceiveRR $
+(RR$ %
+languageRR% -
+)RR- .
+;RR. /
+}SS 
+elseTT 
+{UU 
+ifVV 
+(VV 
+
+cbLanguageVV 
+.VV 
+TextVV "
+==VV# %
+
+PropertiesVV& 0
+.VV0 1
+	ResourcesVV1 :
+.VV: ;
+EnglishVV; B
+)VVB C
+{WW 
+SystemXX 
+.XX 
+	ThreadingXX $
+.XX$ %
+ThreadXX% +
+.XX+ ,
+CurrentThreadXX, 9
+.XX9 :
+CurrentUICultureXX: J
+=XXK L
+newXXM P
+SystemXXQ W
+.XXW X
+GlobalizationXXX e
+.XXe f
+CultureInfoXXf q
+(XXq r
+$strXXr v
+)XXv w
+;XXw x
+languageYY 
+=YY 
+$strYY #
+;YY# $
+PlayZZ 
+.ZZ 
+LanguageReceiveZZ (
+(ZZ( )
+languageZZ) 1
+)ZZ1 2
+;ZZ2 3
+}[[ 
+}\\ 
+Lobby]] 
+lobby]] 
+=]] 
+new]] 
+Lobby]] #
+(]]# $
+)]]$ %
+;]]% &
+lobby^^ 
+.^^ 
+ColocateBestScores^^ $
+(^^$ %
+)^^% &
+;^^& '
+lobby__ 
+.__ '
+ColocatePersonalInformation__ -
+(__- .
+)__. /
+;__/ 0
+lobby`` 
+.`` 
+Show`` 
+(`` 
+)`` 
+;`` 
+thisaa 
+.aa 
+Closeaa 
+(aa 
+)aa 
+;aa 
+}bb 	
+privatecc 
+voidcc 
+ChangedSoundcc !
+(cc! "
+objectcc" (
+sendercc) /
+,cc/ 0*
+RoutedPropertyChangedEventArgscc1 O
+<ccO P
+doubleccP V
+>ccV W&
+routedPropertyChangedEventccX r
+)ccr s
+{dd 	
+Slideree 
+slideree 
+=ee 
+senderee "
+asee# %
+Slideree& ,
+;ee, -
+ifff 
+(ff 
+sliderff 
+!=ff 
+nullff 
+)ff 
+{gg 
+doublehh 
+changeVolumehh #
+=hh$ %
+sliderhh& ,
+.hh, -
+Valuehh- 2
+/hh2 3
+$numhh3 6
+;hh6 7
+Appii 
+.ii 
+ChangeVolumeMediaii %
+(ii% &
+changeVolumeii& 2
+)ii2 3
+;ii3 4
+
+valueSoundjj 
+=jj 
+changeVolumejj )
+;jj) *
+}kk 
+}ll 	
+}mm 
+}nn ˛Y
+AC:\Users\Ale_2\source\repos\hangmanGame\EmailConfirmation.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext /
+=0 1
+false2 7
+)7 8
+]8 9
+public 
+
+partial 
+class 
+EmailConfirmation *
+:+ ,
+Window- 3
+,3 4"
+IPlayerManagerCallback5 K
+{ 
+private 
+ServiceAccount 
+account &
+;& '
+private 
+ServicePlayer 
+accountPlayer +
+;+ ,
+private 
+bool  
+responseConfirmation )
+;) *
+public 
+EmailConfirmation  
+(  !
+)! "
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+ProhibitPaste 
+( 
+) 
+; 
+} 	
+public   
+void   !
+PlayerResponseBoolean   )
+(  ) *
+bool  * .
+response  / 7
+)  7 8
+{!! 	 
+responseConfirmation""  
+=""! "
+response""# +
+;""+ ,
+}## 	
+public)) 
+void)) 
+AccountReceived)) #
+())# $
+ServiceAccount))$ 2
+accountReceived))3 B
+)))B C
+{** 	
+account++ 
+=++ 
+new++ 
+ServiceAccount++ (
+(++( )
+)++) *
+;++* +
+account,, 
+=,, 
+accountReceived,, %
+;,,% &
+}-- 	
+public33 
+void33 
+PlayerReceived33 "
+(33" #
+ServicePlayer33# 0
+playerReceived331 ?
+)33? @
+{44 	
+accountPlayer55 
+=55 
+new55 
+ServicePlayer55  -
+(55- .
+)55. /
+;55/ 0
+accountPlayer66 
+=66 
+playerReceived66 *
+;66* +
+}77 	
+public<< 
+void<<  
+SendConfirmationCode<< (
+(<<( )
+)<<) *
+{== 	
+InstanceContext>> 
+instanceContext>> +
+=>>, -
+new>>. 1
+InstanceContext>>2 A
+(>>A B
+this>>B F
+)>>F G
+;>>G H
+PlayerManagerClient?? 
+sendConfirmation??  0
+=??1 2
+new??3 6
+PlayerManagerClient??7 J
+(??J K
+instanceContext??K Z
+)??Z [
+;??[ \
+sendConfirmation@@ 
+.@@ 
+	SendEmail@@ &
+(@@& '
+account@@' .
+.@@. /
+Email@@/ 4
+,@@4 5
+account@@6 =
+.@@= >
+ConfirmationCode@@> N
+)@@N O
+;@@O P
+}AA 	
+privateBB 
+voidBB 
+ProhibitPasteBB "
+(BB" #
+)BB# $
+{CC 	
+CommandManagerDD 
+.DD '
+AddPreviewCanExecuteHandlerDD 6
+(DD6 7
+tbConfirmationCodeDD7 I
+,DDI J
+OnPreviewCanExecuteDDK ^
+)DD^ _
+;DD_ `
+CommandManagerEE 
+.EE %
+AddPreviewExecutedHandlerEE 4
+(EE4 5
+tbConfirmationCodeEE5 G
+,EEG H
+OnPreviewExecutedEEI Z
+)EEZ [
+;EE[ \
+}FF 	
+privateGG 
+voidGG 
+OnPreviewCanExecuteGG (
+(GG( )
+objectGG) /
+senderGG0 6
+,GG6 7%
+CanExecuteRoutedEventArgsGG8 Q%
+canExecuteRoutedEventArgsGGR k
+)GGk l
+{HH 	
+ifII 
+(II %
+canExecuteRoutedEventArgsII )
+.II) *
+CommandII* 1
+==II2 4
+ApplicationCommandsII5 H
+.IIH I
+PasteIII N
+)IIN O
+{JJ %
+canExecuteRoutedEventArgsKK )
+.KK) *
+
+CanExecuteKK* 4
+=KK5 6
+trueKK7 ;
+;KK; <%
+canExecuteRoutedEventArgsLL )
+.LL) *
+HandledLL* 1
+=LL2 3
+trueLL4 8
+;LL8 9
+}MM 
+}NN 	
+privateOO 
+voidOO 
+OnPreviewExecutedOO &
+(OO& '
+objectOO' -
+senderOO. 4
+,OO4 5#
+ExecutedRoutedEventArgsOO6 M#
+executedRoutedEventArgsOON e
+)OOe f
+{PP 	
+ifQQ 
+(QQ #
+executedRoutedEventArgsQQ '
+.QQ' (
+CommandQQ( /
+==QQ0 2
+ApplicationCommandsQQ3 F
+.QQF G
+PasteQQG L
+)QQL M
+{RR #
+executedRoutedEventArgsSS '
+.SS' (
+HandledSS( /
+=SS0 1
+trueSS2 6
+;SS6 7
+}TT 
+}UU 	
+privateVV 
+voidVV 
+ProhibitSpaceVV "
+(VV" #
+objectVV# )
+senderVV* 0
+,VV0 1
+KeyEventArgsVV2 >
+keyEventVV? G
 )VVG H
-;VVH I
-ifWW 
-(WW 
-isImgNewPasswordWW $
-)WW$ %
-{XX 
-lbErrorNewPasswordYY &
-.YY& '
-
-VisibilityYY' 1
-=YY2 3
-
-VisibilityYY4 >
-.YY> ?
-HiddenYY? E
-;YYE F
-}ZZ 
-else[[ 
-{\\ '
-lbErrorConfirmationPassword]] /
-.]]/ 0
-
-Visibility]]0 :
-=]]; <
-
-Visibility]]= G
-.]]G H
-Hidden]]H N
-;]]N O
-}^^ 
-}__ 
+{WW 	
+ifXX 
+(XX 
+keyEventXX 
+.XX 
+KeyXX 
+==XX 
+KeyXX  #
+.XX# $
+SpaceXX$ )
+)XX) *
+keyEventYY 
+.YY 
+HandledYY  
+=YY! "
+trueYY# '
+;YY' (
+}ZZ 	
+private[[ 
+void[[  
+SendCodeConfirmation[[ )
+([[) *
+object[[* 0
+sender[[1 7
+,[[7 8
+RoutedEventArgs[[9 H
+routedEventArgs[[I X
+)[[X Y
+{\\ 	
+int]] 
+codeConfirmation]]  
+=]]! "
+ValidationData]]# 1
+.]]1 2$
+GenerateConfirmationCode]]2 J
+(]]J K
+)]]K L
+;]]L M
+account^^ 
+.^^ 
+ConfirmationCode^^ $
+=^^% &
+codeConfirmation^^' 7
+;^^7 8 
+SendConfirmationCode__  
+(__  !
+)__! "
+;__" #
 }`` 	
 privateaa 
-voidaa 
-prohibitSpaceaa "
-(aa" #
-objectaa# )
-senderaa* 0
-,aa0 1
-KeyEventArgsaa2 >
-keyEventaa? G
-)aaG H
-{bb 	
-ifcc 
-(cc 
-keyEventcc 
-.cc 
-Keycc 
-==cc 
-Keycc  #
-.cc# $
-Spacecc$ )
-)cc) *
-keyEventdd 
-.dd 
-Handleddd  
-=dd! "
-truedd# '
-;dd' (
-}ee 	
-privateff 
-voidff !
-ChangeAccountPasswordff *
-(ff* +
-objectff+ 1
-senderff2 8
-,ff8 9
-RoutedEventArgsff: I
-routedEventArgsffJ Y
-)ffY Z
-{gg 	(
-imgErrorConfirmationPasswordhh (
-.hh( )
+voidaa 
+Error_MouseEnteraa %
+(aa% &
+Objectaa& ,
+	objectImgaa- 6
+,aa6 7
+MouseEventArgsaa8 F
+mouseEventArgsaaG U
+)aaU V
+{bb 	#
+lbErrorCodeConfirmationcc #
+.cc# $
 
-Visibilityhh) 3
-=hh4 5
+Visibilitycc$ .
+=cc/ 0
 
-Visibilityhh6 @
-.hh@ A
-HiddenhhA G
-;hhG H#
-imgErrorCurrentPasswordii #
-.ii# $
+Visibilitycc1 ;
+.cc; <
+Visiblecc< C
+;ccC D
+}dd 	
+privateee 
+voidee 
+Error_MouseLeaveee %
+(ee% &
+Objectee& ,
+	objectImgee- 6
+,ee6 7
+MouseEventArgsee8 F
+mouseEventArgseeG U
+)eeU V
+{ff 	#
+lbErrorCodeConfirmationgg #
+.gg# $
 
-Visibilityii$ .
-=ii/ 0
+Visibilitygg$ .
+=gg/ 0
 
-Visibilityii1 ;
-.ii; <
-Hiddenii< B
-;iiB C
-imgErrorNewPasswordjj 
-.jj  
+Visibilitygg1 ;
+.gg; <
+Hiddengg< B
+;ggB C
+}hh 	
+privateii 
+voidii "
+AcceptCodeConfirmationii +
+(ii+ ,
+objectii, 2
+senderii3 9
+,ii9 :
+RoutedEventArgsii; J
+routedEventArgsiiK Z
+)iiZ [
+{jj 	$
+imgErrorCodeConfirmationkk $
+.kk$ %
 
-Visibilityjj  *
-=jj+ ,
+Visibilitykk% /
+=kk0 1
 
-Visibilityjj- 7
-.jj7 8
-Hiddenjj8 >
-;jj> ?"
-pbConfirmationPasswordkk "
-.kk" #
-BorderBrushkk# .
-=kk/ 0
-Brusheskk1 8
-.kk8 9
-Transparentkk9 D
-;kkD E
+Visibilitykk2 <
+.kk< =
+Hiddenkk= C
+;kkC D
+boolll #
+isValidConfirmationCodell (
+;ll( )#
+isValidConfirmationCodemm #
+=mm$ %
+ValidationDatamm& 4
+.mm4 5$
+ValidateConfirmationCodemm5 M
+(mmM N
+tbConfirmationCodemmN `
+.mm` a
+Textmma e
+)mme f
+;mmf g
+ifnn 
+(nn #
+isValidConfirmationCodenn '
+)nn' (
+{oo 
+InstanceContextpp 
+instanceContextpp  /
+=pp0 1
+newpp2 5
+InstanceContextpp6 E
+(ppE F
+thisppF J
+)ppJ K
+;ppK L
+PlayerManagerClientqq #
+registryqq$ ,
+=qq- .
+newqq/ 2
+PlayerManagerClientqq3 F
+(qqF G
+instanceContextqqG V
+)qqV W
+;qqW X
+registryrr 
+.rr 
+Registerrr !
+(rr! "
+accountrr" )
+,rr) *
+accountPlayerrr+ 8
+)rr8 9
+;rr9 :
+ifss 
+(ss  
+responseConfirmationss (
+)ss( )
+{tt 
+OpenMessageBoxuu "
+(uu" #
 
-pbPasswordll 
-.ll 
-BorderBrushll "
-=ll# $
-Brushesll% ,
-.ll, -
-Transparentll- 8
-;ll8 9
-pbNewPasswordmm 
-.mm 
-BorderBrushmm %
-=mm& '
-Brushesmm( /
-.mm/ 0
-Transparentmm0 ;
-;mm; <
-isValidNewPasswordnn 
-=nn  
-falsenn! &
-;nn& '
-ValidatePasswordoo 
-(oo 
-)oo 
-;oo 
-ValidateNewPasswordpp 
-(pp  
-)pp  !
-;pp! "
-ifqq 
-(qq 
-isValidPasswordqq 
-&&qq !
-isValidNewPasswordqq" 4
-)qq4 5
-{rr 
-stringss 
-passwordEncryptss &
-=ss' (
-Securityss) 1
-.ss1 2
-Encryptss2 9
-(ss9 :
-pbNewPasswordss: G
-.ssG H
-PasswordssH P
-)ssP Q
-;ssQ R
-InstanceContexttt 
-instanceContexttt  /
-=tt0 1
-newtt2 5
-InstanceContexttt6 E
-(ttE F
-thisttF J
-)ttJ K
-;ttK L
-PlayerManagerClientuu #
-playerManageruu$ 1
-=uu2 3
-newuu4 7
-PlayerManagerClientuu8 K
-(uuK L
-instanceContextuuL [
-)uu[ \
-;uu\ ]
-playerManagervv 
-.vv 
-ChangePasswordvv ,
-(vv, -
-accountvv- 4
-.vv4 5
-Emailvv5 :
-,vv: ;
-passwordEncryptvv< K
-)vvK L
-;vvL M
-ifww 
-(ww 
-responseBooleanww #
-)ww# $
+Propertiesuu# -
+.uu- .
+	Resourcesuu. 7
+.uu7 8&
+AccountRegistrationMessageuu8 R
+,uuR S
+
+PropertiesuuT ^
+.uu^ _
+	Resourcesuu_ h
+.uuh i,
+AccountRegistrationMessageTitle	uui à
+,
+uuà â
+(
+uuä ã
+MessageBoxImage
+uuã ö
+)
+uuö õ
+System
+uuõ °
+.
+uu° ¢
+Windows
+uu¢ ©
+.
+uu© ™
+Forms
+uu™ Ø
+.
+uuØ ∞
+MessageBoxIcon
+uu∞ æ
+.
+uuæ ø
+Information
+uuø  
+)
+uu  À
+;
+uuÀ Ã
+}vv 
+elseww 
 {xx 
 OpenMessageBoxyy "
 (yy" #
@@ -584,2808 +3939,220 @@ pbPasswordll 
 Propertiesyy# -
 .yy- .
 	Resourcesyy. 7
-.yy7 8!
-ChangePasswordMessageyy8 M
-,yyM N
+.yy7 8&
+NoAccountRegisteredMessageyy8 R
+,yyR S
 
-PropertiesyyO Y
-.yyY Z
-	ResourcesyyZ c
-.yyc d&
-ChangePasswordMessageTitleyyd ~
-,yy~ 
-(
-yyÄ Å
-MessageBoxImage
-yyÅ ê
-)
-yyê ë
-System
-yyë ó
-.
-yyó ò
-Windows
-yyò ü
-.
-yyü †
-Forms
-yy† •
-.
-yy• ¶
-MessageBoxIcon
-yy¶ ¥
-.
-yy¥ µ
-Information
-yyµ ¿
-)
-yy¿ ¡
-;
-yy¡ ¬
-}zz 
-else{{ 
-{|| 
-OpenMessageBox}} "
-(}}" #
-
-Properties}}# -
-.}}- .
-	Resources}}. 7
-.}}7 8#
-NoChangePasswordMessage}}8 O
-,}}O P
-
-Properties}}Q [
-.}}[ \
-	Resources}}\ e
-.}}e f'
-ChangePasswordMessageTitle	}}f Ä
+PropertiesyyT ^
+.yy^ _
+	Resourcesyy_ h
+.yyh i,
+AccountRegistrationMessageTitle	yyi à
 ,
-}}Ä Å
+yyà â
 (
-}}Ç É
+yyä ã
 MessageBoxImage
-}}É í
+yyã ö
 )
-}}í ì
+yyö õ
 System
-}}ì ô
+yyõ °
 .
-}}ô ö
+yy° ¢
 Windows
-}}ö °
+yy¢ ©
 .
-}}° ¢
+yy© ™
 Forms
-}}¢ ß
+yy™ Ø
 .
-}}ß ®
+yyØ ∞
 MessageBoxIcon
-}}® ∂
+yy∞ æ
 .
-}}∂ ∑
+yyæ ø
 Error
-}}∑ º
+yyø ƒ
 )
-}}º Ω
+yyƒ ≈
 ;
-}}Ω æ
-}~~ 
-ModifyAccount 
-modifyAccount +
-=, -
-new. 1
-ModifyAccount2 ?
-(? @
-)@ A
-;A B
-modifyAccount
-ÄÄ 
-.
-ÄÄ 
-AccountReceived
-ÄÄ -
-(
-ÄÄ- .
-)
-ÄÄ. /
-;
-ÄÄ/ 0
-modifyAccount
-ÅÅ 
-.
-ÅÅ 
-Show
-ÅÅ "
-(
-ÅÅ" #
-)
-ÅÅ# $
-;
-ÅÅ$ %
-this
-ÇÇ 
-.
-ÇÇ 
-Close
-ÇÇ 
-(
-ÇÇ 
-)
-ÇÇ 
-;
-ÇÇ 
-}
-ÉÉ 
-else
-ÑÑ 
+yy≈ ∆
+}zz 
+
+MainWindow{{ 
+
+mainWindow{{ %
+={{& '
+new{{( +
+
+MainWindow{{, 6
+({{6 7
+){{7 8
+;{{8 9
+
+mainWindow|| 
+.|| 
+Show|| 
+(||  
+)||  !
+;||! "
+this}} 
+.}} 
+Close}} 
+(}} 
+)}} 
+;}} 
+}~~ 
+else 
 {
-ÑÑ 
+ÄÄ &
+imgErrorCodeConfirmation
+ÅÅ (
+.
+ÅÅ( )
+
+Visibility
+ÅÅ) 3
+=
+ÅÅ4 5
+
+Visibility
+ÅÅ6 @
+.
+ÅÅ@ A
+Visible
+ÅÅA H
+;
+ÅÅH I
 OpenMessageBox
-ÖÖ 
+ÇÇ 
 (
-ÖÖ 
+ÇÇ 
 
 Properties
-ÖÖ )
+ÇÇ )
 .
-ÖÖ) *
+ÇÇ) *
 	Resources
-ÖÖ* 3
+ÇÇ* 3
 .
-ÖÖ3 4"
-IncorrectDataMessage
-ÖÖ4 H
+ÇÇ3 4"
+IncorrectCodeMessage
+ÇÇ4 H
 ,
-ÖÖH I
+ÇÇH I
 
 Properties
-ÖÖJ T
+ÇÇJ T
 .
-ÖÖT U
+ÇÇT U
 	Resources
-ÖÖU ^
+ÇÇU ^
 .
-ÖÖ^ _'
-IncorrectDataMessageTitle
-ÖÖ_ x
+ÇÇ^ _'
+IncorrectCodeMessageTitle
+ÇÇ_ x
 ,
-ÖÖx y
+ÇÇx y
 (
-ÖÖz {
-MessageBoxImageÖÖ{ ä
-)ÖÖä ã
-SystemÖÖã ë
-.ÖÖë í
-WindowsÖÖí ô
-.ÖÖô ö
-FormsÖÖö ü
-.ÖÖü †
-MessageBoxIconÖÖ† Æ
-.ÖÖÆ Ø
-WarningÖÖØ ∂
-)ÖÖ∂ ∑
-;ÖÖ∑ ∏
+ÇÇz {
+MessageBoxImageÇÇ{ ä
+)ÇÇä ã
+SystemÇÇã ë
+.ÇÇë í
+WindowsÇÇí ô
+.ÇÇô ö
+FormsÇÇö ü
+.ÇÇü †
+MessageBoxIconÇÇ† Æ
+.ÇÇÆ Ø
+WarningÇÇØ ∂
+)ÇÇ∂ ∑
+;ÇÇ∑ ∏
 }
-ÜÜ 
+ÉÉ 
 }
-áá 	
+ÑÑ 	
 private
-àà 
+ÖÖ 
 void
-àà 
+ÖÖ 
 OpenMessageBox
-àà #
+ÖÖ #
 (
-àà# $
+ÖÖ# $
 string
-àà$ *
+ÖÖ$ *
 textMessage
-àà+ 6
+ÖÖ+ 6
 ,
-àà6 7
+ÖÖ6 7
 string
-àà8 >
+ÖÖ8 >
 titleMessage
-àà? K
+ÖÖ? K
 ,
-ààK L
+ÖÖK L
 MessageBoxImage
-ààM \
+ÖÖM \
 messageBoxImage
-àà] l
+ÖÖ] l
 )
-ààl m
+ÖÖl m
 {
-ââ 	
+ÜÜ 	
 
 MessageBox
-ää 
+áá 
 .
-ää 
+áá 
 Show
-ää 
+áá 
 (
-ää 
+áá 
 textMessage
-ää '
+áá '
 ,
-ää' (
+áá' (
 titleMessage
-ää) 5
+áá) 5
 ,
-ää5 6
+áá5 6
 (
-ää7 8
+áá7 8
 MessageBoxButton
-ää8 H
+áá8 H
 )
-ääH I
+ááH I
 System
-ääI O
+ááI O
 .
-ääO P
+ááO P
 Windows
-ääP W
+ááP W
 .
-ääW X
+ááW X
 Forms
-ääX ]
+ááX ]
 .
-ää] ^
+áá] ^
 MessageBoxButtons
-ää^ o
+áá^ o
 .
-ääo p
+ááo p
 OK
-ääp r
+ááp r
 ,
-äär s
-messageBoxImageäät É
-)ääÉ Ñ
-;ääÑ Ö
+áár s
+messageBoxImageáát É
+)ááÉ Ñ
+;ááÑ Ö
 }
-ãã 	
-private
-åå 
-void
-åå 
-ValidatePassword
-åå %
-(
-åå% &
-)
-åå& '
-{
-çç 	
-isValidPassword
-éé 
-=
-éé 
-false
-éé #
-;
-éé# $
-string
-èè 
-password
-èè 
-=
-èè 
-Security
-èè &
-.
-èè& '
-Decrypt
-èè' .
-(
-èè. /
-account
-èè/ 6
-.
-èè6 7
-PasswordAccount
-èè7 F
-)
-èèF G
-;
-èèG H
-if
-êê 
-(
-êê 
-password
-êê 
-==
-êê 
-
-pbPassword
-êê &
-.
-êê& '
-Password
-êê' /
-)
-êê/ 0
-{
-ëë 
-isValidPassword
-íí 
-=
-íí  !
-true
-íí" &
-;
-íí& '
-
-pbPassword
-ìì 
-.
-ìì 
-BorderBrush
-ìì &
-=
-ìì' (
-Brushes
-ìì) 0
-.
-ìì0 1
-Green
-ìì1 6
-;
-ìì6 7
+àà 	
 }
-îî 
-else
-ïï 
-{
-ññ 
-
-pbPassword
-óó 
-.
-óó 
-BorderBrush
-óó &
-=
-óó' (
-Brushes
-óó) 0
-.
-óó0 1
-Red
-óó1 4
-;
-óó4 5%
-imgErrorCurrentPassword
-òò '
-.
-òò' (
-
-Visibility
-òò( 2
-=
-òò3 4
-
-Visibility
-òò5 ?
-.
-òò? @
-Visible
-òò@ G
-;
-òòG H
-}
-ôô 
-}
-öö 	
-private
-õõ 
-void
-õõ !
-ValidateNewPassword
-õõ (
-(
-õõ( )
-)
-õõ) *
-{
-úú 	
-bool
-ùù  
-isValidatePassword
-ùù #
-;
-ùù# $
-bool
-ûû ,
-isValidateConfirmationPassword
-ûû /
-;
-ûû/ 0 
-isValidatePassword
-üü 
-=
-üü  
-ValidationData
-üü! /
-.
-üü/ 0
-ValidatePassword
-üü0 @
-(
-üü@ A
-pbNewPassword
-üüA N
-.
-üüN O
-Password
-üüO W
-)
-üüW X
-;
-üüX Y,
-isValidateConfirmationPassword
-†† *
-=
-††+ ,
-ValidationData
-††- ;
-.
-††; <
-ValidatePassword
-††< L
-(
-††L M$
-pbConfirmationPassword
-††M c
-.
-††c d
-Password
-††d l
-)
-††l m
-;
-††m n
-if
-°° 
-(
-°° 
-pbNewPassword
-°° 
-.
-°° 
-Password
-°° &
-!=
-°°' )$
-pbConfirmationPassword
-°°* @
-.
-°°@ A
-Password
-°°A I
-)
-°°I J
-{
-¢¢ 
-pbNewPassword
-££ 
-.
-££ 
-BorderBrush
-££ )
-=
-££* +
-Brushes
-££, 3
-.
-££3 4
-Red
-££4 7
-;
-££7 8$
-pbConfirmationPassword
-§§ &
-.
-§§& '
-BorderBrush
-§§' 2
-=
-§§3 4
-Brushes
-§§5 <
-.
-§§< =
-Red
-§§= @
-;
-§§@ A!
-imgErrorNewPassword
-•• #
-.
-••# $
-
-Visibility
-••$ .
-=
-••/ 0
-
-Visibility
-••1 ;
-.
-••; <
-Visible
-••< C
-;
-••C D*
-imgErrorConfirmationPassword
-¶¶ ,
-.
-¶¶, -
-
-Visibility
-¶¶- 7
-=
-¶¶8 9
-
-Visibility
-¶¶: D
-.
-¶¶D E
-Visible
-¶¶E L
-;
-¶¶L M
-}
-ßß 
-else
-®® 
-{
-©© 
-if
-™™ 
-(
-™™  
-isValidatePassword
-™™ &
-)
-™™& '
-{
-´´ 
-pbNewPassword
-¨¨ !
-.
-¨¨! "
-BorderBrush
-¨¨" -
-=
-¨¨. /
-Brushes
-¨¨0 7
-.
-¨¨7 8
-Green
-¨¨8 =
-;
-¨¨= >
-}
-≠≠ 
-else
-ÆÆ 
-{
-ØØ 
-pbNewPassword
-∞∞ !
-.
-∞∞! "
-BorderBrush
-∞∞" -
-=
-∞∞. /
-Brushes
-∞∞0 7
-.
-∞∞7 8
-Red
-∞∞8 ;
-;
-∞∞; <!
-imgErrorNewPassword
-±± '
-.
-±±' (
-
-Visibility
-±±( 2
-=
-±±3 4
-
-Visibility
-±±5 ?
-.
-±±? @
-Visible
-±±@ G
-;
-±±G H
-}
-≤≤ 
-if
-≥≥ 
-(
-≥≥ ,
-isValidateConfirmationPassword
-≥≥ 2
-)
-≥≥2 3
-{
-¥¥ $
-pbConfirmationPassword
-µµ *
-.
-µµ* +
-BorderBrush
-µµ+ 6
-=
-µµ7 8
-Brushes
-µµ9 @
-.
-µµ@ A
-Green
-µµA F
-;
-µµF G
-}
-∂∂ 
-else
-∑∑ 
-{
-∏∏ $
-pbConfirmationPassword
-ππ *
-.
-ππ* +
-BorderBrush
-ππ+ 6
-=
-ππ7 8
-Brushes
-ππ9 @
-.
-ππ@ A
-Red
-ππA D
-;
-ππD E*
-imgErrorConfirmationPassword
-∫∫ 0
-.
-∫∫0 1
-
-Visibility
-∫∫1 ;
-=
-∫∫< =
-
-Visibility
-∫∫> H
-.
-∫∫H I
-Visible
-∫∫I P
-;
-∫∫P Q
-}
-ªª 
-}
-ºº 
-if
-ΩΩ 
-(
-ΩΩ ,
-isValidateConfirmationPassword
-ΩΩ .
-&&
-ΩΩ/ 1 
-isValidatePassword
-ΩΩ2 D
-)
-ΩΩD E
-{
-ææ  
-isValidNewPassword
-øø "
-=
-øø# $
-true
-øø% )
-;
-øø) *
-}
-¿¿ 
-}
-¡¡ 	
-private
-¬¬ 
-void
-¬¬ 
-Exit
-¬¬ 
-(
-¬¬ 
-object
-¬¬  
-sender
-¬¬! '
-,
-¬¬' (
-RoutedEventArgs
-¬¬) 8
-routedEventArgs
-¬¬9 H
-)
-¬¬H I
-{
-√√ 	
-ModifyAccount
-ƒƒ 
-modifyAccount
-ƒƒ '
-=
-ƒƒ( )
-new
-ƒƒ* -
-ModifyAccount
-ƒƒ. ;
-(
-ƒƒ; <
-)
-ƒƒ< =
-;
-ƒƒ= >
-modifyAccount
-≈≈ 
-.
-≈≈ "
-InitializeDataPlayer
-≈≈ .
-(
-≈≈. /
-)
-≈≈/ 0
-;
-≈≈0 1
-modifyAccount
-∆∆ 
-.
-∆∆ 
-Show
-∆∆ 
-(
-∆∆ 
-)
-∆∆  
-;
-∆∆  !
-this
-«« 
-.
-«« 
-Close
-«« 
-(
-«« 
-)
-«« 
-;
-«« 
-}
-»» 	
-}
-…… 
-}   ¨
-<C:\Users\Ale_2\source\repos\hangmanGame\CharacterSentence.cs
-	namespace 	
-hangmanGame
- 
-{ 
-class		 	
-CharacterSentence		
- 
-{
-
- 
-public 
-char 
-	Character 
-{ 
-get  #
-;# $
-set% (
-;( )
-}* +
-public 
-int 
-PositionRow 
-{  
-get! $
-;$ %
-set& )
-;) *
-}+ ,
-public 
-int 
-PositionColumn !
-{" #
-get$ '
-;' (
-set) ,
-;, -
-}. /
-} 
-} â
-8C:\Users\Ale_2\source\repos\hangmanGame\GameOver.xaml.cs
-	namespace 	
-hangmanGame
- 
-{		 
-public
-
- 
-
-partial
-
- 
-class
-
- 
-GameOver
-
- !
-:
-
-" #
-Window
-
-$ *
-{ 
-public 
-GameOver 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void #
-InitializeServiceWinner +
-(, -
-ServiceWinner- :
-serviceWinner; H
-,H I
-stringJ P
-nicknameOwnerQ ^
-)^ _
-{ 	
-	lbNicname 
-. 
-Content 
-= 
-serviceWinner  -
-.- .
-NickName. 6
-;6 7
-
-lbMistakes 
-. 
-Content 
-=  
-serviceWinner! .
-.. /
-Mistakes/ 7
-.7 8
-ToString8 @
-(@ A
-)A B
-;B C
-lbPoints 
-. 
-Content 
-= 
-serviceWinner ,
-., -
-Points- 3
-;3 4
-lbTime 
-. 
-Content 
-= 
-serviceWinner *
-.* +
-Time+ /
-;/ 0
-if 
-( 
-serviceWinner 
-. 
-NickName &
-!=' )
-nicknameOwner* 7
-)7 8
-{ 
-	lbMessage 
-. 
-Content !
-=" #
-
-Properties$ .
-.. /
-	Resources/ 8
-.8 9
-LostMessage9 D
-;D E
-imgSixError 
-. 
-
-Visibility &
-=' (
-
-Visibility) 3
-.3 4
-Visible4 ;
-;; <
-imgHagmanGame 
-. 
-
-Visibility (
-=) *
-
-Visibility+ 5
-.5 6
-Hidden6 <
-;< =
-imgMan 
-. 
-
-Visibility !
-=" #
-
-Visibility$ .
-.. /
-Hidden/ 5
-;5 6
-	imgTrophy 
-. 
-
-Visibility $
-=% &
-
-Visibility' 1
-.1 2
-Hidden2 8
-;8 9
-} 
-}   	
-private!! 
-void!! 
-AcceptGameOver!! #
-(!!# $
-object!!$ *
-sender!!+ 1
-,!!1 2
-RoutedEventArgs!!3 B
-routedEventArgs!!C R
-)!!R S
-{"" 	
-this## 
-.## 
-Close## 
-(## 
-)## 
-;## 
-}$$ 	
-}%% 
-}&& ö
-8C:\Users\Ale_2\source\repos\hangmanGame\LostGame.xaml.cs
-	namespace 	
-hangmanGame
- 
-{ 
-public 
-
-partial 
-class 
-LostGame !
-:" #
-Window$ *
-{ 
-public 
-LostGame 
-( 
-) 
-{ 	
-InitializeComponent		 
-(		  
-)		  !
-;		! "
-}
-
- 	
-private 
-void 
-AcceptLostGame #
-(# $
-object$ *
-sender+ 1
-,1 2
-RoutedEventArgs3 B
-routedEventArgsC R
-)R S
-{ 	
-this 
-. 
-Close 
-( 
-) 
-; 
-} 	
-} 
-} Ù
-1C:\Users\Ale_2\source\repos\hangmanGame\Number.cs
-	namespace 	
-hangmanGame
- 
-{ 
-public 
-
-enum 
-NumberValues 
-{ 
-ZERO 
-= 
-$num 
-, 
-ONE 
-= 
-$num 
-, 
-TWO 
-= 
-$num 
-, 
-THREE		 
-=		 
-$num		 
-,		 
-FOUR
-
- 
-=
-
- 
-$num
-
- 
-,
-
- 
-FIVE 
-= 
-$num 
-, 
-TEN 
-= 
-$num 
-} 
-public 
-
-class 
-Number 
-{ 
-public 
-static 
-int 
-NumberValue %
-(% &
-NumberValues& 2
-numberValues3 ?
-)? @
-{ 	
-int 
-number 
-= 
-( 
-int 
-) 
-numberValues *
-;* +
-return 
-number 
-; 
-} 	
-} 
-} ÑC
-6C:\Users\Ale_2\source\repos\hangmanGame\Report.xaml.cs
-	namespace 	
-hangmanGame
- 
-{ 
-[ 
-CallbackBehavior 
-( %
-UseSynchronizationContext /
-=0 1
-false2 7
-)7 8
-]8 9
-public		 
-
-partial		 
-class		 
-Report		 
-:		  !
-Window		" (
-,		( )"
-IReportManagerCallback		* @
-{
-
- 
-private 
-bool 
-isReportPlayer #
-;# $
-private 
-static 
-string 
-nicknameReported .
-;. /
-private 
-static 
-string 
-nickname &
-;& '
-private #
-ServiceReportMisConduct '
-[' (
-]( )
-
-reportList* 4
-;4 5
-public 
-Report 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void 
-ResponseReportList &
-(& '#
-ServiceReportMisConduct' >
-[> ?
-]? @
-reportMisConductsA R
-)R S
-{ 	
-
-reportList 
-= 
-reportMisConducts *
-;* +
-} 	
-public 
-void  
-ResponseReportPlayer (
-(( )
-bool) -
-isReport. 6
-)6 7
-{ 	
-isReportPlayer 
-= 
-isReport %
-;% &
-} 	
-public 
-void $
-NickNameReportedReceived ,
-(, -
-string- 3"
-nicknamePlayerReported4 J
-)J K
-{ 	
-nicknameReported 
-= "
-nicknamePlayerReported 5
-;5 6
-} 	
-public 
-void 
-NickNameReceived $
-($ %
-string% +
-nicknamePlayer, :
-): ;
-{   	
-nickname!! 
-=!! 
-nicknamePlayer!! %
-;!!% &
-}"" 	
-private## 
-void## 
-ReportPlayer## !
-(##! "
-object##" (
-sender##) /
-,##/ 0
-RoutedEventArgs##1 @
-routedEventArgs##A P
-)##P Q
-{$$ 	#
-ServiceReportMisConduct%% ##
-serviceReportMisConduct%%$ ;
-=%%< =
-new%%> A#
-ServiceReportMisConduct%%B Y
-(%%Y Z
-)%%Z [
-;%%[ \#
-serviceReportMisConduct&& #
-.&&# $
-IdReportedPlayer&&$ 4
-=&&5 6
-nicknameReported&&7 G
-;&&G H#
-serviceReportMisConduct'' #
-.''# $
-IdReportingPlayer''$ 5
-=''6 7
-nickname''8 @
-;''@ A
-string(( 
-dataContext(( 
-=((  
-ValidationData((! /
-.((/ 0
-DeleteSpaceWord((0 ?
-(((? @
-	tbContext((@ I
-.((I J
-Text((J N
-)((N O
-;((O P
-if)) 
-()) 
-dataContext)) 
-.)) 
-Length)) "
->))# $
-Number))% +
-.))+ ,
-NumberValue)), 7
-())7 8
-NumberValues))8 D
-.))D E
-ZERO))E I
-)))I J
-)))J K
-{** #
-serviceReportMisConduct++ '
-.++' (
-AdditionalContext++( 9
-=++: ;
-dataContext++< G
-;++G H
-},, 
-string-- 
-
-typeReport-- 
-=-- 
-null--  $
-;--$ %
-if.. 
-(.. 
-	rbTypeOne.. 
-... 
-	IsChecked.. #
-==..$ &
-true..' +
-)..+ ,
-{// 
-
-typeReport00 
-=00 
-
-Properties00 '
-.00' (
-	Resources00( 1
-.001 2
-VerbalMotive002 >
-;00> ?
-}11 
-else22 
-{33 
-if44 
-(44 
-	rbTypeTwo44 
-.44 
-	IsChecked44 '
-==44( *
-true44+ /
-)44/ 0
-{55 
-
-typeReport66 
-=66  
-
-Properties66! +
-.66+ ,
-	Resources66, 5
-.665 6
-OffensiveMotive666 E
-;66E F
-}77 
-else88 
-{99 
-if:: 
-(:: 
-rbTypeThree:: #
-.::# $
-	IsChecked::$ -
-==::. 0
-true::1 5
-)::5 6
-{;; 
-
-typeReport<< "
-=<<# $
-
-Properties<<% /
-.<</ 0
-	Resources<<0 9
-.<<9 :
-
-HateMotive<<: D
-;<<D E
-}== 
-}>> 
-}?? 
-if@@ 
-(@@ 
-!@@ 
-string@@ 
-.@@ 
-IsNullOrEmpty@@ %
-(@@% &
-
-typeReport@@& 0
-)@@0 1
-)@@1 2
-{@@2 3#
-serviceReportMisConductAA '
-.AA' (
-
-TypeReportAA( 2
-=AA3 4
-
-typeReportAA5 ?
-;AA? @
-InstanceContextBB 
-instanceContextBB  /
-=BB0 1
-newBB2 5
-InstanceContextBB6 E
-(BBE F
-thisBBF J
-)BBJ K
-;BBK L
-ReportManagerClientCC #
-reportManagerClientCC$ 7
-=CC8 9
-newCC: =
-ReportManagerClientCC> Q
-(CCQ R
-instanceContextCCR a
-)CCa b
-;CCb c
-reportManagerClientDD #
-.DD# $
-ReportPlayerDD$ 0
-(DD0 1#
-serviceReportMisConductDD1 H
-)DDH I
-;DDI J
-ifEE 
-(EE 
-isReportPlayerEE "
-)EE" #
-{FF 
-OpenMessageBoxGG "
-(GG" #
-
-PropertiesGG# -
-.GG- .
-	ResourcesGG. 7
-.GG7 8
-ReportPlayerMessageGG8 K
-,GGK L
-
-PropertiesGGM W
-.GGW X
-	ResourcesGGX a
-.GGa b&
-TitleRegisterReportMessageGGb |
-,GG| }
-(GG~ 
-MessageBoxImage	GG é
-)
-GGé è
-System
-GGè ï
-.
-GGï ñ
-Windows
-GGñ ù
-.
-GGù û
-Forms
-GGû £
-.
-GG£ §
-MessageBoxIcon
-GG§ ≤
-.
-GG≤ ≥
-Information
-GG≥ æ
-)
-GGæ ø
-;
-GGø ¿
-}HH 
-elseII 
-{JJ 
-OpenMessageBoxKK "
-(KK" #
-
-PropertiesKK# -
-.KK- .
-	ResourcesKK. 7
-.KK7 8$
-ReportPlayerErrorMessageKK8 P
-,KKP Q
-
-PropertiesKKR \
-.KK\ ]
-	ResourcesKK] f
-.KKf g'
-TitleRegisterReportMessage	KKg Å
-,
-KKÅ Ç
-(
-KKÉ Ñ
-MessageBoxImage
-KKÑ ì
-)
-KKì î
-System
-KKî ö
-.
-KKö õ
-Windows
-KKõ ¢
-.
-KK¢ £
-Forms
-KK£ ®
-.
-KK® ©
-MessageBoxIcon
-KK© ∑
-.
-KK∑ ∏
-Error
-KK∏ Ω
-)
-KKΩ æ
-;
-KKæ ø
-}LL 
-PlayMM 
-.MM  
-ReportPlayerReceivedMM )
-(MM) *
-isReportPlayerMM* 8
-)MM8 9
-;MM9 :
-thisNN 
-.NN 
-CloseNN 
-(NN 
-)NN 
-;NN 
-}OO 
-elsePP 
-{QQ 
-OpenMessageBoxRR 
-(RR 
-
-PropertiesRR )
-.RR) *
-	ResourcesRR* 3
-.RR3 4"
-TypeReportErrorMessageRR4 J
-,RRJ K
-
-PropertiesRRL V
-.RRV W
-	ResourcesRRW `
-.RR` a%
-IncorrectDataMessageTitleRRa z
-,RRz {
-(RR| }
-MessageBoxImage	RR} å
-)
-RRå ç
-System
-RRç ì
-.
-RRì î
-Windows
-RRî õ
-.
-RRõ ú
-Forms
-RRú °
-.
-RR° ¢
-MessageBoxIcon
-RR¢ ∞
-.
-RR∞ ±
-Error
-RR± ∂
-)
-RR∂ ∑
-;
-RR∑ ∏
-}SS 
-}TT 	
-privateUU 
-voidUU 
-OpenMessageBoxUU #
-(UU# $
-stringUU$ *
-textMessageUU+ 6
-,UU6 7
-stringUU8 >
-titleMessageUU? K
-,UUK L
-MessageBoxImageUUM \
-messageBoxImageUU] l
-)UUl m
-{VV 	
-
-MessageBoxWW 
-.WW 
-ShowWW 
-(WW 
-textMessageWW '
-,WW' (
-titleMessageWW) 5
-,WW5 6
-(WW7 8
-MessageBoxButtonWW8 H
-)WWH I
-SystemWWI O
-.WWO P
-WindowsWWP W
-.WWW X
-FormsWWX ]
-.WW] ^
-MessageBoxButtonsWW^ o
-.WWo p
-OKWWp r
-,WWr s
-messageBoxImage	WWt É
-)
-WWÉ Ñ
-;
-WWÑ Ö
-}XX 	
-}YY 
-}ZZ Æ
-:C:\Users\Ale_2\source\repos\hangmanGame\ReportList.xaml.cs
-	namespace 	
-hangmanGame
- 
-{ 
-[ 
-CallbackBehavior 
-( %
-UseSynchronizationContext ,
-=- .
-false/ 4
-)4 5
-]5 6
-public		 
-partial		 
-class		 
-
-ReportList		  
-:		! "
-Window		# )
-,		) *"
-IReportManagerCallback		+ A
-{
-
- 
-private 	
-static
- 
-string 
-emailAccount $
-;$ %
-private 	
-static
- 
-string 
-nickname  
-;  !
-private 	#
-ServiceReportMisConduct
- !
-[! "
-]" #
-
-reportList$ .
-;. /
-private 	
-bool
- 
-isReportPlayer 
-; 
-public 
-
-ReportList	 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void	 
-EmailReceived 
-( 
-string "
-email# (
-)( )
-{ 
-emailAccount 
-= 
-email 
-; 
-} 
-public 
-void	 
-NickNameReceived 
-( 
-string %
-nicknamePlayer& 4
-)4 5
-{ 
-nickname 
-= 
-nicknamePlayer 
-; 
-} 
-public 
-void	  
-ResponseReportPlayer "
-(" #
-bool# '
-isReport( 0
-)0 1
-{ 
-isReportPlayer 
-= 
-isReport 
-; 
-} 
-public 
-void	 
-ResponseReportList  
-(  !#
-ServiceReportMisConduct! 8
-[8 9
-]9 :
-reportMisConducts; L
-)L M
-{   
-
-reportList!! 
-=!! 
-reportMisConducts!! !
-;!!! "
-}"" 
-public## 
-void##	 
-ColocateReports## 
-(## 
-)## 
-{$$ 
-InstanceContext%% 
-instanceContext%% "
-=%%# $
-new%%% (
-InstanceContext%%) 8
-(%%8 9
-this%%9 =
-)%%= >
-;%%> ?
-ReportManagerClient&& 
-reportManagerClient&& *
-=&&+ ,
-new&&- 0
-ReportManagerClient&&1 D
-(&&D E
-instanceContext&&E T
-)&&T U
-;&&U V
-reportManagerClient'' 
-.'' 
-
-ReportList'' !
-(''! "
-nickname''" *
-)''* +
-;''+ ,
-lvReportList(( 
-.(( 
-ItemsSource(( 
-=(( 
-
-reportList(( (
-;((( )
-})) 
-private** 	
-void**
- 
-Exit** 
-(** 
-object** 
-sender** !
-,**! "
-RoutedEventArgs**# 2
-routedEventArgs**3 B
-)**B C
-{++ 
-ModifyAccount,, 
-modifyAccount,, 
-=,,  
-new,,! $
-ModifyAccount,,% 2
-(,,2 3
-),,3 4
-;,,4 5
-modifyAccount-- 
-.--  
-InitializeDataPlayer-- %
-(--% &
-)--& '
-;--' (
-modifyAccount.. 
-... 
-Show.. 
-(.. 
-).. 
-;.. 
-this// 
-.// 
-Close// 
-(// 
-)// 
-;// 
-}00 
-}11 
-}22 Ã9
-7C:\Users\Ale_2\source\repos\hangmanGame\Setting.xaml.cs
-	namespace 	
-hangmanGame
- 
-{ 
-public 
-
-partial 
-class 
-Setting  
-:! "
-Window# )
-{ 
-private		 
-static		 
-string		 
-language		 &
-;		& '
-private
-
- 
-static
-
- 
-double
-
- 
-
-valueSound
-
- (
-;
-
-( )
-public 
-Setting 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-static 
-void 
-LanguageReceive *
-(* +
-string+ 1
-languageReceive2 A
-)A B
-{ 	
-language 
-= 
-languageReceive &
-;& '
-} 	
-public 
-static 
-void 
-ValueSoundReceive ,
-(, -
-double- 3
-soundReceive4 @
-)@ A
-{ 	
-
-valueSound 
-= 
-soundReceive %
-;% &
-} 	
-public 
-void  
-InitializeValueSound (
-(( )
-)) *
-{ 	
-double 
-valueSliderSound #
-=$ %
-
-valueSound& 0
-*1 2
-$num3 6
-;6 7
-sliderSound 
-. 
-Value 
-= 
-valueSliderSound  0
-;0 1
-} 	
-public 
-void 
-InitializeComboBox &
-(& '
-)' (
-{ 	
-if 
-( 
-language 
-== 
-$str 
-)  
-{ 
-
-cbLanguage   
-.   
-SelectedIndex   (
-=  ) *
-Number  + 1
-.  1 2
-NumberValue  2 =
-(  = >
-NumberValues  > J
-.  J K
-ZERO  K O
-)  O P
-;  P Q
-
-cbIOption1!! 
-.!! 
-Content!! "
-=!!# $
-
-Properties!!% /
-.!!/ 0
-	Resources!!0 9
-.!!9 :
-English!!: A
-;!!A B
-
-cbIOption2"" 
-."" 
-Content"" "
-=""# $
-
-Properties""% /
-.""/ 0
-	Resources""0 9
-.""9 :
-Spanish"": A
-;""A B
-}## 
-else$$ 
-{%% 
-
-cbLanguage&& 
-.&& 
-SelectedIndex&& (
-=&&) *
-Number&&+ 1
-.&&1 2
-NumberValue&&2 =
-(&&= >
-NumberValues&&> J
-.&&J K
-ZERO&&K O
-)&&O P
-;&&P Q
-
-cbIOption1'' 
-.'' 
-Content'' "
-=''# $
-
-Properties''% /
-.''/ 0
-	Resources''0 9
-.''9 :
-Spanish'': A
-;''A B
-
-cbIOption2(( 
-.(( 
-Content(( "
-=((# $
-
-Properties((% /
-.((/ 0
-	Resources((0 9
-.((9 :
-English((: A
-;((A B
-})) 
-}** 	
-private++ 
-void++ 
-Exit++ 
-(++ 
-object++  
-sender++! '
-,++' (
-RoutedEventArgs++) 8
-routedEventArgs++9 H
-)++H I
-{,, 	
-Lobby-- 
-lobby-- 
-=-- 
-new-- 
-Lobby-- #
-(--# $
-)--$ %
-;--% &
-lobby.. 
-... 
-ColocateBestScores.. $
-(..$ %
-)..% &
-;..& '
-lobby// 
-.// '
-ColocatePersonalInformation// -
-(//- .
-)//. /
-;/// 0
-lobby00 
-.00 
-Show00 
-(00 
-)00 
-;00 
-this11 
-.11 
-Close11 
-(11 
-)11 
-;11 
-}22 	
-private33 
-void33 
-ChangeSetting33 "
-(33" #
-object33# )
-sender33* 0
-,330 1
-RoutedEventArgs332 A
-routedEventArgs33B Q
-)33Q R
-{44 	
-if55 
-(55 
-
-cbLanguage55 
-.55 
-Text55 
-==55 !
-
-Properties55" ,
-.55, -
-	Resources55- 6
-.556 7
-Spanish557 >
-)55> ?
-{66 
-System77 
-.77 
-	Threading77  
-.77  !
-Thread77! '
-.77' (
-CurrentThread77( 5
-.775 6
-CurrentUICulture776 F
-=77G H
-new77I L
-System77M S
-.77S T
-Globalization77T a
-.77a b
-CultureInfo77b m
-(77m n
-$str77n u
-)77u v
-;77v w
-language88 
-=88 
-$str88 "
-;88" #
-Play99 
-.99 
-LanguageReceive99 $
-(99$ %
-language99% -
-)99- .
-;99. /
-}:: 
-else;; 
-{<< 
-if== 
-(== 
-
-cbLanguage== 
-.== 
-Text== "
-====# %
-
-Properties==& 0
-.==0 1
-	Resources==1 :
-.==: ;
-English==; B
-)==B C
-{>> 
-System?? 
-.?? 
-	Threading?? $
-.??$ %
-Thread??% +
-.??+ ,
-CurrentThread??, 9
-.??9 :
-CurrentUICulture??: J
-=??K L
-new??M P
-System??Q W
-.??W X
-Globalization??X e
-.??e f
-CultureInfo??f q
-(??q r
-$str??r v
-)??v w
-;??w x
-language@@ 
-=@@ 
-$str@@ #
-;@@# $
-PlayAA 
-.AA 
-LanguageReceiveAA (
-(AA( )
-languageAA) 1
-)AA1 2
-;AA2 3
-}BB 
-}CC 
-LobbyDD 
-lobbyDD 
-=DD 
-newDD 
-LobbyDD #
-(DD# $
-)DD$ %
-;DD% &
-lobbyEE 
-.EE 
-ColocateBestScoresEE $
-(EE$ %
-)EE% &
-;EE& '
-lobbyFF 
-.FF '
-ColocatePersonalInformationFF -
-(FF- .
-)FF. /
-;FF/ 0
-lobbyGG 
-.GG 
-ShowGG 
-(GG 
-)GG 
-;GG 
-thisHH 
-.HH 
-CloseHH 
-(HH 
-)HH 
-;HH 
-}II 	
-privateJJ 
-voidJJ 
-ChangedSoundJJ !
-(JJ! "
-objectJJ" (
-senderJJ) /
-,JJ/ 0*
-RoutedPropertyChangedEventArgsJJ1 O
-<JJO P
-doubleJJP V
->JJV W&
-routedPropertyChangedEventJJX r
-)JJr s
-{KK 	
-SliderLL 
-sliderLL 
-=LL 
-senderLL "
-asLL# %
-SliderLL& ,
-;LL, -
-ifMM 
-(MM 
-sliderMM 
-!=MM 
-nullMM 
-)MM 
-{NN 
-doubleOO 
-changeVolumeOO #
-=OO$ %
-sliderOO& ,
-.OO, -
-ValueOO- 2
-/OO2 3
-$numOO3 6
-;OO6 7
-AppPP 
-.PP 
-ChangeVolumeMediaPP %
-(PP% &
-changeVolumePP& 2
-)PP2 3
-;PP3 4
-
-valueSoundQQ 
-=QQ 
-changeVolumeQQ )
-;QQ) *
-}RR 
-}SS 	
-}TT 
-}UU ıJ
-AC:\Users\Ale_2\source\repos\hangmanGame\EmailConfirmation.xaml.cs
-	namespace 	
-hangmanGame
- 
-{ 
-[		 
-CallbackBehavior		 
-(		 %
-UseSynchronizationContext		 /
-=		0 1
-false		2 7
-)		7 8
-]		8 9
-public
-
- 
-
-partial
-
- 
-class
-
- 
-EmailConfirmation
-
- *
-:
-
-+ ,
-Window
-
-- 3
-,
-
-3 4"
-IPlayerManagerCallback
-
-5 K
-{ 
-private 
-ServiceAccount 
-account &
-;& '
-private 
-ServicePlayer 
-accountPlayer +
-;+ ,
-private 
-bool  
-responseConfirmation )
-;) *
-public 
-EmailConfirmation  
-(  !
-)! "
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void !
-PlayerResponseBoolean )
-() *
-bool* .
-response/ 7
-)7 8
-{ 	 
-responseConfirmation  
-=! "
-response# +
-;+ ,
-} 	
-public 
-void 
-AccountReceive "
-(" #
-ServiceAccount# 1
-accountReceive2 @
-)@ A
-{ 	
-account 
-= 
-new 
-ServiceAccount (
-(( )
-)) *
-;* +
-account 
-= 
-accountReceive $
-;$ %
-} 	
-public 
-void 
-PlayerReceive !
-(! "
-ServicePlayer" /
-player0 6
-)6 7
-{ 	
-accountPlayer 
-= 
-new 
-ServicePlayer  -
-(- .
-). /
-;/ 0
-accountPlayer 
-= 
-player "
-;" #
-}   	
-public!! 
-void!!  
-SendConfirmationCode!! (
-(!!( )
-)!!) *
-{"" 	
-InstanceContext## 
-instanceContext## +
-=##, -
-new##. 1
-InstanceContext##2 A
-(##A B
-this##B F
-)##F G
-;##G H
-PlayerManagerClient$$ 
-sendConfirmation$$  0
-=$$1 2
-new$$3 6
-PlayerManagerClient$$7 J
-($$J K
-instanceContext$$K Z
-)$$Z [
-;$$[ \
-sendConfirmation%% 
-.%% 
-	SendEmail%% &
-(%%& '
-account%%' .
-.%%. /
-Email%%/ 4
-,%%4 5
-account%%6 =
-.%%= >
-ConfirmationCode%%> N
-)%%N O
-;%%O P
-}&& 	
-private'' 
-void'' 
-prohibitSpace'' "
-(''" #
-object''# )
-sender''* 0
-,''0 1
-KeyEventArgs''2 >
-keyEvent''? G
-)''G H
-{(( 	
-if)) 
-()) 
-keyEvent)) 
-.)) 
-Key)) 
-==)) 
-Key))  #
-.))# $
-Space))$ )
-)))) *
-keyEvent** 
-.** 
-Handled**  
-=**! "
-true**# '
-;**' (
-}++ 	
-private,, 
-void,,  
-SendCodeConfirmation,, )
-(,,) *
-object,,* 0
-sender,,1 7
-,,,7 8
-RoutedEventArgs,,9 H
-routedEventArgs,,I X
-),,X Y
-{-- 	
-int.. 
-codeConfirmation..  
-=..! "
-ValidationData..# 1
-...1 2$
-GenerateConfirmationCode..2 J
-(..J K
-)..K L
-;..L M
-account// 
-.// 
-ConfirmationCode// $
-=//% &
-codeConfirmation//' 7
-;//7 8 
-SendConfirmationCode00  
-(00  !
-)00! "
-;00" #
-}11 	
-private22 
-void22 
-Error_MouseEnter22 %
-(22% &
-Object22& ,
-	objectImg22- 6
-,226 7
-MouseEventArgs228 F
-mouseEventArgs22G U
-)22U V
-{33 	#
-lbErrorCodeConfirmation44 #
-.44# $
-
-Visibility44$ .
-=44/ 0
-
-Visibility441 ;
-.44; <
-Visible44< C
-;44C D
-}55 	
-private66 
-void66 
-Error_MouseLeave66 %
-(66% &
-Object66& ,
-	objectImg66- 6
-,666 7
-MouseEventArgs668 F
-mouseEventArgs66G U
-)66U V
-{77 	#
-lbErrorCodeConfirmation88 #
-.88# $
-
-Visibility88$ .
-=88/ 0
-
-Visibility881 ;
-.88; <
-Hidden88< B
-;88B C
-}99 	
-private:: 
-void:: "
-AcceptCodeConfirmation:: +
-(::+ ,
-object::, 2
-sender::3 9
-,::9 :
-RoutedEventArgs::; J
-routedEventArgs::K Z
-)::Z [
-{;; 	$
-imgErrorCodeConfirmation<< $
-.<<$ %
-
-Visibility<<% /
-=<<0 1
-
-Visibility<<2 <
-.<<< =
-Hidden<<= C
-;<<C D
-bool== #
-isValidConfirmationCode== (
-;==( )#
-isValidConfirmationCode>> #
-=>>$ %
-ValidationData>>& 4
-.>>4 5$
-ValidateConfirmationCode>>5 M
-(>>M N
-tbConfirmationCode>>N `
-.>>` a
-Text>>a e
-)>>e f
-;>>f g
-if?? 
-(?? #
-isValidConfirmationCode?? '
-)??' (
-{@@ 
-intAA 
-codeConfirmationAA $
-=AA% &
-intAA' *
-.AA* +
-ParseAA+ 0
-(AA0 1
-tbConfirmationCodeAA1 C
-.AAC D
-TextAAD H
-)AAH I
-;AAI J
-InstanceContextBB 
-instanceContextBB  /
-=BB0 1
-newBB2 5
-InstanceContextBB6 E
-(BBE F
-thisBBF J
-)BBJ K
-;BBK L
-PlayerManagerClientCC #
-registryCC$ ,
-=CC- .
-newCC/ 2
-PlayerManagerClientCC3 F
-(CCF G
-instanceContextCCG V
-)CCV W
-;CCW X
-registryDD 
-.DD 
-RegisterDD !
-(DD! "
-accountDD" )
-,DD) *
-accountPlayerDD+ 8
-)DD8 9
-;DD9 :
-ifEE 
-(EE  
-responseConfirmationEE (
-)EE( )
-{FF 
-OpenMessageBoxGG "
-(GG" #
-
-PropertiesGG# -
-.GG- .
-	ResourcesGG. 7
-.GG7 8&
-AccountRegistrationMessageGG8 R
-,GGR S
-
-PropertiesGGT ^
-.GG^ _
-	ResourcesGG_ h
-.GGh i,
-AccountRegistrationMessageTitle	GGi à
-,
-GGà â
-(
-GGä ã
-MessageBoxImage
-GGã ö
-)
-GGö õ
-System
-GGõ °
-.
-GG° ¢
-Windows
-GG¢ ©
-.
-GG© ™
-Forms
-GG™ Ø
-.
-GGØ ∞
-MessageBoxIcon
-GG∞ æ
-.
-GGæ ø
-Information
-GGø  
-)
-GG  À
-;
-GGÀ Ã
-}HH 
-elseII 
-{JJ 
-OpenMessageBoxKK "
-(KK" #
-
-PropertiesKK# -
-.KK- .
-	ResourcesKK. 7
-.KK7 8&
-NoAccountRegisteredMessageKK8 R
-,KKR S
-
-PropertiesKKT ^
-.KK^ _
-	ResourcesKK_ h
-.KKh i,
-AccountRegistrationMessageTitle	KKi à
-,
-KKà â
-(
-KKä ã
-MessageBoxImage
-KKã ö
-)
-KKö õ
-System
-KKõ °
-.
-KK° ¢
-Windows
-KK¢ ©
-.
-KK© ™
-Forms
-KK™ Ø
-.
-KKØ ∞
-MessageBoxIcon
-KK∞ æ
-.
-KKæ ø
-Error
-KKø ƒ
-)
-KKƒ ≈
-;
-KK≈ ∆
-}LL 
-
-MainWindowMM 
-
-mainWindowMM %
-=MM& '
-newMM( +
-
-MainWindowMM, 6
-(MM6 7
-)MM7 8
-;MM8 9
-
-mainWindowNN 
-.NN 
-ShowNN 
-(NN  
-)NN  !
-;NN! "
-thisOO 
-.OO 
-CloseOO 
-(OO 
-)OO 
-;OO 
-}PP 
-elseQQ 
-{RR $
-imgErrorCodeConfirmationSS (
-.SS( )
-
-VisibilitySS) 3
-=SS4 5
-
-VisibilitySS6 @
-.SS@ A
-VisibleSSA H
-;SSH I
-OpenMessageBoxTT 
-(TT 
-
-PropertiesTT )
-.TT) *
-	ResourcesTT* 3
-.TT3 4 
-IncorrectCodeMessageTT4 H
-,TTH I
-
-PropertiesTTJ T
-.TTT U
-	ResourcesTTU ^
-.TT^ _%
-IncorrectCodeMessageTitleTT_ x
-,TTx y
-(TTz {
-MessageBoxImage	TT{ ä
-)
-TTä ã
-System
-TTã ë
-.
-TTë í
-Windows
-TTí ô
-.
-TTô ö
-Forms
-TTö ü
-.
-TTü †
-MessageBoxIcon
-TT† Æ
-.
-TTÆ Ø
-Warning
-TTØ ∂
-)
-TT∂ ∑
-;
-TT∑ ∏
-}UU 
-}VV 	
-privateWW 
-voidWW 
-OpenMessageBoxWW #
-(WW# $
-stringWW$ *
-textMessageWW+ 6
-,WW6 7
-stringWW8 >
-titleMessageWW? K
-,WWK L
-MessageBoxImageWWM \
-messageBoxImageWW] l
-)WWl m
-{XX 	
-
-MessageBoxYY 
-.YY 
-ShowYY 
-(YY 
-textMessageYY '
-,YY' (
-titleMessageYY) 5
-,YY5 6
-(YY7 8
-MessageBoxButtonYY8 H
-)YYH I
-SystemYYI O
-.YYO P
-WindowsYYP W
-.YYW X
-FormsYYX ]
-.YY] ^
-MessageBoxButtonsYY^ o
-.YYo p
-OKYYp r
-,YYr s
-messageBoxImage	YYt É
-)
-YYÉ Ñ
-;
-YYÑ Ö
-}ZZ 	
-}[[ 
-}\\ ∆>
+ââ 
+}ää öJ
 >C:\Users\Ale_2\source\repos\hangmanGame\LostMyPassword.xaml.cs
 	namespace 	
 hangmanGame
@@ -3410,9 +4177,9 @@ MessageBoxYY 
 { 
 private 	
 bool
- 
-response 
-; 
+ 
+responseCallback 
+;  
 public 
 LostMyPassword	 
 ( 
@@ -3427,13 +4194,13 @@ MessageBoxYY 
 void	 !
 PlayerResponseBoolean #
 (# $
-bool$ (
-responseCallback) 9
-)9 :
-{ 
-response 
-= 
-responseCallback 
+bool$ (
+response) 1
+)1 2
+{ 
+responseCallback 
+= 
+response 
 ; 
 }   
 private"" 	
@@ -3447,398 +4214,479 @@ MessageBoxYY 
 RoutedEventArgs""% 4
 eventCancel""5 @
 )""@ A
-{## 
-
-MainWindow$$ 
-main$$ 
-=$$ 
-new$$ 
-
-MainWindow$$ #
-($$# $
-)$$$ %
-;$$% &
-main%% 
-.%% 
-Show%% 
-(%% 
-)%% 
-;%% 
-this&& 
-.&& 
-Close&& 
-(&& 
-)&& 
-;&& 
-}'' 
-private)) 	
-void))
+{## 
+CloseWindow$$ 
+($$ 
+)$$ 
+;$$ 
+}%% 
+private'' 	
+void''
  
-SendRecoveryCode)) 
-())  
-object))  &
-sender))' -
-,))- .
-RoutedEventArgs))/ >
-eventSendCode))? L
-)))L M
-{** 
-if++ 
-(++ 
-ValidateEmail++ 
-(++ 
-)++ 
-)++ 
-{,, 
-if-- 
-(-- 
-SearchEmail-- 
-(-- 
-)-- 
-)-- 
-{.. 
-InstanceContext// 
-instanceContext// $
-=//% &
-new//' *
-InstanceContext//+ :
-(//: ;
-this//; ?
-)//? @
-;//@ A
-PlayerManagerClient00 
-sendCode00 !
-=00" #
-new00$ '
-PlayerManagerClient00( ;
-(00; <
-instanceContext00< K
-)00K L
-;00L M
-int11 
-code11	 
-=11 
-ValidationData11 
-.11 $
-GenerateConfirmationCode11 7
-(117 8
-)118 9
-;119 :
-sendCode22 
-.22 
-	SendEmail22 
-(22 
-tbEmail22 
-.22  
-Text22  $
-,22$ %
-code22& *
-)22* +
-;22+ ,
-RecoverAccount33 
-recover33 
-=33 
-new33 !
-RecoverAccount33" 0
-(330 1
-)331 2
-;332 3
+SendRecoveryCode'' 
+(''  
+object''  &
+sender''' -
+,''- .
+RoutedEventArgs''/ >
+eventSendCode''? L
+)''L M
+{(( 
+if)) 
+()) 
+ValidateEmail)) 
+()) 
+))) 
+&&)) 
+SearchEmail)) %
+())% &
+)))& '
+)))' (
+{** 
+try++ 
+{,, 
+InstanceContext-- 
+instanceContext-- $
+=--% &
+new--' *
+InstanceContext--+ :
+(--: ;
+this--; ?
+)--? @
+;--@ A
+PlayerManagerClient.. 
+sendCode.. !
+=.." #
+new..$ '
+PlayerManagerClient..( ;
+(..; <
+instanceContext..< K
+)..K L
+;..L M
+int// 
+code//	 
+=// 
+ValidationData// 
+.// $
+GenerateConfirmationCode// 7
+(//7 8
+)//8 9
+;//9 :
+sendCode00 
+.00 
+	SendEmail00 
+(00 
+tbEmail00 
+.00  
+Text00  $
+,00$ %
+code00& *
+)00* +
+;00+ ,
+RecoverAccount11 
+recover11 
+=11 
+new11 !
+RecoverAccount11" 0
+(110 1
+)111 2
+;112 3
+recover22 
+.22 
+EmailReceived22 
+(22 
+tbEmail22 "
+.22" #
+Text22# '
+)22' (
+;22( )
+recover33 
+.33 
+CodeReceived33 
+(33 
+code33 
+)33 
+;33  
 recover44 
-.44 
-EmailReceived44 
-(44 
-tbEmail44 "
-.44" #
-Text44# '
-)44' (
-;44( )
-recover55 
-.55 
-CodeReceived55 
-(55 
-code55 
-)55 
-;55  
-recover66 
-.66 
-Show66 
-(66 
-)66 
-;66 
-this77 	
-.77	 
+.44 
+Show44 
+(44 
+)44 
+;44 
+this55 	
+.55	 
 
-Close77
+Close55
  
-(77 
-)77 
-;77 
-}88 
-}99 
-}:: 
-private<< 	
-bool<<
+(55 
+)55 
+;55 
+}66 
+catch77 	
+(77
+ %
+EndpointNotFoundException77 $
+	exception77% .
+)77. /
+{88 
+TelegramBot99 
+.99 
+SendToTelegram99 
+(99  
+	exception99  )
+)99) *
+;99* +
+LogException:: 
+.:: 
+Log:: 
+(:: 
+this:: 
+,:: 
+	exception:: %
+)::% &
+;::& '
+LogException;; 
+.;; "
+ErrorConnectionService;; (
+(;;( )
+);;) *
+;;;* +
+CloseWindow<< 
+(<< 
+)<< 
+;<< 
+}== 
+}>> 
+}?? 
+privateAA 	
+boolAA
  
-SearchEmail<< 
-(<< 
-)<< 
-{== 	
-bool>> 
+SearchEmailAA 
+(AA 
+)AA 
+{BB 	
+boolCC 
 
-emailExist>> 
-=>> 
-false>> 
-;>> 
-InstanceContext@@ 
-instanceContext@@ "
-=@@# $
-new@@% (
-InstanceContext@@) 8
-(@@8 9
-this@@9 =
-)@@= >
-;@@> ?
-PlayerManagerClientAA 
-searchEmailAA "
-=AA# $
-newAA% (
-PlayerManagerClientAA) <
-(AA< =
-instanceContextAA= L
-)AAL M
-;AAM N
-searchEmailBB 
-.BB 
-SearchEmailPlayerBB  
-(BB  !
-tbEmailBB! (
-.BB( )
-TextBB) -
-)BB- .
-;BB. /
-ifCC 
-(CC 
-responseCC 
-)CC 
-{DD 
+emailExistCC 
+=CC 
+falseCC 
+;CC 
+tryDD 
+{EE 
+InstanceContextFF 
+instanceContextFF #
+=FF$ %
+newFF& )
+InstanceContextFF* 9
+(FF9 :
+thisFF: >
+)FF> ?
+;FF? @
+PlayerManagerClientGG 
+searchEmailGG #
+=GG$ %
+newGG& )
+PlayerManagerClientGG* =
+(GG= >
+instanceContextGG> M
+)GGM N
+;GGN O
+searchEmailHH 
+.HH 
+SearchEmailPlayerHH !
+(HH! "
+tbEmailHH" )
+.HH) *
+TextHH* .
+)HH. /
+;HH/ 0
+ifII 
+(II 
+responseCallbackII 
+)II 
+{JJ 
 
-emailExistEE 
-=EE 
-trueEE 
-;EE 
-}FF 
-elseGG 
-{HH 
-tbEmailII 
-.II 
-BorderBrushII 
-=II 
-BrushesII !
-.II! "
-RedII" %
-;II% &
-tbValidateEmailJJ 
-.JJ 
-BorderBrushJJ 
-=JJ  !
-BrushesJJ" )
-.JJ) *
-RedJJ* -
-;JJ- .
-SystemKK 
-
-.KK
- 
-WindowsKK 
-.KK 
-FormsKK 
-.KK 
+emailExistKK 
+=KK 
+trueKK 
+;KK 
+}LL 
+elseMM 
+{NN 
+tbEmailOO 
+.OO 
+BorderBrushOO 
+=OO 
+BrushesOO "
+.OO" #
+RedOO# &
+;OO& '
+tbValidateEmailPP 
+.PP 
+BorderBrushPP  
+=PP! "
+BrushesPP# *
+.PP* +
+RedPP+ .
+;PP. /
+SystemQQ 
+.QQ 
+WindowsQQ 
+.QQ 
+FormsQQ 
+.QQ 
 
-MessageBoxKK #
-.KK# $
-ShowKK$ (
-(KK( )
+MessageBoxQQ $
+.QQ$ %
+ShowQQ% )
+(QQ) *
 
-PropertiesKK) 3
-.KK3 4
-	ResourcesKK4 =
-.KK= > 
-EmailNotFoundDetailsKK> R
-,KKR S
+PropertiesQQ* 4
+.QQ4 5
+	ResourcesQQ5 >
+.QQ> ? 
+EmailNotFoundDetailsQQ? S
+,QQS T
 
-PropertiesKKT ^
-.KK^ _
-	ResourcesKK_ h
-.KKh i
-EmailNotFoundKKi v
-,LL 
-MessageBoxButtonsLL 
-.LL 
-OKLL 
-,LL 
-MessageBoxIconLL +
-.LL+ ,
-ExclamationLL, 7
-)LL7 8
-;LL8 9
-}MM 
-returnOO 	
+PropertiesQQU _
+.QQ_ `
+	ResourcesQQ` i
+.QQi j
+EmailNotFoundQQj w
+,RR 
+MessageBoxButtonsRR 
+.RR 
+OKRR 
+,RR 
+MessageBoxIconRR ,
+.RR, -
+ExclamationRR- 8
+)RR8 9
+;RR9 :
+}SS 
+}TT 
+catchUU 
+(UU	 
+%
+EndpointNotFoundExceptionUU
+ #
+	exceptionUU$ -
+)UU- .
+{VV 
+TelegramBotWW 
+.WW 
+SendToTelegramWW 
+(WW 
+	exceptionWW (
+)WW( )
+;WW) *
+LogExceptionXX 
+.XX 
+LogXX 
+(XX 
+thisXX 
+,XX 
+	exceptionXX $
+)XX$ %
+;XX% &
+LogExceptionYY 
+.YY "
+ErrorConnectionServiceYY '
+(YY' (
+)YY( )
+;YY) *
+CloseWindowZZ 
+(ZZ 
+)ZZ 
+;ZZ 
+}[[ 
+return\\ 	
 
-emailExistOO
+emailExist\\
  
-;OO 
-}PP 	
-privateRR 	
-boolRR
+;\\ 
+}]] 	
+private__ 	
+void__
+ 
+CloseWindow__ 
+(__ 
+)__ 
+{`` 
+
+MainWindowaa 
+mainaa 
+=aa 
+newaa 
+
+MainWindowaa #
+(aa# $
+)aa$ %
+;aa% &
+mainbb 
+.bb 
+Showbb 
+(bb 
+)bb 
+;bb 
+thiscc 
+.cc 
+Closecc 
+(cc 
+)cc 
+;cc 
+}dd 
+privateee 	
+boolee
  
-ValidateEmailRR 
-(RR 
-)RR 
-{SS 	
-boolTT 
-isValidTT 
-=TT 
-falseTT 
-;TT 
-ifUU 
-(UU 
-tbEmailUU 
-.UU 
-TextUU 
-!=UU 
-nullUU 
-&&UU 
-tbValidateEmailUU .
-.UU. /
-TextUU/ 3
-!=UU4 6
-nullUU7 ;
-)UU; <
-{VV 
-stringWW 
+ValidateEmailee 
+(ee 
+)ee 
+{ff 	
+boolgg 
+isValidgg 
+=gg 
+falsegg 
+;gg 
+ifhh 
+(hh 
+tbEmailhh 
+.hh 
+Texthh 
+!=hh 
+nullhh 
+&&hh 
+tbValidateEmailhh .
+.hh. /
+Texthh/ 3
+!=hh4 6
+nullhh7 ;
+)hh; <
+{ii 
+stringjj 
 
-emailWW 
-=WW 
-tbEmailWW 
-.WW 
-TextWW 
-;WW  
-stringXX 
+emailjj 
+=jj 
+tbEmailjj 
+.jj 
+Textjj 
+;jj  
+stringkk 
 
-validateEmailXX 
-=XX 
-tbValidateEmailXX *
-.XX* +
-TextXX+ /
-;XX/ 0
-ifZZ 
-(ZZ 
-emailZZ 
-.ZZ 
-EqualsZZ 
-(ZZ 
-validateEmailZZ "
-)ZZ" #
-&&ZZ$ &
-ValidationDataZZ' 5
-.ZZ5 6
-ValidateEmailZZ6 C
-(ZZC D
-emailZZD I
-)ZZI J
-&&ZZK M
-ValidationDataZZN \
-.ZZ\ ]
-ValidateEmailZZ] j
-(ZZj k
-validateEmailZZk x
-)ZZx y
-)ZZy z
-{[[ 
-tbEmail\\ 
-.\\ 
-BorderBrush\\ 
-=\\ 
-Brushes\\ "
-.\\" #
+validateEmailkk 
+=kk 
+tbValidateEmailkk *
+.kk* +
+Textkk+ /
+;kk/ 0
+ifmm 
+(mm 
+emailmm 
+.mm 
+Equalsmm 
+(mm 
+validateEmailmm "
+)mm" #
+&&mm$ &
+ValidationDatamm' 5
+.mm5 6
+ValidateEmailmm6 C
+(mmC D
+emailmmD I
+)mmI J
+&&mmK M
+ValidationDatammN \
+.mm\ ]
+ValidateEmailmm] j
+(mmj k
+validateEmailmmk x
+)mmx y
+)mmy z
+{nn 
+tbEmailoo 
+.oo 
+BorderBrushoo 
+=oo 
+Brushesoo "
+.oo" #
 
-LightGreen\\# -
-;\\- .
-tbValidateEmail]] 
-.]] 
-BorderBrush]]  
-=]]! "
-Brushes]]# *
-.]]* +
+LightGreenoo# -
+;oo- .
+tbValidateEmailpp 
+.pp 
+BorderBrushpp  
+=pp! "
+Brushespp# *
+.pp* +
 
-LightGreen]]+ 5
-;]]5 6
-isValid^^ 
-=^^ 
-true^^ 
-;^^ 
-}__ 
-else`` 
-{aa 
-tbEmailbb 
-.bb 
-BorderBrushbb 
-=bb 
-Brushesbb "
-.bb" #
-Redbb# &
-;bb& '
-tbValidateEmailcc 
-.cc 
-BorderBrushcc  
-=cc! "
-Brushescc# *
-.cc* +
-Redcc+ .
-;cc. /
-Systemdd 
-.dd 
-Windowsdd 
-.dd 
-Formsdd 
-.dd 
+LightGreenpp+ 5
+;pp5 6
+isValidqq 
+=qq 
+trueqq 
+;qq 
+}rr 
+elsess 
+{tt 
+tbEmailuu 
+.uu 
+BorderBrushuu 
+=uu 
+Brushesuu "
+.uu" #
+Reduu# &
+;uu& '
+tbValidateEmailvv 
+.vv 
+BorderBrushvv  
+=vv! "
+Brushesvv# *
+.vv* +
+Redvv+ .
+;vv. /
+Systemww 
+.ww 
+Windowsww 
+.ww 
+Formsww 
+.ww 
 
-MessageBoxdd $
-.dd$ %
-Showdd% )
-(dd) *
+MessageBoxww $
+.ww$ %
+Showww% )
+(ww) *
 
-Propertiesdd* 4
-.dd4 5
-	Resourcesdd5 >
-.dd> ?!
-IncorrectEmailDetailsdd? T
-,ddT U
+Propertiesww* 4
+.ww4 5
+	Resourcesww5 >
+.ww> ?!
+IncorrectEmailDetailsww? T
+,wwT U
 
-PropertiesddV `
-.dd` a
-	Resourcesdda j
-.ddj k
-IncorrectEmailddk y
-,ee 
-MessageBoxButtonsee 
-.ee 
-OKee 
-,ee 
-MessageBoxIconee +
-.ee+ ,
-Exclamationee, 7
-)ee7 8
-;ee8 9
-}ff 
-}gg 
-returnhh 	
-isValidhh
+PropertieswwV `
+.ww` a
+	Resourceswwa j
+.wwj k
+IncorrectEmailwwk y
+,xx 
+MessageBoxButtonsxx 
+.xx 
+OKxx 
+,xx 
+MessageBoxIconxx +
+.xx+ ,
+Exclamationxx, 7
+)xx7 8
+;xx8 9
+}yy 
+}zz 
+return{{ 	
+isValid{{
  
-;hh 
-}ii 	
-}jj 
-}kk Ω“
+;{{ 
+}|| 	
+}}} 
+}~~ πÔ
 =C:\Users\Ale_2\source\repos\hangmanGame\ModifyAccount.xaml.cs
 	namespace		 	
 hangmanGame		
@@ -3846,2148 +4694,2591 @@ PropertiesddV `
 {
 
  
-[ 
-CallbackBehavior 
-( %
-UseSynchronizationContext /
-=0 1
-false2 7
-)7 8
-]8 9
-public 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext /
+=0 1
+false2 7
+)7 8
+]8 9
+public 
 
-partial 
-class 
-ModifyAccount &
-:' (
-Window) /
-,/ 0"
-IPlayerManagerCallback1 G
-,G H#
-IAccountManagerCallbackI `
-{ 
-private 
-static 
-ServiceAccount %
-account& -
-;- .
-private 
-static 
-ServicePlayer $
-player% +
-;+ ,
-private 
-static 
-string 
-emailAccount *
-;* +
-private 
-bool 
-responseBoolean $
-;$ %
-private 
-bool 
-isValidData  
-;  !
-private 
-bool 
-isUpdateEmail "
-;" #
+partial 
+class 
+ModifyAccount &
+:' (
+Window) /
+,/ 0"
+IPlayerManagerCallback1 G
+,G H#
+IAccountManagerCallbackI `
+{ 
+private 
+ServiceAccount 
+account &
+;& '
+private 
+ServicePlayer 
+player $
+;$ %
+private 
+string 
+emailAccount #
+;# $
 private 
-bool 
-isUpdateData !
-;! "
-private 
-string 
-	emailEdit  
+bool 
+responseBoolean $
+;$ %
+private 
+bool 
+isValidData  
 ;  !
-private 
-ServicePlayer 
+private 
+bool 
+isUpdateEmail "
+;" #
+private 
+bool 
+isUpdateData !
+;! "
+private 
+string 
+	emailEdit  
+;  !
+private 
+ServicePlayer 
 
-playerEdit (
-;( )
-public 
-ModifyAccount 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void "
-AccountResponseAccount *
-(* +
-ServiceAccount+ 9
-serviceAccount: H
-)H I
-{ 	
-account 
-= 
-serviceAccount $
-;$ %
-} 	
-public 
-void !
-AccountResponsePlayer )
-() *
-ServicePlayer* 7
-servicePlayer8 E
-)E F
-{   	
-player!! 
-=!! 
-servicePlayer!! "
-;!!" #
+playerEdit (
+;( )
+public 
+ModifyAccount 
+( 
+) 
+{ 	
+InitializeComponent   
+(    
+)    !
+;  ! "
+ProhibitPaste!! 
+(!! 
+)!! 
+;!! 
 }"" 	
-public## 
-void## !
-PlayerResponseBoolean## )
-(##) *
-bool##* .
-response##/ 7
-)##7 8
-{$$ 	
-responseBoolean%% 
-=%% 
-response%% &
-;%%& '
-}&& 	
-public'' 
-void'' 
-EmailReceived'' !
-(''" #
-string''# )
-emailReceive''* 6
-)''6 7
-{(( 	
-emailAccount)) 
-=)) 
-emailReceive)) '
-;))' (
-}** 	
-public++ 
-void++ 
-AccountReceived++ #
-(++# $
-)++$ %
-{,, 	
-InstanceContext-- 
-instanceContext-- +
-=--, -
-new--. 1
-InstanceContext--2 A
-(--A B
-this--B F
-)--F G
-;--G H 
-AccountManagerClient..  
-	getPlayer..! *
-=..+ ,
-new..- 0 
-AccountManagerClient..1 E
-(..E F
-instanceContext..F U
-)..U V
-;..V W
-	getPlayer// 
-.// 
-SearchAccount// #
-(//# $
-emailAccount//$ 0
-)//0 1
-;//1 2
-string00 
-nickName00 
-=00 
-account00 %
-.00% &
-NickName00& .
-;00. /
-	getPlayer11 
-.11 
-SearchPlayer11 "
-(11" #
-nickName11# +
-)11+ ,
-;11, - 
-InitializeDataPlayer22  
-(22  !
-)22! "
-;22" #
-}33 	
-public44 
-void44  
-InitializeDataPlayer44 (
-(44( )
-)44) *
-{55 	
-tbEmail66 
-.66 
-Text66 
-=66 
-account66 "
-.66" #
-Email66# (
-;66( )
-tbName77 
-.77 
-Text77 
-=77 
-player77  
-.77  !
+public(( 
+void(( "
+AccountResponseAccount(( *
+(((* +
+ServiceAccount((+ 9
+serviceAccount((: H
+)((H I
+{)) 	
+account** 
+=** 
+serviceAccount** $
+;**$ %
+}++ 	
+public11 
+void11 !
+AccountResponsePlayer11 )
+(11) *
+ServicePlayer11* 7
+servicePlayer118 E
+)11E F
+{22 	
+player33 
+=33 
+servicePlayer33 "
+;33" #
+}44 	
+public:: 
+void:: !
+PlayerResponseBoolean:: )
+(::) *
+bool::* .
+response::/ 7
+)::7 8
+{;; 	
+responseBoolean<< 
+=<< 
+response<< &
+;<<& '
+}== 	
+publicCC 
+voidCC 
+EmailReceivedCC !
+(CC" #
+stringCC# )
+emailReceiveCC* 6
+)CC6 7
+{DD 	
+emailAccountEE 
+=EE 
+emailReceiveEE '
+;EE' (
+}FF 	
+publicKK 
+voidKK 
+ObtainAccountKK !
+(KK! "
+)KK" #
+{LL 	
+InstanceContextMM 
+instanceContextMM +
+=MM, -
+newMM. 1
+InstanceContextMM2 A
+(MMA B
+thisMMB F
+)MMF G
+;MMG H 
+AccountManagerClientNN  
+	getPlayerNN! *
+=NN+ ,
+newNN- 0 
+AccountManagerClientNN1 E
+(NNE F
+instanceContextNNF U
+)NNU V
+;NNV W
+	getPlayerOO 
+.OO 
+SearchAccountOO #
+(OO# $
+emailAccountOO$ 0
+)OO0 1
+;OO1 2
+stringPP 
+nicknamePP 
+=PP 
+accountPP %
+.PP% &
+NickNamePP& .
+;PP. /
+	getPlayerQQ 
+.QQ 
+SearchPlayerQQ "
+(QQ" #
+nicknameQQ# +
+)QQ+ ,
+;QQ, - 
+InitializeDataPlayerRR  
+(RR  !
+)RR! "
+;RR" #
+}SS 	
+publicXX 
+voidXX  
+InitializeDataPlayerXX (
+(XX( )
+)XX) *
+{YY 	
+tbEmailZZ 
+.ZZ 
+TextZZ 
+=ZZ 
+accountZZ "
+.ZZ" #
+EmailZZ# (
+;ZZ( )
+tbName[[ 
+.[[ 
+Text[[ 
+=[[ 
+player[[  
+.[[  !
 
-NamePlayer77! +
-;77+ ,
+NamePlayer[[! +
+;[[+ ,
 
-tbLastName88 
-.88 
-Text88 
-=88 
-player88 $
-.88$ %
-LastName88% -
-;88- .
-}99 	
-private:: 
-void:: 
-Error_MouseEnter:: %
-(::% &
-Object::& ,
-	objectImg::- 6
-,::6 7
-MouseEventArgs::8 F
-mouseEventArgs::G U
-)::U V
-{;; 	
-bool<< 
-	isImgName<< 
-;<< 
-	isImgName== 
-=== 
-	objectImg== !
-.==! "
-Equals==" (
-(==( )
-imgErrorName==) 5
-)==5 6
-;==6 7
-if>> 
-(>> 
-	isImgName>> 
-)>> 
-{?? 
-lbErrorName@@ 
-.@@ 
+tbLastName\\ 
+.\\ 
+Text\\ 
+=\\ 
+player\\ $
+.\\$ %
+LastName\\% -
+;\\- .
+}]] 	
+private^^ 
+void^^ 
+ProhibitPaste^^ "
+(^^" #
+)^^# $
+{__ 	
+CommandManager`` 
+.`` '
+AddPreviewCanExecuteHandler`` 6
+(``6 7
+tbName``7 =
+,``= >
+OnPreviewCanExecute``? R
+)``R S
+;``S T
+CommandManageraa 
+.aa %
+AddPreviewExecutedHandleraa 4
+(aa4 5
+tbNameaa5 ;
+,aa; <
+OnPreviewExecutedaa= N
+)aaN O
+;aaO P
+CommandManagerbb 
+.bb '
+AddPreviewCanExecuteHandlerbb 6
+(bb6 7
+tbEmailbb7 >
+,bb> ?
+OnPreviewCanExecutebb@ S
+)bbS T
+;bbT U
+CommandManagercc 
+.cc %
+AddPreviewExecutedHandlercc 4
+(cc4 5
+tbEmailcc5 <
+,cc< =
+OnPreviewExecutedcc> O
+)ccO P
+;ccP Q
+CommandManagerdd 
+.dd '
+AddPreviewCanExecuteHandlerdd 6
+(dd6 7
 
-Visibility@@ &
-=@@' (
+tbLastNamedd7 A
+,ddA B
+OnPreviewCanExecuteddC V
+)ddV W
+;ddW X
+CommandManageree 
+.ee %
+AddPreviewExecutedHandleree 4
+(ee4 5
 
-Visibility@@) 3
-.@@3 4
-Visible@@4 ;
-;@@; <
-}AA 
-elseBB 
-{CC 
-boolDD 
-isImgLastNameDD "
-;DD" #
-isImgLastNameEE 
-=EE 
-	objectImgEE  )
-.EE) *
-EqualsEE* 0
-(EE0 1
-imgErrorLastNameEE1 A
-)EEA B
-;EEB C
-ifFF 
-(FF 
-isImgLastNameFF !
-)FF! "
-{GG 
-lbErrorLastNameHH #
-.HH# $
-
-VisibilityHH$ .
-=HH/ 0
-
-VisibilityHH1 ;
-.HH; <
-VisibleHH< C
-;HHC D
-}II 
-elseJJ 
-{KK 
-lbErrorEmailLL  
-.LL  !
-
-VisibilityLL! +
-=LL, -
-
-VisibilityLL. 8
-.LL8 9
-VisibleLL9 @
-;LL@ A
-}MM 
-}NN 
-}OO 	
-privatePP 
-voidPP 
-Error_MouseLeavePP %
-(PP% &
-ObjectPP& ,
-	objectImgPP- 6
-,PP6 7
-MouseEventArgsPP8 F
-mouseEventArgsPPG U
-)PPU V
-{QQ 	
-boolRR 
-	isImgNameRR 
-;RR 
-	isImgNameSS 
-=SS 
-	objectImgSS !
-.SS! "
-EqualsSS" (
-(SS( )
-imgErrorNameSS) 5
-)SS5 6
-;SS6 7
-ifTT 
-(TT 
-	isImgNameTT 
-)TT 
-{UU 
-lbErrorNameVV 
-.VV 
-
-VisibilityVV &
-=VV' (
-
-VisibilityVV) 3
-.VV3 4
-HiddenVV4 :
-;VV: ;
-}WW 
-elseXX 
-{YY 
-boolZZ 
-isImgLastNameZZ "
-;ZZ" #
-isImgLastName[[ 
-=[[ 
-	objectImg[[  )
-.[[) *
-Equals[[* 0
-([[0 1
-imgErrorLastName[[1 A
-)[[A B
-;[[B C
-if\\ 
-(\\ 
-isImgLastName\\ !
-)\\! "
-{]] 
-lbErrorLastName^^ #
-.^^# $
-
-Visibility^^$ .
-=^^/ 0
-
-Visibility^^1 ;
-.^^; <
-Hidden^^< B
-;^^B C
-}__ 
-else`` 
-{aa 
-lbErrorEmailbb  
-.bb  !
-
-Visibilitybb! +
-=bb, -
-
-Visibilitybb. 8
-.bb8 9
-Hiddenbb9 ?
-;bb? @
-}cc 
-}dd 
+tbLastNameee5 ?
+,ee? @
+OnPreviewExecutedeeA R
+)eeR S
+;eeS T
 }ff 	
 privategg 
-voidgg 
-Cancelgg 
-(gg 
-objectgg "
-sendergg# )
-,gg) *
-RoutedEventArgsgg+ :
-routedEventArgsgg; J
-)ggJ K
-{hh 	
-Lobbyii 
-lobbyii 
-=ii 
-newii 
-Lobbyii #
-(ii# $
-)ii$ %
-;ii% &
-lobbyjj 
-.jj 
-EmailReceivedjj 
-(jj  
-emailAccountjj  ,
-)jj, -
-;jj- .
-lobbykk 
-.kk 
-ColocateBestScoreskk $
-(kk$ %
-)kk% &
-;kk& '
-lobbyll 
-.ll '
-ColocatePersonalInformationll -
-(ll- .
-)ll. /
-;ll/ 0
-lobbymm 
-.mm 
-Showmm 
-(mm 
-)mm 
-;mm 
-thisnn 
-.nn 
-Closenn 
-(nn 
-)nn 
-;nn 
-}oo 	
-privatepp 
-voidpp 
+voidgg 
+OnPreviewCanExecutegg (
+(gg( )
+objectgg) /
+sendergg0 6
+,gg6 7%
+CanExecuteRoutedEventArgsgg8 Q%
+canExecuteRoutedEventArgsggR k
+)ggk l
+{hh 	
+ifii 
+(ii %
+canExecuteRoutedEventArgsii )
+.ii) *
+Commandii* 1
+==ii2 4
+ApplicationCommandsii5 H
+.iiH I
+PasteiiI N
+)iiN O
+{jj %
+canExecuteRoutedEventArgskk )
+.kk) *
 
-ReportListpp 
-(pp  
-objectpp  &
-senderpp' -
-,pp- .
-RoutedEventArgspp/ >
-routedEventArgspp? N
-)ppN O
-{qq 	
+CanExecutekk* 4
+=kk5 6
+truekk7 ;
+;kk; <%
+canExecuteRoutedEventArgsll )
+.ll) *
+Handledll* 1
+=ll2 3
+truell4 8
+;ll8 9
+}mm 
+}nn 	
+privateoo 
+voidoo 
+OnPreviewExecutedoo &
+(oo& '
+objectoo' -
+senderoo. 4
+,oo4 5#
+ExecutedRoutedEventArgsoo6 M#
+executedRoutedEventArgsooN e
+)ooe f
+{pp 	
+ifqq 
+(qq #
+executedRoutedEventArgsqq '
+.qq' (
+Commandqq( /
+==qq0 2
+ApplicationCommandsqq3 F
+.qqF G
+PasteqqG L
+)qqL M
+{rr #
+executedRoutedEventArgsss '
+.ss' (
+Handledss( /
+=ss0 1
+truess2 6
+;ss6 7
+}tt 
+}uu 	
+privatevv 
+voidvv 
+Error_MouseEntervv %
+(vv% &
+Objectvv& ,
+	objectImgvv- 6
+,vv6 7
+MouseEventArgsvv8 F
+mouseEventArgsvvG U
+)vvU V
+{ww 	
+boolxx 
+	isImgNamexx 
+;xx 
+	isImgNameyy 
+=yy 
+	objectImgyy !
+.yy! "
+Equalsyy" (
+(yy( )
+imgErrorNameyy) 5
+)yy5 6
+;yy6 7
+ifzz 
+(zz 
+	isImgNamezz 
+)zz 
+{{{ 
+lbErrorName|| 
+.|| 
 
-ReportListrr 
+Visibility|| &
+=||' (
 
-reportListrr !
-=rr" #
-newrr$ '
-
-ReportListrr( 2
-(rr2 3
-)rr3 4
-;rr4 5
-
-reportListss 
-.ss 
-NickNameReceivedss '
-(ss' (
-playerss( .
-.ss. /
-NickNamess/ 7
-)ss7 8
-;ss8 9
-
-reportListtt 
-.tt 
-EmailReceivedtt $
-(tt$ %
-accounttt% ,
-.tt, -
-Emailtt- 2
-)tt2 3
-;tt3 4
-
-reportListuu 
-.uu 
-ColocateReportsuu &
-(uu& '
-)uu' (
-;uu( )
-
-reportListvv 
-.vv 
-Showvv 
-(vv 
-)vv 
-;vv 
-thisww 
-.ww 
-Closeww 
-(ww 
-)ww 
-;ww 
-}xx 	
-privateyy 
-voidyy 
-ChangePasswordyy #
-(yy# $
-objectyy$ *
-senderyy+ 1
-,yy1 2
-RoutedEventArgsyy3 B
-routedEventArgsyyC R
-)yyR S
-{zz 	
-ChangePassword{{ 
-changePassword{{ )
-={{* +
-new{{, /
-ChangePassword{{0 >
-({{> ?
-){{? @
-;{{@ A
-changePassword|| 
-.|| 
-AccountReceived|| *
-(||* +
-account||+ 2
-)||2 3
-;||3 4
-changePassword}} 
-.}} 
-Show}} 
-(}}  
-)}}  !
-;}}! "
-this~~ 
-.~~ 
-Close~~ 
-(~~ 
-)~~ 
-;~~ 
-} 	
-private
-ÄÄ 
-void
-ÄÄ 
-Delete
-ÄÄ 
-(
-ÄÄ 
-object
-ÄÄ "
-sender
-ÄÄ# )
-,
-ÄÄ) *
-RoutedEventArgs
-ÄÄ+ :
-routedEventArgs
-ÄÄ; J
-)
-ÄÄJ K
-{
-ÅÅ 	
-DeleteAccount
-ÇÇ 
-deleteAccount
-ÇÇ '
+Visibility||) 3
+.||3 4
+Visible||4 ;
+;||; <
+}}} 
+else~~ 
+{ 
+bool
+ÄÄ 
+isImgLastName
+ÄÄ "
+;
+ÄÄ" #
+isImgLastName
+ÅÅ 
 =
-ÇÇ( )
-new
-ÇÇ* -
-DeleteAccount
-ÇÇ. ;
-(
-ÇÇ; <
-)
-ÇÇ< =
-;
-ÇÇ= >
-deleteAccount
-ÉÉ 
+ÅÅ 
+	objectImg
+ÅÅ  )
 .
-ÉÉ 
-AccountReceived
-ÉÉ )
-(
-ÉÉ) *
-account
-ÉÉ* 1
-)
-ÉÉ1 2
-;
-ÉÉ2 3
-deleteAccount
-ÑÑ 
-.
-ÑÑ 
-PlayerReceived
-ÑÑ (
-(
-ÑÑ( )
-player
-ÑÑ) /
-)
-ÑÑ/ 0
-;
-ÑÑ0 1
-deleteAccount
-ÖÖ 
-.
-ÖÖ 
-Show
-ÖÖ 
-(
-ÖÖ 
-)
-ÖÖ  
-;
-ÖÖ  !
-this
-ÜÜ 
-.
-ÜÜ 
-Close
-ÜÜ 
-(
-ÜÜ 
-)
-ÜÜ 
-;
-ÜÜ 
-}
-áá 	
-private
-àà 
-void
-àà 
-Modify
-àà 
-(
-àà 
-object
-àà "
-sender
-àà# )
-,
-àà) *
-RoutedEventArgs
-àà+ :
-routedEventArgs
-àà; J
-)
-ààJ K
-{
-ââ 	
-
-playerEdit
-ää 
-=
-ää 
-new
-ää 
-ServicePlayer
-ää *
-(
-ää* +
-)
-ää+ ,
-;
-ää, -
-	emailEdit
-ãã 
-=
-ãã 
-account
-ãã 
-.
-ãã  
-Email
-ãã  %
-;
-ãã% &!
-ValidateDataAccount
-åå 
-(
-åå  
-)
-åå  !
-;
-åå! "
-if
-çç 
-(
-çç 
-isUpdateData
-çç 
-||
-çç 
-!
-çç  
-	emailEdit
-çç  )
-.
-çç) *
+ÅÅ) *
 Equals
-çç* 0
+ÅÅ* 0
 (
-çç0 1
+ÅÅ0 1
+imgErrorLastName
+ÅÅ1 A
+)
+ÅÅA B
+;
+ÅÅB C
+if
+ÇÇ 
+(
+ÇÇ 
+isImgLastName
+ÇÇ !
+)
+ÇÇ! "
+{
+ÉÉ 
+lbErrorLastName
+ÑÑ #
+.
+ÑÑ# $
+
+Visibility
+ÑÑ$ .
+=
+ÑÑ/ 0
+
+Visibility
+ÑÑ1 ;
+.
+ÑÑ; <
+Visible
+ÑÑ< C
+;
+ÑÑC D
+}
+ÖÖ 
+else
+ÜÜ 
+{
+áá 
+lbErrorEmail
+àà  
+.
+àà  !
+
+Visibility
+àà! +
+=
+àà, -
+
+Visibility
+àà. 8
+.
+àà8 9
+Visible
+àà9 @
+;
+àà@ A
+}
+ââ 
+}
+ää 
+}
+ãã 	
+private
+åå 
+void
+åå 
+Error_MouseLeave
+åå %
+(
+åå% &
+Object
+åå& ,
+	objectImg
+åå- 6
+,
+åå6 7
+MouseEventArgs
+åå8 F
+mouseEventArgs
+ååG U
+)
+ååU V
+{
+çç 	
+bool
+éé 
+	isImgName
+éé 
+;
+éé 
+	isImgName
+èè 
+=
+èè 
+	objectImg
+èè !
+.
+èè! "
+Equals
+èè" (
+(
+èè( )
+imgErrorName
+èè) 5
+)
+èè5 6
+;
+èè6 7
+if
+êê 
+(
+êê 
+	isImgName
+êê 
+)
+êê 
+{
+ëë 
+lbErrorName
+íí 
+.
+íí 
+
+Visibility
+íí &
+=
+íí' (
+
+Visibility
+íí) 3
+.
+íí3 4
+Hidden
+íí4 :
+;
+íí: ;
+}
+ìì 
+else
+îî 
+{
+ïï 
+bool
+ññ 
+isImgLastName
+ññ "
+;
+ññ" #
+isImgLastName
+óó 
+=
+óó 
+	objectImg
+óó  )
+.
+óó) *
+Equals
+óó* 0
+(
+óó0 1
+imgErrorLastName
+óó1 A
+)
+óóA B
+;
+óóB C
+if
+òò 
+(
+òò 
+isImgLastName
+òò !
+)
+òò! "
+{
+ôô 
+lbErrorLastName
+öö #
+.
+öö# $
+
+Visibility
+öö$ .
+=
+öö/ 0
+
+Visibility
+öö1 ;
+.
+öö; <
+Hidden
+öö< B
+;
+ööB C
+}
+õõ 
+else
+úú 
+{
+ùù 
+lbErrorEmail
+ûû  
+.
+ûû  !
+
+Visibility
+ûû! +
+=
+ûû, -
+
+Visibility
+ûû. 8
+.
+ûû8 9
+Hidden
+ûû9 ?
+;
+ûû? @
+}
+üü 
+}
+†† 
+}
+¢¢ 	
+private
+££ 
+void
+££ 
+Cancel
+££ 
+(
+££ 
+object
+££ "
+sender
+££# )
+,
+££) *
+RoutedEventArgs
+££+ :
+routedEventArgs
+££; J
+)
+££J K
+{
+§§ 	
+Lobby
+•• 
+lobby
+•• 
+=
+•• 
+new
+•• 
+Lobby
+•• #
+(
+••# $
+)
+••$ %
+;
+••% &
+lobby
+¶¶ 
+.
+¶¶ 
+EmailReceived
+¶¶ 
+(
+¶¶  
 emailAccount
-çç1 =
+¶¶  ,
 )
-çç= >
-)
-çç> ?
-{
-éé 
-if
-èè 
+¶¶, -
+;
+¶¶- .
+lobby
+ßß 
+.
+ßß  
+ColocateBestScores
+ßß $
 (
-èè 
-isValidData
-èè 
+ßß$ %
 )
-èè  
-{
-êê 
-InstanceContext
-ëë #
-instanceContext
-ëë$ 3
-=
-ëë4 5
-new
-ëë6 9
-InstanceContext
-ëë: I
+ßß% &
+;
+ßß& '
+lobby
+®® 
+.
+®® )
+ColocatePersonalInformation
+®® -
 (
-ëëI J
+®®- .
+)
+®®. /
+;
+®®/ 0
+lobby
+©© 
+.
+©© 
+Show
+©© 
+(
+©© 
+)
+©© 
+;
+©© 
 this
-ëëJ N
+™™ 
+.
+™™ 
+Close
+™™ 
+(
+™™ 
 )
-ëëN O
+™™ 
 ;
-ëëO P!
-PlayerManagerClient
-íí '
-playerManager
-íí( 5
+™™ 
+}
+´´ 	
+private
+¨¨ 
+void
+¨¨ 
+
+ReportList
+¨¨ 
+(
+¨¨  
+object
+¨¨  &
+sender
+¨¨' -
+,
+¨¨- .
+RoutedEventArgs
+¨¨/ >
+routedEventArgs
+¨¨? N
+)
+¨¨N O
+{
+≠≠ 	
+
+ReportList
+ÆÆ 
+
+reportList
+ÆÆ !
 =
-íí6 7
+ÆÆ" #
 new
-íí8 ;!
-PlayerManagerClient
-íí< O
+ÆÆ$ '
+
+ReportList
+ÆÆ( 2
 (
-ííO P
-instanceContext
-ííP _
+ÆÆ2 3
 )
-íí_ `
+ÆÆ3 4
 ;
-íí` a
-bool
-ìì  
-isValidRepeatEmail
-ìì +
-=
-ìì, -
-false
-ìì. 3
-;
-ìì3 4
-if
-îî 
-(
-îî 
-isUpdateEmail
-îî %
-)
-îî% &
-{
-ïï 
-playerManager
-ññ %
+ÆÆ4 5
+
+reportList
+ØØ 
 .
-ññ% &&
-SearchRepeatEmailAccount
-ññ& >
+ØØ 
+NicknameReceived
+ØØ '
 (
-ññ> ?
-	emailEdit
-ññ? H
-,
-ññH I
-account
-ññI P
-.
-ññP Q
-	IdAccount
-ññQ Z
-)
-ññZ [
-;
-ññ[ \ 
-isValidRepeatEmail
-óó *
-=
-óó+ ,
-responseBoolean
-óó- <
-;
-óó< =
-}
-òò 
-bool
-ôô 
-updateEmail
-ôô $
-=
-ôô% &
-false
-ôô' ,
-;
-ôô, -
-if
-öö 
-(
-öö 
-isUpdateEmail
-öö $
-&&
-öö% '
-!
-öö( ) 
-isValidRepeatEmail
-öö) ;
-)
-öö; <
-{
-õõ 
-playerManager
-úú %
-.
-úú% &
-UpdateEmail
-úú& 1
-(
-úú1 2
-	emailEdit
-úú2 ;
-,
-úú; <
-account
-úú= D
-.
-úúD E
-	IdAccount
-úúE N
-)
-úúN O
-;
-úúO P
-updateEmail
-ùù #
-=
-ùù$ %
-responseBoolean
-ùù& 5
-;
-ùù5 6
-}
-ûû 
-bool
-üü 
-updatePlayer
-üü %
-=
-üü% &
-false
-üü& +
-;
-üü+ ,
-if
-†† 
-(
-†† 
-isUpdateData
-†† $
-)
-††$ %
-{
-°° 
-playerManager
-¢¢ %
-.
-¢¢% &
-UpdatePlayer
-¢¢& 2
-(
-¢¢2 3
+ØØ' (
 player
-¢¢3 9
+ØØ( .
 .
-¢¢9 :
+ØØ. /
 NickName
-¢¢: B
+ØØ/ 7
+)
+ØØ7 8
+;
+ØØ8 9
+
+reportList
+∞∞ 
+.
+∞∞ 
+EmailReceived
+∞∞ $
+(
+∞∞$ %
+account
+∞∞% ,
+.
+∞∞, -
+Email
+∞∞- 2
+)
+∞∞2 3
+;
+∞∞3 4
+
+reportList
+±± 
+.
+±± 
+ColocateReports
+±± &
+(
+±±& '
+)
+±±' (
+;
+±±( )
+
+reportList
+≤≤ 
+.
+≤≤ 
+Show
+≤≤ 
+(
+≤≤ 
+)
+≤≤ 
+;
+≤≤ 
+this
+≥≥ 
+.
+≥≥ 
+Close
+≥≥ 
+(
+≥≥ 
+)
+≥≥ 
+;
+≥≥ 
+}
+¥¥ 	
+private
+µµ 
+void
+µµ 
+ChangePassword
+µµ #
+(
+µµ# $
+object
+µµ$ *
+sender
+µµ+ 1
 ,
-¢¢B C
+µµ1 2
+RoutedEventArgs
+µµ3 B
+routedEventArgs
+µµC R
+)
+µµR S
+{
+∂∂ 	
+ChangePassword
+∑∑ 
+changePassword
+∑∑ )
+=
+∑∑* +
+new
+∑∑, /
+ChangePassword
+∑∑0 >
+(
+∑∑> ?
+)
+∑∑? @
+;
+∑∑@ A
+changePassword
+∏∏ 
+.
+∏∏ 
+AccountReceived
+∏∏ *
+(
+∏∏* +
+account
+∏∏+ 2
+)
+∏∏2 3
+;
+∏∏3 4
+changePassword
+ππ 
+.
+ππ 
+Show
+ππ 
+(
+ππ  
+)
+ππ  !
+;
+ππ! "
+this
+∫∫ 
+.
+∫∫ 
+Close
+∫∫ 
+(
+∫∫ 
+)
+∫∫ 
+;
+∫∫ 
+}
+ªª 	
+private
+ºº 
+void
+ºº 
+Delete
+ºº 
+(
+ºº 
+object
+ºº "
+sender
+ºº# )
+,
+ºº) *
+RoutedEventArgs
+ºº+ :
+routedEventArgs
+ºº; J
+)
+ººJ K
+{
+ΩΩ 	
+DeleteAccount
+ææ 
+deleteAccount
+ææ '
+=
+ææ( )
+new
+ææ* -
+DeleteAccount
+ææ. ;
+(
+ææ; <
+)
+ææ< =
+;
+ææ= >
+deleteAccount
+øø 
+.
+øø 
+AccountReceived
+øø )
+(
+øø) *
+account
+øø* 1
+)
+øø1 2
+;
+øø2 3
+deleteAccount
+¿¿ 
+.
+¿¿ 
+PlayerReceived
+¿¿ (
+(
+¿¿( )
+player
+¿¿) /
+)
+¿¿/ 0
+;
+¿¿0 1
+deleteAccount
+¡¡ 
+.
+¡¡ 
+Show
+¡¡ 
+(
+¡¡ 
+)
+¡¡  
+;
+¡¡  !
+this
+¬¬ 
+.
+¬¬ 
+Close
+¬¬ 
+(
+¬¬ 
+)
+¬¬ 
+;
+¬¬ 
+}
+√√ 	
+private
+ƒƒ 
+void
+ƒƒ 
+Modify
+ƒƒ 
+(
+ƒƒ 
+object
+ƒƒ "
+sender
+ƒƒ# )
+,
+ƒƒ) *
+RoutedEventArgs
+ƒƒ+ :
+routedEventArgs
+ƒƒ; J
+)
+ƒƒJ K
+{
+≈≈ 	
 
 playerEdit
-¢¢D N
-)
-¢¢N O
-;
-¢¢O P
-updatePlayer
-££ $
+∆∆ 
 =
-££% &
-responseBoolean
-££' 6
-;
-££6 7
-}
-§§ 
-if
-•• 
-(
-•• 
-updatePlayer
-•• $
-||
-••% '
-updateEmail
-••( 3
-)
-••3 4
-{
-¶¶ 
-OpenMessageBox
-ßß &
-(
-ßß& '
-
-Properties
-ßß' 1
-.
-ßß1 2
-	Resources
-ßß2 ;
-.
-ßß; <"
-ModifyAccountMessage
-ßß< P
-,
-ßßP Q
-
-Properties
-ßßR \
-.
-ßß\ ]
-	Resources
-ßß] f
-.
-ßßf g(
-ModifyAccountMessageTitleßßg Ä
-,ßßÄ Å
-(ßßÇ É
-MessageBoxImageßßÉ í
-)ßßí ì
-Systemßßì ô
-.ßßô ö
-Windowsßßö °
-.ßß° ¢
-Formsßß¢ ß
-.ßßß ®
-MessageBoxIconßß® ∂
-.ßß∂ ∑
-Informationßß∑ ¬
-)ßß¬ √
-;ßß√ ƒ
-}
-®® 
-else
-©© 
-{
-™™ 
-OpenMessageBox
-´´ &
-(
-´´& '
-
-Properties
-´´' 1
-.
-´´1 2
-	Resources
-´´2 ;
-.
-´´; <$
-NoModifyAccountMessage
-´´< R
-,
-´´R S
-
-Properties
-´´T ^
-.
-´´^ _
-	Resources
-´´_ h
-.
-´´h i(
-ModifyAccountMessageTitle´´i Ç
-,´´Ç É
-(´´Ñ Ö
-MessageBoxImage´´Ö î
-)´´î ï
-System´´ï õ
-.´´õ ú
-Windows´´ú £
-.´´£ §
-Forms´´§ ©
-.´´© ™
-MessageBoxIcon´´™ ∏
-.´´∏ π
-Error´´π æ
-)´´æ ø
-;´´ø ¿
-}
-¨¨ 
-Lobby
-≠≠ 
-lobby
-≠≠ 
-=
-≠≠  !
+∆∆ 
 new
-≠≠" %
-Lobby
-≠≠& +
+∆∆ 
+ServicePlayer
+∆∆ *
 (
-≠≠+ ,
+∆∆* +
 )
-≠≠, -
+∆∆+ ,
 ;
-≠≠- .
-if
-ÆÆ 
-(
-ÆÆ 
-isUpdateEmail
-ÆÆ %
-)
-ÆÆ% &
-{
-ØØ 
-lobby
-∞∞ 
-.
-∞∞ 
-EmailReceived
-∞∞ +
-(
-∞∞+ ,
+∆∆, -
 	emailEdit
-∞∞, 5
-)
-∞∞5 6
-;
-∞∞6 7
-}
-±± 
-lobby
-≤≤ 
-.
-≤≤  
-ColocateBestScores
-≤≤ ,
-(
-≤≤, -
-)
-≤≤- .
-;
-≤≤. /
-lobby
-≥≥ 
-.
-≥≥ )
-ColocatePersonalInformation
-≥≥ 5
-(
-≥≥5 6
-)
-≥≥6 7
-;
-≥≥7 8
-lobby
-¥¥ 
-.
-¥¥ 
-Show
-¥¥ 
-(
-¥¥ 
-)
-¥¥  
-;
-¥¥  !
-this
-µµ 
-.
-µµ 
-Close
-µµ 
-(
-µµ 
-)
-µµ  
-;
-µµ  !
-}
-∂∂ 
-else
-∑∑ 
-{
-∏∏ 
-OpenMessageBox
-ππ "
-(
-ππ" #
-
-Properties
-ππ# -
-.
-ππ- .
-	Resources
-ππ. 7
-.
-ππ7 8"
-IncorrectDataMessage
-ππ8 L
-,
-ππL M
-
-Properties
-ππN X
-.
-ππX Y
-	Resources
-ππY b
-.
-ππb c'
-IncorrectCodeMessageTitle
-ππc |
-,
-ππ| }
-(
-ππ~ 
-MessageBoxImageππ é
-)ππé è
-Systemππè ï
-.ππï ñ
-Windowsππñ ù
-.ππù û
-Formsππû £
-.ππ£ §
-MessageBoxIconππ§ ≤
-.ππ≤ ≥
-Warningππ≥ ∫
-)ππ∫ ª
-;ππª º
-isUpdateData
-∫∫  
+«« 
 =
-∫∫! "
-false
-∫∫# (
+«« 
+account
+«« 
+.
+««  
+Email
+««  %
 ;
-∫∫( )
-}
-ªª 
-}
-ºº 
-else
-ΩΩ 
-{
-ææ 
-OpenMessageBox
-øø 
+««% &!
+ValidateDataAccount
+»» 
 (
-øø 
-
-Properties
-øø )
-.
-øø) *
-	Resources
-øø* 3
-.
-øø3 4$
-ModifyLeastDataMessage
-øø4 J
-,
-øøJ K
-
-Properties
-øøL V
-.
-øøV W
-	Resources
-øøW `
-.
-øø` a(
-ModifyLeastDataMessageTile
-øøa {
-,
-øø{ |
-(
-øø} ~
-MessageBoxImageøø~ ç
-)øøç é
-Systemøøé î
-.øøî ï
-Windowsøøï ú
-.øøú ù
-Formsøøù ¢
-.øø¢ £
-MessageBoxIconøø£ ±
-.øø± ≤
-Warningøø≤ π
-)øøπ ∫
-;øø∫ ª
-}
-¿¿ 
-}
-¡¡ 	
-private
-¬¬ 
-void
-¬¬ 
-OpenMessageBox
-¬¬ #
-(
-¬¬# $
-string
-¬¬$ *
-textMessage
-¬¬+ 6
-,
-¬¬6 7
-string
-¬¬8 >
-titleMessage
-¬¬? K
-,
-¬¬K L
-MessageBoxImage
-¬¬M \
-messageBoxImage
-¬¬] l
+»»  
 )
-¬¬l m
+»»  !
+;
+»»! "
+if
+…… 
+(
+…… 
+isUpdateData
+…… 
+||
+…… 
+!
+……  
+	emailEdit
+……  )
+.
+……) *
+Equals
+……* 0
+(
+……0 1
+emailAccount
+……1 =
+)
+……= >
+)
+……> ?
 {
-√√ 	
+   
+if
+ÀÀ 
+(
+ÀÀ 
+isValidData
+ÀÀ 
+)
+ÀÀ  
+{
+ÃÃ 
+InstanceContext
+ÕÕ #
+instanceContext
+ÕÕ$ 3
+=
+ÕÕ4 5
+new
+ÕÕ6 9
+InstanceContext
+ÕÕ: I
+(
+ÕÕI J
+this
+ÕÕJ N
+)
+ÕÕN O
+;
+ÕÕO P!
+PlayerManagerClient
+ŒŒ '
+playerManager
+ŒŒ( 5
+=
+ŒŒ6 7
+new
+ŒŒ8 ;!
+PlayerManagerClient
+ŒŒ< O
+(
+ŒŒO P
+instanceContext
+ŒŒP _
+)
+ŒŒ_ `
+;
+ŒŒ` a
+bool
+œœ  
+isValidRepeatEmail
+œœ +
+=
+œœ, -
+false
+œœ. 3
+;
+œœ3 4
+if
+–– 
+(
+–– 
+isUpdateEmail
+–– %
+)
+––% &
+{
+—— 
+playerManager
+““ %
+.
+““% &&
+SearchRepeatEmailAccount
+““& >
+(
+““> ?
+	emailEdit
+““? H
+,
+““H I
+account
+““I P
+.
+““P Q
+	IdAccount
+““Q Z
+)
+““Z [
+;
+““[ \ 
+isValidRepeatEmail
+”” *
+=
+””+ ,
+responseBoolean
+””- <
+;
+””< =
+}
+‘‘ 
+bool
+’’ 
+updateEmail
+’’ $
+=
+’’% &
+false
+’’' ,
+;
+’’, -
+if
+÷÷ 
+(
+÷÷ 
+isUpdateEmail
+÷÷ $
+&&
+÷÷% '
+!
+÷÷( ) 
+isValidRepeatEmail
+÷÷) ;
+)
+÷÷; <
+{
+◊◊ 
+playerManager
+ÿÿ %
+.
+ÿÿ% &
+UpdateEmail
+ÿÿ& 1
+(
+ÿÿ1 2
+	emailEdit
+ÿÿ2 ;
+,
+ÿÿ; <
+account
+ÿÿ= D
+.
+ÿÿD E
+	IdAccount
+ÿÿE N
+)
+ÿÿN O
+;
+ÿÿO P
+updateEmail
+ŸŸ #
+=
+ŸŸ$ %
+responseBoolean
+ŸŸ& 5
+;
+ŸŸ5 6
+}
+⁄⁄ 
+bool
+€€ 
+updatePlayer
+€€ %
+=
+€€% &
+false
+€€& +
+;
+€€+ ,
+if
+‹‹ 
+(
+‹‹ 
+isUpdateData
+‹‹ $
+)
+‹‹$ %
+{
+›› 
+playerManager
+ﬁﬁ %
+.
+ﬁﬁ% &
+UpdatePlayer
+ﬁﬁ& 2
+(
+ﬁﬁ2 3
+player
+ﬁﬁ3 9
+.
+ﬁﬁ9 :
+NickName
+ﬁﬁ: B
+,
+ﬁﬁB C
+
+playerEdit
+ﬁﬁD N
+)
+ﬁﬁN O
+;
+ﬁﬁO P
+updatePlayer
+ﬂﬂ $
+=
+ﬂﬂ% &
+responseBoolean
+ﬂﬂ' 6
+;
+ﬂﬂ6 7
+}
+‡‡ 
+if
+·· 
+(
+·· 
+updatePlayer
+·· $
+||
+··% '
+updateEmail
+··( 3
+)
+··3 4
+{
+‚‚ 
+OpenMessageBox
+„„ &
+(
+„„& '
+
+Properties
+„„' 1
+.
+„„1 2
+	Resources
+„„2 ;
+.
+„„; <"
+ModifyAccountMessage
+„„< P
+,
+„„P Q
+
+Properties
+„„R \
+.
+„„\ ]
+	Resources
+„„] f
+.
+„„f g(
+ModifyAccountMessageTitle„„g Ä
+,„„Ä Å
+(„„Ç É
+MessageBoxImage„„É í
+)„„í ì
+System„„ì ô
+.„„ô ö
+Windows„„ö °
+.„„° ¢
+Forms„„¢ ß
+.„„ß ®
+MessageBoxIcon„„® ∂
+.„„∂ ∑
+Information„„∑ ¬
+)„„¬ √
+;„„√ ƒ
+}
+‰‰ 
+else
+ÂÂ 
+{
+ÊÊ 
+OpenMessageBox
+ÁÁ &
+(
+ÁÁ& '
+
+Properties
+ÁÁ' 1
+.
+ÁÁ1 2
+	Resources
+ÁÁ2 ;
+.
+ÁÁ; <$
+NoModifyAccountMessage
+ÁÁ< R
+,
+ÁÁR S
+
+Properties
+ÁÁT ^
+.
+ÁÁ^ _
+	Resources
+ÁÁ_ h
+.
+ÁÁh i(
+ModifyAccountMessageTitleÁÁi Ç
+,ÁÁÇ É
+(ÁÁÑ Ö
+MessageBoxImageÁÁÖ î
+)ÁÁî ï
+SystemÁÁï õ
+.ÁÁõ ú
+WindowsÁÁú £
+.ÁÁ£ §
+FormsÁÁ§ ©
+.ÁÁ© ™
+MessageBoxIconÁÁ™ ∏
+.ÁÁ∏ π
+ErrorÁÁπ æ
+)ÁÁæ ø
+;ÁÁø ¿
+}
+ËË 
+Lobby
+ÈÈ 
+lobby
+ÈÈ 
+=
+ÈÈ  !
+new
+ÈÈ" %
+Lobby
+ÈÈ& +
+(
+ÈÈ+ ,
+)
+ÈÈ, -
+;
+ÈÈ- .
+if
+ÍÍ 
+(
+ÍÍ 
+isUpdateEmail
+ÍÍ %
+)
+ÍÍ% &
+{
+ÎÎ 
+lobby
+ÏÏ 
+.
+ÏÏ 
+EmailReceived
+ÏÏ +
+(
+ÏÏ+ ,
+	emailEdit
+ÏÏ, 5
+)
+ÏÏ5 6
+;
+ÏÏ6 7
+}
+ÌÌ 
+lobby
+ÓÓ 
+.
+ÓÓ  
+ColocateBestScores
+ÓÓ ,
+(
+ÓÓ, -
+)
+ÓÓ- .
+;
+ÓÓ. /
+lobby
+ÔÔ 
+.
+ÔÔ )
+ColocatePersonalInformation
+ÔÔ 5
+(
+ÔÔ5 6
+)
+ÔÔ6 7
+;
+ÔÔ7 8
+lobby
+ 
+.
+ 
+Show
+ 
+(
+ 
+)
+  
+;
+  !
+this
+ÒÒ 
+.
+ÒÒ 
+Close
+ÒÒ 
+(
+ÒÒ 
+)
+ÒÒ  
+;
+ÒÒ  !
+}
+ÚÚ 
+else
+ÛÛ 
+{
+ÙÙ 
+OpenMessageBox
+ıı "
+(
+ıı" #
+
+Properties
+ıı# -
+.
+ıı- .
+	Resources
+ıı. 7
+.
+ıı7 8"
+IncorrectDataMessage
+ıı8 L
+,
+ııL M
+
+Properties
+ııN X
+.
+ııX Y
+	Resources
+ııY b
+.
+ııb c'
+IncorrectCodeMessageTitle
+ııc |
+,
+ıı| }
+(
+ıı~ 
+MessageBoxImageıı é
+)ııé è
+Systemııè ï
+.ııï ñ
+Windowsııñ ù
+.ııù û
+Formsııû £
+.ıı£ §
+MessageBoxIconıı§ ≤
+.ıı≤ ≥
+Warningıı≥ ∫
+)ıı∫ ª
+;ııª º
+isUpdateData
+ˆˆ  
+=
+ˆˆ! "
+false
+ˆˆ# (
+;
+ˆˆ( )
+}
+˜˜ 
+}
+¯¯ 
+else
+˘˘ 
+{
+˙˙ 
+OpenMessageBox
+˚˚ 
+(
+˚˚ 
+
+Properties
+˚˚ )
+.
+˚˚) *
+	Resources
+˚˚* 3
+.
+˚˚3 4$
+ModifyLeastDataMessage
+˚˚4 J
+,
+˚˚J K
+
+Properties
+˚˚L V
+.
+˚˚V W
+	Resources
+˚˚W `
+.
+˚˚` a(
+ModifyLeastDataMessageTile
+˚˚a {
+,
+˚˚{ |
+(
+˚˚} ~
+MessageBoxImage˚˚~ ç
+)˚˚ç é
+System˚˚é î
+.˚˚î ï
+Windows˚˚ï ú
+.˚˚ú ù
+Forms˚˚ù ¢
+.˚˚¢ £
+MessageBoxIcon˚˚£ ±
+.˚˚± ≤
+Warning˚˚≤ π
+)˚˚π ∫
+;˚˚∫ ª
+}
+¸¸ 
+}
+˝˝ 	
+private
+˛˛ 
+void
+˛˛ 
+OpenMessageBox
+˛˛ #
+(
+˛˛# $
+string
+˛˛$ *
+textMessage
+˛˛+ 6
+,
+˛˛6 7
+string
+˛˛8 >
+titleMessage
+˛˛? K
+,
+˛˛K L
+MessageBoxImage
+˛˛M \
+messageBoxImage
+˛˛] l
+)
+˛˛l m
+{
+ˇˇ 	
 
 MessageBox
-ƒƒ 
+ÄÄ 
 .
-ƒƒ 
+ÄÄ 
 Show
-ƒƒ 
+ÄÄ 
 (
-ƒƒ 
+ÄÄ 
 textMessage
-ƒƒ '
+ÄÄ '
 ,
-ƒƒ' (
+ÄÄ' (
 titleMessage
-ƒƒ) 5
+ÄÄ) 5
 ,
-ƒƒ5 6
+ÄÄ5 6
 (
-ƒƒ7 8
+ÄÄ7 8
 MessageBoxButton
-ƒƒ8 H
+ÄÄ8 H
 )
-ƒƒH I
+ÄÄH I
 System
-ƒƒI O
+ÄÄI O
 .
-ƒƒO P
+ÄÄO P
 Windows
-ƒƒP W
+ÄÄP W
 .
-ƒƒW X
+ÄÄW X
 Forms
-ƒƒX ]
+ÄÄX ]
 .
-ƒƒ] ^
+ÄÄ] ^
 MessageBoxButtons
-ƒƒ^ o
+ÄÄ^ o
 .
-ƒƒo p
+ÄÄo p
 OK
-ƒƒp r
+ÄÄp r
 ,
-ƒƒr s
-messageBoxImageƒƒt É
-)ƒƒÉ Ñ
-;ƒƒÑ Ö
+ÄÄr s
+messageBoxImageÄÄt É
+)ÄÄÉ Ñ
+;ÄÄÑ Ö
 }
-≈≈ 	
+ÅÅ 	
 private
-∆∆ 
+ÇÇ 
 void
-∆∆ !
+ÇÇ !
 ValidateDataAccount
-∆∆ (
+ÇÇ (
 (
-∆∆( )
+ÇÇ( )
 )
-∆∆) *
+ÇÇ) *
 {
-«« 	
+ÉÉ 	
 isValidData
-»» 
+ÑÑ 
 =
-»» 
+ÑÑ 
 true
-»» 
+ÑÑ 
 ;
-»» 
+ÑÑ 
 isUpdateData
-…… 
+ÖÖ 
 =
-…… 
+ÖÖ 
 false
-……  
+ÖÖ  
 ;
-……  !
+ÖÖ  !
 isUpdateEmail
-   
+ÜÜ 
 =
-   
+ÜÜ 
 false
-   !
+ÜÜ !
 ;
-  ! "
-if
-ÀÀ 
-(
-ÀÀ 
-tbName
-ÀÀ 
-.
-ÀÀ 
-Text
-ÀÀ 
-!=
-ÀÀ 
-player
-ÀÀ %
-.
-ÀÀ% &
-
-NamePlayer
-ÀÀ& 0
-)
-ÀÀ0 1
-{
-ÃÃ 
+ÜÜ! "
 imgErrorName
-ÕÕ 
+áá 
 .
-ÕÕ 
+áá 
 
 Visibility
-ÕÕ '
+áá #
 =
-ÕÕ( )
+áá$ %
 
 Visibility
-ÕÕ* 4
+áá& 0
 .
-ÕÕ4 5
+áá0 1
 Hidden
-ÕÕ5 ;
+áá1 7
 ;
-ÕÕ; <
-ValidateName
-ŒŒ 
-(
-ŒŒ 
-)
-ŒŒ 
+áá7 8
+imgErrorLastName
+àà 
+.
+àà 
+
+Visibility
+àà '
+=
+àà( )
+
+Visibility
+àà* 4
+.
+àà4 5
+Hidden
+àà5 ;
 ;
-ŒŒ 
-}
-œœ 
-if
-–– 
-(
-–– 
+àà; <
+imgErrorEmail
+ââ 
+.
+ââ 
+
+Visibility
+ââ $
+=
+ââ% &
+
+Visibility
+ââ' 1
+.
+ââ1 2
+Hidden
+ââ2 8
+;
+ââ8 9
+tbEmail
+ää 
+.
+ää 
+BorderBrush
+ää 
+=
+ää  !
+Brushes
+ää" )
+.
+ää) *
+Transparent
+ää* 5
+;
+ää5 6
 
 tbLastName
-–– 
+ãã 
 .
-–– 
-Text
-–– 
-!=
-––  "
-player
-––# )
-.
-––) *
-LastName
-––* 2
-)
-––2 3
-{
-—— 
-imgErrorLastName
-““  
-.
-““  !
-
-Visibility
-““! +
+ãã 
+BorderBrush
+ãã "
 =
-““, -
-
-Visibility
-““. 8
+ãã# $
+Brushes
+ãã% ,
 .
-““8 9
-Hidden
-““9 ?
+ãã, -
+Transparent
+ãã- 8
 ;
-““? @
-ValidateLastName
-””  
-(
-””  !
-)
-””! "
+ãã8 9
+tbName
+åå 
+.
+åå 
+BorderBrush
+åå 
+=
+åå  
+Brushes
+åå! (
+.
+åå( )
+Transparent
+åå) 4
 ;
-””" #
-}
-‘‘ 
+åå4 5
 if
-’’ 
+çç 
 (
-’’ 
-tbEmail
-’’ 
+çç 
+tbName
+çç 
 .
-’’ 
+çç 
 Text
-’’ 
+çç 
 !=
-’’ 
+çç 
+player
+çç %
+.
+çç% &
+
+NamePlayer
+çç& 0
+)
+çç0 1
+{
+éé 
+ValidateName
+èè 
+(
+èè 
+)
+èè 
+;
+èè 
+}
+êê 
+if
+ëë 
+(
+ëë 
+
+tbLastName
+ëë 
+.
+ëë 
+Text
+ëë 
+!=
+ëë  "
+player
+ëë# )
+.
+ëë) *
+LastName
+ëë* 2
+)
+ëë2 3
+{
+íí 
+ValidateLastName
+ìì  
+(
+ìì  !
+)
+ìì! "
+;
+ìì" #
+}
+îî 
+if
+ïï 
+(
+ïï 
+tbEmail
+ïï 
+.
+ïï 
+Text
+ïï 
+!=
+ïï 
 account
-’’  '
+ïï  '
 .
-’’' (
+ïï' (
 Email
-’’( -
+ïï( -
 )
-’’- .
+ïï- .
 {
-÷÷ 
-imgErrorEmail
-◊◊ 
-.
-◊◊ 
-
-Visibility
-◊◊ (
-=
-◊◊) *
-
-Visibility
-◊◊+ 5
-.
-◊◊5 6
-Hidden
-◊◊6 <
-;
-◊◊< =
+ññ 
 ValidateEmail
-ÿÿ 
+óó 
 (
-ÿÿ 
+óó 
 )
-ÿÿ 
+óó 
 ;
-ÿÿ  
+óó  
 }
-ŸŸ 
+òò 
 }
-⁄⁄ 	
+ôô 	
 private
-€€ 
+öö 
 void
-€€ 
+öö 
 ValidateName
-€€ !
+öö !
 (
-€€! "
+öö! "
 )
-€€" #
+öö" #
 {
-‹‹ 	
+õõ 	
 bool
-›› 
+úú 
 isValidName
-›› 
+úú 
 ;
-›› 
+úú 
 tbName
-ﬁﬁ 
+ùù 
 .
-ﬁﬁ 
+ùù 
 BorderBrush
-ﬁﬁ 
+ùù 
 =
-ﬁﬁ  
+ùù  
 Brushes
-ﬁﬁ! (
+ùù! (
 .
-ﬁﬁ( )
+ùù( )
 Transparent
-ﬁﬁ) 4
+ùù) 4
 ;
-ﬁﬁ4 5
+ùù4 5
 isValidName
-ﬂﬂ 
+ûû 
 =
-ﬂﬂ 
+ûû 
 ValidationData
-ﬂﬂ (
+ûû (
 .
-ﬂﬂ( )"
+ûû( )"
 ValidateNameComplete
-ﬂﬂ) =
+ûû) =
 (
-ﬂﬂ= >
+ûû= >
 tbName
-ﬂﬂ> D
+ûû> D
 .
-ﬂﬂD E
+ûûD E
 Text
-ﬂﬂE I
+ûûE I
 )
-ﬂﬂI J
+ûûI J
 ;
-ﬂﬂJ K
+ûûJ K
 if
-‡‡ 
+üü 
 (
-‡‡ 
+üü 
 isValidName
-‡‡ 
+üü 
 )
-‡‡ 
+üü 
 {
-·· 
+†† 
 tbName
-‚‚ 
+°° 
 .
-‚‚ 
+°° 
 BorderBrush
-‚‚ "
+°° "
 =
-‚‚# $
+°°# $
 Brushes
-‚‚% ,
+°°% ,
 .
-‚‚, -
+°°, -
 Green
-‚‚- 2
+°°- 2
 ;
-‚‚2 3
+°°2 3
 
 playerEdit
-„„ 
+¢¢ 
 .
-„„ 
+¢¢ 
 
 NamePlayer
-„„ %
+¢¢ %
 =
-„„& '
+¢¢& '
 ValidationData
-„„( 6
+¢¢( 6
 .
-„„6 7
+¢¢6 7
 DeleteSpaceWord
-„„7 F
+¢¢7 F
 (
-„„F G
+¢¢F G
 tbName
-„„G M
+¢¢G M
 .
-„„M N
+¢¢M N
 Text
-„„N R
+¢¢N R
 )
-„„R S
+¢¢R S
 ;
-„„S T
+¢¢S T
 }
-‰‰ 
+££ 
 else
-ÂÂ 
+§§ 
 {
-ÊÊ 
+•• 
 tbName
-ÁÁ 
+¶¶ 
 .
-ÁÁ 
+¶¶ 
 BorderBrush
-ÁÁ "
+¶¶ "
 =
-ÁÁ# $
+¶¶# $
 Brushes
-ÁÁ% ,
+¶¶% ,
 .
-ÁÁ, -
+¶¶, -
 Red
-ÁÁ- 0
+¶¶- 0
 ;
-ÁÁ0 1
+¶¶0 1
 isValidData
-ËË 
+ßß 
 =
-ËË 
+ßß 
 false
-ËË #
+ßß #
 ;
-ËË# $
+ßß# $
 imgErrorName
-ÈÈ 
+®® 
 .
-ÈÈ 
+®® 
 
 Visibility
-ÈÈ '
+®® '
 =
-ÈÈ( )
+®®( )
 
 Visibility
-ÈÈ* 4
+®®* 4
 .
-ÈÈ4 5
+®®4 5
 Visible
-ÈÈ5 <
+®®5 <
 ;
-ÈÈ< =
+®®< =
 }
-ÍÍ 
+©© 
 isUpdateData
-ÎÎ 
+™™ 
 =
-ÎÎ 
+™™ 
 true
-ÎÎ 
+™™ 
 ;
-ÎÎ  
+™™  
 }
-ÏÏ 	
+´´ 	
 private
-ÌÌ 
+¨¨ 
 void
-ÌÌ 
+¨¨ 
 ValidateLastName
-ÌÌ %
+¨¨ %
 (
-ÌÌ% &
+¨¨% &
 )
-ÌÌ& '
+¨¨& '
 {
-ÓÓ 	
+≠≠ 	
 bool
-ÔÔ 
+ÆÆ 
 isValidLastName
-ÔÔ  
+ÆÆ  
 ;
-ÔÔ  !
+ÆÆ  !
 
 tbLastName
- 
+ØØ 
 .
- 
+ØØ 
 BorderBrush
- "
+ØØ "
 =
-# $
+ØØ# $
 Brushes
-% ,
+ØØ% ,
 .
-, -
+ØØ, -
 Transparent
-- 8
+ØØ- 8
 ;
-8 9
+ØØ8 9
 isValidLastName
-ÒÒ 
+∞∞ 
 =
-ÒÒ 
+∞∞ 
 ValidationData
-ÒÒ ,
+∞∞ ,
 .
-ÒÒ, -"
+∞∞, -"
 ValidateNameComplete
-ÒÒ- A
+∞∞- A
 (
-ÒÒA B
+∞∞A B
 
 tbLastName
-ÒÒB L
+∞∞B L
 .
-ÒÒL M
+∞∞L M
 Text
-ÒÒM Q
+∞∞M Q
 )
-ÒÒQ R
+∞∞Q R
 ;
-ÒÒR S
+∞∞R S
 if
-ÚÚ 
+±± 
 (
-ÚÚ 
+±± 
 isValidLastName
-ÚÚ 
+±± 
 )
-ÚÚ  
+±±  
 {
-ÛÛ 
+≤≤ 
 
 tbLastName
-ÙÙ 
+≥≥ 
 .
-ÙÙ 
+≥≥ 
 BorderBrush
-ÙÙ &
+≥≥ &
 =
-ÙÙ' (
+≥≥' (
 Brushes
-ÙÙ) 0
+≥≥) 0
 .
-ÙÙ0 1
+≥≥0 1
 Green
-ÙÙ1 6
+≥≥1 6
 ;
-ÙÙ6 7
+≥≥6 7
 
 playerEdit
-ıı 
+¥¥ 
 .
-ıı 
+¥¥ 
 LastName
-ıı #
+¥¥ #
 =
-ıı$ %
+¥¥$ %
 ValidationData
-ıı& 4
+¥¥& 4
 .
-ıı4 5
+¥¥4 5
 DeleteSpaceWord
-ıı5 D
+¥¥5 D
 (
-ııD E
+¥¥D E
 
 tbLastName
-ııE O
+¥¥E O
 .
-ııO P
+¥¥O P
 Text
-ııP T
+¥¥P T
 )
-ııT U
+¥¥T U
 ;
-ııU V
+¥¥U V
 }
-ˆˆ 
+µµ 
 else
-˜˜ 
+∂∂ 
 {
-¯¯ 
+∑∑ 
 
 tbLastName
-˘˘ 
+∏∏ 
 .
-˘˘ 
+∏∏ 
 BorderBrush
-˘˘ &
+∏∏ &
 =
-˘˘' (
+∏∏' (
 Brushes
-˘˘) 0
+∏∏) 0
 .
-˘˘0 1
+∏∏0 1
 Red
-˘˘1 4
+∏∏1 4
 ;
-˘˘4 5
+∏∏4 5
 isValidData
-˙˙ 
+ππ 
 =
-˙˙ 
+ππ 
 false
-˙˙ #
+ππ #
 ;
-˙˙# $
+ππ# $
 imgErrorLastName
-˚˚  
+∫∫  
 .
-˚˚  !
+∫∫  !
 
 Visibility
-˚˚! +
+∫∫! +
 =
-˚˚, -
+∫∫, -
 
 Visibility
-˚˚. 8
+∫∫. 8
 .
-˚˚8 9
+∫∫8 9
 Visible
-˚˚9 @
+∫∫9 @
 ;
-˚˚@ A
+∫∫@ A
 }
-¸¸ 
+ªª 
 isUpdateData
-˝˝ 
+ºº 
 =
-˝˝ 
+ºº 
 true
-˝˝ 
+ºº 
 ;
-˝˝  
+ºº  
 }
-˛˛ 	
+ΩΩ 	
 private
-ˇˇ 
+ææ 
 void
-ˇˇ 
+ææ 
 ValidateEmail
-ˇˇ "
+ææ "
 (
-ˇˇ" #
+ææ" #
 )
-ˇˇ# $
+ææ# $
 {
-ÄÄ 	
+øø 	
 bool
-ÅÅ 
+¿¿ 
 isValidEmail
-ÅÅ 
+¿¿ 
 ;
-ÅÅ 
+¿¿ 
 tbEmail
-ÇÇ 
+¡¡ 
 .
-ÇÇ 
+¡¡ 
 BorderBrush
-ÇÇ 
+¡¡ 
 =
-ÇÇ  !
+¡¡  !
 Brushes
-ÇÇ" )
+¡¡" )
 .
-ÇÇ) *
+¡¡) *
 Transparent
-ÇÇ* 5
+¡¡* 5
 ;
-ÇÇ5 6
+¡¡5 6
 isValidEmail
-ÉÉ 
+¬¬ 
 =
-ÉÉ 
+¬¬ 
 ValidationData
-ÉÉ )
+¬¬ )
 .
-ÉÉ) *
+¬¬) *
 ValidateEmail
-ÉÉ* 7
+¬¬* 7
 (
-ÉÉ7 8
+¬¬7 8
 tbEmail
-ÉÉ8 ?
+¬¬8 ?
 .
-ÉÉ? @
+¬¬? @
 Text
-ÉÉ@ D
+¬¬@ D
 )
-ÉÉD E
+¬¬D E
 ;
-ÉÉE F
+¬¬E F
 if
-ÑÑ 
+√√ 
 (
-ÑÑ 
+√√ 
 isValidEmail
-ÑÑ 
+√√ 
 )
-ÑÑ 
+√√ 
 {
-ÖÖ 
+ƒƒ 
 tbEmail
-ÜÜ 
+≈≈ 
 .
-ÜÜ 
+≈≈ 
 BorderBrush
-ÜÜ #
+≈≈ #
 =
-ÜÜ$ %
+≈≈$ %
 Brushes
-ÜÜ& -
+≈≈& -
 .
-ÜÜ- .
+≈≈- .
 Green
-ÜÜ. 3
+≈≈. 3
 ;
-ÜÜ3 4
+≈≈3 4
 isUpdateEmail
-áá 
+∆∆ 
 =
-áá 
+∆∆ 
 true
-áá  $
+∆∆  $
 ;
-áá$ %
+∆∆$ %
 }
-àà 
+«« 
 else
-ââ 
+»» 
 {
-ää 
+…… 
 tbEmail
-ãã 
+   
 .
-ãã 
+   
 BorderBrush
-ãã #
+   #
 =
-ãã$ %
+  $ %
 Brushes
-ãã& -
+  & -
 .
-ãã- .
+  - .
 Red
-ãã. 1
+  . 1
 ;
-ãã1 2
+  1 2
 isValidData
-åå 
+ÀÀ 
 =
-åå 
+ÀÀ 
 false
-åå #
+ÀÀ #
 ;
-åå# $
+ÀÀ# $
 imgErrorEmail
-çç 
+ÃÃ 
 .
-çç 
+ÃÃ 
 
 Visibility
-çç (
+ÃÃ (
 =
-çç) *
+ÃÃ) *
 
 Visibility
-çç+ 5
+ÃÃ+ 5
 .
-çç5 6
+ÃÃ5 6
 Visible
-çç6 =
+ÃÃ6 =
 ;
-çç= >
+ÃÃ= >
 }
-éé 
+ÕÕ 
 	emailEdit
-èè 
+ŒŒ 
 =
-èè 
+ŒŒ 
 tbEmail
-èè 
+ŒŒ 
 .
-èè  
+ŒŒ  
 Text
-èè  $
+ŒŒ  $
 ;
-èè$ %
+ŒŒ$ %
 }
-êê 	
+œœ 	
 private
-ëë 
+–– 
 void
-ëë 
-prohibitSpace
-ëë "
+–– 
+ProhibitSpace
+–– "
 (
-ëë" #
+––" #
 object
-ëë# )
+––# )
 sender
-ëë* 0
+––* 0
 ,
-ëë0 1
+––0 1
 KeyEventArgs
-ëë2 >
+––2 >
 keyEvent
-ëë? G
+––? G
 )
-ëëG H
+––G H
 {
-íí 	
+—— 	
 if
-ìì 
+““ 
 (
-ìì 
+““ 
 keyEvent
-ìì 
+““ 
 .
-ìì 
+““ 
 Key
-ìì 
+““ 
 ==
-ìì 
+““ 
 Key
-ìì  #
+““  #
 .
-ìì# $
+““# $
 Space
-ìì$ )
+““$ )
 )
-ìì) *
+““) *
 keyEvent
-îî 
+”” 
 .
-îî 
+”” 
 Handled
-îî  
+””  
 =
-îî! "
+””! "
 true
-îî# '
+””# '
 ;
-îî' (
+””' (
 }
-ïï 	
+‘‘ 	
 private
-ññ 
+’’ 
 void
-ññ ,
-prohibitNumberAllowSpecialChar
-ññ 3
+’’ ,
+ProhibitNumberAllowSpecialChar
+’’ 3
 (
-ññ3 4
+’’3 4
 object
-ññ4 :
+’’4 :
 sender
-ññ; A
+’’; A
 ,
-ññA B&
+’’A B&
 TextCompositionEventArgs
-ññC ["
+’’C ["
 textCompositionEvent
-ññ\ p
+’’\ p
 )
-ññp q
+’’p q
 {
-óó 	
+÷÷ 	
 bool
-òò 
+◊◊ 
 	resultado
-òò 
+◊◊ 
 =
-òò 
+◊◊ 
 Regex
-òò "
+◊◊ "
 .
-òò" #
+◊◊" #
 IsMatch
-òò# *
+◊◊# *
 (
-òò* +"
+◊◊* +"
 textCompositionEvent
-òò+ ?
+◊◊+ ?
 .
-òò? @
+◊◊? @
 Text
-òò@ D
+◊◊@ D
 ,
-òòD E
+◊◊D E
 $str
-òòF Z
+◊◊F Z
 )
-òòZ [
+◊◊Z [
 ;
-òò[ \
+◊◊[ \
 if
-ôô 
+ÿÿ 
 (
-ôô 
+ÿÿ 
 !
-ôô 
+ÿÿ 
 	resultado
-ôô 
+ÿÿ 
 )
-ôô 
+ÿÿ 
 {
-öö "
+ŸŸ "
 textCompositionEvent
-õõ $
+⁄⁄ $
 .
-õõ$ %
+⁄⁄$ %
 Handled
-õõ% ,
+⁄⁄% ,
 =
-õõ- .
+⁄⁄- .
 true
-õõ/ 3
+⁄⁄/ 3
 ;
-õõ3 4
+⁄⁄3 4
 }
-úú 
+€€ 
 else
-ùù 
+‹‹ 
 {
-ûû "
+›› "
 textCompositionEvent
-üü $
+ﬁﬁ $
 .
-üü$ %
+ﬁﬁ$ %
 Handled
-üü% ,
+ﬁﬁ% ,
 =
-üü- .
+ﬁﬁ- .
 false
-üü/ 4
+ﬁﬁ/ 4
 ;
-üü4 5
+ﬁﬁ4 5
 }
-†† 
+ﬂﬂ 
 }
-°° 	
+‡‡ 	
 }
-¢¢ 
-}££ Îƒ
+·· 
+}‚‚ ïƒ
 4C:\Users\Ale_2\source\repos\hangmanGame\Play.xaml.cs
 	namespace 	
 hangmanGame
@@ -6013,17 +7304,15 @@ Visibility
 IChatManagerCallback; O
 { 
 private 	
-static
- 
-string 
-emailAccount $
-;$ %
+string
+ 
+emailAccount 
+; 
 private 	
-static
- 
-string 
-nickname  
-;  !
+string
+ 
+nickname 
+; 
 private 	
 ServiceSentence
  
@@ -6188,7 +7477,7 @@ dispatcher   $
 }88 
 public>> 
 void>>	 
-NickNameReceived>> 
+NicknameReceived>> 
 (>> 
 string>> %
 nicknamePlayer>>& 4
@@ -6571,23 +7860,21 @@ IsStarGame
 (
 ££ 
 bool
-££ 
-
-isStarGame
-££ (
+££ 
+isStarGameRun
+££ +
 )
-££( )
+££+ ,
 {
 §§  
 isStartGameCurrent
 •• 
 =
-•• 
-
-isStarGame
-•• "
+•• 
+isStarGameRun
+•• %
 ;
-••" #
+••% &
 }
 ¶¶ 
 public
@@ -6676,763 +7963,792 @@ isStarGame
 )
 ¥¥ 
 ;
-¥¥ !
-lstConnectedPlayers
-∂∂ 
-.
-∂∂ 
-Items
-∂∂ 
-.
-∂∂ 
-Add
-∂∂ "
-(
-∂∂" #
-player
-∂∂# )
-.
-∂∂) *
-NickName
-∂∂* 2
-)
-∂∂2 3
-;
-∂∂3 4
+¥¥ 
 }
-∏∏ 
+µµ 
 }
-ππ 
+∂∂ 
 }
-∫∫ 
+∑∑ 
 private
-ªª 	
+∏∏ 	
 void
-ªª
+∏∏
  "
 ColocateSentenceWork
-ªª #
+∏∏ #
 (
-ªª# $
+∏∏# $
 )
-ªª$ %
+∏∏$ %
 {
-ºº 
+ππ 
 int
-ΩΩ 
+∫∫ 
 indexRow
-ΩΩ 
+∫∫ 
 =
-ΩΩ 
+∫∫ 
 Number
-ΩΩ 
+∫∫ 
 .
-ΩΩ 
+∫∫ 
 NumberValue
-ΩΩ $
+∫∫ $
 (
-ΩΩ$ %
+∫∫$ %
 NumberValues
-ΩΩ% 1
+∫∫% 1
 .
-ΩΩ1 2
+∫∫1 2
 ONE
-ΩΩ2 5
+∫∫2 5
 )
-ΩΩ5 6
+∫∫5 6
 ;
-ΩΩ6 7
+∫∫6 7
 int
-ææ 
+ªª 
 indexColumn
-ææ 
+ªª 
 =
-ææ 
+ªª 
 Number
-ææ 
+ªª 
 .
-ææ 
+ªª 
 NumberValue
-ææ '
+ªª '
 (
-ææ' (
+ªª' (
 NumberValues
-ææ( 4
+ªª( 4
 .
-ææ4 5
+ªª4 5
 ZERO
-ææ5 9
+ªª5 9
 )
-ææ9 :
+ªª9 :
 ;
-ææ: ;
+ªª: ;
 lengthSentence
-øø 
+ºº 
 =
-øø 
+ºº 
 sentenceWork
-øø  
+ºº  
 .
-øø  !
+ºº  !
 Length
-øø! '
+ºº! '
 ;
-øø' (#
+ºº' (#
 listCharacterSentence
-¿¿ 
+ΩΩ 
 =
-¿¿ 
+ΩΩ 
 new
-¿¿ 
+ΩΩ 
 List
-¿¿ #
+ΩΩ #
 <
-¿¿# $
+ΩΩ# $
 CharacterSentence
-¿¿$ 5
+ΩΩ$ 5
 >
-¿¿5 6
+ΩΩ5 6
 (
-¿¿6 7
+ΩΩ6 7
 )
-¿¿7 8
+ΩΩ7 8
 ;
-¿¿8 9
+ΩΩ8 9
 for
-¡¡ 
+ææ 
 (
-¡¡ 
+ææ 
 int
-¡¡ 
+ææ 
 indexSentence
-¡¡ 
+ææ 
 =
-¡¡ 
+ææ 
 $num
-¡¡ 
+ææ 
 ;
-¡¡ 
+ææ 
 indexSentence
-¡¡ ,
+ææ ,
 <
-¡¡- .
+ææ- .
 sentenceWork
-¡¡/ ;
+ææ/ ;
 .
-¡¡; <
+ææ; <
 Length
-¡¡< B
+ææ< B
 ;
-¡¡B C
+ææB C
 indexSentence
-¡¡D Q
+ææD Q
 ++
-¡¡Q S
+ææQ S
 )
-¡¡S T
+ææS T
 {
-¬¬ 
+øø 
 if
-√√ 
+¿¿ 
 (
-√√ 
+¿¿ 
 indexColumn
-√√ 
+¿¿ 
 ==
-√√ 
+¿¿ 
 Number
-√√ 
+¿¿ 
 .
-√√ 
+¿¿ 
 NumberValue
-√√ )
+¿¿ )
 (
-√√) *
+¿¿) *
 NumberValues
-√√* 6
+¿¿* 6
 .
-√√6 7
+¿¿6 7
 TEN
-√√7 :
+¿¿7 :
 )
-√√: ;
+¿¿: ;
 )
-√√; <
+¿¿; <
 {
-ƒƒ 
+¡¡ 
 indexColumn
-≈≈ 
+¬¬ 
 =
-≈≈ 
+¬¬ 
 Number
-≈≈ 
+¬¬ 
 .
-≈≈ 
+¬¬ 
 NumberValue
-≈≈ %
+¬¬ %
 (
-≈≈% &
+¬¬% &
 NumberValues
-≈≈& 2
+¬¬& 2
 .
-≈≈2 3
+¬¬2 3
 ZERO
-≈≈3 7
+¬¬3 7
 )
-≈≈7 8
+¬¬7 8
 ;
-≈≈8 9
+¬¬8 9
 indexRow
-∆∆ 
+√√ 
 ++
-∆∆ 
+√√ 
 ;
-∆∆ 
+√√ 
 }
-«« 
+ƒƒ 
 if
-»» 
+≈≈ 
 (
-»» 
+≈≈ 
 sentenceWork
-»» 
+≈≈ 
 .
-»» 
+≈≈ 
 	ElementAt
-»» 
+≈≈ 
 (
-»» 
+≈≈ 
 indexSentence
-»» ,
+≈≈ ,
 )
-»», -
+≈≈, -
 .
-»»- .
+≈≈- .
 Equals
-»». 4
+≈≈. 4
 (
-»»4 5
+≈≈4 5
 $char
-»»5 8
+≈≈5 8
 )
-»»8 9
+≈≈8 9
 )
-»»9 :
+≈≈9 :
 {
-…… 
+∆∆ 
 indexColumn
-   
+«« 
 ++
-   
+«« 
 ;
-   
+«« 
 lengthSentence
-ÀÀ 
+»» 
 --
-ÀÀ 
+»» 
 ;
-ÀÀ 
+»» 
 }
-ÃÃ 
+…… 
 else
-ÕÕ 
+   
 {
-ŒŒ 
+ÀÀ 
 CharacterSentence
-œœ 
+ÃÃ 
 characterSentence
-œœ (
+ÃÃ (
 =
-œœ) *
+ÃÃ) *
 new
-œœ+ .
+ÃÃ+ .
 CharacterSentence
-œœ/ @
+ÃÃ/ @
 (
-œœ@ A
+ÃÃ@ A
 )
-œœA B
+ÃÃA B
 ;
-œœB C
+ÃÃB C
 characterSentence
-–– 
+ÕÕ 
 .
-–– 
+ÕÕ 
 	Character
-––  
+ÕÕ  
 =
-––! "
+ÕÕ! "
 sentenceWork
-––# /
+ÕÕ# /
 .
-––/ 0
+ÕÕ/ 0
 	ElementAt
-––0 9
+ÕÕ0 9
 (
-––9 :
+ÕÕ9 :
 indexSentence
-––: G
+ÕÕ: G
 )
-––G H
+ÕÕG H
 ;
-––H I
+ÕÕH I
 characterSentence
-—— 
+ŒŒ 
 .
-—— 
+ŒŒ 
 PositionColumn
-—— %
+ŒŒ %
 =
-——& '
+ŒŒ& '
 indexColumn
-——( 3
+ŒŒ( 3
 ;
-——3 4
+ŒŒ3 4
 characterSentence
-““ 
+œœ 
 .
-““ 
+œœ 
 PositionRow
-““ "
+œœ "
 =
-““# $
+œœ# $
 indexRow
-““% -
+œœ% -
 ;
-““- .#
+œœ- .#
 listCharacterSentence
-”” 
+–– 
 .
-”” 
+–– 
 Add
-”” 
+–– 
 (
-”” 
+–– 
 characterSentence
-”” 0
+–– 0
 )
-””0 1
+––0 1
 ;
-””1 2
+––1 2
 TextBox
-‘‘ 
+—— 
 tbCharacter
-‘‘ 
+—— 
 =
-‘‘ 
+—— 
 new
-‘‘ 
+—— 
 TextBox
-‘‘ &
+—— &
 (
-‘‘& '
+——& '
 )
-‘‘' (
+——' (
 ;
-‘‘( )
+——( )
+tbCharacter
+““ 
+.
+““ 
+Height
+““ 
+=
+““ 
+$num
+““ 
+;
+““ 
+tbCharacter
+”” 
+.
+”” 
+
+IsReadOnly
+”” 
+=
+”” 
+true
+”” "
+;
+””" #
+tbCharacter
+‘‘ 
+.
+‘‘ 
+FontSize
+‘‘ 
+=
+‘‘ 
+$num
+‘‘ 
+;
+‘‘ 
 tbCharacter
 ’’ 
 .
-’’ 
-Height
-’’ 
-=
-’’ 
-$num
-’’ 
-;
-’’ 
-tbCharacter
-÷÷ 
-.
-÷÷ 
-
-IsReadOnly
-÷÷ 
-=
-÷÷ 
-true
-÷÷ "
-;
-÷÷" #
-tbCharacter
-◊◊ 
-.
-◊◊ 
-FontSize
-◊◊ 
-=
-◊◊ 
-$num
-◊◊ 
-;
-◊◊ 
-tbCharacter
-ÿÿ 
-.
-ÿÿ 
+’’ 
 
 FontFamily
-ÿÿ 
+’’ 
 =
-ÿÿ 
+’’ 
 new
-ÿÿ !
+’’ !
 
 FontFamily
-ÿÿ" ,
+’’" ,
 (
-ÿÿ, -
+’’, -
 $str
-ÿÿ- 4
+’’- 4
 )
-ÿÿ4 5
+’’4 5
 ;
-ÿÿ5 6
+’’5 6
 Grid
-ŸŸ 	
+÷÷ 	
 .
-ŸŸ	 
+÷÷	 
 
 	SetColumn
-ŸŸ
+÷÷
  
 (
-ŸŸ 
+÷÷ 
 tbCharacter
-ŸŸ 
+÷÷ 
 ,
-ŸŸ  
+÷÷  
 indexColumn
-ŸŸ! ,
+÷÷! ,
 )
-ŸŸ, -
+÷÷, -
 ;
-ŸŸ- .
+÷÷- .
 Grid
-⁄⁄ 	
+◊◊ 	
 .
-⁄⁄	 
+◊◊	 
 
 SetRow
-⁄⁄
+◊◊
  
 (
-⁄⁄ 
+◊◊ 
 tbCharacter
-⁄⁄ 
+◊◊ 
 ,
-⁄⁄ 
+◊◊ 
 indexRow
-⁄⁄ &
+◊◊ &
 )
-⁄⁄& '
+◊◊& '
 ;
-⁄⁄' (
+◊◊' (
 
 gdSentence
-€€ 
+ÿÿ 
 .
-€€ 
+ÿÿ 
 Children
-€€ 
+ÿÿ 
 .
-€€ 
+ÿÿ 
 Add
-€€ 
+ÿÿ 
 (
-€€ 
+ÿÿ 
 tbCharacter
-€€ (
+ÿÿ (
 )
-€€( )
+ÿÿ( )
 ;
-€€) *
+ÿÿ) *
 indexColumn
-‹‹ 
+ŸŸ 
 ++
-‹‹ 
+ŸŸ 
 ;
-‹‹ 
+ŸŸ 
 }
-›› 
+⁄⁄ 
 }
-ﬁﬁ 
+€€ 
 }
-ﬂﬂ 
+‹‹ 
 private
-‡‡ 	
+›› 	
 void
-‡‡
+››
  
 ColocateCategory
-‡‡ 
+›› 
 (
-‡‡  
+››  
 )
-‡‡  !
+››  !
 {
-·· 
+ﬁﬁ 
 if
-‚‚ 
+ﬂﬂ 
 (
-‚‚ 
+ﬂﬂ 
 sentence
-‚‚ 
+ﬂﬂ 
 .
-‚‚ 
+ﬂﬂ 
 Category
-‚‚ 
+ﬂﬂ 
 .
-‚‚ 
+ﬂﬂ 
 Equals
-‚‚ 
+ﬂﬂ 
 (
-‚‚  
+ﬂﬂ  
 $str
-‚‚  #
+ﬂﬂ  #
 )
-‚‚# $
+ﬂﬂ# $
 )
-‚‚$ %
+ﬂﬂ$ %
 {
-„„ 
+‡‡ 
 
 lbCategory
-‰‰ 
+·· 
 .
-‰‰ 
+·· 
 Content
-‰‰ 
+·· 
 =
-‰‰ 
+·· 
 
 Properties
-‰‰ #
+·· #
 .
-‰‰# $
+··# $
 	Resources
-‰‰$ -
+··$ -
 .
-‰‰- .
+··- .
 	CategoryM
-‰‰. 7
+··. 7
 ;
-‰‰7 8
+··7 8
 }
-ÂÂ 
+‚‚ 
 else
-ÊÊ 
+„„ 
 {
-ÁÁ 
+‰‰ 
 if
-ËË 
+ÂÂ 
 (
-ËË 
+ÂÂ 
 sentence
-ËË 
+ÂÂ 
 .
-ËË 
+ÂÂ 
 Category
-ËË 
+ÂÂ 
 .
-ËË 
+ÂÂ 
 Equals
-ËË  
+ÂÂ  
 (
-ËË  !
+ÂÂ  !
 $str
-ËË! $
+ÂÂ! $
 )
-ËË$ %
+ÂÂ$ %
 )
-ËË% &
+ÂÂ% &
 {
-ÈÈ 
+ÊÊ 
 
 lbCategory
-ÍÍ 
+ÁÁ 
 .
-ÍÍ 
+ÁÁ 
 Content
-ÍÍ 
+ÁÁ 
 =
-ÍÍ 
+ÁÁ 
 
 Properties
-ÍÍ $
+ÁÁ $
 .
-ÍÍ$ %
+ÁÁ$ %
 	Resources
-ÍÍ% .
+ÁÁ% .
 .
-ÍÍ. /
+ÁÁ. /
 	CategoryV
-ÍÍ/ 8
+ÁÁ/ 8
 ;
-ÍÍ8 9
+ÁÁ8 9
 }
-ÎÎ 
+ËË 
 else
-ÏÏ 
+ÈÈ 
 {
-ÌÌ 
+ÍÍ 
 if
-ÓÓ 
+ÎÎ 
 (
-ÓÓ 	
+ÎÎ 	
 sentence
-ÓÓ	 
+ÎÎ	 
 .
-ÓÓ 
+ÎÎ 
 Category
-ÓÓ 
+ÎÎ 
 .
-ÓÓ 
+ÎÎ 
 Equals
-ÓÓ !
+ÎÎ !
 (
-ÓÓ! "
+ÎÎ! "
 $str
-ÓÓ" &
+ÎÎ" &
 )
-ÓÓ& '
+ÎÎ& '
 )
-ÓÓ' (
+ÎÎ' (
 {
-ÔÔ 
+ÏÏ 
 
 lbCategory
- 
+ÌÌ 
 .
- 
+ÌÌ 
 Content
- 
+ÌÌ 
 =
- 
+ÌÌ 
 
 Properties
- %
+ÌÌ %
 .
-% &
+ÌÌ% &
 	Resources
-& /
+ÌÌ& /
 .
-/ 0
+ÌÌ/ 0
 
 CategoryAS
-0 :
+ÌÌ0 :
 ;
-: ;
+ÌÌ: ;
 }
-ÒÒ 
+ÓÓ 
 else
-ÚÚ 	
+ÔÔ 	
 {
-ÛÛ 
+ 
 
 lbCategory
-ÙÙ 
+ÒÒ 
 .
-ÙÙ 
+ÒÒ 
 Content
-ÙÙ 
+ÒÒ 
 =
-ÙÙ 
+ÒÒ 
 
 Properties
-ÙÙ %
+ÒÒ %
 .
-ÙÙ% &
+ÒÒ% &
 	Resources
-ÙÙ& /
+ÒÒ& /
 .
-ÙÙ/ 0
+ÒÒ/ 0
 	CategoryS
-ÙÙ0 9
+ÒÒ0 9
 ;
-ÙÙ9 :
+ÒÒ9 :
 }
-ıı 
+ÚÚ 
 }
-ˆˆ 
+ÛÛ 
 }
-˜˜ 
+ÙÙ 
 }
-¯¯ 
+ıı 
 private
-˘˘ 	
+ˆˆ 	
 void
-˘˘
+ˆˆ
  
 WindowClosing
-˘˘ 
+ˆˆ 
 (
-˘˘ 
+ˆˆ 
 object
-˘˘ #
+ˆˆ #
 sender
-˘˘$ *
+ˆˆ$ *
 ,
-˘˘* +
+ˆˆ* +
 System
-˘˘, 2
+ˆˆ, 2
 .
-˘˘2 3
+ˆˆ2 3
 ComponentModel
-˘˘3 A
+ˆˆ3 A
 .
-˘˘A B
+ˆˆA B
 CancelEventArgs
-˘˘B Q
+ˆˆB Q
 cancelEventArgs
-˘˘R a
+ˆˆR a
 )
-˘˘a b
+ˆˆa b
 {
-˙˙ 
+˜˜ 
 InstanceContext
-˚˚ 
+¯¯ 
 instanceContext
-˚˚ "
+¯¯ "
 =
-˚˚# $
+¯¯# $
 new
-˚˚% (
+¯¯% (
 InstanceContext
-˚˚) 8
+¯¯) 8
 (
-˚˚8 9
+¯¯8 9
 this
-˚˚9 =
+¯¯9 =
 )
-˚˚= >
+¯¯= >
 ;
-˚˚> ?
+¯¯> ?
 PlayConnectClient
-¸¸ 
+˘˘ 
 playConnect
-¸¸  
+˘˘  
 =
-¸¸! "
+˘˘! "
 new
-¸¸# &
+˘˘# &
 PlayConnectClient
-¸¸' 8
+˘˘' 8
 (
-¸¸8 9
+˘˘8 9
 instanceContext
-¸¸9 H
+˘˘9 H
 )
-¸¸H I
+˘˘H I
 ;
-¸¸I J
+˘˘I J
 playConnect
-˝˝ 
+˙˙ 
 .
-˝˝ 
+˙˙ 
 PlayerDisconnect
-˝˝ 
+˙˙ 
+(
+˙˙  
+nickname
+˙˙  (
+)
+˙˙( )
+;
+˙˙) *
+InstanceContext
+˚˚ !
+instanceContextChat
+˚˚ &
+=
+˚˚' (
+new
+˚˚) ,
+InstanceContext
+˚˚- <
+(
+˚˚< =
+this
+˚˚= A
+)
+˚˚A B
+;
+˚˚B C
+ChatManagerClient
+¸¸ 
+chatManagerClient
+¸¸ &
+=
+¸¸' (
+new
+¸¸) ,
+ChatManagerClient
+¸¸- >
+(
+¸¸> ?!
+instanceContextChat
+¸¸? R
+)
+¸¸R S
+;
+¸¸S T
+chatManagerClient
+˝˝ 
+.
+˝˝ 
+
+RemoveUser
+˝˝ 
 (
 ˝˝  
 nickname
@@ -7440,2475 +8756,2438 @@ Properties
 )
 ˝˝( )
 ;
-˝˝) *
-InstanceContext
-˛˛ !
-instanceContextChat
-˛˛ &
-=
-˛˛' (
-new
-˛˛) ,
-InstanceContext
-˛˛- <
-(
-˛˛< =
-this
-˛˛= A
-)
-˛˛A B
-;
-˛˛B C
-ChatManagerClient
-ˇˇ 
-chatManagerClient
-ˇˇ &
-=
-ˇˇ' (
-new
-ˇˇ) ,
-ChatManagerClient
-ˇˇ- >
-(
-ˇˇ> ?!
-instanceContextChat
-ˇˇ? R
-)
-ˇˇR S
-;
-ˇˇS T
-chatManagerClient
-ÄÄ 
-.
-ÄÄ 
-
-RemoveUser
-ÄÄ 
-(
-ÄÄ  
-nickname
-ÄÄ  (
-)
-ÄÄ( )
-;
-ÄÄ) *
+˝˝) *
 
 dispatcher
-ÅÅ 
+˛˛ 
 .
-ÅÅ 
+˛˛ 
 Stop
-ÅÅ 
+˛˛ 
 (
-ÅÅ 
+˛˛ 
 )
-ÅÅ 
+˛˛ 
 ;
-ÅÅ 
+˛˛ 
 }
-ÇÇ 
+ˇˇ 
 private
-ÉÉ 	
+ÄÄ 	
 void
-ÉÉ
+ÄÄ
  
 Exit
-ÉÉ 
+ÄÄ 
 (
-ÉÉ 
+ÄÄ 
 object
-ÉÉ 
+ÄÄ 
 sender
-ÉÉ !
+ÄÄ !
 ,
-ÉÉ! "
+ÄÄ! "
 RoutedEventArgs
-ÉÉ# 2
+ÄÄ# 2
 routedEventArgs
-ÉÉ3 B
+ÄÄ3 B
 )
-ÉÉB C
+ÄÄB C
 {
-ÑÑ 
+ÅÅ 
 MissGame
-ÖÖ 
+ÇÇ 
 (
-ÖÖ 
+ÇÇ 
 )
-ÖÖ 
+ÇÇ 
 ;
-ÖÖ 
+ÇÇ 
 }
-ÜÜ 
+ÉÉ 
 private
-áá 	
+ÑÑ 	
 void
-áá
+ÑÑ
  
 
 UnlockHint
-áá 
+ÑÑ 
 (
-áá 
+ÑÑ 
 object
-áá  
+ÑÑ  
 sender
-áá! '
+ÑÑ! '
 ,
-áá' (
+ÑÑ' (
 RoutedEventArgs
-áá) 8
+ÑÑ) 8
 routedEventArgs
-áá9 H
+ÑÑ9 H
 )
-ááH I
+ÑÑH I
 {
-àà 
+ÖÖ 
 pbHint
-ââ 	
+ÜÜ 	
 .
-ââ	 
+ÜÜ	 
 
 
 Visibility
-ââ
+ÜÜ
  
 =
-ââ 
+ÜÜ 
 
 Visibility
-ââ !
+ÜÜ !
 .
-ââ! "
+ÜÜ! "
 Hidden
-ââ" (
+ÜÜ" (
 ;
-ââ( )
+ÜÜ( )
 tbHint
-ää 	
+áá 	
 .
-ää	 
+áá	 
 
 
 Visibility
-ää
+áá
  
 =
-ää 
+áá 
 
 Visibility
-ää !
+áá !
 .
-ää! "
+áá! "
 Visible
-ää" )
+áá" )
 ;
-ää) *
+áá) *
 tbCurrentScore
-ãã 
+àà 
 .
-ãã 
+àà 
 Text
-ãã 
+àà 
 =
-ãã 
+àà 
 (
-ãã 
+àà 
 int
-ãã 
+àà 
 .
-ãã 
+àà 
 Parse
-ãã #
+àà #
 (
-ãã# $
+àà# $
 tbCurrentScore
-ãã$ 2
+àà$ 2
 .
-ãã2 3
+àà2 3
 Text
-ãã3 7
+àà3 7
 )
-ãã7 8
+àà7 8
 -
-ãã9 :
+àà9 :
 $num
-ãã; >
+àà; >
 )
-ãã> ?
+àà> ?
 .
-ãã? @
+àà? @
 ToString
-ãã@ H
+àà@ H
 (
-ããH I
+ààH I
 )
-ããI J
+ààI J
 ;
-ããJ K
+ààJ K
 btnUnlockHint
-åå 
+ââ 
 .
-åå 
+ââ 
 	IsEnabled
-åå 
+ââ 
 =
-åå 
+ââ 
 false
-åå "
+ââ "
 ;
-åå" #
+ââ" #
 }
-çç 
+ää 
 private
-éé 	
+ãã 	
 void
-éé
+ãã
  
 Check
-éé 
+ãã 
 (
-éé 
+ãã 
 object
-éé 
+ãã 
 sender
-éé "
+ãã "
 ,
-éé" #
+ãã" #
 RoutedEventArgs
-éé$ 3
+ãã$ 3
 routedEventArgs
-éé4 C
+ãã4 C
 )
-ééC D
+ããC D
 {
-èè 	
+åå 	
 string
-êê 	
+çç 	
 wrongLetters
-êê
+çç
  
 =
-êê 
+çç 
 tbWrongLetters
-êê '
+çç '
 .
-êê' (
+çç' (
 Text
-êê( ,
+çç( ,
 .
-êê, -
+çç, -
 ToUpper
-êê- 4
+çç- 4
 (
-êê4 5
+çç4 5
 )
-êê5 6
+çç5 6
 ;
-êê6 7
+çç6 7
 bool
-ëë 
+éé 
 isLetterPass
-ëë 
+éé 
 =
-ëë 
+éé 
 false
-ëë 
+éé 
 ;
-ëë 
+éé 
 bool
-íí 
+èè 
 isAcceptLetter
-íí 
+èè 
 =
-íí 
+èè 
 false
-íí 
+èè 
 ;
-íí 
+èè 
 foreach
-ìì 
+êê 
 
 (
-ìì
+êê
  
 string
-ìì 
+êê 
 letter
-ìì 
+êê 
 in
-ìì 
+êê 
 listCharacterPass
-ìì -
+êê -
 )
-ìì- .
+êê- .
 {
-îî 
+ëë 
 if
-ïï 
+íí 
 (
-ïï 
+íí 
 wrongLetters
-ïï  
+íí  
 .
-ïï  !
+íí  !
 Equals
-ïï! '
+íí! '
 (
-ïï' (
+íí' (
 letter
-ïï( .
+íí( .
 )
-ïï. /
+íí. /
 )
-ïï/ 0
+íí/ 0
 {
-ññ 
+ìì 
 isLetterPass
-óó 
+îî 
 =
-óó 
+îî 
 true
-óó 
+îî 
 ;
-óó 
+îî 
 break
-òò 
+ïï 
 
 ;
-òò
+ïï
  
 }
-ôô 
+ññ 
 }
-öö 
+óó 
 if
-õõ 
+òò 
 (
-õõ 
+òò 
 !
-õõ 
+òò 
 isLetterPass
-õõ 
+òò 
 )
-õõ 
+òò 
 {
-úú 
+ôô 
 foreach
-ùù 
+öö 
 (
-ùù 
+öö 
 CharacterSentence
-ùù 
+öö 
 characterSentence
-ùù 0
+öö 0
 in
-ùù1 3#
+öö1 3#
 listCharacterSentence
-ùù4 I
+öö4 I
 )
-ùùI J
+ööI J
 {
-ûû 
+õõ 
 string
-üü 
+úú 
 letterSentence
-üü 
+úú 
 =
-üü 
+úú 
 characterSentence
-üü .
+úú .
 .
-üü. /
+úú. /
 	Character
-üü/ 8
+úú/ 8
 .
-üü8 9
+úú8 9
 ToString
-üü9 A
+úú9 A
 (
-üüA B
+úúA B
 )
-üüB C
+úúB C
 ;
-üüC D
+úúC D
 if
-†† 
+ùù 
 (
-†† 	
+ùù 	
 letterSentence
-††	 
+ùù	 
 .
-†† 
+ùù 
 ToUpper
-†† 
+ùù 
 (
-††  
+ùù  
 )
-††  !
+ùù  !
 .
-††! "
+ùù! "
 Equals
-††" (
+ùù" (
 (
-††( )
+ùù( )
 wrongLetters
-††) 5
+ùù) 5
 )
-††5 6
+ùù5 6
 )
-††6 7
+ùù6 7
 {
-°° 
+ûû 
 isAcceptLetter
-¢¢ 
+üü 
 =
-¢¢ 
+üü 
 true
-¢¢ 
+üü 
 ;
-¢¢ 
+üü 
 TextBox
-££ 
+†† 
 tbCharacter
-££ 
+†† 
 =
-££ 
+†† 
 new
-££ 
+†† 
 TextBox
-££  '
+††  '
 (
-££' (
+††' (
 )
-££( )
+††( )
 ;
-££) *
+††) *
+tbCharacter
+°° 
+.
+°° 
+Height
+°° 
+=
+°° 
+$num
+°° 
+;
+°° 
+tbCharacter
+¢¢ 
+.
+¢¢ 
+
+IsReadOnly
+¢¢ 
+=
+¢¢ 
+true
+¢¢ #
+;
+¢¢# $
+tbCharacter
+££ 
+.
+££ 
+
+FontFamily
+££ 
+=
+££ 
+new
+££ "
+
+FontFamily
+££# -
+(
+££- .
+$str
+££. 5
+)
+££5 6
+;
+££6 7
 tbCharacter
 §§ 
 .
-§§ 
-Height
-§§ 
-=
-§§ 
-$num
-§§ 
-;
-§§ 
-tbCharacter
-•• 
-.
-•• 
-
-IsReadOnly
-•• 
-=
-•• 
-true
-•• #
-;
-••# $
-tbCharacter
-¶¶ 
-.
-¶¶ 
-
-FontFamily
-¶¶ 
-=
-¶¶ 
-new
-¶¶ "
-
-FontFamily
-¶¶# -
-(
-¶¶- .
-$str
-¶¶. 5
-)
-¶¶5 6
-;
-¶¶6 7
-tbCharacter
-ßß 
-.
-ßß 
+§§ 
 FontSize
-ßß 
+§§ 
 =
-ßß 
+§§ 
 $num
-ßß 
+§§ 
 ;
-ßß  
+§§  
 Grid
-®® 
+•• 
 
 .
-®®
+••
  
 	SetColumn
-®® 
+•• 
 (
-®® 
+•• 
 tbCharacter
-®®  
+••  
 ,
-®®  !
+••  !
 characterSentence
-®®" 3
+••" 3
 .
-®®3 4
+••3 4
 PositionColumn
-®®4 B
+••4 B
 )
-®®B C
+••B C
 ;
-®®C D
+••C D
 Grid
-©© 
+¶¶ 
 
 .
-©©
+¶¶
  
 SetRow
-©© 
+¶¶ 
 (
-©© 
+¶¶ 
 tbCharacter
-©© 
+¶¶ 
 ,
-©© 
+¶¶ 
 characterSentence
-©© 0
+¶¶ 0
 .
-©©0 1
+¶¶0 1
 PositionRow
-©©1 <
+¶¶1 <
 )
-©©< =
+¶¶< =
 ;
-©©= >
+¶¶= >
 
 gdSentence
-™™ 
+ßß 
 .
-™™ 
+ßß 
 Children
-™™ 
+ßß 
 .
-™™ 
+ßß 
 Remove
-™™  
+ßß  
 (
-™™  !
+ßß  !
 tbCharacter
-™™! ,
+ßß! ,
 )
-™™, -
+ßß, -
 ;
-™™- .
+ßß- .
 tbCharacter
-´´ 
+®® 
 .
-´´ 
+®® 
 Text
-´´ 
+®® 
 =
-´´ 
+®® 
 characterSentence
-´´ *
+®® *
 .
-´´* +
+®®* +
 	Character
-´´+ 4
+®®+ 4
 .
-´´4 5
+®®4 5
 ToString
-´´5 =
+®®5 =
 (
-´´= >
+®®= >
 )
-´´> ?
+®®> ?
 ;
-´´? @
+®®? @
 
 gdSentence
-¨¨ 
+©© 
 .
-¨¨ 
+©© 
 Children
-¨¨ 
+©© 
 .
-¨¨ 
+©© 
 Add
-¨¨ 
+©© 
 (
-¨¨ 
+©© 
 tbCharacter
-¨¨ )
+©© )
 )
-¨¨) *
+©©) *
 ;
-¨¨* +
+©©* +
 countLetters
-≠≠ 
+™™ 
 ++
-≠≠ 
+™™ 
 ;
-≠≠ 
+™™ 
 }
-ÆÆ 
+´´ 
 }
-ØØ 
+¨¨ 
 if
-∞∞ 
+≠≠ 
 (
-∞∞ 
+≠≠ 
 isAcceptLetter
-∞∞ "
+≠≠ "
 )
-∞∞" #
+≠≠" #
 {
-±± 
+ÆÆ 
 tbCurrentScore
-≤≤ 
+ØØ 
 .
-≤≤ 
+ØØ 
 Text
-≤≤ 
+ØØ 
 =
-≤≤ 
+ØØ 
 (
-≤≤ 
+ØØ 
 int
-≤≤ 
+ØØ 
 .
-≤≤  
+ØØ  
 Parse
-≤≤  %
+ØØ  %
 (
-≤≤% &
+ØØ% &
 tbCurrentScore
-≤≤& 4
+ØØ& 4
 .
-≤≤4 5
+ØØ4 5
 Text
-≤≤5 9
+ØØ5 9
 )
-≤≤9 :
+ØØ9 :
 +
-≤≤; <
+ØØ; <
 $num
-≤≤= @
+ØØ= @
 )
-≤≤@ A
+ØØ@ A
 .
-≤≤A B
+ØØA B
 ToString
-≤≤B J
+ØØB J
 (
-≤≤J K
+ØØJ K
 )
-≤≤K L
+ØØK L
 ;
-≤≤L M
+ØØL M
 listCharacterPass
-≥≥ 
+∞∞ 
 .
-≥≥ 
+∞∞ 
 Add
-≥≥ 
+∞∞ 
 (
-≥≥ 
+∞∞ 
 wrongLetters
-≥≥ '
+∞∞ '
 .
-≥≥' (
+∞∞' (
 ToUpper
-≥≥( /
+∞∞( /
 (
-≥≥/ 0
+∞∞/ 0
 )
-≥≥0 1
+∞∞0 1
 )
-≥≥1 2
+∞∞1 2
 ;
-≥≥2 3
+∞∞2 3
 if
-¥¥ 
+±± 
 (
-¥¥ 
+±± 
 countLetters
-¥¥ $
+±± $
 ==
-¥¥% '
+±±% '
 lengthSentence
-¥¥( 6
+±±( 6
 )
-¥¥6 7
+±±6 7
 {
-µµ 
+≤≤ 
 time
-∂∂ 
+≥≥ 
 
 -=
-∂∂ 
+≥≥ 
 (
-∂∂ 
+≥≥ 
 int
-∂∂ 
+≥≥ 
 )
-∂∂ 
+≥≥ 
 lbTimer
-∂∂ 
+≥≥ 
 .
-∂∂ 
+≥≥ 
 Content
-∂∂ "
+≥≥ "
 ;
-∂∂" #
+≥≥" #
 btnCheck
-∑∑ 
+¥¥ 
 .
-∑∑ 
+¥¥ 
 	IsEnabled
-∑∑ 
+¥¥ 
 =
-∑∑ 
+¥¥ 
 false
-∑∑  
+¥¥  
 ;
-∑∑  !
+¥¥  !
 btnUnlockHint
-∏∏ 
+µµ 
 .
-∏∏ 
+µµ 
 	IsEnabled
-∏∏ 
+µµ 
 =
-∏∏ 
+µµ 
 false
-∏∏  %
+µµ  %
 ;
-∏∏% &
+µµ% &
 }
-ππ 
+∂∂ 
 }
-∫∫ 
+∑∑ 
 else
-ªª 
+∏∏ 
 {
-ºº 
+ππ 
 tbCurrentScore
-ΩΩ 
+∫∫ 
 .
-ΩΩ 
+∫∫ 
 Text
-ΩΩ 
+∫∫ 
 =
-ΩΩ 
+∫∫ 
 (
-ΩΩ 
+∫∫ 
 int
-ΩΩ 
+∫∫ 
 .
-ΩΩ  
+∫∫  
 Parse
-ΩΩ  %
+∫∫  %
 (
-ΩΩ% &
+∫∫% &
 tbCurrentScore
-ΩΩ& 4
+∫∫& 4
 .
-ΩΩ4 5
+∫∫4 5
 Text
-ΩΩ5 9
+∫∫5 9
 )
-ΩΩ9 :
+∫∫9 :
 -
-ΩΩ; <
+∫∫; <
 $num
-ΩΩ= @
+∫∫= @
 )
-ΩΩ@ A
+∫∫@ A
 .
-ΩΩA B
+∫∫A B
 ToString
-ΩΩB J
+∫∫B J
 (
-ΩΩJ K
+∫∫J K
 )
-ΩΩK L
+∫∫K L
 ;
-ΩΩL M
+∫∫L M
 
 countError
-ææ 
+ªª 
 ++
-ææ 
+ªª 
 ;
-ææ 
+ªª 
 
 ImageError
-øø 
+ºº 
 (
-øø 
+ºº 
 )
-øø 
+ºº 
 ;
-øø 
+ºº 
+lbWrongLetters
+ΩΩ 
+.
+ΩΩ 
+Content
+ΩΩ 
+=
+ΩΩ 
+lbWrongLetters
+ΩΩ ,
+.
+ΩΩ, -
+Content
+ΩΩ- 4
++
+ΩΩ5 6
+$str
+ΩΩ7 :
++
+ΩΩ; <
+wrongLetters
+ΩΩ= I
+;
+ΩΩI J
 }
-¿¿ 
+ææ 
 }
-¡¡ 
+øø 
 }
-¬¬ 	
+¿¿ 	
 private
-√√ 	
+¡¡ 	
 void
-√√
+¡¡
  
 
 ImageError
-√√ 
+¡¡ 
 (
-√√ 
+¡¡ 
 )
-√√ 
+¡¡ 
 {
-ƒƒ 	
+¬¬ 	
 if
-≈≈ 
+√√ 
 (
-≈≈ 
+√√ 
 
 countError
-≈≈ 
+√√ 
 ==
-≈≈ 
+√√ 
 Number
-≈≈ $
+√√ $
 .
-≈≈$ %
+√√$ %
 NumberValue
-≈≈% 0
+√√% 0
 (
-≈≈0 1
+√√0 1
 NumberValues
-≈≈1 =
+√√1 =
 .
-≈≈= >
+√√= >
 ONE
-≈≈> A
+√√> A
 )
-≈≈A B
+√√A B
 )
-≈≈B C
+√√B C
 {
-∆∆ 
+ƒƒ 
 imgStart
-«« 
+≈≈ 
 .
-«« 
+≈≈ 
 
 Visibility
-«« 
+≈≈ 
 =
-«« 
+≈≈ 
 
 Visibility
-«« $
+≈≈ $
 .
-««$ %
+≈≈$ %
 Hidden
-««% +
+≈≈% +
 ;
-««+ ,
+≈≈+ ,
 imgOneError
-»» 
+∆∆ 
 .
-»» 
+∆∆ 
 
 Visibility
-»» 
+∆∆ 
 =
-»» 
+∆∆ 
 
 Visibility
-»» '
+∆∆ '
 .
-»»' (
+∆∆' (
 Visible
-»»( /
+∆∆( /
 ;
-»»/ 0
+∆∆/ 0
 }
-…… 
+«« 
 else
-   
+»» 
 {
-ÀÀ 
+…… 
 if
-ÃÃ 
+   
 (
-ÃÃ 
+   
 
 countError
-ÃÃ 
+   
 ==
-ÃÃ 
+   
 Number
-ÃÃ 
+   
 .
-ÃÃ 
+   
 NumberValue
-ÃÃ (
+   (
 (
-ÃÃ( )
+  ( )
 NumberValues
-ÃÃ) 5
+  ) 5
 .
-ÃÃ5 6
+  5 6
 TWO
-ÃÃ6 9
+  6 9
 )
-ÃÃ9 :
+  9 :
 )
-ÃÃ: ;
+  : ;
 {
-ÕÕ 
+ÀÀ 
 imgOneError
-ŒŒ 
+ÃÃ 
 .
-ŒŒ 
+ÃÃ 
 
 Visibility
-ŒŒ 
+ÃÃ 
 =
-ŒŒ 
+ÃÃ 
 
 Visibility
-ŒŒ (
+ÃÃ (
 .
-ŒŒ( )
+ÃÃ( )
 Hidden
-ŒŒ) /
+ÃÃ) /
 ;
-ŒŒ/ 0
+ÃÃ/ 0
 imgTwoError
-œœ 
+ÕÕ 
 .
-œœ 
+ÕÕ 
 
 Visibility
-œœ 
+ÕÕ 
 =
-œœ 
+ÕÕ 
 
 Visibility
-œœ (
+ÕÕ (
 .
-œœ( )
+ÕÕ( )
 Visible
-œœ) 0
+ÕÕ) 0
 ;
-œœ0 1
+ÕÕ0 1
 }
-–– 
+ŒŒ 
 else
-—— 
+œœ 
 {
-““ 
+–– 
 if
-”” 
+—— 
 (
-”” 	
+—— 	
 
 countError
-””	 
+——	 
 ==
-”” 
+—— 
 Number
-”” 
+—— 
 .
-”” 
+—— 
 NumberValue
-”” )
+—— )
 (
-””) *
+——) *
 NumberValues
-””* 6
+——* 6
 .
-””6 7
+——6 7
 THREE
-””7 <
+——7 <
 )
-””< =
+——< =
 )
-””= >
+——= >
 {
-‘‘ 
+““ 
 imgTwoError
-’’ 
+”” 
 .
-’’ 
+”” 
 
 Visibility
-’’ 
+”” 
 =
-’’ 
+”” 
 
 Visibility
-’’ )
+”” )
 .
-’’) *
+””) *
 Hidden
-’’* 0
+””* 0
 ;
-’’0 1
+””0 1
 imgThreeError
-÷÷ 
+‘‘ 
 .
-÷÷ 
+‘‘ 
 
 Visibility
-÷÷ 
+‘‘ 
 =
-÷÷  
+‘‘  
 
 Visibility
-÷÷! +
+‘‘! +
 .
-÷÷+ ,
+‘‘+ ,
 Visible
-÷÷, 3
+‘‘, 3
 ;
-÷÷3 4
+‘‘3 4
 }
-◊◊ 
+’’ 
 else
-ÿÿ 
+÷÷ 
 {
-ŸŸ 
+◊◊ 
 if
-⁄⁄ 
+ÿÿ 
 (
-⁄⁄	 
+ÿÿ	 
 
 
 countError
-⁄⁄
+ÿÿ
  
 ==
-⁄⁄ 
+ÿÿ 
 Number
-⁄⁄ 
+ÿÿ 
 .
-⁄⁄ 
+ÿÿ 
 NumberValue
-⁄⁄ *
+ÿÿ *
 (
-⁄⁄* +
+ÿÿ* +
 NumberValues
-⁄⁄+ 7
+ÿÿ+ 7
 .
-⁄⁄7 8
+ÿÿ7 8
 FOUR
-⁄⁄8 <
+ÿÿ8 <
 )
-⁄⁄< =
+ÿÿ< =
 )
-⁄⁄= >
+ÿÿ= >
 {
-€€ 
+ŸŸ 
 imgThreeError
-‹‹ 
+⁄⁄ 
 .
-‹‹ 
+⁄⁄ 
 
 Visibility
-‹‹ 
+⁄⁄ 
 =
-‹‹  !
+⁄⁄  !
 
 Visibility
-‹‹" ,
+⁄⁄" ,
 .
-‹‹, -
+⁄⁄, -
 Hidden
-‹‹- 3
+⁄⁄- 3
 ;
-‹‹3 4
+⁄⁄3 4
 imgFourError
-›› 
+€€ 
 .
-›› 
+€€ 
 
 Visibility
-›› 
+€€ 
 =
-››  
+€€  
 
 Visibility
-››! +
+€€! +
 .
-››+ ,
+€€+ ,
 Visible
-››, 3
+€€, 3
 ;
-››3 4
+€€3 4
 }
-ﬁﬁ 
+‹‹ 
 else
-ﬂﬂ 
+›› 
 {
-‡‡ 
+ﬁﬁ 
 if
-·· 	
+ﬂﬂ 	
 (
-··
+ﬂﬂ
  
 
 countError
-·· 
+ﬂﬂ 
 ==
-·· 
+ﬂﬂ 
 Number
-·· 
+ﬂﬂ 
 .
-··  
+ﬂﬂ  
 NumberValue
-··  +
+ﬂﬂ  +
 (
-··+ ,
+ﬂﬂ+ ,
 NumberValues
-··, 8
+ﬂﬂ, 8
 .
-··8 9
+ﬂﬂ8 9
 FIVE
-··9 =
+ﬂﬂ9 =
 )
-··= >
+ﬂﬂ= >
 )
-··> ?
+ﬂﬂ> ?
 {
-‚‚ 
+‡‡ 
 imgFourError
-„„ 
+·· 
 .
-„„ 
+·· 
 
 Visibility
-„„ 
+·· 
 =
-„„  !
+··  !
 
 Visibility
-„„" ,
+··" ,
 .
-„„, -
+··, -
 Hidden
-„„- 3
+··- 3
 ;
-„„3 4
+··3 4
 imgFiveError
-‰‰ 
+‚‚ 
 .
-‰‰ 
+‚‚ 
 
 Visibility
-‰‰ 
+‚‚ 
 =
-‰‰  !
+‚‚  !
 
 Visibility
-‰‰" ,
+‚‚" ,
 .
-‰‰, -
+‚‚, -
 Visible
-‰‰- 4
+‚‚- 4
 ;
-‰‰4 5
+‚‚4 5
 }
-ÂÂ 
+„„ 
 else
-ÊÊ  
+‰‰  
 {
-ÁÁ 
+ÂÂ 
 imgFiveError
-ËË 
+ÊÊ 
 .
-ËË 
+ÊÊ 
 
 Visibility
-ËË 
+ÊÊ 
 =
-ËË  !
+ÊÊ  !
 
 Visibility
-ËË" ,
+ÊÊ" ,
 .
-ËË, -
+ÊÊ, -
 Hidden
-ËË- 3
+ÊÊ- 3
 ;
-ËË3 4
+ÊÊ3 4
 imgSixError
-ÈÈ 
+ÁÁ 
 .
-ÈÈ 
+ÁÁ 
 
 Visibility
-ÈÈ 
+ÁÁ 
 =
-ÈÈ  
+ÁÁ  
 
 Visibility
-ÈÈ! +
+ÁÁ! +
 .
-ÈÈ+ ,
+ÁÁ+ ,
 Visible
-ÈÈ, 3
+ÁÁ, 3
 ;
-ÈÈ3 4
+ÁÁ3 4
 MissGame
-ÍÍ 
+ËË 
 (
-ÍÍ 
+ËË 
 )
-ÍÍ 
+ËË 
 ;
-ÍÍ 
+ËË 
 }
-ÎÎ 
+ÈÈ 
 }
-ÏÏ 
+ÍÍ 
 }
-ÌÌ 
+ÎÎ 
 }
-ÓÓ 
+ÏÏ 
 }
-ÔÔ 
+ÌÌ 
 }
- 	
+ÓÓ 	
 private
-ÒÒ 	
+ÔÔ 	
 void
-ÒÒ
+ÔÔ
  
 MissGame
-ÒÒ 
+ÔÔ 
 (
-ÒÒ 
+ÔÔ 
 )
-ÒÒ 
+ÔÔ 
 {
-ÚÚ 	
+ 	
 
 dispatcher
-ÛÛ 
+ÒÒ 
 .
-ÛÛ 
+ÒÒ 
 Stop
-ÛÛ 
+ÒÒ 
 (
-ÛÛ 
+ÒÒ 
 )
-ÛÛ 
+ÒÒ 
 ;
-ÛÛ 
+ÒÒ 
 InstanceContext
-ÙÙ 
+ÚÚ 
 instanceContext
-ÙÙ "
+ÚÚ "
 =
-ÙÙ# $
+ÚÚ# $
 new
-ÙÙ% (
+ÚÚ% (
 InstanceContext
-ÙÙ) 8
+ÚÚ) 8
 (
-ÙÙ8 9
+ÚÚ8 9
 this
-ÙÙ9 =
+ÚÚ9 =
 )
-ÙÙ= >
+ÚÚ= >
 ;
-ÙÙ> ?
+ÚÚ> ?
 PlayConnectClient
-ıı 
+ÛÛ 
 playConnect
-ıı  
+ÛÛ  
 =
-ıı! "
+ÛÛ! "
 new
-ıı# &
+ÛÛ# &
 PlayConnectClient
-ıı' 8
+ÛÛ' 8
 (
-ıı8 9
+ÛÛ8 9
 instanceContext
-ıı9 H
+ÛÛ9 H
 )
-ııH I
+ÛÛH I
 ;
-ııI J
+ÛÛI J
 playConnect
-ˆˆ 
+ÙÙ 
 .
-ˆˆ 
+ÙÙ 
 PlayerDisconnect
-ˆˆ 
+ÙÙ 
 (
-ˆˆ  
+ÙÙ  
 nickname
-ˆˆ  (
+ÙÙ  (
 )
-ˆˆ( )
+ÙÙ( )
 ;
-ˆˆ) *
+ÙÙ) *
 InstanceContext
-˜˜ !
+ıı !
 instanceContextChat
-˜˜ &
+ıı &
 =
-˜˜' (
+ıı' (
 new
-˜˜) ,
+ıı) ,
 InstanceContext
-˜˜- <
+ıı- <
 (
-˜˜< =
+ıı< =
 this
-˜˜= A
+ıı= A
 )
-˜˜A B
+ııA B
 ;
-˜˜B C
+ııB C
 ChatManagerClient
-¯¯ 
+ˆˆ 
 chatManagerClient
-¯¯ &
+ˆˆ &
 =
-¯¯' (
+ˆˆ' (
 new
-¯¯) ,
+ˆˆ) ,
 ChatManagerClient
-¯¯- >
+ˆˆ- >
 (
-¯¯> ?!
+ˆˆ> ?!
 instanceContextChat
-¯¯? R
+ˆˆ? R
 )
-¯¯R S
+ˆˆR S
 ;
-¯¯S T
+ˆˆS T
 chatManagerClient
-˘˘ 
+˜˜ 
 .
-˘˘ 
+˜˜ 
 
 RemoveUser
-˘˘ 
+˜˜ 
 (
-˘˘  
+˜˜  
 nickname
-˘˘  (
+˜˜  (
 )
-˘˘( )
+˜˜( )
 ;
-˘˘) *
+˜˜) *
 LostGame
-˙˙ 
+¯¯ 
 lostGame
-˙˙ 
+¯¯ 
 =
-˙˙ 
+¯¯ 
 new
-˙˙ 
+¯¯ 
 LostGame
-˙˙ #
+¯¯ #
 (
-˙˙# $
+¯¯# $
 )
-˙˙$ %
+¯¯$ %
 ;
-˙˙% &
+¯¯% &
 lostGame
-˚˚ 
+˘˘ 
 .
-˚˚ 
+˘˘ 
 Owner
-˚˚ 
+˘˘ 
 =
-˚˚ 
+˘˘ 
 this
-˚˚ 
+˘˘ 
 ;
-˚˚ 
+˘˘ 
 lostGame
-¸¸ 
+˙˙ 
 .
-¸¸ 
+˙˙ 
 
 ShowDialog
-¸¸ 
+˙˙ 
 (
-¸¸ 
+˙˙ 
 )
-¸¸ 
+˙˙ 
 ;
-¸¸ 
+˙˙ 
 Lobby
-˝˝ 
+˚˚ 
 lobby
-˝˝	 
+˚˚	 
 =
-˝˝ 
+˚˚ 
 new
-˝˝ 
+˚˚ 
 Lobby
-˝˝ 
+˚˚ 
 (
-˝˝ 
+˚˚ 
 )
-˝˝ 
+˚˚ 
 ;
-˝˝ 
+˚˚ 
+lobby
+¸¸ 
+.
+¸¸ 	
+EmailReceived
+¸¸	 
+(
+¸¸ 
+emailAccount
+¸¸ #
+)
+¸¸# $
+;
+¸¸$ %
+lobby
+˝˝ 
+.
+˝˝ 	 
+ColocateBestScores
+˝˝	 
+(
+˝˝ 
+)
+˝˝ 
+;
+˝˝ 
 lobby
 ˛˛ 
 .
-˛˛ 	
-EmailReceived
-˛˛	 
+˛˛ 	)
+ColocatePersonalInformation
+˛˛	 $
 (
-˛˛ 
-emailAccount
-˛˛ #
+˛˛$ %
 )
-˛˛# $
+˛˛% &
 ;
-˛˛$ %
+˛˛& '
 lobby
 ˇˇ 
 .
-ˇˇ 	 
-ColocateBestScores
-ˇˇ	 
-(
-ˇˇ 
-)
-ˇˇ 
-;
-ˇˇ 
-lobby
-ÄÄ 
-.
-ÄÄ 	)
-ColocatePersonalInformation
-ÄÄ	 $
-(
-ÄÄ$ %
-)
-ÄÄ% &
-;
-ÄÄ& '
-lobby
-ÅÅ 
-.
-ÅÅ 	
+ˇˇ 	
 Show
-ÅÅ	 
+ˇˇ	 
 (
-ÅÅ 
+ˇˇ 
 )
-ÅÅ 
+ˇˇ 
 ;
-ÅÅ 
+ˇˇ 
 this
-ÇÇ 
+ÄÄ 
 .
-ÇÇ 
+ÄÄ 
 Close
-ÇÇ 
+ÄÄ 
 (
-ÇÇ 
+ÄÄ 
 )
-ÇÇ 
+ÄÄ 
 ;
-ÇÇ 
+ÄÄ 
 }
-ÉÉ 
+ÅÅ 
 private
-ÑÑ 	
+ÇÇ 	
 void
-ÑÑ
+ÇÇ
  
 Report
-ÑÑ 
+ÇÇ 
 (
-ÑÑ 
+ÇÇ 
 object
-ÑÑ 
+ÇÇ 
 objectReport
-ÑÑ )
+ÇÇ )
 ,
-ÑÑ) *
+ÇÇ) *
 RoutedEventArgs
-ÑÑ+ :
+ÇÇ+ :
 routedEventArgs
-ÑÑ; J
+ÇÇ; J
 )
-ÑÑJ K
+ÇÇJ K
 {
-ÖÖ 
+ÉÉ 
 Button
-ÜÜ 	
+ÑÑ 	
 btnReportPlayer
-ÜÜ
+ÑÑ
  
 =
-ÜÜ 
+ÑÑ 
 (
-ÜÜ 
+ÑÑ 
 Button
-ÜÜ #
+ÑÑ #
 )
-ÜÜ# $
+ÑÑ# $
 objectReport
-ÜÜ$ 0
+ÑÑ$ 0
 ;
-ÜÜ0 1
+ÑÑ0 1
 string
-áá 	
-nickNamePlayer
-áá
+ÖÖ 	
+nicknamePlayer
+ÖÖ
  
 =
-áá 
+ÖÖ 
 btnReportPlayer
-áá *
+ÖÖ *
 .
-áá* +
+ÖÖ* +
 CommandParameter
-áá+ ;
+ÖÖ+ ;
 as
-áá< >
+ÖÖ< >
 string
-áá? E
+ÖÖ? E
 ;
-ááE F
+ÖÖE F
 Report
-àà 	
+ÜÜ 	
 report
-àà
+ÜÜ
  
 =
-àà 
+ÜÜ 
 new
-àà 
+ÜÜ 
 Report
-àà 
+ÜÜ 
 (
-àà 
+ÜÜ 
 )
-àà 
+ÜÜ 
 ;
-àà  
+ÜÜ  
+report
+áá 	
+.
+áá	 
+&
+NicknameReportedReceived
+áá
+ "
+(
+áá" #
+nicknamePlayer
+áá# 1
+)
+áá1 2
+;
+áá2 3
+report
+àà 	
+.
+àà	 
+
+NicknameReceived
+àà
+ 
+(
+àà 
+nickname
+àà #
+)
+àà# $
+;
+àà$ %
 report
 ââ 	
 .
 ââ	 
-&
-NickNameReportedReceived
-ââ
- "
-(
-ââ" #
-nickNamePlayer
-ââ# 1
-)
-ââ1 2
-;
-ââ2 3
-report
-ää 	
-.
-ää	 
-
-NickNameReceived
-ää
- 
-(
-ää 
-nickname
-ää #
-)
-ää# $
-;
-ää$ %
-report
-ãã 	
-.
-ãã	 
 
 
 ShowDialog
-ãã
+ââ
  
 (
-ãã 
+ââ 
 )
-ãã 
+ââ 
 ;
-ãã 
+ââ 
 if
-åå 
+ää 
 (
-åå 
+ää 
 isReportPlayer
-åå 
+ää 
 )
-åå 
+ää 
 {
-çç 
+ãã 
 btnReportPlayer
-éé 
+åå 
 .
-éé 
+åå 
 	IsEnabled
-éé 
+åå 
 =
-éé 
+åå 
 false
-éé  %
+åå  %
 ;
-éé% &
+åå% &
 }
-èè 
+çç 
 isReportPlayer
-êê 
+éé 
 =
-êê 
+éé 
 false
-êê 
+éé 
 ;
-êê 
+éé 
 }
-ëë 
+èè 
 private
-ìì 	
+ëë 	
 void
-ìì
+ëë
  
 CreateTimer
-ìì 
+ëë 
 (
-ìì 
+ëë 
 )
-ìì 
+ëë 
 {
-îî 	
+íí 	
 
 dispatcher
-ïï 
+ìì 
 .
-ïï 
+ìì 
 Interval
-ïï 
+ìì 
 =
-ïï 
+ìì 
 new
-ïï 
+ìì 
 TimeSpan
-ïï %
+ìì %
 (
-ïï% &
+ìì% &
 $num
-ïï& '
+ìì& '
 ,
-ïï' (
+ìì' (
 $num
-ïï) *
+ìì) *
 ,
-ïï* +
+ìì* +
 $num
-ïï, -
+ìì, -
 ,
-ïï- .
+ìì- .
 $num
-ïï/ 0
+ìì/ 0
 ,
-ïï0 1
+ìì0 1
 $num
-ïï2 6
+ìì2 6
 )
-ïï6 7
+ìì6 7
 ;
-ïï7 8
-int
-ññ 
-time
-ññ 
-=
-ññ 
-$num
-ññ 
-;
-ññ 
+ìì7 8
 
 dispatcher
-óó 
+îî 
 .
-óó 
+îî 
 Tick
-óó 
+îî 
 +=
-óó 
+îî 
 (
-óó 
+îî 
 a
-óó 
+îî 
 ,
-óó 
+îî 
 b
-óó 
+îî 
 )
-óó 
+îî 
 =>
-óó 
+îî 
 {
-òò 
+ïï 
 lbTimer
-ôô 
+ññ 
 .
-ôô 
+ññ 
 Content
-ôô 
+ññ 
 =
-ôô 
+ññ 
 time
-ôô 
+ññ 
 --
-ôô 
+ññ 
 ;
-ôô 
+ññ 
 if
-öö 
+óó 
 (
-öö 
+óó 
 time
-öö 
+óó 
 ==
-öö 
+óó 
 Number
-öö 
+óó 
 .
-öö 
+óó 
 NumberValue
-öö !
+óó !
 (
-öö! "
+óó! "
 NumberValues
-öö" .
+óó" .
 .
-öö. /
+óó. /
 ZERO
-öö/ 3
+óó/ 3
 )
-öö3 4
+óó3 4
 )
-öö4 5
+óó4 5
 {
-õõ 
+òò 
 lbTimer
-úú 
+ôô 
 .
-úú 
+ôô 
 Content
-úú 
+ôô 
 =
-úú 
+ôô 
 time
-úú 
+ôô 
 --
-úú 
+ôô 
 ;
-úú 
+ôô 
 
 dispatcher
-ùù 
+öö 
 .
-ùù 
+öö 
 Stop
-ùù 
+öö 
 (
-ùù 
+öö 
 )
-ùù 
+öö 
 ;
-ùù 
+öö 
 EndGame
-ûû 
+õõ 
 (
-ûû 
+õõ 
 )
-ûû 
+õõ 
 ;
-ûû 
+õõ 
 }
-üü 
+úú 
 }
-†† 
+ùù 
 ;
-†† 
+ùù 
 
 dispatcher
-°° 
+ûû 
 .
-°° 
+ûû 
 Start
-°° 
+ûû 
 (
-°° 
+ûû 
 )
-°° 
+ûû 
 ;
-°° 
+ûû 
 }
-¢¢ 
+üü 
 private
-§§ 	
+°° 	
 void
-§§
+°°
  
 EndGame
-§§ 
+°° 
 (
-§§ 
+°° 
 )
-§§ 
+°° 
 {
-•• 	
+¢¢ 	
 InstanceContext
-¶¶ 
+££ 
 instanceContext
-¶¶ "
+££ "
 =
-¶¶# $
+££# $
 new
-¶¶% (
+££% (
 InstanceContext
-¶¶) 8
+££) 8
 (
-¶¶8 9
+££8 9
 this
-¶¶9 =
+££9 =
 )
-¶¶= >
+££= >
 ;
-¶¶> ?
+££> ?
 PlayConnectClient
-ßß 
+§§ 
 endGame
-ßß 
+§§ 
 =
-ßß 
+§§ 
 new
-ßß "
+§§ "
 PlayConnectClient
-ßß# 4
+§§# 4
 (
-ßß4 5
+§§4 5
 instanceContext
-ßß5 D
+§§5 D
 )
-ßßD E
+§§D E
 ;
-ßßE F
+§§E F
 ServiceWinner
-®® 
+•• 
 serviceWinner
-®® 
+•• 
 =
-®®  
+••  
 new
-®®! $
+••! $
 ServiceWinner
-®®% 2
+••% 2
 (
-®®2 3
+••2 3
 )
-®®3 4
+••3 4
 ;
-®®4 5
+••4 5
+serviceWinner
+¶¶ 
+.
+¶¶ 
+NickName
+¶¶ 
+=
+¶¶ 
+nickname
+¶¶ $
+;
+¶¶$ %
+serviceWinner
+ßß 
+.
+ßß 
+Points
+ßß 
+=
+ßß 
+Int32
+ßß 
+.
+ßß  
+Parse
+ßß  %
+(
+ßß% &
+tbCurrentScore
+ßß& 4
+.
+ßß4 5
+Text
+ßß5 9
+)
+ßß9 :
+;
+ßß: ;
+serviceWinner
+®® 
+.
+®® 
+Time
+®® 
+=
+®® 
+time
+®® 
+;
+®® 
 serviceWinner
 ©© 
 .
 ©© 
-NickName
+Mistakes
 ©© 
 =
-©© 
-nickname
-©© $
-;
-©©$ %
-serviceWinner
-™™ 
-.
-™™ 
-Points
-™™ 
-=
-™™ 
-Int32
-™™ 
-.
-™™  
-Parse
-™™  %
-(
-™™% &
-tbCurrentScore
-™™& 4
-.
-™™4 5
-Text
-™™5 9
-)
-™™9 :
-;
-™™: ;
-serviceWinner
-´´ 
-.
-´´ 
-Time
-´´ 
-=
-´´ 
-time
-´´ 
-;
-´´ 
-serviceWinner
-¨¨ 
-.
-¨¨ 
-Mistakes
-¨¨ 
-=
-¨¨ 
+©© 
 
 countError
-¨¨ &
+©© &
 ;
-¨¨& '
+©©& '
 endGame
-≠≠ 
+™™ 
 
 .
-≠≠
+™™
  
 GameOver
-≠≠ 
+™™ 
 (
-≠≠ 
+™™ 
 serviceWinner
-≠≠ !
+™™ !
 )
-≠≠! "
+™™! "
 ;
-≠≠" #
+™™" #
 }
-ÆÆ 
+´´ 
 public
-¥¥ 
+±± 
 void
-¥¥	 
+±±	 
 PlayerWinner
-¥¥ 
+±± 
 (
-¥¥ 
+±± 
 ServiceWinner
-¥¥ (
-playerWinner
-¥¥) 5
+±± (
+playerWinnerGame
+±±) 9
 )
-¥¥5 6
+±±9 :
 {
-µµ 	$
+≤≤ 	$
 synchronizationContext
-∂∂ 
+≥≥ 
 .
-∂∂ 
+≥≥ 
 Post
-∂∂ 
+≥≥ 
 (
-∂∂ 
+≥≥ 
 objectPlayer
-∂∂ +
+≥≥ +
 =>
-∂∂, .
+≥≥, .
 OpenGameOver
-∂∂/ ;
+≥≥/ ;
 (
-∂∂; <
-playerWinner
-∂∂< H
+≥≥; <
+playerWinnerGame
+≥≥< L
 )
-∂∂H I
+≥≥L M
 ,
-∂∂I J
+≥≥M N
 null
-∂∂K O
+≥≥O S
 )
-∂∂O P
+≥≥S T
 ;
-∂∂P Q
+≥≥T U
 }
-∑∑ 
+¥¥ 
 public
-ΩΩ 
+∫∫ 
 void
-ΩΩ	 
+∫∫	 
 OpenGameOver
-ΩΩ 
+∫∫ 
 (
-ΩΩ 
+∫∫ 
 ServiceWinner
-ΩΩ )
+∫∫ )
 playerWinner
-ΩΩ* 6
+∫∫* 6
 )
-ΩΩ6 7
+∫∫6 7
 {
-ææ 	
+ªª 	
 GameOver
-øø 
+ºº 
 gameOver
-øø 
+ºº 
 =
-øø 
+ºº 
 new
-øø 
+ºº 
 GameOver
-øø #
+ºº #
 (
-øø# $
+ºº# $
 )
-øø$ %
+ºº$ %
 ;
-øø% &
+ºº% &
 gameOver
-¿¿ 
+ΩΩ 
 .
-¿¿ %
+ΩΩ %
 InitializeServiceWinner
-¿¿ #
+ΩΩ #
 (
-¿¿# $
+ΩΩ# $
 playerWinner
-¿¿$ 0
+ΩΩ$ 0
 ,
-¿¿0 1
+ΩΩ0 1
 nickname
-¿¿2 :
+ΩΩ2 :
 )
-¿¿: ;
+ΩΩ: ;
 ;
-¿¿; <
+ΩΩ; <
 gameOver
-¡¡ 
+ææ 
 .
-¡¡ 
+ææ 
 
 ShowDialog
-¡¡ 
+ææ 
 (
-¡¡ 
+ææ 
 )
-¡¡ 
+ææ 
 ;
-¡¡ 
+ææ 
 Lobby
-¬¬ 
+øø 
 lobby
-¬¬	 
+øø	 
 =
-¬¬ 
+øø 
 new
-¬¬ 
+øø 
 Lobby
-¬¬ 
+øø 
 (
-¬¬ 
+øø 
 )
-¬¬ 
+øø 
 ;
-¬¬ 
+øø 
+lobby
+¿¿ 
+.
+¿¿ 	
+EmailReceived
+¿¿	 
+(
+¿¿ 
+emailAccount
+¿¿ #
+)
+¿¿# $
+;
+¿¿$ %
+lobby
+¡¡ 
+.
+¡¡ 	 
+ColocateBestScores
+¡¡	 
+(
+¡¡ 
+)
+¡¡ 
+;
+¡¡ 
+lobby
+¬¬ 
+.
+¬¬ 	)
+ColocatePersonalInformation
+¬¬	 $
+(
+¬¬$ %
+)
+¬¬% &
+;
+¬¬& '
 lobby
 √√ 
 .
-√√ 	
-EmailReceived
-√√	 
-(
-√√ 
-emailAccount
-√√ #
-)
-√√# $
-;
-√√$ %
-lobby
-ƒƒ 
-.
-ƒƒ 	 
-ColocateBestScores
-ƒƒ	 
-(
-ƒƒ 
-)
-ƒƒ 
-;
-ƒƒ 
-lobby
-≈≈ 
-.
-≈≈ 	)
-ColocatePersonalInformation
-≈≈	 $
-(
-≈≈$ %
-)
-≈≈% &
-;
-≈≈& '
-lobby
-∆∆ 
-.
-∆∆ 	
+√√ 	
 Show
-∆∆	 
+√√	 
 (
-∆∆ 
+√√ 
 )
-∆∆ 
+√√ 
 ;
-∆∆ 
+√√ 
 this
-«« 
+ƒƒ 
 .
-«« 
+ƒƒ 
 Close
-«« 
+ƒƒ 
 (
-«« 
+ƒƒ 
 )
-«« 
+ƒƒ 
 ;
-«« 
+ƒƒ 
 }
-»» 	
+≈≈ 	
 private
-   	
+«« 	
 void
-  
+««
  
 SendMessage
-   
+«« 
 (
-   
+«« 
 object
-   !
+«« !
 sender
-  " (
+««" (
 ,
-  ( )
+««( )
 RoutedEventArgs
-  * 9
+««* 9
 routedEventArgs
-  : I
+««: I
 )
-  I J
+««I J
 {
-ÀÀ 
+»» 
 InstanceContext
-ÃÃ 
+…… 
 instanceContext
-ÃÃ "
+…… "
 =
-ÃÃ# $
+……# $
 new
-ÃÃ% (
+……% (
 InstanceContext
-ÃÃ) 8
+……) 8
 (
-ÃÃ8 9
+……8 9
 this
-ÃÃ9 =
+……9 =
 )
-ÃÃ= >
+……= >
 ;
-ÃÃ> ?
+……> ?
 ChatManagerClient
-ÕÕ 
+   
 chatManager
-ÕÕ  
+    
 =
-ÕÕ! "
+  ! "
 new
-ÕÕ# &
+  # &
 ChatManagerClient
-ÕÕ' 8
+  ' 8
 (
-ÕÕ8 9
+  8 9
 instanceContext
-ÕÕ9 H
+  9 H
 )
-ÕÕH I
+  H I
 ;
-ÕÕI J
+  I J
 if
-ŒŒ 
+ÀÀ 
 (
-ŒŒ 
+ÀÀ 
 	tbMessage
-ŒŒ 
+ÀÀ 
 .
-ŒŒ 
+ÀÀ 
 Text
-ŒŒ 
+ÀÀ 
 !=
-ŒŒ 
+ÀÀ 
 null
-ŒŒ 
+ÀÀ 
 )
-ŒŒ 
+ÀÀ 
 {
-œœ 
+ÃÃ 
 chatManager
-–– 
+ÕÕ 
 .
-–– 
+ÕÕ 
 SendNewMessages
-–– 
+ÕÕ 
 (
-––  
+ÕÕ  
 	tbMessage
-––  )
+ÕÕ  )
 .
-––) *
+ÕÕ) *
 Text
-––* .
+ÕÕ* .
 ,
-––. /
+ÕÕ. /
 nickname
-––0 8
+ÕÕ0 8
 )
-––8 9
+ÕÕ8 9
 ;
-––9 :
+ÕÕ9 :
 	tbMessage
-““ 
+ŒŒ 
 .
-““ 
+ŒŒ 
 Text
-““ 
+ŒŒ 
 =
-““ 
+ŒŒ 
 null
-““ 
+ŒŒ 
 ;
-““ 
+ŒŒ 
 }
-”” 
+œœ 
 }
-‘‘ 
+–– 
 public
-ŸŸ 
+’’ 
 void
-ŸŸ	 
+’’	 
 ConnectToChat
-ŸŸ 
+’’ 
 (
-ŸŸ 
+’’ 
 )
-ŸŸ 
+’’ 
 {
-⁄⁄ 
+÷÷ 
 InstanceContext
-€€ 
+◊◊ 
 instanceContext
-€€ "
+◊◊ "
 =
-€€# $
+◊◊# $
 new
-€€% (
+◊◊% (
 InstanceContext
-€€) 8
+◊◊) 8
 (
-€€8 9
+◊◊8 9
 this
-€€9 =
+◊◊9 =
 )
-€€= >
+◊◊= >
 ;
-€€> ?
+◊◊> ?
 ChatManagerClient
-‹‹ 
+ÿÿ 
 chatManager
-‹‹  
+ÿÿ  
 =
-‹‹! "
+ÿÿ! "
 new
-‹‹# &
+ÿÿ# &
 ChatManagerClient
-‹‹' 8
+ÿÿ' 8
 (
-‹‹8 9
+ÿÿ8 9
 instanceContext
-‹‹9 H
+ÿÿ9 H
 )
-‹‹H I
+ÿÿH I
 ;
-‹‹I J
+ÿÿI J
 chatManager
-›› 
+ŸŸ 
 .
-›› 
+ŸŸ 
 ClientConnect
-›› 
+ŸŸ 
 (
-›› 
+ŸŸ 
 nickname
-›› %
+ŸŸ %
 )
-››% &
+ŸŸ% &
 ;
-››& '
+ŸŸ& '
 }
-·· 
+⁄⁄ 
 public
-ÁÁ 
+‡‡ 
 void
-ÁÁ	 !
+‡‡	 !
 ChatResponseBoolean
-ÁÁ !
+‡‡ !
 (
-ÁÁ! "
+‡‡! "
 bool
-ÁÁ" &
+‡‡" &
 responseBoolean
-ÁÁ' 6
+‡‡' 6
 )
-ÁÁ6 7
+‡‡6 7
 {
-ËË 	
+·· 	
 connectchat
-ÈÈ 
+‚‚ 
 =
-ÈÈ 
+‚‚ 
 responseBoolean
-ÈÈ  
+‚‚  
 ;
-ÈÈ  !
+‚‚  !
 }
-ÍÍ 	
+„„ 	
 public
- 
+ÈÈ 
 void
-	 !
+ÈÈ	 !
 PlayerEntryMessages
- !
+ÈÈ !
 (
-! "
+ÈÈ! "
 string
-" ( 
+ÈÈ" ( 
 responseListString
-) ;
+ÈÈ) ;
 )
-; <
+ÈÈ; <
 {
-ÒÒ 	$
+ÍÍ 	$
 synchronizationContext
-ÛÛ 
+ÎÎ 
 .
-ÛÛ 
+ÎÎ 
 Post
-ÛÛ 
+ÎÎ 
 (
-ÛÛ 
+ÎÎ 
 objectPlayer
-ÛÛ +
+ÎÎ +
 =>
-ÛÛ, .
+ÎÎ, .
 
 ReloadChat
-ÛÛ/ 9
+ÎÎ/ 9
 (
-ÛÛ9 : 
+ÎÎ9 : 
 responseListString
-ÛÛ: L
+ÎÎ: L
 )
-ÛÛL M
+ÎÎL M
 ,
-ÛÛM N
+ÎÎM N
 null
-ÛÛO S
+ÎÎO S
 )
-ÛÛS T
+ÎÎS T
 ;
-ÛÛT U
+ÎÎT U
 }
-ÙÙ 
+ÏÏ 
 public
-˙˙ 
+ÚÚ 
 void
-˙˙	 
+ÚÚ	 
 
 ReloadChat
-˙˙ 
+ÚÚ 
 (
-˙˙ 
+ÚÚ 
 string
-˙˙ 
+ÚÚ 
 response
-˙˙  (
+ÚÚ  (
 )
-˙˙( )
+ÚÚ( )
 {
-˚˚ 
+ÛÛ 
 lstChat
-˛˛ 
+ÙÙ 
 
 .
-˛˛
+ÙÙ
  
 Items
-˛˛ 
+ÙÙ 
 .
-˛˛ 
+ÙÙ 
 Add
-˛˛ 
+ÙÙ 
 (
-˛˛ 
+ÙÙ 
 response
-˛˛ 
+ÙÙ 
 )
-˛˛ 
+ÙÙ 
 ;
-˛˛ 
+ÙÙ 
 }
-ÅÅ 
+ıı 
 }
-ÉÉ 
-}ÑÑ ˙j
+˜˜ 
+}¯¯ ëp
 >C:\Users\Ale_2\source\repos\hangmanGame\RecoverAccount.xaml.cs
 	namespace		 	
 hangmanGame		
@@ -9938,18 +11217,16 @@ ReloadChat
  
 response 
 ; 
-private 	
-static
- 
-int 
-code 
-; 
+private 	
+int
+ 
+code 
+; 
 private 	
-static
- 
-string 
-emailAccount $
-;$ %
+string
+ 
+emailAccount 
+; 
 public 
 RecoverAccount	 
 ( 
@@ -10286,572 +11563,654 @@ MainWindowYY #
 (``) *
 )``* +
 )``+ ,
-{aa 
-InstanceContextbb 
-instanceContextbb #
-=bb$ %
-newbb& )
-InstanceContextbb* 9
-(bb9 :
-thisbb: >
-)bb> ?
-;bb? @
-PlayerManagerClientcc 
-changePasswordcc &
-=cc' (
-newcc) ,
-PlayerManagerClientcc- @
-(cc@ A
-instanceContextccA P
-)ccP Q
-;ccQ R
-changePassworddd 
-.dd 
-ChangePassworddd !
-(dd! "
-emailAccountdd" .
-,dd. /
-Securitydd0 8
-.dd8 9
-Encryptdd9 @
-(dd@ A
-tbNewPasswordddA N
-.ddN O
-TextddO S
-)ddS T
-)ddT U
-;ddU V
-ifee 
-(ee 
-responseee 
-)ee 
-{ff 
-Systemgg 
-.gg 
-Windowsgg 
-.gg 
-Formsgg 
-.gg 
+{aa 
+trybb 
+{cc 
+InstanceContextdd 
+instanceContextdd $
+=dd% &
+newdd' *
+InstanceContextdd+ :
+(dd: ;
+thisdd; ?
+)dd? @
+;dd@ A
+PlayerManagerClientee 
+changePasswordee '
+=ee( )
+newee* -
+PlayerManagerClientee. A
+(eeA B
+instanceContexteeB Q
+)eeQ R
+;eeR S
+changePasswordff 
+.ff 
+ChangePasswordff "
+(ff" #
+emailAccountff# /
+,ff/ 0
+Securityff1 9
+.ff9 :
+Encryptff: A
+(ffA B
+tbNewPasswordffB O
+.ffO P
+TextffP T
+)ffT U
+)ffU V
+;ffV W
+ifgg 
+(gg 	
+responsegg	 
+)gg 
+{hh 
+Systemii 
+.ii 
+Windowsii 
+.ii 
+Formsii 
+.ii 
 
-MessageBoxgg %
-.gg% &
-Showgg& *
-(gg* +
+MessageBoxii %
+.ii% &
+Showii& *
+(ii* +
 
-Propertiesgg+ 5
-.gg5 6
-	Resourcesgg6 ?
-.gg? @"
-PasswordChangedDetailsgg@ V
-,ggV W
+Propertiesii+ 5
+.ii5 6
+	Resourcesii6 ?
+.ii? @"
+PasswordChangedDetailsii@ V
+,iiV W
 
-PropertiesggX b
-.ggb c
-	Resourcesggc l
-.ggl m
-PasswordChangedggm |
-,hh 
-MessageBoxButtonshh 
-.hh 
-OKhh 
-,hh 
-MessageBoxIconhh +
-.hh+ ,
-Informationhh, 7
-)hh7 8
-;hh8 9
-}ii 
-elsejj 
-{kk 
-Systemll 
-.ll 
-Windowsll 
-.ll 
-Formsll 
-.ll 
+PropertiesiiX b
+.iib c
+	Resourcesiic l
+.iil m
+PasswordChangediim |
+,jj 
+MessageBoxButtonsjj 
+.jj 
+OKjj 
+,jj 
+MessageBoxIconjj +
+.jj+ ,
+Informationjj, 7
+)jj7 8
+;jj8 9
+}kk 
+elsell 	
+{mm 
+Systemnn 
+.nn 
+Windowsnn 
+.nn 
+Formsnn 
+.nn 
 
-MessageBoxll $
-.ll$ %
-Showll% )
-(ll) *
+MessageBoxnn %
+.nn% &
+Shownn& *
+(nn* +
 
-Propertiesll* 4
-.ll4 5
-	Resourcesll5 >
-.ll> ? 
-ErrorDataBaseDetailsll? S
-,llS T
+Propertiesnn+ 5
+.nn5 6
+	Resourcesnn6 ?
+.nn? @ 
+ErrorDataBaseDetailsnn@ T
+,nnT U
 
-PropertiesllU _
-.ll_ `
-	Resourcesll` i
-.lli j
-ErrorDataBasellj w
-,mm 
-MessageBoxButtonsmm 
-.mm 
-OKmm 
-,mm 
-MessageBoxIconmm +
-.mm+ ,
-Errormm, 1
-)mm1 2
-;mm2 3
-}nn 
+PropertiesnnV `
+.nn` a
+	Resourcesnna j
+.nnj k
+ErrorDataBasennk x
+,oo 
+MessageBoxButtonsoo 
+.oo 
+OKoo 
+,oo 
+MessageBoxIconoo ,
+.oo, -
+Erroroo- 2
+)oo2 3
+;oo3 4
+}pp 
+}qq 
+catchrr 	
+(rr
+ %
+EndpointNotFoundExceptionrr $
+	exceptionrr% .
+)rr. /
+{ss 
+TelegramBottt 
+.tt 
+SendToTelegramtt 
+(tt  
+	exceptiontt  )
+)tt) *
+;tt* +
+LogExceptionuu 
+.uu 
+Loguu 
+(uu 
+thisuu 
+,uu 
+	exceptionuu %
+)uu% &
+;uu& '
+LogExceptionvv 
+.vv "
+ErrorConnectionServicevv (
+(vv( )
+)vv) *
+;vv* +
+}ww 
 
-MainWindowoo 
-mainoo 
-=oo 
-newoo 
+MainWindowxx 
+mainxx 
+=xx 
+newxx 
 
-MainWindowoo $
-(oo$ %
-)oo% &
-;oo& '
-mainpp 
-.pp 	
-Showpp	 
-(pp 
-)pp 
-;pp 
-thisqq 
-.qq 	
-Closeqq	 
-(qq 
-)qq 
-;qq 
-}rr 
-}tt 
-privatevv 	
-boolvv
+MainWindowxx $
+(xx$ %
+)xx% &
+;xx& '
+mainyy 
+.yy 	
+Showyy	 
+(yy 
+)yy 
+;yy 
+thiszz 
+.zz 	
+Closezz	 
+(zz 
+)zz 
+;zz 
+}{{ 
+}}} 
+private 	
+bool
  
-ValidateCodevv 
-(vv 
-)vv 
-{ww 	
-boolxx 
-isValidxx 
-=xx 
-falsexx 
-;xx 
-ifzz 
-(zz 
-tbCodezz 
-.zz 
-Textzz 
-!=zz 
-nullzz 
-&&zz 
-ValidationDatazz ,
-.zz, -$
-ValidateConfirmationCodezz- E
-(zzE F
-tbCodezzF L
-.zzL M
-TextzzM Q
-)zzQ R
-&&zzS U
-codezzV Z
-==zz[ ]
-intzz^ a
-.zza b
-Parsezzb g
-(zzg h
-tbCodezzh n
-.zzn o
-Textzzo s
-)zzs t
-)zzt u
-{{{ 
-tbCode|| 
-
-.||
- 
-BorderBrush|| 
-=|| 
-Brushes||  
-.||  !
-
-LightGreen||! +
-;||+ ,
-isValid}} 
-=}} 
-true}} 
-;}} 
-}~~ 
-else 
+ValidateCode 
+( 
+) 
 {
-ÄÄ 
+ÄÄ 	
+bool
+ÅÅ 
+isValid
+ÅÅ 
+=
+ÅÅ 
+false
+ÅÅ 
+;
+ÅÅ 
+if
+ÉÉ 
+(
+ÉÉ 
 tbCode
-ÅÅ 
+ÉÉ 
+.
+ÉÉ 
+Text
+ÉÉ 
+!=
+ÉÉ 
+null
+ÉÉ 
+&&
+ÉÉ 
+ValidationData
+ÉÉ ,
+.
+ÉÉ, -&
+ValidateConfirmationCode
+ÉÉ- E
+(
+ÉÉE F
+tbCode
+ÉÉF L
+.
+ÉÉL M
+Text
+ÉÉM Q
+)
+ÉÉQ R
+&&
+ÉÉS U
+code
+ÉÉV Z
+==
+ÉÉ[ ]
+int
+ÉÉ^ a
+.
+ÉÉa b
+Parse
+ÉÉb g
+(
+ÉÉg h
+tbCode
+ÉÉh n
+.
+ÉÉn o
+Text
+ÉÉo s
+)
+ÉÉs t
+)
+ÉÉt u
+{
+ÑÑ 
+tbCode
+ÖÖ 
 
 .
-ÅÅ
+ÖÖ
  
 BorderBrush
-ÅÅ 
+ÖÖ 
 =
-ÅÅ 
+ÖÖ 
 Brushes
-ÅÅ  
+ÖÖ  
 .
-ÅÅ  !
-Red
-ÅÅ! $
+ÖÖ  !
+
+LightGreen
+ÖÖ! +
 ;
-ÅÅ$ %
-System
-ÇÇ 
+ÖÖ+ ,
+isValid
+ÜÜ 
+=
+ÜÜ 
+true
+ÜÜ 
+;
+ÜÜ 
+}
+áá 
+else
+àà 
+{
+ââ 
+tbCode
+ää 
 
 .
-ÇÇ
+ää
+ 
+BorderBrush
+ää 
+=
+ää 
+Brushes
+ää  
+.
+ää  !
+Red
+ää! $
+;
+ää$ %
+System
+ãã 
+
+.
+ãã
  
 Windows
-ÇÇ 
+ãã 
 .
-ÇÇ 
+ãã 
 Forms
-ÇÇ 
+ãã 
 .
-ÇÇ 
+ãã 
 
 MessageBox
-ÇÇ #
+ãã #
 .
-ÇÇ# $
+ãã# $
 Show
-ÇÇ$ (
+ãã$ (
 (
-ÇÇ( )
+ãã( )
 
 Properties
-ÇÇ) 3
+ãã) 3
 .
-ÇÇ3 4
+ãã3 4
 	Resources
-ÇÇ4 =
+ãã4 =
 .
-ÇÇ= >
+ãã= >
 ErrorCodeDetails
-ÇÇ> N
+ãã> N
 ,
-ÇÇN O
+ããN O
 
 Properties
-ÇÇP Z
+ããP Z
 .
-ÇÇZ [
+ããZ [
 	Resources
-ÇÇ[ d
+ãã[ d
 .
-ÇÇd e#
+ããd e#
 ErrorCodeConfirmation
-ÇÇe z
+ããe z
 ,
-ÉÉ 
+åå 
 MessageBoxButtons
-ÉÉ 
+åå 
 .
-ÉÉ 
+åå 
 OK
-ÉÉ 
+åå 
 ,
-ÉÉ 
+åå 
 MessageBoxIcon
-ÉÉ +
+åå +
 .
-ÉÉ+ ,
+åå+ ,
 Exclamation
-ÉÉ, 7
+åå, 7
 )
-ÉÉ7 8
+åå7 8
 ;
-ÉÉ8 9
+åå8 9
 }
-ÑÑ 
+çç 
 return
-ÜÜ 	
+èè 	
 isValid
-ÜÜ
+èè
  
 ;
-ÜÜ 
+èè 
 }
-áá 
+êê 
 private
-ââ 	
+íí 	
 bool
-ââ
+íí
  
 ValidatePassword
-ââ 
+íí 
 (
-ââ  !
+íí  !
 )
-ââ! "
+íí! "
 {
-ää 
+ìì 
 bool
-ãã 
+îî 
 isValid
-ãã 
+îî 
 =
-ãã 
+îî 
 false
-ãã 
+îî 
 ;
-ãã 
+îî 
 if
-çç 
+ññ 
 (
-çç 
+ññ 
 pbNewPassword
-çç 
+ññ 
 .
-çç 
+ññ 
 Password
-çç 
+ññ 
 !=
-çç  
+ññ  
 null
-çç! %
+ññ! %
 &&
-çç& ( 
+ññ& ( 
 pbValidatePassword
-çç) ;
+ññ) ;
 .
-çç; <
+ññ; <
 Password
-çç< D
+ññ< D
 !=
-ççE G
+ññE G
 null
-ççH L
+ññH L
 &&
-ççM O 
+ññM O 
 pbValidatePassword
-ççP b
+ññP b
 .
-ççb c
+ññb c
 Password
-ççc k
+ññc k
 .
-ççk l
+ññk l
 Equals
-ççl r
+ññl r
 (
-ççr s
-pbNewPasswordççs Ä
-.ççÄ Å
-PasswordççÅ â
-)ççâ ä
-&&ççã ç
+ññr s
+pbNewPasswordññs Ä
+.ññÄ Å
+PasswordññÅ â
+)ññâ ä
+&&ññã ç
 ValidationData
-éé 
+óó 
 .
-éé 
+óó 
 ValidatePassword
-éé #
+óó #
 (
-éé# $
+óó# $
 pbNewPassword
-éé$ 1
+óó$ 1
 .
-éé1 2
+óó1 2
 Password
-éé2 :
+óó2 :
 )
-éé: ;
+óó: ;
 &&
-éé< >
+óó< >
 ValidationData
-éé? M
+óó? M
 .
-ééM N
+óóM N
 ValidatePassword
-ééN ^
+óóN ^
 (
-éé^ _ 
+óó^ _ 
 pbValidatePassword
-éé_ q
+óó_ q
 .
-ééq r
+óóq r
 Password
-éér z
+óór z
 )
-ééz {
+óóz {
 )
-éé{ |
+óó{ |
 {
-èè 
+òò 
 pbNewPassword
-êê 
+ôô 
 .
-êê 
+ôô 
 BorderBrush
-êê 
+ôô 
 =
-êê 
+ôô 
 Brushes
-êê  '
+ôô  '
 .
-êê' (
+ôô' (
 
 LightGreen
-êê( 2
+ôô( 2
 ;
-êê2 3 
+ôô2 3 
 pbValidatePassword
-ëë 
+öö 
 .
-ëë 
+öö 
 BorderBrush
-ëë "
+öö "
 =
-ëë# $
+öö# $
 Brushes
-ëë% ,
+öö% ,
 .
-ëë, -
+öö, -
 
 LightGreen
-ëë- 7
+öö- 7
 ;
-ëë7 8
+öö7 8
 isValid
-íí 
+õõ 
 =
-íí 
+õõ 
 true
-íí 
+õõ 
 ;
-íí 
+õõ 
 }
-ìì 
+úú 
 else
-îî 
+ùù 
 {
-ïï 
+ûû 
 pbNewPassword
-ññ 
+üü 
 .
-ññ 
+üü 
 BorderBrush
-ññ 
+üü 
 =
-ññ 
+üü 
 Brushes
-ññ  '
+üü  '
 .
-ññ' (
+üü' (
 Red
-ññ( +
+üü( +
 ;
-ññ+ , 
+üü+ , 
 pbValidatePassword
-óó 
+†† 
 .
-óó 
+†† 
 BorderBrush
-óó "
+†† "
 =
-óó# $
+††# $
 Brushes
-óó% ,
+††% ,
 .
-óó, -
+††, -
 Red
-óó- 0
+††- 0
 ;
-óó0 1
+††0 1
 ValidateCode
-òò 
+°° 
 (
-òò 
+°° 
 )
-òò 
+°° 
 ;
-òò 
+°° 
 System
-ôô 
+¢¢ 
 
 .
-ôô
+¢¢
  
 Windows
-ôô 
+¢¢ 
 .
-ôô 
+¢¢ 
 Forms
-ôô 
+¢¢ 
 .
-ôô 
+¢¢ 
 
 MessageBox
-ôô #
+¢¢ #
 .
-ôô# $
+¢¢# $
 Show
-ôô$ (
+¢¢$ (
 (
-ôô( )
+¢¢( )
 
 Properties
-ôô) 3
+¢¢) 3
 .
-ôô3 4
+¢¢3 4
 	Resources
-ôô4 =
+¢¢4 =
 .
-ôô= >'
+¢¢= >'
 IncorrectPasswordsDetails
-ôô> W
+¢¢> W
 ,
-ôôW X
+¢¢W X
 
 Properties
-ôôY c
+¢¢Y c
 .
-ôôc d
+¢¢c d
 	Resources
-ôôd m
+¢¢d m
 .
-ôôm n!
-IncorrectPasswordsôôn Ä
+¢¢m n!
+IncorrectPasswords¢¢n Ä
 ,
-öö 
+££ 
 MessageBoxButtons
-öö 
+££ 
 .
-öö 
+££ 
 OK
-öö 
+££ 
 ,
-öö 
+££ 
 MessageBoxIcon
-öö +
+££ +
 .
-öö+ ,
+££+ ,
 Warning
-öö, 3
+££, 3
 )
-öö3 4
+££3 4
 ;
-öö4 5
+££4 5
 }
-õõ 
+§§ 
 return
-úú 	
+•• 	
 isValid
-úú
+••
  
 ;
-úú 
+•• 
 }
-ùù 
+¶¶ 
 }
-ûû 
-}üü Èé
+ßß 
+}®® ˘Ø
 8C:\Users\Ale_2\source\repos\hangmanGame\Registry.xaml.cs
 	namespace		 	
 hangmanGame		
@@ -10859,3372 +12218,3704 @@ Properties
 {
 
  
-[ 
-CallbackBehavior 
-( %
-UseSynchronizationContext ,
-=- .
-false/ 4
-)4 5
-]5 6
-public 
-partial 
-class 
-Registry 
-:  
-Window! '
-,' ("
-IPlayerManagerCallback) ?
-{ 
-private 	
-bool
- 
-isValidName 
-; 
-private 	
-bool
- 
-isValidLastName 
-; 
-private 	
-bool
- 
-isValidNickName 
-; 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext ,
+=- .
+false/ 4
+)4 5
+]5 6
+public 
+partial 
+class 
+Registry 
+:  
+Window! '
+,' ("
+IPlayerManagerCallback) ?
+{ 
 private 	
 bool
- 
-isValidEmail 
-; 
+ 
+isValidName 
+; 
 private 	
 bool
  
-isValidPassword 
+isValidLastName 
 ; 
 private 	
 bool
  
-responseBoolean 
-; 
-public 
-Registry	 
-( 
-) 
-{ 
-InitializeComponent 
-( 
-) 
-; 
-} 
-public 
-void	 !
-PlayerResponseBoolean #
-(# $
-bool$ (
-response) 1
-)1 2
-{ 
-responseBoolean 
-= 
-response 
-; 
-} 
-private 	
-void
- 
-Password_MouseEnter "
-(" #
-Object# )
-sender* 0
-,0 1
-MouseEventArgs2 @
-mouseEventArgsA O
-)O P
-{ 
-
-tbPassword 
-. 
-
-Visibility 
-= 
-
-Visibility %
-.% &
-Visible& -
-;- .
-
-pbPassword 
-. 
-
-Visibility 
-= 
-
-Visibility %
-.% &
-Hidden& ,
-;, -
-
-tbPassword   
-.   
-Text   
-=   
-
-pbPassword   
-.    
-Password    (
-;  ( )
-}!! 
-private"" 	
-void""
- 
-Password_MouseLeave"" "
-(""" #
-Object""# )
-sender""* 0
-,""0 1
-MouseEventArgs""2 @
-mouseEventArgs""A O
-)""O P
-{## 
-
-tbPassword$$ 
-.$$ 
-
-Visibility$$ 
-=$$ 
-
-Visibility$$ %
-.$$% &
-Hidden$$& ,
-;$$, -
-
-pbPassword%% 
-.%% 
-
-Visibility%% 
-=%% 
-
-Visibility%% %
-.%%% &
-Visible%%& -
-;%%- .
-
-tbPassword&& 
-.&& 
-Text&& 
-=&& 
-String&& 
-.&& 
-Empty&& !
-;&&! "
-}'' 
-private(( 	
-void((
- +
-ConfirmationPassword_MouseEnter(( .
-(((. /
-Object((/ 5
-sender((6 <
-,((< =
-MouseEventArgs((> L
-mouseEventArgs((M [
-)(([ \
-{)) "
-tbConfirmationPassword** 
-.** 
-
-Visibility** $
-=**% &
-
-Visibility**' 1
-.**1 2
-Visible**2 9
-;**9 :"
-pbConfirmationPassword++ 
-.++ 
-
-Visibility++ $
-=++% &
-
-Visibility++' 1
-.++1 2
-Hidden++2 8
-;++8 9"
-tbConfirmationPassword,, 
-.,, 
-Text,, 
-=,,  "
-pbConfirmationPassword,,! 7
-.,,7 8
-Password,,8 @
-;,,@ A
-}-- 
-private.. 	
-void..
- +
-ConfirmationPassword_MouseLeave.. .
-(... /
-Object../ 5
-sender..6 <
-,..< =
-MouseEventArgs..> L
-mouseEventArgs..M [
-)..[ \
-{// "
-tbConfirmationPassword00 
-.00 
-
-Visibility00 $
-=00% &
-
-Visibility00' 1
-.001 2
-Hidden002 8
-;008 9"
-pbConfirmationPassword11 
-.11 
-
-Visibility11 $
-=11% &
-
-Visibility11' 1
-.111 2
-Visible112 9
-;119 :"
-tbConfirmationPassword22 
-.22 
-Text22 
-=22  
-String22! '
-.22' (
-Empty22( -
-;22- .
-}33 
-private44 	
-void44
- 
-Error_MouseEnter44 
-(44  
-Object44  &
-	objectImg44' 0
-,440 1
-MouseEventArgs442 @
-mouseEventArgs44A O
-)44O P
-{55 
-bool66 
-	isImgName66 
-;66 
-	isImgName77 
-=77 
-	objectImg77 
-.77 
-Equals77 
-(77  
-imgErrorName77  ,
-)77, -
-;77- .
-if88 
-(88 
-	isImgName88 
-)88 
-{99 
-lbErrorName:: 
-.:: 
-
-Visibility:: 
-=:: 
-
-Visibility:: '
-.::' (
-Visible::( /
-;::/ 0
-};; 
-else<< 
-{== 
-bool>> 
-isImgLastName>>	 
-;>> 
-isImgLastName?? 
-=?? 
-	objectImg?? 
-.?? 
-Equals?? $
-(??$ %
-imgErrorLastName??% 5
-)??5 6
-;??6 7
-if@@ 
-(@@ 
-isImgLastName@@ 
-)@@ 
-{AA 
-lbErrorLastNameBB 
-.BB 
-
-VisibilityBB 
-=BB  !
-
-VisibilityBB" ,
-.BB, -
-VisibleBB- 4
-;BB4 5
-}CC 
-elseDD 
-{EE 
-boolFF 	
-isImgNickNameFF
- 
-;FF 
-isImgNickNameGG 
-=GG 
-	objectImgGG 
-.GG 
-EqualsGG %
-(GG% &
-imgErrorNickNameGG& 6
-)GG6 7
-;GG7 8
-ifHH 
-(HH 	
-isImgNickNameHH	 
-)HH 
-{II 
-lbErrorNickNameJJ 
-.JJ 
-
-VisibilityJJ  
-=JJ! "
-
-VisibilityJJ# -
-.JJ- .
-VisibleJJ. 5
-;JJ5 6
-}KK 
-elseLL 	
-{MM 
-boolNN 
-
-
-isImgEmailNN 
-;NN 
-
-isImgEmailOO 
-=OO 
-	objectImgOO 
-.OO 
-EqualsOO #
-(OO# $
-imgErrorEmailOO$ 1
-)OO1 2
-;OO2 3
-ifPP 
-(PP	 
-
-
-isImgEmailPP
- 
-)PP 
-{QQ 
-lbErrorEmailRR 
-.RR 
-
-VisibilityRR 
-=RR  
-
-VisibilityRR! +
-.RR+ ,
-VisibleRR, 3
-;RR3 4
-}SS 
-elseTT 
-
-{UU 
-boolVV 
-isImgPasswordVV 
-;VV 
-isImgPasswordWW 
-=WW 
-	objectImgWW  
-.WW  !
-EqualsWW! '
-(WW' (
-imgErrorPasswordWW( 8
-)WW8 9
-;WW9 :
-ifXX 	
-(XX
- 
-isImgPasswordXX 
-)XX 
-{YY 
-lbErrorPasswordZZ 
-.ZZ 
-
-VisibilityZZ "
-=ZZ# $
-
-VisibilityZZ% /
-.ZZ/ 0
-VisibleZZ0 7
-;ZZ7 8
-}[[ 
-else\\ 
-{]] '
-lbErrorConfirmationPassword^^ #
-.^^# $
-
-Visibility^^$ .
-=^^/ 0
-
-Visibility^^1 ;
-.^^; <
-Visible^^< C
-;^^C D
-}__ 
-}`` 
-}aa 
-}bb 
-}cc 
-}dd 
-privateee 	
-voidee
- 
-Error_MouseLeaveee 
-(ee  
-Objectee  &
-	objectImgee' 0
-,ee0 1
-MouseEventArgsee2 @
-mouseEventArgseeA O
-)eeO P
-{ff 
-boolgg 
-	isImgNamegg 
-;gg 
-	isImgNamehh 
-=hh 
-	objectImghh 
-.hh 
-Equalshh 
-(hh  
-imgErrorNamehh  ,
-)hh, -
-;hh- .
-ifii 
-(ii 
-	isImgNameii 
-)ii 
-{jj 
-lbErrorNamekk 
-.kk 
-
-Visibilitykk 
-=kk 
-
-Visibilitykk '
-.kk' (
-Hiddenkk( .
-;kk. /
-}ll 
-elsemm 
-{nn 
-booloo 
-isImgLastNameoo	 
-;oo 
-isImgLastNamepp 
-=pp 
-	objectImgpp 
-.pp 
-Equalspp $
-(pp$ %
-imgErrorLastNamepp% 5
-)pp5 6
-;pp6 7
-ifqq 
-(qq 
-isImgLastNameqq !
-)qq! "
-{rr 
-lbErrorLastNamess 
-.ss 
-
-Visibilityss 
-=ss  !
-
-Visibilityss" ,
-.ss, -
-Hiddenss- 3
-;ss3 4
-}tt 
-elseuu 
-{vv 
-boolww 	
-isImgNickNameww
- 
-;ww 
-isImgNickNamexx 
-=xx 
-	objectImgxx 
-.xx 
-Equalsxx %
-(xx% &
-imgErrorNickNamexx& 6
-)xx6 7
-;xx7 8
-ifyy 
-(yy 
-isImgNickNameyy %
-)yy% &
-{zz 
-lbErrorNickName{{ 
-.{{ 
-
-Visibility{{  
-={{! "
-
-Visibility{{# -
-.{{- .
-Hidden{{. 4
-;{{4 5
-}|| 
-else}} 
-{~~ 
-bool 
-
-
-isImgEmail 
-; 
-
-isImgEmail
-ÄÄ 
-=
-ÄÄ 
-	objectImg
-ÄÄ 
-.
-ÄÄ 
-Equals
-ÄÄ #
-(
-ÄÄ# $
-imgErrorEmail
-ÄÄ$ 1
-)
-ÄÄ1 2
-;
-ÄÄ2 3
-if
-ÅÅ 
-(
-ÅÅ 
-
-isImgEmail
-ÅÅ &
-)
-ÅÅ& '
-{
-ÇÇ 
-lbErrorEmail
-ÉÉ 
-.
-ÉÉ 
-
-Visibility
-ÉÉ 
-=
-ÉÉ  
-
-Visibility
-ÉÉ! +
-.
-ÉÉ+ ,
-Hidden
-ÉÉ, 2
-;
-ÉÉ2 3
-}
-ÑÑ 
-else
-ÖÖ 
-{
-ÜÜ 
-bool
-áá 
-isImgPassword
-áá 
-;
-áá 
-isImgPassword
-àà 
-=
-àà 
-	objectImg
-àà  
-.
-àà  !
-Equals
-àà! '
-(
-àà' (
-imgErrorPassword
-àà( 8
-)
-àà8 9
-;
-àà9 :
-if
-ââ 
-(
-ââ  
-isImgPassword
-ââ  -
-)
-ââ- .
-{
-ää 
-lbErrorPassword
-ãã 
-.
-ãã 
-
-Visibility
-ãã "
-=
-ãã# $
-
-Visibility
-ãã% /
-.
-ãã/ 0
-Hidden
-ãã0 6
-;
-ãã6 7
-}
-åå 
-else
-çç  
-{
-éé )
-lbErrorConfirmationPassword
-èè #
-.
-èè# $
-
-Visibility
-èè$ .
-=
-èè/ 0
-
-Visibility
-èè1 ;
-.
-èè; <
-Hidden
-èè< B
-;
-èèB C
-}
-êê 
-}
-ëë 
-}
-íí 
-}
-ìì 
-}
-îî 
-}
-ïï 
-private
-ññ 	
-void
-ññ
- ,
-prohibitNumberAllowSpecialChar
-ññ -
-(
-ññ- .
-object
-ññ. 4
-sender
-ññ5 ;
-,
-ññ; <&
-TextCompositionEventArgs
-ññ= U"
-textCompositionEvent
-ññV j
-)
-ññj k
-{
-óó 
-bool
-òò 
-	resultado
-òò 
-=
-òò 
-Regex
-òò 
-.
-òò 
-IsMatch
-òò !
-(
-òò! ""
-textCompositionEvent
-òò" 6
-.
-òò6 7
-Text
-òò7 ;
-,
-òò; <
-$str
-òò= Q
-)
-òòQ R
-;
-òòR S
-if
-ôô 
-(
-ôô 
-!
-ôô 
-	resultado
-ôô 
-)
-ôô 
-{
-öö "
-textCompositionEvent
-õõ 
-.
-õõ 
-Handled
-õõ  
-=
-õõ! "
-true
-õõ# '
-;
-õõ' (
-}
-úú 
-else
-ùù 
-{
-ûû "
-textCompositionEvent
-üü 
-.
-üü 
-Handled
-üü  
-=
-üü! "
-false
-üü# (
-;
-üü( )
-}
-†† 
-}
-°° 
-private
-¢¢ 	
-void
-¢¢
+isValidNickname 
+; 
+private 	
+bool
+ 
+isValidEmail 
+; 
+private 	
+bool
  
-prohibitSpace
-¢¢ 
-(
-¢¢ 
-object
-¢¢ #
-sender
-¢¢$ *
-,
-¢¢* +
-KeyEventArgs
-¢¢, 8
-keyEvent
-¢¢9 A
-)
-¢¢A B
-{
-££ 
-if
-§§ 
-(
-§§ 
-keyEvent
-§§ 
-.
-§§ 
-Key
-§§ 
-==
-§§ 
-Key
-§§ 
-.
-§§ 
-Space
-§§  
-)
-§§  !
-keyEvent
-•• 
-.
-•• 
-Handled
-•• 
-=
-•• 
-true
-•• 
-;
-•• 
-}
-¶¶ 
-private
-ßß 	
-void
-ßß
- &
-prohibitAllowSpecialChar
-ßß '
-(
-ßß' (
-object
-ßß( .
-sender
-ßß/ 5
-,
-ßß5 6
-KeyEventArgs
-ßß7 C
-keyEvent
-ßßD L
-)
-ßßL M
-{
-®® 
-if
-©© 
-(
-©© 
-(
-©© 
-(
-©© 	
-keyEvent
-©©	 
-.
-©© 
-Key
-©© 
-<
-©© 
-Key
-©© 
-.
-©© 
-NumPad0
-©© #
-)
-©©# $
-||
-©©% '
-(
-©©( )
-keyEvent
-©©) 1
-.
-©©1 2
-Key
-©©2 5
->
-©©6 7
-Key
-©©8 ;
-.
-©©; <
-NumPad9
-©©< C
-)
-©©C D
-)
-©©D E
-&&
-©©F H
-(
-©©I J
-(
-©©J K
-keyEvent
-©©K S
-.
-©©S T
-Key
-©©T W
-<
-©©X Y
-Key
-©©Z ]
-.
-©©] ^
-A
-©©^ _
-)
-©©_ `
-||
-©©a c
-(
-©©d e
-keyEvent
-©©e m
-.
-©©m n
-Key
-©©n q
->
-©©r s
-Key
-©©t w
-.
-©©w x
-Z
-©©x y
-)
-©©y z
-)
-©©z {
-&&
-©©| ~
-(
-™™ 
-(
-™™ 
-keyEvent
-™™ 
-.
-™™ 
-Key
-™™ 
-<
-™™ 
-Key
-™™ 
-.
-™™ 
-D0
-™™ 
-)
-™™ 
-||
-™™ 
-(
-™™  !
-keyEvent
-™™! )
-.
-™™) *
-Key
-™™* -
->
-™™. /
-Key
-™™0 3
-.
-™™3 4
-D9
-™™4 6
-)
-™™6 7
-)
-™™7 8
-)
-™™8 9
-{
-´´ 
-keyEvent
-¨¨ 
-.
-¨¨ 
-Handled
-¨¨ 
-=
-¨¨ 
-true
-¨¨ 
-;
-¨¨ 
-}
-≠≠ 
-}
-ÆÆ 
-private
-ØØ 	
-void
-ØØ
- 
-Exit
-ØØ 
-(
-ØØ 
-object
-ØØ 
-sender
-ØØ !
-,
-ØØ! "
-RoutedEventArgs
-ØØ# 2
-routedEventArgs
-ØØ3 B
-)
-ØØB C
-{
-∞∞ 
+isValidPassword 
+; 
+private 	
+bool
+ 
+responseBoolean 
+; 
+public 
+Registry	 
+( 
+) 
+{ 
+InitializeComponent 
+( 
+) 
+; 
+ProhibitPaste 
+( 
+) 
+; 
+} 
+public%% 
+void%%	 !
+PlayerResponseBoolean%% #
+(%%# $
+bool%%$ (
+response%%) 1
+)%%1 2
+{&& 
+responseBoolean'' 
+='' 
+response'' 
+;'' 
+}(( 
+private)) 	
+void))
+ 
+ProhibitPaste)) 
+()) 
+))) 
+{** 
+CommandManager++ 
+.++ '
+AddPreviewCanExecuteHandler++ -
+(++- .
+tbName++. 4
+,++4 5
+OnPreviewCanExecute++6 I
+)++I J
+;++J K
+CommandManager,, 
+.,, %
+AddPreviewExecutedHandler,, +
+(,,+ ,
+tbName,,, 2
+,,,2 3
+OnPreviewExecuted,,4 E
+),,E F
+;,,F G
+CommandManager-- 
+.-- '
+AddPreviewCanExecuteHandler-- -
+(--- .
+tbEmail--. 5
+,--5 6
+OnPreviewCanExecute--7 J
+)--J K
+;--K L
+CommandManager.. 
+... %
+AddPreviewExecutedHandler.. +
+(..+ ,
+tbEmail.., 3
+,..3 4
+OnPreviewExecuted..5 F
+)..F G
+;..G H
+CommandManager// 
+.// '
+AddPreviewCanExecuteHandler// -
+(//- .
 
-MainWindow
-±± 
-main
-±± 
-=
-±± 
-new
-±± 
+tbLastName//. 8
+,//8 9
+OnPreviewCanExecute//: M
+)//M N
+;//N O
+CommandManager00 
+.00 %
+AddPreviewExecutedHandler00 +
+(00+ ,
 
-MainWindow
-±± #
-(
-±±# $
-)
-±±$ %
-;
-±±% &
-main
-≤≤ 
-.
-≤≤ 
-Show
-≤≤ 
-(
-≤≤ 
-)
-≤≤ 
-;
-≤≤ 
-this
-≥≥ 
-.
-≥≥ 
-Close
-≥≥ 
-(
-≥≥ 
-)
-≥≥ 
-;
-≥≥ 
-}
-¥¥ 
-private
-µµ 	
-void
-µµ
+tbLastName00, 6
+,006 7
+OnPreviewExecuted008 I
+)00I J
+;00J K
+CommandManager11 
+.11 '
+AddPreviewCanExecuteHandler11 -
+(11- .
+
+tbNickname11. 8
+,118 9
+OnPreviewCanExecute11: M
+)11M N
+;11N O
+CommandManager22 
+.22 %
+AddPreviewExecutedHandler22 +
+(22+ ,
+
+tbNickname22, 6
+,226 7
+OnPreviewExecuted228 I
+)22I J
+;22J K
+CommandManager33 
+.33 '
+AddPreviewCanExecuteHandler33 -
+(33- .
+
+pbPassword33. 8
+,338 9
+OnPreviewCanExecute33: M
+)33M N
+;33N O
+CommandManager44 
+.44 %
+AddPreviewExecutedHandler44 +
+(44+ ,
+
+pbPassword44, 6
+,446 7
+OnPreviewExecuted448 I
+)44I J
+;44J K
+CommandManager55 
+.55 '
+AddPreviewCanExecuteHandler55 -
+(55- ."
+pbConfirmationPassword55. D
+,55D E
+OnPreviewCanExecute55F Y
+)55Y Z
+;55Z [
+CommandManager66 
+.66 %
+AddPreviewExecutedHandler66 +
+(66+ ,"
+pbConfirmationPassword66, B
+,66B C
+OnPreviewExecuted66D U
+)66U V
+;66V W
+}77 
+private88 	
+void88
+ 
+OnPreviewCanExecute88 "
+(88" #
+object88# )
+sender88* 0
+,880 1%
+CanExecuteRoutedEventArgs882 K%
+canExecuteRoutedEventArgs88L e
+)88e f
+{99 
+if:: 
+(:: %
+canExecuteRoutedEventArgs::  
+.::  !
+Command::! (
+==::) +
+ApplicationCommands::, ?
+.::? @
+Paste::@ E
+)::E F
+{;; %
+canExecuteRoutedEventArgs<< 
+.<< 
+
+CanExecute<< (
+=<<) *
+true<<+ /
+;<</ 0%
+canExecuteRoutedEventArgs== 
+.== 
+Handled== %
+===& '
+true==( ,
+;==, -
+}>> 
+}?? 
+private@@ 	
+void@@
+ 
+OnPreviewExecuted@@  
+(@@  !
+object@@! '
+sender@@( .
+,@@. /#
+ExecutedRoutedEventArgs@@0 G#
+executedRoutedEventArgs@@H _
+)@@_ `
+{AA 
+ifBB 
+(BB #
+executedRoutedEventArgsBB 
+.BB 
+CommandBB &
+==BB' )
+ApplicationCommandsBB* =
+.BB= >
+PasteBB> C
+)BBC D
+{CC #
+executedRoutedEventArgsDD 
+.DD 
+HandledDD #
+=DD$ %
+trueDD& *
+;DD* +
+}EE 
+}FF 
+privateGG 	
+voidGG
+ 
+Password_MouseEnterGG "
+(GG" #
+ObjectGG# )
+senderGG* 0
+,GG0 1
+MouseEventArgsGG2 @
+mouseEventArgsGGA O
+)GGO P
+{HH 
+
+tbPasswordII 
+.II 
+
+VisibilityII 
+=II 
+
+VisibilityII %
+.II% &
+VisibleII& -
+;II- .
+
+pbPasswordJJ 
+.JJ 
+
+VisibilityJJ 
+=JJ 
+
+VisibilityJJ %
+.JJ% &
+HiddenJJ& ,
+;JJ, -
+
+tbPasswordKK 
+.KK 
+TextKK 
+=KK 
+
+pbPasswordKK 
+.KK  
+PasswordKK  (
+;KK( )
+}LL 
+privateMM 	
+voidMM
+ 
+Password_MouseLeaveMM "
+(MM" #
+ObjectMM# )
+senderMM* 0
+,MM0 1
+MouseEventArgsMM2 @
+mouseEventArgsMMA O
+)MMO P
+{NN 
+
+tbPasswordOO 
+.OO 
+
+VisibilityOO 
+=OO 
+
+VisibilityOO %
+.OO% &
+HiddenOO& ,
+;OO, -
+
+pbPasswordPP 
+.PP 
+
+VisibilityPP 
+=PP 
+
+VisibilityPP %
+.PP% &
+VisiblePP& -
+;PP- .
+
+tbPasswordQQ 
+.QQ 
+TextQQ 
+=QQ 
+StringQQ 
+.QQ 
+EmptyQQ !
+;QQ! "
+}RR 
+privateSS 	
+voidSS
+ +
+ConfirmationPassword_MouseEnterSS .
+(SS. /
+ObjectSS/ 5
+senderSS6 <
+,SS< =
+MouseEventArgsSS> L
+mouseEventArgsSSM [
+)SS[ \
+{TT "
+tbConfirmationPasswordUU 
+.UU 
+
+VisibilityUU $
+=UU% &
+
+VisibilityUU' 1
+.UU1 2
+VisibleUU2 9
+;UU9 :"
+pbConfirmationPasswordVV 
+.VV 
+
+VisibilityVV $
+=VV% &
+
+VisibilityVV' 1
+.VV1 2
+HiddenVV2 8
+;VV8 9"
+tbConfirmationPasswordWW 
+.WW 
+TextWW 
+=WW  "
+pbConfirmationPasswordWW! 7
+.WW7 8
+PasswordWW8 @
+;WW@ A
+}XX 
+privateYY 	
+voidYY
+ +
+ConfirmationPassword_MouseLeaveYY .
+(YY. /
+ObjectYY/ 5
+senderYY6 <
+,YY< =
+MouseEventArgsYY> L
+mouseEventArgsYYM [
+)YY[ \
+{ZZ "
+tbConfirmationPassword[[ 
+.[[ 
+
+Visibility[[ $
+=[[% &
+
+Visibility[[' 1
+.[[1 2
+Hidden[[2 8
+;[[8 9"
+pbConfirmationPassword\\ 
+.\\ 
+
+Visibility\\ $
+=\\% &
+
+Visibility\\' 1
+.\\1 2
+Visible\\2 9
+;\\9 :"
+tbConfirmationPassword]] 
+.]] 
+Text]] 
+=]]  
+String]]! '
+.]]' (
+Empty]]( -
+;]]- .
+}^^ 
+private__ 	
+void__
  
-RegisterPlayer
-µµ 
-(
-µµ 
-object
-µµ $
-sender
-µµ% +
-,
-µµ+ ,
-RoutedEventArgs
-µµ- <
-routedEventArgs
-µµ= L
-)
-µµL M
+Error_MouseEnter__ 
+(__  
+Object__  &
+	objectImg__' 0
+,__0 1
+MouseEventArgs__2 @
+mouseEventArgs__A O
+)__O P
+{`` 
+boolaa 
+	isImgNameaa 
+;aa 
+	isImgNamebb 
+=bb 
+	objectImgbb 
+.bb 
+Equalsbb 
+(bb  
+imgErrorNamebb  ,
+)bb, -
+;bb- .
+ifcc 
+(cc 
+	isImgNamecc 
+)cc 
+{dd 
+lbErrorNameee 
+.ee 
+
+Visibilityee 
+=ee 
+
+Visibilityee '
+.ee' (
+Visibleee( /
+;ee/ 0
+}ff 
+elsegg 
+{hh 
+boolii 
+isImgLastNameii	 
+;ii 
+isImgLastNamejj 
+=jj 
+	objectImgjj 
+.jj 
+Equalsjj $
+(jj$ %
+imgErrorLastNamejj% 5
+)jj5 6
+;jj6 7
+ifkk 
+(kk 
+isImgLastNamekk 
+)kk 
+{ll 
+lbErrorLastNamemm 
+.mm 
+
+Visibilitymm 
+=mm  !
+
+Visibilitymm" ,
+.mm, -
+Visiblemm- 4
+;mm4 5
+}nn 
+elseoo 
+{pp 
+boolqq 	
+isImgNicknameqq
+ 
+;qq 
+isImgNicknamerr 
+=rr 
+	objectImgrr 
+.rr 
+Equalsrr %
+(rr% &
+imgErrorNicknamerr& 6
+)rr6 7
+;rr7 8
+ifss 
+(ss 	
+isImgNicknamess	 
+)ss 
+{tt 
+lbErrorNicknameuu 
+.uu 
+
+Visibilityuu  
+=uu! "
+
+Visibilityuu# -
+.uu- .
+Visibleuu. 5
+;uu5 6
+}vv 
+elseww 	
+{xx 
+boolyy 
+
+
+isImgEmailyy 
+;yy 
+
+isImgEmailzz 
+=zz 
+	objectImgzz 
+.zz 
+Equalszz #
+(zz# $
+imgErrorEmailzz$ 1
+)zz1 2
+;zz2 3
+if{{ 
+({{	 
+
+
+isImgEmail{{
+ 
+){{ 
+{|| 
+lbErrorEmail}} 
+.}} 
+
+Visibility}} 
+=}}  
+
+Visibility}}! +
+.}}+ ,
+Visible}}, 3
+;}}3 4
+}~~ 
+else 
+
 {
-∂∂ 
+ÄÄ 
 bool
-∑∑ 
-isValidData
-∑∑ 
-=
-∑∑ 
-ValidateDataPlaye
-∑∑ '
-(
-∑∑' (
-)
-∑∑( )
+ÅÅ 
+isImgPassword
+ÅÅ 
 ;
-∑∑) *
+ÅÅ 
+isImgPassword
+ÇÇ 
+=
+ÇÇ 
+	objectImg
+ÇÇ  
+.
+ÇÇ  !
+Equals
+ÇÇ! '
+(
+ÇÇ' (
+imgErrorPassword
+ÇÇ( 8
+)
+ÇÇ8 9
+;
+ÇÇ9 :
 if
-∏∏ 
+ÉÉ 	
 (
-∏∏ 
-isValidData
-∏∏ 
+ÉÉ
+ 
+isImgPassword
+ÉÉ 
 )
-∏∏ 
+ÉÉ 
 {
-ππ 
-string
-∫∫ 
-
-name
-∫∫ 
-=
-∫∫ 
-tbName
-∫∫ 
+ÑÑ 
+lbErrorPassword
+ÖÖ 
 .
-∫∫ 
-Text
-∫∫ 
-;
-∫∫ 
-string
-ªª 
-
-lastName
-ªª 
-=
-ªª 
+ÖÖ 
 
-tbLastName
-ªª  
-.
-ªª  !
-Text
-ªª! %
-;
-ªª% &
-string
-ºº 
-
-nickname
-ºº 
+Visibility
+ÖÖ "
 =
-ºº 
+ÖÖ# $
 
-tbNickName
-ºº  
+Visibility
+ÖÖ% /
 .
-ºº  !
-Text
-ºº! %
+ÖÖ/ 0
+Visible
+ÖÖ0 7
 ;
-ºº% &
-string
-ΩΩ 
-
-email
-ΩΩ 
-=
-ΩΩ 
-tbEmail
-ΩΩ 
+ÖÖ7 8
+}
+ÜÜ 
+else
+áá 
+{
+àà )
+lbErrorConfirmationPassword
+ââ #
 .
-ΩΩ 
-Text
-ΩΩ 
-;
-ΩΩ  
-string
-ææ 
-
-password
-ææ 
-=
-ææ 
-Security
-ææ 
-.
-ææ 
-Encrypt
-ææ &
-(
-ææ& '
+ââ# $
 
-pbPassword
-ææ' 1
-.
-ææ1 2
-Password
-ææ2 :
-)
-ææ: ;
-;
-ææ; <
-int
-øø 
-codeConfirmation
-øø 
+Visibility
+ââ$ .
 =
-øø 
-ValidationData
-øø )
+ââ/ 0
+
+Visibility
+ââ1 ;
 .
-øø) *&
-GenerateConfirmationCode
-øø* B
+ââ; <
+Visible
+ââ< C
+;
+ââC D
+}
+ää 
+}
+ãã 
+}
+åå 
+}
+çç 
+}
+éé 
+}
+èè 
+private
+êê 	
+void
+êê
+ 
+Error_MouseLeave
+êê 
 (
-øøB C
+êê  
+Object
+êê  &
+	objectImg
+êê' 0
+,
+êê0 1
+MouseEventArgs
+êê2 @
+mouseEventArgs
+êêA O
 )
-øøC D
+êêO P
+{
+ëë 
+bool
+íí 
+	isImgName
+íí 
 ;
-øøD E
-ServiceAccount
-¡¡ 
-account
-¡¡ 
+íí 
+	isImgName
+ìì 
 =
-¡¡ 
-new
-¡¡  
-ServiceAccount
-¡¡! /
+ìì 
+	objectImg
+ìì 
+.
+ìì 
+Equals
+ìì 
 (
-¡¡/ 0
+ìì  
+imgErrorName
+ìì  ,
 )
-¡¡0 1
+ìì, -
 ;
-¡¡1 2
-account
-¬¬ 
+ìì- .
+if
+îî 
+(
+îî 
+	isImgName
+îî 
+)
+îî 
+{
+ïï 
+lbErrorName
+ññ 
 .
-¬¬ 
-PasswordAccount
-¬¬ 
+ññ 
+
+Visibility
+ññ 
 =
-¬¬ 
-password
-¬¬ &
-;
-¬¬& '
-account
-√√ 
+ññ 
+
+Visibility
+ññ '
 .
-√√ 
-Email
-√√ 
+ññ' (
+Hidden
+ññ( .
+;
+ññ. /
+}
+óó 
+else
+òò 
+{
+ôô 
+bool
+öö 
+isImgLastName
+öö	 
+;
+öö 
+isImgLastName
+õõ 
+=
+õõ 
+	objectImg
+õõ 
+.
+õõ 
+Equals
+õõ $
+(
+õõ$ %
+imgErrorLastName
+õõ% 5
+)
+õõ5 6
+;
+õõ6 7
+if
+úú 
+(
+úú 
+isImgLastName
+úú !
+)
+úú! "
+{
+ùù 
+lbErrorLastName
+ûû 
+.
+ûû 
+
+Visibility
+ûû 
+=
+ûû  !
+
+Visibility
+ûû" ,
+.
+ûû, -
+Hidden
+ûû- 3
+;
+ûû3 4
+}
+üü 
+else
+†† 
+{
+°° 
+bool
+¢¢ 	
+isImgNickname
+¢¢
+ 
+;
+¢¢ 
+isImgNickname
+££ 
+=
+££ 
+	objectImg
+££ 
+.
+££ 
+Equals
+££ %
+(
+££% &
+imgErrorNickname
+££& 6
+)
+££6 7
+;
+££7 8
+if
+§§ 
+(
+§§ 
+isImgNickname
+§§ %
+)
+§§% &
+{
+•• 
+lbErrorNickname
+¶¶ 
+.
+¶¶ 
+
+Visibility
+¶¶  
+=
+¶¶! "
+
+Visibility
+¶¶# -
+.
+¶¶- .
+Hidden
+¶¶. 4
+;
+¶¶4 5
+}
+ßß 
+else
+®® 
+{
+©© 
+bool
+™™ 
+
+
+isImgEmail
+™™ 
+;
+™™ 
+
+isImgEmail
+´´ 
+=
+´´ 
+	objectImg
+´´ 
+.
+´´ 
+Equals
+´´ #
+(
+´´# $
+imgErrorEmail
+´´$ 1
+)
+´´1 2
+;
+´´2 3
+if
+¨¨ 
+(
+¨¨ 
+
+isImgEmail
+¨¨ &
+)
+¨¨& '
+{
+≠≠ 
+lbErrorEmail
+ÆÆ 
+.
+ÆÆ 
+
+Visibility
+ÆÆ 
+=
+ÆÆ  
+
+Visibility
+ÆÆ! +
+.
+ÆÆ+ ,
+Hidden
+ÆÆ, 2
+;
+ÆÆ2 3
+}
+ØØ 
+else
+∞∞ 
+{
+±± 
+bool
+≤≤ 
+isImgPassword
+≤≤ 
+;
+≤≤ 
+isImgPassword
+≥≥ 
+=
+≥≥ 
+	objectImg
+≥≥  
+.
+≥≥  !
+Equals
+≥≥! '
+(
+≥≥' (
+imgErrorPassword
+≥≥( 8
+)
+≥≥8 9
+;
+≥≥9 :
+if
+¥¥ 
+(
+¥¥  
+isImgPassword
+¥¥  -
+)
+¥¥- .
+{
+µµ 
+lbErrorPassword
+∂∂ 
+.
+∂∂ 
+
+Visibility
+∂∂ "
+=
+∂∂# $
+
+Visibility
+∂∂% /
+.
+∂∂/ 0
+Hidden
+∂∂0 6
+;
+∂∂6 7
+}
+∑∑ 
+else
+∏∏  
+{
+ππ )
+lbErrorConfirmationPassword
+∫∫ #
+.
+∫∫# $
+
+Visibility
+∫∫$ .
+=
+∫∫/ 0
+
+Visibility
+∫∫1 ;
+.
+∫∫; <
+Hidden
+∫∫< B
+;
+∫∫B C
+}
+ªª 
+}
+ºº 
+}
+ΩΩ 
+}
+ææ 
+}
+øø 
+}
+¿¿ 
+private
+¡¡ 	
+void
+¡¡
+ ,
+ProhibitNumberAllowSpecialChar
+¡¡ -
+(
+¡¡- .
+object
+¡¡. 4
+sender
+¡¡5 ;
+,
+¡¡; <&
+TextCompositionEventArgs
+¡¡= U"
+textCompositionEvent
+¡¡V j
+)
+¡¡j k
+{
+¬¬ 
+bool
+√√ 
+	resultado
+√√ 
 =
 √√ 
-email
+Regex
 √√ 
-;
+.
 √√ 
-account
-ƒƒ 
-.
-ƒƒ 
-ConfirmationCode
-ƒƒ 
-=
-ƒƒ 
-codeConfirmation
-ƒƒ /
-;
-ƒƒ/ 0
-ServicePlayer
-∆∆ 
-accountPlayer
-∆∆ 
-=
-∆∆  !
-new
-∆∆" %
-ServicePlayer
-∆∆& 3
+IsMatch
+√√ !
 (
-∆∆3 4
+√√! ""
+textCompositionEvent
+√√" 6
+.
+√√6 7
+Text
+√√7 ;
+,
+√√; <
+$str
+√√= Q
 )
-∆∆4 5
+√√Q R
 ;
-∆∆5 6
-accountPlayer
-«« 
+√√R S
+if
+ƒƒ 
+(
+ƒƒ 
+!
+ƒƒ 
+	resultado
+ƒƒ 
+)
+ƒƒ 
+{
+≈≈ "
+textCompositionEvent
+∆∆ 
 .
-«« 
-NickName
-«« 
+∆∆ 
+Handled
+∆∆  
 =
-«« 
-nickname
-«« %
+∆∆! "
+true
+∆∆# '
 ;
-««% &
-accountPlayer
-»» 
+∆∆' (
+}
+«« 
+else
+»» 
+{
+…… "
+textCompositionEvent
+   
 .
-»» 
+   
+Handled
+    
+=
+  ! "
+false
+  # (
+;
+  ( )
+}
+ÀÀ 
+}
+ÃÃ 
+private
+ÕÕ 	
+void
+ÕÕ
+ 
+ProhibitSpace
+ÕÕ 
+(
+ÕÕ 
+object
+ÕÕ #
+sender
+ÕÕ$ *
+,
+ÕÕ* +
+KeyEventArgs
+ÕÕ, 8
+keyEvent
+ÕÕ9 A
+)
+ÕÕA B
+{
+ŒŒ 
+if
+œœ 
+(
+œœ 
+keyEvent
+œœ 
+.
+œœ 
+Key
+œœ 
+==
+œœ 
+Key
+œœ 
+.
+œœ 
+Space
+œœ  
+)
+œœ  !
+keyEvent
+–– 
+.
+–– 
+Handled
+–– 
+=
+–– 
+true
+–– 
+;
+–– 
+}
+—— 
+private
+““ 	
+void
+““
+ &
+ProhibitAllowSpecialChar
+““ '
+(
+““' (
+object
+““( .
+sender
+““/ 5
+,
+““5 6
+KeyEventArgs
+““7 C
+keyEvent
+““D L
+)
+““L M
+{
+”” 
+if
+‘‘ 
+(
+‘‘ 
+(
+‘‘ 
+(
+‘‘ 	
+keyEvent
+‘‘	 
+.
+‘‘ 
+Key
+‘‘ 
+<
+‘‘ 
+Key
+‘‘ 
+.
+‘‘ 
+NumPad0
+‘‘ #
+)
+‘‘# $
+||
+‘‘% '
+(
+‘‘( )
+keyEvent
+‘‘) 1
+.
+‘‘1 2
+Key
+‘‘2 5
+>
+‘‘6 7
+Key
+‘‘8 ;
+.
+‘‘; <
+NumPad9
+‘‘< C
+)
+‘‘C D
+)
+‘‘D E
+&&
+‘‘F H
+(
+‘‘I J
+(
+‘‘J K
+keyEvent
+‘‘K S
+.
+‘‘S T
+Key
+‘‘T W
+<
+‘‘X Y
+Key
+‘‘Z ]
+.
+‘‘] ^
+A
+‘‘^ _
+)
+‘‘_ `
+||
+‘‘a c
+(
+‘‘d e
+keyEvent
+‘‘e m
+.
+‘‘m n
+Key
+‘‘n q
+>
+‘‘r s
+Key
+‘‘t w
+.
+‘‘w x
+Z
+‘‘x y
+)
+‘‘y z
+)
+‘‘z {
+&&
+‘‘| ~
+(
+’’ 
+(
+’’ 
+keyEvent
+’’ 
+.
+’’ 
+Key
+’’ 
+<
+’’ 
+Key
+’’ 
+.
+’’ 
+D0
+’’ 
+)
+’’ 
+||
+’’ 
+(
+’’  !
+keyEvent
+’’! )
+.
+’’) *
+Key
+’’* -
+>
+’’. /
+Key
+’’0 3
+.
+’’3 4
+D9
+’’4 6
+)
+’’6 7
+)
+’’7 8
+)
+’’8 9
+{
+÷÷ 
+keyEvent
+◊◊ 
+.
+◊◊ 
+Handled
+◊◊ 
+=
+◊◊ 
+true
+◊◊ 
+;
+◊◊ 
+}
+ÿÿ 
+}
+ŸŸ 
+private
+⁄⁄ 	
+void
+⁄⁄
+ 
+Exit
+⁄⁄ 
+(
+⁄⁄ 
+object
+⁄⁄ 
+sender
+⁄⁄ !
+,
+⁄⁄! "
+RoutedEventArgs
+⁄⁄# 2
+routedEventArgs
+⁄⁄3 B
+)
+⁄⁄B C
+{
+€€ 
+
+MainWindow
+‹‹ 
+main
+‹‹ 
+=
+‹‹ 
+new
+‹‹ 
+
+MainWindow
+‹‹ #
+(
+‹‹# $
+)
+‹‹$ %
+;
+‹‹% &
+main
+›› 
+.
+›› 
+Show
+›› 
+(
+›› 
+)
+›› 
+;
+›› 
+this
+ﬁﬁ 
+.
+ﬁﬁ 
+Close
+ﬁﬁ 
+(
+ﬁﬁ 
+)
+ﬁﬁ 
+;
+ﬁﬁ 
+}
+ﬂﬂ 
+private
+‡‡ 	
+void
+‡‡
+ 
+RegisterPlayer
+‡‡ 
+(
+‡‡ 
+object
+‡‡ $
+sender
+‡‡% +
+,
+‡‡+ ,
+RoutedEventArgs
+‡‡- <
+routedEventArgs
+‡‡= L
+)
+‡‡L M
+{
+·· 
+bool
+‚‚ 
+isValidData
+‚‚ 
+=
+‚‚ 
+ValidateDataPlaye
+‚‚ '
+(
+‚‚' (
+)
+‚‚( )
+;
+‚‚) *
+if
+„„ 
+(
+„„ 
+isValidData
+„„ 
+)
+„„ 
+{
+‰‰ 
+string
+ÂÂ 
+
+name
+ÂÂ 
+=
+ÂÂ 
+tbName
+ÂÂ 
+.
+ÂÂ 
+Text
+ÂÂ 
+;
+ÂÂ 
+string
+ÊÊ 
+
+lastName
+ÊÊ 
+=
+ÊÊ 
+
+tbLastName
+ÊÊ  
+.
+ÊÊ  !
+Text
+ÊÊ! %
+;
+ÊÊ% &
+string
+ÁÁ 
+
+nickname
+ÁÁ 
+=
+ÁÁ 
+
+tbNickname
+ÁÁ  
+.
+ÁÁ  !
+Text
+ÁÁ! %
+;
+ÁÁ% &
+string
+ËË 
+
+email
+ËË 
+=
+ËË 
+tbEmail
+ËË 
+.
+ËË 
+Text
+ËË 
+;
+ËË  
+string
+ÈÈ 
+
+password
+ÈÈ 
+=
+ÈÈ 
+Security
+ÈÈ 
+.
+ÈÈ 
+Encrypt
+ÈÈ &
+(
+ÈÈ& '
+
+pbPassword
+ÈÈ' 1
+.
+ÈÈ1 2
+Password
+ÈÈ2 :
+)
+ÈÈ: ;
+;
+ÈÈ; <
+int
+ÍÍ 
+codeConfirmation
+ÍÍ 
+=
+ÍÍ 
+ValidationData
+ÍÍ )
+.
+ÍÍ) *&
+GenerateConfirmationCode
+ÍÍ* B
+(
+ÍÍB C
+)
+ÍÍC D
+;
+ÍÍD E
+ServiceAccount
+ÏÏ 
+account
+ÏÏ 
+=
+ÏÏ 
+new
+ÏÏ  
+ServiceAccount
+ÏÏ! /
+(
+ÏÏ/ 0
+)
+ÏÏ0 1
+;
+ÏÏ1 2
+account
+ÌÌ 
+.
+ÌÌ 
+PasswordAccount
+ÌÌ 
+=
+ÌÌ 
+password
+ÌÌ &
+;
+ÌÌ& '
+account
+ÓÓ 
+.
+ÓÓ 
+Email
+ÓÓ 
+=
+ÓÓ 
+email
+ÓÓ 
+;
+ÓÓ 
+account
+ÔÔ 
+.
+ÔÔ 
+ConfirmationCode
+ÔÔ 
+=
+ÔÔ 
+codeConfirmation
+ÔÔ /
+;
+ÔÔ/ 0
+ServicePlayer
+ÒÒ 
+accountPlayer
+ÒÒ 
+=
+ÒÒ  !
+new
+ÒÒ" %
+ServicePlayer
+ÒÒ& 3
+(
+ÒÒ3 4
+)
+ÒÒ4 5
+;
+ÒÒ5 6
+accountPlayer
+ÚÚ 
+.
+ÚÚ 
+NickName
+ÚÚ 
+=
+ÚÚ 
+nickname
+ÚÚ %
+;
+ÚÚ% &
+accountPlayer
+ÛÛ 
+.
+ÛÛ 
 
 NamePlayer
-»» 
+ÛÛ 
 =
-»» 
+ÛÛ 
 ValidationData
-»» -
+ÛÛ -
 .
-»»- .
+ÛÛ- .
 DeleteSpaceWord
-»». =
+ÛÛ. =
 (
-»»= >
+ÛÛ= >
 name
-»»> B
+ÛÛ> B
 )
-»»B C
+ÛÛB C
 ;
-»»C D
+ÛÛC D
 accountPlayer
-…… 
+ÙÙ 
 .
-…… 
+ÙÙ 
 LastName
-…… 
+ÙÙ 
 =
-…… 
+ÙÙ 
 ValidationData
-…… +
+ÙÙ +
 .
-……+ ,
+ÙÙ+ ,
 DeleteSpaceWord
-……, ;
+ÙÙ, ;
 (
-……; <
+ÙÙ; <
 lastName
-……< D
+ÙÙ< D
 )
-……D E
+ÙÙD E
 ;
-……E F
+ÙÙE F
 accountPlayer
-   
+ıı 
 .
-   
+ıı 
 StatusPlayer
-   
+ıı 
 =
-    
+ıı  
 $str
-  ! )
+ıı! )
 ;
-  ) *
+ıı) *
 InstanceContext
-ÃÃ 
+˜˜ 
 instanceContext
-ÃÃ #
+˜˜ #
 =
-ÃÃ$ %
+˜˜$ %
 new
-ÃÃ& )
+˜˜& )
 InstanceContext
-ÃÃ* 9
+˜˜* 9
 (
-ÃÃ9 :
+˜˜9 :
 this
-ÃÃ: >
+˜˜: >
 )
-ÃÃ> ?
+˜˜> ?
 ;
-ÃÃ? @!
+˜˜? @!
 PlayerManagerClient
-ÕÕ 
+¯¯ 
 validatePlayer
-ÕÕ &
+¯¯ &
 =
-ÕÕ' (
+¯¯' (
 new
-ÕÕ) ,!
+¯¯) ,!
 PlayerManagerClient
-ÕÕ- @
+¯¯- @
 (
-ÕÕ@ A
+¯¯@ A
 instanceContext
-ÕÕA P
+¯¯A P
 )
-ÕÕP Q
+¯¯P Q
 ;
-ÕÕQ R
+¯¯Q R
 validatePlayer
-ŒŒ 
+˘˘ 
 .
-ŒŒ "
+˘˘ "
 SearchNicknamePlayer
-ŒŒ '
+˘˘ '
 (
-ŒŒ' (
+˘˘' (
 nickname
-ŒŒ( 0
+˘˘( 0
 )
-ŒŒ0 1
+˘˘0 1
 ;
-ŒŒ1 2
+˘˘1 2
 bool
-œœ #
-isValidRepeatNickName
-œœ	 
+˙˙ #
+isValidRepeatNickname
+˙˙	 
 =
-œœ  
+˙˙  
 responseBoolean
-œœ! 0
+˙˙! 0
 ;
-œœ0 1
+˙˙0 1
 validatePlayer
-–– 
+˚˚ 
 .
-–– 
+˚˚ 
 SearchEmailPlayer
-–– $
+˚˚ $
 (
-––$ %
+˚˚$ %
 email
-––% *
+˚˚% *
 )
-––* +
+˚˚* +
 ;
-––+ ,
+˚˚+ ,
 bool
-——  
+¸¸  
 isValidRepeatEmail
-——	 
+¸¸	 
 =
-—— 
+¸¸ 
 responseBoolean
-—— -
+¸¸ -
 ;
-——- .
+¸¸- .
 if
-”” 
+˛˛ 
 (
-””  
+˛˛  
 isValidRepeatEmail
-”” 
+˛˛ 
 &&
-”” #
-isValidRepeatNickName
-”” 2
+˛˛ #
+isValidRepeatNickname
+˛˛ 2
 )
-””2 3
+˛˛2 3
 {
-‘‘ 
+ˇˇ 
 OpenMessageBox
-’’ 
+ÄÄ 
 (
-’’ 
+ÄÄ 
 
 Properties
-’’ 
+ÄÄ 
 .
-’’ 
+ÄÄ 
 	Resources
-’’ (
+ÄÄ (
 .
-’’( ),
-RegisteredEmailNickNameMessage
-’’) G
+ÄÄ( ),
+RegisteredEmailNicknameMessage
+ÄÄ) G
 ,
-’’G H
+ÄÄG H
 
 Properties
-’’I S
+ÄÄI S
 .
-’’S T
+ÄÄS T
 	Resources
-’’T ]
+ÄÄT ]
 .
-’’] ^&
+ÄÄ] ^&
 RepeatedDataMessageTitle
-’’^ v
+ÄÄ^ v
 ,
-’’v w
+ÄÄv w
 (
-’’x y
-MessageBoxImage’’y à
-)’’à â
-System’’â è
-.’’è ê
-Windows’’ê ó
-.’’ó ò
-Forms’’ò ù
-.’’ù û
-MessageBoxIcon’’û ¨
-.’’¨ ≠
-Warning’’≠ ¥
-)’’¥ µ
-;’’µ ∂
+ÄÄx y
+MessageBoxImageÄÄy à
+)ÄÄà â
+SystemÄÄâ è
+.ÄÄè ê
+WindowsÄÄê ó
+.ÄÄó ò
+FormsÄÄò ù
+.ÄÄù û
+MessageBoxIconÄÄû ¨
+.ÄÄ¨ ≠
+WarningÄÄ≠ ¥
+)ÄÄ¥ µ
+;ÄÄµ ∂
 }
-÷÷ 
+ÅÅ 
 else
-◊◊ 
+ÇÇ 
 {
-ÿÿ 
+ÉÉ 
 if
-ŸŸ 
+ÑÑ 
 (
-ŸŸ  
+ÑÑ  
 isValidRepeatEmail
-ŸŸ *
+ÑÑ *
 )
-ŸŸ* +
+ÑÑ* +
 {
-⁄⁄ 
+ÖÖ 
 OpenMessageBox
-€€ 
+ÜÜ 
 (
-€€ 
+ÜÜ 
 
 Properties
-€€ 
+ÜÜ 
 .
-€€  
+ÜÜ  
 	Resources
-€€  )
+ÜÜ  )
 .
-€€) *$
+ÜÜ) *$
 RegisteredEmailMessage
-€€* @
+ÜÜ* @
 ,
-€€@ A
+ÜÜ@ A
 
 Properties
-€€B L
+ÜÜB L
 .
-€€L M
+ÜÜL M
 	Resources
-€€M V
+ÜÜM V
 .
-€€V W&
+ÜÜV W&
 RepeatedDataMessageTitle
-€€W o
+ÜÜW o
 ,
-€€o p
+ÜÜo p
 (
-€€q r
-MessageBoxImage€€r Å
-)€€Å Ç
-System€€Ç à
-.€€à â
-Windows€€â ê
-.€€ê ë
-Forms€€ë ñ
-.€€ñ ó
-MessageBoxIcon€€ó •
-.€€• ¶
-Warning€€¶ ≠
-)€€≠ Æ
-;€€Æ Ø
+ÜÜq r
+MessageBoxImageÜÜr Å
+)ÜÜÅ Ç
+SystemÜÜÇ à
+.ÜÜà â
+WindowsÜÜâ ê
+.ÜÜê ë
+FormsÜÜë ñ
+.ÜÜñ ó
+MessageBoxIconÜÜó •
+.ÜÜ• ¶
+WarningÜÜ¶ ≠
+)ÜÜ≠ Æ
+;ÜÜÆ Ø
 }
-‹‹ 
+áá 
 else
-›› 
+àà 
 {
-ﬁﬁ 
+ââ 
 if
-ﬂﬂ 
+ää 
 (
-ﬂﬂ #
-isValidRepeatNickName
-ﬂﬂ 1
+ää #
+isValidRepeatNickname
+ää 1
 )
-ﬂﬂ1 2
+ää1 2
 {
-‡‡ 
+ãã 
 OpenMessageBox
-·· 
+åå 
 (
-·· 
+åå 
 
 Properties
-··  
+åå  
 .
-··  !
+åå  !
 	Resources
-··! *
+åå! *
 .
-··* +'
-RegisteredNickNameMessage
-··+ D
+åå* +'
+RegisteredNicknameMessage
+åå+ D
 ,
-··D E
+ååD E
 
 Properties
-··F P
+ååF P
 .
-··P Q
+ååP Q
 	Resources
-··Q Z
+ååQ Z
 .
-··Z [&
+ååZ [&
 RepeatedDataMessageTitle
-··[ s
+åå[ s
 ,
-··s t
+åås t
 (
-··u v
-MessageBoxImage··v Ö
-)··Ö Ü
-System··Ü å
-.··å ç
-Windows··ç î
-.··î ï
-Forms··ï ö
-.··ö õ
-MessageBoxIcon··õ ©
-.··© ™
-Warning··™ ±
-)··± ≤
-;··≤ ≥
+ååu v
+MessageBoxImageååv Ö
+)ååÖ Ü
+SystemååÜ å
+.ååå ç
+Windowsååç î
+.ååî ï
+Formsååï ö
+.ååö õ
+MessageBoxIconååõ ©
+.åå© ™
+Warningåå™ ±
+)åå± ≤
+;åå≤ ≥
 }
-‚‚ 
+çç 
 else
-„„ 
+éé 
 {
-‰‰ 
+èè 
 EmailConfirmation
-ÂÂ 
+êê 
 emailConfirmation
-ÂÂ *
+êê *
 =
-ÂÂ+ ,
+êê+ ,
 new
-ÂÂ- 0
+êê- 0
 EmailConfirmation
-ÂÂ1 B
+êê1 B
 (
-ÂÂB C
+êêB C
 )
-ÂÂC D
+êêC D
 ;
-ÂÂD E
+êêD E
 emailConfirmation
-ÊÊ 
+ëë 
 .
-ÊÊ 
-AccountReceive
-ÊÊ '
+ëë 
+AccountReceived
+ëë (
 (
-ÊÊ' (
+ëë( )
 account
-ÊÊ( /
+ëë) 0
 )
-ÊÊ/ 0
+ëë0 1
 ;
-ÊÊ0 1
+ëë1 2
 emailConfirmation
-ÁÁ 
+íí 
 .
-ÁÁ 
-PlayerReceive
-ÁÁ &
+íí 
+PlayerReceived
+íí '
 (
-ÁÁ& '
+íí' (
 accountPlayer
-ÁÁ' 4
+íí( 5
 )
-ÁÁ4 5
+íí5 6
 ;
-ÁÁ5 6
+íí6 7
 emailConfirmation
-ËË 
+ìì 
 .
-ËË "
+ìì "
 SendConfirmationCode
-ËË -
+ìì -
 (
-ËË- .
+ìì- .
 )
-ËË. /
+ìì. /
 ;
-ËË/ 0
+ìì/ 0
 emailConfirmation
-ÈÈ 
+îî 
 .
-ÈÈ 
+îî 
 Show
-ÈÈ 
+îî 
 (
-ÈÈ 
+îî 
 )
-ÈÈ 
+îî 
 ;
-ÈÈ  
+îî  
 this
-ÍÍ 
+ïï 
 .
-ÍÍ 
+ïï 
 Close
-ÍÍ 
+ïï 
 (
-ÍÍ 
+ïï 
 )
-ÍÍ 
+ïï 
 ;
-ÍÍ 
+ïï 
 }
-ÎÎ 
+ññ 
 }
-ÏÏ 
+óó 
 }
-ÌÌ 
+òò 
 }
-ÓÓ 
+ôô 
 else
-ÔÔ 
+öö 
 {
- 
+õõ 
 OpenMessageBox
-ÒÒ 
+úú 
 (
-ÒÒ 
+úú 
 
 Properties
-ÒÒ 
+úú 
 .
-ÒÒ 
+úú 
 	Resources
-ÒÒ '
+úú '
 .
-ÒÒ' ("
+úú' ("
 IncorrectDataMessage
-ÒÒ( <
+úú( <
 ,
-ÒÒ< =
+úú< =
 
 Properties
-ÒÒ> H
+úú> H
 .
-ÒÒH I
+úúH I
 	Resources
-ÒÒI R
+úúI R
 .
-ÒÒR S'
+úúR S'
 IncorrectDataMessageTitle
-ÒÒS l
+úúS l
 ,
-ÒÒl m
+úúl m
 (
-ÒÒn o
+úún o
 MessageBoxImage
-ÒÒo ~
+úúo ~
 )
-ÒÒ~ 
-SystemÒÒ Ö
-.ÒÒÖ Ü
-WindowsÒÒÜ ç
-.ÒÒç é
-FormsÒÒé ì
-.ÒÒì î
-MessageBoxIconÒÒî ¢
-.ÒÒ¢ £
-WarningÒÒ£ ™
-)ÒÒ™ ´
-;ÒÒ´ ¨
+úú~ 
+Systemúú Ö
+.úúÖ Ü
+WindowsúúÜ ç
+.úúç é
+Formsúúé ì
+.úúì î
+MessageBoxIconúúî ¢
+.úú¢ £
+Warningúú£ ™
+)úú™ ´
+;úú´ ¨
 }
-ÚÚ 
+ùù 
 }
-ÛÛ 
+ûû 
 private
-ÙÙ 	
+üü 	
 void
-ÙÙ
+üü
  
 OpenMessageBox
-ÙÙ 
+üü 
 (
-ÙÙ 
+üü 
 string
-ÙÙ $
+üü $
 textMessage
-ÙÙ% 0
+üü% 0
 ,
-ÙÙ0 1
+üü0 1
 string
-ÙÙ2 8
+üü2 8
 titleMessage
-ÙÙ9 E
+üü9 E
 ,
-ÙÙE F
+üüE F
 MessageBoxImage
-ÙÙG V
+üüG V
 messageBoxImage
-ÙÙW f
+üüW f
 )
-ÙÙf g
+üüf g
 {
-ıı 
+†† 
 
 MessageBox
-ˆˆ 
+°° 
 .
-ˆˆ 
+°° 
 Show
-ˆˆ 
+°° 
 (
-ˆˆ 
+°° 
 textMessage
-ˆˆ 
+°° 
 ,
-ˆˆ 
+°° 
 titleMessage
-ˆˆ  ,
+°°  ,
 ,
-ˆˆ, -
+°°, -
 (
-ˆˆ. /
+°°. /
 MessageBoxButton
-ˆˆ/ ?
+°°/ ?
 )
-ˆˆ? @
+°°? @
 System
-ˆˆ@ F
+°°@ F
 .
-ˆˆF G
+°°F G
 Windows
-ˆˆG N
+°°G N
 .
-ˆˆN O
+°°N O
 Forms
-ˆˆO T
+°°O T
 .
-ˆˆT U
+°°T U
 MessageBoxButtons
-ˆˆU f
+°°U f
 .
-ˆˆf g
+°°f g
 OK
-ˆˆg i
+°°g i
 ,
-ˆˆi j
+°°i j
 messageBoxImage
-ˆˆk z
+°°k z
 )
-ˆˆz {
+°°z {
 ;
-ˆˆ{ |
+°°{ |
 }
-˜˜ 
+¢¢ 
 private
-¯¯ 	
+££ 	
 bool
-¯¯
+££
  
 ValidateDataPlaye
-¯¯  
+££  
 (
-¯¯  !
+££  !
 )
-¯¯! "
+££! "
 {
-˘˘ 
+§§ 
 bool
-˙˙ 
+•• 
 isValidDataPlayer
-˙˙ 
+•• 
 =
-˙˙ 
+•• 
 false
-˙˙ !
+•• !
 ;
-˙˙! "
+••! "
 isValidName
-˚˚ 
+¶¶ 
 =
-˚˚ 
+¶¶ 
 false
-˚˚ 
+¶¶ 
 ;
-˚˚ 
+¶¶ 
 isValidLastName
-¸¸ 
+ßß 
 =
-¸¸ 
+ßß 
 false
-¸¸ 
+ßß 
 ;
-¸¸ 
-isValidNickName
-˝˝ 
+ßß 
+isValidNickname
+®® 
 =
-˝˝ 
+®® 
 false
-˝˝ 
+®® 
 ;
-˝˝ 
+®® 
 isValidEmail
-˛˛ 
+©© 
 =
-˛˛ 
+©© 
 false
-˛˛ 
+©© 
 ;
-˛˛ 
+©© 
 isValidPassword
-ˇˇ 
+™™ 
 =
-ˇˇ 
+™™ 
 false
-ˇˇ 
+™™ 
 ;
-ˇˇ 
+™™ 
 tbName
-ÅÅ 	
+¨¨ 	
 .
-ÅÅ	 
+¨¨	 
 
 BorderBrush
-ÅÅ
+¨¨
  
 =
-ÅÅ 
+¨¨ 
 Brushes
-ÅÅ 
+¨¨ 
 .
-ÅÅ  
+¨¨  
 Transparent
-ÅÅ  +
+¨¨  +
 ;
-ÅÅ+ ,
+¨¨+ ,
 
 tbLastName
-ÇÇ 
+≠≠ 
 .
-ÇÇ 
+≠≠ 
 BorderBrush
-ÇÇ 
+≠≠ 
 =
-ÇÇ 
+≠≠ 
 Brushes
-ÇÇ #
+≠≠ #
 .
-ÇÇ# $
+≠≠# $
 Transparent
-ÇÇ$ /
+≠≠$ /
 ;
-ÇÇ/ 0
+≠≠/ 0
 
-tbNickName
-ÉÉ 
+tbNickname
+ÆÆ 
 .
-ÉÉ 
+ÆÆ 
 BorderBrush
-ÉÉ 
+ÆÆ 
 =
-ÉÉ 
+ÆÆ 
 Brushes
-ÉÉ #
+ÆÆ #
 .
-ÉÉ# $
+ÆÆ# $
 Transparent
-ÉÉ$ /
+ÆÆ$ /
 ;
-ÉÉ/ 0
+ÆÆ/ 0
 tbEmail
-ÑÑ 
+ØØ 
 
 .
-ÑÑ
+ØØ
  
 BorderBrush
-ÑÑ 
+ØØ 
 =
-ÑÑ 
+ØØ 
 Brushes
-ÑÑ  
+ØØ  
 .
-ÑÑ  !
+ØØ  !
 Transparent
-ÑÑ! ,
+ØØ! ,
 ;
-ÑÑ, -
+ØØ, -
 
 pbPassword
-ÖÖ 
+∞∞ 
 .
-ÖÖ 
+∞∞ 
 BorderBrush
-ÖÖ 
+∞∞ 
 =
-ÖÖ 
+∞∞ 
 Brushes
-ÖÖ #
+∞∞ #
 .
-ÖÖ# $
+∞∞# $
 Transparent
-ÖÖ$ /
+∞∞$ /
 ;
-ÖÖ/ 0$
+∞∞/ 0$
 pbConfirmationPassword
-ÜÜ 
+±± 
 .
-ÜÜ 
+±± 
 BorderBrush
-ÜÜ %
+±± %
 =
-ÜÜ& '
+±±& '
 Brushes
-ÜÜ( /
+±±( /
 .
-ÜÜ/ 0
+±±/ 0
 Transparent
-ÜÜ0 ;
+±±0 ;
 ;
-ÜÜ; <*
+±±; <*
 imgErrorConfirmationPassword
-àà 
+≥≥ 
 .
-àà  
+≥≥  
 
 Visibility
-àà  *
+≥≥  *
 =
-àà+ ,
+≥≥+ ,
 
 Visibility
-àà- 7
+≥≥- 7
 .
-àà7 8
+≥≥7 8
 Hidden
-àà8 >
+≥≥8 >
 ;
-àà> ?
+≥≥> ?
 imgErrorPassword
-ââ 
+¥¥ 
 .
-ââ 
+¥¥ 
 
 Visibility
-ââ 
+¥¥ 
 =
-ââ  
+¥¥  
 
 Visibility
-ââ! +
+¥¥! +
 .
-ââ+ ,
+¥¥+ ,
 Hidden
-ââ, 2
+¥¥, 2
 ;
-ââ2 3
+¥¥2 3
 imgErrorName
-ää 
+µµ 
 .
-ää 
+µµ 
 
 Visibility
-ää 
+µµ 
 =
-ää 
+µµ 
 
 Visibility
-ää '
+µµ '
 .
-ää' (
+µµ' (
 Hidden
-ää( .
+µµ( .
 ;
-ää. /
+µµ. /
 imgErrorLastName
-ãã 
+∂∂ 
 .
-ãã 
+∂∂ 
 
 Visibility
-ãã 
+∂∂ 
 =
-ãã  
+∂∂  
 
 Visibility
-ãã! +
+∂∂! +
 .
-ãã+ ,
+∂∂+ ,
 Hidden
-ãã, 2
+∂∂, 2
 ;
-ãã2 3
-imgErrorNickName
-åå 
+∂∂2 3
+imgErrorNickname
+∑∑ 
 .
-åå 
+∑∑ 
 
 Visibility
-åå 
+∑∑ 
 =
-åå  
+∑∑  
 
 Visibility
-åå! +
+∑∑! +
 .
-åå+ ,
+∑∑+ ,
 Hidden
-åå, 2
+∑∑, 2
 ;
-åå2 3
+∑∑2 3
 imgErrorEmail
-çç 
+∏∏ 
 .
-çç 
+∏∏ 
 
 Visibility
-çç 
+∏∏ 
 =
-çç 
+∏∏ 
 
 Visibility
-çç (
+∏∏ (
 .
-çç( )
+∏∏( )
 Hidden
-çç) /
+∏∏) /
 ;
-çç/ 0
+∏∏/ 0
 ValidateName
-èè 
+∫∫ 
 (
-èè 
+∫∫ 
 )
-èè 
+∫∫ 
 ;
-èè 
+∫∫ 
 ValidateLastName
-êê 
+ªª 
 (
-êê 
+ªª 
 )
-êê 
+ªª 
 ;
-êê 
-ValidateNickName
-ëë 
+ªª 
+ValidateNickname
+ºº 
 (
-ëë 
+ºº 
 )
-ëë 
+ºº 
 ;
-ëë 
+ºº 
 ValidateEmail
-íí 
+ΩΩ 
 (
-íí 
+ΩΩ 
 )
-íí 
+ΩΩ 
 ;
-íí 
+ΩΩ 
 ValidatePassword
-ìì 
+ææ 
 (
-ìì 
+ææ 
 )
-ìì 
+ææ 
 ;
-ìì 
+ææ 
 if
-ïï 
+¿¿ 
 (
-ïï 
+¿¿ 
 isValidName
-ïï 
+¿¿ 
 &&
-ïï 
+¿¿ 
 isValidLastName
-ïï %
+¿¿ %
 &&
-ïï& (
-isValidNickName
-ïï) 8
+¿¿& (
+isValidNickname
+¿¿) 8
 &&
-ïï9 ;
+¿¿9 ;
 isValidEmail
-ïï< H
+¿¿< H
 &&
-ïïI K
+¿¿I K
 isValidPassword
-ïïL [
+¿¿L [
 )
-ïï[ \
+¿¿[ \
 {
-ññ 
+¡¡ 
 isValidDataPlayer
-óó 
+¬¬ 
 =
-óó 
+¬¬ 
 true
-óó 
+¬¬ 
 ;
-óó 
+¬¬ 
 }
-ôô 
+ƒƒ 
 return
-öö 	
+≈≈ 	
 isValidDataPlayer
-öö
+≈≈
  
 ;
-öö 
+≈≈ 
 }
-õõ 
+∆∆ 
 private
-úú 	
+«« 	
 void
-úú
+««
  
 ValidateName
-úú 
+«« 
 (
-úú 
+«« 
 )
-úú 
+«« 
 {
-ùù 
+»» 
 isValidName
-ûû 
+…… 
 =
-ûû 
+…… 
 ValidationData
-ûû 
+…… 
 .
-ûû  "
+……  "
 ValidateNameComplete
-ûû  4
+……  4
 (
-ûû4 5
+……4 5
 tbName
-ûû5 ;
+……5 ;
 .
-ûû; <
+……; <
 Text
-ûû< @
+……< @
 )
-ûû@ A
+……@ A
 ;
-ûûA B
+……A B
 if
-üü 
+   
 (
-üü 
+   
 isValidName
-üü 
+   
 )
-üü 
+   
 {
-†† 
+ÀÀ 
 tbName
-°° 
+ÃÃ 
 
 .
-°°
+ÃÃ
  
 BorderBrush
-°° 
+ÃÃ 
 =
-°° 
+ÃÃ 
 Brushes
-°°  
+ÃÃ  
 .
-°°  !
+ÃÃ  !
 Green
-°°! &
+ÃÃ! &
 ;
-°°& '
+ÃÃ& '
 }
-¢¢ 
+ÕÕ 
 else
-££ 
+ŒŒ 
 {
-§§ 
+œœ 
 tbName
-•• 
+–– 
 
 .
-••
+––
  
 BorderBrush
-•• 
+–– 
 =
-•• 
+–– 
 Brushes
-••  
+––  
 .
-••  !
+––  !
 Red
-••! $
+––! $
 ;
-••$ %
+––$ %
 imgErrorName
-¶¶ 
+—— 
 .
-¶¶ 
+—— 
 
 Visibility
-¶¶ 
+—— 
 =
-¶¶ 
+—— 
 
 Visibility
-¶¶ (
+—— (
 .
-¶¶( )
+——( )
 Visible
-¶¶) 0
+——) 0
 ;
-¶¶0 1
+——0 1
 }
-ßß 
+““ 
 }
-®® 
+”” 
 private
-©© 	
+‘‘ 	
 void
-©©
+‘‘
  
 ValidateLastName
-©© 
+‘‘ 
 (
-©©  
+‘‘  
 )
-©©  !
+‘‘  !
 {
-™™ 
+’’ 
 isValidLastName
-´´ 
+÷÷ 
 =
-´´ 
+÷÷ 
 ValidationData
-´´ #
+÷÷ #
 .
-´´# $"
+÷÷# $"
 ValidateNameComplete
-´´$ 8
+÷÷$ 8
 (
-´´8 9
+÷÷8 9
 
 tbLastName
-´´9 C
+÷÷9 C
 .
-´´C D
+÷÷C D
 Text
-´´D H
+÷÷D H
 )
-´´H I
+÷÷H I
 ;
-´´I J
+÷÷I J
 if
-¨¨ 
+◊◊ 
 (
-¨¨ 
+◊◊ 
 isValidLastName
-¨¨ 
+◊◊ 
 )
-¨¨ 
+◊◊ 
 {
-≠≠ 
+ÿÿ 
 
 tbLastName
-ÆÆ 
+ŸŸ 
 .
-ÆÆ 
+ŸŸ 
 BorderBrush
-ÆÆ 
+ŸŸ 
 =
-ÆÆ 
+ŸŸ 
 Brushes
-ÆÆ $
+ŸŸ $
 .
-ÆÆ$ %
+ŸŸ$ %
 Green
-ÆÆ% *
+ŸŸ% *
 ;
-ÆÆ* +
+ŸŸ* +
 }
-ØØ 
+⁄⁄ 
 else
-∞∞ 
+€€ 
 {
-±± 
+‹‹ 
 
 tbLastName
-≤≤ 
+›› 
 .
-≤≤ 
+›› 
 BorderBrush
-≤≤ 
+›› 
 =
-≤≤ 
+›› 
 Brushes
-≤≤ $
+›› $
 .
-≤≤$ %
+››$ %
 Red
-≤≤% (
+››% (
 ;
-≤≤( )
+››( )
 imgErrorLastName
-≥≥ 
+ﬁﬁ 
 .
-≥≥ 
+ﬁﬁ 
 
 Visibility
-≥≥ 
+ﬁﬁ 
 =
-≥≥  !
+ﬁﬁ  !
 
 Visibility
-≥≥" ,
+ﬁﬁ" ,
 .
-≥≥, -
+ﬁﬁ, -
 Visible
-≥≥- 4
+ﬁﬁ- 4
 ;
-≥≥4 5
+ﬁﬁ4 5
 }
-¥¥ 
+ﬂﬂ 
 }
-µµ 
+‡‡ 
 private
-∂∂ 	
+·· 	
 void
-∂∂
+··
  
 ValidateEmail
-∂∂ 
+·· 
 (
-∂∂ 
+·· 
 )
-∂∂ 
+·· 
 {
-∑∑ 
+‚‚ 
 isValidEmail
-∏∏ 
+„„ 
 =
-∏∏ 
+„„ 
 ValidationData
-∏∏  
+„„  
 .
-∏∏  !
+„„  !
 ValidateEmail
-∏∏! .
+„„! .
 (
-∏∏. /
+„„. /
 tbEmail
-∏∏/ 6
+„„/ 6
 .
-∏∏6 7
+„„6 7
 Text
-∏∏7 ;
+„„7 ;
 )
-∏∏; <
+„„; <
 ;
-∏∏< =
+„„< =
 if
-ππ 
+‰‰ 
 (
-ππ 
+‰‰ 
 isValidEmail
-ππ 
+‰‰ 
 )
-ππ 
+‰‰ 
 {
-∫∫ 
+ÂÂ 
 tbEmail
-ªª 
+ÊÊ 
 .
-ªª 
+ÊÊ 
 BorderBrush
-ªª 
+ÊÊ 
 =
-ªª 
+ÊÊ 
 Brushes
-ªª !
+ÊÊ !
 .
-ªª! "
+ÊÊ! "
 Green
-ªª" '
+ÊÊ" '
 ;
-ªª' (
+ÊÊ' (
 }
-ºº 
+ÁÁ 
 else
-ΩΩ 
+ËË 
 {
-ææ 
+ÈÈ 
 tbEmail
-øø 
+ÍÍ 
 .
-øø 
+ÍÍ 
 BorderBrush
-øø 
+ÍÍ 
 =
-øø 
+ÍÍ 
 Brushes
-øø !
+ÍÍ !
 .
-øø! "
+ÍÍ! "
 Red
-øø" %
+ÍÍ" %
 ;
-øø% &
+ÍÍ% &
 imgErrorEmail
-¿¿ 
+ÎÎ 
 .
-¿¿ 
+ÎÎ 
 
 Visibility
-¿¿ 
+ÎÎ 
 =
-¿¿ 
+ÎÎ 
 
 Visibility
-¿¿ )
+ÎÎ )
 .
-¿¿) *
+ÎÎ) *
 Visible
-¿¿* 1
+ÎÎ* 1
 ;
-¿¿1 2
+ÎÎ1 2
 }
-¡¡ 
+ÏÏ 
 }
-¬¬ 
+ÌÌ 
 private
-√√ 	
+ÓÓ 	
 void
-√√
+ÓÓ
  
 ValidatePassword
-√√ 
+ÓÓ 
 (
-√√  
+ÓÓ  
 )
-√√  !
+ÓÓ  !
 {
-ƒƒ 
+ÔÔ 
 bool
-≈≈  
+  
 isValidatePassword
-≈≈ 
+ 
 ;
-≈≈ 
+ 
 bool
-∆∆ ,
+ÒÒ ,
 isValidateConfirmationPassword
-∆∆ &
+ÒÒ &
 ;
-∆∆& ' 
+ÒÒ& ' 
 isValidatePassword
-«« 
+ÚÚ 
 =
-«« 
+ÚÚ 
 ValidationData
-«« &
+ÚÚ &
 .
-««& '
+ÚÚ& '
 ValidatePassword
-««' 7
+ÚÚ' 7
 (
-««7 8
+ÚÚ7 8
 
 pbPassword
-««8 B
+ÚÚ8 B
 .
-««B C
+ÚÚB C
 Password
-««C K
+ÚÚC K
 )
-««K L
+ÚÚK L
 ;
-««L M,
+ÚÚL M,
 isValidateConfirmationPassword
-»» !
+ÛÛ !
 =
-»»" #
+ÛÛ" #
 ValidationData
-»»$ 2
+ÛÛ$ 2
 .
-»»2 3
+ÛÛ2 3
 ValidatePassword
-»»3 C
+ÛÛ3 C
 (
-»»C D$
+ÛÛC D$
 pbConfirmationPassword
-»»D Z
+ÛÛD Z
 .
-»»Z [
+ÛÛZ [
 Password
-»»[ c
+ÛÛ[ c
 )
-»»c d
+ÛÛc d
 ;
-»»d e
+ÛÛd e
 if
-…… 
+ÙÙ 
 (
-…… 
+ÙÙ 
 
 pbPassword
-…… 
+ÙÙ 
 .
-…… 
+ÙÙ 
 Password
-…… 
+ÙÙ 
 !=
-…… $
+ÙÙ $
 pbConfirmationPassword
-…… 4
+ÙÙ 4
 .
-……4 5
+ÙÙ4 5
 Password
-……5 =
+ÙÙ5 =
 )
-……= >
+ÙÙ= >
 {
-   
+ıı 
 
 pbPassword
-ÀÀ 
+ˆˆ 
 .
-ÀÀ 
+ˆˆ 
 BorderBrush
-ÀÀ 
+ˆˆ 
 =
-ÀÀ 
+ˆˆ 
 Brushes
-ÀÀ $
+ˆˆ $
 .
-ÀÀ$ %
+ˆˆ$ %
 Red
-ÀÀ% (
+ˆˆ% (
 ;
-ÀÀ( )$
+ˆˆ( )$
 pbConfirmationPassword
-ÃÃ 
+˜˜ 
 .
-ÃÃ 
+˜˜ 
 BorderBrush
-ÃÃ &
+˜˜ &
 =
-ÃÃ' (
+˜˜' (
 Brushes
-ÃÃ) 0
+˜˜) 0
 .
-ÃÃ0 1
+˜˜0 1
 Red
-ÃÃ1 4
+˜˜1 4
 ;
-ÃÃ4 5
+˜˜4 5
 imgErrorPassword
-ÕÕ 
+¯¯ 
 .
-ÕÕ 
+¯¯ 
 
 Visibility
-ÕÕ 
+¯¯ 
 =
-ÕÕ  !
+¯¯  !
 
 Visibility
-ÕÕ" ,
+¯¯" ,
 .
-ÕÕ, -
+¯¯, -
 Visible
-ÕÕ- 4
+¯¯- 4
 ;
-ÕÕ4 5*
+¯¯4 5*
 imgErrorConfirmationPassword
-ŒŒ  
+˘˘  
 .
-ŒŒ  !
+˘˘  !
 
 Visibility
-ŒŒ! +
+˘˘! +
 =
-ŒŒ, -
+˘˘, -
 
 Visibility
-ŒŒ. 8
+˘˘. 8
 .
-ŒŒ8 9
+˘˘8 9
 Visible
-ŒŒ9 @
+˘˘9 @
 ;
-ŒŒ@ A
+˘˘@ A
 }
-œœ 
+˙˙ 
 else
-–– 
+˚˚ 
 {
-—— 
+¸¸ 
 if
-““ 
+˝˝ 
 (
-““  
+˝˝  
 isValidatePassword
-““ 
+˝˝ 
 )
-““ 
+˝˝ 
 {
-”” 
+˛˛ 
 
 pbPassword
-‘‘ 
+ˇˇ 
 .
-‘‘ 
+ˇˇ 
 BorderBrush
-‘‘ 
+ˇˇ 
 =
-‘‘ 
+ˇˇ 
 Brushes
-‘‘ %
+ˇˇ %
 .
-‘‘% &
+ˇˇ% &
 Green
-‘‘& +
+ˇˇ& +
 ;
-‘‘+ ,
+ˇˇ+ ,
 }
-’’ 
+ÄÄ 
 else
-÷÷ 
+ÅÅ 
 {
-◊◊ 
+ÇÇ 
 
 pbPassword
-ÿÿ 
+ÉÉ 
 .
-ÿÿ 
+ÉÉ 
 BorderBrush
-ÿÿ 
+ÉÉ 
 =
-ÿÿ 
+ÉÉ 
 Brushes
-ÿÿ %
+ÉÉ %
 .
-ÿÿ% &
+ÉÉ% &
 Red
-ÿÿ& )
+ÉÉ& )
 ;
-ÿÿ) *
+ÉÉ) *
 imgErrorPassword
-ŸŸ 
+ÑÑ 
 .
-ŸŸ 
+ÑÑ 
 
 Visibility
-ŸŸ  
+ÑÑ  
 =
-ŸŸ! "
+ÑÑ! "
 
 Visibility
-ŸŸ# -
+ÑÑ# -
 .
-ŸŸ- .
+ÑÑ- .
 Visible
-ŸŸ. 5
+ÑÑ. 5
 ;
-ŸŸ5 6
+ÑÑ5 6
 }
-⁄⁄ 
+ÖÖ 
 if
-€€ 
+ÜÜ 
 (
-€€ ,
+ÜÜ ,
 isValidateConfirmationPassword
-€€ &
+ÜÜ &
 )
-€€& '
+ÜÜ& '
 {
-‹‹ $
+áá $
 pbConfirmationPassword
-›› 
+àà 
 .
-›› 
+àà 
 BorderBrush
-›› '
+àà '
 =
-››( )
+àà( )
 Brushes
-››* 1
+àà* 1
 .
-››1 2
+àà1 2
 Green
-››2 7
+àà2 7
 ;
-››7 8
+àà7 8
 }
-ﬁﬁ 
+ââ 
 else
-ﬂﬂ 
+ää 
 {
-‡‡ $
+ãã $
 pbConfirmationPassword
-·· 
+åå 
 .
-·· 
+åå 
 BorderBrush
-·· '
+åå '
 =
-··( )
+åå( )
 Brushes
-··* 1
+åå* 1
 .
-··1 2
+åå1 2
 Red
-··2 5
+åå2 5
 ;
-··5 6*
+åå5 6*
 imgErrorConfirmationPassword
-‚‚ !
+çç !
 .
-‚‚! "
+çç! "
 
 Visibility
-‚‚" ,
+çç" ,
 =
-‚‚- .
+çç- .
 
 Visibility
-‚‚/ 9
+çç/ 9
 .
-‚‚9 :
+çç9 :
 Visible
-‚‚: A
+çç: A
 ;
-‚‚A B
+ççA B
 }
-„„ 
+éé 
 }
-‰‰ 
+èè 
 if
-ÂÂ 
+êê 
 (
-ÂÂ ,
+êê ,
 isValidateConfirmationPassword
-ÂÂ %
+êê %
 &&
-ÂÂ& ( 
+êê& ( 
 isValidatePassword
-ÂÂ) ;
+êê) ;
 )
-ÂÂ; <
+êê; <
 {
-ÊÊ 
+ëë 
 isValidPassword
-ÁÁ 
+íí 
 =
-ÁÁ 
+íí 
 true
-ÁÁ 
+íí 
 ;
-ÁÁ 
+íí 
 }
-ËË 
+ìì 
 }
-ÈÈ 
+îî 
 private
-ÍÍ 	
+ïï 	
 void
-ÍÍ
+ïï
  
-ValidateNickName
-ÍÍ 
+ValidateNickname
+ïï 
 (
-ÍÍ  
+ïï  
 )
-ÍÍ  !
+ïï  !
 {
-ÎÎ 
-isValidNickName
-ÏÏ 
+ññ 
+isValidNickname
+óó 
 =
-ÏÏ 
+óó 
 ValidationData
-ÏÏ #
+óó #
 .
-ÏÏ# $
-ValidateNickName
-ÏÏ$ 4
+óó# $
+ValidateNickname
+óó$ 4
 (
-ÏÏ4 5
+óó4 5
 
-tbNickName
-ÏÏ5 ?
+tbNickname
+óó5 ?
 .
-ÏÏ? @
+óó? @
 Text
-ÏÏ@ D
+óó@ D
 )
-ÏÏD E
+óóD E
 ;
-ÏÏE F
+óóE F
 if
-ÌÌ 
+òò 
 (
-ÌÌ 
-isValidNickName
-ÌÌ 
+òò 
+isValidNickname
+òò 
 )
-ÌÌ 
+òò 
 {
-ÓÓ 
+ôô 
 
-tbNickName
-ÔÔ 
+tbNickname
+öö 
 .
-ÔÔ 
+öö 
 BorderBrush
-ÔÔ 
+öö 
 =
-ÔÔ 
+öö 
 Brushes
-ÔÔ $
+öö $
 .
-ÔÔ$ %
+öö$ %
 Green
-ÔÔ% *
+öö% *
 ;
-ÔÔ* +
+öö* +
 }
- 
+õõ 
 else
-ÒÒ 
+úú 
 {
-ÚÚ 
+ùù 
 
-tbNickName
-ÛÛ 
+tbNickname
+ûû 
 .
-ÛÛ 
+ûû 
 BorderBrush
-ÛÛ 
+ûû 
 =
-ÛÛ 
+ûû 
 Brushes
-ÛÛ $
+ûû $
 .
-ÛÛ$ %
+ûû$ %
 Red
-ÛÛ% (
+ûû% (
 ;
-ÛÛ( )
-imgErrorNickName
-ÙÙ 
+ûû( )
+imgErrorNickname
+üü 
 .
-ÙÙ 
+üü 
 
 Visibility
-ÙÙ 
+üü 
 =
-ÙÙ  !
+üü  !
 
 Visibility
-ÙÙ" ,
+üü" ,
 .
-ÙÙ, -
+üü, -
 Visible
-ÙÙ- 4
+üü- 4
 ;
-ÙÙ4 5
+üü4 5
 }
-ıı 
+†† 
 }
-ˆˆ 
+°° 
 }
-˜˜ 
-}¯¯ µ4
+¢¢ 
+}££ ç4
 =C:\Users\Ale_2\source\repos\hangmanGame\DeleteAccount.xaml.cs
 	namespace 	
 hangmanGame
  
 { 
-[ 
-CallbackBehavior 
-( %
-UseSynchronizationContext /
-=0 1
-false2 7
-)7 8
-]8 9
-public		 
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext /
+=0 1
+false2 7
+)7 8
+]8 9
+public 
 
-partial		 
-class		 
-DeleteAccount		 &
-:		' (
-Window		) /
-,		/ 0"
-IPlayerManagerCallback		1 G
-{
-
- 
-private 
-static 
-ServiceAccount %
-account& -
-;- .
-private 
-static 
-ServicePlayer $
-player% +
-;+ ,
-private 
-bool 
-responseBoolean $
-;$ %
-public 
-DeleteAccount 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-} 	
-public 
-void !
-PlayerResponseBoolean )
-() *
-bool* .
-response/ 7
-)7 8
-{ 	
-responseBoolean 
-= 
-response &
-;& '
-} 	
-public 
-void 
-AccountReceived #
-(# $
-ServiceAccount$ 2
-accountReceived3 B
-)B C
-{ 	
-account 
-= 
-accountReceived %
-;% &
-lEmail 
-. 
-Content 
-= 
-account $
-.$ %
-Email% *
-;* +
-string 
-password 
-= 
-Security &
-.& '
-Decrypt' .
-(. /
-account/ 6
-.6 7
-PasswordAccount7 F
-)F G
-;G H
-	lPassword 
-. 
-Content 
-= 
-password  (
-;( )
-} 	
-public 
-void 
-PlayerReceived "
-(" #
-ServicePlayer# 0
-playerReceived1 ?
-)? @
-{ 	
-player 
-= 
-playerReceived #
-;# $
-lName   
-.   
-Content   
-=   
-player   "
-.  " #
+partial 
+class 
+DeleteAccount &
+:' (
+Window) /
+,/ 0"
+IPlayerManagerCallback1 G
+{ 
+private 
+ServiceAccount 
+account &
+;& '
+private 
+ServicePlayer 
+player $
+;$ %
+private 
+bool 
+responseBoolean $
+;$ %
+public 
+DeleteAccount 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+} 	
+public 
+void !
+PlayerResponseBoolean )
+() *
+bool* .
+response/ 7
+)7 8
+{ 	
+responseBoolean   
+=   
+response   &
+;  & '
+}!! 	
+public'' 
+void'' 
+AccountReceived'' #
+(''# $
+ServiceAccount''$ 2
+accountReceived''3 B
+)''B C
+{(( 	
+account)) 
+=)) 
+accountReceived)) %
+;))% &
+lEmail** 
+.** 
+Content** 
+=** 
+account** $
+.**$ %
+Email**% *
+;*** +
+string++ 
+password++ 
+=++ 
+Security++ &
+.++& '
+Decrypt++' .
+(++. /
+account++/ 6
+.++6 7
+PasswordAccount++7 F
+)++F G
+;++G H
+	lPassword,, 
+.,, 
+Content,, 
+=,, 
+password,,  (
+;,,( )
+}-- 	
+public33 
+void33 
+PlayerReceived33 "
+(33" #
+ServicePlayer33# 0
+playerReceived331 ?
+)33? @
+{44 	
+player55 
+=55 
+playerReceived55 #
+;55# $
+lName66 
+.66 
+Content66 
+=66 
+player66 "
+.66" #
 
-NamePlayer  # -
-;  - .
-	lLastName!! 
-.!! 
-Content!! 
-=!! 
-player!!  &
-.!!& '
-LastName!!' /
-;!!/ 0
-	lNickName"" 
-."" 
-Content"" 
-="" 
-player""  &
-.""& '
-NickName""' /
-;""/ 0
-}## 	
-private$$ 
-void$$ 
-DeleteAccountPlayer$$ (
-($$( )
-object$$) /
-sender$$0 6
-,$$6 7
-RoutedEventArgs$$8 G
-routedEventArgs$$H W
-)$$W X
-{$$Y Z
-InstanceContext%% 
-instanceContext%% +
-=%%, -
-new%%. 1
-InstanceContext%%2 A
-(%%A B
-this%%B F
-)%%F G
-;%%G H
-PlayerManagerClient&& 
-playerManager&&  -
-=&&. /
-new&&0 3
-PlayerManagerClient&&4 G
-(&&G H
-instanceContext&&H W
-)&&W X
-;&&X Y
-playerManager'' 
-.'' 
-DeleteAccountPlayer'' -
-(''- .
-player''. 4
-.''4 5
-NickName''5 =
-)''= >
-;''> ?
-bool(( 
-isDeletePlayer(( 
-=((  !
-responseBoolean((" 1
-;((1 2
-if)) 
-()) 
-isDeletePlayer)) 
-))) 
-{** 
-OpenMessageBox++ 
-(++ 
+NamePlayer66# -
+;66- .
+	lLastName77 
+.77 
+Content77 
+=77 
+player77  &
+.77& '
+LastName77' /
+;77/ 0
+	lNickname88 
+.88 
+Content88 
+=88 
+player88  &
+.88& '
+NickName88' /
+;88/ 0
+}99 	
+private:: 
+void:: 
+DeleteAccountPlayer:: (
+(::( )
+object::) /
+sender::0 6
+,::6 7
+RoutedEventArgs::8 G
+routedEventArgs::H W
+)::W X
+{::Y Z
+InstanceContext;; 
+instanceContext;; +
+=;;, -
+new;;. 1
+InstanceContext;;2 A
+(;;A B
+this;;B F
+);;F G
+;;;G H
+PlayerManagerClient<< 
+playerManager<<  -
+=<<. /
+new<<0 3
+PlayerManagerClient<<4 G
+(<<G H
+instanceContext<<H W
+)<<W X
+;<<X Y
+playerManager== 
+.== 
+DeleteAccountPlayer== -
+(==- .
+player==. 4
+.==4 5
+NickName==5 =
+)=== >
+;==> ?
+bool>> 
+isDeletePlayer>> 
+=>>  !
+responseBoolean>>" 1
+;>>1 2
+if?? 
+(?? 
+isDeletePlayer?? 
+)?? 
+{@@ 
+OpenMessageBoxAA 
+(AA 
 
-Properties++ )
-.++) *
-	Resources++* 3
-.++3 4 
-DeleteAccountMessage++4 H
-,++H I
+PropertiesAA )
+.AA) *
+	ResourcesAA* 3
+.AA3 4 
+DeleteAccountMessageAA4 H
+,AAH I
 
-Properties++J T
-.++T U
-	Resources++U ^
-.++^ _%
-DeleteAccountMessageTitle++_ x
-,++x y
-(++z {
-MessageBoxImage	++{ ä
+PropertiesAAJ T
+.AAT U
+	ResourcesAAU ^
+.AA^ _%
+DeleteAccountMessageTitleAA_ x
+,AAx y
+(AAz {
+MessageBoxImage	AA{ ä
 )
-++ä ã
+AAä ã
 System
-++ã ë
+AAã ë
 .
-++ë í
+AAë í
 Windows
-++í ô
+AAí ô
 .
-++ô ö
+AAô ö
 Forms
-++ö ü
+AAö ü
 .
-++ü †
+AAü †
 MessageBoxIcon
-++† Æ
+AA† Æ
 .
-++Æ Ø
+AAÆ Ø
 Information
-++Ø ∫
+AAØ ∫
 )
-++∫ ª
+AA∫ ª
 ;
-++ª º
+AAª º
 
-MainWindow,, 
-main,, 
-=,,  !
-new,," %
+MainWindowBB 
+mainBB 
+=BB  !
+newBB" %
 
-MainWindow,,& 0
-(,,0 1
-),,1 2
-;,,2 3
-main-- 
-.-- 
-Show-- 
-(-- 
-)-- 
-;-- 
-this.. 
-... 
-Close.. 
-(.. 
-).. 
-;.. 
-}// 
-else00 
-{11 
-OpenMessageBox22 
-(22 
+MainWindowBB& 0
+(BB0 1
+)BB1 2
+;BB2 3
+mainCC 
+.CC 
+ShowCC 
+(CC 
+)CC 
+;CC 
+thisDD 
+.DD 
+CloseDD 
+(DD 
+)DD 
+;DD 
+}EE 
+elseFF 
+{GG 
+OpenMessageBoxHH 
+(HH 
 
-Properties22 )
-.22) *
-	Resources22* 3
-.223 4"
-NoDeleteAccountMessage224 J
-,22J K
+PropertiesHH )
+.HH) *
+	ResourcesHH* 3
+.HH3 4"
+NoDeleteAccountMessageHH4 J
+,HHJ K
 
-Properties22L V
-.22V W
-	Resources22W `
-.22` a%
-DeleteAccountMessageTitle22a z
-,22z {
-(22| }
-MessageBoxImage	22} å
+PropertiesHHL V
+.HHV W
+	ResourcesHHW `
+.HH` a%
+DeleteAccountMessageTitleHHa z
+,HHz {
+(HH| }
+MessageBoxImage	HH} å
 )
-22å ç
+HHå ç
 System
-22ç ì
+HHç ì
 .
-22ì î
+HHì î
 Windows
-22î õ
+HHî õ
 .
-22õ ú
+HHõ ú
 Forms
-22ú °
+HHú °
 .
-22° ¢
+HH° ¢
 MessageBoxIcon
-22¢ ∞
+HH¢ ∞
 .
-22∞ ±
+HH∞ ±
 Error
-22± ∂
+HH± ∂
 )
-22∂ ∑
+HH∂ ∑
 ;
-22∑ ∏
-}33 
-}44 	
-private55 
-void55 
-OpenMessageBox55 #
-(55# $
-string55$ *
-textMessage55+ 6
-,556 7
-string558 >
-titleMessage55? K
-,55K L
-MessageBoxImage55M \
-messageBoxImage55] l
-)55l m
-{66 	
+HH∑ ∏
+}II 
+}JJ 	
+privateKK 
+voidKK 
+OpenMessageBoxKK #
+(KK# $
+stringKK$ *
+textMessageKK+ 6
+,KK6 7
+stringKK8 >
+titleMessageKK? K
+,KKK L
+MessageBoxImageKKM \
+messageBoxImageKK] l
+)KKl m
+{LL 	
 
-MessageBox77 
-.77 
-Show77 
-(77 
-textMessage77 '
-,77' (
-titleMessage77) 5
-,775 6
-(777 8
-MessageBoxButton778 H
-)77H I
-System77I O
-.77O P
-Windows77P W
-.77W X
-Forms77X ]
-.77] ^
-MessageBoxButtons77^ o
-.77o p
-OK77p r
-,77r s
-messageBoxImage	77t É
+MessageBoxMM 
+.MM 
+ShowMM 
+(MM 
+textMessageMM '
+,MM' (
+titleMessageMM) 5
+,MM5 6
+(MM7 8
+MessageBoxButtonMM8 H
+)MMH I
+SystemMMI O
+.MMO P
+WindowsMMP W
+.MMW X
+FormsMMX ]
+.MM] ^
+MessageBoxButtonsMM^ o
+.MMo p
+OKMMp r
+,MMr s
+messageBoxImage	MMt É
 )
-77É Ñ
+MMÉ Ñ
 ;
-77Ñ Ö
-}88 	
-private99 
-void99 
-Exit99 
-(99 
-object99  
-sender99! '
-,99' (
-RoutedEventArgs99) 8
-routedEventArgs999 H
-)99H I
-{:: 	
-ModifyAccount;; 
-modifyAccount;; '
-=;;( )
-new;;* -
-ModifyAccount;;. ;
-(;;; <
-);;< =
-;;;= >
-modifyAccount<< 
-.<<  
-InitializeDataPlayer<< .
-(<<. /
-)<</ 0
-;<<0 1
-modifyAccount== 
-.== 
-Show== 
-(== 
-)==  
-;==  !
-this>> 
-.>> 
-Close>> 
-(>> 
-)>> 
-;>> 
-}?? 	
-}@@ 
-}AA ˆS
+MMÑ Ö
+}NN 	
+privateOO 
+voidOO 
+ExitOO 
+(OO 
+objectOO  
+senderOO! '
+,OO' (
+RoutedEventArgsOO) 8
+routedEventArgsOO9 H
+)OOH I
+{PP 	
+ModifyAccountQQ 
+modifyAccountQQ '
+=QQ( )
+newQQ* -
+ModifyAccountQQ. ;
+(QQ; <
+)QQ< =
+;QQ= >
+modifyAccountRR 
+.RR  
+InitializeDataPlayerRR .
+(RR. /
+)RR/ 0
+;RR0 1
+modifyAccountSS 
+.SS 
+ShowSS 
+(SS 
+)SS  
+;SS  !
+thisTT 
+.TT 
+CloseTT 
+(TT 
+)TT 
+;TT 
+}UU 	
+}VV 
+}WW Ωh
 5C:\Users\Ale_2\source\repos\hangmanGame\Lobby.xaml.cs
 	namespace 	
 hangmanGame
@@ -14268,17 +15959,15 @@ MessageBox77 
 IPlayerScoresManagerCallback_ {
 { 
 private 	
-static
- 
-string 
-emailAccount $
-;$ %
+string
+ 
+emailAccount 
+; 
 private 	
-static
- 
-string 
-nickname  
-;  !
+string
+ 
+nickname 
+; 
 private 	
 int
  
@@ -14292,20 +15981,18 @@ MessageBox77 
 ] 
 servicePlayers (
 ;( )
-private 	
-static
- 
-ServicePlayer 
-[ 
-]  !
-servicePlayersConnect! 6
-;6 7
-private 	
-static
- 
-bool 
-isStartGameCurrent (
-;( )
+private 	
+ServicePlayer
+ 
+[ 
+] !
+servicePlayersConnect /
+;/ 0
+private 	
+bool
+ 
+isStartGameCurrent !
+;! "
 private 	
 ServiceSentence
  
@@ -14409,16 +16096,14 @@ MessageBox77 
 
 IsStarGamePP 
 (PP 
-boolPP 
-
-isStarGamePP (
-)PP( )
+boolPP 
+isStarGameRunPP +
+)PP+ ,
 {QQ 
 isStartGameCurrentRR 
-=RR 
-
-isStarGameRR "
-;RR" #
+=RR 
+isStarGameRunRR %
+;RR% &
 }SS 
 publicYY 
 voidYY	 
@@ -14437,691 +16122,890 @@ isStarGameRR "
 voidbb	 
 PlayerWinnerbb 
 (bb 
-ServiceWinnerbb (
-playerWinnerbb) 5
-)bb5 6
+ServiceWinnerbb (
+playerWinnerGamebb) 9
+)bb9 :
 {cc 
 serviceWinnerdd 
-=dd 
-playerWinnerdd 
-;dd  
+=dd 
+playerWinnerGamedd #
+;dd# $
 }ee 
 publicjj 
 voidjj	 
 ColocateBestScoresjj  
 (jj  !
 )jj! "
-{kk 
-InstanceContextll 
-instanceContextll "
-=ll# $
-newll% (
-InstanceContextll) 8
-(ll8 9
-thisll9 =
-)ll= >
-;ll> ?%
-PlayerScoresManagerClientmm 
-searchBestScoresmm -
-=mm. /
-newmm0 3%
-PlayerScoresManagerClientmm4 M
-(mmM N
-instanceContextmmN ]
-)mm] ^
-;mm^ _
-searchBestScoresnn 
-.nn "
-SearchBestScoresPlayernn *
-(nn* +
-)nn+ ,
-;nn, -
-dgBestScoresoo 
-.oo 
-ItemsSourceoo 
-=oo 
-servicePlayersoo ,
-;oo, -
-}pp 
-publicuu 
-voiduu	 '
-ColocatePersonalInformationuu )
-(uu) *
-)uu* +
-{vv 
-InstanceContextww 
-instanceContextww "
-=ww# $
-newww% (
-InstanceContextww) 8
-(ww8 9
-thisww9 =
-)ww= >
-;ww> ?*
-InformationPlayerManagerClientxx !
-personalInformationxx" 5
-=xx6 7
-newxx8 ;*
-InformationPlayerManagerClientxx< Z
-(xxZ [
-instanceContextxx[ j
-)xxj k
-;xxk l
-personalInformationyy 
-.yy #
-SearchInformationPlayeryy .
-(yy. /
-emailAccountyy/ ;
-)yy; <
-;yy< =
-
-lbNicknamezz 
-.zz 
-Contentzz 
-=zz 
-nicknamezz  
-;zz  !
-lbScore{{ 
-
-.{{
- 
-Content{{ 
-={{ 
-score{{ 
-;{{ 
-}|| 
-private~~ 	
-void~~
- 
-LogOut~~ 
-(~~ 
-object~~ 
-sender~~ #
-,~~# $
-RoutedEventArgs~~% 4
-e~~5 6
-)~~6 7
-{ 
-
-MainWindow
-ÄÄ 
-main
-ÄÄ 
-=
-ÄÄ 
-new
-ÄÄ 
-
-MainWindow
-ÄÄ #
-(
-ÄÄ# $
-)
-ÄÄ$ %
-;
-ÄÄ% &
-main
-ÅÅ 
-.
-ÅÅ 
-Show
-ÅÅ 
-(
-ÅÅ 
-)
-ÅÅ 
-;
-ÅÅ 
-this
-ÇÇ 
-.
-ÇÇ 
-Close
-ÇÇ 
-(
-ÇÇ 
-)
-ÇÇ 
-;
-ÇÇ 
-}
-ÉÉ 
-private
-ÖÖ 	
-void
-ÖÖ
- 
-ManageSettings
-ÖÖ 
-(
-ÖÖ 
-object
-ÖÖ $
-sender
-ÖÖ% +
-,
-ÖÖ+ ,
-RoutedEventArgs
-ÖÖ- <
-e
-ÖÖ= >
-)
-ÖÖ> ?
+{kk 
+tryll 
+{mm 
+InstanceContextnn 
+instanceContextnn #
+=nn$ %
+newnn& )
+InstanceContextnn* 9
+(nn9 :
+thisnn: >
+)nn> ?
+;nn? @%
+PlayerScoresManagerClientoo 
+searchBestScoresoo .
+=oo/ 0
+newoo1 4%
+PlayerScoresManagerClientoo5 N
+(ooN O
+instanceContextooO ^
+)oo^ _
+;oo_ `
+searchBestScorespp 
+.pp "
+SearchBestScoresPlayerpp +
+(pp+ ,
+)pp, -
+;pp- .
+dgBestScoresqq 
+.qq 
+ItemsSourceqq 
+=qq 
+servicePlayersqq -
+;qq- .
+}rr 
+catchss 
+(ss	 
+%
+EndpointNotFoundExceptionss
+ #
+	exceptionss$ -
+)ss- .
+{tt 
+TelegramBotuu 
+.uu 
+SendToTelegramuu 
+(uu 
+	exceptionuu (
+)uu( )
+;uu) *
+LogExceptionvv 
+.vv 
+Logvv 
+(vv 
+thisvv 
+,vv 
+	exceptionvv $
+)vv$ %
+;vv% &
+LogExceptionww 
+.ww "
+ErrorConnectionServiceww '
+(ww' (
+)ww( )
+;ww) *
+CloseWindowxx 
+(xx 
+)xx 
+;xx 
+}yy 
+}zz 
+public 
+void	 '
+ColocatePersonalInformation )
+() *
+)* +
 {
-ÜÜ 
-Setting
-áá 
-
-setting
-áá 
-=
-áá 
-new
-áá 
-Setting
-áá  
-(
-áá  !
-)
-áá! "
-;
-áá" #
-setting
-àà 
-
-.
-àà
-  
-InitializeComboBox
-àà 
-(
-àà 
-)
-àà 
-;
-àà  
-setting
-ââ 
-
-.
-ââ
- "
-InitializeValueSound
-ââ 
-(
-ââ  
-)
-ââ  !
-;
-ââ! "
-setting
-ää 
-
-.
-ää
- 
-Show
-ää 
-(
-ää 
-)
-ää 
-;
-ää 
-this
-ãã 
-.
-ãã 
-Close
-ãã 
-(
-ãã 
-)
-ãã 
-;
-ãã 
-}
-åå 
-private
-éé 	
-void
-éé
- 
-UpdateAccount
-éé 
-(
-éé 
-object
-éé #
-sender
-éé$ *
-,
-éé* +
-RoutedEventArgs
-éé, ;
-e
-éé< =
-)
-éé= >
+ÄÄ 
+try
+ÅÅ 
 {
-èè 
-ModifyAccount
-êê 
-modifyAccount
-êê 
+ÇÇ 
+InstanceContext
+ÉÉ 
+instanceContext
+ÉÉ #
 =
-êê  
+ÉÉ$ %
 new
-êê! $
-ModifyAccount
-êê% 2
+ÉÉ& )
+InstanceContext
+ÉÉ* 9
 (
-êê2 3
+ÉÉ9 :
+this
+ÉÉ: >
 )
-êê3 4
+ÉÉ> ?
 ;
-êê4 5
-modifyAccount
-ëë 
-.
-ëë 
-EmailReceived
-ëë 
+ÉÉ? @,
+InformationPlayerManagerClient
+ÑÑ "!
+personalInformation
+ÑÑ# 6
+=
+ÑÑ7 8
+new
+ÑÑ9 <,
+InformationPlayerManagerClient
+ÑÑ= [
 (
-ëë 
+ÑÑ[ \
+instanceContext
+ÑÑ\ k
+)
+ÑÑk l
+;
+ÑÑl m!
+personalInformation
+ÖÖ 
+.
+ÖÖ %
+SearchInformationPlayer
+ÖÖ /
+(
+ÖÖ/ 0
 emailAccount
-ëë +
+ÖÖ0 <
 )
-ëë+ ,
+ÖÖ< =
 ;
-ëë, -
-modifyAccount
-íí 
+ÖÖ= >
+
+lbNickname
+ÜÜ 
 .
-íí 
-AccountReceived
-íí  
-(
-íí  !
-)
-íí! "
+ÜÜ 
+Content
+ÜÜ 
+=
+ÜÜ 
+nickname
+ÜÜ !
 ;
-íí" #
-modifyAccount
-ìì 
+ÜÜ! "
+lbScore
+áá 
 .
-ìì 
-Show
-ìì 
-(
-ìì 
-)
-ìì 
+áá 
+Content
+áá 
+=
+áá 
+score
+áá 
 ;
-ìì 
+áá 
+}
+àà 
+catch
+ââ 
+(
+ââ	 
+'
+EndpointNotFoundException
+ââ
+ #
+	exception
+ââ$ -
+)
+ââ- .
+{
+ää 
+TelegramBot
+ãã 
+.
+ãã 
+SendToTelegram
+ãã 
+(
+ãã 
+	exception
+ãã (
+)
+ãã( )
+;
+ãã) *
+LogException
+åå 
+.
+åå 
+Log
+åå 
+(
+åå 
 this
-îî 
-.
-îî 
-Close
-îî 
-(
-îî 
+åå 
+,
+åå 
+	exception
+åå $
 )
-îî 
+åå$ %
 ;
+åå% &
+LogException
+çç 
+.
+çç $
+ErrorConnectionService
+çç '
+(
+çç' (
+)
+çç( )
+;
+çç) *
+CloseWindow
+éé 
+(
+éé 
+)
+éé 
+;
+éé 
+}
+èè 
+}
+êê 
+private
+íí 	
+void
+íí
+ 
+LogOut
+íí 
+(
+íí 
+object
+íí 
+sender
+íí #
+,
+íí# $
+RoutedEventArgs
+íí% 4
+e
+íí5 6
+)
+íí6 7
+{
+ìì 
+CloseWindow
+îî 
+(
+îî 
+)
 îî 
+;
+îî 
 }
 ïï 
 private
 óó 	
 void
 óó
+ 
+ManageSettings
+óó 
+(
+óó 
+object
+óó $
+sender
+óó% +
+,
+óó+ ,
+RoutedEventArgs
+óó- <
+e
+óó= >
+)
+óó> ?
+{
+òò 
+Setting
+ôô 
+
+setting
+ôô 
+=
+ôô 
+new
+ôô 
+Setting
+ôô  
+(
+ôô  !
+)
+ôô! "
+;
+ôô" #
+setting
+öö 
+
+.
+öö
+  
+InitializeComboBox
+öö 
+(
+öö 
+)
+öö 
+;
+öö  
+setting
+õõ 
+
+.
+õõ
+ "
+InitializeValueSound
+õõ 
+(
+õõ  
+)
+õõ  !
+;
+õõ! "
+setting
+úú 
+
+.
+úú
+ 
+Show
+úú 
+(
+úú 
+)
+úú 
+;
+úú 
+this
+ùù 
+.
+ùù 
+Close
+ùù 
+(
+ùù 
+)
+ùù 
+;
+ùù 
+}
+ûû 
+private
+†† 	
+void
+††
+ 
+UpdateAccount
+†† 
+(
+†† 
+object
+†† #
+sender
+††$ *
+,
+††* +
+RoutedEventArgs
+††, ;
+e
+††< =
+)
+††= >
+{
+°° 
+ModifyAccount
+¢¢ 
+modifyAccount
+¢¢ 
+=
+¢¢  
+new
+¢¢! $
+ModifyAccount
+¢¢% 2
+(
+¢¢2 3
+)
+¢¢3 4
+;
+¢¢4 5
+modifyAccount
+££ 
+.
+££ 
+EmailReceived
+££ 
+(
+££ 
+emailAccount
+££ +
+)
+££+ ,
+;
+££, -
+modifyAccount
+§§ 
+.
+§§ 
+ObtainAccount
+§§ 
+(
+§§ 
+)
+§§  
+;
+§§  !
+modifyAccount
+•• 
+.
+•• 
+Show
+•• 
+(
+•• 
+)
+•• 
+;
+•• 
+this
+¶¶ 
+.
+¶¶ 
+Close
+¶¶ 
+(
+¶¶ 
+)
+¶¶ 
+;
+¶¶ 
+}
+ßß 
+private
+©© 	
+void
+©©
+ 
+CloseWindow
+©© 
+(
+©© 
+)
+©© 
+{
+™™ 	
+
+MainWindow
+´´ 
+main
+´´ 
+=
+´´ 
+new
+´´ 
+
+MainWindow
+´´ #
+(
+´´# $
+)
+´´$ %
+;
+´´% &
+main
+¨¨ 
+.
+¨¨ 
+Show
+¨¨ 
+(
+¨¨ 
+)
+¨¨ 
+;
+¨¨ 
+this
+≠≠ 
+.
+≠≠ 
+Close
+≠≠ 
+(
+≠≠ 
+)
+≠≠ 
+;
+≠≠ 
+}
+ÆÆ 
+private
+ØØ 	
+void
+ØØ
  
 Play
-óó 
+ØØ 
 (
-óó 
+ØØ 
 object
-óó 
+ØØ 
 sender
-óó !
+ØØ !
 ,
-óó! "
+ØØ! "
 RoutedEventArgs
-óó# 2
+ØØ# 2
 e
-óó3 4
+ØØ3 4
 )
-óó4 5
+ØØ4 5
 {
-òò 
+∞∞ 
+try
+±± 
+{
+≤≤ 
 InstanceContext
-ôô 
+≥≥ 
 instanceContext
-ôô "
+≥≥ #
 =
-ôô# $
+≥≥$ %
 new
-ôô% (
+≥≥& )
 InstanceContext
-ôô) 8
+≥≥* 9
 (
-ôô8 9
+≥≥9 :
 this
-ôô9 =
+≥≥: >
 )
-ôô= >
+≥≥> ?
 ;
-ôô> ?
+≥≥? @
 PlayConnectClient
-öö 
+¥¥ 
 playConnectClient
-öö &
+¥¥ '
 =
-öö' (
+¥¥( )
 new
-öö) ,
+¥¥* -
 PlayConnectClient
-öö- >
+¥¥. ?
 (
-öö> ?
+¥¥? @
 instanceContext
-öö? N
+¥¥@ O
 )
-ööN O
+¥¥O P
 ;
-ööO P
+¥¥P Q
 playConnectClient
-õõ 
+µµ 
 .
-õõ 
+µµ 
 VerifyGameStart
-õõ $
+µµ %
 (
-õõ$ %
+µµ% &
 )
-õõ% &
+µµ& '
 ;
-õõ& '
-if
-úú 
+µµ' (
+
+IsStarGame
+∂∂ 
 (
-úú  
-isStartGameCurrent
-úú 
+∂∂ 
 )
-úú 
+∂∂ 
+;
+∂∂ 
+}
+∑∑ 
+catch
+∏∏ 
+(
+∏∏	 
+'
+EndpointNotFoundException
+∏∏
+ #
+	exception
+∏∏$ -
+)
+∏∏- .
 {
-ùù 
+ππ 
+TelegramBot
+∫∫ 
+.
+∫∫ 
+SendToTelegram
+∫∫ 
+(
+∫∫ 
+	exception
+∫∫ (
+)
+∫∫( )
+;
+∫∫) *
+LogException
+ªª 
+.
+ªª 
+Log
+ªª 
+(
+ªª 
+this
+ªª 
+,
+ªª 
+	exception
+ªª $
+)
+ªª$ %
+;
+ªª% &
+LogException
+ºº 
+.
+ºº $
+ErrorConnectionService
+ºº '
+(
+ºº' (
+)
+ºº( )
+;
+ºº) *
+CloseWindow
+ΩΩ 
+(
+ΩΩ 
+)
+ΩΩ 
+;
+ΩΩ 
+}
+ææ 
+}
+øø 
+private
+¿¿ 	
+void
+¿¿
+ 
+
+IsStarGame
+¿¿ 
+(
+¿¿ 
+)
+¿¿ 
+{
+¡¡ 	
+if
+¬¬ 
+(
+¬¬  
+isStartGameCurrent
+¬¬ 
+)
+¬¬ 
+{
+√√ 
 
 MessageBox
-ûû 
+ƒƒ 
 .
-ûû 
+ƒƒ 
 Show
-ûû 
+ƒƒ 
 (
-ûû 
+ƒƒ 
 
 Properties
-ûû 
+ƒƒ 
 .
-ûû 
+ƒƒ 
 	Resources
-ûû (
+ƒƒ (
 .
-ûû( ) 
+ƒƒ( ) 
 NoOpenMatchMessage
-ûû) ;
+ƒƒ) ;
 ,
-ûû; <
+ƒƒ; <
 
 Properties
-ûû= G
+ƒƒ= G
 .
-ûûG H
+ƒƒG H
 	Resources
-ûûH Q
+ƒƒH Q
 .
-ûûQ R
+ƒƒQ R
 
 TitleMatch
-ûûR \
+ƒƒR \
 ,
-ûû\ ]
+ƒƒ\ ]
 (
-ûû^ _
+ƒƒ^ _
 MessageBoxButton
-ûû_ o
+ƒƒ_ o
 )
-ûûo p
+ƒƒo p
 System
-ûûp v
+ƒƒp v
 .
-ûûv w
+ƒƒv w
 Windows
-ûûw ~
+ƒƒw ~
 .
-ûû~ 
-Formsûû Ñ
-.ûûÑ Ö!
-MessageBoxButtonsûûÖ ñ
-.ûûñ ó
-OKûûó ô
-,ûûô ö
-(ûûõ ú
-MessageBoxImageûûú ´
-)ûû´ ¨
-Systemûû¨ ≤
-.ûû≤ ≥
-Windowsûû≥ ∫
-.ûû∫ ª
-Formsûûª ¿
-.ûû¿ ¡
-MessageBoxIconûû¡ œ
-.ûûœ –
-Exclamationûû– €
-)ûû€ ‹
-;ûû‹ ›
+ƒƒ~ 
+Formsƒƒ Ñ
+.ƒƒÑ Ö!
+MessageBoxButtonsƒƒÖ ñ
+.ƒƒñ ó
+OKƒƒó ô
+,ƒƒô ö
+(ƒƒõ ú
+MessageBoxImageƒƒú ´
+)ƒƒ´ ¨
+Systemƒƒ¨ ≤
+.ƒƒ≤ ≥
+Windowsƒƒ≥ ∫
+.ƒƒ∫ ª
+Formsƒƒª ¿
+.ƒƒ¿ ¡
+MessageBoxIconƒƒ¡ œ
+.ƒƒœ –
+Exclamationƒƒ– €
+)ƒƒ€ ‹
+;ƒƒ‹ ›
 }
-üü 
+≈≈ 
 else
-†† 
+∆∆ 
 {
-°° 
+«« 
 WaitingRoom
-¢¢ 
+»» 
 waitingRoom
-¢¢ 
+»» 
 =
-¢¢ 
+»» 
 new
-¢¢ !
+»» !
 WaitingRoom
-¢¢" -
+»»" -
 (
-¢¢- .
+»»- .
 )
-¢¢. /
+»». /
 ;
-¢¢/ 0
+»»/ 0
 waitingRoom
-££ 
+…… 
 .
-££ 
-NickNameReceived
-££  
+…… 
+NicknameReceived
+……  
 (
-££  !
+……  !
 nickname
-££! )
+……! )
 )
-££) *
+……) *
 ;
-££* +
+……* +
 waitingRoom
-§§ 
+   
 .
-§§ 
+   
 EmailReceived
-§§ 
+   
 (
-§§ 
+   
 emailAccount
-§§ *
+   *
 )
-§§* +
+  * +
 ;
-§§+ ,
+  + ,
 waitingRoom
-•• 
+ÀÀ 
 .
-•• 
+ÀÀ 
 ObtainListPlayer
-••  
+ÀÀ  
 (
-••  !
+ÀÀ  !
 )
-••! "
+ÀÀ! "
 ;
-••" #
+ÀÀ" #
 waitingRoom
-¶¶ 
+ÃÃ 
 .
-¶¶ 
+ÃÃ 
 Show
-¶¶ 
+ÃÃ 
 (
-¶¶ 
+ÃÃ 
 )
-¶¶ 
+ÃÃ 
 ;
-¶¶ 
+ÃÃ 
 this
-ßß 
+ÕÕ 
 .
-ßß 	
+ÕÕ 	
 Close
-ßß	 
+ÕÕ	 
 (
-ßß 
+ÕÕ 
 )
-ßß 
+ÕÕ 
 ;
-ßß 
+ÕÕ 
 }
-®® 
+ŒŒ 
 }
-©© 
+œœ 
 }
-™™ 
-}´´ ª
+–– 
+}—— ª
 3C:\Users\Ale_2\source\repos\hangmanGame\Security.cs
 	namespace 	
 hangmanGame
  
 { 
-public 
+public 
 
-static 
-class 
-Security  
-{ 
-public 
-static 
-string 
-Encrypt $
-($ %
-string% +
-password, 4
-)4 5
-{ 	
-string		 
-passwordEncrypt		 "
-=		# $
-string		% +
-.		+ ,
-Empty		, 1
-;		1 2
-byte
-
- 
-[
-
- 
-]
-
- 
-encryted
-
- 
-=
-
- 
-System
-
- $
-.
-
-$ %
-Text
-
-% )
-.
-
-) *
-Encoding
-
-* 2
-.
-
-2 3
-Unicode
-
-3 :
-.
-
-: ;
-GetBytes
-
-; C
-(
-
-C D
-password
-
-D L
-)
-
-L M
-;
-
-M N
-passwordEncrypt 
-= 
-Convert %
-.% &
-ToBase64String& 4
-(4 5
-encryted5 =
-)= >
-;> ?
-return 
-passwordEncrypt "
-;" #
-} 	
+static 
+class 
+Security  
+{		 
 public 
 static 
 string 
-Decrypt $
+Encrypt $
 ($ %
 string% +
 password, 4
 )4 5
 { 	
 string 
-passwordDecrypt "
+passwordEncrypt "
 =# $
 string% +
 .+ ,
@@ -15130,1130 +17014,1536 @@ TitleMatch
 byte 
 [ 
 ] 
-decryted 
-= 
-Convert %
-.% &
-FromBase64String& 6
-(6 7
-password7 ?
-)? @
-;@ A
-passwordDecrypt 
-= 
-System $
-.$ %
-Text% )
-.) *
-Encoding* 2
-.2 3
-Unicode3 :
-.: ;
-	GetString; D
-(D E
-decrytedE M
-)M N
-;N O
+encryted 
+= 
+System $
+.$ %
+Text% )
+.) *
+Encoding* 2
+.2 3
+Unicode3 :
+.: ;
+GetBytes; C
+(C D
+passwordD L
+)L M
+;M N
+passwordEncrypt 
+= 
+Convert %
+.% &
+ToBase64String& 4
+(4 5
+encryted5 =
+)= >
+;> ?
 return 
-passwordDecrypt "
+passwordEncrypt "
 ;" #
-} 	
-} 
-} …0
+} 	
+public 
+static 
+string 
+Decrypt $
+($ %
+string% +
+password, 4
+)4 5
+{ 	
+string 
+passwordDecrypt "
+=# $
+string% +
+.+ ,
+Empty, 1
+;1 2
+byte 
+[ 
+] 
+decryted 
+= 
+Convert %
+.% &
+FromBase64String& 6
+(6 7
+password7 ?
+)? @
+;@ A
+passwordDecrypt   
+=   
+System   $
+.  $ %
+Text  % )
+.  ) *
+Encoding  * 2
+.  2 3
+Unicode  3 :
+.  : ;
+	GetString  ; D
+(  D E
+decryted  E M
+)  M N
+;  N O
+return!! 
+passwordDecrypt!! "
+;!!" #
+}"" 	
+}## 
+}$$ û
+6C:\Users\Ale_2\source\repos\hangmanGame\TelegramBot.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public
+
+ 
+
+class
+
+ 
+TelegramBot
+
+ 
+{ 
+private 
+static 
+readonly 
+string  &
+idGroup' .
+=/ 0
+$str1 A
+;A B
+private 
+static 
+readonly 
+TelegramBotClient  1
+telegramBotClient2 C
+=D E
+newF I
+TelegramBotClientJ [
+([ \
+$str	\ å
+)
+å ç
+;
+ç é
+TelegramBot 
+( 
+) 
+{ 	
+} 	
+public 
+static 
+void 
+SendToTelegram )
+() *
+	Exception* 3
+	exception4 =
+)= >
+{ 	
+try 
+{ 
+string 
+menssage 
+=  !
+$str" 3
++4 5
+	exception6 ?
+.? @
+Message@ G
+;G H
+if   
+(   
+	exception   
+.   
+InnerException   ,
+!=  - /
+null  0 4
+)  4 5
+{!! 
+menssage"" 
+="" 
+menssage"" '
++""( )
+$str""* ?
++""@ A
+	exception""B K
+.""K L
+InnerException""L Z
+.""Z [
+Message""[ b
+;""b c
+}## 
+menssage$$ 
+=$$ 
+menssage$$ #
++$$$ %
+$str$$& 7
++$$8 9
+	exception$$: C
+.$$C D
+
+StackTrace$$D N
+;$$N O
+telegramBotClient%% !
+.%%! " 
+SendTextMessageAsync%%" 6
+(%%6 7
+idGroup%%7 >
+,%%> ?
+menssage%%@ H
+)%%H I
+;%%I J
+}&& 
+catch'' 
+('' 
+IOException'' 
+ioException'' *
+)''* +
+{(( 
+TelegramBot)) 
+telegramBot)) '
+=))( )
+new))* -
+TelegramBot)). 9
+())9 :
+))): ;
+;)); <
+LogException** 
+.** 
+Log**  
+(**  !
+telegramBot**! ,
+,**, -
+ioException**. 9
+)**9 :
+;**: ;
+}++ 
+},, 	
+}-- 
+}.. …0
 9C:\Users\Ale_2\source\repos\hangmanGame\ValidationData.cs
 	namespace 	
 hangmanGame
  
 { 
-public 
-static 
-class 
-ValidationData #
-{ 
-public 
-static	 
-int $
-GenerateConfirmationCode ,
-(, -
-)- .
-{		 
-Random
+public		 
+static		 
+class		 
+ValidationData		 #
+{
 
- 	
-random
-
-
+ 
+public 
+static	 
+int $
+GenerateConfirmationCode ,
+(, -
+)- .
+{ 
+Random 	
+random
  
-=
-
- 
-new
-
- 
-Random
-
- 
-(
-
- 
-)
-
- 
-;
-
-  
-int 
-code 
-= 
-random 
-. 
-Next 
-( 
-$num  
-,  !
-$num" (
-)( )
-;) *
-return 	
-code
- 
-; 
-} 
-public 
-static	 
-bool 
-ValidatePassword %
-(% &
-string& ,
-password- 5
-)5 6
-{ 
-bool 
-isValidPassword 
-= 
-false 
-;  
-var 
-	hasNumber 
 = 
-new 
-Regex 
-( 
-$str &
-)& '
-;' (
-var 
-hasUpperChar 
-= 
-new 
-Regex 
-(  
-$str  )
-)) *
-;* +
-var 
-hasMiniMaxChars 
-= 
-new 
-Regex "
-(" #
-$str# -
-)- .
-;. /
-var 
-hasLowerChar 
-= 
-new 
-Regex 
-(  
-$str  )
-)) *
-;* +
-var 
+new 
+Random 
+( 
+) 
+;  
+int 
+code 
+= 
+random 
+. 
+Next 
+( 
+$num  
+,  !
+$num" (
+)( )
+;) *
+return 	
+code
+ 
+; 
+} 
+public 
+static	 
+bool 
+ValidatePassword %
+(% &
+string& ,
+password- 5
+)5 6
+{ 
+bool 
+isValidPassword 
+= 
+false 
+;  
+var 
+	hasNumber 
+= 
+new 
+Regex 
+( 
+$str &
+)& '
+;' (
+var 
+hasUpperChar 
+= 
+new 
+Regex 
+(  
+$str  )
+)) *
+;* +
+var   
+hasMiniMaxChars   
+=   
+new   
+Regex   "
+(  " #
+$str  # -
+)  - .
+;  . /
+var!! 
+hasLowerChar!! 
+=!! 
+new!! 
+Regex!! 
+(!!  
+$str!!  )
+)!!) *
+;!!* +
+var"" 
 
-hasSymbols 
-= 
-new 
-Regex 
-( 
-$str &
-)& '
-;' (
-if 
-( 
-	hasNumber 
-. 
-IsMatch 
-( 
-password !
-)! "
-&&# %
-hasUpperChar& 2
-.2 3
-IsMatch3 :
-(: ;
-password; C
-)C D
-&&E G
-hasMiniMaxChars 
-. 
-IsMatch 
-( 
-password $
-)$ %
-&&& (
-hasLowerChar) 5
-.5 6
-IsMatch6 =
-(= >
-password> F
-)F G
-&&H J
+hasSymbols"" 
+="" 
+new"" 
+Regex"" 
+("" 
+$str"" &
+)""& '
+;""' (
+if## 
+(## 
+	hasNumber## 
+.## 
+IsMatch## 
+(## 
+password## !
+)##! "
+&&### %
+hasUpperChar##& 2
+.##2 3
+IsMatch##3 :
+(##: ;
+password##; C
+)##C D
+&&##E G
+hasMiniMaxChars$$ 
+.$$ 
+IsMatch$$ 
+($$ 
+password$$ $
+)$$$ %
+&&$$& (
+hasLowerChar$$) 5
+.$$5 6
+IsMatch$$6 =
+($$= >
+password$$> F
+)$$F G
+&&$$H J
 
-hasSymbolsK U
-.U V
-IsMatchV ]
-(] ^
-password^ f
-)f g
-)g h
-{ 
-isValidPassword 
-= 
-true 
-; 
-} 
-return 	
-isValidPassword
+hasSymbols$$K U
+.$$U V
+IsMatch$$V ]
+($$] ^
+password$$^ f
+)$$f g
+)$$g h
+{%% 
+isValidPassword&& 
+=&& 
+true&& 
+;&& 
+}'' 
+return(( 	
+isValidPassword((
  
-; 
-} 
-public 
-static	 
-bool  
-ValidateNameComplete )
-() *
-string* 0
-name1 5
-)5 6
-{ 
-bool 
-isValidNameComplete 
-= 
-false #
-;# $
-name   
-=   
-name  	 
-.   
-Trim   
-(   
-)   
-;   
-Regex!! 
-	regexName!!	 
-=!! 
-new!! 
-Regex!! 
-(!! 
-$str!! 4
-)!!4 5
-;!!5 6
-isValidNameComplete"" 
-="" 
-	regexName"" "
-.""" #
-IsMatch""# *
-(""* +
-name""+ /
-)""/ 0
-;""0 1
-return## 	
-isValidNameComplete##
+;(( 
+})) 
+public00 
+static00	 
+bool00  
+ValidateNameComplete00 )
+(00) *
+string00* 0
+name001 5
+)005 6
+{11 
+bool22 
+isValidNameComplete22 
+=22 
+false22 #
+;22# $
+name33 
+=33 
+name33	 
+.33 
+Trim33 
+(33 
+)33 
+;33 
+Regex44 
+	regexName44	 
+=44 
+new44 
+Regex44 
+(44 
+$str44 4
+)444 5
+;445 6
+isValidNameComplete55 
+=55 
+	regexName55 "
+.55" #
+IsMatch55# *
+(55* +
+name55+ /
+)55/ 0
+;550 1
+return66 	
+isValidNameComplete66
  
-;## 
-}$$ 
-public%% 
-static%%	 
-bool%% 
-ValidateEmail%% "
-(%%" #
-string%%# )
-email%%* /
-)%%/ 0
-{&& 
-bool'' 
-isValidEmail'' 
-='' 
-false'' 
-;'' 
-Regex(( 
+;66 
+}77 
+public>> 
+static>>	 
+bool>> 
+ValidateEmail>> "
+(>>" #
+string>># )
+email>>* /
+)>>/ 0
+{?? 
+bool@@ 
+isValidEmail@@ 
+=@@ 
+false@@ 
+;@@ 
+RegexAA 
 
-regexEmail((	 
-=(( 
-new(( 
-Regex(( 
-(((  
-$str((  v
-)((v w
-;((w x
-isValidEmail)) 
-=)) 
+regexEmailAA	 
+=AA 
+newAA 
+RegexAA 
+(AA  
+$strAA  v
+)AAv w
+;AAw x
+isValidEmailBB 
+=BB 
 
-regexEmail)) 
-.)) 
-IsMatch)) $
-())$ %
-email))% *
-)))* +
-;))+ ,
-return** 	
-isValidEmail**
+regexEmailBB 
+.BB 
+IsMatchBB $
+(BB$ %
+emailBB% *
+)BB* +
+;BB+ ,
+returnCC 	
+isValidEmailCC
  
-;** 
-}++ 
-public,, 
-static,,	 
-bool,, 
-ValidateNickName,, %
-(,,% &
-string,,& ,
-nickName,,- 5
-),,5 6
-{-- 
-bool.. 
-isValidNickName.. 
-=.. 
-false.. 
-;..  
-Regex// 
-regexNickName//	 
-=// 
-new// 
-Regex// "
-(//" #
-$str//# 9
-)//9 :
-;//: ;
-isValidNickName00 
-=00 
-regexNickName00 "
-.00" #
-IsMatch00# *
-(00* +
-nickName00+ 3
-)003 4
-;004 5
-return11 	
-isValidNickName11
+;CC 
+}DD 
+publicKK 
+staticKK	 
+boolKK 
+ValidateNicknameKK %
+(KK% &
+stringKK& ,
+nicknameKK- 5
+)KK5 6
+{LL 
+boolMM 
+isValidNicknameMM 
+=MM 
+falseMM 
+;MM  
+RegexNN 
+regexNicknameNN	 
+=NN 
+newNN 
+RegexNN "
+(NN" #
+$strNN# 9
+)NN9 :
+;NN: ;
+isValidNicknameOO 
+=OO 
+regexNicknameOO "
+.OO" #
+IsMatchOO# *
+(OO* +
+nicknameOO+ 3
+)OO3 4
+;OO4 5
+returnPP 	
+isValidNicknamePP
  
-;11 
-}22 
-public33 
-static33	 
-bool33 $
-ValidateConfirmationCode33 -
-(33- .
-string33. 4
-confirmationCode335 E
-)33E F
-{44 
-bool55 #
-isValidConfirmationCode55 
-=55  !
-false55" '
-;55' (
-Regex66 
-regexConfirmation66	 
-=66 
-new66  
-Regex66! &
-(66& '
-$str66' 6
-)666 7
-;667 8#
-isValidConfirmationCode77 
-=77 
-regexConfirmation77 .
-.77. /
-IsMatch77/ 6
-(776 7
-confirmationCode777 G
-)77G H
-;77H I
-return88 	#
-isValidConfirmationCode88
+;PP 
+}QQ 
+publicXX 
+staticXX	 
+boolXX $
+ValidateConfirmationCodeXX -
+(XX- .
+stringXX. 4
+confirmationCodeXX5 E
+)XXE F
+{YY 
+boolZZ #
+isValidConfirmationCodeZZ 
+=ZZ  !
+falseZZ" '
+;ZZ' (
+Regex[[ 
+regexConfirmation[[	 
+=[[ 
+new[[  
+Regex[[! &
+([[& '
+$str[[' 6
+)[[6 7
+;[[7 8#
+isValidConfirmationCode\\ 
+=\\ 
+regexConfirmation\\ .
+.\\. /
+IsMatch\\/ 6
+(\\6 7
+confirmationCode\\7 G
+)\\G H
+;\\H I
+return]] 	#
+isValidConfirmationCode]]
  !
-;88! "
-}99 
-public:: 
-static::	 
-string:: 
-DeleteSpaceWord:: &
-(::& '
-string::' -
-words::. 3
-)::3 4
-{;; 
-while<< 
-(<<	 
+;]]! "
+}^^ 
+publicee 
+staticee	 
+stringee 
+DeleteSpaceWordee &
+(ee& '
+stringee' -
+wordsee. 3
+)ee3 4
+{ff 
+whilegg 
+(gg	 
 
-words<<
+wordsgg
  
-.<< 
-Contains<< 
-(<< 
-$str<< 
-)<< 
-)<< 
-{== 
-words>> 	
-=>>
+.gg 
+Containsgg 
+(gg 
+$strgg 
+)gg 
+)gg 
+{hh 
+wordsii 	
+=ii
  
-words>> 
-.>> 
-Replace>> 
-(>> 
-$str>> 
-,>> 
-$str>>  #
-)>># $
-;>>$ %
-}?? 
-return@@ 	
-words@@
+wordsii 
+.ii 
+Replaceii 
+(ii 
+$strii 
+,ii 
+$strii  #
+)ii# $
+;ii$ %
+}jj 
+returnkk 	
+wordskk
  
-;@@ 
-}AA 
-}BB 
-}CC øR
+;kk 
+}ll 
+}mm 
+}nn Ç[
 ;C:\Users\Ale_2\source\repos\hangmanGame\WaitingRoom.xaml.cs
 	namespace 	
 hangmanGame
  
 { 
-[		 
-CallbackBehavior		 
-(		 %
-UseSynchronizationContext		 ,
-=		- .
-false		/ 4
-)		4 5
-]		5 6
-public
-
- 
-partial
-
- 
-class
-
- 
-WaitingRoom
-
- !
-:
-
-" #
-Window
-
-$ *
-,
-
-* + 
-IPlayConnectCallback
-
-, @
-{ 
-private 	
-static
- 
-ServicePlayer 
-[ 
-]  
-servicePlayers! /
-;/ 0
-private 	
-static
- 
-string 
-emailAccount $
-;$ %
-private 	
-static
- 
-string 
-nickname  
-;  !
-private 	
-readonly
- "
-SynchronizationContext )"
-synchronizationContext* @
-;@ A
+[ 
+CallbackBehavior 
+( %
+UseSynchronizationContext ,
+=- .
+false/ 4
+)4 5
+]5 6
+public 
+partial 
+class 
+WaitingRoom !
+:" #
+Window$ *
+,* + 
+IPlayConnectCallback, @
+{ 
+private 	
+ServicePlayer
+ 
+[ 
+] 
+servicePlayers (
+;( )
 private 	
-static
- 
-bool 
-isStartGameCurrent (
-;( )
-private 	
-ServiceSentence
+string
+ 
+emailAccount 
+; 
+private 	
+string
+ 
+nickname 
+; 
+private 	
+readonly
+ "
+SynchronizationContext )"
+synchronizationContext* @
+;@ A
+private 	
+bool
+ 
+isStartGameCurrent !
+;! "
+private 	
+ServiceSentence
  
-sentence "
-;" #
-private 	
-bool
+sentence "
+;" #
+private 	
+bool
  
-	isClosing 
-= 
-true 
-;  
-private 	
-ServiceWinner
+	isClosing 
+= 
+true 
+;  
+private 	
+ServiceWinner
  
-serviceWinner %
-=& '
-new( +
-ServiceWinner, 9
-(9 :
-): ;
-;; <
-public 
-WaitingRoom	 
-( 
-) 
-{ 
-InitializeComponent 
-( 
-) 
-; "
-synchronizationContext 
-= "
-SynchronizationContext 2
-.2 3
-Current3 :
-;: ;
-} 
-public 
-void	 
-EmailReceived 
-( 
-string "
-email# (
-)( )
-{ 
-emailAccount 
-= 
-email 
-; 
-} 
-public 
-void	  
-InitializeListPlayer "
-(" #
-ServicePlayer# 0
-[0 1
-]1 2
-servicePlayerList3 D
-)D E
-{ 
-if 
-( 
-	lvPlayers 
-. 
-Items 
-. 
-Count 
-!= 
-Number  &
-.& '
-NumberValue' 2
-(2 3
-NumberValues3 ?
-.? @
-ZERO@ D
-)D E
-)E F
-{   
-	lvPlayers!! 
-.!! 
-Items!! 
-.!! 
-Clear!! 
-(!! 
-)!! 
-;!! 
-}"" 
-if## 
-(## 
-servicePlayerList## 
-.## 
-Length## 
->##  !
-Number##" (
-.##( )
-NumberValue##) 4
-(##4 5
-NumberValues##5 A
-.##A B
-ONE##B E
-)##E F
-)##F G
-{##H I
-btnStart$$ 
-.$$ 
-	IsEnabled$$ 
-=$$ 
-true$$ 
-;$$ 
-lbWait%% 
+serviceWinner %
+=& '
+new( +
+ServiceWinner, 9
+(9 :
+): ;
+;; <
+private 	
+string
+ 
+[ 
+] 
+responseList 
+;  
+private 	
+string
+ 
+response 
+; 
+public 
+WaitingRoom	 
+( 
+) 
+{ 
+InitializeComponent 
+( 
+) 
+; "
+synchronizationContext   
+=   "
+SynchronizationContext   2
+.  2 3
+Current  3 :
+;  : ;
+}!! 
+public'' 
+void''	 
+EmailReceived'' 
+('' 
+string'' "
+email''# (
+)''( )
+{(( 
+emailAccount)) 
+=)) 
+email)) 
+;)) 
+}** 
+public00 
+void00	  
+InitializeListPlayer00 "
+(00" #
+ServicePlayer00# 0
+[000 1
+]001 2
+servicePlayerList003 D
+)00D E
+{11 
+if22 
+(22 
+	lvPlayers22 
+.22 
+Items22 
+.22 
+Count22 
+!=22 
+Number22  &
+.22& '
+NumberValue22' 2
+(222 3
+NumberValues223 ?
+.22? @
+ZERO22@ D
+)22D E
+)22E F
+{33 
+	lvPlayers44 
+.44 
+Items44 
+.44 
+Clear44 
+(44 
+)44 
+;44 
+}55 
+if66 
+(66 
+servicePlayerList66 
+.66 
+Length66 
+>66  !
+Number66" (
+.66( )
+NumberValue66) 4
+(664 5
+NumberValues665 A
+.66A B
+ONE66B E
+)66E F
+)66F G
+{66H I
+btnStart77 
+.77 
+	IsEnabled77 
+=77 
+true77 
+;77 
+lbWait88 
 
-.%%
+.88
  
 
-Visibility%% 
-=%% 
-
-Visibility%% "
-.%%" #
-Hidden%%# )
-;%%) *
-}&& 
-else'' 
-{(( 
-lbWait)) 
-
-.))
- 
-
-Visibility)) 
-=)) 
-
-Visibility)) "
-.))" #
-Visible))# *
-;))* +
-btnStart** 
-.** 
-	IsEnabled** 
-=** 
-false** 
-;** 
-}++ 
-foreach,, 
-
-(,, 
-var,, 
-players,, 
-in,, 
-servicePlayerList,, ,
-),,, -
-{-- 
-	lvPlayers.. 
-... 
-Items.. 
-... 
-Add.. 
-(.. 
-players.. 
-...  
-NickName..  (
-)..( )
-;..) *
-}// 
-}00 
-public11 
-void11	 
-PlayerConnectList11 
-(11  
-ServicePlayer11  -
-[11- .
-]11. /
-servicePlayerList110 A
-)11A B
-{22 
-servicePlayers33 
-=33 
-servicePlayerList33 %
-;33% &"
-synchronizationContext44 
-.44 
-Post44 
-(44 
-objectPlayer44 +
-=>44, . 
-InitializeListPlayer44/ C
-(44C D
-servicePlayerList44D U
-)44U V
-,44V W
-null44X \
-)44\ ]
-;44] ^
-}55 
-public66 
-void66	 
-
-IsStarGame66 
-(66 
-bool66 
-
-isStarGame66 (
-)66( )
-{77 
-isStartGameCurrent88 
+Visibility88 
 =88 
 
-isStarGame88 "
-;88" #
-}99 
-public:: 
-void::	 
-SentenceFound:: 
-(:: 
-ServiceSentence:: +
-responseSentence::, <
-)::< =
-{;; 
-sentence<< 
-=<< 
-responseSentence<< 
-;<< "
-synchronizationContext== 
-.== 
-Post== 
-(== 
-objectPlayer== +
-=>==, .
-PlayGame==/ 7
-(==7 8
-)==8 9
-,==9 :
-null==; ?
-)==? @
-;==@ A
-}>> 
-public?? 
-void??	 
-PlayGame?? 
-(?? 
-)?? 
-{@@ 
-PlayAA 
-playAA 
-=AA 
-newAA 
-PlayAA 
-(AA 
-)AA 
-;AA 
-playBB 
-.BB 
-EmailReceivedBB 
-(BB 
-emailAccountBB "
-)BB" #
-;BB# $
-playCC 
-.CC 
-NickNameReceivedCC 
-(CC 
-nicknameCC !
-)CC! "
-;CC" #
-playDD 
-.DD 
-SentenceReceivedDD 
-(DD 
-sentenceDD !
-)DD! "
-;DD" #
-playEE 
-.EE %
-ListPlayerConnectReceivedEE !
-(EE! "
-servicePlayersEE" 0
-)EE0 1
-;EE1 2
-playFF 
-.FF 
-ColocateSentenceFF 
-(FF 
-)FF 
-;FF 
-playGG 
-.GG 
-ColocatePlayerGG 
-(GG 
-)GG 
-;GG 
-playHH 
-.HH 
-ConnectToChatHH 
-(HH 
-)HH 
-;HH 
-playII 
-.II 
-ShowII 
-(II 
-)II 
-;II 
-	isClosingJJ 
-=JJ 
-falseJJ 
-;JJ 
-thisKK 
-.KK 
-CloseKK 
-(KK 
-)KK 
-;KK 
-}LL 
-publicMM 
-voidMM	 
-NickNameReceivedMM 
-(MM 
-stringMM %
-nicknamePlayerMM& 4
-)MM4 5
-{NN 
-nicknameOO 
-=OO 
-nicknamePlayerOO 
-;OO 
-}PP 
-publicQQ 
-voidQQ	 
-ObtainListPlayerQQ 
-(QQ 
-)QQ  
-{RR 
-InstanceContextSS 
-instanceContextSS "
-=SS# $
-newSS% (
-InstanceContextSS) 8
-(SS8 9
-thisSS9 =
-)SS= >
-;SS> ?
-PlayConnectClientTT 
-playerConnectTT "
-=TT# $
-newTT% (
-PlayConnectClientTT) :
-(TT: ;
-instanceContextTT; J
-)TTJ K
-;TTK L
-playerConnectUU 
-.UU 
-PlayerConnectUU 
-(UU 
-nicknameUU '
-)UU' (
-;UU( )
-}VV 
-privateWW 	
-voidWW
- 
-	StartGameWW 
-(WW 
-objectWW 
-senderWW  &
-,WW& '
-RoutedEventArgsWW( 7
-routedEventArgsWW8 G
-)WWG H
-{XX 
-InstanceContextYY 
-instanceContextYY "
-=YY# $
-newYY% (
-InstanceContextYY) 8
-(YY8 9
-thisYY9 =
-)YY= >
-;YY> ?
-PlayConnectClientZZ 
-playConnectZZ  
-=ZZ! "
-newZZ# &
-PlayConnectClientZZ' 8
-(ZZ8 9
-instanceContextZZ9 H
-)ZZH I
-;ZZI J
-playConnect[[ 
-.[[ 
-	StartGame[[ 
-([[ 
-nickname[[ !
-)[[! "
-;[[" #
-}\\ 
-private]] 	
-void]]
- 
-GoOut]] 
-(]] 
-object]] 
-sender]] "
-,]]" #
-RoutedEventArgs]]$ 3
-routedEventArgs]]4 C
-)]]C D
-{^^ 
-InstanceContext__ 
-instanceContext__ "
-=__# $
-new__% (
-InstanceContext__) 8
-(__8 9
-this__9 =
-)__= >
-;__> ?
-PlayConnectClient`` 
-playConnect``  
-=``! "
-new``# &
-PlayConnectClient``' 8
-(``8 9
-instanceContext``9 H
-)``H I
-;``I J
-playConnectaa 
-.aa 
-PlayerDisconnectaa 
-(aa  
-nicknameaa  (
-)aa( )
-;aa) *
-Lobbybb 
-lobbybb	 
-=bb 
-newbb 
-Lobbybb 
-(bb 
-)bb 
-;bb 
-lobbycc 
-.cc 	
-EmailReceivedcc	 
-(cc 
-emailAccountcc #
-)cc# $
-;cc$ %
-lobbydd 
-.dd 	
-ColocateBestScoresdd	 
-(dd 
-)dd 
-;dd 
-lobbyee 
-.ee 	'
-ColocatePersonalInformationee	 $
-(ee$ %
-)ee% &
-;ee& '
-lobbyff 
-.ff 	
-Showff	 
-(ff 
-)ff 
-;ff 
-	isClosinggg 
-=gg 
-falsegg 
-;gg 
-thishh 
-.hh 
-Closehh 
-(hh 
-)hh 
-;hh 
-}ii 
-	protectedjj 
-overridejj 
-voidjj 
-	OnClosingjj #
-(jj# $
-Systemjj$ *
-.jj* +
-ComponentModeljj+ 9
-.jj9 :
-CancelEventArgsjj: I
-eventCanceljjJ U
-)jjU V
-{kk 
-basell 
-.ll 
-	OnClosingll 
-(ll 
-eventCancelll 
-)ll 
-;ll 
-eventCancelmm 
-.mm 
-Cancelmm 
-=mm 
-	isClosingmm !
-;mm! "
-}nn 
-publicpp 
-voidpp	 
-PlayerWinnerpp 
-(pp 
-ServiceWinnerpp (
-playerWinnerpp) 5
-)pp5 6
-{qq 
-serviceWinnerrr 
-=rr 
-playerWinnerrr 
-;rr  
-}ss 
-}uu 
-}vv ó
-3C:\Users\Ale_2\source\repos\hangmanGame\App.xaml.cs
-	namespace 	
-hangmanGame
- 
-{ 
-public		 
-
-partial		 
-class		 
-App		 
-:		 
-Application		 *
-{
-
- 
-private 
-static 
-MediaElement #
-mediaElement$ 0
-;0 1
-App 
-( 
-) 
-{ 	
-string 
-language 
-= 
-$str %
-;% &
-System 
-. 
-	Threading 
-. 
-Thread #
-.# $
-CurrentThread$ 1
-.1 2
-CurrentUICulture2 B
-=C D
-newE H
-SystemI O
-.O P
-GlobalizationP ]
-.] ^
-CultureInfo^ i
-(i j
-languagej r
-)r s
-;s t
-Setting 
-. 
-LanguageReceive #
-(# $
-language$ ,
-), -
-;- .
-Play 
-. 
-LanguageReceive  
-(  !
-language! )
-)) *
-;* +
-mediaElement 
-= 
-new 
-MediaElement +
-(+ ,
-), -
-;- .
-mediaElement 
-. 
-Source 
-=  !
-new" %
-Uri& )
-() *
-$str	* ó
+Visibility88 "
+.88" #
+Hidden88# )
+;88) *
+}99 
+else:: 
+{;; 
+lbWait<< 
+
+.<<
+ 
+
+Visibility<< 
+=<< 
+
+Visibility<< "
+.<<" #
+Visible<<# *
+;<<* +
+btnStart== 
+.== 
+	IsEnabled== 
+=== 
+false== 
+;== 
+}>> 
+foreach?? 
+
+(?? 
+var?? 
+players?? 
+in?? 
+servicePlayerList?? ,
+)??, -
+{@@ 
+	lvPlayersAA 
+.AA 
+ItemsAA 
+.AA 
+AddAA 
+(AA 
+playersAA 
+.AA  
+NickNameAA  (
+)AA( )
+;AA) *
+}BB 
+}CC 
+publicII 
+voidII	 
+PlayerConnectListII 
+(II  
+ServicePlayerII  -
+[II- .
+]II. /
+servicePlayerListII0 A
+)IIA B
+{JJ 
+servicePlayersKK 
+=KK 
+servicePlayerListKK %
+;KK% &"
+synchronizationContextLL 
+.LL 
+PostLL 
+(LL 
+objectPlayerLL +
+=>LL, . 
+InitializeListPlayerLL/ C
+(LLC D
+servicePlayerListLLD U
+)LLU V
+,LLV W
+nullLLX \
+)LL\ ]
+;LL] ^
+}MM 
+publicSS 
+voidSS	 
+
+IsStarGameSS 
+(SS 
+boolSS 
+isStarGameRunSS +
+)SS+ ,
+{TT 
+isStartGameCurrentUU 
+=UU 
+isStarGameRunUU %
+;UU% &
+}VV 
+public\\ 
+void\\	 
+SentenceFound\\ 
+(\\ 
+ServiceSentence\\ +
+responseSentence\\, <
+)\\< =
+{]] 
+sentence^^ 
+=^^ 
+responseSentence^^ 
+;^^ "
+synchronizationContext__ 
+.__ 
+Post__ 
+(__ 
+objectPlayer__ +
+=>__, .
+PlayGame__/ 7
+(__7 8
+)__8 9
+,__9 :
+null__; ?
+)__? @
+;__@ A
+}`` 
+publicee 
+voidee	 
+PlayGameee 
+(ee 
+)ee 
+{ff 
+Playgg 
+playgg 
+=gg 
+newgg 
+Playgg 
+(gg 
+)gg 
+;gg 
+playhh 
+.hh 
+EmailReceivedhh 
+(hh 
+emailAccounthh "
+)hh" #
+;hh# $
+playii 
+.ii 
+NicknameReceivedii 
+(ii 
+nicknameii !
+)ii! "
+;ii" #
+playjj 
+.jj 
+SentenceReceivedjj 
+(jj 
+sentencejj !
+)jj! "
+;jj" #
+playkk 
+.kk %
+ListPlayerConnectReceivedkk !
+(kk! "
+servicePlayerskk" 0
+)kk0 1
+;kk1 2
+playll 
+.ll 
+ColocateSentencell 
+(ll 
+)ll 
+;ll 
+playmm 
+.mm 
+ColocatePlayermm 
+(mm 
+)mm 
+;mm 
+playnn 
+.nn 
+ConnectToChatnn 
+(nn 
+)nn 
+;nn 
+playoo 
+.oo 
+Showoo 
+(oo 
+)oo 
+;oo 
+	isClosingpp 
+=pp 
+falsepp 
+;pp 
+thisqq 
+.qq 
+Closeqq 
+(qq 
+)qq 
+;qq 
+}rr 
+publicww 
+voidww	 
+NicknameReceivedww 
+(ww 
+stringww %
+nicknamePlayerww& 4
+)ww4 5
+{xx 
+nicknameyy 
+=yy 
+nicknamePlayeryy 
+;yy 
+}zz 
+public 
+void	 
+ObtainListPlayer 
+( 
+)  
+{
+ÄÄ 
+InstanceContext
+ÅÅ 
+instanceContext
+ÅÅ "
+=
+ÅÅ# $
+new
+ÅÅ% (
+InstanceContext
+ÅÅ) 8
+(
+ÅÅ8 9
+this
+ÅÅ9 =
 )
-ó ò
+ÅÅ= >
 ;
-ò ô
-double 
-volume 
-= 
-$num 
-;  
-mediaElement 
-. 
-Volume 
-=  !
-volume" (
-;( )
-Setting 
-. 
-ValueSoundReceive %
-(% &
-volume& ,
-), -
-;- .
+ÅÅ> ?
+PlayConnectClient
+ÇÇ 
+playerConnect
+ÇÇ "
+=
+ÇÇ# $
+new
+ÇÇ% (
+PlayConnectClient
+ÇÇ) :
+(
+ÇÇ: ;
+instanceContext
+ÇÇ; J
+)
+ÇÇJ K
+;
+ÇÇK L
+playerConnect
+ÉÉ 
+.
+ÉÉ 
+PlayerConnect
+ÉÉ 
+(
+ÉÉ 
+nickname
+ÉÉ '
+)
+ÉÉ' (
+;
+ÉÉ( )
+}
+ÑÑ 
+public
+ää 
+void
+ää	 
+PlayerWinner
+ää 
+(
+ää 
+ServiceWinner
+ää (
+playerWinnerGame
+ää) 9
+)
+ää9 :
+{
+ãã 
+serviceWinner
+åå 
+=
+åå 
+playerWinnerGame
+åå #
+;
+åå# $
+}
+çç 
+public
+ìì 
+void
+ìì	  
+PlayerEntryMessage
+ìì  
+(
+ìì  !
+string
+ìì! '
+[
+ìì' (
+]
+ìì( ) 
+responseListString
+ìì* <
+)
+ìì< =
+{
+îî 
+responseList
+ïï 
+=
+ïï  
+responseListString
+ïï $
+;
+ïï$ %
+}
+ññ 
+public
+úú 
+void
+úú	 #
+PlayerEntryOneMessage
+úú #
+(
+úú# $
+string
+úú$ * 
+responseListString
+úú+ =
+)
+úú= >
+{
+ùù 
+response
+ûû 
+=
+ûû  
+responseListString
+ûû  
+;
+ûû  !
+}
+üü 
+	protected
+•• 
+override
+•• 
+void
+•• 
+	OnClosing
+•• #
+(
+••# $
+System
+••$ *
+.
+••* +
+ComponentModel
+••+ 9
+.
+••9 :
+CancelEventArgs
+••: I
+e
+••J K
+)
+••K L
+{
+¶¶ 
+base
+ßß 
+.
+ßß 
+	OnClosing
+ßß 
+(
+ßß 
+e
+ßß 
+)
+ßß 
+;
+ßß 
+e
+®® 
+.
+®® 
+Cancel
+®® 
+=
+®® 
+	isClosing
+®® 
+;
+®® 
+}
+©© 
+private
+™™ 	
+void
+™™
+ 
+	StartGame
+™™ 
+(
+™™ 
+object
+™™ 
+sender
+™™  &
+,
+™™& '
+RoutedEventArgs
+™™( 7
+routedEventArgs
+™™8 G
+)
+™™G H
+{
+´´ 
+InstanceContext
+¨¨ 
+instanceContext
+¨¨ "
+=
+¨¨# $
+new
+¨¨% (
+InstanceContext
+¨¨) 8
+(
+¨¨8 9
+this
+¨¨9 =
+)
+¨¨= >
+;
+¨¨> ?
+PlayConnectClient
+≠≠ 
+playConnect
+≠≠  
+=
+≠≠! "
+new
+≠≠# &
+PlayConnectClient
+≠≠' 8
+(
+≠≠8 9
+instanceContext
+≠≠9 H
+)
+≠≠H I
+;
+≠≠I J
+playConnect
+ÆÆ 
+.
+ÆÆ 
+	StartGame
+ÆÆ 
+(
+ÆÆ 
+nickname
+ÆÆ !
+)
+ÆÆ! "
+;
+ÆÆ" #
+}
+ØØ 
+private
+∞∞ 	
+void
+∞∞
+ 
+GoOut
+∞∞ 
+(
+∞∞ 
+object
+∞∞ 
+sender
+∞∞ "
+,
+∞∞" #
+RoutedEventArgs
+∞∞$ 3
+routedEventArgs
+∞∞4 C
+)
+∞∞C D
+{
+±± 
+InstanceContext
+≤≤ 
+instanceContext
+≤≤ "
+=
+≤≤# $
+new
+≤≤% (
+InstanceContext
+≤≤) 8
+(
+≤≤8 9
+this
+≤≤9 =
+)
+≤≤= >
+;
+≤≤> ?
+PlayConnectClient
+≥≥ 
+playConnect
+≥≥  
+=
+≥≥! "
+new
+≥≥# &
+PlayConnectClient
+≥≥' 8
+(
+≥≥8 9
+instanceContext
+≥≥9 H
+)
+≥≥H I
+;
+≥≥I J
+playConnect
+¥¥ 
+.
+¥¥ 
+PlayerDisconnect
+¥¥ 
+(
+¥¥  
+nickname
+¥¥  (
+)
+¥¥( )
+;
+¥¥) *
+Lobby
+µµ 
+lobby
+µµ	 
+=
+µµ 
+new
+µµ 
+Lobby
+µµ 
+(
+µµ 
+)
+µµ 
+;
+µµ 
+lobby
+∂∂ 
+.
+∂∂ 	
+EmailReceived
+∂∂	 
+(
+∂∂ 
+emailAccount
+∂∂ #
+)
+∂∂# $
+;
+∂∂$ %
+lobby
+∑∑ 
+.
+∑∑ 	 
+ColocateBestScores
+∑∑	 
+(
+∑∑ 
+)
+∑∑ 
+;
+∑∑ 
+lobby
+∏∏ 
+.
+∏∏ 	)
+ColocatePersonalInformation
+∏∏	 $
+(
+∏∏$ %
+)
+∏∏% &
+;
+∏∏& '
+lobby
+ππ 
+.
+ππ 	
+Show
+ππ	 
+(
+ππ 
+)
+ππ 
+;
+ππ 
+	isClosing
+∫∫ 
+=
+∫∫ 
+false
+∫∫ 
+;
+∫∫ 
+this
+ªª 
+.
+ªª 
+Close
+ªª 
+(
+ªª 
+)
+ªª 
+;
+ªª 
+}
+ºº 
+}
+ΩΩ 
+}ææ Ç
+3C:\Users\Ale_2\source\repos\hangmanGame\App.xaml.cs
+	namespace 	
+hangmanGame
+ 
+{ 
+public
+
+ 
+
+partial
+
+ 
+class
+
+ 
+App
+
+ 
+:
+
+ 
+Application
+
+ *
+{ 
+private 
+static 
+MediaElement #
+mediaElement$ 0
+=1 2
+new3 6
+MediaElement7 C
+(C D
+)D E
+;E F
+public 
+App 
+( 
+) 
+{ 	
+string 
+language 
+= 
+$str %
+;% &
+System 
+. 
+	Threading 
+. 
+Thread #
+.# $
+CurrentThread$ 1
+.1 2
+CurrentUICulture2 B
+=C D
+newE H
+SystemI O
+.O P
+GlobalizationP ]
+.] ^
+CultureInfo^ i
+(i j
+languagej r
+)r s
+;s t
+Setting 
+. 
+LanguageReceive #
+(# $
+language$ ,
+), -
+;- .
+Play 
+. 
+LanguageReceive  
+(  !
+language! )
+)) *
+;* +
 mediaElement 
-. 
-LoadedBehavior '
-=( )
+. 
+Source 
+=  !
+new" %
+Uri& )
+() *
+$str	* ó
+)
+ó ò
+;
+ò ô
+double 
+volume 
+= 
+$num 
+;  
+mediaElement 
+. 
+Volume 
+=  !
+volume" (
+;( )
+Setting 
+. 
+ValueSoundReceive %
+(% &
+volume& ,
+), -
+;- .
+mediaElement 
+. 
+LoadedBehavior '
+=( )
 
-MediaState* 4
-.4 5
-Play5 9
-;9 :
-mediaElement 
-. 
-UnloadedBehavior )
-=* +
-
-MediaState, 6
-.6 7
-Play7 ;
-;; <
-} 	
-public 
-static 
-void 
-ChangeVolumeMedia ,
-(, -
-double- 3
-volumeReceive4 A
-)A B
-{ 	
+MediaState* 4
+.4 5
+Play5 9
+;9 :
 mediaElement 
-. 
-Volume 
-=  !
-volumeReceive" /
-;/ 0
-} 	
-} 
-} ´D
+. 
+UnloadedBehavior )
+=* +
+
+MediaState, 6
+.6 7
+Play7 ;
+;; <
+} 	
+public## 
+static## 
+void## 
+ChangeVolumeMedia## ,
+(##, -
+double##- 3
+volumeReceive##4 A
+)##A B
+{$$ 	
+mediaElement%% 
+.%% 
+Volume%% 
+=%%  !
+volumeReceive%%" /
+;%%/ 0
+}&& 	
+}'' 
+}(( ÌF
 :C:\Users\Ale_2\source\repos\hangmanGame\MainWindow.xaml.cs
 	namespace 	
 hangmanGame
@@ -16513,278 +18803,302 @@ pbPassword;;' 1
 ,@@ 
 password@@  
 )@@  !
-;@@! "
-}AA 
-catchAA 
-(AA 
-	ExceptionAA 
-eAA 
+;@@! "
+ifAA 
+(AA 	
+responseGeneralAA	 
 )AA 
-{BB 
-ConsoleCC 
-.CC 
-	WriteLineCC 
-(CC 
-eCC 
-)CC 
-;CC 
-}DD 
-ifFF 
-(FF 
-responseGeneralFF 
-)FF 
-{GG 
-tbEmailHH 
-.HH 
-BorderBrushHH 
-=HH 
-BrushesHH "
-.HH" #
+{BB 
+tbEmailCC 
+.CC 
+BorderBrushCC 
+=CC 
+BrushesCC #
+.CC# $
 
-LightGreenHH# -
-;HH- .
+LightGreenCC$ .
+;CC. /
 
-pbPasswordII 
-.II 
-BorderBrushII 
-=II 
-BrushesII %
-.II% &
+pbPasswordDD 
+.DD 
+BorderBrushDD 
+=DD 
+BrushesDD &
+.DD& '
 
-LightGreenII& 0
-;II0 1
-LobbyJJ 
-
-lobbyJJ 
-=JJ 
-newJJ 
-LobbyJJ 
-(JJ 
-)JJ 
-;JJ 
-lobbyKK 
+LightGreenDD' 1
+;DD1 2
+LobbyEE 
+lobbyEE 
+=EE 
+newEE 
+LobbyEE 
+(EE 
+)EE 
+;EE  
+lobbyFF 
+.FF 
+EmailReceivedFF 
+(FF 
+emailFF 
+)FF  
+;FF  !
+lobbyGG 
+.GG 
+ColocateBestScoresGG 
+(GG 
+)GG  
+;GG  !
+lobbyHH 
+.HH '
+ColocatePersonalInformationHH '
+(HH' (
+)HH( )
+;HH) *
+lobbyII 
+.II 
+ShowII 
+(II 
+)II 
+;II 
+thisJJ 
 
-.KK
- 
-EmailReceivedKK 
-(KK 
-emailKK 
-)KK 
-;KK  
-lobbyLL 
-
-.LL
- 
-ColocateBestScoresLL 
-(LL 
-)LL 
-;LL  
-lobbyMM 
-
-.MM
- '
-ColocatePersonalInformationMM &
-(MM& '
-)MM' (
-;MM( )
-lobbyNN 
-
-.NN
- 
-ShowNN 
-(NN 
-)NN 
-;NN 
-thisOO 	
-.OO	 
-
-CloseOO
- 
-(OO 
-)OO 
-;OO 
-}PP 
-elseQQ 
-{RR 
-WrongCredentialsSS 
-(SS 
-)SS 
-;SS 
-}TT 
-}UU 
-}VV 
-privateXX 	
-boolXX
+.JJ
+ 
+CloseJJ 
+(JJ 
+)JJ 
+;JJ 
+}KK 
+elseLL 	
+{MM 
+WrongCredentialsNN 
+(NN 
+)NN 
+;NN 
+}OO 
+}PP 
+catchPP 
+(PP %
+EndpointNotFoundExceptionPP &
+	exceptionPP' 0
+)PP0 1
+{QQ 
+TelegramBotRR 
+.RR 
+SendToTelegramRR 
+(RR  
+	exceptionRR  )
+)RR) *
+;RR* +
+LogExceptionSS 
+.SS 
+LogSS 
+(SS 
+thisSS 
+,SS 
+	exceptionSS %
+)SS% &
+;SS& '
+LogExceptionTT 
+.TT "
+ErrorConnectionServiceTT (
+(TT( )
+)TT) *
+;TT* +
+}UU 
+}VV 
+}WW 
+privateYY 	
+boolYY
  
-ValidateCredentialXX !
-(XX" #
-)XX# $
-{YY 	
-boolZZ 
-isValidZZ 
-=ZZ 
-falseZZ 
-;ZZ 
-if\\ 
-(\\ 
-tbEmail\\ 
-.\\ 
-Text\\ 
-!=\\ 
-null\\ 
-&&\\ 
+ValidateCredentialYY !
+(YY" #
+)YY# $
+{ZZ 	
+bool[[ 
+isValid[[ 
+=[[ 
+false[[ 
+;[[ 
+if]] 
+(]] 
+tbEmail]] 
+.]] 
+Text]] 
+!=]] 
+null]] 
+&&]] 
 
-pbPassword\\ )
-.\\) *
-Password\\* 2
-!=\\3 5
-null\\6 :
-&&\\; =
-ValidationData\\> L
-.\\L M
-ValidateEmail\\M Z
-(\\Z [
-tbEmail\\[ b
-.\\b c
-Text\\c g
-)\\g h
-)\\h i
-{]] 
-isValid^^ 
-=^^ 
-true^^ 
-;^^ 
-tbEmail__ 
-.__ 
-BorderBrush__ 
-=__ 
-Brushes__ !
-.__! "
+pbPassword]] )
+.]]) *
+Password]]* 2
+!=]]3 5
+null]]6 :
+&&]]; =
+ValidationData]]> L
+.]]L M
+ValidateEmail]]M Z
+(]]Z [
+tbEmail]][ b
+.]]b c
+Text]]c g
+)]]g h
+)]]h i
+{^^ 
+isValid__ 
+=__ 
+true__ 
+;__ 
+tbEmail`` 
+.`` 
+BorderBrush`` 
+=`` 
+Brushes`` !
+.``! "
 
-LightGreen__" ,
-;__, -
+LightGreen``" ,
+;``, -
 
-pbPassword`` 
-.`` 
-BorderBrush`` 
-=`` 
-Brushes`` $
-.``$ %
+pbPasswordaa 
+.aa 
+BorderBrushaa 
+=aa 
+Brushesaa $
+.aa$ %
 
-LightGreen``% /
-;``/ 0
-}aa 
-elseaa 	
-{bb 
-WrongCredentialscc 
-(cc 
-)cc 
-;cc 
-}dd 
-returnff 	
-isValidff
+LightGreenaa% /
+;aa/ 0
+}bb 
+elsebb 	
+{cc 
+WrongCredentialsdd 
+(dd 
+)dd 
+;dd 
+}ee 
+returngg 	
+isValidgg
  
-;ff 
-}gg 	
-privateii 	
-voidii
+;gg 
+}hh 	
+privatejj 	
+voidjj
  
-WrongCredentialsii 
-(ii  !
-)ii! "
-{jj 
-tbEmailkk 
+WrongCredentialsjj 
+(jj  !
+)jj! "
+{kk 
+tbEmailll 
 
-.kk
+.ll
  
-BorderBrushkk 
-=kk 
-Brusheskk  
-.kk  !
-Redkk! $
-;kk$ %
+BorderBrushll 
+=ll 
+Brushesll  
+.ll  !
+Redll! $
+;ll$ %
 
-pbPasswordll 
-.ll 
-BorderBrushll 
-=ll 
-Brushesll #
-.ll# $
-Redll$ '
-;ll' (
-Systemmm 	
-.mm	 
+pbPasswordmm 
+.mm 
+BorderBrushmm 
+=mm 
+Brushesmm #
+.mm# $
+Redmm$ '
+;mm' (
+Systemnn 	
+.nn	 
 
-Windowsmm
+Windowsnn
  
-.mm 
-Formsmm 
-.mm 
+.nn 
+Formsnn 
+.nn 
 
-MessageBoxmm "
-.mm" #
-Showmm# '
-(mm' (
+MessageBoxnn "
+.nn" #
+Shownn# '
+(nn' (
 
-Propertiesmm( 2
-.mm2 3
-	Resourcesmm3 <
-.mm< =#
-EnteredWrongCredentialsmm= T
-,mmT U
+Propertiesnn( 2
+.nn2 3
+	Resourcesnn3 <
+.nn< =#
+EnteredWrongCredentialsnn= T
+,nnT U
 
-PropertiesmmV `
-.mm` a
-	Resourcesmma j
-.mmj k
-WrongCredentialsmmk {
-,nn 
-MessageBoxButtonsnn 
-.nn 
-OKnn 
-,nn 
-MessageBoxIconnn ,
-.nn, -
-Exclamationnn- 8
-)nn8 9
-;nn9 :
-}oo 
-privateqq 	
-voidqq
+PropertiesnnV `
+.nn` a
+	Resourcesnna j
+.nnj k
+WrongCredentialsnnk {
+,oo 
+MessageBoxButtonsoo 
+.oo 
+OKoo 
+,oo 
+MessageBoxIconoo ,
+.oo, -
+Exclamationoo- 8
+)oo8 9
+;oo9 :
+}pp 
+privaterr 	
+voidrr
  
-LostMyPasswordqq 
-(qq 
-objectqq $
-senderqq% +
-,qq+ ,
-RoutedEventArgsqq- <
-	eventLostqq= F
-)qqF G
-{rr 
-LostMyPasswordss 
-lostMyPasswordss  
-=ss! "
-newss# &
-LostMyPasswordss' 5
-(ss5 6
-)ss6 7
-;ss7 8
-lostMyPasswordtt 
-.tt 
-Showtt 
-(tt 
-)tt 
-;tt 
-thisuu 
-.uu 
-Closeuu 
-(uu 
-)uu 
-;uu 
-}vv 
-}ww 
-}xx â
+LostMyPasswordrr 
+(rr 
+objectrr $
+senderrr% +
+,rr+ ,
+RoutedEventArgsrr- <
+	eventLostrr= F
+)rrF G
+{ss 
+LostMyPasswordtt 
+lostMyPasswordtt  
+=tt! "
+newtt# &
+LostMyPasswordtt' 5
+(tt5 6
+)tt6 7
+;tt7 8
+lostMyPassworduu 
+.uu 
+Showuu 
+(uu 
+)uu 
+;uu 
+thisvv 
+.vv 
+Closevv 
+(vv 
+)vv 
+;vv 
+}ww 
+}xx 
+}yy â
 BC:\Users\Ale_2\source\repos\hangmanGame\Properties\AssemblyInfo.cs
+[ 
+assembly 	
+:	 
+
+AssemblyTitle 
+( 
+$str &
+)& '
+]' (
+[		 
+assembly		 	
+:			 
+
+AssemblyDescription		 
+(		 
+$str		 !
+)		! "
+]		" #
 [
 
  
@@ -16794,125 +19108,107 @@ BC:\Users\Ale_2\source\repos\hangmanGame\Properties\AssemblyInfo.cs
 :
 
 	 
-
-AssemblyTitle
+!
+AssemblyConfiguration
 
- 
+  
 (
 
- 
+  !
 $str
 
- &
+! #
 )
 
-& '
+# $
 ]
 
-' (
+$ %
 [ 
 assembly 	
 :	 
-
-AssemblyDescription 
-( 
-$str !
-)! "
-]" #
+
+AssemblyCompany 
+( 
+$str $
+)$ %
+]% &
 [ 
 assembly 	
 :	 
-!
-AssemblyConfiguration  
-(  !
-$str! #
-)# $
-]$ %
+
+AssemblyProduct 
+( 
+$str (
+)( )
+]) *
 [ 
 assembly 	
 :	 
-
-AssemblyCompany 
-( 
-$str $
-)$ %
-]% &
+
+AssemblyCopyright 
+( 
+$str 7
+)7 8
+]8 9
 [ 
 assembly 	
 :	 
-
-AssemblyProduct 
-( 
-$str (
-)( )
-]) *
+
+AssemblyTrademark 
+( 
+$str 
+)  
+]  !
 [ 
 assembly 	
 :	 
-
-AssemblyCopyright 
-( 
-$str 7
-)7 8
-]8 9
-[ 
-assembly 	
-:	 
-
-AssemblyTrademark 
-( 
-$str 
-)  
-]  !
-[ 
-assembly 	
-:	 
 
-AssemblyCulture 
-( 
-$str 
-) 
-] 
-[ 
-assembly 	
-:	 
+AssemblyCulture 
+( 
+$str 
+) 
+] 
+[ 
+assembly 	
+:	 
 
 
-ComVisible 
-( 
-false 
-) 
-] 
-["" 
-assembly"" 	
-:""	 
+ComVisible 
+( 
+false 
+) 
+] 
+[   
+assembly   	
+:  	 
 
-	ThemeInfo"" 
-("" &
-ResourceDictionaryLocation## 
-.## 
-None## #
-,### $&
-ResourceDictionaryLocation&& 
-.&& 
-SourceAssembly&& -
-))) 
-])) 
-[66 
-assembly66 	
-:66	 
+	ThemeInfo   
+(   &
+ResourceDictionaryLocation!! 
+.!! 
+None!! #
+,!!# $&
+ResourceDictionaryLocation$$ 
+.$$ 
+SourceAssembly$$ -
+)'' 
+]'' 
+[44 
+assembly44 	
+:44	 
 
-AssemblyVersion66 
-(66 
-$str66 $
-)66$ %
-]66% &
-[77 
-assembly77 	
-:77	 
+AssemblyVersion44 
+(44 
+$str44 $
+)44$ %
+]44% &
+[55 
+assembly55 	
+:55	 
 
-AssemblyFileVersion77 
-(77 
-$str77 (
-)77( )
-]77) *
+AssemblyFileVersion55 
+(55 
+$str55 (
+)55( )
+]55) *

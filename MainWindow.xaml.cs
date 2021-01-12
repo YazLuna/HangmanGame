@@ -83,7 +83,6 @@ namespace hangmanGame
 					LogException.Log(this, exception);
 					LogException.ErrorConnectionService();
 				}
-
 			}
 		}
 

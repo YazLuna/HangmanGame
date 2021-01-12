@@ -2,5 +2,5 @@ projectKey=my:HangmanGameClient
 serverUrl=http://localhost:9000
 serverVersion=8.5.1.38104
 dashboardUrl=http://localhost:9000/dashboard?id=my%3AHangmanGameClient
-ceTaskId=AXbu1l9ARxY353XQbKWj
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXbu1l9ARxY353XQbKWj
+ceTaskId=AXb0eR4-7nFYCkdJTUQi
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXb0eR4-7nFYCkdJTUQi

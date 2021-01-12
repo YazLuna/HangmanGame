@@ -8,7 +8,7 @@ namespace hangmanGame
     /// <summary>
 	/// This class is for logging exceptions to telegram
 	/// </summary>
-    public class LogException
+    public static class LogException
     {
         /// <summary>
 		/// Method that receives the player's email
