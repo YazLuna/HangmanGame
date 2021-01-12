@@ -126,9 +126,17 @@ namespace hangmanGame
 		/// </summary>
 		public void ObtainListPlayer()
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playerConnect = new PlayConnectClient(instanceContext);
-			playerConnect.PlayerConnect(nickname);
+            try { 
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient playerConnect = new PlayConnectClient(instanceContext);
+				playerConnect.PlayerConnect(nickname);
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 		}
 
 		/// <summary>
@@ -169,15 +177,31 @@ namespace hangmanGame
 		}
 		private void StartGame(object sender, RoutedEventArgs routedEventArgs)
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
-			playConnect.StartGame(nickname);
+            try { 
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
+				playConnect.StartGame(nickname);
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 		}
 		private void GoOut(object sender, RoutedEventArgs routedEventArgs)
 		{
-			InstanceContext instanceContext = new InstanceContext(this);
-			PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
-			playConnect.PlayerDisconnect(nickname);
+            try {
+				InstanceContext instanceContext = new InstanceContext(this);
+				PlayConnectClient playConnect = new PlayConnectClient(instanceContext);
+				playConnect.PlayerDisconnect(nickname);
+			}
+			catch (EndpointNotFoundException exception)
+			{
+				TelegramBot.SendToTelegram(exception);
+				LogException.Log(this, exception);
+				LogException.ErrorConnectionService();
+			}
 			Lobby lobby = new Lobby();
 			lobby.EmailReceived(emailAccount);
 			lobby.ColocateBestScores();

@@ -102,19 +102,28 @@ namespace hangmanGame
             }
             if (!string.IsNullOrEmpty(typeReport)){
                 serviceReportMisConduct.TypeReport = typeReport;
-                InstanceContext instanceContext = new InstanceContext(this);
-                ReportPlayerClient reportManagerClient = new ReportPlayerClient(instanceContext);
-                reportManagerClient.ReportPlayer(serviceReportMisConduct);
-                if (isReportPlayer)
+                try
                 {
-                    OpenMessageBox(Properties.Resources.ReportPlayerMessage, Properties.Resources.TitleRegisterReportMessage, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                    InstanceContext instanceContext = new InstanceContext(this);
+                    ReportManagerClient reportManagerClient = new ReportManagerClient(instanceContext);
+                    reportManagerClient.ReportPlayer(serviceReportMisConduct);
+                    if (isReportPlayer)
+                    {
+                        OpenMessageBox(Properties.Resources.ReportPlayerMessage, Properties.Resources.TitleRegisterReportMessage, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        OpenMessageBox(Properties.Resources.ReportPlayerErrorMessage, Properties.Resources.TitleRegisterReportMessage, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    }
+                    Play.ReportPlayerReceived(isReportPlayer);
+                    this.Close();
                 }
-                else
+                catch (EndpointNotFoundException exception)
                 {
-                    OpenMessageBox(Properties.Resources.ReportPlayerErrorMessage, Properties.Resources.TitleRegisterReportMessage, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    TelegramBot.SendToTelegram(exception);
+                    LogException.Log(this, exception);
+                    LogException.ErrorConnectionService();
                 }
-                Play.ReportPlayerReceived(isReportPlayer);
-                this.Close();
             }
             else
             {

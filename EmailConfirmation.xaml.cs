@@ -59,9 +59,17 @@ namespace hangmanGame
         /// </summary>
         public void SendConfirmationCode()
         {
-            InstanceContext instanceContext = new InstanceContext(this);
-            PlayerManagerClient sendConfirmation = new PlayerManagerClient(instanceContext);
-            sendConfirmation.SendEmail(account.Email, account.ConfirmationCode);
+            try { 
+                InstanceContext instanceContext = new InstanceContext(this);
+                PlayerManagerClient sendConfirmation = new PlayerManagerClient(instanceContext);
+                sendConfirmation.SendEmail(account.Email, account.ConfirmationCode);
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                TelegramBot.SendToTelegram(exception);
+                LogException.Log(this, exception);
+                LogException.ErrorConnectionService();
+            }
         }
         private void ProhibitPaste()
         {
@@ -86,7 +94,9 @@ namespace hangmanGame
         private void ProhibitSpace(object sender, KeyEventArgs keyEvent)
         {
             if (keyEvent.Key == Key.Space)
+            {
                 keyEvent.Handled = true;
+            }
         }
         private void SendCodeConfirmation(object sender, RoutedEventArgs routedEventArgs)
         {
@@ -109,16 +119,25 @@ namespace hangmanGame
             isValidConfirmationCode = ValidationData.ValidateConfirmationCode(tbConfirmationCode.Text);
             if (isValidConfirmationCode)
             {
-                InstanceContext instanceContext = new InstanceContext(this);
-                PlayerManagerClient registry = new PlayerManagerClient(instanceContext);
-                registry.Register(account, accountPlayer);
-                if (responseConfirmation)
+                int codeConfirmation = int.Parse(tbConfirmationCode.Text);
+                try
                 {
-                    OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);  
-                }
-                else
+                    InstanceContext instanceContext = new InstanceContext(this);
+                    PlayerManagerClient registry = new PlayerManagerClient(instanceContext);
+                    registry.Register(account, accountPlayer);
+                    if (responseConfirmation)
+                    {
+                        OpenMessageBox(Properties.Resources.AccountRegistrationMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        OpenMessageBox(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    }
+                }catch (EndpointNotFoundException exception)
                 {
-                    OpenMessageBox(Properties.Resources.NoAccountRegisteredMessage, Properties.Resources.AccountRegistrationMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                    TelegramBot.SendToTelegram(exception);
+                    LogException.Log(this, exception);
+                    LogException.ErrorConnectionService();
                 }
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();

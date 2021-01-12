@@ -56,20 +56,28 @@ namespace hangmanGame
             lNickname.Content = player.NickName;
         }
         private void DeleteAccountPlayer(object sender, RoutedEventArgs routedEventArgs) {
-            InstanceContext instanceContext = new InstanceContext(this);
-            PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
-            playerManager.DeleteAccountPlayer(player.NickName);
-            bool isDeletePlayer = responseBoolean;
-            if (isDeletePlayer)
+            try
             {
-                OpenMessageBox(Properties.Resources.DeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
-                MainWindow main = new MainWindow();
-                main.Show();
-                this.Close();
-            }
-            else
+                InstanceContext instanceContext = new InstanceContext(this);
+                PlayerManagerClient playerManager = new PlayerManagerClient(instanceContext);
+                playerManager.DeleteAccountPlayer(player.NickName);
+                bool isDeletePlayer = responseBoolean;
+                if (isDeletePlayer)
+                {
+                    OpenMessageBox(Properties.Resources.DeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Information);
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    OpenMessageBox(Properties.Resources.NoDeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                }
+            } catch (EndpointNotFoundException exception)
             {
-                OpenMessageBox(Properties.Resources.NoDeleteAccountMessage, Properties.Resources.DeleteAccountMessageTitle, (MessageBoxImage)System.Windows.Forms.MessageBoxIcon.Error);
+                TelegramBot.SendToTelegram(exception);
+                LogException.Log(this, exception);
+                LogException.ErrorConnectionService();
             }
         }
         private void OpenMessageBox(string textMessage, string titleMessage, MessageBoxImage messageBoxImage)
